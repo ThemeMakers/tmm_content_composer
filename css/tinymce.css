@@ -1,0 +1,16 @@
+	
+	/* -------------------------------------------------- */
+	/*	Icone Placeholder
+	/* -------------------------------------------------- */
+
+	.shortcode-placeholder {
+		display: inline-block;
+		margin: 5px;
+                cursor: pointer;                                
+		background-color: #0074a2;
+		-webkit-transition: background-color .35s ease;
+				transition: background-color .35s ease;
+	}
+             
+
+	.shortcode-placeholder:hover { background-color: #f6a828; }	

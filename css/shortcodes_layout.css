@@ -1,0 +1,347 @@
+/* #Shortcodes Media Queries
+================================================== */
+
+@media screen and (max-width: 1200px) {
+	/* -------------------------------------------------- */
+	/*	Social Share
+	/* -------------------------------------------------- */
+
+		.social-like,
+		.social-share { padding: 0; }
+
+		.social-like  { border-right-width: 0; }
+		.social-share { padding-right: 5px; }
+
+		.side-share { display: block; }
+
+		.post-footer .side-share {
+			display: inline-block;
+			padding-left: 10px;
+		}
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+	/* ---------------------------------------------------------------------- */
+	/*	Portfolio
+	/* ---------------------------------------------------------------------- */
+
+		/* -------------------------------------------------- */
+		/*	Portfolio Items
+		/* -------------------------------------------------- */
+
+			.portfolio-items.col-5 article,
+			.portfolio-items.col-6 article { width: 33.33333333333333%; }
+
+		/* -------------------------------------------------- */
+		/* Cycle Rotator
+		/* -------------------------------------------------- */
+
+			.cycle-rotator .item h1 {
+				font-size: 50px;
+			}
+}
+
+/* Smaller than standard 992 (devices and browsers) */
+@media only screen and (max-width: 992px) {
+
+
+}
+
+/* Tablet Portrait size to standard 960 (devices and browsers) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+
+	/* -------------------------------------------------- */
+	/*	Content Box
+	/* -------------------------------------------------- */
+
+	.content-boxes > ul > li { width: 50%; }
+
+	/* -------------------------------------------------- */
+	/* Cycle Rotator
+	/* -------------------------------------------------- */
+
+		.cycle-rotator .item h1 { font-size: 55px; }
+
+    /* ---------------------------------------------------------------------- */
+	/*	Blog
+	/* ---------------------------------------------------------------------- */
+
+		/* -------------------------------------------------- */
+		/*	Masonry Blog
+		/* -------------------------------------------------- */
+
+			.masonry .post-item,
+			.masonry.col-4 .post-item,
+			#main .masonry .post-item {
+				width: 46%;
+			}
+
+			.section > #post-area.masonry .post-item {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+
+        /* ---------------------------------------------------------------------- */
+		/*	Portfolio
+		/* ---------------------------------------------------------------------- */
+
+			/* -------------------------------------------------- */
+			/*	Portfolio Items
+			/* -------------------------------------------------- */
+
+				.portfolio-items.col-4 article,
+				.portfolio-items.col-5 article,
+				.portfolio-items.col-6 article { width: 33.33333333333333%; }
+
+			/* -------------------------------------------------- */
+			/*	Portfolio Single
+			/* -------------------------------------------------- */
+
+				.project-meta span { font-size: 12px; }
+
+}
+
+/* All Mobile Sizes (devices and browser) */
+@media only screen and (max-width: 767px) {
+
+	/* -------------------------------------------------- */
+	/*	Typography
+	/* -------------------------------------------------- */
+
+		blockquote.quote-text { padding-left: 50px; }
+
+		blockquote.quote-text:before {
+			left: -5px;
+			top: 8px;
+			font-size: 65px;
+		}
+
+	/* -------------------------------------------------- */
+	/*	Contact and Comments Form
+	/* -------------------------------------------------- */
+
+		.inputs-block {
+			margin-right: 0;
+			width: 100%;
+		}
+
+		.textarea-block {
+			margin-left: 0;
+			width: 100%;
+		}
+
+		.full-inputs-block .input-block {
+			display: inline-block;
+			margin-left: 0;
+			width: 100%;
+		}
+
+			.full-textarea-block textarea { min-height: 160px; }
+
+    /* -------------------------------------------------- */
+	/*	Clients
+	/* -------------------------------------------------- */
+
+		.clients-items li { width: 50%; }
+
+    /* -------------------------------------------------- */
+	/* Slogan Title
+	/* -------------------------------------------------- */
+
+	.section-title { margin-bottom: 30px; }
+
+		.section-title * { padding: 0; }
+
+		.section-title *:after,
+		.section-title *:before { display: none; }
+
+    /* ---------------------------------------------------------------------- */
+	/*	Blog
+	/* ---------------------------------------------------------------------- */
+
+		/* -------------------------------------------------- */
+		/*	Masonry Blog
+		/* -------------------------------------------------- */
+
+			#main > #post-area.masonry,
+			.col-xs-12 > #post-area.masonry {
+				margin-left: 0;
+				margin-right: 0;
+			}
+
+			.masonry .post-item,
+			.masonry.col-4 .post-item,
+			#main .masonry .post-item {
+				margin-left: 0;
+				margin-right: 0;
+				padding-left: 0;
+				padding-right: 0;
+				width: 100%;
+			}
+
+			.section > #post-area.masonry .post-item {
+				padding-left: 25px;
+				padding-right: 25px;
+			}
+
+    /* -------------------------------------------------- */
+	/* Fullscreen
+	/* -------------------------------------------------- */
+
+		.fullscreen-entry { padding: 2%; }
+
+	/* -------------------------------------------------- */
+	/* Cycle Rotator
+	/* -------------------------------------------------- */
+
+		.cycle-rotator .item h1 { font-size: 29px; }
+
+	/* -------------------------------------------------- */
+	/* Pricing Tables
+	/* -------------------------------------------------- */
+
+		.simple-pricing-table .column {
+			margin-bottom: 20px;
+			width: 100%;
+		}
+
+		.simple-pricing-table.col-2 .column,
+		.simple-pricing-table.col-3 .column,
+		.simple-pricing-table.col-4 .column { width: 100%; }
+
+		.simple-pricing-table .column:hover,
+		.simple-pricing-table .featured {
+			-webkit-transform: scale(1);
+					transform: scale(1);
+		}
+
+	/* ---------------------------------------------------------------------- */
+	/*	Blog
+	/* ---------------------------------------------------------------------- */
+
+	.entry-item .entry-meta {
+		position: relative;
+		left: auto;
+		top: auto;
+		margin-bottom: 10px;
+		width: auto;
+	}
+
+	.entry-item .entry-body {
+		margin-left: 0;
+		margin-bottom: 25px;
+		padding-bottom: 25px;
+	}
+
+		.entry-item .post-meta { margin-bottom: 15px; }
+
+	/* ---------------------------------------------------------------------- */
+	/*	Portfolio
+	/* ---------------------------------------------------------------------- */
+
+		/* -------------------------------------------------- */
+		/*	Portfolio Items
+		/* -------------------------------------------------- */
+
+			.portfolio-items.col-3 article,
+			.portfolio-items.col-4 article,
+			.portfolio-items.col-5 article,
+			.portfolio-items.col-6 article { width: 100%; }
+
+		/* -------------------------------------------------- */
+		/*	Portfolio Single
+		/* -------------------------------------------------- */
+
+		.project-single-entry + .tabs-holder { margin-bottom: 0; }
+
+		/* Project Similar Posts */
+
+			.project-similar li { width: 50%; }
+
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+	/* ---------------------------------------------------------------------- */
+	/*	Portfolio
+	/* ---------------------------------------------------------------------- */
+
+		/* -------------------------------------------------- */
+		/*	Portfolio Items
+		/* -------------------------------------------------- */
+
+			.portfolio-items.col-3 article,
+			.portfolio-items.col-4 article,
+			.portfolio-items.col-5 article,
+			.portfolio-items.col-6 article { width: 50%; }
+
+	/* -------------------------------------------------- */
+	/*	Tabs
+	/* -------------------------------------------------- */
+
+		.tabs-nav li a { padding: 12px 20px; }
+
+	/* -------------------------------------------------- */
+	/*	Counter
+	/* -------------------------------------------------- */
+
+		.counter-box .counter { width: 50%; }
+
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+
+	/* -------------------------------------------------- */
+	/*	Portfolio Filter
+	/* -------------------------------------------------- */
+
+	.filter-container { text-align: left; }
+
+		.portfolio-filter li {
+			display: inline-block;
+			margin: 1%;
+			width: 48%;
+			text-align: center;
+		}
+
+	/* -------------------------------------------------- */
+	/* Cycle Rotator
+	/* -------------------------------------------------- */
+
+		.cycle-rotator .item h1 { font-size: 24px; }
+
+	/* ---------------------------------------------------------------------- */
+	/*	Blog
+	/* ---------------------------------------------------------------------- */
+
+		.entry-item .entry-body { margin-left: 0; }
+
+			.post-meta .entry-date:after {
+				padding: 0 2px 0 4px;
+				content: "/"
+			}
+
+        /* -------------------------------------------------- */
+		/*	Masonry Blog
+		/* -------------------------------------------------- */
+
+			.section > #post-area.masonry .post-item {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+
+        /* -------------------------------------------------- */
+		/*	Tabs
+		/* -------------------------------------------------- */
+
+		.tabs-nav li { width: 50%; }
+
+		/* -------------------------------------------------- */
+		/*	Clients
+		/* -------------------------------------------------- */
+
+			.clients-items li { padding: 0 5%; }
+
+}
