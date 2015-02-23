@@ -9,35 +9,10 @@ if (!$posts_per_page) {
 	$posts_per_page = 6;
 }
 
-$query = new WP_Query(array(
-	'post_type' => TMM_Gallery::$slug,
-	'showposts' => '-1'
-));
-$posts_array = $query->posts;
+$featured_image_alias = TMM_Gallery::get_gallery_image_alias();
 
-$featured_image_alias = "547*430";
-
-$galleries = array();
-$id = 0;
-foreach($posts_array as $post){
-	$post_gall = get_post_meta($post->ID,'thememakers_gallery', true);
-	$tags = wp_get_post_terms($post->ID, 'gallery-category');
-	$slug = '';
-	foreach ($tags as $key => $tag) {
-		if ($key > 0) {
-			$slug .= " ";
-		}
-		$slug .= $tag->slug;
-	}
-
-	foreach ($post_gall as $gall){
-		$galleries[$id]['imgurl'] = $gall['imgurl'];
-		$galleries[$id]['title'] = $post->post_title;
-		$galleries[$id]['slug'] = $slug;
-		$id++;
-	}
-}
-
+$galleries = TMM_Gallery::get_galleries_images();
+$folio_tags = TMM_Gallery::get_gallery_tags();
 ?>
 
 	<div class="filter-holder clearfix">
@@ -48,15 +23,7 @@ foreach($posts_array as $post){
 				<ul id="portfolio-filter" class="portfolio-filter">
 
 					<?php
-					$folio_tags = array();
 
-					foreach ($posts_array as $p) {
-						$tmp = wp_get_post_terms($p->ID, 'gallery-category');
-						foreach ($tmp as $tag_object) {
-							$folio_tags[$tag_object->term_id] = $tag_object;
-
-						}
-					}
 					?>
 					<li><a class="filter active" data-filter="all"><?php _e('All', TMM_CC_TEXTDOMAIN); ?></a></li>
 
@@ -73,7 +40,7 @@ foreach($posts_array as $post){
 
 		<section id="portfolio-items" class="portfolio-items popup-gallery col-<?php echo $layout ?>">
 
-			<?php if (!empty($posts_array)) {
+			<?php //if (!empty($posts_array)) {
 
 				 for ($i = 0; $i < $posts_per_page; $i++) {
 
@@ -102,7 +69,7 @@ foreach($posts_array as $post){
 
 					}
 				 }
-			}
+			//}
 			?>
 
 		</section><!--/ .portfolio-items-->
