@@ -18,7 +18,11 @@ class TMM_Shortcode {
 					continue;
 				}
 
-				if($file !== 'default' && $file !== 'woocommerce' && !class_exists('TMM')){
+				if($file === 'dgx' && !function_exists('dgx_donate_init')){
+					continue;
+				}
+
+				if($file !== 'default' && $file !== 'woocommerce' && $file !== 'dgx' && !class_exists('TMM')){
 					continue;
 				}
 
