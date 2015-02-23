@@ -8,7 +8,7 @@
 			'type' => 'select',
 			'title' => __('Gallery Type', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'gallery_type',
-			'id' => '',
+			'id' => 'gallery_type',
 			'options' => array(
 				'default' => __('Default', TMM_CC_TEXTDOMAIN),
 				'albums' => __('Albums', TMM_CC_TEXTDOMAIN)
@@ -20,7 +20,7 @@
 
 	</div><!--/ .one-half-->
 
-	<div class="one-half">
+	<div class="one-half option-default">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -41,22 +41,7 @@
 
 	</div><!--/ .one-half-->
 
-	<div class="one-half">
-
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Enable Gallery Filter', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'folio_filter',
-			'id' => 'folio_filter',
-			'is_checked' => TMM_Content_Composer::set_default_value('folio_filter', 1),
-			'description' => __('Enable Folio Filter', TMM_CC_TEXTDOMAIN)
-		));
-		?>
-
-	</div>
-
-	<div class="one-half">
+	<div class="one-half option-default">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -71,7 +56,7 @@
 
 	</div><!--/ .one-half-->
 
-	<div class="one-half">
+	<div class="one-half option-default">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -86,7 +71,22 @@
 
 	</div><!--/ .one-half-->
 
-	<div class="one-half">
+	<div class="one-half option-default">
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Enable Gallery Filter', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'folio_filter',
+			'id' => 'folio_filter',
+			'is_checked' => TMM_Content_Composer::set_default_value('folio_filter', 1),
+			'description' => __('Enable Folio Filter', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+
+	</div>
+
+	<div class="one-half option-default">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -113,6 +113,27 @@
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
+		var galleryType = jQuery('#gallery_type'),
+			optionDefault = jQuery('.option-default'),
+			galleryTypeVal = galleryType.val();
+
+		changeGalleryType(galleryTypeVal);
+
+		galleryType.on('change', function(){
+			var $this = jQuery(this),
+				val = $this.val();
+			changeGalleryType(val);
+
+		});
+
+		function changeGalleryType(val){
+			if (val=='albums'){
+				optionDefault.slideUp(100);
+			}else{
+				optionDefault.slideDown(300);
+			}
+		}
+
 	});
 
 </script>

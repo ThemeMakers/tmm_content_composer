@@ -2,7 +2,7 @@
 <?php
 
 $galleries = TMM_Gallery::get_galleries_images();
-$featured_image_alias = TMM_Gallery::get_gallery_image_alias();
+$featured_image_alias = TMM_Gallery::get_gallery_image_alias($gallery_type);
 tmm_enqueue_script('magnific');
 tmm_enqueue_style('magnific');
 
