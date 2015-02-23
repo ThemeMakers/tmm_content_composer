@@ -6,6 +6,25 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
+			'title' => __('Gallery Type', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'gallery_type',
+			'id' => '',
+			'options' => array(
+				'default' => __('Default', TMM_CC_TEXTDOMAIN),
+				'albums' => __('Albums', TMM_CC_TEXTDOMAIN)
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('gallery_type', 'default'),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .one-half-->
+
+	<div class="one-half">
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
 			'title' => __('Layout', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
 			'id' => '',
