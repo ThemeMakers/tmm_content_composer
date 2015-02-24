@@ -18,11 +18,11 @@ class TMM_Shortcode {
 					continue;
 				}
 
-				if($file === 'dgx' && !function_exists('dgx_donate_init')){
+				if($file === 'seamless-donations' && !function_exists('dgx_donate_init')){
 					continue;
 				}
 
-				if($file !== 'default' && $file !== 'woocommerce' && $file !== 'dgx' && !class_exists('TMM')){
+				if($file !== 'default' && $file !== 'woocommerce' && $file !== 'seamless-donations' && !class_exists('TMM')){
 					continue;
 				}
 
