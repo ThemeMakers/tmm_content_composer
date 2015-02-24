@@ -13,7 +13,7 @@ switch($gallery_type){
 		$data_group = 0;
 		$category = '';
 		?>
-		<span id="close" class="back">&larr;</span>
+		<span id="gallery-close" class="gallery-back">&larr;</span>
 		<ul id="tp-grid" class="tp-grid">
 			<?php if (!empty($galleries)){
 				foreach($galleries as $gall){
