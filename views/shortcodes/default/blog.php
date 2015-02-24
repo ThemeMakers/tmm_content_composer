@@ -51,8 +51,9 @@ $args['paged'] = $paged;
 global $wp_query;
 $original_query = $wp_query;
 $wp_query = new WP_Query($args);
-
 $posts_array = $wp_query->posts;
+
+$data_columns = '';
 
 switch($blog_type) {
 	case 'blog-classic':
@@ -64,8 +65,7 @@ switch($blog_type) {
 	break;		
 	case 'blog-masonry':
         $blog_type = 'masonry';
-        $post_class = 'animate post-item';
-        $count_column = 'post-col-' .$columns;
+        $data_columns = 'data-columns="' . $columns . '"';
         break;	
 	case 'blog-grid':
 	case 'blog-grid-overlay':
@@ -73,7 +73,7 @@ switch($blog_type) {
 		$count_column = 'post-col-' .$columns;
 	break;
 }
-$data_columns = '';
+
 if (isset($post_carousel) && $post_carousel){
     $blog_type = 'post-carousel';
     $count_column = '';
@@ -116,6 +116,7 @@ if (isset($post_carousel) && $post_carousel){
                     $post = $posts_array[$i];
                     $data = array();			
                     $data['post_key'] = $i;
+                    $data['columns'] = $columns;
                     echo TMM::draw_html('post/masonry_piece', $data);
                 }
             } 
@@ -179,9 +180,9 @@ wp_reset_postdata();
     ?>
 	<script type="text/javascript">
 		jQuery(function() {
-			//jQuery(".masonry").imagesLoaded(function() {
+
 				jQuery(".masonry").init_masonry(<?php echo $columns ?>, <?php echo $load_with_animation ?>);
-			//});
+
 		});
 	</script>
 

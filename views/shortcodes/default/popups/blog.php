@@ -51,8 +51,7 @@
 			'options' => array(
 				'2' => __('2 Columns', TMM_CC_TEXTDOMAIN),
 				'3' => __('3 Columns', TMM_CC_TEXTDOMAIN),
-				'4' => __('4 Columns', TMM_CC_TEXTDOMAIN),
-				'5' => __('5 Columns', TMM_CC_TEXTDOMAIN),
+				'4' => __('4 Columns', TMM_CC_TEXTDOMAIN)
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('columns', '3'),
 			'description' => ''

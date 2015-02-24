@@ -14,7 +14,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 		
 		if (!Modernizr.touch) {
 			
-			$('.section-full-width, .container, .projects, .masonry, .clients-items, .progress-bar, .team-member.type-1').waypoints({ offset: '74%' });
+			$('.section-full-width, .container, .projects, .clients-items, .progress-bar, .team-member.type-1').waypoints({ offset: '74%' });
 
 			if ($('.opacityEffect').length) {
 				$('.section-full-width').effect({ effect: 'opacityEffect' });
@@ -55,21 +55,9 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 			}
 
 			if ($('.masonry').length) {
-
 				$('.masonry').effect({
-					effect: 'swipeDownEffect',
-					speed: 200,
-					beforeCall : function (el) {
-						$(el).find('.cover').addClass(this.effect);
-					}
-				});
-
-				$('.masonry').effect({
-					effect: 'showMeEffect',
-					speed: 200,
-					beforeCall : function (el) {
-						$(el).find('article').addClass(this.effect).addClass('shown');
-					}
+					effect: 'translateEffect',
+					speed: 200
 				});
 			}
 
@@ -148,7 +136,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 			delay: 0, 
 			beforeCall : function() {}
 		}, o = $.extend({}, defaults, options);
-		
+
 		return this.each(function () {
 			var container = $(this), elements;
 				o.beforeCall(container);
