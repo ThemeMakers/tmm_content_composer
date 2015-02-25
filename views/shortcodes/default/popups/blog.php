@@ -234,68 +234,6 @@
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
-
-		var option_default = jQuery('.option-default'),
-			option_masonry = jQuery('.option-masonry'),
-			option_columns = jQuery('.option-columns'),
-			option_carousel = jQuery('.option-carousel'),
-			post_review = jQuery('#show_review'),
-			post_review_val = post_review.val(),
-			blog_type = jQuery('#blog_type'),
-			blog_type_val = blog_type.val();
-
-		switchBlogType(blog_type_val);
-		switchPostQuery(post_review_val);
-
-		blog_type.on('change', function(){
-			var val = jQuery(this).val();
-			switchBlogType(val);
-		});
-
-		post_review.on('change', function(){
-			var val = jQuery(this).val();
-			switchPostQuery(val);
-		});
-
-		function switchBlogType(val){
-			switch(val){
-				case 'blog-masonry':
-					option_default.slideUp();
-					option_columns.slideDown(300);
-					option_masonry.slideDown(300);
-					option_carousel.slideUp();
-					break;
-				case 'blog-classic':
-				case 'blog-medium':
-					option_columns.slideUp();
-					option_default.slideDown(300);
-					option_masonry.slideUp();
-					option_carousel.slideUp();
-					break;
-				case 'blog-grid':
-				case 'blog-grid-overlay':
-				case 'blog-grid-layout':
-					option_columns.slideDown(300);
-					option_default.slideDown(300);
-					option_masonry.slideUp();
-					option_carousel.slideDown(300);
-					break;
-			}
-		}
-		function switchPostQuery(val){
-			var category = jQuery('#category'),
-				posts = jQuery('#posts');
-			switch(val){
-				case '1':
-					category.prop('disabled', true).css('background-color','#eee');
-					posts.prop('disabled', true).css('background-color','#eee');
-					break;
-				case '0':
-					category.prop('disabled', false).css('background-color','#fff');
-					posts.prop('disabled', false).css('background-color','#fff');
-					break;
-			}
-		}
 	});
 </script>
 

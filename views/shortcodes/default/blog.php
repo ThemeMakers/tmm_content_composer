@@ -53,26 +53,6 @@ $original_query = $wp_query;
 $wp_query = new WP_Query($args);
 $posts_array = $wp_query->posts;
 
-$data_columns = '';
-
-switch($blog_type) {
-	case 'blog-classic':
-		$count_column = 'post-col-1';
-	break;
-	case 'blog-medium':
-		$post_area = 'post-list';
-		$post_class = 'post-entry';
-	break;		
-	case 'blog-masonry':
-        $blog_type = 'masonry';
-        $data_columns = 'data-columns="' . $columns . '"';
-        break;	
-	case 'blog-grid':
-	case 'blog-grid-overlay':
-	case 'blog-grid-layout':
-		$count_column = 'post-col-' .$columns;
-	break;
-}
 
 if (isset($post_carousel) && $post_carousel){
     $blog_type = 'post-carousel';
@@ -84,9 +64,35 @@ if (isset($post_carousel) && $post_carousel){
     tmm_enqueue_style('owltransitions');
 }
 
+$post_class = 'post';
+switch($blog_type){
+    case 'blog-first':
+        $post_class .= ' post-news';
+        break;
+    case 'blog-second':
+        $post_class .= ' post-extra';
+        break;
+    case 'blog-third':
+        $post_class .= ' post-image';
+        break;
+}
+
+$columns_class = '';
+switch ($columns){
+    case '2':
+        $columns_class = 'medium-6 large-6 columns';
+        break;
+    case '3':
+        $columns_class = 'medium-4 large-4 columns';
+        break;
+    case '4':
+        $columns_class = 'medium-3 large-3 columns';
+        break;
+}
+
  ?>
 
-	<div id="post-area" class="<?php echo $post_area ?> <?php echo $count_column ?> <?php echo $blog_type ?>" <?php if (!empty($data_columns)) echo $data_columns; ?>>
+	<div class="row">
         
         <?php 
         if ($blog_type!='masonry'){           
@@ -99,10 +105,16 @@ if (isset($post_carousel) && $post_carousel){
 
                 the_post(); ?>
 
-                <article id="post-<?php the_ID(); ?>" <?php post_class($post_class); ?>>
+            <article class="<?php echo $columns_class ?>">
+
+                <div id="post-<?php the_ID(); ?>" <?php post_class($post_class);?>>
+
                     <?php get_template_part( $path, 'content' ); ?>
-                </article>
-                    
+
+                </div><!--/ .post-extra-->
+
+             </article>
+
             <?php }
             }
         

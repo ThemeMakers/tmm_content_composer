@@ -276,11 +276,11 @@ class TMM_Content_Composer {
      public static function get_blog_type() {
 		return array(
 			'blog-classic' => __('Blog Classic', TMM_CC_TEXTDOMAIN),
-			'blog-medium' => __('Blog Medium', TMM_CC_TEXTDOMAIN),
-			'blog-masonry' => __('Blog Masonry', TMM_CC_TEXTDOMAIN),
-			'blog-grid' => __('Blog Grid', TMM_CC_TEXTDOMAIN),
-			'blog-grid-overlay' => __('Grid Overlay', TMM_CC_TEXTDOMAIN),
-			'blog-grid-layout' => __('Grid Multi Layout', TMM_CC_TEXTDOMAIN)
+			'blog-first' => __('Type 1', TMM_CC_TEXTDOMAIN),
+			'blog-second' => __('Type 2', TMM_CC_TEXTDOMAIN),
+			'blog-third' => __('Type 3', TMM_CC_TEXTDOMAIN),
+			'blog-fourth' => __('Type 4', TMM_CC_TEXTDOMAIN),
+			'blog-fifth' => __('Type 5', TMM_CC_TEXTDOMAIN)
 		);
 	}
 
