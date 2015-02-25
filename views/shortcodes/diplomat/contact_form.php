@@ -84,14 +84,14 @@ if (!empty($contact_form['inputs'])) {
                         case "select":
                             $select_options = explode(",", $input['options']);
                             ?>
-                            <p class="input-block sel">
+                            <p class="input-block">
 	                            <label for="url_<?php echo $unique_id ?>"><?php echo $input['label'] ?><?php echo($input['is_required'] ? ': <span class="required">(' . __('required', TMM_CC_TEXTDOMAIN) . ')</span>' : '') ?></label>
 	                            <select id="url_<?php echo $unique_id ?>" name="<?php echo $name ?>">
 		                            <?php if (!empty($select_options)): ?>
-                                        <?php foreach ($select_options as $value) : ?>
-                                            <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
-                                        <?php endforeach; ?>
-                                    <?php endif; ?>
+				                        <?php foreach ($select_options as $value) : ?>
+					                        <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
+				                        <?php endforeach; ?>
+			                        <?php endif; ?>
                                 </select>
                             </p>
                             <?php
@@ -133,7 +133,7 @@ if (!empty($contact_form['inputs'])) {
 
                         <p class="input-block">
                             <?php $hash = md5(time()); ?>
-                            <img class="contact_form_capcha" src="<?php echo get_stylesheet_directory_uri(); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="27" width="72" /><input type="text" value="" name="verify" class="verify" /><input type="hidden" name="verify_code" value="<?php echo $hash ?>" />
+                            <img class="contact_form_capcha" src="<?php echo get_stylesheet_directory_uri(); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="54" width="72" /><input type="text" value="" name="verify" class="verify" /><input type="hidden" name="verify_code" value="<?php echo $hash ?>" />
                         </p><!--/ .row-->
 
                     <?php } ?>
@@ -143,7 +143,7 @@ if (!empty($contact_form['inputs'])) {
                             <?php
                         }else{
                             ?>
-                            <button class="button submit <?php echo $contact_form['submit_button'] ?>" type="submit"><?php echo ($contact_form['submit_button_text']) ? $contact_form['submit_button_text'] : '<i class="icon-paper-plane-2"></i>'?></button>
+                            <button class="button middle <?php echo $contact_form['submit_button'] ?>" type="submit"><?php echo ($contact_form['submit_button_text']) ? $contact_form['submit_button_text'] : '<i class="icon-paper-plane-2"></i>'?></button>
                             <?php
                         } ?>
 			
