@@ -142,21 +142,23 @@ if (isset($post_carousel) && $post_carousel){
         ?>
 
         <div class="masonry-loader spinner">
-            <div id="fadingBarsG_1" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_2" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_3" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_4" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_5" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_6" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_7" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_8" class="fadingBarsG">
+            <div id="spinningSquaresG">
+                <div id="spinningSquaresG_1" class="spinningSquaresG">
+                </div>
+                <div id="spinningSquaresG_2" class="spinningSquaresG">
+                </div>
+                <div id="spinningSquaresG_3" class="spinningSquaresG">
+                </div>
+                <div id="spinningSquaresG_4" class="spinningSquaresG">
+                </div>
+                <div id="spinningSquaresG_5" class="spinningSquaresG">
+                </div>
+                <div id="spinningSquaresG_6" class="spinningSquaresG">
+                </div>
+                <div id="spinningSquaresG_7" class="spinningSquaresG">
+                </div>
+                <div id="spinningSquaresG_8" class="spinningSquaresG">
+                </div>
             </div>
         </div>
         
