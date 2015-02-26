@@ -78,6 +78,9 @@ switch($blog_type){
     case 'blog-third':
         $post_class .= ' post-image';
         break;
+    case 'blog-fifth':
+        $post_class .= ' small';
+        break;
     case 'blog-masonry':
         $blog_type = 'masonry';
         $posts_list = 'masonry';
@@ -113,15 +116,15 @@ switch ($columns){
 
                 the_post(); ?>
 
-            <article class="<?php echo $columns_class ?>">
+                    <article class="<?php echo $columns_class ?>">
 
-                <div id="post-<?php the_ID(); ?>" <?php post_class($post_class);?>>
+                        <div id="post-<?php the_ID(); ?>" <?php post_class($post_class);?>>
 
-                    <?php get_template_part( $path, 'content' ); ?>
+                            <?php get_template_part( $path, 'content' ); ?>
 
-                </div><!--/ .post-extra-->
+                        </div><!--/ .post-extra-->
 
-             </article>
+                    </article>
 
             <?php }
             }
