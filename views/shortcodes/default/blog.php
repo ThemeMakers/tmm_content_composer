@@ -64,7 +64,10 @@ if (isset($post_carousel) && $post_carousel){
     tmm_enqueue_style('owltransitions');
 }
 
+$posts_list = '';
 $post_class = 'post';
+$data_columns = '';
+
 switch($blog_type){
     case 'blog-first':
         $post_class .= ' post-news';
@@ -74,6 +77,11 @@ switch($blog_type){
         break;
     case 'blog-third':
         $post_class .= ' post-image';
+        break;
+    case 'blog-masonry':
+        $blog_type = 'masonry';
+        $posts_list = 'masonry';
+        $data_columns = "data-columns='".$columns."'";
         break;
 }
 
@@ -92,10 +100,10 @@ switch ($columns){
 
  ?>
 
-	<div class="row">
+	<div id="post-area" class="row <?php echo (!empty($posts_list)) ? $posts_list : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?>>
         
         <?php 
-        if ($blog_type!='masonry'){           
+        if ($blog_type!='masonry'){
 
             if ( have_posts() ){
 

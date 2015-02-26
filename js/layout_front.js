@@ -57,7 +57,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 			if ($('.masonry').length) {
 				$('.masonry').effect({
 					effect: 'translateEffect',
-					speed: 200
+					speed: 400
 				});
 			}
 
