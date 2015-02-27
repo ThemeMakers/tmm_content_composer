@@ -23,12 +23,9 @@ if (isset($location_mode) && $location_mode == 'address') {
 	}
 }
 
-
 if (!isset($maptype)) {
 	$maptype = 'image';
 }
-
-
 
 if (isset($latitude) && $latitude !== '' && isset($longitude) && $longitude !== '') {
 
