@@ -330,7 +330,7 @@ class TMM_Content_Composer {
 				if (!empty($data['options'])) {
 					?>
 					<label class="sel">
-						<select <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" id="<?php echo $data['id'] ?>">
+						<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" id="<?php echo $data['id'] ?>">
 							<?php foreach ($data['options'] as $key => $text) { ?>
 								<option <?php selected($data['default_value'], $key); ?> value="<?php echo $key ?>"><?php echo $text ?></option>
 							<?php } ?>

@@ -36,6 +36,39 @@
 		));
 		?>
 
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'textarea',
+			'title' => __('Working Days', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'working_days',
+			'id' => 'working_days',
+			'default_value' => TMM_Content_Composer::set_default_value('working_days', ''),
+			'description' => ''
+		));
+		?>
+
+		<?php
+		$days = array(
+			'Sunday' => 'Sunday',
+			'Monday' => 'Monday',
+			'Tuesday' => 'Tuesday',
+			'Wednesday' => 'Wednesday',
+			'Thursday' => 'Thursday',
+			'Friday' => 'Friday',
+			'Saturday' => 'Saturday',
+		);
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Closed Days', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'closed_days',
+			'id' => 'closed_days',
+			'options' => $days,
+			'multiple' => true,
+			'default_value' => TMM_Content_Composer::set_default_value('closed_days', 'sunday'),
+			'description' => ''
+		));
+		?>
+
 
     </div><!--/ .fullwidth-->
 
