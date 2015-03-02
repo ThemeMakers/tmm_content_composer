@@ -53,7 +53,7 @@
 				'3' => __('3 Columns', TMM_CC_TEXTDOMAIN),
 				'4' => __('4 Columns', TMM_CC_TEXTDOMAIN)
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('columns', '3'),
+			'default_value' => TMM_Content_Composer::set_default_value('columns', '2'),
 			'description' => ''
 		));
 		?>

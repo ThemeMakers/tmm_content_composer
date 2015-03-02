@@ -144,11 +144,11 @@
 			<input type="hidden" id="row_align___ROW_ID__" value="left" name="tmm_layout_constructor_row[__ROW_ID__][row_align]" />
             <input type="hidden" id="row_center___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][row_center]" />
             <input type="hidden" id="row_overlay___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][row_overlay]" />
-			<input type="hidden" id="row_padding_top___ROW_ID__" value="55" name="tmm_layout_constructor_row[__ROW_ID__][padding_top]" />
-			<input type="hidden" id="row_padding_bottom___ROW_ID__" value="55" name="tmm_layout_constructor_row[__ROW_ID__][padding_bottom]" />
-			<input type="hidden" id="row_margin_top___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][margin_top]" />
-			<input type="hidden" id="row_margin_bottom___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][margin_bottom]" />
-			<input type="hidden" id="row_section_content___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][section_content]" />
+			<input type="hidden" id="row_padding_top___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][padding_top]" />
+			<input type="hidden" id="row_padding_bottom___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][padding_bottom]" />
+			<input type="hidden" id="row_margin_top___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][margin_top]" />
+			<input type="hidden" id="row_margin_bottom___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][margin_bottom]" />
+			<input type="hidden" id="row_section_content___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][section_content]" />
 
 		</li>
 
