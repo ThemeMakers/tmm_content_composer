@@ -328,11 +328,26 @@ class TMM_Content_Composer {
 				}
 
 				if (!empty($data['options'])) {
+					if ($data['multiple']){
+						$default_value = explode(',', $data['default_value']);
+					}
 					?>
 					<label class="sel">
 						<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" id="<?php echo $data['id'] ?>">
-							<?php foreach ($data['options'] as $key => $text) { ?>
-								<option <?php selected($data['default_value'], $key); ?> value="<?php echo $key ?>"><?php echo $text ?></option>
+							<?php foreach ($data['options'] as $key => $text) {
+
+								$selected = '';
+								if ($data['multiple']) {
+									foreach ($default_value as $value) {
+										if (selected($value, $key)) {
+											$selected = selected($value, $key);
+										}
+									}
+								}else{
+									$selected = selected($data['default_value'], $key);
+								}
+								?>
+								<option <?php echo $selected; ?> value="<?php echo $key ?>"><?php echo $text ?></option>
 							<?php } ?>
 						</select>
 					</label>
