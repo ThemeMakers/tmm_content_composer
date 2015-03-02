@@ -137,6 +137,7 @@
 		/* -------------------------------------------------- */
 
 		.tmm-popup-content .one-fourth,
+        .tmm-popup-content .one-third,
 		.tmm-popup-content .one-half,
 		.tmm-popup-content .fullwidth {
 			display: inline-block;
@@ -145,6 +146,7 @@
 		}
 
 		.tmm-popup-content .one-fourth { width: 22.5%; }
+        .tmm-popup-content .one-third { width: 30.3%; }
 		.tmm-popup-content .one-half { width: 47.5%; }
 		.tmm-popup-content .fullwidth { width: 98%; }
                 
