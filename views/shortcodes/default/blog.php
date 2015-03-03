@@ -25,11 +25,11 @@ if (!empty($posts_per_page)&&($blog_type!='blog-masonry')) {
 	$args['posts_per_page'] = $posts_per_page;
 }
 
-if (!empty($category) &&($blog_type!='blog-masonry')) {
-	$args['category__in'] = explode(',', $category) ;
+if (!empty($category) && ($category!='null') && ($blog_type!='blog-masonry')) {
+        $args['category__in'] = $category;
 }
 
-if (!empty($tag) &&($blog_type!='blog-masonry')) {
+if (!empty($tag) && ($tag!='null') &&($blog_type!='blog-masonry')) {
 	$args['tag__in'] = explode(',', $tag) ;
 }
 
@@ -37,7 +37,6 @@ if (!empty($posts)&&($blog_type!='blog-masonry')) {
 	$posts = explode(',', $posts);
 	$args['post__in'] = $posts;
 }
-
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args['paged'] = $paged;
