@@ -3,11 +3,15 @@
 $titles_array = explode('^', $titles);
 $content_array = explode('^', $content);
 ?>
-<div class="acc-box <?php echo $type_style ?>">
-	<?php if (!empty($content_array)): ?>
-		<?php foreach ($content_array as $key => $value) : ?>
-			<span data-mode="<?php echo $type ?>" class="acc-trigger"><a href="#"><?php echo $titles_array[$key] ?></a></span>
-			<div class="acc-container"><p><?php echo do_shortcode($value) ?></p></div><!--/ .acc-container-->
-		<?php endforeach; ?>
-	<?php endif; ?>
-</div><!--/ .acc-box-->
+<ul class="accordion">
+	<?php if (!empty($content_array)) { ?>
+		<?php foreach ($content_array as $key => $value) { ?>
+			<li class="accordion-navigation">
+				<a href="#" class="acc-trigger" data-mode="<?php echo $type ?>"><?php echo $titles_array[$key] ?></a>
+				<div class="content">
+					<?php echo do_shortcode($value) ?>
+				</div>
+			</li>
+		<?php }
+	} ?>
+</ul>
