@@ -263,13 +263,40 @@ class TMM_Content_Composer {
 		return $post_categories;
 	}
 
+	public static function get_post_tags() {
+		$post_tags = array(
+			0 => __('All Tags', TMM_CC_TEXTDOMAIN)
+		);
+
+		$args = array(
+			'orderby' => 'name',
+			'order' => 'ASC',
+			'hide_empty' => 0,
+			'child_of' => 0,
+			'hierarchical' => true,
+			'number' => NULL
+		);
+
+		$tags = get_tags($args);
+
+		foreach ($tags as $value) {
+			$post_tags[$value->term_id] = $value->name;
+		}
+
+		return $post_tags;
+	}
+
 	public static function get_post_sort_array() {
 		return array(
-			'ID' => 'ID', 'date' => 'date', 'post_date' => 'post_date', 'title' => 'title',
-            'post_title' => 'post_title', 'name' => 'name', 'post_name' => 'post_name', 'modified' => 'modified',
-            'post_modified' => 'post_modified', 'modified_gmt' => 'modified_gmt', 'post_modified_gmt' => 'post_modified_gmt',
-            'menu_order' => 'menu_order', 'parent' => 'parent', 'post_parent' => 'post_parent',
-            'rand' => 'rand', 'comment_count' => 'comment_count', 'author' => 'author', 'post_author' => 'post_author'
+			'ID' => 'ID',
+			'author' => 'Author',
+			'title' => 'Title',
+			'name' => 'Name',
+			'date' => 'Date',
+			'modified' => 'Modified',
+			'parent' => 'Parent',
+			'rand' => 'Rand',
+			'comment_count' => 'Comment Count'
 		);
 	}
     
@@ -323,7 +350,7 @@ class TMM_Content_Composer {
 
 				if (!empty($data['title'])) {
 					?>
-					<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
+					<h4 class="label" for="<?php echo isset($data['id']) ? $data['id'] : '' ?>"><?php echo $data['title'] ?></h4>
 					<?php
 				}
 
@@ -337,18 +364,18 @@ class TMM_Content_Composer {
 					}
 					?>
 					<label class="sel">
-						<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" id="<?php echo $data['id'] ?>">
+						<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" id="<?php echo isset($data['id']) ? $data['id'] : ''; ?>">
 							<?php foreach ($data['options'] as $key => $text) {
 
 								$selected = '';
 								if ($data['multiple']) {
 									foreach ($default_value as $value) {
 										if (selected($value, $key)) {
-											$selected = selected($value, $key);
+											$selected = selected($value, $key, false);
 										}
 									}
 								}else{
-									$selected = selected($data['default_value'], $key);
+									$selected = selected($data['default_value'], $key, false);
 								}
 								?>
 								<option <?php echo $selected; ?> value="<?php echo $key ?>"><?php echo $text ?></option>

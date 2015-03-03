@@ -786,7 +786,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
  */
 (function ($) {
     $.fn.appear = function (options) {
-		
+
 		var transEndEventNames = {
 			'WebkitTransition': 'webkitTransitionEnd',
 			'MozTransition': 'transitionend',
@@ -867,7 +867,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 				
                 //mark the element as visible
                 t.appeared = true;
-				
+
                 //trigger the original fn
                 fn.apply(this, arguments);
             };

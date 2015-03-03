@@ -49,6 +49,7 @@
 			'shortcode_field' => 'columns',
 			'id' => '',
 			'options' => array(
+				'fullwidth' => __('Fullwidth', TMM_CC_TEXTDOMAIN),
 				'2' => __('2 Columns', TMM_CC_TEXTDOMAIN),
 				'3' => __('3 Columns', TMM_CC_TEXTDOMAIN),
 				'4' => __('4 Columns', TMM_CC_TEXTDOMAIN)
@@ -64,11 +65,28 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
+			'multiple' => true,
 			'title' => __('Category', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'category',
 			'id' => 'category',
 			'options' => TMM_Content_Composer::get_post_categories(),
 			'default_value' => TMM_Content_Composer::set_default_value('category', ''),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'multiple' => true,
+			'title' => __('Tag', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'tag',
+			'id' => 'tag',
+			'options' => TMM_Content_Composer::get_post_tags(),
+			'default_value' => TMM_Content_Composer::set_default_value('tag', ''),
 			'description' => ''
 		));
 		?>
@@ -169,20 +187,6 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show Latest Review', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'show_review',
-			'id' => 'show_review',
-			'is_checked' => TMM_Content_Composer::set_default_value('show_review', 0),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
-		));
-		?>
-
-	</div><!--/ .ona-half-->
-
-	<div class="one-half option-default">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
 			'title' => __('Show/Hide Pagination', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_pagination',
 			'id' => 'show_pagination',
@@ -192,19 +196,6 @@
 		?>
 
 	</div><!--/ .ona-half-->
-
-	<div class="one-half option-carousel">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Use as Post Carousel', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'post_carousel',
-			'id' => 'post_carousel',
-			'is_checked' => TMM_Content_Composer::set_default_value('post_carousel', 0),
-			'description' => __('Use as Post Carousel', TMM_CC_TEXTDOMAIN)
-		));
-		?>
-	</div>
 
 	<div class="one-half option-masonry">
 		<?php

@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) exit;
 wp_reset_query();
 
 $count_column = '';
-$post_class = (isset($post_appearing_effect) && !empty($post_appearing_effect)) ? 'post-item '.$post_appearing_effect : 'post-item';
+$post_class = (isset($post_appearing_effect) && !empty($post_appearing_effect)) ? 'post '.$post_appearing_effect : 'post';
 $post_area = 'post-area';
 
 $path = 'content/' . $blog_type . '/content';
@@ -25,8 +25,12 @@ if (!empty($posts_per_page)&&($blog_type!='blog-masonry')) {
 	$args['posts_per_page'] = $posts_per_page;
 }
 
-if ((int) $category > 0 &&($blog_type!='blog-masonry')) {
-	$args['cat'] = (int) $category;
+if (!empty($category) &&($blog_type!='blog-masonry')) {
+	$args['category__in'] = explode(',', $category) ;
+}
+
+if (!empty($tag) &&($blog_type!='blog-masonry')) {
+	$args['tag__in'] = explode(',', $tag) ;
 }
 
 if (!empty($posts)&&($blog_type!='blog-masonry')) {
@@ -34,16 +38,6 @@ if (!empty($posts)&&($blog_type!='blog-masonry')) {
 	$args['post__in'] = $posts;
 }
 
-if ($show_review){
-    $args['meta_key'] = 'tmm_review_total';
-    $args['meta_query'] = array(
-        array(
-            'key' => 'tmm_review_total',
-            'value' => array( 0.1, 100000),
-            'type' => 'numeric',
-            'compare' => 'BETWEEN'
-        ));
-}
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args['paged'] = $paged;
@@ -53,19 +47,7 @@ $original_query = $wp_query;
 $wp_query = new WP_Query($args);
 $posts_array = $wp_query->posts;
 
-
-if (isset($post_carousel) && $post_carousel){
-    $blog_type = 'post-carousel';
-    $count_column = '';
-    $data_columns = 'data-columns="' . $columns . '"';
-    tmm_enqueue_script('owlcarousel');
-    tmm_enqueue_style('owlcarousel');
-    tmm_enqueue_style('owltheme');
-    tmm_enqueue_style('owltransitions');
-}
-
 $posts_list = '';
-$post_class = 'post';
 $data_columns = '';
 
 switch($blog_type){
@@ -84,26 +66,31 @@ switch($blog_type){
     case 'blog-masonry':
         $blog_type = 'masonry';
         $posts_list = 'masonry';
+        $columns = ($columns!='fullwidth') ? $columns : 2;
         $data_columns = "data-columns='".$columns."'";
         break;
 }
 
 $columns_class = '';
 switch ($columns){
+    case 'fullwidth':
+        $columns_class .= 'medium-12 large-12 columns';
+        break;
     case '2':
-        $columns_class = 'medium-6 large-6 columns';
+        $columns_class .= 'medium-6 large-6 columns';
+        $posts_list = 'post-list-extra';
         break;
     case '3':
-        $columns_class = 'medium-4 large-4 columns';
+        $columns_class .= 'medium-4 large-4 columns';
         break;
     case '4':
-        $columns_class = 'medium-3 large-3 columns';
+        $columns_class .= 'medium-3 large-3 columns';
         break;
 }
 
  ?>
 
-	<div id="post-area" class="row <?php echo (!empty($posts_list)) ? $posts_list : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?>>
+	<div class="row <?php echo (!empty($posts_list)) ? $posts_list : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?>>
         
         <?php 
         if ($blog_type!='masonry'){
@@ -206,7 +193,7 @@ wp_reset_postdata();
 	<script type="text/javascript">
 		jQuery(function() {
 
-				jQuery(".masonry").init_masonry(<?php echo $columns ?>, <?php echo $load_with_animation ?>);
+				jQuery(".masonry").init_masonry(<?php echo ($columns!='fullwidth') ? $columns : '2' ?>, <?php echo $load_with_animation ?>);
 
 		});
 	</script>
