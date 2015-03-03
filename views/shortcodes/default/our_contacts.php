@@ -3,8 +3,8 @@
 <div class="our_contacts">
     <ul>
         <?php if (!empty($content)){ ?><li><?php  echo $content ?></li><?php } ?>
-        <?php if (!empty($phone)){ ?><li><?php __('Call:', TMM_CC_TEXTDOMAIN) ?> <?php echo $phone; ?> </li><?php } ?>
-        <?php if (!empty($email)){?><li><?php __('Email:', TMM_CC_TEXTDOMAIN) ?> <a href="mailto:<?php echo $email ?>"><?php echo $email ?></a></li><?php } ?>
+        <?php if (!empty($phone)){ ?><li><?php _e('Call:', TMM_CC_TEXTDOMAIN) ?> <?php echo $phone; ?> </li><?php } ?>
+        <?php if (!empty($email)){?><li><?php _e('E-mail:', TMM_CC_TEXTDOMAIN) ?> <a href="mailto:<?php echo $email ?>"><?php echo $email ?></a></li><?php } ?>
     </ul>
 </div>
 <div class="our_timetable">
@@ -16,7 +16,7 @@
             foreach($closed_days as $closed_day){
                 ?>
                 <dt><?php echo $closed_day ?>:</dt>
-                <dd><?php __('Closed', TMM_CC_TEXTDOMAIN) ?></dd>
+                <dd><?php _e('Closed', TMM_CC_TEXTDOMAIN) ?></dd>
                 <?php
             }
         } ?>
