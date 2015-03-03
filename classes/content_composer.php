@@ -327,6 +327,10 @@ class TMM_Content_Composer {
 					<?php
 				}
 
+				if (!isset($data['multiple'])) {
+					$data['multiple'] = false;
+				}
+
 				if (!empty($data['options'])) {
 					if ($data['multiple']){
 						$default_value = explode(',', $data['default_value']);
