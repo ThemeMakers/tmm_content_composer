@@ -39,23 +39,23 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'textarea',
-			'title' => __('Working Days', TMM_CC_TEXTDOMAIN),
+			'title' => __('Working Days Info', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'working_days',
 			'id' => 'working_days',
 			'default_value' => TMM_Content_Composer::set_default_value('working_days', ''),
-			'description' => ''
+			'description' => __('Hold the CTRL key and click the items in a list to choose them', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
 		<?php
 		$days = array(
-			'Sunday' => 'Sunday',
 			'Monday' => 'Monday',
 			'Tuesday' => 'Tuesday',
 			'Wednesday' => 'Wednesday',
 			'Thursday' => 'Thursday',
 			'Friday' => 'Friday',
 			'Saturday' => 'Saturday',
+			'Sunday' => 'Sunday'
 		);
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
