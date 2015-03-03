@@ -14,7 +14,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 		
 		if (!Modernizr.touch) {
 			
-			$('.section-full-width, .container, .projects, .clients-items, .progress-bar, .team-member.type-1').waypoints({ offset: '74%' });
+			$('.section-full-width, .post-list, .projects, .clients-items, .progress-bar, .team-member.type-1').waypoints({ offset: '74%' });
 
 			if ($('.opacityEffect').length) {
 				$('.section-full-width').effect({ effect: 'opacityEffect' });
@@ -141,7 +141,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 			var container = $(this), elements;
 				o.beforeCall(container);
 				o.getData ? elements = container.find('.' + o.effect) : elements = container.find('[data-effect]');
-			//container.on('start', function () {
+			container.on('start', function () {
 				elements.each(function (i) {
 					var element = $(this);
 					setTimeout(function () {
@@ -151,7 +151,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 						}, i * o.speed);
 					}, (i * o.speed));
 				});
-			//});
+			});
 		});
 	};
 	

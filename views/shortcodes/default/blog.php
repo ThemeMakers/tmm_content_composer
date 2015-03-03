@@ -47,7 +47,7 @@ $original_query = $wp_query;
 $wp_query = new WP_Query($args);
 $posts_array = $wp_query->posts;
 
-$posts_list = '';
+$posts_list = 'post-list';
 $data_columns = '';
 
 switch($blog_type){
@@ -65,7 +65,7 @@ switch($blog_type){
         break;
     case 'blog-masonry':
         $blog_type = 'masonry';
-        $posts_list = 'masonry';
+        $posts_list .= ' masonry';
         $columns = ($columns!='fullwidth') ? $columns : 2;
         $data_columns = "data-columns='".$columns."'";
         break;
@@ -78,7 +78,7 @@ switch ($columns){
         break;
     case '2':
         $columns_class .= 'medium-6 large-6 columns';
-        $posts_list = 'post-list-extra';
+        $posts_list .= ' post-list-extra';
         break;
     case '3':
         $columns_class .= 'medium-4 large-4 columns';
