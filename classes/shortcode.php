@@ -7,22 +7,36 @@ class TMM_Shortcode {
 	public static $shortcodes = array();
 	public static $shortcodes_folders = array();
 	public static $shortcodes_keys_by_folders = array();
+	public static $external_shortcodes = array(); // other plugins shortcodes
 
 	public static function register() {
+
+		self::$external_shortcodes = array(
+			'woocommerce' => 1,
+			'seamless-donations' => 1,
+			'tmm_events_calendar' => 1,
+		);
+
 		//collect shortcodes from folder "views"
 		$handler = opendir(TMM_CC_DIR . "views/shortcodes/");
 		while ($file = readdir($handler)) {
 			if ($file != "." AND $file != "..") {
 
-				if($file === 'woocommerce' && !class_exists('WooCommerce')){
-					continue;
-				}
+				if (isset(self::$external_shortcodes[$file])) {
 
-				if($file === 'seamless-donations' && !function_exists('dgx_donate_init')){
-					continue;
-				}
+					if($file === 'woocommerce' && !class_exists('WooCommerce')){
+						continue;
+					}
 
-				if($file !== 'default' && $file !== 'woocommerce' && $file !== 'seamless-donations' && !class_exists('TMM')){
+					if($file === 'seamless-donations' && !function_exists('dgx_donate_init')){
+						continue;
+					}
+
+					if($file === 'tmm_events_calendar' && !class_exists('TMM_EventsPlugin')){
+						continue;
+					}
+
+				} else if ($file !== 'default' && !class_exists('TMM')) {
 					continue;
 				}
 
@@ -127,9 +141,9 @@ class TMM_Shortcode {
 		$results_ext = array();
 		if (!empty(self::$shortcodes_keys_by_folders)) {
 			foreach (self::$shortcodes_keys_by_folders as $key => $value) {
-				if($key === 'woocommerce'){
+				if ( isset(self::$external_shortcodes[$key]) ) {
 					$results_ext = array_merge($results_ext, $value);
-				}else{
+				} else {
 					$results = array_merge($results, $value);
 				}
 			}
