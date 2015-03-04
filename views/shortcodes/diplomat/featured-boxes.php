@@ -99,20 +99,23 @@
 </style>
 
 <ul class="block-with-icons">
-	<li class="<?php echo $first_icon; ?>">
+	<li >
 		<a href="#">
-		<?php if (!empty($first_title)){ ?><h5><?php echo $first_title ?></h5><?php } ?>
-		<?php if (!empty($first_description)){ ?><span><?php echo $first_description ?></span><?php } ?>
+			<i class="<?php echo $first_icon; ?>"></i>
+			<?php if (!empty($first_title)){ ?><h5><?php echo $first_title ?></h5><?php } ?>
+			<?php if (!empty($first_description)){ ?><span><?php echo $first_description ?></span><?php } ?>
 		</a>
 	</li>
-	<li  class="<?php echo $second_icon; ?>">
+	<li>
 		<a href="#">
+			<i class="<?php echo $second_icon; ?>"></i>
 			<?php if (!empty($second_title)){ ?><h5><?php echo $second_title ?></h5><?php } ?>
 			<?php if (!empty($second_description)){ ?><span><?php echo $second_description ?></span><?php } ?>
 		</a>
 	</li>
-	<li class="<?php echo $third_icon; ?>">
+	<li>
 		<a href="#">
+			<i class="<?php echo $third_icon; ?>"></i>
 			<?php if (!empty($third_title)){ ?><h5><?php echo $third_title ?></h5><?php } ?>
 			<?php if (!empty($third_description)){ ?><span><?php echo $third_description ?></span><?php } ?>
 		</a>
