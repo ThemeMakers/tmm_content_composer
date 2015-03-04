@@ -180,7 +180,7 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 	<div class="one-half">
 
 		<?php
-		$view_icon_group = TMM_Content_Composer::set_default_value('second_icon', 'icon-thumbs-up-alt');
+		$view_icon_group = TMM_Content_Composer::set_default_value('second_icon', 'icon-thumbs-up-4');
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Icon', TMM_CC_TEXTDOMAIN),
@@ -330,7 +330,7 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 	<div class="one-half">
 
 		<?php
-		$view_icon_group = TMM_Content_Composer::set_default_value('third_icon', 'icon-calendar');
+		$view_icon_group = TMM_Content_Composer::set_default_value('third_icon', 'icon-calendar-inv');
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Icon', TMM_CC_TEXTDOMAIN),
