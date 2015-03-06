@@ -14,7 +14,7 @@ $image_size = "1036*576";
 
 ?>
 
-<div style="height: 100%">
+<div class="entry-media" style="height: 100%">
 
 	<?php
 	switch ($video_type) {
