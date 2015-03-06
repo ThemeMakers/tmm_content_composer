@@ -20,5 +20,13 @@ if(class_exists('TMM_EventsPlugin')){
 		$atts['category'] = $category;
 	}
 
+	if (isset($show_period_selector)) {
+		$atts['show_period_selector'] = $show_period_selector;
+	}
+
+	if (isset($period_selector_amount)) {
+		$atts['period_selector_amount'] = $period_selector_amount;
+	}
+
 	TMM_EventsPlugin::get_shortcode_template('events_list', $atts);
 }

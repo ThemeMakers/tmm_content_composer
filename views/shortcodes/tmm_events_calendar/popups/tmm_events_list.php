@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Count of events', TMM_CC_TEXTDOMAIN),
+			'title' => __('Count of events per page', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'events_count',
 			'id' => 'events_count',
 			'default_value' => TMM_Content_Composer::set_default_value('events_count', '3'),
@@ -23,6 +23,44 @@
 			'id' => 'sorting',
 			'options' => array('DESC' => 'DESC', 'ASC' => 'ASC'),
 			'default_value' => TMM_Content_Composer::set_default_value('sorting', 'DESC'),
+			'description' => ''
+		));
+		?>
+	</div><!--/ .one-half-->
+
+	<div class="one-half">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Months amount in events period selector', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'period_selector_amount',
+			'id' => 'period_selector_amount',
+			'options' => array(
+				1 => 1,
+				2 => 2,
+				3 => 3,
+				4 => 4,
+				5 => 5,
+				6 => 6,
+				7 => 7,
+				8 => 8,
+				9 => 9,
+				10 => 10,
+				11 => 11,
+				12 => 12,
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('period_selector_amount', 3),
+			'description' => __('Months amount, that will be displayed in events period selector', TMM_CC_TEXTDOMAIN),
+		));
+		?>
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Display events period selector', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'show_period_selector',
+			'id' => 'show_period_selector',
+			'is_checked' => TMM_Content_Composer::set_default_value('show_period_selector', 1),
 			'description' => ''
 		));
 		?>
