@@ -21,16 +21,16 @@
 
 			<?php foreach ($content_edit_data as $key => $content_edit_text) : ?>
 				<li class="list_item">
-					<table style="width: 100%;">
+					<table width="100%">
 						<tr>
-							<td valign="top" style="width: 100%;">
+							<td valign="top">
 								<input placeholder="Title" type="text" value="<?php echo $titles_edit_data[$key] ?>" class="accordion_item_title js_shortcode_template_changer" style="width: 67%;" />
 								&nbsp;<a class="button button-small js_delete_accordion_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
 							</td>
 						</tr>
 						<tr>
-							<td valign="top" style="width: 100%;" colspan="2">
-								<textarea placeholder="Content" class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php _e('Content', TMM_CC_TEXTDOMAIN); ?>"><?php echo $content_edit_text ?></textarea>
+							<td valign="top">
+								<textarea placeholder="Content" rows="3" class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php _e('Content', TMM_CC_TEXTDOMAIN); ?>"><?php echo $content_edit_text ?></textarea>
 							</td>
 						</tr>
 					</table>
