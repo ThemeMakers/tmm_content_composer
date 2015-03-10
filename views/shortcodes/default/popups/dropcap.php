@@ -10,8 +10,8 @@
 			'shortcode_field' => 'type',
 			'id' => '',
 			'options' => array(
-				'default' => __('Default', TMM_CC_TEXTDOMAIN),
-				'secondary' => __('Secondary', TMM_CC_TEXTDOMAIN),
+				'type-1' => __('Type 1', TMM_CC_TEXTDOMAIN),
+				'type-2' => __('Type 2', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type', 'default'),
 			'description' => __('Select type of you dropcap', TMM_CC_TEXTDOMAIN)
