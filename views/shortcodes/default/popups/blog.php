@@ -15,7 +15,7 @@
         ?>
     </div>
 
-	<div class="one-half">
+	<div class="one-half option-default">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
@@ -225,6 +225,32 @@
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
+
+		var blogType = jQuery('#blog_type').val(),
+			optionMasonry = jQuery('.option-masonry'),
+			optionDefault = jQuery('.option-default');
+
+		changeBlogType(blogType);
+
+		jQuery('#blog_type').on('change', function(){
+			var $this = jQuery(this),
+				val = $this.val();
+			changeBlogType(val);
+		});
+
+		function changeBlogType(val){
+			switch (val){
+				case 'blog-masonry':
+					optionDefault.slideUp(300);
+					optionMasonry.slideDown(300);
+					break;
+				default:
+					optionDefault.slideDown(300);
+					optionMasonry.slideUp(300);
+					break;
+			}
+		}
+
 	});
 </script>
 
