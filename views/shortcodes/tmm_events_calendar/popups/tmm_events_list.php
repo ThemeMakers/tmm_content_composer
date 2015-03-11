@@ -80,6 +80,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
+				'multiple' => true,
 				'title' => __('Category', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'category',
 				'id' => 'category',
