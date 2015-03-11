@@ -23,35 +23,35 @@ if (!empty($contact_form['inputs'])) {
             switch ($input['type']) {
                 case "email":
                     ?>
-					<fieldset class="input-block type-input">
+					<p class="input-block type-input">
                         <input id="email_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="email" name="<?php echo $name ?>" value="<?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" />
-                    </fieldset>
+                    </p>
                     <?php
                     break;
 
                 case "textinput":
                     ?>
-                    <fieldset class="input-block type-input">
+                    <p class="input-block type-input">
                         <input id="name_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo $name ?>" value="<?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" />
-                    </fieldset>
+                    </p>
                     <?php
                     break;
 
 	            case "website":
 		            ?>
-		            <fieldset class="input-block type-input">
+		            <p class="input-block type-input">
 			            <input id="url_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="url" name="<?php echo $name ?>" value="<?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" />
-		            </fieldset>
+		            </p>
 		            <?php
 		            break;
 
                 case "checkbox":
 	                $unique_id = uniqid();
                     ?>
-                    <fieldset class="checkbox">
+                    <p class="checkbox">
                         <input id="cb_<?php echo $unique_id ?>" type="checkbox" name="<?php echo $name ?>" value="0" class="contact_form_option_checkbox" />
 	                    <label for="cb_<?php echo $unique_id ?>"><?php echo $input['label'] ?></label>
-                    </fieldset>
+                    </p>
                     <?php
                     break;
 
@@ -59,7 +59,7 @@ if (!empty($contact_form['inputs'])) {
                     $radio_items = explode(",", $input['options']);
                     if (!empty($radio_items)):
                         ?>
-                        <fieldset class="input-block">
+                        <p class="input-block">
 
                             <?php foreach ($radio_items as $item) : ?>
                                 <label>
@@ -67,7 +67,7 @@ if (!empty($contact_form['inputs'])) {
                                 </label>
                             <?php endforeach; ?>
 
-                        </fieldset>
+                        </p>
                         <?php
                     endif;
                     break;
@@ -75,7 +75,7 @@ if (!empty($contact_form['inputs'])) {
                 case "select":
                     $select_options = explode(",", $input['options']);
                     ?>
-                    <fieldset class="input-block">
+                    <p class="input-block">
                         <select id="url_<?php echo $unique_id ?>" name="<?php echo $name ?>"<?php echo($input['is_required'] ? " required" : "") ?>>
                             <?php
                             if (!empty($input['label'])) {
@@ -99,7 +99,7 @@ if (!empty($contact_form['inputs'])) {
                             }
                             ?>
                         </select>
-                    </fieldset>
+                    </p>
                     <?php
                     break;
 
@@ -108,9 +108,9 @@ if (!empty($contact_form['inputs'])) {
 		                $name = "messagebody";
 	                }
 	                ?>
-	                <fieldset class="input-block">
+	                <p class="textarea-block">
 		                <textarea id="message_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> name="<?php echo $name ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" ><?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?></textarea>
-	                </fieldset>
+	                </p>
                     <?php
 	                break;
 
@@ -137,9 +137,9 @@ if (!empty($contact_form['inputs'])) {
 
         <?php } ?>
 
-        <fieldset>
+        <p>
 	        <button class="button middle <?php echo $contact_form['submit_button'] ?>" type="submit"><?php echo ($contact_form['submit_button_text']) ? $contact_form['submit_button_text'] : '<i class="icon-paper-plane-2"></i>'?></button>
-        </fieldset>
+        </p>
 
 		<div class="contact_form_responce" style="display: none;"><ul></ul></div>
 
