@@ -39,7 +39,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){
 			?>
 
-			<div class="container">
+			<div class="row">
 
 		<?php
 		}
@@ -128,7 +128,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 							if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
 								?>
 							
-								<div class="container">
+								<div class="row">
 											
 								<?php
 							}                    
