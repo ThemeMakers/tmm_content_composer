@@ -46,13 +46,44 @@ if (!empty($contact_form['inputs'])) {
 		            break;
 
                 case "checkbox":
-	                $unique_id = uniqid();
-                    ?>
-                    <p class="checkbox">
-                        <input id="cb_<?php echo $unique_id ?>" type="checkbox" name="<?php echo $name ?>" value="0" class="contact_form_option_checkbox" />
-	                    <label for="cb_<?php echo $unique_id ?>"><?php echo $input['label'] ?></label>
-                    </p>
-                    <?php
+
+	                $checkbox_items = explode(",", $input['options']);
+
+					if (!empty($input['label'])) {
+						?>
+
+						<h2 class="info-title"><?php echo $input['label']; ?></h2>
+
+						<?php
+					}
+
+	                if (!empty($checkbox_items)) {
+
+		                foreach ($checkbox_items as $key => $item) {
+			                $item_id = uniqid();
+			                ?>
+
+		                    <p class="checkbox">
+				                <input id="cb_<?php echo $item_id ?>" type="checkbox" name="<?php echo $name ?>[]" value="cb_<?php echo $key ?>" class="contact_form_option_checkbox" />
+				                <label for="cb_<?php echo $item_id ?>"><?php echo $item ?></label>
+		                    </p>
+
+		                    <?php
+		                }
+
+	                }
+
+	                if ($input['optional_field']) {
+		                ?>
+
+		                <h3 class="form-title"><?php _e('Other', TMM_THEME_TEXTDOMAIN); ?></h3>
+		                <p class="textarea-block">
+			                <textarea name="<?php echo $name ?>[]"></textarea>
+		                </p>
+
+	                    <?php
+	                }
+
                     break;
 
                 case "radio":

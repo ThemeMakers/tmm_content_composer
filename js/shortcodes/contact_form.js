@@ -5,14 +5,6 @@ jQuery(document).ready(function() {
 		return false;
 	});
 
-	jQuery(".contact_form_option_checkbox").life('click', function() {
-		if (jQuery(this).is(":checked")) {
-			jQuery(this).val(1);
-		} else {
-			jQuery(this).val(0);
-		}
-	});
-
 });
 
 
