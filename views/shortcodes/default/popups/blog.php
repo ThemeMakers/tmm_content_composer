@@ -182,7 +182,7 @@
 
 	</div><!--/ .ona-half-->
 
-	<div class="one-half option-default">
+	<div class="one-half option-border">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
@@ -226,6 +226,7 @@
 		});
 
 		var blogType = jQuery('#blog_type').val(),
+			optionBorder = jQuery('.option-border'),
 			optionMasonry = jQuery('.option-masonry'),
 			optionDefault = jQuery('.option-default');
 
@@ -242,10 +243,16 @@
 				case 'blog-masonry':
 					optionDefault.slideUp(300);
 					optionMasonry.slideDown(300);
+					optionBorder.slideUp(300);
 					break;
+				case 'blog-third':
+					optionDefault.slideDown(300);
+					optionMasonry.slideUp(300);
+					optionBorder.slideUp(300);
 				default:
 					optionDefault.slideDown(300);
 					optionMasonry.slideUp(300);
+					optionBorder.slideDown(300);
 					break;
 			}
 		}
