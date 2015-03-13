@@ -33,7 +33,7 @@ $query = new WP_Query($args);
 						<?php the_content() ?>
 					</p>
 
-					<div class="quote-meta">
+					<div class="quote-meta clearfix">
 						<div class="quote-author">
 							<?php the_title(); ?>
 						</div>
