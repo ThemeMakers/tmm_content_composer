@@ -50,17 +50,20 @@ $posts_list = 'post-list';
 $data_columns = '';
 
 switch($blog_type){
+    case 'blog-classic':
+        $post_class .= ($show_border_bottom) ? ' border-solid' : '';
+        break;
     case 'blog-first':
-        $post_class .= ' post-news';
+        $post_class .= ($show_border_bottom) ? ' post-news border-solid' :' post-news';
         break;
     case 'blog-second':
-        $post_class .= ' post-extra';
+        $post_class .= ($show_border_bottom) ? ' post-extra border-dashed' : ' post-extra';
         break;
     case 'blog-third':
         $post_class .= ' post-image';
         break;
-    case 'blog-fifth':
-        $post_class .= ' small';
+    case 'blog-fourth':
+        $post_class .= ($show_border_bottom) ? ' small border-dashed' : ' small';
         break;
     case 'blog-masonry':
         $blog_type = 'masonry';

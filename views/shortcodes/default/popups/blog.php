@@ -175,8 +175,22 @@
 			'title' => __('Show/Hide Pagination', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_pagination',
 			'id' => 'show_pagination',
-			'is_checked' => TMM_Content_Composer::set_default_value('show_pagination', 1),
+			'is_checked' => TMM_Content_Composer::set_default_value('show_pagination', 0),
 			'description' => __('Enable Pagination', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Show/Hide Border Bottom', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'show_border_bottom',
+			'id' => 'show_border_bottom',
+			'is_checked' => TMM_Content_Composer::set_default_value('show_border_bottom', 1),
+			'description' => __('Show/Hide Border Bottom', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
