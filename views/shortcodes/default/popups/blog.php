@@ -169,21 +169,6 @@
 	</div><!--/ .ona-half-->
 
 	<div class="one-half option-default">
-
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Show/Hide Meta Data', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'show_metadata',
-			'id' => 'show_metadata',
-			'is_checked' => TMM_Content_Composer::set_default_value('show_metadata', 1),
-			'description' => __('Show/Hide Meta Info', TMM_CC_TEXTDOMAIN)
-		));
-		?>
-
-	</div>
-
-	<div class="one-half option-default">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',

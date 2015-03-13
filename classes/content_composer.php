@@ -307,8 +307,7 @@ class TMM_Content_Composer {
 			'blog-first' => __('Type 1', TMM_CC_TEXTDOMAIN),
 			'blog-second' => __('Type 2', TMM_CC_TEXTDOMAIN),
 			'blog-third' => __('Type 3', TMM_CC_TEXTDOMAIN),
-			'blog-fourth' => __('Type 4', TMM_CC_TEXTDOMAIN),
-			'blog-fifth' => __('Type 5', TMM_CC_TEXTDOMAIN)
+			'blog-fourth' => __('Type 4', TMM_CC_TEXTDOMAIN)
 		);
 	}
 

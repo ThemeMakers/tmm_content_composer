@@ -96,8 +96,6 @@ switch ($columns){
 
             if ( have_posts() ){
 
-                $_REQUEST['shortcode_show_metadata'] = $show_metadata;
-
                 while ( have_posts() ) { 
 
                 the_post(); ?>
