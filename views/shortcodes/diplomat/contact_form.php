@@ -87,7 +87,17 @@ if (!empty($contact_form['inputs'])) {
                     break;
 
                 case "radio":
+
                     $radio_items = explode(",", $input['options']);
+
+	                if (!empty($input['label'])) {
+		                ?>
+
+		                <h2 class="info-title"><?php echo $input['label']; ?></h2>
+
+	                <?php
+	                }
+
                     if (!empty($radio_items)) {
 
 	                    foreach ( $radio_items as $item ) {
