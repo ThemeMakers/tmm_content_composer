@@ -249,6 +249,7 @@
 					optionDefault.slideDown(300);
 					optionMasonry.slideUp(300);
 					optionBorder.slideUp(300);
+					break;
 				default:
 					optionDefault.slideDown(300);
 					optionMasonry.slideUp(300);

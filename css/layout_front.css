@@ -2,6 +2,10 @@
 /*	Page Styles 
 /* ---------------------------------------------------------------------- */
 
+.tmm_row{
+	position: relative;
+}
+
 .section-full-width { 
     overflow: hidden;
     position: relative;
