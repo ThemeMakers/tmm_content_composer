@@ -32,13 +32,12 @@ $query = new WP_Query($args);
 					<p>
 						<?php the_content() ?>
 					</p>
-
-					<div class="quote-meta clearfix">
-						<div class="quote-author">
-							<?php the_title(); ?>
-						</div>
-					</div>
 				</div><!--/ .author-message-->
+				<div class="quote-meta clearfix">
+					<div class="quote-author">
+						<?php the_title(); ?>
+					</div>
+				</div>
 			</blockquote><!--/ .testimonial-->
 
 			<?php
