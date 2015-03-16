@@ -63,8 +63,8 @@ if (!empty($contact_form['inputs'])) {
 			                $item_id = uniqid();
 			                ?>
 
-		                    <p class="checkbox">
-				                <input id="cb_<?php echo $item_id ?>" type="checkbox" name="<?php echo $name ?>[]" value="cb_<?php echo $key ?>" class="contact_form_option_checkbox" />
+		                    <p class="tmmFormStyling form-checkbox">
+				                <input id="cb_<?php echo $item_id ?>" type="checkbox" name="<?php echo $name ?>[]" value="cb_<?php echo $key ?>" class="tmm-checkbox" />
 				                <label for="cb_<?php echo $item_id ?>"><?php echo $item ?></label>
 		                    </p>
 
@@ -77,7 +77,7 @@ if (!empty($contact_form['inputs'])) {
 		                ?>
 
 		                <h3 class="form-title"><?php _e('Other', TMM_THEME_TEXTDOMAIN); ?></h3>
-		                <p class="textarea-block">
+		                <p class="tmmFormStyling form-textarea">
 			                <textarea name="<?php echo $name ?>[]"></textarea>
 		                </p>
 
@@ -88,25 +88,26 @@ if (!empty($contact_form['inputs'])) {
 
                 case "radio":
                     $radio_items = explode(",", $input['options']);
-                    if (!empty($radio_items)):
-                        ?>
-                        <p class="input-block">
+                    if (!empty($radio_items)) {
 
-                            <?php foreach ($radio_items as $item) : ?>
-                                <label>
-                                    <input type="radio" name="<?php echo $name ?>" value="<?php echo $item ?>" />&nbsp;<?php echo $item ?>
-                                </label>
-                            <?php endforeach; ?>
+	                    foreach ( $radio_items as $item ) {
+		                    $item_id = uniqid();
+		                    ?>
 
-                        </p>
-                        <?php
-                    endif;
+		                    <p class="tmmFormStyling form-radio">
+			                    <input id="cb_<?php echo $item_id ?>" type="radio" name="<?php echo $name ?>" value="<?php echo $item ?>" class="tmm-radio" />
+			                    <label for="cb_<?php echo $item_id ?>"><?php echo $item ?></label>
+		                    </p>
+
+	                    <?php }
+
+                    }
                     break;
 
                 case "select":
                     $select_options = explode(",", $input['options']);
                     ?>
-                    <p class="input-block">
+                    <p class="tmmFormStyling form-select">
                         <select id="url_<?php echo $unique_id ?>" name="<?php echo $name ?>"<?php echo($input['is_required'] ? " required" : "") ?>>
                             <?php
                             if (!empty($input['label'])) {
@@ -139,7 +140,7 @@ if (!empty($contact_form['inputs'])) {
 		                $name = "messagebody";
 	                }
 	                ?>
-	                <p class="textarea-block">
+	                <p class="tmmFormStyling form-textarea">
 		                <textarea id="message_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> name="<?php echo $name ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" ><?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?></textarea>
 	                </p>
                     <?php
@@ -161,14 +162,15 @@ if (!empty($contact_form['inputs'])) {
 
         <?php if ($contact_form['has_capture']){ ?>
 
-            <p class="input-block">
+            <p class="tmmFormStyling form-captcha">
                 <?php $hash = md5(time()); ?>
-                    <img class="contact_form_capcha" src="<?php echo get_stylesheet_directory_uri(); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="54" width="72" /><input type="text" value="" name="verify" class="verify" /><input type="hidden" name="verify_code" value="<?php echo $hash ?>" />
-            </p><!--/ .row-->
+                <img class="contact_form_capcha" src="<?php echo get_stylesheet_directory_uri(); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="54" width="72" />
+	            <input type="text" value="" name="verify" class="verify" /><input type="hidden" name="verify_code" value="<?php echo $hash ?>" />
+            </p>
 
         <?php } ?>
 
-        <p>
+        <p class="tmmFormStyling form-submit">
 	        <button class="button middle <?php echo $contact_form['submit_button'] ?>" type="submit"><?php echo ($contact_form['submit_button_text']) ? $contact_form['submit_button_text'] : '<i class="icon-paper-plane-2"></i>'?></button>
         </p>
 
