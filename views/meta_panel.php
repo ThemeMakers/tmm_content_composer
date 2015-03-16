@@ -206,6 +206,7 @@
 
             <div class="row_full_width" style="display: none;">
             <?php
+			/*
             TMM_Content_Composer::html_option(array(
                 'type' => 'select',
                 'title' => __('Row Full Width', TMM_CC_TEXTDOMAIN),
@@ -217,12 +218,13 @@
                 ),
                 'default_value' => TMM_Content_Composer::set_default_value('full_width', 0),
                 'description' => ''
-            ));
+            ));*/
             ?>
             </div>
 
             <div class="content_full_width" style="display: none;">
             <?php
+			/*
             TMM_Content_Composer::html_option(array(
                 'type' => 'select',
                 'title' => __('Content Full Width', TMM_CC_TEXTDOMAIN),
@@ -234,7 +236,7 @@
                 ),
                 'default_value' => TMM_Content_Composer::set_default_value('content_full_width', 0),
                 'description' => ''
-            ));
+            ));*/
             ?>
             </div>
 

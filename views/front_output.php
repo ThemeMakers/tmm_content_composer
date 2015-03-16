@@ -36,13 +36,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		}
 		$section_style .= '"';
 
-		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){
-			?>
-
-			<div class="row">
-
-		<?php
-		}
 		?>
 
 		<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>" <?php echo $section_style ?>>
@@ -93,68 +86,54 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 						<div class="fullscreen-entry">
 							
 						<?php
-				}                                         
-                            $bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';                               
-							$padding_top = (isset($tmm_layout_constructor_row[$row]['padding_top'])) ? $tmm_layout_constructor_row[$row]['padding_top'] : 0;                   
-							$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : 0;
-							$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
-							$row_center = (isset($tmm_layout_constructor_row[$row]['row_center'])&&($tmm_layout_constructor_row[$row]['row_center']==true)) ? true : false;
-							
-							$row_class = 'row';
-							if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
-								$row_class .= ' theme-default-bg';
-							}
-							
-							$row_style_attr = '';
-							if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] != 'custom' && isset($row_style['style_custom_color'])) {
-								$row_style_attr .= $row_style['style_custom_color'];
-							}
-							if (!empty($bg_color)) {
-								//$row_style_attr .= 'background:'.$bg_color.'; ';
-							}
-							if ($padding_top > 0) {
-								$row_style_attr .= 'padding-top:'.$padding_top.'px; ';
-							}
-							if ($padding_bottom > 0) {
-								$row_style_attr .= 'padding-bottom:'.$padding_bottom.'px; ';
-							}
-							if (!empty($align)) {
-								$row_style_attr .= 'text-align:'.$align.'; ';
-							}
-							if (!empty($row_style_attr)) {
-								$row_style_attr = ' style="'.$row_style_attr.'"';
-							}
+				}
 
-							if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
-								?>
-							
-								<div class="row">
-											
-								<?php
-							}                    
-									?>	                       
+				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
+				$padding_top = (isset($tmm_layout_constructor_row[$row]['padding_top'])) ? $tmm_layout_constructor_row[$row]['padding_top'] : 0;
+				$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : 0;
+				$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
+				$row_center = (isset($tmm_layout_constructor_row[$row]['row_center'])&&($tmm_layout_constructor_row[$row]['row_center']==true)) ? true : false;
 
-									<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
+				$row_class = 'tmm_row';
+				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
+					$row_class .= ' theme-default-bg';
+				}
 
-										<?php foreach ($row_data as $uniqid => $column){ ?>
+				$row_style_attr = '';
+				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] != 'custom' && isset($row_style['style_custom_color'])) {
+					$row_style_attr .= $row_style['style_custom_color'];
+				}
+				if (!empty($bg_color)) {
+					//$row_style_attr .= 'background:'.$bg_color.'; ';
+				}
+				if ($padding_top > 0) {
+					$row_style_attr .= 'padding-top:'.$padding_top.'px; ';
+				}
+				if ($padding_bottom > 0) {
+					$row_style_attr .= 'padding-bottom:'.$padding_bottom.'px; ';
+				}
+				if (!empty($align)) {
+					$row_style_attr .= 'text-align:'.$align.'; ';
+				}
+				if (!empty($row_style_attr)) {
+					$row_style_attr = ' style="'.$row_style_attr.'"';
+				}
+					?>
 
-											<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
-											<div class="columns <?php echo (!empty($row_center)&&($row_center==true)) ? 'col-sm-push-2 col-sm-pull-2 ' :  ''?><?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
+					<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
 
-										<?php } ?>
-												
-										<div class="clearfix"></div>
-												
-									</div>
-									
-									<?php
-							if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
-								?>
-									
-								</div><!--/ .container -->
-										
-								<?php
-							}                    
+						<?php foreach ($row_data as $uniqid => $column){ ?>
+
+							<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
+							<div class="columns <?php echo (!empty($row_center)&&($row_center==true)) ? 'col-sm-push-2 col-sm-pull-2 ' :  ''?><?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
+
+						<?php } ?>
+
+						<div class="clearfix"></div>
+
+					</div>
+
+					<?php
                     
 					if (isset($tmm_layout_constructor_row[$row]['bg_fullscreen']) && $tmm_layout_constructor_row[$row]['bg_fullscreen'] == true) {
 							?>
@@ -171,13 +150,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		</div><!--/ .section -->
 
     <?php
-		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){
-			?>
 
-			</div><!--/ .container-->
-
-		<?php
-		}
 	} 
 
 } 

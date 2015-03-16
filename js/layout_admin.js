@@ -335,8 +335,8 @@
                         
                         var cur_popup = $('.tmm-popup-edit-row'),
                             lc_displaying = $('#row_lc_displaying_' + row_id).val(),                            
-                            full_width = $('#row_full_width_' + row_id).val(),                            
-                            content_full_width = $('#row_content_full_width_' + row_id).val(),
+                            //full_width = $('#row_full_width_' + row_id).val(),
+                            //content_full_width = $('#row_content_full_width_' + row_id).val(),
                             bg_type = $('#row_bg_type_' + row_id).val(),                            
                             padding_top = $('#row_padding_top_' + row_id).val(),
                             padding_bottom = $('#row_padding_bottom_' + row_id).val(),
@@ -357,16 +357,16 @@
                             custom_box = cur_popup.find('#row_background_image_box'),
                             custom_box_color = cur_popup.find('#row_background_color_box'),
                             custom_box_image = cur_popup.find('.bg_custom_type_image'),
-                            custom_box_video = cur_popup.find('.bg_custom_type_video'),
-                            box_row_full_fidth  = cur_popup.find('.row_full_width'),                 
-                            box_content_full_fidth  = cur_popup.find('.content_full_width');                 
+                            custom_box_video = cur_popup.find('.bg_custom_type_video');
+                            //box_row_full_fidth  = cur_popup.find('.row_full_width'),
+                            //box_content_full_fidth  = cur_popup.find('.content_full_width');
                         
-                        if (lc_displaying == 'full_width' || lc_displaying == 'before_full_width'){
-                            box_row_full_fidth.show();
-                        }
-                        if (full_width == 1 && (lc_displaying == 'full_width' || lc_displaying == 'before_full_width')){
-                                box_content_full_fidth.show();
-                            }
+                        //if (lc_displaying == 'full_width' || lc_displaying == 'before_full_width'){
+                            //box_row_full_fidth.show();
+                        //}
+                        //if (full_width == 1 && (lc_displaying == 'full_width' || lc_displaying == 'before_full_width')){
+                               // box_content_full_fidth.show();
+                           // }
                         
                         if(!bg_type){
                             bg_type = 'none';
@@ -401,8 +401,8 @@
                         }
                      
                         cur_popup.find('#row_lc_displaying').val(lc_displaying);
-                        cur_popup.find('#row_full_width').val(full_width);
-                        cur_popup.find('#row_content_full_width').val(content_full_width);
+                        //cur_popup.find('#row_full_width').val(full_width);
+                        //cur_popup.find('#row_content_full_width').val(content_full_width);
                         cur_popup.find('#row_background_type').val(bg_type);                        
                         cur_popup.find('#row_padding_top').val(padding_top);
                         cur_popup.find('#row_padding_bottom').val(padding_bottom);
@@ -442,14 +442,14 @@
                                     break;
                                 case 'full_width':
                                 case 'before_full_width':
-                                    box_row_full_fidth.slideDown();
+                                   /* box_row_full_fidth.slideDown();
                                     if (cur_popup.find('#row_full_width').val()=='1'){
                                          box_content_full_fidth.slideDown();
-                                    }
+                                    }*/
                                     break;                                
                             }
                         });
-                        
+                        /*
                         cur_popup.find('#row_full_width').on('change', function(){
                             var val = $(this).val();                            
                             
@@ -461,7 +461,7 @@
                                     box_content_full_fidth.slideUp();
                                     break;                                
                             }
-                        });
+                        });*/
                         
                         cur_popup.find('#row_background_type').on('change', function() {
                             var val = $(this).val();                    
@@ -566,7 +566,7 @@
                         /* remove events handlers */
                         var cur_popup = $('.tmm-popup-edit-row');
 	                    cur_popup.find('#row_lc_displaying').off('change');
-	                    cur_popup.find('#row_full_width').off('change');
+	                    //cur_popup.find('#row_full_width').off('change');
                         cur_popup.find('#row_background_type').off('change');
 	                    cur_popup.find('#row_bg_custom_type').off('change');
                         cur_popup.find('.tmm_button_upload').off('click');
@@ -576,8 +576,8 @@
                     save: function() {
                         var cur_popup = $('.tmm-popup-edit-row'),
                             lc_displaying = cur_popup.find('#row_lc_displaying').val(),
-                            full_width = cur_popup.find('#row_full_width').val(),
-                            content_full_width = cur_popup.find('#row_content_full_width').val(),
+                            //full_width = cur_popup.find('#row_full_width').val(),
+                            //content_full_width = cur_popup.find('#row_content_full_width').val(),
                             bg_type = cur_popup.find('#row_background_type').val(),                            
                             padding_top = cur_popup.find('#row_padding_top').val(),
                             padding_bottom = cur_popup.find('#row_padding_bottom').val(),
@@ -607,8 +607,8 @@
                         }
                         
                         $('#row_lc_displaying_' + row_id).val(lc_displaying);
-                        $('#row_full_width_' + row_id).val(full_width);
-                        $('#row_content_full_width_' + row_id).val(content_full_width);
+                        //$('#row_full_width_' + row_id).val(full_width);
+                        //$('#row_content_full_width_' + row_id).val(content_full_width);
                         $('#row_bg_type_' + row_id).val(bg_type);                        
                         $('#row_padding_top_' + row_id).val(padding_top);
                         $('#row_padding_bottom_' + row_id).val(padding_bottom);
