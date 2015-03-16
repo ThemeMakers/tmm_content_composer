@@ -5,6 +5,20 @@ jQuery(document).ready(function() {
 		return false;
 	});
 
+	jQuery( '.tmm-country-select' ).on('change', function(){
+		var country = jQuery(this).val();
+		var stateSelect = jQuery(this).parents( '.contact-form' ).first().find( '.tmm-state-select' ).parents( 'p' ).first();
+		var countyInput = jQuery(this).parents( '.contact-form' ).first().find( '.tmm-county-input' ).parents( 'p' ).first();
+
+		if ( country == 'US' ) {
+			stateSelect.show();
+			countyInput.hide();
+		} else {
+			stateSelect.hide();
+			countyInput.show();
+		}
+	});
+
 });
 
 
