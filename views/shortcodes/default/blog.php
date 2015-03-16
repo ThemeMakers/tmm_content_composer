@@ -51,7 +51,7 @@ $data_columns = '';
 
 switch($blog_type){
     case 'blog-classic':
-        $post_class .= ($show_border_bottom) ? ' border-solid' : '';
+        $post_class .= ($show_border_bottom) ? ' border-solid  post-classic' : ' post-classic';
         break;
     case 'blog-first':
         $post_class .= ($show_border_bottom) ? ' post-news border-solid' :' post-news';
