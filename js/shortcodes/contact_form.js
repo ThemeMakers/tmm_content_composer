@@ -62,7 +62,9 @@ function contact_form_submit(_this, contact_form_attachments) {
 				jQuery(form_self).find(".contact_form_responce ul").append('<li>' + lang_server_failed + '!</li>');
 			}
 
-			jQuery(form_self).find("[type=text],[type=email],textarea,checkbox").val("");
+			jQuery(form_self).find("[type=text],[type=email],[type=url],textarea").val("");
+			jQuery(form_self).find("[type=checkbox],[type=radio]").prop("checked", false);
+			jQuery(form_self).find("select").not('.tmm-state-select, .tmm-country-select').val("").find('option').first().prop("selected", true);
 			jQuery(form_self).find('.contact_form_attach_list').html('');
 		}
 

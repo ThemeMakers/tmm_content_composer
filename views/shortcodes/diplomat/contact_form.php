@@ -66,7 +66,7 @@ if (!empty($contact_form['inputs'])) {
 			                ?>
 
 		                    <p class="tmmFormStyling form-checkbox">
-				                <input id="cb_<?php echo $item_id ?>" type="checkbox" name="<?php echo $name ?>[]" value="cb_<?php echo $key ?>" class="tmm-checkbox" />
+				                <input id="cb_<?php echo $item_id ?>" type="checkbox" <?php echo($input['is_required'] ? "required" : "") ?> name="<?php echo $name ?>[]" value="cb_<?php echo $key ?>" class="tmm-checkbox" />
 				                <label for="cb_<?php echo $item_id ?>"><?php echo $item ?></label>
 		                    </p>
 
