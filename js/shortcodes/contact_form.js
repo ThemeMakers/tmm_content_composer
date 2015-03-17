@@ -8,14 +8,17 @@ jQuery(document).ready(function() {
 	jQuery( '.tmm-country-select' ).on('change', function(){
 		var country = jQuery(this).val();
 		var stateSelect = jQuery(this).parents( '.contact-form' ).first().find( '.tmm-state-select' ).parents( 'p' ).first();
-		var countyInput = jQuery(this).parents( '.contact-form' ).first().find( '.tmm-county-input' ).parents( 'p' ).first();
+		var countyInput = jQuery(this).parents( '.contact-form' ).first().find( '.tmm-county-input' );
+		var countyInputWrapper = countyInput.parents( 'p' ).first();
 
 		if ( country == 'US' ) {
 			stateSelect.show();
-			countyInput.hide();
+			countyInput.attr('type', 'hidden');
+			countyInputWrapper.hide();
 		} else {
 			stateSelect.hide();
-			countyInput.show();
+			countyInput.attr('type', 'text');
+			countyInputWrapper.show();
 		}
 	});
 
