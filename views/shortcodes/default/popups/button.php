@@ -26,20 +26,6 @@
 		));
 		?>
 	</div><!--/ .one-half-->
-        
-        <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Top Indent', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'top_indent',
-			'id' => '',
-			'default_value' => TMM_Content_Composer::set_default_value('top_indent', ''),
-			'description' => ''
-		));
-		?>	
-
-	</div><!--/ .one-half-->	
 
 	<div class="one-half">
 		<?php

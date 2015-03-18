@@ -23,12 +23,11 @@
 			'vimeo' => 'Vimeo',
 			'digg' => 'Digg',
 			'appstore' => 'Appstore',
-			'stumbleupon' => 'Stubleupon',
             'deviantart' => 'Deviantart',
             'github' => 'Github',          
 			'mail' => 'Email'
                     );
-		
+
 		$social_types = array('facebook');
 		$links = array('#');
 		if (isset($_REQUEST["shortcode_mode_edit"])) {

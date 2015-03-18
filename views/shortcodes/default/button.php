@@ -7,12 +7,6 @@ $hover_styles = "";
 $mouseout_styles = "";
 $roll_styles = "";
 
-//Top Indent
-if (!empty($top_indent)) {
-	$styles .= 'margin-top: ' . (int) $top_indent . 'px;';
-    $roll_styles.= 'style="margin-top: ' . (int) $top_indent . 'px;"';
-}
-
 //Text Color
 if (!empty($text_color)) {
 	$styles .= 'color: ' . $text_color . '; ';

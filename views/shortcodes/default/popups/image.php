@@ -189,31 +189,6 @@
             ?>
 
 		</div>
-        
-        <div id="image_without_link" style="display: <?php echo($action == 'none' ? 'block' : 'none') ?>;">
-            <?php
-            TMM_Content_Composer::html_option(array(
-                        'type' => 'checkbox',
-                        'title' => __('Parallax Image (On / Off)', TMM_CC_TEXTDOMAIN),
-                        'shortcode_field' => 'parallax',
-                        'id' => 'parallax',
-                        'is_checked' => TMM_Content_Composer::set_default_value('parallax', 0),
-                        'description' => ''
-                ));
-            ?>	
-            <?php
-            TMM_Content_Composer::html_option(array(
-                        'type' => 'checkbox',
-                        'title' => __('Parallax Overlay (On / Off)', TMM_CC_TEXTDOMAIN),
-                        'shortcode_field' => 'overlay',
-                        'id' => 'overlay',
-                        'is_checked' => TMM_Content_Composer::set_default_value('overlay', 0),
-                        'description' => ''
-                ));
-                ?>
-            
-            
-        </div>
 
 	</div><!--/ .one-half-->
        
@@ -233,18 +208,12 @@
 
 		jQuery('#img_shortcode_action').on('change', function() {
 			jQuery("#image_action_link").hide(300);
-            jQuery("#image_without_link").show(300);
+
 			if (jQuery(this).val() == 'link') {
 				jQuery("#image_action_link").show(300);
-				jQuery("#image_without_link").hide(300);
-                jQuery("#parallax").val('');
-                jQuery("#overlay").val('');
 			}
 			if (jQuery(this).val() == 'lightbox') {
 				jQuery("#image_action_link").hide(300);
-				jQuery("#image_without_link").hide(300);
-                jQuery("#parallax").val('');
-                jQuery("#overlay").val('');
 			}
 		});
 		

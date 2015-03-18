@@ -75,7 +75,7 @@ class TMM_Shortcode {
 	}
 
 	public static function get_shortcodes_items() {
-		$continue_array = array('google_table_row', 'price_table');
+		$continue_array = array('google_table_row', 'price_table', 'pricing_tables', 'services');
 		$result = array();
 
 		global $pagenow;
