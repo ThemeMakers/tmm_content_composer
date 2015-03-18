@@ -54,7 +54,7 @@ if (!empty($contact_form['inputs'])) {
 					if (!empty($input['label'])) {
 						?>
 
-						<h2 class="info-title"><?php echo $input['label']; ?></h2>
+						<h3 class="info-title"><?php echo $input['label']; ?></h3>
 
 						<?php
 					}
@@ -78,7 +78,7 @@ if (!empty($contact_form['inputs'])) {
 	                if ($input['optional_field']) {
 		                ?>
 
-		                <h3 class="form-title"><?php _e('Other', TMM_THEME_TEXTDOMAIN); ?></h3>
+		                <h6 class="form-title"><?php _e('Other', TMM_THEME_TEXTDOMAIN); ?></h6>
 		                <p class="tmmFormStyling form-textarea">
 			                <textarea name="<?php echo $name ?>[]"></textarea>
 		                </p>
@@ -95,7 +95,7 @@ if (!empty($contact_form['inputs'])) {
 	                if (!empty($input['label'])) {
 		                ?>
 
-		                <h2 class="info-title"><?php echo $input['label']; ?></h2>
+		                <h3 class="info-title"><?php echo $input['label']; ?></h3>
 
 	                    <?php
 	                }
@@ -152,7 +152,7 @@ if (!empty($contact_form['inputs'])) {
 		            if (!empty($input['label'])) {
 			            ?>
 
-			            <h2 class="info-title"><?php echo $input['label']; ?></h2>
+			            <h3 class="info-title"><?php echo $input['label']; ?></h3>
 
 		                <?php
 		            }
