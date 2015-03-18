@@ -68,6 +68,11 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
 
 			$row_class = 'tmm_row';
+
+			if ($tmm_layout_constructor_row[$row]['lc_displaying'] == 'default'){
+				$row_class .= ' row';
+			}
+
 			if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
 				$row_class .= ' theme-default-bg';
 			}
