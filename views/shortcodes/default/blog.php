@@ -138,7 +138,7 @@ switch ($columns){
 
     tmm_enqueue_script('owlcarousel');
     tmm_enqueue_style('owlcarousel');
-    tmm_enqueue_style('owltheme');
+   // tmm_enqueue_style('owltheme');
     tmm_enqueue_style('owltransitions');
 
         $next_posts = "";
@@ -192,9 +192,9 @@ wp_reset_postdata();
     ?>
 	<script type="text/javascript">
 		jQuery(function() {
-
-				jQuery(".masonry").init_masonry(<?php echo ($columns!='fullwidth') ? $columns : '2' ?>, <?php echo $load_with_animation ?>);
-
+           // jQuery(".post-list.masonry").imagesLoaded(function() {
+                jQuery(".masonry").init_masonry(<?php echo ($columns!='fullwidth') ? $columns : '2' ?>, <?php echo $load_with_animation ?>);
+            //});
 		});
 	</script>
 

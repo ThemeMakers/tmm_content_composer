@@ -141,9 +141,12 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 			var container = $(this), elements;
 				o.beforeCall(container);
 				o.getData ? elements = container.find('.' + o.effect) : elements = container.find('[data-effect]');
-			container.on('start', function () {
+
+			//container.on('start', function () {
+
 				elements.each(function (i) {
 					var element = $(this);
+
 					setTimeout(function () {
 						o.getData ? element.addClass(o.effect + 'Run') : element.addClass(element.data('effect') + 'Run');
 						setTimeout(function () {
@@ -151,7 +154,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 						}, i * o.speed);
 					}, (i * o.speed));
 				});
-			});
+			//});
 		});
 	};
 	
