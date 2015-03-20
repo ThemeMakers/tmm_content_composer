@@ -84,7 +84,7 @@ switch($gallery_type){
 							<div class="work-item">
 
 								<a href="<?php echo TMM_Content_Composer::resize_image($gall['imgurl'], ''); ?>" class="gallery popup-link">
-									<div class="item-overlay">
+									<div class="item-overlay gallery">
 										<img src="<?php echo TMM_Content_Composer::resize_image($gall['imgurl'], $featured_image_alias); ?>" alt="<?php echo $gall['title'] ?>">
 									</div>
 									<?php if ($show_categories){
