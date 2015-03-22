@@ -90,7 +90,7 @@
                     'title' => __('Mouseover Text Color', TMM_CC_TEXTDOMAIN),
                     'shortcode_field' => 'mouseover_text_color',
                     'id' => '',
-                    'default_value' => TMM_Content_Composer::set_default_value('mouseover_text_color', '#fff'),
+                    'default_value' => TMM_Content_Composer::set_default_value('mouseover_text_color', '#000'),
                     'description' => '',
                     'display' => 1
                 ));
@@ -134,7 +134,7 @@
                         'title' => __('Mouseover Background Color', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'mouseover_bg_color',
                         'id' => '',
-                        'default_value' => TMM_Content_Composer::set_default_value('mouseover_bg_color', '#14b3e4'),
+                        'default_value' => TMM_Content_Composer::set_default_value('mouseover_bg_color', ''),
                         'description' => '',
                         'display' => 1
                     )); ?>
@@ -145,8 +145,8 @@
                         'title' => __('Transparent Mouseover Background Color', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'mouseover_bg_transparent',
                         'id' => 'mouseover_bg_transparent',
-                        'is_checked' => TMM_Content_Composer::set_default_value('mouseover_bg_transparent', false),
-                        'default_value' => TMM_Content_Composer::set_default_value('mouseover_bg_transparent', false),
+                        'is_checked' => TMM_Content_Composer::set_default_value('mouseover_bg_transparent', true),
+                        'default_value' => TMM_Content_Composer::set_default_value('mouseover_bg_transparent', true),
                         'description' => ''
                     ));
                     
@@ -190,7 +190,7 @@
                         'title' => __('Mouseover Border Color', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'mouseover_border_color',
                         'id' => '',
-                        'default_value' => TMM_Content_Composer::set_default_value('mouseover_border_color', ''),
+                        'default_value' => TMM_Content_Composer::set_default_value('mouseover_border_color', '#000'),
                         'description' => '',
                         'display' => 1
                     ));
@@ -203,8 +203,8 @@
                         'title' => __('Transparent Mouseover Border Color', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'mouseover_border_color_transparent',
                         'id' => 'mouseover_border_color_transparent',
-                        'is_checked' => TMM_Content_Composer::set_default_value('mouseover_border_color_transparent', true),
-                        'default_value' => TMM_Content_Composer::set_default_value('mouseover_border_color_transparent', true),
+                        'is_checked' => TMM_Content_Composer::set_default_value('mouseover_border_color_transparent', false),
+                        'default_value' => TMM_Content_Composer::set_default_value('mouseover_border_color_transparent', false),
                         'description' => ''
                     ));
                     ?>

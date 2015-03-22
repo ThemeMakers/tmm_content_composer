@@ -117,13 +117,11 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 					<?php foreach ($row_data as $uniqid => $column){ ?>
 
 						<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content']));
-						$column_class = ($show_column) ? 'columns '.$column['effect'].' '.$column['front_css_class'] : $column['effect'];
+						$column_class = $show_column ? 'columns '.$column['effect'].' '.$column['front_css_class'] : 'relative '.$column['effect'];
 						?>
 						<div class="<?php echo $column_class ?>"><?php echo $content ?></div>
 
 					<?php } ?>
-
-					<div class="clearfix"></div>
 
 				</div>
                              
@@ -133,4 +131,4 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 	} 
 
-} 
+}

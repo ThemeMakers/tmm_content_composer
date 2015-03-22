@@ -1,13 +1,11 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <blockquote class="blockquote">
-    <p class="message">
+    <p>
         <?php echo $content ?>
     </p>
     <?php if (isset($author)&&(!empty($author))){ ?>
     <div class="quote-meta">
-        <div class="quote-author">
-            <?php echo $author ?>
-        </div>
+        <?php echo $author ?>
     </div>
     <?php } ?>
 </blockquote>

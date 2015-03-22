@@ -91,7 +91,7 @@
 				'600'    => 600,
 				'700'    => 700
 			),
-			'default_value'   => TMM_Content_Composer::set_default_value( 'font_weight', '600' ),
+			'default_value'   => TMM_Content_Composer::set_default_value( 'font_weight', '400' ),
 			'description'     => ''
 		) );
 		?>
