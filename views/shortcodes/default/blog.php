@@ -38,6 +38,18 @@ if (!empty($posts)&&($blog_type!='blog-masonry')) {
 	$args['post__in'] = $posts;
 }
 
+if (($blog_type!='blog-masonry')&&($exclude_post_formats!='none')) {
+    $exclude_post_formats = explode(',', $exclude_post_formats);
+	$args['tax_query'] = array(
+        array(
+            'taxonomy' => 'post_format',
+            'field' => 'slug',
+            'terms' => $exclude_post_formats,
+            'operator' => 'NOT IN',
+        )
+    );
+}
+
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args['paged'] = $paged;
 

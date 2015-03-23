@@ -168,6 +168,28 @@
 
 	</div><!--/ .ona-half-->
 
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Exclude Post Formats', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'exclude_post_formats',
+			'id' => 'exclude_post_formats',
+			'multiple' => true,
+			'options' => array(
+				'none' => __('None', TMM_CC_TEXTDOMAIN),
+				'post-format-gallery' => __('Gallery Post', TMM_CC_TEXTDOMAIN),
+				'post-format-quote' => __('Quote Post', TMM_CC_TEXTDOMAIN),
+				'post-format-video' => __('Video Post', TMM_CC_TEXTDOMAIN),
+				'post-format-audio' => __('Audio Post', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_formats', ''),
+			'description' => __('', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
 	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
