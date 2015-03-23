@@ -70,6 +70,9 @@ switch($blog_type){
         $posts_list .= ' masonry';
         $columns = ($columns!='fullwidth') ? $columns : 2;
         $data_columns = "data-columns='".$columns."'";
+        $data_titlesymbols = "data-titlesymbols='".$title_symbols."'";
+        $data_exerptsymbols = "data-excerptsymbols='".$excerpt_symbols."'";
+
         break;
 }
 
@@ -90,9 +93,14 @@ switch ($columns){
         break;
 }
 
+$_REQUEST['title_symbols'] = $title_symbols;
+$_REQUEST['excerpt_symbols'] = $excerpt_symbols;
+$_REQUEST['show_tags'] = $show_tags;
+$_REQUEST['show_author'] = $show_author;
+
  ?>
 
-	<div class="row <?php echo (!empty($posts_list)) ? $posts_list : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?>>
+	<div class="row <?php echo (!empty($posts_list)) ? $posts_list : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?> <?php echo (!empty($data_titlesymbols)) ? $data_titlesymbols : ''; ?> <?php echo (!empty($data_exerptsymbols)) ? $data_exerptsymbols : ''; ?> >
         
         <?php 
         if ($blog_type!='masonry'){
@@ -127,6 +135,8 @@ switch ($columns){
                     $data = array();			
                     $data['post_key'] = $i;
                     $data['columns'] = $columns;
+                    $data['title_symbols'] = $title_symbols;
+                    $data['excerpt_symbols'] = $excerpt_symbols;
                     echo TMM::draw_html('post/masonry_piece', $data);
                 }
             } 
@@ -138,7 +148,6 @@ switch ($columns){
 
     tmm_enqueue_script('owlcarousel');
     tmm_enqueue_style('owlcarousel');
-   // tmm_enqueue_style('owltheme');
     tmm_enqueue_style('owltransitions');
 
         $next_posts = "";
@@ -192,9 +201,7 @@ wp_reset_postdata();
     ?>
 	<script type="text/javascript">
 		jQuery(function() {
-           // jQuery(".post-list.masonry").imagesLoaded(function() {
-                jQuery(".masonry").init_masonry(<?php echo ($columns!='fullwidth') ? $columns : '2' ?>, <?php echo $load_with_animation ?>);
-            //});
+            jQuery(".masonry").init_masonry(<?php echo ($columns!='fullwidth') ? $columns : '2' ?>, <?php echo $load_with_animation ?>);
 		});
 	</script>
 

@@ -40,27 +40,6 @@
 		?>
 	</div>
 
-	<div class="one-half option-columns">
-
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Layout', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'columns',
-			'id' => '',
-			'options' => array(
-				'fullwidth' => __('Fullwidth', TMM_CC_TEXTDOMAIN),
-				'2' => __('2 Columns', TMM_CC_TEXTDOMAIN),
-				'3' => __('3 Columns', TMM_CC_TEXTDOMAIN),
-				'4' => __('4 Columns', TMM_CC_TEXTDOMAIN)
-			),
-			'default_value' => TMM_Content_Composer::set_default_value('columns', '2'),
-			'description' => ''
-		));
-		?>
-
-	</div><!--/ .one-half-->
-
 	<div class="one-half option-default">
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -92,6 +71,27 @@
 		?>
 
 	</div><!--/ .ona-half-->
+
+	<div class="one-half option-columns">
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Layout', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'columns',
+			'id' => '',
+			'options' => array(
+				'fullwidth' => __('Fullwidth', TMM_CC_TEXTDOMAIN),
+				'2' => __('2 Columns', TMM_CC_TEXTDOMAIN),
+				'3' => __('3 Columns', TMM_CC_TEXTDOMAIN),
+				'4' => __('4 Columns', TMM_CC_TEXTDOMAIN)
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('columns', '2'),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .one-half-->
 
 	<div class="one-half option-default">
 
@@ -168,6 +168,32 @@
 
 	</div><!--/ .ona-half-->
 
+	<div class="one-half">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Title Symbols Count', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'title_symbols',
+			'id' => 'posts',
+			'default_value' => TMM_Content_Composer::set_default_value('title_symbols', '25'),
+			'description' => __('', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-excerpt">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Excerpt Symbols Count', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'excerpt_symbols',
+			'id' => 'posts',
+			'default_value' => TMM_Content_Composer::set_default_value('excerpt_symbols', '110'),
+			'description' => __('', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+	</div><!--/ .ona-half-->
+
 	<div class="one-half option-default">
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -208,7 +234,34 @@
 			'description' => ''
 		));
 		?>
+	</div><!--/ .one-half-->
 
+	<div class="one-half option-classic">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Show/Hide Tags', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'show_tags',
+			'id' => 'show_tags',
+			'is_checked' => TMM_Content_Composer::set_default_value('show_tags', true),
+			'default_value' => TMM_Content_Composer::set_default_value('show_tags', true),
+			'description' => ''
+		));
+		?>
+	</div><!--/ .one-half-->
+
+	<div class="one-half option-classic">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Show/Hide Author', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'show_author',
+			'id' => 'show_author',
+			'is_checked' => TMM_Content_Composer::set_default_value('show_author', true),
+			'default_value' => TMM_Content_Composer::set_default_value('show_author', true),
+			'description' => ''
+		));
+		?>
 	</div><!--/ .one-half-->
 
 
@@ -228,7 +281,9 @@
 		var blogType = jQuery('#blog_type').val(),
 			optionBorder = jQuery('.option-border'),
 			optionMasonry = jQuery('.option-masonry'),
-			optionDefault = jQuery('.option-default');
+			optionDefault = jQuery('.option-default'),
+			optionExcerpt = jQuery('.option-excerpt'),
+			optionClassic = jQuery('.option-classic');
 
 		changeBlogType(blogType);
 
@@ -240,20 +295,47 @@
 
 		function changeBlogType(val){
 			switch (val){
+				case 'blog-classic':
+					optionDefault.slideDown(300);
+					optionMasonry.slideUp(300);
+					optionBorder.slideDown(300);
+					optionExcerpt.slideDown(300);
+					optionClassic.slideDown(300);
+					break;
 				case 'blog-masonry':
 					optionDefault.slideUp(300);
 					optionMasonry.slideDown(300);
 					optionBorder.slideUp(300);
+					optionExcerpt.slideDown(300);
+					optionClassic.slideUp(300);
+					break;
+				case 'blog-second':
+					optionDefault.slideDown(300);
+					optionMasonry.slideUp(300);
+					optionBorder.slideDown(300);
+					optionExcerpt.slideUp(300);
+					optionClassic.slideUp(300);
 					break;
 				case 'blog-third':
 					optionDefault.slideDown(300);
 					optionMasonry.slideUp(300);
 					optionBorder.slideUp(300);
+					optionExcerpt.slideUp(300);
+					optionClassic.slideUp(300);
+					break;
+				case 'blog-fourth':
+					optionDefault.slideDown(300);
+					optionMasonry.slideUp(300);
+					optionBorder.slideDown(300);
+					optionExcerpt.slideUp(300);
+					optionClassic.slideUp(300);
 					break;
 				default:
 					optionDefault.slideDown(300);
 					optionMasonry.slideUp(300);
 					optionBorder.slideDown(300);
+					optionExcerpt.slideDown(300);
+					optionClassic.slideUp(300);
 					break;
 			}
 		}

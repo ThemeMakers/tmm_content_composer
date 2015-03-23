@@ -333,6 +333,8 @@ body {
 		opacity: 1;
 		-webkit-animation-name: slideUpEffectRun;
 				animation-name: slideUpEffectRun;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		-webkit-transform: translateY(0);
 				transform: translateY(0);	
 	}
@@ -341,6 +343,8 @@ body {
 		opacity: 1;
 		-webkit-animation-name: slideUpEffectRun;
 				animation-name: slideUpEffectRun;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		-webkit-transform: translateY(0);
 				transform: translateY(0);		
 	}	
@@ -350,6 +354,7 @@ body {
 	/* -------------------------------------------------- */
 
 	.slideUp {
+		opacity: 0;
 		-webkit-transform: translateY(100%);
 				transform: translateY(100%);
 		-webkit-transition-timing-function: ease-in-out;
@@ -363,15 +368,21 @@ body {
 	}
 	
 	.touch .slideUp {
+		opacity: 1;
 		-webkit-animation-name: slideUpRun;
 				animation-name: slideUpRun;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		-webkit-transform: translateY(0);
 				transform: translateY(0);	
 	}
 
 	.slideUpRun {
+		opacity: 1;
 		-webkit-animation-name: slideUpRun;
 				animation-name: slideUpRun;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 		-webkit-transform: translateY(0);
 				transform: translateY(0);		
 	}	
