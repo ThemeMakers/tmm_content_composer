@@ -413,27 +413,25 @@ class TMM_Content_Composer {
 				break;
 
 			case 'upload':
+			case 'upload_video':
+			case 'upload_audio':
+				if ($data['type'] === 'upload_video') {
+					$type = 'video';
+				} else if ($data['type'] === 'upload_audio') {
+					$type = 'audio';
+				} else {
+					$type = 'image';
+				}
 				?>
+
 				<?php if (!empty($data['title'])): ?>
 				<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
-			<?php endif; ?>
+				<?php endif; ?>
 
 				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a title="" class="button tmm_button_upload" href="#">
+				<a title="" class="button tmm_button_upload" data-type="<?php echo $type; ?>" href="#">
 					<?php _e('Browse', TMM_CC_TEXTDOMAIN); ?>
 				</a>
-				<span class="preset_description"><?php echo $data['description'] ?></span>
-				<?php
-				break;
-
-			case 'upload_video':
-				?>
-				<?php if (!empty($data['title'])): ?>
-				<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
-			<?php endif; ?>
-
-				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;"><?php _e('Browse', TMM_CC_TEXTDOMAIN); ?></a>
 				<span class="preset_description"><?php echo $data['description'] ?></span>
 				<?php
 				break;

@@ -131,11 +131,22 @@
 
                             /* events handlers */
 	                        cur_popup.find('.tmm_button_upload').on('click', function() {
-		                        var input_object = jQuery(this).prev('input, textarea'),
-			                        frame = wp.media({
-				                        title: wp.media.view.l10n.addMedia,
+		                        var input_object = $(this).prev('input, textarea'),
+			                        type = $(this).data('type'),
+			                        title = wp.media.view.l10n.chooseImage;
+
+		                        if (!type) {
+			                        type = 'image';
+		                        } else if (type === 'audio') {
+			                        title = wp.media.view.l10n.audioAddSourceTitle;
+		                        } else if (type === 'video') {
+			                        title = wp.media.view.l10n.videoAddSourceTitle;
+		                        }
+
+			                    var frame = wp.media({
+				                        title: title,
 				                        multiple: false,
-				                        library: { type: 'image,audio' }
+				                        library: { type: type }
 			                        });
 
 		                        frame.on( 'select', function() {
@@ -151,25 +162,6 @@
 		                        return false;
 	                        });
 
-	                        cur_popup.find('.tmm_button_upload_video').on('click', function() {
-		                        var input_object = jQuery(this).prev('input, textarea'),
-			                        frame = wp.media({
-				                        title: wp.media.view.l10n.chooseImage,
-				                        multiple: false,
-				                        library: { type: 'video' }
-			                        });
-
-		                        frame.on( 'select', function() {
-			                        var selection = frame.state().get('selection');
-			                        selection.each(function(attachment) {
-				                        var url = attachment.attributes.url;
-				                        input_object.val(url).trigger('change');
-			                        });
-		                        });
-
-		                        frame.open();
-	                        });
-
                         },
                         close: function() {
                             if($.isFunction(params.onclose)){
@@ -178,7 +170,6 @@
                             /* remove events handlers */
 	                        var cur_popup = $('.tmm-popup-single-shortcode');
 	                        cur_popup.find('.tmm_button_upload').off('click');
-	                        cur_popup.find('.tmm_button_upload_video').off('click');
                         },
                         save: function() {
                             var shortcode = tmm_ext_shortcodes.get_html_from_buffer();
