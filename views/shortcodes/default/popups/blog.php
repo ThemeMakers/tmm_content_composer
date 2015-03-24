@@ -172,6 +172,25 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
+			'title' => __('Exclude Posts', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'exclude_posts',
+			'id' => 'exclude_posts',
+			'options' => array(
+				'none' => __('None', TMM_CC_TEXTDOMAIN),
+				'post-with-image' => __('Post with Image', TMM_CC_TEXTDOMAIN),
+				'post-without-image' => __('Post Without Image', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('exclude_posts', 'none'),
+			'description' => __('', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
 			'title' => __('Exclude Post Formats', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'exclude_post_formats',
 			'id' => 'exclude_post_formats',
@@ -182,8 +201,10 @@
 				'post-format-quote' => __('Quote Post', TMM_CC_TEXTDOMAIN),
 				'post-format-video' => __('Video Post', TMM_CC_TEXTDOMAIN),
 				'post-format-audio' => __('Audio Post', TMM_CC_TEXTDOMAIN),
+				'post-with-image' => __('Post with Image', TMM_CC_TEXTDOMAIN),
+				'post-without-image' => __('Post Without Image', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_formats', ''),
+			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_formats', 'none'),
 			'description' => __('', TMM_CC_TEXTDOMAIN)
 		));
 		?>

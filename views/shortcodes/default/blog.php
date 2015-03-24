@@ -38,6 +38,29 @@ if (!empty($posts)&&($blog_type!='blog-masonry')) {
 	$args['post__in'] = $posts;
 }
 
+if(($exclude_posts!='none') && ($blog_type!='blog-masonry')){
+
+    switch ($exclude_posts){
+
+        case 'post-with-image':
+            $args['meta_query'] = array(
+                array(
+                    'key' => '_thumbnail_id',
+                    'compare' => 'NOT EXISTS'
+                ));
+            break;
+
+        case 'post-without-image':
+            $args['meta_query'] = array(
+                array(
+                    'key' => '_thumbnail_id',
+                    'compare' => 'EXISTS'
+                ));
+            break;
+    }
+
+}
+
 if (($blog_type!='blog-masonry')&&($exclude_post_formats!='none')) {
     $exclude_post_formats = explode(',', $exclude_post_formats);
 	$args['tax_query'] = array(
