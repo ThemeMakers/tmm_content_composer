@@ -141,14 +141,6 @@
 						to: { sync: true }
 					}
 				}
-			},
-
-			/* ---------------------------------------------------- */
-			/*	Tooltipster											*/
-			/* ---------------------------------------------------- */
-
-			objTooltipster : {
-				animation: 'grow'	// Choose fade, grow, swing, slide, fall
 			}
 
 		}

@@ -121,9 +121,6 @@ class TMM_Content_Composer {
 		wp_deregister_style('wp-mediaelement');
 		wp_register_style('tmm_mediaelement', TMM_CC_URL . 'js/shortcodes/mediaelement/mediaelementplayer.css');
 
-		wp_register_style('tmm_tooltipster', TMM_CC_URL . 'css/tooltipster.css');
-		wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/jquery.tooltipster.min.js', array('jquery'), false, true);
-
 		wp_register_style('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.css');
 		wp_register_style('tmm_owltheme', TMM_CC_URL . 'js/owl-carousel/owl.theme.css');
 		wp_register_style('tmm_owltransitions', TMM_CC_URL . 'js/owl-carousel/owl.transitions.css');
