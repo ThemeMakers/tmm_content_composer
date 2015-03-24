@@ -102,7 +102,7 @@
 			'shortcode_field' => 'orderby',
 			'id' => 'orderby',
 			'options' => TMM_Content_Composer::get_post_sort_array(),
-			'default_value' => TMM_Content_Composer::set_default_value('orderby', ''),
+			'default_value' => TMM_Content_Composer::set_default_value('orderby', 'date'),
 			'description' => ''
 		));
 		?>
