@@ -349,8 +349,8 @@
                             align = $('#row_align_' + row_id).val(),
                             custom_box = cur_popup.find('#row_background_image_box'),
                             custom_box_color = cur_popup.find('#row_background_color_box'),
-                            custom_box_image = cur_popup.find('.bg_custom_type_image'),
-                            custom_box_video = cur_popup.find('.bg_custom_type_video');
+                            custom_box_image = cur_popup.find('.bg_custom_type_image');
+
                         
                         if(!bg_type){
                             bg_type = 'none';
@@ -369,10 +369,7 @@
                             if ((bg_custom_type === 'image')){
                                 custom_box_image.show();
                             }
-                            if (bg_custom_type === 'video'){
-                                custom_box_video.show();
-                            }
-                            
+
                             custom_box.show();                         
                             
                             if (bg_is_cover == 1) {
@@ -407,9 +404,7 @@
                                     if ((bg_custom_type === 'image')){
                                         custom_box_image.slideDown();
                                     }
-                                    if (bg_custom_type === 'video'){
-                                        custom_box_video.slideDown();
-                                    }                                    
+
                                     break;
                                 case 'default':
                                 case 'none':
@@ -426,15 +421,15 @@
                                 case 'color':
                                     custom_box_color.slideDown();
                                     custom_box_image.slideUp();
-                                    custom_box_video.slideUp();
+
                                     break;
                                 case 'image':
                                     custom_box_image.slideDown();
                                     custom_box_color.slideUp();
-                                    custom_box_video.slideUp();
+
                                     break;
                                 case 'video':
-                                    custom_box_video.slideDown();
+
                                     custom_box_color.slideUp();
                                     custom_box_image.slideUp();
                                     break;

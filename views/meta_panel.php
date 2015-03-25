@@ -311,7 +311,6 @@
                     'options' => array(
                         'color' => __('Color', TMM_CC_TEXTDOMAIN),
                         'image' => __('Image', TMM_CC_TEXTDOMAIN),
-                        'video' => __('Video', TMM_CC_TEXTDOMAIN)                        
                     ),
                     'default_value' => 'color',
 					'description' => ''
@@ -342,19 +341,6 @@
                         'id' => 'row_background_image',
                         'default_value' => '',
                         'description' => ''
-                    ));
-                    ?>
-                </div>
-
-                <div class="bg_custom_type_video" style="display: none;">
-                    <?php
-                    TMM_Content_Composer::html_option(array(
-                        'type' => 'upload_video',
-                        'title' => __('Background Video', TMM_CC_TEXTDOMAIN),
-                        'shortcode_field' => 'row_background_video',
-                        'id' => 'row_background_video',
-                        'default_value' => '',
-                        'description' => 'Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg http://vimeo.com/22439234 or upload self hosted video'
                     ));
                     ?>
                 </div>
