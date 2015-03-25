@@ -1,4 +1,16 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
+<?php
+if (!defined('ABSPATH')) die('No direct access allowed');
+
+$gal_categories = array();
+$gal_terms = TMM_Gallery::get_gallery_tags();
+
+if ($gal_terms) {
+	foreach ( $gal_terms as $term ) {
+		$gal_categories[$term->term_id] = $term->name;
+	}
+}
+?>
+
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
 	<div class="one-half">
@@ -72,6 +84,22 @@
 	</div><!--/ .one-half-->
 
 	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'multiple' => true,
+			'title' => __('Category', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'gal_category',
+			'id' => 'gal_category',
+			'options' => $gal_categories,
+			'default_value' => TMM_Content_Composer::set_default_value('gal_category', ''),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -83,10 +111,6 @@
 			'description' => __('Enable Folio Filter', TMM_CC_TEXTDOMAIN)
 		));
 		?>
-
-	</div>
-
-	<div class="one-half option-default">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
