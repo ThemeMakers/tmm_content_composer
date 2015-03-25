@@ -82,6 +82,22 @@ class TMM_Shortcode {
 		if ($pagenow != 'nav-menus.php'){
 			$continue_array[] = 'menu';
 		}
+		if ($pagenow == 'nav-menus.php'){
+			$continue_array = array('accordion', 'alert',
+				'blockquote', 'button',
+				'chart', 'divider',
+				'dropcap', 'google_map',
+				'google_table', 'highlight',
+				'image', 'list',
+				'our_contacts', 'socialicons',
+				'tabs', 'testimonials',
+				'title', 'tmm_audio',
+				'tmm_video', 'tooltip',
+				'archives', 'contact_form',
+				'featured-boxes', 'slider',
+				'google_table_row', 'price_table',
+				'pricing_tables', 'services');
+		}
 
 		foreach (self::$shortcodes as $shortcode_key => $shortcode_name){
 
