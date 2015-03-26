@@ -296,6 +296,14 @@ class TMM_Content_Composer {
 			'comment_count' => 'Comment Count'
 		);
 	}
+
+	public static function get_def_value($val){
+		$def_values = array(
+			'left_indent' => '15',
+			'right_indent' => '15',
+		);
+		return $def_values[$val];
+	}
     
      public static function get_blog_type() {
 		return array(

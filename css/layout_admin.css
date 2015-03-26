@@ -97,7 +97,7 @@
 
 #tmm_lc_column_options {
 	display: inline-block;
-	width: 110px;
+	width: 100%;
 }
 
 #tmm_lc_column_options .data-select {
@@ -175,7 +175,7 @@
 			}
 
 			.tmm-lc-column-title-input {
-				margin-bottom: 20px !important;
+
 			}
 
 			.tmm-lc-column-bar-right {

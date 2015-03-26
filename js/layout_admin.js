@@ -161,19 +161,34 @@
                                     tinyMCE.execCommand('mceSetContent', false, text);
                                 }, 1000);
                             }
+
                             /* setup Editor Text tab buttons */
                             quicktags(self.active_editor_id);
                             QTags._buttonsInit();
+
                             /* add custom elements */
                             var lc_title = '<input type="text" placeholder="' + tmm_lang['empty_title'] + '" value="' + title + '" class="tmm-lc-column-title-input" /><br />',
-                                lc_column_options = '&nbsp;<span id="tmm_lc_column_options"></span>';
-                            $('#wp-'+self.active_editor_id+'-editor-tools').prepend(lc_title).find('#wp-'+self.active_editor_id+'-media-buttons').append(lc_column_options);
+                                lc_column_options = '&nbsp;<div id="tmm_lc_column_options"></div>';
+                            $('#wp-'+self.active_editor_id+'-editor-tools').prepend(lc_column_options).prepend(lc_title);
+
                             /* column options settings */
                             $('#tmm_lc_column_options').append($('#tmm_lc_column_effects').html());
+
                             $('.tmm-lc-column-effects-selector').val($("#item_" + item_id).find('.js_effect').val());
                             $('.tmm-lc-column-effects-selector').change(function() {
                                 $("#item_" + item_id).find('.js_effect').val($(this).val());
                             });
+
+                            $('.tmm-lc-column-left-indent').val($("#item_" + item_id).find('.js_left_indent').val());
+                            $('.tmm-lc-column-left-indent').change(function() {
+                                $("#item_" + item_id).find('.js_left_indent').val($(this).val());
+                            });
+
+                            $('.tmm-lc-column-right-indent').val($("#item_" + item_id).find('.js_right_indent').val());
+                            $('.tmm-lc-column-right-indent').change(function() {
+                                $("#item_" + item_id).find('.js_right_indent').val($(this).val());
+                            });
+
 	                        tmm_info_popup_hide();
                         },
                         close: function() {

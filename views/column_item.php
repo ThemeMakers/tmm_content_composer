@@ -21,7 +21,10 @@
 		<input type="hidden" class="js_css_class" value="<?php echo $css_class ?>" name="tmm_layout_constructor[<?php echo $row ?>][<?php echo $uniqid ?>][css_class]" />
 		<input type="hidden" class="js_front_css_class" value="<?php echo $front_css_class ?>" name="tmm_layout_constructor[<?php echo $row ?>][<?php echo $uniqid ?>][front_css_class]" />
 		<input type="hidden" class="js_value" value="<?php echo $value ?>" name="tmm_layout_constructor[<?php echo $row ?>][<?php echo $uniqid ?>][value]" />
+
 		<input type="hidden" class="js_effect" value="<?php echo @$effect ?>" name="tmm_layout_constructor[<?php echo $row ?>][<?php echo $uniqid ?>][effect]" />
+		<input type="hidden" class="js_left_indent" value="<?php echo @$left_indent ?>" name="tmm_layout_constructor[<?php echo $row ?>][<?php echo $uniqid ?>][left_indent]" />
+		<input type="hidden" class="js_right_indent" value="<?php echo @$right_indent ?>" name="tmm_layout_constructor[<?php echo $row ?>][<?php echo $uniqid ?>][right_indent]" />
 
 		<textarea style="display: none;" class="js_content" name="tmm_layout_constructor[<?php echo $row ?>][<?php echo $uniqid ?>][content]"><?php echo $content ?></textarea>
 

@@ -114,12 +114,22 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 					}
 					?>
 
-					<?php foreach ($row_data as $uniqid => $column){ ?>
+					<?php foreach ($row_data as $uniqid => $column){
 
-						<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content']));
+						$content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content']));
 						$column_class = $show_column ? 'columns '.$column['effect'].' '.$column['front_css_class'] : 'relative '.$column['effect'];
+						$column_style = '';
+						if ($column['left_indent']!=TMM_Content_Composer::get_def_value('left_indent')){
+							$column_style .= 'padding-left:'.$column['left_indent'].'px; ';
+						}
+						if ($column['right_indent']!=TMM_Content_Composer::get_def_value('right_indent')){
+							$column_style .= 'padding-right:'.$column['right_indent'].'px; ';
+						}
+						if (!empty($column_style)){
+							$column_style = 'style="' . $column_style . '"';
+						}
 						?>
-						<div class="<?php echo $column_class ?>"><?php echo $content ?></div>
+						<div class="<?php echo $column_class ?>" <?php echo $column_style ?>><?php echo $content ?></div>
 
 					<?php } ?>
 

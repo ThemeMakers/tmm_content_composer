@@ -41,6 +41,8 @@
 								'content' => $column['content'],
 								'title' => $column['title'],
 								'effect' => @$column['effect'],
+								'left_indent' => ($column['left_indent']!='') ? $column['left_indent'] : TMM_Content_Composer::get_def_value('left_indent'),
+								'right_indent' => ($column['right_indent']!='') ? $column['right_indent'] : TMM_Content_Composer::get_def_value('right_indent'),
 								'row_align' => @$column['row_align'],
 								'padding_top' => @$column['padding_top'],
 								'padding_bottom' => @$column['padding_bottom'],
@@ -101,6 +103,8 @@
 			'content' => '',
 			'title' => '',
 			'effect' => '',
+			'left_indent' => TMM_Content_Composer::get_def_value('left_indent'),
+			'right_indent' => TMM_Content_Composer::get_def_value('right_indent'),
 		);
 		TMM_Layout_Constructor::draw_column_item($col_data);
 		?>
@@ -143,31 +147,61 @@
 	</ul>
 
 	<div id="tmm_lc_column_effects">
-		<?php
-		$effects = array(
-			'' => __("No effects", TMM_CC_TEXTDOMAIN),
-			'elementFade' => __('Element Fade', TMM_CC_TEXTDOMAIN),
-			'opacity2x' => __('Opacity', TMM_CC_TEXTDOMAIN),
-			'slideRight' => __('Slide Right', TMM_CC_TEXTDOMAIN),
-			'slideLeft' => __('Slide Left', TMM_CC_TEXTDOMAIN),
-			'slideDown' => __('Slide Down', TMM_CC_TEXTDOMAIN),
-			'slideUp' => __('Slide Up', TMM_CC_TEXTDOMAIN),
-			'slideUp2x' => __('Slide Up 2x', TMM_CC_TEXTDOMAIN),
-			'extraRadius' => __('Extra Radius', TMM_CC_TEXTDOMAIN)
-		);
+		<div class="one-fourth">
+			<?php
+			$effects = array(
+				'' => __("No effects", TMM_CC_TEXTDOMAIN),
+				'elementFade' => __('Element Fade', TMM_CC_TEXTDOMAIN),
+				'opacity2x' => __('Opacity', TMM_CC_TEXTDOMAIN),
+				'slideRight' => __('Slide Right', TMM_CC_TEXTDOMAIN),
+				'slideLeft' => __('Slide Left', TMM_CC_TEXTDOMAIN),
+				'slideDown' => __('Slide Down', TMM_CC_TEXTDOMAIN),
+				'slideUp' => __('Slide Up', TMM_CC_TEXTDOMAIN),
+				'slideUp2x' => __('Slide Up 2x', TMM_CC_TEXTDOMAIN),
+				'extraRadius' => __('Extra Radius', TMM_CC_TEXTDOMAIN)
+			);
 
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => '',
-			'label' => __("Layout constructor", TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'tmm-lc-column-effects-selector',
-			'id' => '',
-			'options' => $effects,
-			'default_value' => '',
-			'description' => '',
-			'css_classes' => 'tmm-lc-column-effects-selector'
-		));
-		?>
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' =>  __("Column Appearing Effect", TMM_CC_TEXTDOMAIN),
+				'label' => __("Layout constructor", TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'tmm-lc-column-effects-selector',
+				'id' => '',
+				'options' => $effects,
+				'default_value' => '',
+				'description' => '',
+				'css_classes' => 'tmm-lc-column-effects-selector'
+			));
+			?>
+		</div>
+		<div class="one-fourth">
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'text',
+				'title' =>  __("Column Left Indent", TMM_CC_TEXTDOMAIN),
+				'label' => __("Column Left Indent", TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'tmm-lc-column-left-indent',
+				'id' => '',
+				'default_value' => '',
+				'description' => 'px',
+				'css_classes' => 'tmm-lc-column-left-indent'
+			));
+			?>
+		</div>
+		<div class="one-fourth">
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'text',
+				'title' =>  __("Column Right Indent", TMM_CC_TEXTDOMAIN),
+				'label' => __("Column Right Indent", TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'tmm-lc-column-right-indent',
+				'id' => '',
+				'default_value' => '',
+				'description' => 'px',
+				'css_classes' => 'tmm-lc-column-right-indent'
+			));
+			?>
+		</div>
 	</div>
 
 	<!-- ------------------------ Edit Row Template ----------------------------------------- -->

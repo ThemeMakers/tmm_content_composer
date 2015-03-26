@@ -38,9 +38,9 @@ if (!empty($posts)&&($blog_type!='blog-masonry')) {
 	$args['post__in'] = $posts;
 }
 
-if(($exclude_posts!='none') && ($blog_type!='blog-masonry')){
+if(($exclude_post_types!='none') && ($blog_type!='blog-masonry')){
 
-    switch ($exclude_posts){
+    switch ($exclude_post_types){
 
         case 'post-with-image':
             $args['meta_query'] = array(
@@ -57,6 +57,7 @@ if(($exclude_posts!='none') && ($blog_type!='blog-masonry')){
                     'compare' => 'EXISTS'
                 ));
             break;
+
     }
 
 }

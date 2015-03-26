@@ -173,14 +173,14 @@
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Exclude Posts', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'exclude_posts',
+			'shortcode_field' => 'exclude_post_types',
 			'id' => 'exclude_posts',
 			'options' => array(
 				'none' => __('None', TMM_CC_TEXTDOMAIN),
 				'post-with-image' => __('Post with Image', TMM_CC_TEXTDOMAIN),
 				'post-without-image' => __('Post Without Image', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('exclude_posts', 'none'),
+			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_types', 'none'),
 			'description' => __('', TMM_CC_TEXTDOMAIN)
 		));
 		?>
@@ -200,9 +200,7 @@
 				'post-format-gallery' => __('Gallery Post', TMM_CC_TEXTDOMAIN),
 				'post-format-quote' => __('Quote Post', TMM_CC_TEXTDOMAIN),
 				'post-format-video' => __('Video Post', TMM_CC_TEXTDOMAIN),
-				'post-format-audio' => __('Audio Post', TMM_CC_TEXTDOMAIN),
-				'post-with-image' => __('Post with Image', TMM_CC_TEXTDOMAIN),
-				'post-without-image' => __('Post Without Image', TMM_CC_TEXTDOMAIN),
+				'post-format-audio' => __('Audio Post', TMM_CC_TEXTDOMAIN)
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_formats', 'none'),
 			'description' => __('', TMM_CC_TEXTDOMAIN)
