@@ -12,26 +12,21 @@ if ($gallery_type === 'albums') {
 }
 
 $gal_images = TMM_Gallery::get_galleries_images(); // all images array
+$gal_terms = TMM_Gallery::get_gallery_tags();
 $image_size = TMM_Gallery::get_gallery_image_alias($gallery_type);
-$gal_category = $gal_category !== 'null' ? explode(',', $gal_category) : 0;
+$gal_category = $gal_category !== 'null' ? explode(',', $gal_category) : array();
 $loaded_images = array();
-$gal_category_images = array(); // gallery categories slugs array with related images ids
+$gal_category_slugs = array();
 
-for ($i = 0; $i < $posts_per_page; $i++) {
-	$loaded_images[$i] = $gal_images[$i];
+if ($gal_terms && $gal_category) {
+	foreach ( $gal_terms as $term ) {
+		if (in_array($term->term_id, $gal_category)) {
+			$gal_category_slugs[$term->slug] = 1;
+		}
+	}
+
+	$gal_category_slugs = array_keys($gal_category_slugs);
 }
-
-//foreach ($gal_images as $key => $value) {
-//	$cat_slugs = explode(' ', $value['slug']);
-//
-//	foreach ($cat_slugs as $cat_slug) {
-//		if ( !isset($gal_category_images[$cat_slug]) ) {
-//			$gal_category_images[$cat_slug] = array();
-//		}
-//		$gal_category_images[$cat_slug][] = $key;
-//	}
-//
-//}
 
 if ($gallery_type === 'albums') {
 
@@ -95,14 +90,33 @@ if ($gallery_type === 'albums') {
 		<section id="portfolio-items" class="portfolio-items popup-gallery col-<?php echo $layout ?>">
 
 			<?php
-			foreach ($loaded_images as $key => $image) {
+			foreach ($gal_images as $key => $image) {
 
-				$data = array();
-				$data['post_key'] = $key;
-				$data['galleries'] = $gal_images;
-				$data['category'] = 'all';
-				$data['show_categories'] = $show_categories;
-				echo TMM::draw_html('gallery/shortcodes/gallery_article', $data);
+				if (count($loaded_images) >= $posts_per_page) {
+					break;
+				}
+
+				$display = true;
+
+				if (!empty($gal_category_slugs)) {
+					$display = false;
+					$cat_slugs = explode(' ', $image['slug']);
+
+					foreach ($gal_category_slugs as $cat) {
+						if ( in_array($cat, $cat_slugs) ) {
+							$display = true;
+						}
+					}
+				}
+
+				if ($display) {
+					$loaded_images[$key] = $image;
+					$data = array();
+					$data['post_key'] = $key;
+					$data['galleries'] = $gal_images;
+					$data['show_categories'] = $show_categories;
+					echo TMM::draw_html('gallery/shortcodes/gallery_article', $data);
+				}
 
 			}
 			?>
@@ -114,7 +128,7 @@ if ($gallery_type === 'albums') {
 	<?php if (count($gal_images) > $posts_per_page) {	?>
 
 		<div class="portfolio-paging">
-			<a  href="#" data-loaded="<?php echo implode(',', array_keys($loaded_images)); ?>" data-perload="<?php echo $posts_per_load ?>" data-catecory="all" data-showcategories="<?php echo $show_categories ?>" class="load-more">Load More</a>
+			<a  href="#" data-loaded="<?php echo implode(',', array_keys($loaded_images)); ?>" data-perload="<?php echo $posts_per_load ?>" data-category="<?php echo !empty($gal_category_slugs) ? implode(',', $gal_category_slugs) : 'all'; ?>" data-showcategories="<?php echo $show_categories ?>" class="load-more">Load More</a>
 		</div><!--/ .portfolio-paging-->
 
 	<?php }
