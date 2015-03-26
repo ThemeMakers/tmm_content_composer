@@ -86,19 +86,19 @@ $data_columns = '';
 
 switch($blog_type){
     case 'blog-classic':
-        $post_class .= ($show_border_bottom) ? ' border-solid  post-classic' : ' post-classic';
+        $post_class .= ($show_border_bottom) ? ' border  post-classic' : ' post-classic';
         break;
     case 'blog-first':
-        $post_class .= ($show_border_bottom) ? ' post-news border-solid' :' post-news';
+        $post_class .= ($show_border_bottom) ? ' border post-alternate-1' :' post-alternate-1';
         break;
     case 'blog-second':
-        $post_class .= ($show_border_bottom) ? ' post-extra border-dashed' : ' post-extra';
+        $post_class .= ($show_border_bottom) ? ' border post-alternate-2' : ' post-alternate-2';
         break;
     case 'blog-third':
-        $post_class .= ' post-image';
+        $post_class .= ' post-alternate-3';
         break;
     case 'blog-fourth':
-        $post_class .= ($show_border_bottom) ? ' small border-dashed' : ' small';
+        $post_class .= ($show_border_bottom) ? ' border post-alternate-4' : ' post-alternate-4';
         break;
     case 'blog-masonry':
         $blog_type = 'masonry';
@@ -118,13 +118,15 @@ switch ($columns){
         break;
     case '2':
         $columns_class .= 'medium-6 large-6 columns';
-        $posts_list .= ' post-list-extra';
+        $posts_list .= ' two-cols';
         break;
     case '3':
         $columns_class .= 'medium-4 large-4 columns';
+	    $posts_list .= ' three-cols';
         break;
     case '4':
         $columns_class .= 'medium-3 large-3 columns';
+	    $posts_list .= ' four-cols';
         break;
 }
 
@@ -240,4 +242,4 @@ wp_reset_postdata();
 		});
 	</script>
 
-<?php } 
+<?php }
