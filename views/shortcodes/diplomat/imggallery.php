@@ -6,7 +6,7 @@ tmm_enqueue_style('magnific');
 
 if ($gallery_type === 'albums') {
 	tmm_enqueue_script('stapel');
-	tmm_enqueue_style('stapel');
+//	tmm_enqueue_style('stapel');
 } else {
 	tmm_enqueue_script('mixitup');
 }
