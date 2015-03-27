@@ -87,7 +87,7 @@ $data_columns = '';
 
 switch($blog_type){
     case 'blog-classic':
-        $post_class .= ($show_border_bottom) ? ' border  post-classic' : ' post-classic';
+        $post_class .= ($show_border_bottom) ? ' border post-classic' : ' post-classic';
         break;
     case 'blog-first':
         $post_class .= ($show_border_bottom) ? ' border post-alternate-1' :' post-alternate-1';
