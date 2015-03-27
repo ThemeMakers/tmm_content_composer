@@ -6,7 +6,6 @@ tmm_enqueue_style('magnific');
 
 if ($gallery_type === 'albums') {
 	tmm_enqueue_script('stapel');
-//	tmm_enqueue_style('stapel');
 } else {
 	tmm_enqueue_script('mixitup');
 }
@@ -14,7 +13,7 @@ if ($gallery_type === 'albums') {
 $gal_images = TMM_Gallery::get_galleries_images(); // all images array
 $gal_terms = TMM_Gallery::get_gallery_tags();
 $image_size = TMM_Gallery::get_gallery_image_alias($gallery_type);
-$gal_category = $gal_category !== 'null' ? explode(',', $gal_category) : array();
+$gal_category = (!empty($gal_category) && $gal_category !== 'null') ? explode(',', $gal_category) : array();
 $loaded_images = array();
 $gal_category_slugs = array();
 
@@ -31,26 +30,32 @@ if ($gal_terms && $gal_category) {
 if ($gallery_type === 'albums') {
 
 	$data_group = 0;
-	$category = '';
+	$post_slug = '';
 	?>
+
 	<span id="gallery-close" class="gallery-back">&larr;</span>
 	<ul id="tp-grid" class="tp-grid">
-		<?php if (!empty($gal_images)){
-			foreach($gal_images as $gall){
-				if($category!=$gall['slug']){
+
+		<?php if (!empty($gal_images)) {
+			foreach ($gal_images as $image) {
+
+				if ($post_slug !== $image['post_slug']) {
 					$data_group++;
 				}
 				?>
-				<li data-pile="<?php echo $gall['slug'] ?>">
-					<a href="<?php echo TMM_Content_Composer::resize_image($gall['imgurl'], ''); ?>" data-group="<?php echo $data_group ?>" class="item-overlay gallery popup-link-<?php echo $data_group; ?>">
-						<h6 class="extra-title"><?php echo $gall['title'] ?></h6>
-						<img src="<?php echo TMM_Content_Composer::resize_image($gall['imgurl'], $image_size); ?>" />
+
+				<li data-pile="<?php echo $image['post_slug'] ?>">
+					<a href="<?php echo TMM_Content_Composer::resize_image($image['imgurl'], ''); ?>" data-group="<?php echo $data_group ?>" class="item-overlay gallery popup-link-<?php echo $data_group; ?>">
+						<h6 class="extra-title"><?php echo $image['title'] ?></h6>
+						<img src="<?php echo TMM_Content_Composer::resize_image($image['imgurl'], $image_size); ?>" />
 					</a>
 				</li>
+
 				<?php
-				$category = $gall['slug'];
+				$post_slug = $image['post_slug'];
 			}
 		} ?>
+
 		<input type="hidden" class="tp_groups" value="<?php echo $data_group ?>">
 	</ul><!--/ .tp-grid-->
 
