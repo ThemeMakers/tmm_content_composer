@@ -46,7 +46,6 @@ if ($gallery_type === 'albums') {
 
 				<li data-pile="<?php echo $image['post_slug'] ?>">
 					<a href="<?php echo TMM_Content_Composer::resize_image($image['imgurl'], ''); ?>" data-group="<?php echo $data_group ?>" class="item-overlay gallery popup-link-<?php echo $data_group; ?>">
-						<h6 class="extra-title"><?php echo $image['title'] ?></h6>
 						<img src="<?php echo TMM_Content_Composer::resize_image($image['imgurl'], $image_size); ?>" />
 					</a>
 				</li>
