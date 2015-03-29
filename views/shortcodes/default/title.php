@@ -18,9 +18,9 @@ if (!isset($align)) {
 }
 
 // Font Weight
-if (!empty($font_weight)) {
+if (isset($font_weight) && $font_size != 'default') {
 	$styles.="font-weight: " . $font_weight . ";";
-        $single_styles.="font-weight: " . $font_weight . ";";
+    $single_styles.="font-weight: " . $font_weight . ";";
 }
 
 // Letter spacing
@@ -29,7 +29,7 @@ if (!empty($letter_spacing)) {
 	$single_styles.="letter-spacing:{$letter_spacing}px;";
 }
 // Align
-if (!empty($align)) {
+if (isset($align) && $font_size != 'default') {
 	$styles.="text-align: " . $align . "; ";
 	$general_styles.="text-align: " . $align . "; ";
 }
@@ -100,10 +100,14 @@ if (!empty($title_effect)&&($title_effect!='none')){
 //Output Html
 $content = str_replace("`", "'", $content);
 
-if ( isset($title_type) && $title_type=='section'){
+if ( isset($title_type) && $title_type=='section') {
     $html.= '<' . $type . ' class="section-title ' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '>';
 
-}else{
+} else if ( isset($title_type) && $title_type=='section-alternate') {
+
+	$html.= '<' . $type . ' class="section-title-alternate ' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '>';
+
+} else {
 
 	$html.= '<' . $type . ' class="' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '>';
 

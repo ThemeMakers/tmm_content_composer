@@ -82,16 +82,15 @@
 			'shortcode_field' => 'font_weight',
 			'id'              => 'font_weight',
 			'options'         => array(
-				'normal' => __( 'Normal', TMM_CC_TEXTDOMAIN ),
+				'default' => __( 'Default', TMM_CC_TEXTDOMAIN ),
 				'100'    => 100,
 				'200'    => 200,
 				'300'    => 300,
 				'400'    => 400,
 				'500'    => 500,
-				'600'    => 600,
-				'700'    => 700
+				'600'    => 600
 			),
-			'default_value'   => TMM_Content_Composer::set_default_value( 'font_weight', '400' ),
+			'default_value'   => TMM_Content_Composer::set_default_value( 'font_weight', 'normal' ),
 			'description'     => ''
 		) );
 		?>
@@ -106,9 +105,10 @@
 			'shortcode_field' => 'align',
 			'id'              => 'align',
 			'options'         => array(
+				'default'   => 'Default',
 				'left'   => 'Left',
 				'right'  => 'Right',
-				'center' => 'Center',
+				'center' => 'Center'
 			),
 			'default_value'   => TMM_Content_Composer::set_default_value( 'align', 'left' ),
 			'description'     => ''
@@ -144,7 +144,8 @@
 			'id'              => 'title_type',
 			'options'         => array(
 				'default' => 'Default',
-				'section' => 'Section Title'
+				'section' => 'Section Title',
+				'section-alternate' => 'Alternate Section Title'
 			),
 			'display'         => 1
 		) );
@@ -215,4 +216,3 @@
 
 	});
 </script>
-
