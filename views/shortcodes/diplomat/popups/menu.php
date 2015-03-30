@@ -19,7 +19,7 @@
 				$links = explode('^', $_REQUEST["shortcode_mode_edit"]['menu_links']);			
 				$icons = explode('^', $_REQUEST["shortcode_mode_edit"]['menu_icons']);			
 			}            
-            
+            /*
             $all_menu_items = array('none' => '— Select —');
             $post_types = get_post_types(array('show_in_nav_menus'=>true), 'names');
             foreach ($post_types as $post_type){
@@ -36,7 +36,9 @@
                 }
                 $all_menu_items += $post_titles;
             }
-            
+                */
+            $all_menu_items = TMM_Content_Composer::get_all_menu_items();
+
             $icon_type_array = array(
                 'none' => __('None', TMM_THEME_TEXTDOMAIN),
                 'icon-paper-plane-2' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-paper-plane-2',

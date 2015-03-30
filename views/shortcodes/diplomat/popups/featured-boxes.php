@@ -2,6 +2,8 @@
 if (!defined('ABSPATH')) die('No direct access allowed');
 
 $fontello_icons = TMM_Helper::get_fontello_icons();
+
+$all_menu_items = TMM_Content_Composer::get_all_menu_items();
 ?>
 
 <style type="text/css">
@@ -27,7 +29,7 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 
 	<h4><?php _e('First Box:',TMM_CC_TEXTDOMAIN); ?></h4>
 
-	<div class="one-half">
+	<div class="one-half icon-option">
 		<?php
 		$view_icon_group = TMM_Content_Composer::set_default_value('first_icon', 'icon-group');
 		TMM_Content_Composer::html_option(array(
@@ -40,16 +42,29 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 			'description' => ''
 		));
 		?>
+		<div class="iconsweets first_icon <?php echo $view_icon_group; ?>"></div>
 
 	</div><!--/ .one-half-->
 
 	<div class="one-half">
 
-		<div class="iconsweets first_icon <?php echo $view_icon_group; ?>"></div>
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Page Links', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => '',
+			'id' => 'first_select_menu_item',
+			'options' => $all_menu_items,
+			'default_value' => (isset($all_menu_items[TMM_Content_Composer::set_default_value('first_link_url', '')])) ? TMM_Content_Composer::set_default_value('first_link_url', '') : 'none' ,
+			'description' => '',
+			'css_classes' => 'select_menu_item'
+		));
+
+		?>
 
 	</div><!--/ .one-half-->
 
-    <div class="fullwidth">
+	<div class="one-half">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -61,6 +76,26 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 			'description' => ''
 		));
 		?>
+
+	</div>
+
+	<div class="one-half">
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Link URL', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'first_link_url',
+			'id' => '',
+			'css_classes' => 'first_select_menu_item',
+			'default_value' => TMM_Content_Composer::set_default_value('first_link_url', ''),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .one-half-->
+
+	<div class="fullwidth">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -177,7 +212,7 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 
 	<h4><?php _e('Second Box:',TMM_CC_TEXTDOMAIN); ?></h4>
 
-	<div class="one-half">
+	<div class="one-half icon-option">
 
 		<?php
 		$view_icon_group = TMM_Content_Composer::set_default_value('second_icon', 'icon-thumbs-up-4');
@@ -192,16 +227,30 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 		));
 		?>
 
-	</div><!--/ .one-half-->
-
-	<div class="one-half">
-
 		<div class="iconsweets second_icon <?php echo $view_icon_group; ?>"></div>
 
 	</div><!--/ .one-half-->
 
-	<div class="fullwidth">
-                
+	<div class="one-half">
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Page Links', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => '',
+			'id' => 'second_select_menu_item',
+			'options' => $all_menu_items,
+			'default_value' => (isset($all_menu_items[TMM_Content_Composer::set_default_value('second_link_url', '')])) ? TMM_Content_Composer::set_default_value('second_link_url', '') : 'none' ,
+			'description' => '',
+			'css_classes' => 'select_menu_item'
+		));
+
+		?>
+
+	</div><!--/ .one-half-->
+
+    <div class="one-half">
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
@@ -212,6 +261,26 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 			'description' => ''
 		));
 		?>
+
+	</div>
+
+	<div class="one-half">
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Link URL', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'second_link_url',
+			'id' => '',
+			'css_classes' => 'second_select_menu_item',
+			'default_value' => TMM_Content_Composer::set_default_value('second_link_url', ''),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .one-half-->
+
+	<div class="fullwidth">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -327,7 +396,7 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 
 	<h4><?php _e('Third Box:',TMM_CC_TEXTDOMAIN); ?></h4>
 
-	<div class="one-half">
+	<div class="one-half icon-option">
 
 		<?php
 		$view_icon_group = TMM_Content_Composer::set_default_value('third_icon', 'icon-calendar-inv');
@@ -342,15 +411,30 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 		));
 		?>
 
-	</div><!--/ .one-half-->
-
-	<div class="one-half">
-
 		<div class="iconsweets third_icon <?php echo $view_icon_group; ?>"></div>
 
 	</div><!--/ .one-half-->
 
-	<div class="fullwidth">
+	<div class="one-half">
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Page Links', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => '',
+			'id' => 'third_select_menu_item',
+			'options' => $all_menu_items,
+			'default_value' => (isset($all_menu_items[TMM_Content_Composer::set_default_value('third_link_url', '')])) ? TMM_Content_Composer::set_default_value('third_link_url', '') : 'none' ,
+			'description' => '',
+			'css_classes' => 'select_menu_item'
+		));
+
+		?>
+
+	</div><!--/ .one-half-->
+
+
+	<div class="one-half">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -362,6 +446,26 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 			'description' => ''
 		));
 		?>
+
+	</div><!--/ .one-half-->
+
+	<div class="one-half">
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Link URL', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'third_link_url',
+			'id' => '',
+			'css_classes' => 'third_select_menu_item',
+			'default_value' => TMM_Content_Composer::set_default_value('third_link_url', ''),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .one-half-->
+
+	<div class="fullwidth">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -488,7 +592,16 @@ $fontello_icons = TMM_Helper::get_fontello_icons();
 			colorizator();
 		});
 
-		jQuery("#tmm_shortcode_template select").on('change', function() {
+		jQuery('.select_menu_item').on('change', function(){
+			var $this = jQuery(this),
+				$thisId = $this.attr('id'),
+				$thisVal = $this.val();
+
+			jQuery('.'+$thisId).val($thisVal);
+			tmm_ext_shortcodes.changer(shortcode_name);
+		});
+
+		jQuery("#tmm_shortcode_template .icon-option select").on('change', function() {
 			var block_class = jQuery(this).data('shortcode-field');
 			jQuery('.' + block_class).removeClass().addClass(jQuery(this).val() + ' iconsweets ' + block_class);
 		});
