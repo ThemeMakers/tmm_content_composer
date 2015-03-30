@@ -13,6 +13,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$first = reset($row_data);
 
 		$show_column = true;
+
 		if (count($row_data)==1 && $first['front_css_class']=='medium-12 large-12'){
 			$section_class = 'section padding-off columns medium-12 large-12';
 			$show_column = false;
@@ -41,8 +42,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		}
 		$section_style .= '"';
 
-
-
 		?>
 
 		<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>" <?php echo $section_style ?>>
@@ -67,13 +66,12 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : 0;
 			$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
 
-			$row_class = 'tmm_row row';
+			$row_class = 'tmm_row';
 
-			/*
-			if ($tmm_layout_constructor_row[$row]['lc_displaying'] == 'default'){
+			if ($tmm_layout_constructor_row[$row]['lc_displaying'] == 'default' || $show_column){
 				$row_class .= ' row';
 			}
-			*/
+
 			if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
 				$row_class .= ' theme-default-bg';
 			}
