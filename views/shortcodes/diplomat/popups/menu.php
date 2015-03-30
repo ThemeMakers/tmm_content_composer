@@ -19,24 +19,7 @@
 				$links = explode('^', $_REQUEST["shortcode_mode_edit"]['menu_links']);			
 				$icons = explode('^', $_REQUEST["shortcode_mode_edit"]['menu_icons']);			
 			}            
-            /*
-            $all_menu_items = array('none' => '— Select —');
-            $post_types = get_post_types(array('show_in_nav_menus'=>true), 'names');
-            foreach ($post_types as $post_type){
-                $args = array(
-                    'numberposts' => -1,
-                    'post_type' => $post_type,
-                    'suppress_filters' => false
-                );
-                $posts = get_posts($args);
-                $post_titles=array();
-                foreach ($posts as $post){
-                    $permalink = get_permalink($post->ID);                    
-                    $post_titles[$permalink] = $post->post_title;
-                }
-                $all_menu_items += $post_titles;
-            }
-                */
+
             $all_menu_items = TMM_Content_Composer::get_all_menu_items();
 
             $icon_type_array = array(
