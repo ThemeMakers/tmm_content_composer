@@ -13,7 +13,7 @@
 			'id' => 'show_testimonial_value',
 			'options' => array(
 				'mode1' => __('Show selected testimonial', TMM_CC_TEXTDOMAIN),
-				'mode2' => __('Show latest testimonial', TMM_CC_TEXTDOMAIN),
+				'mode2' => __('Show all testimonials', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => $show,
 			'description' => ''

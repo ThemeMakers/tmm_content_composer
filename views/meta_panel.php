@@ -136,13 +136,13 @@
 			<input type="hidden" id="row_bg_custom_image___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_image]" />
 			<input type="hidden" id="row_bg_custom_video___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video]" />
 			<input type="hidden" id="row_bg_custom_opacity___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][bg_opacity]" />
-			<input type="hidden" id="row_bg_is_cover___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][bg_cover]" />
+			<input type="hidden" id="row_bg_is_cover___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_cover]" />
 			<input type="hidden" id="row_align___ROW_ID__" value="left" name="tmm_layout_constructor_row[__ROW_ID__][row_align]" />
-			<input type="hidden" id="row_padding_top___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][padding_top]" />
-			<input type="hidden" id="row_padding_bottom___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][padding_bottom]" />
-			<input type="hidden" id="row_margin_top___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][margin_top]" />
-			<input type="hidden" id="row_margin_bottom___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][margin_bottom]" />
-			<input type="hidden" id="row_custom_css_class___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][custom_css_class]" />
+			<input type="hidden" id="row_padding_top___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][padding_top]" />
+			<input type="hidden" id="row_padding_bottom___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][padding_bottom]" />
+			<input type="hidden" id="row_margin_top___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][margin_top]" />
+			<input type="hidden" id="row_margin_bottom___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][margin_bottom]" />
+			<input type="hidden" id="row_custom_css_class___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][custom_css_class]" />
 
 		</li>
 

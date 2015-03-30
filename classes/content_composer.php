@@ -298,7 +298,7 @@ class TMM_Content_Composer {
 	}
 
 	public static function get_all_menu_items(){
-		$all_menu_items = array('none' => '— Select —');
+		$all_menu_items = array('none' => '— Custom url —');
 		$post_types = get_post_types(array('show_in_nav_menus'=>true), 'names');
 		foreach ($post_types as $post_type){
 			$args = array(
