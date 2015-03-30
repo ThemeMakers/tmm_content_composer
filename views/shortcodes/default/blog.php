@@ -116,6 +116,7 @@ $columns_class = '';
 switch ($columns){
     case 'fullwidth':
         $columns_class .= 'medium-12 large-12 columns';
+	    $posts_list .= ' full-width';
         break;
     case '2':
         $columns_class .= 'medium-6 large-6 columns';
