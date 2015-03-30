@@ -355,6 +355,7 @@
                             padding_bottom = $('#row_padding_bottom_' + row_id).val(),
                             margin_top = $('#row_margin_top_' + row_id).val(),
                             margin_bottom = $('#row_margin_bottom_' + row_id).val(),
+                            custom_css_class = $('#row_custom_css_class_' + row_id).val(),
                             bg_color = $('#row_bg_custom_color_' + row_id).val(),
                             bg_custom_type = $('#row_bg_custom_type_' + row_id).val(),
                             bg_opacity = $('#row_bg_custom_opacity_' + row_id).val(),
@@ -400,6 +401,7 @@
                         cur_popup.find('#row_padding_bottom').val(padding_bottom);
                         cur_popup.find('#row_margin_top').val(margin_top);
                         cur_popup.find('#row_margin_bottom').val(margin_bottom);
+                        cur_popup.find('#row_custom_css_class').val(custom_css_class);
                         cur_popup.find('#row_align').val(align);
 
                         self.colorizator();	                        
@@ -513,6 +515,7 @@
                             padding_bottom = cur_popup.find('#row_padding_bottom').val(),
                             margin_top = cur_popup.find('#row_margin_top').val(),
                             margin_bottom = cur_popup.find('#row_margin_bottom').val(),
+                            custom_css_class = cur_popup.find('#row_custom_css_class').val(),
                             bg_color = cur_popup.find('#row_background_color').val(),
                             bg_custom_type = cur_popup.find('#row_bg_custom_type').val(),
                             bg_image = cur_popup.find('#row_background_image').val(),
@@ -534,6 +537,7 @@
                         $('#row_padding_bottom_' + row_id).val(padding_bottom);
                         $('#row_margin_top_' + row_id).val(margin_top);
                         $('#row_margin_bottom_' + row_id).val(margin_bottom);
+                        $('#row_custom_css_class_' + row_id).val(custom_css_class);
                         $('#row_align_' + row_id).val(align);
                         
                         }

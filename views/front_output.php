@@ -77,6 +77,9 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
 				$row_class .= ' theme-default-bg';
 			}
+			if (isset($tmm_layout_constructor_row[$row]['custom_css_class']) && !empty($tmm_layout_constructor_row[$row]['custom_css_class'])){
+				$row_class .= ' '.$tmm_layout_constructor_row[$row]['custom_css_class'];
+			}
 
 			$row_style_attr = '';
 			if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] != 'custom' && isset($row_style['style_custom_color'])) {

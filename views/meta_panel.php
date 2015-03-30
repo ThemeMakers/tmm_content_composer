@@ -78,6 +78,7 @@
 				<input type="hidden" id="row_padding_bottom_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['padding_bottom'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][padding_bottom]" />
 				<input type="hidden" id="row_margin_top_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['margin_top'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][margin_top]" />
 				<input type="hidden" id="row_margin_bottom_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['margin_bottom'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][margin_bottom]" />
+				<input type="hidden" id="row_custom_css_class_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['custom_css_class'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][custom_css_class]" />
 
 			</li>
 
@@ -141,6 +142,7 @@
 			<input type="hidden" id="row_padding_bottom___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][padding_bottom]" />
 			<input type="hidden" id="row_margin_top___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][margin_top]" />
 			<input type="hidden" id="row_margin_bottom___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][margin_bottom]" />
+			<input type="hidden" id="row_custom_css_class___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][custom_css_class]" />
 
 		</li>
 
@@ -319,6 +321,16 @@
 		<div class="one-half">
 
 			<?php
+
+			TMM_Content_Composer::html_option(array(
+				'title' => __('Custom css class', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'row_custom_css_class',
+				'type' => 'text',
+				'description' => '',
+				'default_value' => TMM_Content_Composer::set_default_value('row_custom_css_class', ''),
+				'id' => 'row_custom_css_class'
+			));
+
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
 				'title' => __('Row Background Type', TMM_CC_TEXTDOMAIN),
