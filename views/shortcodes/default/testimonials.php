@@ -11,6 +11,8 @@ switch ($show){
 		$args = array(
 			'post_type' => TMM_Testimonial::$slug,
 			'posts_per_page' => $count,
+			'order' => $order,
+			'orderby' => $orderby
 		);
 		break;
 }

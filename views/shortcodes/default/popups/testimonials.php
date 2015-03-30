@@ -8,12 +8,12 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Show', 'tmm_shortcodes'),
+			'title' => __('Show', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show',
 			'id' => 'show_testimonial_value',
 			'options' => array(
-				'mode1' => __('Show selected testimonial', 'tmm_shortcodes'),
-				'mode2' => __('Show latest testimonial', 'tmm_shortcodes'),
+				'mode1' => __('Show selected testimonial', TMM_CC_TEXTDOMAIN),
+				'mode2' => __('Show latest testimonial', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => $show,
 			'description' => ''
@@ -35,7 +35,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Testimonials', 'tmm_shortcodes'),
+				'title' => __('Testimonials', TMM_CC_TEXTDOMAIN),
 				'options' => $testimonials,
 				'shortcode_field' => 'content',
 				'id' => '',
@@ -50,11 +50,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Count', 'tmm_shortcodes'),
+			'title' => __('Count', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'count',
 			'id' => '',
 			'options' => array(
-				-1 => __('All', 'tmm_shortcodes'),
+				-1 => __('All', TMM_CC_TEXTDOMAIN),
 				1 => 1,
 				2 => 2,
 				3 => 3,
@@ -65,6 +65,48 @@
 			'description' => ''
 		));
 		?>
+
+	</div>
+
+	<div class="one-half option-count">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Order', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'order',
+			'id' => '',
+			'options' => array(
+				'ASC' => __('ASC', TMM_CC_TEXTDOMAIN),
+				'DESC' => __('DESC', TMM_CC_TEXTDOMAIN)
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('order', 'ASC'),
+			'description' => ''
+		));
+		?>
+	</div>
+
+	<div class="one-half option-count">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Order by', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'orderby',
+			'id' => '',
+			'options' => array(
+				'none' => __('None', TMM_CC_TEXTDOMAIN),
+				'ID' => __('ID', TMM_CC_TEXTDOMAIN),
+				'author' => __('Author', TMM_CC_TEXTDOMAIN),
+				'title' => __('Title', TMM_CC_TEXTDOMAIN),
+				'name' => __('Name', TMM_CC_TEXTDOMAIN),
+				'date' => __('Date', TMM_CC_TEXTDOMAIN),
+				'modified' => __('Modified', TMM_CC_TEXTDOMAIN),
+				'rand' => __('Rand', TMM_CC_TEXTDOMAIN)
+
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('orderby', 'date'),
+			'description' => ''
+		));
+		?>
 	</div>
 
 	<div class="one-half">
@@ -72,11 +114,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show photo', 'tmm_shortcodes'),
+			'title' => __('Show photo', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_photo',
 			'id' => '',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_photo', 1),
-			'description' => __('Show / Hide Photo', 'tmm_shortcodes')
+			'description' => __('Show / Hide Photo', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
