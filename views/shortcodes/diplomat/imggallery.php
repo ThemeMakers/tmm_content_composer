@@ -27,6 +27,16 @@ if ($gal_terms && $gal_category) {
 	$gal_category_slugs = array_keys($gal_category_slugs);
 }
 
+$count_images_by_cat = 0;
+foreach ($gal_images as $image) {
+	$cats = explode(' ', $image['slug']);
+	foreach ($cats as $cat) {
+		if (in_array($cat, $gal_category_slugs)) {
+			$count_images_by_cat++;
+		}
+	}
+}
+
 if ($gallery_type === 'albums') {
 
 	$data_group = 0;
@@ -67,14 +77,17 @@ if ($gallery_type === 'albums') {
 	}
 
 	$folio_tags = TMM_Gallery::get_gallery_tags();
+	$uniqid = uniqid();
 	?>
+
+	<div class="portfolio-holder">
 
 	<div class="filter-holder clearfix">
 
 		<?php if($folio_filter){ ?>
 
 			<div class="filter-container">
-				<ul id="portfolio-filter" class="portfolio-filter">
+				<ul id="portfolio_filter_<?php echo $uniqid; ?>" class="portfolio-filter">
 
 					<li><a class="filter active" data-filter="all"><?php _e('All', TMM_CC_TEXTDOMAIN); ?></a></li>
 
@@ -91,7 +104,7 @@ if ($gallery_type === 'albums') {
 
 		<?php } ?>
 
-		<section id="portfolio-items" class="portfolio-items popup-gallery col-<?php echo $layout ?>">
+		<section id="portfolio_items_<?php echo $uniqid; ?>" class="portfolio-items popup-gallery col-<?php echo $layout ?>">
 
 			<?php
 			foreach ($gal_images as $key => $image) {
@@ -129,12 +142,15 @@ if ($gallery_type === 'albums') {
 
 	</div><!--/ .filter-holder-->
 
-	<?php if (count($gal_images) > $posts_per_page) {	?>
+	<?php if ($count_images_by_cat > $posts_per_page) {	?>
 
 		<div class="portfolio-paging">
 			<a  href="#" data-loaded="<?php echo implode(',', array_keys($loaded_images)); ?>" data-perload="<?php echo $posts_per_load ?>" data-category="<?php echo !empty($gal_category_slugs) ? implode(',', $gal_category_slugs) : 'all'; ?>" data-showcategories="<?php echo $show_categories ?>" class="load-more">Load More</a>
 		</div><!--/ .portfolio-paging-->
 
-	<?php }
+	<?php } ?>
 
+	</div>
+
+	<?php
 }
