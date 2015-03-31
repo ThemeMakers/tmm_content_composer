@@ -1,4 +1,4 @@
-<div class="entry-media">
+<div class="image-post">
 	<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 	<audio controls="control" type="audio/mp3" preload="none" src="<?php echo $content ?>"></audio>
 <?php
