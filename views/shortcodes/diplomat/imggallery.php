@@ -28,14 +28,20 @@ if ($gal_terms && $gal_category) {
 }
 
 $count_images_by_cat = 0;
-foreach ($gal_images as $image) {
-	$cats = explode(' ', $image['slug']);
-	foreach ($cats as $cat) {
-		if (in_array($cat, $gal_category_slugs)) {
-			$count_images_by_cat++;
+
+if (!empty($gal_category)) {
+	foreach ($gal_images as $image) {
+		$cats = explode(' ', $image['slug']);
+		foreach ($cats as $cat) {
+			if (in_array($cat, $gal_category_slugs)) {
+				$count_images_by_cat++;
+			}
 		}
 	}
+} else {
+	$count_images_by_cat = count($gal_images);
 }
+
 
 if ($gallery_type === 'albums') {
 
