@@ -1,6 +1,12 @@
+[class^="mejs-"],
+[class^="mejs-"] button {
+    outline: none;
+}
+
 .mejs-container {
+    width: 100%;
 	position: relative;
-	background: #ededed;
+	background: transparent;
 	font-family: Helvetica, Arial;
 	text-align: left;
 	vertical-align: top;
@@ -76,6 +82,9 @@
 }
 
 .mejs-overlay {
+    width: 0;
+    height: 0;
+    overflow: hidden;
 	position: absolute;
 	top: 0;
 	left: 0
@@ -89,10 +98,13 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 100px;
-	height: 100px;
-	margin: -50px 0 0 -50px;
-	background: url(bigplay.svg) no-repeat
+	width: 50px;
+	height: 50px;
+	margin: -25px 0 0 -25px;
+	background: url(bigplay.svg) no-repeat;
+    background-size: 50px;
+    transition: width 2s linear 1s;
+    -webkit-transition: width 2s linear 1s;
 }
 
 .no-svg .mejs-overlay-button {
@@ -100,7 +112,7 @@
 }
 
 .mejs-overlay:hover .mejs-overlay-button {
-	background-position: 0 -100px
+	background-position: 0 -50px
 }
 
 .mejs-overlay-loading {
@@ -124,7 +136,7 @@
 	display: block;
 	width: 80px;
 	height: 80px;
-	background: url(loading.gif) 50% 50% no-repeat
+	background: url(loading.gif) 50% 50% no-repeat;
 }
 
 .mejs-offscreen {
@@ -142,7 +154,7 @@
 	padding: 0;
 	bottom: 0;
 	left: 0;
-	background-color: #ededed;
+	background-color: #fff;
 	height: 45px;
 	width: 100%
 }
@@ -230,14 +242,14 @@
 	display: block;
 	position: absolute;
 	width: 0;
-	height: 11px;
+	height: 10px;
 	cursor: pointer
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-total {
 	margin: 5px;
 	top: 12px;
-	background-color: #fff
+	background-color: #dbdbdb;
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-buffering {
@@ -305,7 +317,7 @@
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-loaded {
-	background: #fff
+	background: #efefef;
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-current {
