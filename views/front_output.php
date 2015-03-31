@@ -118,7 +118,9 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 					<?php foreach ($row_data as $uniqid => $column){
 
-						$content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content']));
+						$content = TMM_Shortcode::remove_empty_tags($column['content']);
+						$content = do_shortcode(shortcode_unautop($content));
+
 						$column_class = $show_column ? 'columns '.$column['effect'].' '.$column['front_css_class'] : 'relative '.$column['effect'];
 						$column_style = '';
 						if ($column['left_indent']!=TMM_Content_Composer::get_def_value('left_indent')){
