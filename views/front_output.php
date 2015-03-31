@@ -33,14 +33,16 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 		$margin_top = (isset($tmm_layout_constructor_row[$row]['margin_top'])) ? $tmm_layout_constructor_row[$row]['margin_top'] : '';
 		$margin_bottom = (isset($tmm_layout_constructor_row[$row]['margin_bottom'])) ? $tmm_layout_constructor_row[$row]['margin_bottom'] : '';
-		$section_style = 'style="';
-		if ($margin_top != ''){
+		$section_style = '';
+		if ($margin_top != '' && $margin_top){
 			$section_style .= 'margin-top:' . $margin_top . 'px;';
 		}
-		if ($margin_bottom != ''){
+		if ($margin_bottom != '' && $margin_bottom){
 			$section_style .= 'margin-bottom:' . $margin_bottom . 'px;';
 		}
-		$section_style .= '"';
+		if (!empty($section_style)){
+			$section_style = ' style="'.$section_style.'"';
+		}
 
 		?>
 

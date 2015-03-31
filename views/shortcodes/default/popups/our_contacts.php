@@ -43,7 +43,7 @@
 			'shortcode_field' => 'working_days',
 			'id' => 'working_days',
 			'default_value' => TMM_Content_Composer::set_default_value('working_days', ''),
-			'description' => __('Hold the CTRL key and click the items in a list to choose them', TMM_CC_TEXTDOMAIN)
+			'description' => __('', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
@@ -65,7 +65,7 @@
 			'options' => $days,
 			'multiple' => true,
 			'default_value' => TMM_Content_Composer::set_default_value('closed_days', 'sunday'),
-			'description' => ''
+			'description' => __('Hold the CTRL key and click the items in a list to choose them', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
