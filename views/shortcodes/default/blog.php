@@ -133,6 +133,7 @@ switch ($columns){
 }
 
 $_REQUEST['title_symbols'] = $title_symbols;
+$_REQUEST['show_excerpt'] = $show_excerpt;
 $_REQUEST['excerpt_symbols'] = $excerpt_symbols;
 $_REQUEST['show_tags'] = $show_tags;
 $_REQUEST['show_author'] = $show_author;

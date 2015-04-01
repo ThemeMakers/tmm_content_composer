@@ -225,6 +225,18 @@
 	<div class="one-half option-excerpt">
 		<?php
 		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Show / Hide Post Excerpt', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'show_excerpt',
+			'is_checked' => TMM_Content_Composer::set_default_value('show_excerpt', 1),
+			'description' => __('', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-excerpt">
+		<?php
+		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
 			'title' => __('Excerpt Symbols Count', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'excerpt_symbols',
