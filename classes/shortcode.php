@@ -96,7 +96,10 @@ class TMM_Shortcode {
 				'archives', 'contact_form',
 				'featured-boxes', 'slider',
 				'google_table_row', 'price_table',
-				'pricing_tables', 'services');
+				'pricing_tables', 'services',
+				'tmm_donate', 'tmm_events_list',
+				'tmm_events_calendar',
+			);
 		}
 
 		foreach (self::$shortcodes as $shortcode_key => $shortcode_name){

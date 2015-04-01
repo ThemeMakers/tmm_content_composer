@@ -16,15 +16,21 @@ if ($gal_terms) {
 	<div class="one-half">
 
 		<?php
+
+		$type_options = array(
+			'default' => __('Default', TMM_CC_TEXTDOMAIN),
+		);
+
+		if (strpos($_SERVER['HTTP_REFERER'], 'nav-menus.php') === false) {
+			$type_options['albums'] = __('Albums', TMM_CC_TEXTDOMAIN);
+		}
+
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Gallery Type', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'gallery_type',
 			'id' => 'gallery_type',
-			'options' => array(
-				'default' => __('Default', TMM_CC_TEXTDOMAIN),
-				'albums' => __('Albums', TMM_CC_TEXTDOMAIN)
-			),
+			'options' => $type_options,
 			'default_value' => TMM_Content_Composer::set_default_value('gallery_type', 'default'),
 			'description' => ''
 		));
