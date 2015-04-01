@@ -100,7 +100,7 @@ if ($gallery_type === 'albums') {
 					<?php if (!empty($folio_tags)): ?>
 						<?php foreach ($folio_tags as $term_id => $tag) : ?>
 							<?php if (empty($gal_category) || in_array($term_id, $gal_category)): ?>
-								<li><a class="filter" data-filter=".<?php echo $tag->slug ?>"><?php echo $tag->name ?></a></li>
+								<li><a class="filter" data-filter=".<?php echo $tag->slug ?>"><?php _e($tag->name, TMM_CC_TEXTDOMAIN); ?></a></li>
 							<?php endif; ?>
 						<?php endforeach; ?>
 					<?php endif; ?>
@@ -151,7 +151,7 @@ if ($gallery_type === 'albums') {
 	<?php if ($count_images_by_cat > $posts_per_page) {	?>
 
 		<div class="portfolio-paging">
-			<a  href="#" data-loaded="<?php echo implode(',', array_keys($loaded_images)); ?>" data-perload="<?php echo $posts_per_load ?>" data-category="<?php echo !empty($gal_category_slugs) ? implode(',', $gal_category_slugs) : 'all'; ?>" data-showcategories="<?php echo $show_categories ?>" class="load-more">Load More</a>
+			<a  href="#" data-total="<?php echo $count_images_by_cat; ?>" data-loaded="<?php echo implode(',', array_keys($loaded_images)); ?>" data-perload="<?php echo $posts_per_load ?>" data-category="<?php echo !empty($gal_category_slugs) ? implode(',', $gal_category_slugs) : 'all'; ?>" data-showcategories="<?php echo $show_categories ?>" class="load-more"><?php _e('Load More', TMM_CC_TEXTDOMAIN); ?></a>
 		</div><!--/ .portfolio-paging-->
 
 	<?php } ?>
