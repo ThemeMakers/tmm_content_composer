@@ -4,6 +4,10 @@ if (!defined('ABSPATH')) die('No direct access allowed');
 tmm_enqueue_script('magnific');
 tmm_enqueue_style('magnific');
 
+if (!isset($gallery_type)) {
+	$gallery_type = 'default';
+}
+
 if ($gallery_type === 'albums') {
 	tmm_enqueue_script('stapel');
 } else {
@@ -173,7 +177,7 @@ if ($gallery_type === 'albums') {
 		</div>
 
 		<div class="portfolio-paging">
-			<a  href="#" data-total="<?php echo $count_images_by_cat; ?>" data-loaded="<?php echo implode(',', array_keys($loaded_images)); ?>" data-perload="<?php echo $posts_per_load ?>" data-category="<?php echo !empty($gal_category_slugs) ? implode(',', $gal_category_slugs) : 'all'; ?>" data-showcategories="<?php echo $show_categories ?>" class="load-more"><?php _e('Load More', TMM_CC_TEXTDOMAIN); ?></a>
+			<a  href="#" data-total="<?php echo $count_images_by_cat; ?>" data-loaded="<?php echo implode(',', array_keys($loaded_images)); ?>" data-perpage="<?php echo $posts_per_page ?>" data-perload="<?php echo $posts_per_load ?>" data-category="<?php echo !empty($gal_category_slugs) ? implode(',', $gal_category_slugs) : 'all'; ?>" data-showcategories="<?php echo $show_categories ?>" class="load-more"><?php _e('Load More', TMM_CC_TEXTDOMAIN); ?></a>
 		</div><!--/ .portfolio-paging-->
 
 	<?php } ?>
