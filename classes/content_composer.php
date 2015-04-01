@@ -325,8 +325,8 @@ class TMM_Content_Composer {
 		return $def_values[$val];
 	}
     
-     public static function get_blog_type() {
-		return array(
+	public static function get_blog_type() {
+		$types = array(
 			'blog-classic' => __('Blog Classic', TMM_CC_TEXTDOMAIN),
 			'blog-masonry' => __('Blog Masonry', TMM_CC_TEXTDOMAIN),
 			'blog-first' => __('Type 1', TMM_CC_TEXTDOMAIN),
@@ -334,6 +334,12 @@ class TMM_Content_Composer {
 			'blog-third' => __('Type 3', TMM_CC_TEXTDOMAIN),
 			'blog-fourth' => __('Type 4', TMM_CC_TEXTDOMAIN)
 		);
+
+		if (strpos($_SERVER['HTTP_REFERER'], 'nav-menus.php') !== false) {
+			unset($types['blog-masonry']);
+		}
+
+		return $types;
 	}
 
 	public static function set_default_value($key, $default_value = '') {
