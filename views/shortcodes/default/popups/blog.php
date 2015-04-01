@@ -228,6 +228,7 @@
 			'type' => 'checkbox',
 			'title' => __('Show / Hide Post Excerpt', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_excerpt',
+			'id' => 'show_excerpt',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_excerpt', 1),
 			'description' => __('', TMM_CC_TEXTDOMAIN)
 		));
@@ -240,7 +241,7 @@
 			'type' => 'text',
 			'title' => __('Excerpt Symbols Count', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'excerpt_symbols',
-			'id' => 'posts',
+			'id' => 'excerpt_symbols',
 			'default_value' => TMM_Content_Composer::set_default_value('excerpt_symbols', '110'),
 			'description' => __('', TMM_CC_TEXTDOMAIN)
 		));
@@ -336,14 +337,34 @@
 			optionMasonry = jQuery('.option-masonry'),
 			optionDefault = jQuery('.option-default'),
 			optionExcerpt = jQuery('.option-excerpt'),
-			optionClassic = jQuery('.option-classic');
+			optionClassic = jQuery('.option-classic'),
+			showExcerpt = jQuery('#show_excerpt'),
+			ExcerptSymbols = jQuery('#excerpt_symbols');
+
+		cahangeExcerpt(showExcerpt.is(':checked'));
+
+		showExcerpt.life('change', function(){
+			var val = jQuery(this).is(':checked');
+			cahangeExcerpt(val);
+		});
+
+		function cahangeExcerpt(val){
+			if (val){
+				ExcerptSymbols.attr('disabled', false).css('background-color', '#fff');
+			}else{
+				ExcerptSymbols.attr('disabled', true).css('background-color', '#eee');
+			}
+
+		}
 
 		changeBlogType(blogType);
 
 		jQuery('#blog_type').on('change', function(){
 			var $this = jQuery(this),
 				val = $this.val();
+
 			changeBlogType(val);
+
 		});
 
 		function changeBlogType(val){

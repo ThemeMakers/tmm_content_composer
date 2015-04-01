@@ -108,6 +108,7 @@ switch($blog_type){
         $data_columns = "data-columns='".$columns."'";
         $data_titlesymbols = "data-titlesymbols='".$title_symbols."'";
         $data_exerptsymbols = "data-excerptsymbols='".$excerpt_symbols."'";
+        $data_showexcerpt = "data-showexcerpt='" . $show_excerpt . "'";
 
         break;
 }
@@ -140,7 +141,7 @@ $_REQUEST['show_author'] = $show_author;
 
  ?>
 
-	<div class="row <?php echo (!empty($posts_list)) ? $posts_list : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?> <?php echo (!empty($data_titlesymbols)) ? $data_titlesymbols : ''; ?> <?php echo (!empty($data_exerptsymbols)) ? $data_exerptsymbols : ''; ?> >
+	<div class="row <?php echo (!empty($posts_list)) ? $posts_list : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?> <?php echo (!empty($data_titlesymbols)) ? $data_titlesymbols : ''; ?> <?php echo (!empty($data_exerptsymbols)) ? $data_exerptsymbols : ''; ?> <?php echo (!empty($data_showexcerpt)) ? $data_showexcerpt : ''; ?> >
         
         <?php 
         if ($blog_type!='masonry'){
@@ -177,6 +178,7 @@ $_REQUEST['show_author'] = $show_author;
                     $data['columns'] = $columns;
                     $data['title_symbols'] = $title_symbols;
                     $data['excerpt_symbols'] = $excerpt_symbols;
+                    $data['show_excerpt'] = $show_excerpt;
                     echo TMM::draw_html('post/masonry_piece', $data);
                 }
             } 
