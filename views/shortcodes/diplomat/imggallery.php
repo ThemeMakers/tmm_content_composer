@@ -35,6 +35,7 @@ if (!empty($gal_category)) {
 		foreach ($cats as $cat) {
 			if (in_array($cat, $gal_category_slugs)) {
 				$count_images_by_cat++;
+				break;
 			}
 		}
 	}
@@ -149,6 +150,27 @@ if ($gallery_type === 'albums') {
 	</div><!--/ .filter-holder-->
 
 	<?php if ($count_images_by_cat > $posts_per_page) {	?>
+
+		<div class="spinner">
+			<div id="spinningSquaresG">
+				<div id="spinningSquaresG_1" class="spinningSquaresG">
+				</div>
+				<div id="spinningSquaresG_2" class="spinningSquaresG">
+				</div>
+				<div id="spinningSquaresG_3" class="spinningSquaresG">
+				</div>
+				<div id="spinningSquaresG_4" class="spinningSquaresG">
+				</div>
+				<div id="spinningSquaresG_5" class="spinningSquaresG">
+				</div>
+				<div id="spinningSquaresG_6" class="spinningSquaresG">
+				</div>
+				<div id="spinningSquaresG_7" class="spinningSquaresG">
+				</div>
+				<div id="spinningSquaresG_8" class="spinningSquaresG">
+				</div>
+			</div>
+		</div>
 
 		<div class="portfolio-paging">
 			<a  href="#" data-total="<?php echo $count_images_by_cat; ?>" data-loaded="<?php echo implode(',', array_keys($loaded_images)); ?>" data-perload="<?php echo $posts_per_load ?>" data-category="<?php echo !empty($gal_category_slugs) ? implode(',', $gal_category_slugs) : 'all'; ?>" data-showcategories="<?php echo $show_categories ?>" class="load-more"><?php _e('Load More', TMM_CC_TEXTDOMAIN); ?></a>
