@@ -54,7 +54,7 @@ if (!empty($contact_form['inputs'])) {
 					if (!empty($input['label'])) {
 						?>
 
-						<h3 class="info-title"><?php echo $input['label']; ?></h3>
+						<h2 class="info-title"><?php echo $input['label']; ?></h2>
 
 						<?php
 					}
@@ -95,7 +95,7 @@ if (!empty($contact_form['inputs'])) {
 	                if (!empty($input['label'])) {
 		                ?>
 
-		                <h3 class="info-title"><?php echo $input['label']; ?></h3>
+		                <h2 class="info-title"><?php echo $input['label']; ?></h2>
 
 	                    <?php
 	                }
@@ -152,7 +152,7 @@ if (!empty($contact_form['inputs'])) {
 		            if (!empty($input['label'])) {
 			            ?>
 
-			            <h3 class="info-title"><?php echo $input['label']; ?></h3>
+			            <h2 class="info-title"><?php echo $input['label']; ?></h2>
 
 		                <?php
 		            }
