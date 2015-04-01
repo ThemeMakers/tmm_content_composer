@@ -12,6 +12,7 @@ $path = 'content/' . $blog_type . '/content';
 $args = array(
 	'orderby' => $orderby,
 	'order' => $order,
+    'ignore_sticky_posts' => true,
 	'post_status' => array('publish')
 );
 
@@ -236,6 +237,7 @@ if ($show_pagination && class_exists('TMM') && $blog_type != 'masonry') {
 
 $wp_query = $original_query;
 wp_reset_postdata();
+
 
  if (!empty($posts_array) && ($blog_type == 'masonry')){     
      $load_with_animation = 1;
