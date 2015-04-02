@@ -72,8 +72,8 @@ switch($archives_type){
 			'show_option_all'    => '',
 			'orderby'            => 'name',
 			'order'              => 'ASC',
-			'title_li'           => __( '' ),
-			'show_option_none'   => __( '' ),
+			'title_li'           => '',
+			'show_option_none'   => '',
 			'number'             => $count,
 			'echo'               => false,
 			'taxonomy'           => 'category'

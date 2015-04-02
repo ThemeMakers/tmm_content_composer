@@ -43,19 +43,19 @@
 			'shortcode_field' => 'working_days',
 			'id' => 'working_days',
 			'default_value' => TMM_Content_Composer::set_default_value('working_days', ''),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('Put your working days info here.', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
 		<?php
 		$days = array(
-			'Monday' => 'Monday',
-			'Tuesday' => 'Tuesday',
-			'Wednesday' => 'Wednesday',
-			'Thursday' => 'Thursday',
-			'Friday' => 'Friday',
-			'Saturday' => 'Saturday',
-			'Sunday' => 'Sunday'
+			'Monday' => __('Monday', TMM_CC_TEXTDOMAIN),
+			'Tuesday' => __('Tuesday', TMM_CC_TEXTDOMAIN),
+			'Wednesday' => __('Wednesday', TMM_CC_TEXTDOMAIN),
+			'Thursday' => __('Thursday', TMM_CC_TEXTDOMAIN),
+			'Friday' => __('Friday', TMM_CC_TEXTDOMAIN),
+			'Saturday' => __('Saturday', TMM_CC_TEXTDOMAIN),
+			'Sunday' => __('Sunday', TMM_CC_TEXTDOMAIN)
 		);
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',

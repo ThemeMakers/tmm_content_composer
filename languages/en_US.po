@@ -1,1795 +1,1563 @@
 msgid ""
 msgstr ""
-"Content-Type: text/plain; charset=utf-8\n"
+"Project-Id-Version: ThemeMakers Visual Content Composer\n"
+"POT-Creation-Date: 2015-04-02 13:50+0100\n"
+"PO-Revision-Date: 2015-04-02 13:50+0100\n"
+"Last-Translator: ThemeMakers Team <support@webtemplatemasters.com>\n"
+"Language-Team: ThemeMakers Team <support@webtemplatemasters.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#. Text in echo
-#: views/shortcodes/engorgio/masonry.php:237
-msgid " Comments"
+#: classes/content_composer.php:59
+msgid "ThemeMakers Layout Constructor"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/pricing_tables.php:176
-msgid "$19.95"
+#: classes/content_composer.php:92
+msgid "Loading ..."
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-msgid "2 Columns"
+#: classes/content_composer.php:93
+msgid "Close"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-#: views/shortcodes/default/popups/recent_projects.php:24
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "3 Columns"
+#: classes/content_composer.php:94
+msgid "Apply"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-#: views/shortcodes/default/popups/recent_projects.php:24
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "4 Columns"
+#: classes/content_composer.php:95
+msgid "There is no options for shortcode!"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/recent_projects.php:24
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "5 Columns"
+#: classes/content_composer.php:96
+msgid "Shortcode updated!"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/recent_projects.php:24
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "6 Columns"
+#: classes/content_composer.php:97
+msgid "Insert Shortcode"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "ASC"
+#: classes/content_composer.php:98
+msgid "Edit shortcode"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/accordion.php:6
-msgid "Accordion"
+#: classes/content_composer.php:108
+msgid "Sure about column deleting?"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Action"
+#: classes/content_composer.php:109
+msgid "Sure about row deleting?"
 msgstr ""
 
-#. Text in echo
-#: views/meta_panel.php:18
-#: views/meta_panel.php:118
-msgid "Add Column"
+#: classes/content_composer.php:110 views/column_item.php:13
+msgid "Empty title"
 msgstr ""
 
-#. Text in echo
+#: classes/content_composer.php:111
+msgid "Column content editor"
+msgstr ""
+
+#: classes/content_composer.php:112
+msgid "Row editor"
+msgstr ""
+
+#: classes/content_composer.php:208 index.php:40
+#: views/shortcodes/default/popups/title.php:45
+#: views/shortcodes/default/popups/title.php:85
+#: views/shortcodes/diplomat/popups/imggallery.php:21
+msgid "Default"
+msgstr ""
+
+#: classes/content_composer.php:209
+msgid "Default-white"
+msgstr ""
+
+#: classes/content_composer.php:220
+msgid "Small"
+msgstr ""
+
+#: classes/content_composer.php:221
+msgid "Middle"
+msgstr ""
+
+#: classes/content_composer.php:222
+msgid "Large"
+msgstr ""
+
+#: classes/content_composer.php:230
+msgid "All Categories"
+msgstr ""
+
+#: classes/content_composer.php:265
+msgid "All Tags"
+msgstr ""
+
+#: classes/content_composer.php:330
+msgid "Blog Classic"
+msgstr ""
+
+#: classes/content_composer.php:331
+msgid "Blog Masonry"
+msgstr ""
+
+#: classes/content_composer.php:332
+#: views/shortcodes/default/popups/dropcap.php:13
+msgid "Type 1"
+msgstr ""
+
+#: classes/content_composer.php:333
+#: views/shortcodes/default/popups/dropcap.php:14
+msgid "Type 2"
+msgstr ""
+
+#: classes/content_composer.php:334
+msgid "Type 3"
+msgstr ""
+
+#: classes/content_composer.php:335
+msgid "Type 4"
+msgstr ""
+
+#: classes/content_composer.php:464
+msgid "Browse"
+msgstr ""
+
+#: classes/layout_constructor.php:202
+#: views/shortcodes/default/tmm_video.php:101
+#: views/shortcodes/default/tmm_video.php:104
+msgid "Unsupported video format"
+msgstr ""
+
+#: classes/shortcode.php:57
+msgid "Price table"
+msgstr ""
+
+#: classes/shortcode.php:58
+msgid "Google table row"
+msgstr ""
+
+#: views/column_item.php:16 views/meta_panel.php:20 views/meta_panel.php:121
+msgid "Edit"
+msgstr ""
+
+#: views/column_item.php:17 views/meta_panel.php:21 views/meta_panel.php:122
+msgid "Delete"
+msgstr ""
+
 #: views/meta_panel.php:4
 msgid "Add New Row"
 msgstr ""
 
-#. Text in echo
-#: views/meta_panel.php:19
-msgid "Add Row to Clipboard"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/progressbar.php:81
-#: views/shortcodes/engorgio/popups/counter.php:96
-msgid "Add bar item"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/engorgio/popups/slogan_slider.php:283
-#: views/shortcodes/default/popups/clients.php:27
-#: views/shortcodes/default/popups/clients.php:71
-#: views/shortcodes/engorgio/popups/socialicons.php:88
-#: views/shortcodes/default/popups/accordion.php:59
-#: views/shortcodes/engorgio/popups/services.php:188
-#: views/shortcodes/default/popups/tabs.php:41
-msgid "Add item"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/list.php:177
-msgid "Add list item"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/staff.php:77
-msgid "Add staff item"
-msgstr ""
-
-#. Text in echo
-#: views/meta_panel.php:119
-msgid "Add to Clipboard"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Address"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/title.php:8
-msgid "Advanced Title Options"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Align"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/testimonials.php:76
-#: views/shortcodes/default/portfolio.php:80
-msgid "All"
-msgstr ""
-
-#. Text in function
-#: classes/content_composer.php:112
-msgid "All Categories"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/recent_posts.php:72
-msgid "All categories"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
-msgid "Animation"
-msgstr ""
-
-#. Text in echo
-#: classes/content_composer.php:92
-msgid "Apply"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Area Chart"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/tmm_audio.php:20
-msgid "Audio format"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Background Align Center"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:353
-msgid "Background Attachment"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-#: views/shortcodes/engorgio/popups/services.php:151
-#: views/shortcodes/default/popups/title.php:361
-#: views/meta_panel.php:393
-#: views/shortcodes/default/popups/button.php:166
-msgid "Background Color"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Background Height (px)"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/services.php:151
-msgid "Background Hover Color"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:353
-msgid "Background Image"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Background Opacity (from 0 to 1)"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Background Radius (%)"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:353
-msgid "Background Video"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Background Width (px)"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Bar Chart"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:185
-msgid "Below content matching its layout"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:185
-msgid "Below main content with separate layout options"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_special_products.php:31
-msgid "Best Selling"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:163
-msgid "Blank"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/engorgio/popups/services.php:84
-msgid "Blocks"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "Blog Title"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/button.php:166
-msgid "Border Color"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Bottom Indent (px)"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/icon.php:86
-#: views/shortcodes/default/popups/icon.php:418
-msgid "Brand Icons"
-msgstr ""
-
-#. Text in echo
-#: classes/content_composer.php:311
-#: classes/content_composer.php:324
-msgid "Browse"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "Button Color"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/pricing_tables.php:235
-msgid "Button Link"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "Button Size"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/pricing_tables.php:233
-msgid "Button Text"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/button.php:60
-msgid "Button type"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/button.php:60
-msgid "Buttons Text"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-#: views/shortcodes/default/popups/recent_posts.php:5
-#: views/shortcodes/default/popups/blog.php:110
-msgid "Category"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Center"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Chart Data"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Chart Height"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Chart Titles"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Chart Type"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Chart Width"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/contact_form.php:5
-msgid "Choose Contact Form"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/slider.php:94
-msgid "Choose sliders group"
-msgstr ""
-
-#. Text in echo
-#: classes/content_composer.php:91
-msgid "Close"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:149
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
-#: views/shortcodes/default/popups/title.php:361
-msgid "Color"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/services.php:38
-msgid "Colorized"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Column Chart"
-msgstr ""
-
-#. Text in echo
-#: classes/content_composer.php:109
-msgid "Column content editor"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_recent_products.php:31
-#: views/shortcodes/woocommerce/popups/tmm_special_products.php:31
-msgid "Columns"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_table.php:41
-msgid "Columns count"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Combo Chart"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/single_post.php:189
-msgid "Comments"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/accordion.php:51
-#: views/shortcodes/engorgio/popups/services.php:173
-#: views/shortcodes/default/popups/tabs.php:33
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "Content"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:234
-msgid "Content Align"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/recent_posts.php:72
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "Content Char Count"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:234
-msgid "Content Full Width"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Coordinates"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/testimonials.php:76
-msgid "Count"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:281
-msgid "Custom"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:393
-msgid "Custom Background Type"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "DESC"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
-msgid "Data Speed"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Default"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/title.php:7
-msgid "Default Options"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:281
-msgid "Default Theme Color"
-msgstr ""
-
-#. Text in echo
-#: views/column_item.php:17
-#: views/meta_panel.php:21
-#: views/meta_panel.php:121
-msgid "Delete"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/icon.php:86
-#: views/shortcodes/default/popups/icon.php:392
-msgid "Directional Icons"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_recent_products.php:31
-msgid "Display products by selected category"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_single_product.php:41
-msgid "Display single product by SKU."
-msgstr ""
-
-#. Text in echo
-#: views/column_item.php:16
-#: views/meta_panel.php:20
-#: views/meta_panel.php:120
-msgid "Edit"
-msgstr ""
-
-#. Text in echo
-#: classes/content_composer.php:96
-msgid "Edit shortcode"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Effect for Appearing Post."
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Effect for Appearing Table"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Effect for Appearing Title"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-#: views/meta_panel.php:152
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Element Fade"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/divider.php:5
-msgid "Empty Space"
-msgstr ""
-
-#. Text in function
-#: views/column_item.php:13
-#: classes/content_composer.php:108
-msgid "Empty title"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "Enable Folio Filter"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Enable Marker"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "Enable Pagination"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Enable Popup"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Enable Scrollwheel"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Enable Slide Up Effect"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/detail_box.php:28
-msgid "Enter Address"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/detail_box.php:28
-msgid "Enter Email"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/detail_box.php:28
-msgid "Enter Phone"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/dropcap.php:6
-msgid "Enter Symbol"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/alert.php:19
-#: views/shortcodes/default/popups/highlight.php:6
-#: views/shortcodes/default/popups/tooltip.php:17
-msgid "Enter Text"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/tooltip.php:17
-msgid "Enter Tooltip Text"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blockquote.php:20
-msgid "Enter text"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/pricing_tables.php:228
-msgid "Enter text here"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/alert.php:19
-msgid "Error"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Example:"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "Example: 56,73,119. It has the most hight priority!"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/icon.php:86
-msgid "Example: http://forums.webtemplatemasters.com/"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/tmm_video.php:33
-msgid "Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg  http://vimeo.com/22439234 or upload self hosted video"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "Excerpt"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-#: views/meta_panel.php:152
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Extra Radius"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:149
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
-msgid "Fade in effect"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:149
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
-msgid "Fade out effect"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_special_products.php:31
-msgid "Featured"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-#: views/shortcodes/default/popups/title.php:361
-msgid "Font Family"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-#: views/shortcodes/default/popups/title.php:361
-msgid "Font Size"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Font weight"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/staff.php:25
-msgid "Four Columns"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Geochart"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/pricing_tables.php:176
-msgid "Get Started"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/slider.php:62
-msgid "Grid Slider groups"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "HYBRID"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/tmm_video.php:33
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Height"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Html Content"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "If true the info window for this marker will be shown when the map finished loading. If html is empty this option will be ignored."
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:393
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Image"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:163
-msgid "Image Action Link"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Image Alt"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Image URL"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/alert.php:19
-msgid "Info"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:234
-msgid "Inner Content Center"
-msgstr ""
-
-#. Text in echo
 #: views/meta_panel.php:5
 msgid "Insert Clipboard Row here"
 msgstr ""
 
-#. Text in echo
-#: classes/content_composer.php:95
-msgid "Insert Shortcode"
+#: views/meta_panel.php:18 views/meta_panel.php:119
+msgid "Add Column"
 msgstr ""
 
-#. Text in echo
+#: views/meta_panel.php:19
+msgid "Add Row to Clipboard"
+msgstr ""
+
+#: views/meta_panel.php:120
+msgid "Add to Clipboard"
+msgstr ""
+
+#: views/meta_panel.php:155
+msgid "No effects"
+msgstr ""
+
+#: views/meta_panel.php:156 views/shortcodes/default/popups/blog.php:27
+#: views/shortcodes/default/popups/pricing_tables.php:156
+msgid "Element Fade"
+msgstr ""
+
+#: views/meta_panel.php:157 views/shortcodes/default/popups/blog.php:28
+#: views/shortcodes/default/popups/pricing_tables.php:157
+msgid "Opacity"
+msgstr ""
+
+#: views/meta_panel.php:158 views/shortcodes/default/popups/blog.php:31
+#: views/shortcodes/default/popups/pricing_tables.php:160
+msgid "Slide Right"
+msgstr ""
+
+#: views/meta_panel.php:159 views/shortcodes/default/popups/blog.php:32
+#: views/shortcodes/default/popups/pricing_tables.php:161
+msgid "Slide Left"
+msgstr ""
+
+#: views/meta_panel.php:160 views/shortcodes/default/popups/blog.php:33
+#: views/shortcodes/default/popups/pricing_tables.php:162
+msgid "Slide Down"
+msgstr ""
+
+#: views/meta_panel.php:161 views/shortcodes/default/popups/blog.php:34
+#: views/shortcodes/default/popups/pricing_tables.php:163
+msgid "Slide Up"
+msgstr ""
+
+#: views/meta_panel.php:162 views/shortcodes/default/popups/blog.php:35
+#: views/shortcodes/default/popups/pricing_tables.php:164
+msgid "Slide Up 2x"
+msgstr ""
+
+#: views/meta_panel.php:163 views/shortcodes/default/popups/blog.php:36
+#: views/shortcodes/default/popups/pricing_tables.php:165
+msgid "Extra Radius"
+msgstr ""
+
+#: views/meta_panel.php:168
+msgid "Column Appearing Effect"
+msgstr ""
+
+#: views/meta_panel.php:169
+msgid "Layout constructor"
+msgstr ""
+
+#: views/meta_panel.php:183 views/meta_panel.php:184
+msgid "Column Left Indent"
+msgstr ""
+
+#: views/meta_panel.php:197 views/meta_panel.php:198
+msgid "Column Right Indent"
+msgstr ""
+
+#: views/meta_panel.php:218
+msgid "Row content displaying"
+msgstr ""
+
+#: views/meta_panel.php:222
+msgid "Below content matching its layout"
+msgstr ""
+
+#: views/meta_panel.php:223
+msgid "Before main content with separate layout options"
+msgstr ""
+
+#: views/meta_panel.php:224
+msgid "Below main content with separate layout options"
+msgstr ""
+
+#: views/meta_panel.php:269
+msgid "Padding top"
+msgstr ""
+
+#: views/meta_panel.php:278
+msgid "Padding bottom"
+msgstr ""
+
+#: views/meta_panel.php:287
+msgid "Margin top"
+msgstr ""
+
+#: views/meta_panel.php:296
+msgid "Margin bottom"
+msgstr ""
+
+#: views/meta_panel.php:306
+msgid "Content Align"
+msgstr ""
+
+#: views/meta_panel.php:326
+msgid "Custom css class"
+msgstr ""
+
+#: views/meta_panel.php:336
+msgid "Row Background Type"
+msgstr ""
+
+#: views/meta_panel.php:340 views/shortcodes/default/popups/blog.php:26
+#: views/shortcodes/default/popups/blog.php:179
+#: views/shortcodes/default/popups/blog.php:199
+#: views/shortcodes/default/popups/image.php:27
+#: views/shortcodes/default/popups/testimonials.php:96
+#: views/shortcodes/diplomat/popups/menu.php:26
+msgid "None"
+msgstr ""
+
+#: views/meta_panel.php:341
+msgid "Default Theme Color"
+msgstr ""
+
+#: views/meta_panel.php:342
+msgid "Custom"
+msgstr ""
+
+#: views/meta_panel.php:354
+msgid "Custom Background Type"
+msgstr ""
+
+#: views/meta_panel.php:358 views/shortcodes/default/popups/title.php:174
+msgid "Color"
+msgstr ""
+
+#: views/meta_panel.php:359 views/shortcodes/default/popups/google_map.php:43
+msgid "Image"
+msgstr ""
+
+#: views/meta_panel.php:369 views/shortcodes/default/popups/button.php:106
+#: views/shortcodes/default/popups/chart.php:146
+#: views/shortcodes/default/popups/services.php:141
+#: views/shortcodes/diplomat/popups/featured-boxes.php:182
+#: views/shortcodes/diplomat/popups/featured-boxes.php:367
+#: views/shortcodes/diplomat/popups/featured-boxes.php:552
+msgid "Background Color"
+msgstr ""
+
+#: views/meta_panel.php:385
+msgid "Background Image"
+msgstr ""
+
+#: views/shortcodes/default/blog.php:228
+#: views/shortcodes/diplomat/imggallery.php:180
+msgid "Load More"
+msgstr ""
+
+#: views/shortcodes/default/our_contacts.php:6
+msgid "Call:"
+msgstr ""
+
+#: views/shortcodes/default/our_contacts.php:7
+msgid "E-mail:"
+msgstr ""
+
+#: views/shortcodes/default/our_contacts.php:19
+msgid "Closed"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:9
+#: views/shortcodes/default/popups/dropcap.php:9
+#: views/shortcodes/default/popups/services.php:12
+#: views/shortcodes/default/popups/services.php:39
+#: views/shortcodes/default/popups/services.php:40
+#: views/shortcodes/default/popups/services.php:41
+#: views/shortcodes/default/popups/services.php:42
+#: views/shortcodes/default/popups/services.php:43
+#: views/shortcodes/default/popups/services.php:44
+#: views/shortcodes/default/popups/services.php:45
+#: views/shortcodes/default/popups/services.php:46
+#: views/shortcodes/default/popups/services.php:47
+#: views/shortcodes/default/popups/services.php:48
+#: views/shortcodes/default/popups/services.php:49
+#: views/shortcodes/default/popups/services.php:50
+#: views/shortcodes/default/popups/services.php:51
+#: views/shortcodes/default/popups/services.php:52
+#: views/shortcodes/default/popups/services.php:53
+#: views/shortcodes/default/popups/services.php:54
+#: views/shortcodes/default/popups/services.php:55
+#: views/shortcodes/default/popups/services.php:56
+#: views/shortcodes/default/popups/services.php:57
+#: views/shortcodes/default/popups/services.php:58
+#: views/shortcodes/default/popups/services.php:59
+#: views/shortcodes/default/popups/services.php:60
+#: views/shortcodes/default/popups/services.php:61
+#: views/shortcodes/default/popups/services.php:62
+#: views/shortcodes/default/popups/services.php:63
+#: views/shortcodes/default/popups/services.php:64
+#: views/shortcodes/default/popups/services.php:65
+#: views/shortcodes/default/popups/services.php:66
+#: views/shortcodes/default/popups/services.php:67
+#: views/shortcodes/default/popups/services.php:68
+#: views/shortcodes/default/popups/services.php:69
+#: views/shortcodes/default/popups/services.php:70
+#: views/shortcodes/default/popups/services.php:71
+#: views/shortcodes/default/popups/services.php:72
+#: views/shortcodes/default/popups/services.php:73
+#: views/shortcodes/default/popups/services.php:74
+#: views/shortcodes/default/popups/services.php:75
+#: views/shortcodes/default/popups/services.php:76
+#: views/shortcodes/default/popups/services.php:77
+#: views/shortcodes/default/popups/services.php:78
+#: views/shortcodes/diplomat/popups/menu.php:27
+#: views/shortcodes/diplomat/popups/menu.php:28
+#: views/shortcodes/diplomat/popups/menu.php:29
+#: views/shortcodes/diplomat/popups/menu.php:30
+#: views/shortcodes/diplomat/popups/menu.php:31
+#: views/shortcodes/diplomat/popups/menu.php:32
+#: views/shortcodes/diplomat/popups/menu.php:33
+#: views/shortcodes/diplomat/popups/menu.php:34
+#: views/shortcodes/diplomat/popups/menu.php:35
+#: views/shortcodes/diplomat/popups/menu.php:36
+#: views/shortcodes/diplomat/popups/menu.php:37
+#: views/shortcodes/diplomat/popups/menu.php:38
+#: views/shortcodes/diplomat/popups/menu.php:39
+#: views/shortcodes/diplomat/popups/menu.php:40
+#: views/shortcodes/diplomat/popups/menu.php:41
+#: views/shortcodes/diplomat/popups/menu.php:42
+#: views/shortcodes/diplomat/popups/menu.php:43
+#: views/shortcodes/diplomat/popups/menu.php:44
+#: views/shortcodes/diplomat/popups/menu.php:45
+#: views/shortcodes/diplomat/popups/menu.php:46
+#: views/shortcodes/diplomat/popups/menu.php:47
+#: views/shortcodes/diplomat/popups/menu.php:48
+#: views/shortcodes/diplomat/popups/menu.php:49
+#: views/shortcodes/diplomat/popups/menu.php:50
+#: views/shortcodes/diplomat/popups/menu.php:51
+#: views/shortcodes/diplomat/popups/menu.php:52
+#: views/shortcodes/diplomat/popups/menu.php:53
+#: views/shortcodes/diplomat/popups/menu.php:54
+#: views/shortcodes/diplomat/popups/menu.php:55
+#: views/shortcodes/diplomat/popups/menu.php:56
+#: views/shortcodes/diplomat/popups/menu.php:57
+#: views/shortcodes/diplomat/popups/menu.php:58
+#: views/shortcodes/diplomat/popups/menu.php:59
+#: views/shortcodes/diplomat/popups/menu.php:60
+#: views/shortcodes/diplomat/popups/menu.php:61
+#: views/shortcodes/diplomat/popups/menu.php:62
+#: views/shortcodes/diplomat/popups/menu.php:63
+#: views/shortcodes/diplomat/popups/menu.php:64
+msgid "Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:13
+msgid "Accordion"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:14
+msgid "Toggle"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:28
+#: views/shortcodes/default/popups/accordion.php:59
+#: views/shortcodes/default/popups/services.php:83
+#: views/shortcodes/default/popups/services.php:209
+#: views/shortcodes/default/popups/socialicons.php:41
+#: views/shortcodes/default/popups/socialicons.php:87
+#: views/shortcodes/default/popups/tabs.php:9
+#: views/shortcodes/default/popups/tabs.php:41
+#: views/shortcodes/diplomat/popups/menu.php:8
+#: views/shortcodes/diplomat/popups/menu.php:143
+msgid "Add item"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:45
+#: views/shortcodes/default/popups/chart.php:32
+#: views/shortcodes/default/popups/services.php:182
+#: views/shortcodes/default/popups/testimonials.php:99
+#: views/shortcodes/diplomat/popups/featured-boxes.php:72
+#: views/shortcodes/diplomat/popups/featured-boxes.php:257
+#: views/shortcodes/diplomat/popups/featured-boxes.php:442
+msgid "Title"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:46
+#: views/shortcodes/default/popups/list.php:167
+#: views/shortcodes/default/popups/services.php:198
+#: views/shortcodes/default/popups/socialicons.php:77
+#: views/shortcodes/default/popups/tabs.php:28
+#: views/shortcodes/diplomat/popups/menu.php:87
+msgid "Remove"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:51
+#: views/shortcodes/default/popups/services.php:193
+#: views/shortcodes/default/popups/tabs.php:33
+msgid "Content"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:10
+#: views/shortcodes/default/popups/highlight.php:9
+#: views/shortcodes/default/popups/tooltip.php:20
+msgid "Enter Text"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:22
+#: views/shortcodes/default/popups/divider.php:8
+msgid "Select Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:26
+msgid "Error"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:27
+msgid "Success"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:28
+msgid "Info"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:29
+msgid "Notice"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:30
+msgid "Transparent"
+msgstr ""
+
+#: views/shortcodes/default/popups/blockquote.php:9
+msgid "Enter text"
+msgstr ""
+
+#: views/shortcodes/default/popups/blockquote.php:23
+#: views/shortcodes/default/popups/testimonials.php:98
+msgid "Author"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:8
+msgid "Blog Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:13
+msgid "Choose necessary layout for displaying posts."
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:22
+msgid "Effect for Appearing Post"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:29
+#: views/shortcodes/default/popups/pricing_tables.php:158
+msgid "Opacity 2x Run"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:30
+#: views/shortcodes/default/popups/pricing_tables.php:159
+msgid "Scale"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:38
+#: views/shortcodes/default/popups/pricing_tables.php:167
+msgid "Effect for Appearing Post."
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:48
+#: views/shortcodes/diplomat/popups/imggallery.php:97
+#: views/shortcodes/tmm_events_calendar/popups/tmm_events_list.php:84
+msgid "Category"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:64
+msgid "Tag"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:80
+#: views/shortcodes/diplomat/popups/imggallery.php:46
+msgid "Layout"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:84
+msgid "Fullwidth"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:85
+#: views/shortcodes/diplomat/popups/imggallery.php:50
+msgid "2 Columns"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:86
+#: views/shortcodes/diplomat/popups/imggallery.php:51
+msgid "3 Columns"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:87
+#: views/shortcodes/diplomat/popups/imggallery.php:52
+msgid "4 Columns"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:101
+msgid "Order By"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:116
+#: views/shortcodes/default/popups/testimonials.php:75
+msgid "Order"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:120
+#: views/shortcodes/default/popups/testimonials.php:80
+msgid "DESC"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:121
+#: views/shortcodes/default/popups/testimonials.php:79
+msgid "ASC"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:133
+msgid "Posts Per Page"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:147
+msgid "Posts Per Load"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:161
+msgid "Posts"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:165
+msgid "Example: 56,73,119. It has the most hight priority!"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:175
+msgid "Exclude Posts"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:180
+msgid "Posts With Featured Image"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:181
+msgid "Posts Without Featured Image"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:184
+#: views/shortcodes/default/popups/blog.php:206
+msgid "Choose post formats that will not be included in current query."
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:194
+msgid "Exclude Post Formats"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:200
+msgid "Gallery Post"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:201
+msgid "Quote Post"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:202
+msgid "Video Post"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:203
+msgid "Audio Post"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:216
+msgid "Title Symbols Count"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:220
+msgid "Truncate post titles depending on symbols number you want."
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:229
+msgid "Show / Hide Post Excerpt"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:233
+msgid "If checked, post excerpts will be shown according to layout."
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:242
+msgid "Excerpt Symbols Count"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:246
+msgid "Truncate excerpt depending on symbols number you want."
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:255
+msgid "Show/Hide Pagination"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:259
+msgid "Enable Pagination"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:269
+#: views/shortcodes/default/popups/blog.php:273
+msgid "Show/Hide Border Bottom"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:283
+msgid "Load Posts By Scrolling"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:297
+msgid "Show/Hide Tags"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:311
+msgid "Show/Hide Author"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:8
+msgid "Buttons Text"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:21
+msgid "URL"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:34
+#: views/shortcodes/default/popups/image.php:46
+msgid "Size"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:49
+msgid "Button type"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:74
+#: views/shortcodes/default/popups/services.php:128
+msgid "Text Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:90
+msgid "Mouseover Text Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:117
+msgid "Transparent Background Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:134
+#: views/shortcodes/diplomat/popups/featured-boxes.php:198
+#: views/shortcodes/diplomat/popups/featured-boxes.php:383
+#: views/shortcodes/diplomat/popups/featured-boxes.php:568
+msgid "Mouseover Background Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:145
+msgid "Transparent Mouseover Background Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:162
+msgid "Border Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:173
+msgid "Transparent Border Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:190
+msgid "Mouseover Border Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:203
+msgid "Transparent Mouseover Border Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:9
+msgid "Chart Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:13
+msgid "Pie Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:14
+msgid "Bar Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:15
+msgid "Column Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:16
+msgid "Geochart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:17
+msgid "Line Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:18
+msgid "Area Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:19
+msgid "Combo Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:46
+msgid "Chart Width"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:60
+msgid "Chart Height"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:74
+#: views/shortcodes/default/popups/title.php:124
+msgid "Font Family"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:96
+#: views/shortcodes/default/popups/title.php:52
+msgid "Font Size"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:111
+msgid "Chart Titles"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:115
+#: views/shortcodes/default/popups/chart.php:132
+msgid "Example:"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:128
+msgid "Chart Data"
+msgstr ""
+
+#: views/shortcodes/default/popups/divider.php:12
+msgid "Solid"
+msgstr ""
+
+#: views/shortcodes/default/popups/divider.php:13
+msgid "Dashed Type 1"
+msgstr ""
+
+#: views/shortcodes/default/popups/divider.php:14
+msgid "Dashed Type 2"
+msgstr ""
+
+#: views/shortcodes/default/popups/dropcap.php:17
+msgid "Select type of you dropcap"
+msgstr ""
+
+#: views/shortcodes/default/popups/dropcap.php:22
+msgid "Enter Symbol"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:9
+#: views/shortcodes/default/popups/tmm_video.php:36
+msgid "Height"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:24
+#: views/shortcodes/default/popups/tmm_video.php:22
+msgid "Width"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:38
+msgid "Mode"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:42
+msgid "Map"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:56
+msgid "Location mode"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:60
+#: views/shortcodes/default/popups/google_map.php:105
+msgid "Address"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:61
+msgid "Coordinates"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:75
+msgid "Marker Latitude"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:79
+#: views/shortcodes/default/popups/google_map.php:95
+msgid ""
+"Point on which the viewport will be centered. If not given and no markers "
+"are defined the viewport defaults to world view. In address Location mode it "
+"is calculated automatically!"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:91
+msgid "Marker Longitude"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:126
+msgid "Zoom"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:131
+msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:141
+msgid "Enable Scrollwheel"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:145
+msgid "Set to false to disable zooming with your mouses scrollwheel."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:154
+msgid "Maptype"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:158
+msgid "ROADMAP"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:159
+msgid "SATELLITE"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:160
+msgid "HYBRID"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:161
+msgid "TERRAIN"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:175
+msgid "Enable Marker"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:179
+msgid "Set to false to disable display a marker in the viewport."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:188
+msgid "Enable Popup"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:192
+msgid ""
+"If true the info window for this marker will be shown when the map finished "
+"loading. If html is empty this option will be ignored."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:202
+msgid "Marker is draggable"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:206
+msgid "Set marker draggable"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:215
+msgid "Html Content"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:14
+msgid "Rows count"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:29
+msgid "Columns count"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:46
+msgid "Show Row Number"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:52
+msgid "Yes"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:58
+msgid "No"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:74
+msgid "string"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:75
+msgid "number"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:91
+msgid "Table headers"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:121
+msgid "Table data"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:8
+msgid "Image URL"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:23
+msgid "Align"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:28
+msgid "Left"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:29
+msgid "Right"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:30
+msgid "Center"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:50
+msgid "width*height. Fore example: 500*300. Empty field means full size"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:62
+msgid "Image Alt"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:76
+msgid "Top Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:90
+msgid "Right Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:104
+msgid "Bottom Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:118
+msgid "Left Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:135
+msgid "Action"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:139
+msgid "No link on image"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:140
+msgid "Open link"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:141
+msgid "Open Image in lightbox"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:153
+msgid "Image Action Link"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:166
+msgid "Link Target"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:170
+msgid "Self"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:171
+msgid "Blank"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:183
+msgid "Link Title"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:97
+msgid "List Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:103
+msgid "Unordered"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:109
+msgid "Ordered"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:121
+msgid "List Styles"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:122
+#: views/shortcodes/default/popups/list.php:177
+msgid "Add list item"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:9
+msgid "Enter Address"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:20
+msgid "Enter Phone"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:31
+msgid "Enter Email"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:42
+msgid "Working Days Info"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:46
+msgid "Put your working days info here."
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:52
+msgid "Monday"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:53
+msgid "Tuesday"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:54
+msgid "Wednesday"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:55
+msgid "Thursday"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:56
+msgid "Friday"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:57
+msgid "Saturday"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:58
+msgid "Sunday"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:62
+msgid "Closed Days"
+msgstr ""
+
+#: views/shortcodes/default/popups/our_contacts.php:68
+msgid "Hold the CTRL key and click the items in a list to choose them"
+msgstr ""
+
+#: views/shortcodes/default/popups/pricing_tables.php:112
+msgid "Table Count"
+msgstr ""
+
+#: views/shortcodes/default/popups/pricing_tables.php:136
+msgid "Row Count"
+msgstr ""
+
+#: views/shortcodes/default/popups/pricing_tables.php:150
+msgid "Effect for Appearing Table"
+msgstr ""
+
+#: views/shortcodes/default/popups/pricing_tables.php:177
+msgid "Starter Package"
+msgstr ""
+
+#: views/shortcodes/default/popups/pricing_tables.php:177
+msgid "$19.95"
+msgstr ""
+
+#: views/shortcodes/default/popups/pricing_tables.php:177
+msgid "per month"
+msgstr ""
+
+#: views/shortcodes/default/popups/pricing_tables.php:177
+msgid "Get Started"
+msgstr ""
+
+#: views/shortcodes/default/popups/pricing_tables.php:228
+msgid "Enter text here"
+msgstr ""
+
+#: views/shortcodes/default/popups/pricing_tables.php:233
+msgid "Button Text"
+msgstr ""
+
+#: views/shortcodes/default/popups/pricing_tables.php:235
+msgid "Button Link"
+msgstr ""
+
 #: views/shortcodes/default/popups/pricing_tables.php:237
 #: views/shortcodes/default/popups/pricing_tables.php:239
 msgid "Is Featured"
 msgstr ""
 
-#. Text in echo
-#: views/shortcodes/default/popups/clients.php:25
+#: views/shortcodes/default/popups/services.php:18
+msgid "Normal"
+msgstr ""
+
+#: views/shortcodes/default/popups/services.php:24
+msgid "Colorized"
+msgstr ""
+
+#: views/shortcodes/default/popups/services.php:82
+msgid "Blocks"
+msgstr ""
+
+#: views/shortcodes/default/popups/services.php:155
+msgid "Text Hover Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/services.php:168
+msgid "Background Hover Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/services.php:185
+msgid "Link"
+msgstr ""
+
+#: views/shortcodes/default/popups/services.php:189
+msgid "Hover Title"
+msgstr ""
+
+#: views/shortcodes/default/popups/services.php:194
+msgid "Hover Content"
+msgstr ""
+
+#: views/shortcodes/default/popups/socialicons.php:72
+msgid "http://"
+msgstr ""
+
 #: views/shortcodes/default/popups/tabs.php:7
 msgid "Items"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/clients.php:5
-msgid "Items Per Slide"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/slider.php:94
-msgid "Layerslider plugins groups"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-#: views/shortcodes/default/popups/staff.php:25
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "Layout"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:152
-msgid "Layout constructor"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Left"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Left Indent (px)"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Letter spacing (px)"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Line Chart"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/engorgio/popups/services.php:170
-msgid "Link"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:163
-msgid "Link Target"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:204
-msgid "Link Title"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/tmm_audio.php:20
-msgid "Link to Audio"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/list.php:121
-msgid "List Styles"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/list.php:92
-msgid "List Type"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-msgid "Load Posts By Scrolling"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-msgid "Load Posts With Animation"
-msgstr ""
-
-#. Text in echo
-#: classes/content_composer.php:90
-msgid "Loading ..."
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Location mode"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Map"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Maptype"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Margin Bottom (px)"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Marker Latitude"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Marker Longitude"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Marker is draggable"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/icon.php:86
-#: views/shortcodes/default/popups/icon.php:431
-msgid "Medical Icons"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "Meta Data"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Mode"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/engorgio/masonry.php:339
-msgid "More"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/button.php:166
-msgid "Mouseover Background Color"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/button.php:166
-msgid "Mouseover Border Color"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/button.php:166
-msgid "Mouseover Text Color"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/icon.php:86
-#: views/shortcodes/default/popups/icon.php:353
-msgid "New Icons"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_table.php:41
-#: views/meta_panel.php:234
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "No"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:152
-msgid "No effects"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "No link on image"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/slider.php:113
-msgid "No one Layerslider group exists"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/slider.php:53
-msgid "No one slider exists"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "No readmore button"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_recent_products.php:31
-#: views/shortcodes/default/popups/image.php:130
-#: views/shortcodes/default/popups/title.php:361
-#: views/meta_panel.php:281
-msgid "None"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/services.php:38
-#: views/shortcodes/default/popups/title.php:361
-msgid "Normal"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/alert.php:19
-msgid "Notice"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/tmm_audio.php:20
-msgid "Ogg"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-#: views/meta_panel.php:152
-#: views/meta_panel.php:393
-#: views/shortcodes/engorgio/popups/counter.php:102
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Opacity"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Opacity 2x Run"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Open Image in lightbox"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Open link"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/icon.php:71
-msgid "Optional Text"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "Order"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "Order By"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/list.php:92
-msgid "Ordered"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/tmm_audio.php:20
-msgid "Other"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:378
-msgid "Overlay"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Padding (px)"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:234
-msgid "Padding bottom"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:234
-msgid "Padding top"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/slider.php:19
-msgid "Page slider type"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:204
-msgid "Parallax Image (On / Off)"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:204
-msgid "Parallax Overlay (On / Off)"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/progressbar.php:56
-msgid "Percentage %"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-msgid "Pie Chart"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/slider.php:62
-msgid "Please, create accordion grid slider at first"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Point on which the viewport will be centered. If not given and no markers are defined the viewport defaults to world view. In address Location mode it is calculated automatically!"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "Posts"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-msgid "Posts Per Load"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "Posts Per Page"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/recent_posts.php:72
-msgid "Posts count"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "Posts per load"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "Posts per page"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_single_product.php:41
-msgid "Product SKU"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_recent_products.php:31
-#: views/shortcodes/woocommerce/popups/tmm_special_products.php:31
-msgid "Products Per Page"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/progressbar.php:19
-#: views/shortcodes/engorgio/popups/counter.php:32
-msgid "Progress bars"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/recent_projects.php:24
-msgid "Projects Per Page"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "ROADMAP"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "Read More Button"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/single_post.php:195
-msgid "Read more"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/progressbar.php:71
-#: views/shortcodes/engorgio/popups/slogan_slider.php:44
-#: views/shortcodes/default/popups/clients.php:57
-#: views/shortcodes/engorgio/popups/socialicons.php:78
-#: views/shortcodes/default/popups/accordion.php:46
-#: views/shortcodes/engorgio/popups/services.php:177
-#: views/shortcodes/default/popups/staff.php:67
-#: views/shortcodes/default/popups/list.php:167
-#: views/shortcodes/default/popups/tabs.php:28
-#: views/shortcodes/engorgio/popups/counter.php:86
-msgid "Remove"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Right"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Right Indent (px)"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:393
-msgid "Row Background Image Fullscreen"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:281
-msgid "Row Background Type"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/pricing_tables.php:176
-msgid "Row Count"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:234
-msgid "Row Full Width"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:185
-msgid "Row content displaying"
-msgstr ""
-
-#. Text in echo
-#: classes/content_composer.php:110
-msgid "Row editor"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_table.php:41
-msgid "Rows count"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "SATELLITE"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_special_products.php:31
-msgid "Sale Products"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Scale"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_recent_products.php:31
-msgid "Select Category"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "Select Post"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_single_product.php:41
-msgid "Select Product"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_special_products.php:31
-msgid "Select Products Type"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/alert.php:19
-#: views/shortcodes/default/popups/divider.php:5
-msgid "Select Type"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_special_products.php:31
-msgid "Select products type"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_single_product.php:41
-msgid "Select single product by title"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:163
-msgid "Self"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:393
-msgid "Set The Row Background Image Fullscreen"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Set marker draggable"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Set to false to disable display a marker in the viewport."
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Set to false to disable zooming with your mouses scrollwheel."
-msgstr ""
-
-#. Text in echo
-#: classes/content_composer.php:94
-msgid "Shortcode updated!"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/testimonials.php:76
+#: views/shortcodes/default/popups/testimonials.php:11
 msgid "Show"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/recent_posts.php:72
-msgid "Show \"Read more\" button"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-msgid "Show / Hide Facebook"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-msgid "Show / Hide Google+"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "Show / Hide Icons"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-msgid "Show / Hide Pinterest"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-msgid "Show / Hide Twitter"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "Show Pagination"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_table.php:41
-msgid "Show Row Number"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "Show categories"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/testimonials.php:76
-msgid "Show latest testimonial"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/testimonials.php:76
-msgid "Show photo"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/recent_posts.php:72
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "Show post metadata"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "Show post type media"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
-msgid "Show posts from selected category"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/testimonials.php:76
-msgid "Show random testimonial"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "Show readmore button"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/testimonials.php:76
+#: views/shortcodes/default/popups/testimonials.php:15
 msgid "Show selected testimonial"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Show with Slide Up Effect"
+#: views/shortcodes/default/popups/testimonials.php:16
+msgid "Show all testimonials"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "Show/Hide Categories"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/portfolio.php:87
-msgid "Show/Hide Icons"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/blog.php:110
-msgid "Show/Hide Meta Info"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/testimonials.php:76
-msgid "Show/Hide Photo"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-#: views/shortcodes/default/popups/button.php:60
-msgid "Size"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-#: views/meta_panel.php:152
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Slide Down"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-#: views/meta_panel.php:152
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Slide Left"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-#: views/meta_panel.php:152
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Slide Right"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-#: views/meta_panel.php:152
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Slide Up"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-#: views/meta_panel.php:152
-#: views/shortcodes/default/popups/pricing_tables.php:148
-msgid "Slide Up 2x"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
-msgid "SlideDown"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
-msgid "SlideLeft"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
-msgid "SlideRight"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
-msgid "SlideUp"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/slider.php:85
-msgid "Slider groups"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:5
-msgid "Slider type"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/engorgio/popups/masonry.php:80
-msgid "Social Share Buttons"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/divider.php:5
-msgid "Solid Long"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/divider.php:5
-msgid "Solid Short"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Split Title in Rows and Animate Each Row"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:373
-msgid "Split Title with the help \"^\" symbol"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/staff.php:44
-msgid "Staff"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/pricing_tables.php:176
-msgid "Starter Package"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/alert.php:19
-msgid "Success"
-msgstr ""
-
-#. Text in echo
-#: classes/content_composer.php:106
-msgid "Sure about column deleting?"
-msgstr ""
-
-#. Text in echo
-#: classes/content_composer.php:107
-msgid "Sure about row deleting?"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "TERRAIN"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/pricing_tables.php:176
-msgid "Table Count"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/google_table.php:125
-msgid "Table data"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/popups/google_table.php:93
-msgid "Table headers"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/recent_projects.php:24
-msgid "Template"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/testimonials.php:35
+#: views/shortcodes/default/popups/testimonials.php:38
 msgid "Testimonials"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/engorgio/popups/services.php:151
-#: views/shortcodes/default/popups/blockquote.php:20
-#: views/shortcodes/default/popups/button.php:166
-msgid "Text Color"
+#: views/shortcodes/default/popups/testimonials.php:53
+msgid "Count"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/icon.php:86
-#: views/shortcodes/default/popups/icon.php:379
-msgid "Text Editor Icons"
+#: views/shortcodes/default/popups/testimonials.php:57
+#: views/shortcodes/diplomat/imggallery.php:103
+msgid "All"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Text Transform Uppercase"
+#: views/shortcodes/default/popups/testimonials.php:92
+msgid "Order by"
 msgstr ""
 
-#. Text in function
-#: classes/content_composer.php:1
-msgid "ThemeMakers Layout Constructor"
+#: views/shortcodes/default/popups/testimonials.php:97
+msgid "ID"
 msgstr ""
 
-#. Text in echo
-#: classes/content_composer.php:93
-msgid "There is no options for shortcode!"
+#: views/shortcodes/default/popups/testimonials.php:100
+msgid "Name"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/staff.php:25
-msgid "Three Columns"
+#: views/shortcodes/default/popups/testimonials.php:101
+msgid "Date"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/chart.php:143
-#: views/shortcodes/default/popups/progressbar.php:56
-#: views/shortcodes/default/popups/accordion.php:45
-#: views/shortcodes/engorgio/popups/services.php:167
-#: views/shortcodes/default/popups/icon.php:86
-#: views/shortcodes/engorgio/popups/counter.php:70
-msgid "Title"
+#: views/shortcodes/default/popups/testimonials.php:102
+msgid "Modified"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Title Align"
+#: views/shortcodes/default/popups/testimonials.php:103
+msgid "Rand"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Title Heading"
+#: views/shortcodes/default/popups/testimonials.php:117
+msgid "Show photo"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
+#: views/shortcodes/default/popups/testimonials.php:121
+msgid "Show / Hide Photo"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:10
 msgid "Title Text"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
-msgid "Title Text 1"
+#: views/shortcodes/default/popups/title.php:25
+msgid "Title Heading"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
-msgid "Title Text 2"
+#: views/shortcodes/default/popups/title.php:67
+msgid "Letter spacing (px)"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
+#: views/shortcodes/default/popups/title.php:81
+msgid "Font weight"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:104
+msgid "Title Align"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:139
 msgid "Title type"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/accordion.php:6
-msgid "Toggle"
+#: views/shortcodes/default/popups/title.php:160
+msgid "Line Height (em)"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/button.php:60
-msgid "Top Indent"
+#: views/shortcodes/default/popups/title.php:191
+msgid "Text Transform Uppercase"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "Top Indent (px)"
+#: views/shortcodes/default/popups/tmm_audio.php:8
+msgid "Link to Audio"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/woocommerce/popups/tmm_special_products.php:31
-msgid "Top Rated"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:149
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
-#: views/shortcodes/default/popups/accordion.php:6
-#: views/shortcodes/engorgio/popups/services.php:38
-msgid "Type"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/icon.php:86
-#: views/shortcodes/default/popups/button.php:60
-msgid "URL"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/list.php:92
-msgid "Unordered"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/title.php:361
-msgid "Use Website General Color"
-msgstr ""
-
-#. Text in function
-#: views/meta_panel.php:393
-msgid "Video"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/icon.php:86
-#: views/shortcodes/default/popups/icon.php:405
-msgid "Video Player Icons"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/icon.php:86
-msgid "View icon group"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/tmm_audio.php:20
-msgid "Wav"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/icon.php:86
-#: views/shortcodes/default/popups/icon.php:366
-msgid "Web Application Icons"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/tmm_video.php:33
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Width"
-msgstr ""
-
-#. Text in echo
-#: views/shortcodes/default/single_post.php:189
-msgid "With"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/google_table.php:41
-#: views/meta_panel.php:234
-#: views/shortcodes/default/popups/single_post.php:161
-msgid "Yes"
-msgstr ""
-
-#. Text in function
-#: views/shortcodes/default/popups/tmm_video.php:33
+#: views/shortcodes/default/popups/tmm_video.php:8
 msgid "Youtube or Vimeo link"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Zoom"
+#: views/shortcodes/default/popups/tmm_video.php:12
+msgid ""
+"Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg  http://vimeo."
+"com/22439234 or upload self hosted video"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/google_map.php:225
-msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
+#: views/shortcodes/default/popups/tooltip.php:9
+msgid "Enter Tooltip Text"
 msgstr ""
 
-#. Text in function
-#: views/meta_panel.php:353
-msgid "fixed"
+#: views/shortcodes/diplomat/contact_form.php:81
+msgid "Other"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:70
-msgid "from"
+#: views/shortcodes/diplomat/contact_form.php:184
+msgid "City "
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/engorgio/popups/socialicons.php:64
-msgid "http://"
+#: views/shortcodes/diplomat/contact_form.php:205
+msgid "State"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/google_table.php:74
-msgid "number"
+#: views/shortcodes/diplomat/contact_form.php:211
+msgid "Zip Code "
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/pricing_tables.php:176
-msgid "per month"
+#: views/shortcodes/diplomat/popups/archives.php:6
+msgid "Latest Posts"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/contact_form.php:88
-msgid "required"
+#: views/shortcodes/diplomat/popups/archives.php:7
+msgid "Archives by Month"
 msgstr ""
 
-#. Text in function
-#: views/meta_panel.php:353
-msgid "scroll"
+#: views/shortcodes/diplomat/popups/archives.php:8
+msgid "Archives by Year"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/google_table.php:74
-msgid "string"
+#: views/shortcodes/diplomat/popups/archives.php:9
+msgid "Archives by Day"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:70
-msgid "to"
+#: views/shortcodes/diplomat/popups/archives.php:10
+msgid "Archives by Category"
 msgstr ""
 
-#. Text in function
-#: views/shortcodes/default/popups/image.php:130
-msgid "width*height. Fore example: 500*300. Empty field means full size"
+#: views/shortcodes/diplomat/popups/archives.php:14
+msgid "Archives"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/archives.php:19
+msgid "Shows archives according to selected option."
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/archives.php:28
+msgid "Count of Items"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/archives.php:32
+msgid "Leave field empty for displaying all items"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/contact_form.php:8
+msgid "Choose Contact Form"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/featured-boxes.php:30
+msgid "First Box:"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/featured-boxes.php:37
+#: views/shortcodes/diplomat/popups/featured-boxes.php:221
+#: views/shortcodes/diplomat/popups/featured-boxes.php:405
+msgid "Icon"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/featured-boxes.php:54
+#: views/shortcodes/diplomat/popups/featured-boxes.php:239
+#: views/shortcodes/diplomat/popups/featured-boxes.php:423
+msgid "Page Links"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/featured-boxes.php:87
+#: views/shortcodes/diplomat/popups/featured-boxes.php:272
+#: views/shortcodes/diplomat/popups/featured-boxes.php:457
+#: views/shortcodes/diplomat/popups/menu.php:109
+msgid "Link URL"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/featured-boxes.php:103
+#: views/shortcodes/diplomat/popups/featured-boxes.php:288
+#: views/shortcodes/diplomat/popups/featured-boxes.php:473
+msgid "Description"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/featured-boxes.php:118
+#: views/shortcodes/diplomat/popups/featured-boxes.php:303
+#: views/shortcodes/diplomat/popups/featured-boxes.php:488
+msgid "Icon Color"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/featured-boxes.php:134
+#: views/shortcodes/diplomat/popups/featured-boxes.php:319
+#: views/shortcodes/diplomat/popups/featured-boxes.php:504
+msgid "Title Color"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/featured-boxes.php:150
+#: views/shortcodes/diplomat/popups/featured-boxes.php:335
+#: views/shortcodes/diplomat/popups/featured-boxes.php:520
+msgid "Description Color"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/featured-boxes.php:166
+#: views/shortcodes/diplomat/popups/featured-boxes.php:351
+#: views/shortcodes/diplomat/popups/featured-boxes.php:536
+msgid "Top Border Color"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/featured-boxes.php:213
+msgid "Second Box:"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/featured-boxes.php:397
+msgid "Third Box:"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/imggallery.php:25
+msgid "Albums"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/imggallery.php:30
+msgid "Gallery Type"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/imggallery.php:67
+#: views/shortcodes/diplomat/popups/imggallery.php:71
+msgid "Posts per page"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/imggallery.php:82
+#: views/shortcodes/diplomat/popups/imggallery.php:86
+msgid "Posts per load"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/imggallery.php:113
+msgid "Enable Gallery Filter"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/imggallery.php:117
+msgid "Enable Folio Filter"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/imggallery.php:124
+msgid "Show categories"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/imggallery.php:128
+msgid "Show/Hide Categories"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/menu.php:6
+msgid "Menu Items"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/menu.php:95
+msgid "Link Text"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/menu.php:122
+msgid " Icon Type"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/slider.php:22
+msgid "Page slider type"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/slider.php:42
+msgid "Slider groups"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/slider.php:53
+msgid "No one slider exists"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/slider.php:68
+msgid "Grid Slider groups"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/slider.php:77
+msgid "Please, create accordion grid slider at first"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/slider.php:102
+msgid "Layerslider plugins groups"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/slider.php:105
+msgid "Choose sliders group"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/slider.php:113
+msgid "No one Layerslider group exists"
+msgstr ""
+
+#: views/shortcodes/tmm_events_calendar/popups/tmm_events_calendar.php:8
+msgid "Display event featured image in the tooltip"
+msgstr ""
+
+#: views/shortcodes/tmm_events_calendar/popups/tmm_events_calendar.php:21
+msgid "Display event time in the tooltip"
+msgstr ""
+
+#: views/shortcodes/tmm_events_calendar/popups/tmm_events_calendar.php:34
+msgid "Display event place in the tooltip"
+msgstr ""
+
+#: views/shortcodes/tmm_events_calendar/popups/tmm_events_calendar.php:47
+msgid "Display event description in the tooltip"
+msgstr ""
+
+#: views/shortcodes/tmm_events_calendar/popups/tmm_events_calendar.php:60
+msgid "Excerpt symbols count in the tooltip description"
+msgstr ""
+
+#: views/shortcodes/tmm_events_calendar/popups/tmm_events_list.php:8
+msgid "Count of events per page"
+msgstr ""
+
+#: views/shortcodes/tmm_events_calendar/popups/tmm_events_list.php:21
+msgid "Sorting"
+msgstr ""
+
+#: views/shortcodes/tmm_events_calendar/popups/tmm_events_list.php:35
+msgid "Months amount in events period selector"
+msgstr ""
+
+#: views/shortcodes/tmm_events_calendar/popups/tmm_events_list.php:53
+msgid "Months amount, that will be displayed in events period selector"
+msgstr ""
+
+#: views/shortcodes/tmm_events_calendar/popups/tmm_events_list.php:60
+msgid "Display events period selector"
 msgstr ""

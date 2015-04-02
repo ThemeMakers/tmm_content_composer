@@ -16,7 +16,7 @@
 			'id' => 'archives_type',
 			'options' => $archives_array,
 			'default_value' => TMM_Content_Composer::set_default_value('archives_type', 'latest_posts'),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('Shows archives according to selected option.', TMM_CC_TEXTDOMAIN)
 		));
 	?>
 	</div>

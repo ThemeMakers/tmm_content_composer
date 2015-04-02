@@ -10,7 +10,7 @@
             'id' => 'blog_type',
             'options' => TMM_Content_Composer::get_blog_type(),
             'default_value' => TMM_Content_Composer::set_default_value('blog_type', 'blog-classic'),
-            'description' => __('', TMM_CC_TEXTDOMAIN)
+            'description' => __('Choose necessary layout for displaying posts.', TMM_CC_TEXTDOMAIN)
         ));
         ?>
     </div>
@@ -177,11 +177,11 @@
 			'id' => 'exclude_posts',
 			'options' => array(
 				'none' => __('None', TMM_CC_TEXTDOMAIN),
-				'post-with-image' => __('Post with Image', TMM_CC_TEXTDOMAIN),
-				'post-without-image' => __('Post Without Image', TMM_CC_TEXTDOMAIN),
+				'post-with-image' => __('Posts With Featured Image', TMM_CC_TEXTDOMAIN),
+				'post-without-image' => __('Posts Without Featured Image', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_types', 'none'),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('Choose post formats that will not be included in current query.', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
@@ -203,7 +203,7 @@
 				'post-format-audio' => __('Audio Post', TMM_CC_TEXTDOMAIN)
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_formats', 'none'),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('Choose post formats that will not be included in current query.', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
@@ -217,7 +217,7 @@
 			'shortcode_field' => 'title_symbols',
 			'id' => 'posts',
 			'default_value' => TMM_Content_Composer::set_default_value('title_symbols', '25'),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('Truncate post titles depending on symbols number you want.', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 	</div><!--/ .ona-half-->
@@ -230,7 +230,7 @@
 			'shortcode_field' => 'show_excerpt',
 			'id' => 'show_excerpt',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_excerpt', 1),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('If checked, post excerpts will be shown according to layout.', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 	</div><!--/ .ona-half-->
@@ -243,7 +243,7 @@
 			'shortcode_field' => 'excerpt_symbols',
 			'id' => 'excerpt_symbols',
 			'default_value' => TMM_Content_Composer::set_default_value('excerpt_symbols', '110'),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('Truncate excerpt depending on symbols number you want.', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 	</div><!--/ .ona-half-->
