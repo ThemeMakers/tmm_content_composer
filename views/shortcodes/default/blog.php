@@ -140,6 +140,11 @@ $_REQUEST['excerpt_symbols'] = $excerpt_symbols;
 $_REQUEST['show_tags'] = $show_tags;
 $_REQUEST['show_author'] = $show_author;
 
+$_REQUEST['image_opacity'] = (isset($image_opacity) && $image_opacity!='0.3') ? $image_opacity : '';
+$_REQUEST['image_background'] = (isset($image_background) && $image_background!='#272729') ? $image_background : '';
+
+
+
  ?>
 
 	<div class="row <?php echo (!empty($posts_list)) ? $posts_list : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?> <?php echo (!empty($data_titlesymbols)) ? $data_titlesymbols : ''; ?> <?php echo (!empty($data_exerptsymbols)) ? $data_exerptsymbols : ''; ?> <?php echo (!empty($data_showexcerpt)) ? $data_showexcerpt : ''; ?> >
