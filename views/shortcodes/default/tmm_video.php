@@ -27,7 +27,7 @@ $image_size = "1036*576";
 			}
 			?>
 
-			<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" type="text/html" width="<?php echo $width ?>" height="<?php echo (!isset($width) || empty($width)) ? '' : $height ?>" src="http://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent"></iframe>
+			<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" width="<?php echo $width ?>" height="<?php echo (!isset($width) || empty($width)) ? '' : $height ?>" src="http://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent&amp;rel=0&amp;controls=0&amp;showinfo=0"></iframe>
 			<?php
 
 			break;
