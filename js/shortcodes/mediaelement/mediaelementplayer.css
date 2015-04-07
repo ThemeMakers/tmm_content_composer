@@ -1,20 +1,29 @@
+.mejs-offscreen{
+    /* Accessibility: hide screen reader texts (and prefer "top" for RTL languages). */
+    position: absolute !important;
+    top: -10000px;
+    left: -10000px;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+}
+
 [class^="mejs-"],
 [class^="mejs-"] button {
     outline: none;
 }
 
 .mejs-container {
-    width: 100%;
 	position: relative;
-	background: transparent;
+	background: #000;
 	font-family: Helvetica, Arial;
 	text-align: left;
 	vertical-align: top;
-	text-indent: 0
+	text-indent: 0;
 }
 
 .me-plugin {
-	position: absolute
+	position: absolute;
 }
 
 .mejs-embed, .mejs-embed body {
@@ -23,11 +32,11 @@
 	margin: 0;
 	padding: 0;
 	background: #000;
-	overflow: hidden
+	overflow: hidden;
 }
 
 .mejs-fullscreen {
-	overflow: hidden !important
+	overflow: hidden !important;
 }
 
 .mejs-container-fullscreen {
@@ -37,12 +46,13 @@
 	right: 0;
 	bottom: 0;
 	overflow: hidden;
-	z-index: 1000
+	z-index: 1000;
 }
 
-.mejs-container-fullscreen .mejs-mediaelement, .mejs-container-fullscreen video {
+.mejs-container-fullscreen .mejs-mediaelement,
+.mejs-container-fullscreen video {
 	width: 100%;
-	height: 100%
+	height: 100%;
 }
 
 .mejs-clear {
@@ -60,7 +70,7 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%
+	height: 100%;
 }
 
 .mejs-poster {
@@ -69,29 +79,26 @@
 	left: 0;
 	background-size: contain;
 	background-position: 50% 50%;
-	background-repeat: no-repeat
+	background-repeat: no-repeat;
 }
 
 :root .mejs-poster img {
-	display: none
+	display: none;
 }
 
 .mejs-poster img {
 	padding: 0;
-	border: 0
+	border: 0;
 }
 
 .mejs-overlay {
-    width: 0;
-    height: 0;
-    overflow: hidden;
 	position: absolute;
 	top: 0;
-	left: 0
+	left: 0;
 }
 
 .mejs-overlay-play {
-	cursor: pointer
+	cursor: pointer;
 }
 
 .mejs-overlay-button {
@@ -108,11 +115,11 @@
 }
 
 .no-svg .mejs-overlay-button {
-	background-image: url(bigplay.png)
+	background-image: url(bigplay.png);
 }
 
 .mejs-overlay:hover .mejs-overlay-button {
-	background-position: 0 -50px
+	background-position: 0 -50px;
 }
 
 .mejs-overlay-loading {
@@ -129,24 +136,17 @@
 	background: -moz-linear-gradient(top, rgba(50, 50, 50, .9), rgba(0, 0, 0, .9));
 	background: -o-linear-gradient(top, rgba(50, 50, 50, .9), rgba(0, 0, 0, .9));
 	background: -ms-linear-gradient(top, rgba(50, 50, 50, .9), rgba(0, 0, 0, .9));
-	background: linear-gradient(rgba(50, 50, 50, .9), rgba(0, 0, 0, .9))
+	background: linear-gradient(rgba(50, 50, 50, .9), rgba(0, 0, 0, .9));
 }
 
 .mejs-overlay-loading span {
 	display: block;
 	width: 80px;
 	height: 80px;
-	background: url(loading.gif) 50% 50% no-repeat;
+	background: transparent url(loading.gif) 50% 50% no-repeat;
 }
 
-.mejs-offscreen {
-	position: absolute !important;
-	top: -10000px;
-	overflow: hidden;
-	width: 1px;
-	height: 1px
-}
-
+/* Start: CONTROL BAR */
 .mejs-container .mejs-controls {
 	position: absolute;
 	list-style-type: none;
@@ -156,7 +156,7 @@
 	left: 0;
 	background-color: #fff;
 	height: 45px;
-	width: 100%
+	width: 100%;
 }
 
 .mejs-container .mejs-controls div {
@@ -166,7 +166,7 @@
 	margin: 0 4px;
 	width: 30px;
 	height: 45px;
-	border: 0
+	border: 0;
 }
 
 .mejs-controls .mejs-button button {
@@ -183,7 +183,7 @@
 	width: 26px;
 	border: 0;
 	-webkit-transition: none;
-	transition: none
+	transition: none;
 }
 
 .mejs-controls .mejs-button button:after {
@@ -191,7 +191,7 @@
 	color: #262626;
 	font-size: 19px;
 	font-family: fontello;
-	line-height: 45px
+	line-height: 45px;
 }
 
 .mejs-container .mejs-controls .mejs-time {
@@ -205,7 +205,7 @@
 	text-align: center;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	box-sizing: border-box
+	box-sizing: border-box;
 }
 
 .mejs-container .mejs-controls .mejs-time span {
@@ -214,7 +214,7 @@
 	display: block;
 	float: left;
 	font-weight: 400;
-	font-family: Roboto, sans-serif
+	font-family: Roboto, sans-serif;
 }
 
 .mejs-controls .mejs-play button:after {
@@ -226,7 +226,7 @@
 }
 
 .mejs-controls .mejs-stop button {
-	background-position: -112px 0
+	background-position: -112px 0;
 }
 
 .mejs-controls .mejs-time-rail a, .mejs-controls .mejs-time-rail span {
@@ -235,7 +235,7 @@
 	width: 180px;
 	height: 10px;
 	border-radius: 0;
-	cursor: pointer
+	cursor: pointer;
 }
 
 .mejs-controls .mejs-time-rail span {
@@ -243,7 +243,7 @@
 	position: absolute;
 	width: 0;
 	height: 10px;
-	cursor: pointer
+	cursor: pointer;
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-total {
@@ -268,7 +268,7 @@
 	-moz-animation: buffering-stripes 2s linear infinite;
 	-ms-animation: buffering-stripes 2s linear infinite;
 	-o-animation: buffering-stripes 2s linear infinite;
-	animation: buffering-stripes 2s linear infinite
+	animation: buffering-stripes 2s linear infinite;
 }
 
 @-webkit-keyframes buffering-stripes {
@@ -332,7 +332,7 @@
 	background: #f85c37;
 	cursor: pointer;
 	top: -2px;
-	text-align: center
+	text-align: center;
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-float {
@@ -345,7 +345,7 @@
 	top: -36px;
 	margin-left: -25px;
 	text-align: center;
-	color: #111
+	color: #111;
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-float-current {
@@ -353,19 +353,19 @@
 	width: 48px;
 	display: block;
 	text-align: center;
-	left: 0
+	left: 0;
 }
 
 .mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float {
-	width: 48px
+	width: 48px;
 }
 
 .mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float-current {
-	width: 44px
+	width: 44px;
 }
 
 .mejs-long-video .mejs-controls .mejs-time-rail .mejs-time-float-corner {
-	left: 18px
+	left: 18px;
 }
 
 .mejs-controls .mejs-fullscreen-button button:after {
@@ -373,7 +373,7 @@
 }
 
 .mejs-controls .mejs-unfullscreen button:after {
-	content: '\e9f5'
+	content: '\e9f5';
 }
 
 .mejs-controls .mejs-mute button:after {
@@ -381,11 +381,11 @@
 }
 
 .mejs-controls .mejs-unmute button:after {
-	content: '\e89e'
+	content: '\e89e';
 }
 
 .mejs-controls .mejs-volume-button {
-	position: relative
+	position: relative;
 }
 
 .mejs-controls .mejs-volume-button .mejs-volume-slider {
@@ -398,7 +398,7 @@
 	left: 0;
 	z-index: 1;
 	position: absolute;
-	margin: 0
+	margin: 0;
 }
 
 .mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-total {
@@ -409,7 +409,7 @@
 	height: 100px;
 	background: #ddd;
 	background: rgba(255, 255, 255, .5);
-	margin: 0
+	margin: 0;
 }
 
 .mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-current {
@@ -420,7 +420,7 @@
 	height: 100px;
 	background: #ddd;
 	background: rgba(255, 255, 255, .9);
-	margin: 0
+	margin: 0;
 }
 
 .mejs-controls .mejs-volume-button .mejs-volume-slider .mejs-volume-handle {
@@ -435,13 +435,13 @@
 	-webkit-border-radius: 1px;
 	-moz-border-radius: 1px;
 	border-radius: 1px;
-	margin: 0
+	margin: 0;
 }
 
 .mejs-controls div.mejs-horizontal-volume-slider {
 	height: 21px;
 	width: 60px;
-	position: relative
+	position: relative;
 }
 
 .mejs-controls .mejs-horizontal-volume-slider {
@@ -450,7 +450,7 @@
 	position: relative;
 	display: block;
 	float: left;
-	vertical-align: middle
+	vertical-align: middle;
 }
 
 .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
@@ -462,7 +462,7 @@
 	margin: 0;
 	padding: 0;
 	font-size: 1px;
-	background-color: #fff
+	background-color: #fff;
 }
 
 .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
@@ -478,15 +478,15 @@
 }
 
 .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle {
-	display: none
+	display: none;
 }
 
 .mejs-controls .mejs-captions-button {
-	position: relative
+	position: relative;
 }
 
 .mejs-controls .mejs-captions-button button {
-	background-position: -48px 0
+	background-position: -48px 0;
 }
 
 .mejs-controls .mejs-captions-button .mejs-captions-selector {
@@ -503,7 +503,7 @@
 	overflow: hidden;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
-	border-radius: 0
+	border-radius: 0;
 }
 
 .mejs-controls .mejs-captions-button .mejs-captions-selector ul {
@@ -511,7 +511,7 @@
 	padding: 0;
 	display: block;
 	list-style-type: none !important;
-	overflow: hidden
+	overflow: hidden;
 }
 
 .mejs-controls .mejs-captions-button .mejs-captions-selector ul li {
@@ -520,13 +520,13 @@
 	list-style-type: none !important;
 	display: block;
 	color: #fff;
-	overflow: hidden
+	overflow: hidden;
 }
 
 .mejs-controls .mejs-captions-button .mejs-captions-selector ul li input {
 	clear: both;
 	float: left;
-	margin: 3px 3px 0 5px
+	margin: 3px 3px 0 5px;
 }
 
 .mejs-controls .mejs-captions-button .mejs-captions-selector ul li label {
@@ -535,12 +535,12 @@
 	padding: 4px 0 0;
 	line-height: 15px;
 	font-family: helvetica, arial;
-	font-size: 10px
+	font-size: 10px;
 }
 
 .mejs-controls .mejs-captions-button .mejs-captions-translations {
 	font-size: 10px;
-	margin: 0 0 5px
+	margin: 0 0 5px;
 }
 
 .mejs-chapters {
@@ -549,7 +549,7 @@
 	left: 0;
 	-xborder-right: solid 1px #fff;
 	width: 10000px;
-	z-index: 1
+	z-index: 1;
 }
 
 .mejs-chapters .mejs-chapter {
@@ -565,7 +565,7 @@
 	background: linear-gradient(rgba(50, 50, 50, .7), rgba(0, 0, 0, .7));
 	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#323232, endColorstr=#000000);
 	overflow: hidden;
-	border: 0
+	border: 0;
 }
 
 .mejs-chapters .mejs-chapter .mejs-chapter-block {
@@ -575,11 +575,11 @@
 	display: block;
 	border-right: solid 1px #333;
 	border-bottom: solid 1px #333;
-	cursor: pointer
+	cursor: pointer;
 }
 
 .mejs-chapters .mejs-chapter .mejs-chapter-block-last {
-	border-right: none
+	border-right: none;
 }
 
 .mejs-chapters .mejs-chapter .mejs-chapter-block:hover {
@@ -591,7 +591,7 @@
 	background: -o-linear-gradient(top, rgba(102, 102, 102, .7), rgba(50, 50, 50, .6));
 	background: -ms-linear-gradient(top, rgba(102, 102, 102, .7), rgba(50, 50, 50, .6));
 	background: linear-gradient(rgba(102, 102, 102, .7), rgba(50, 50, 50, .6));
-	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666, endColorstr=#323232)
+	filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, startColorstr=#666666, endColorstr=#323232);
 }
 
 .mejs-chapters .mejs-chapter .mejs-chapter-block .ch-title {
@@ -601,7 +601,7 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	margin: 0 0 3px;
-	line-height: 12px
+	line-height: 12px;
 }
 
 .mejs-chapters .mejs-chapter .mejs-chapter-block .ch-timespan {
@@ -610,7 +610,7 @@
 	margin: 3px 0 4px;
 	display: block;
 	white-space: nowrap;
-	text-overflow: ellipsis
+	text-overflow: ellipsis;
 }
 
 .mejs-captions-layer {
@@ -620,64 +620,64 @@
 	text-align: center;
 	line-height: 22px;
 	font-size: 12px;
-	color: #fff
+	color: #fff;
 }
 
 .mejs-captions-layer a {
 	color: #fff;
-	text-decoration: underline
+	text-decoration: underline;
 }
 
 .mejs-captions-layer[lang=ar] {
 	font-size: 20px;
-	font-weight: 400
+	font-weight: 400;
 }
 
 .mejs-captions-position {
 	position: absolute;
 	width: 100%;
 	bottom: 15px;
-	left: 0
+	left: 0;
 }
 
 .mejs-captions-position-hover {
-	bottom: 45px
+	bottom: 45px;
 }
 
 .mejs-captions-text {
 	padding: 3px 5px;
 	background: url(background.png);
-	background: rgba(20, 20, 20, .8)
+	background: rgba(20, 20, 20, .8);
 }
 
 .me-cannotplay a {
 	color: #fff;
-	font-weight: 700
+	font-weight: 700;
 }
 
 .me-cannotplay span {
 	padding: 15px;
-	display: block
+	display: block;
 }
 
 .mejs-controls .mejs-loop-off button {
-	background-position: -64px -16px
+	background-position: -64px -16px;
 }
 
 .mejs-controls .mejs-loop-on button {
-	background-position: -64px 0
+	background-position: -64px 0;
 }
 
 .mejs-controls .mejs-backlight-off button {
-	background-position: -80px -16px
+	background-position: -80px -16px;
 }
 
 .mejs-controls .mejs-backlight-on button {
-	background-position: -80px 0
+	background-position: -80px 0;
 }
 
 .mejs-controls .mejs-picturecontrols-button {
-	background-position: -96px 0
+	background-position: -96px 0;
 }
 
 .mejs-contextmenu {
@@ -689,14 +689,14 @@
 	left: 0;
 	background: #fff;
 	border: 1px solid #999;
-	z-index: 1001
+	z-index: 1001;
 }
 
 .mejs-contextmenu .mejs-contextmenu-separator {
 	height: 1px;
 	font-size: 0;
 	margin: 5px 6px;
-	background: #333
+	background: #333;
 }
 
 .mejs-contextmenu .mejs-contextmenu-item {
@@ -704,20 +704,20 @@
 	font-size: 12px;
 	padding: 4px 6px;
 	cursor: pointer;
-	color: #333
+	color: #333;
 }
 
 .mejs-contextmenu .mejs-contextmenu-item:hover {
 	background: #2C7C91;
-	color: #fff
+	color: #fff;
 }
 
 .mejs-controls .mejs-sourcechooser-button {
-	position: relative
+	position: relative;
 }
 
 .mejs-controls .mejs-sourcechooser-button button {
-	background-position: -128px 0
+	background-position: -128px 0;
 }
 
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector {
@@ -734,7 +734,7 @@
 	overflow: hidden;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
-	border-radius: 0
+	border-radius: 0;
 }
 
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul {
@@ -742,7 +742,7 @@
 	padding: 0;
 	display: block;
 	list-style-type: none !important;
-	overflow: hidden
+	overflow: hidden;
 }
 
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li {
@@ -751,13 +751,13 @@
 	list-style-type: none !important;
 	display: block;
 	color: #fff;
-	overflow: hidden
+	overflow: hidden;
 }
 
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li input {
 	clear: both;
 	float: left;
-	margin: 3px 3px 0 5px
+	margin: 3px 3px 0 5px;
 }
 
 .mejs-controls .mejs-sourcechooser-button .mejs-sourcechooser-selector ul li label {
@@ -766,7 +766,7 @@
 	padding: 4px 0 0;
 	line-height: 15px;
 	font-family: helvetica, arial;
-	font-size: 10px
+	font-size: 10px;
 }
 
 .mejs-postroll-layer {
@@ -778,12 +778,12 @@
 	background: url(background.png);
 	background: rgba(50, 50, 50, .7);
 	z-index: 1000;
-	overflow: hidden
+	overflow: hidden;
 }
 
 .mejs-postroll-layer-content {
 	width: 100%;
-	height: 100%
+	height: 100%;
 }
 
 .mejs-postroll-close {
@@ -795,5 +795,5 @@
 	color: #fff;
 	padding: 4px;
 	z-index: 100;
-	cursor: pointer
+	cursor: pointer;
 }
