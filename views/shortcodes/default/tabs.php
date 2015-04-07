@@ -9,7 +9,7 @@ $content_array = explode('^', $content);
 
 		<ul class="tabs-nav clearfix">
 			<?php foreach ($titles_array as $key => $value) : ?>
-				<li><a href="#"><?php echo $value ?></a></li>
+				<li><h3><?php echo $value ?></h3></li>
 			<?php endforeach; ?>		
 		</ul>
 
