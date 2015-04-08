@@ -1,8 +1,8 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 
 <input type="hidden" name="tmm_meta_saving" value="1" />
-<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php _e("Add New Row", TMM_CC_TEXTDOMAIN) ?></a>
-<a href="#" class="tmm-lc-paste-row button button-large"><?php _e("Insert Clipboard Row here", TMM_CC_TEXTDOMAIN) ?></a><br />
+<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php esc_html_e("Add New Row", TMM_CC_TEXTDOMAIN) ?></a>
+<a href="#" class="tmm-lc-paste-row button button-large"><?php esc_html_e("Insert Clipboard Row here", TMM_CC_TEXTDOMAIN) ?></a><br />
 
 <ul id="tmm_lc_rows" class="tmm-lc-rows">
 
@@ -15,10 +15,10 @@
 			<li id="tmm_lc_row_<?php echo $row ?>" class="tmm-lc-row">
 
 				<div class="tmm-lc-row-buttons-wrapper">
-					<a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php _e("Add Row to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-add-column" data-row-id="<?php echo esc_attr($row); ?>" title="<?php esc_html_e("Add Column", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-copy-row" data-row-id="<?php echo esc_attr($row); ?>" title="<?php esc_html_e("Add Row to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-edit-row" data-row-id="<?php echo esc_attr($row); ?>" title="<?php esc_html_e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-delete-row" data-row-id="<?php echo esc_attr($row); ?>" title="<?php esc_html_e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
 				</div>
 
 				<div class="tmm-lc-columns" id="tmm_lc_columns_<?php echo $row ?>">
@@ -57,28 +57,28 @@
 
 				</div>
 
-				<input type="hidden" id="row_lc_displaying_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['lc_displaying'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][lc_displaying]" />
-				<input type="hidden" id="row_full_width_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['full_width'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][full_width]" />
-				<input type="hidden" id="row_content_full_width_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['content_full_width'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][content_full_width]" />
-				<input type="hidden" id="row_bg_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_type'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_type]" />
-				<input type="hidden" id="row_bg_data_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_data'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_data]" />
-				<input type="hidden" id="row_bg_custom_color_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_color'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_color]" />
+				<input type="hidden" id="row_lc_displaying_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['lc_displaying']) : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][lc_displaying]" />
+				<input type="hidden" id="row_full_width_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['full_width']) : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][full_width]" />
+				<input type="hidden" id="row_content_full_width_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['content_full_width']) : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][content_full_width]" />
+				<input type="hidden" id="row_bg_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['bg_type']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_type]" />
+				<input type="hidden" id="row_bg_data_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['bg_data']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_data]" />
+				<input type="hidden" id="row_bg_custom_color_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['bg_color']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_color]" />
                 
-				<input type="hidden" id="row_bg_custom_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_custom_type'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_custom_type]" />
+				<input type="hidden" id="row_bg_custom_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['bg_custom_type']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_custom_type]" />
                 
-				<input type="hidden" id="row_bg_custom_image_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_image'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_image]" />
-				<input type="hidden" id="row_bg_custom_video_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_video'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_video]" />
-				<input type="hidden" id="row_bg_custom_opacity_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_opacity'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_opacity]" />
-				<input type="hidden" id="row_bg_is_cover_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_cover'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_cover]" />
-				<input type="hidden" id="row_border_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['border_type'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][border_type]" />
-				<input type="hidden" id="row_border_width_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['border_width'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][border_width]" />
-				<input type="hidden" id="row_border_color_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['border_color'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][border_color]" />
-				<input type="hidden" id="row_align_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['row_align'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][row_align]" />
-				<input type="hidden" id="row_padding_top_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['padding_top'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][padding_top]" />
-				<input type="hidden" id="row_padding_bottom_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['padding_bottom'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][padding_bottom]" />
-				<input type="hidden" id="row_margin_top_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['margin_top'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][margin_top]" />
-				<input type="hidden" id="row_margin_bottom_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['margin_bottom'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][margin_bottom]" />
-				<input type="hidden" id="row_custom_css_class_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['custom_css_class'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][custom_css_class]" />
+				<input type="hidden" id="row_bg_custom_image_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['bg_image']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_image]" />
+				<input type="hidden" id="row_bg_custom_video_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['bg_video']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_video]" />
+				<input type="hidden" id="row_bg_custom_opacity_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['bg_opacity']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_opacity]" />
+				<input type="hidden" id="row_bg_is_cover_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['bg_cover']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_cover]" />
+				<input type="hidden" id="row_border_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['border_type']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][border_type]" />
+				<input type="hidden" id="row_border_width_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['border_width']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][border_width]" />
+				<input type="hidden" id="row_border_color_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['border_color']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][border_color]" />
+				<input type="hidden" id="row_align_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['row_align']) : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][row_align]" />
+				<input type="hidden" id="row_padding_top_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['padding_top']) : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][padding_top]" />
+				<input type="hidden" id="row_padding_bottom_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['padding_bottom']) : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][padding_bottom]" />
+				<input type="hidden" id="row_margin_top_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['margin_top']) : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][margin_top]" />
+				<input type="hidden" id="row_margin_bottom_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['margin_bottom']) : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][margin_bottom]" />
+				<input type="hidden" id="row_custom_css_class_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? esc_attr(@$tmm_layout_constructor_row[$row]['custom_css_class']) : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][custom_css_class]" />
 
 			</li>
 
@@ -116,10 +116,10 @@
 		<li id="tmm_lc_row___ROW_ID__" class="tmm-lc-row">
 
             <div class="tmm-lc-row-buttons-wrapper">
-                <a class="tmm-lc-add-column" title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>" data-row-id="__ROW_ID__"></a>
-                <a class="tmm-lc-copy-row" data-row-id="__ROW_ID__" title="<?php _e("Add to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-                <a class="tmm-lc-edit-row" data-row-id="__ROW_ID__" title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
-                <a class="tmm-lc-delete-row" data-row-id="__ROW_ID__" title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
+                <a class="tmm-lc-add-column" title="<?php esc_attr_e("Add Column", TMM_CC_TEXTDOMAIN) ?>" data-row-id="__ROW_ID__"></a>
+                <a class="tmm-lc-copy-row" data-row-id="__ROW_ID__" title="<?php esc_attr_e("Add to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
+                <a class="tmm-lc-edit-row" data-row-id="__ROW_ID__" title="<?php esc_attr_e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
+                <a class="tmm-lc-delete-row" data-row-id="__ROW_ID__" title="<?php esc_attr_e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
             </div>
 
 			<div class="tmm-lc-columns" id="tmm_lc_columns___ROW_ID__"></div>

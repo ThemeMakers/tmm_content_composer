@@ -41,12 +41,12 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_style .= 'margin-bottom:' . $margin_bottom . 'px;';
 		}
 		if (!empty($section_style)){
-			$section_style = ' style="'.$section_style.'"';
+			$section_style = ' style="'. esc_attr($section_style) .'"';
 		}
 
 		?>
 
-		<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>" <?php echo $section_style ?>>
+		<div id="<?php echo 'section_'.$row ?>" class="<?php echo esc_attr($section_class); ?>" <?php echo $section_style ?>>
 
 			<?php
 			if (!empty($tmm_layout_constructor_row[$row]['bg_video']) && $tmm_layout_constructor_row[$row]['bg_custom_type']=='video' && $row_style['bg_type'] == 'custom'){
@@ -98,11 +98,11 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				$row_style_attr .= 'text-align:'.$align.'; ';
 			}
 			if (!empty($row_style_attr)) {
-				$row_style_attr = ' style="'.$row_style_attr.'"';
+				$row_style_attr = ' style="'. esc_attr($row_style_attr) .'"';
 			}
 				?>
 
-				<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
+				<div class="<?php echo esc_attr($row_class); ?>"<?php echo $row_style_attr; ?>>
 
 					<?php
 					if (isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom' && $tmm_layout_constructor_row[$row]['bg_custom_type']=='color'){
@@ -132,10 +132,10 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 							$column_style .= 'padding-right:'.$column['right_indent'].'px; ';
 						}
 						if (!empty($column_style)){
-							$column_style = 'style="' . $column_style . '"';
+							$column_style = 'style="' . esc_attr($column_style) . '"';
 						}
 						?>
-						<div class="<?php echo $column_class ?>" <?php echo $column_style ?>><?php echo $content ?></div>
+						<div class="<?php echo esc_attr($column_class) ?>" <?php echo $column_style ?>><?php echo $content; ?></div>
 
 					<?php } ?>
 
