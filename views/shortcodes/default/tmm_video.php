@@ -12,17 +12,25 @@ foreach ($allows_array as $key => $needle) {
 
 $image_size = "1036*576";
 
+global $is_iphone;
+$is_mobiles = wp_is_mobile() || $is_iphone || stripos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false;
+
 if (isset($cover_id)) {
-	global $is_iphone;
-	$is_mobiles = wp_is_mobile() || $is_iphone || stripos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false;
 
 	if ($is_mobiles) {
 		$cover_id = (int) $cover_id;
 	} else {
 		$cover_id = '';
 	}
+
 } else {
 	$cover_id = '';
+}
+
+if (isset($cover_image_on_mobiles) && $cover_image_on_mobiles === '1') {
+	if (isset($cover_image) && !$is_mobiles) {
+		$cover_image = '';
+	}
 }
 
 if (!empty($width)) {

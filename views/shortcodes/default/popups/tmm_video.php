@@ -27,6 +27,16 @@
 		));
 		?>
 
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Show Cover Image Only on Mobiles', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'cover_image_on_mobiles',
+			'id' => 'cover_image_on_mobiles',
+			'is_checked' => TMM_Content_Composer::set_default_value('cover_image_on_mobiles', 0),
+			'description' => __('Show Cover Image Only on Mobiles', TMM_CC_TEXTDOMAIN)
+		));
+		?>
 	</div><!--/ .one-half-->
 
 	<div class="one-half">
