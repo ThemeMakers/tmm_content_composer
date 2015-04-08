@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2015-04-02 13:50+0100\n"
-"PO-Revision-Date: 2015-04-02 13:50+0100\n"
+"POT-Creation-Date: 2015-04-08 23:56+0100\n"
+"PO-Revision-Date: 2015-04-08 23:56+0100\n"
 "Last-Translator: ThemeMakers Team <support@webtemplatemasters.com>\n"
 "Language-Team: ThemeMakers Team <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
@@ -128,13 +128,13 @@ msgstr ""
 msgid "Type 4"
 msgstr ""
 
-#: classes/content_composer.php:464
+#: classes/content_composer.php:465
 msgid "Browse"
 msgstr ""
 
 #: classes/layout_constructor.php:202
-#: views/shortcodes/default/tmm_video.php:101
-#: views/shortcodes/default/tmm_video.php:104
+#: views/shortcodes/default/tmm_video.php:134
+#: views/shortcodes/default/tmm_video.php:137
 msgid "Unsupported video format"
 msgstr ""
 
@@ -178,42 +178,42 @@ msgstr ""
 msgid "No effects"
 msgstr ""
 
-#: views/meta_panel.php:156 views/shortcodes/default/popups/blog.php:27
+#: views/meta_panel.php:156 views/shortcodes/default/popups/blog.php:40
 #: views/shortcodes/default/popups/pricing_tables.php:156
 msgid "Element Fade"
 msgstr ""
 
-#: views/meta_panel.php:157 views/shortcodes/default/popups/blog.php:28
+#: views/meta_panel.php:157 views/shortcodes/default/popups/blog.php:41
 #: views/shortcodes/default/popups/pricing_tables.php:157
 msgid "Opacity"
 msgstr ""
 
-#: views/meta_panel.php:158 views/shortcodes/default/popups/blog.php:31
+#: views/meta_panel.php:158 views/shortcodes/default/popups/blog.php:44
 #: views/shortcodes/default/popups/pricing_tables.php:160
 msgid "Slide Right"
 msgstr ""
 
-#: views/meta_panel.php:159 views/shortcodes/default/popups/blog.php:32
+#: views/meta_panel.php:159 views/shortcodes/default/popups/blog.php:45
 #: views/shortcodes/default/popups/pricing_tables.php:161
 msgid "Slide Left"
 msgstr ""
 
-#: views/meta_panel.php:160 views/shortcodes/default/popups/blog.php:33
+#: views/meta_panel.php:160 views/shortcodes/default/popups/blog.php:46
 #: views/shortcodes/default/popups/pricing_tables.php:162
 msgid "Slide Down"
 msgstr ""
 
-#: views/meta_panel.php:161 views/shortcodes/default/popups/blog.php:34
+#: views/meta_panel.php:161 views/shortcodes/default/popups/blog.php:47
 #: views/shortcodes/default/popups/pricing_tables.php:163
 msgid "Slide Up"
 msgstr ""
 
-#: views/meta_panel.php:162 views/shortcodes/default/popups/blog.php:35
+#: views/meta_panel.php:162 views/shortcodes/default/popups/blog.php:48
 #: views/shortcodes/default/popups/pricing_tables.php:164
 msgid "Slide Up 2x"
 msgstr ""
 
-#: views/meta_panel.php:163 views/shortcodes/default/popups/blog.php:36
+#: views/meta_panel.php:163 views/shortcodes/default/popups/blog.php:49
 #: views/shortcodes/default/popups/pricing_tables.php:165
 msgid "Extra Radius"
 msgstr ""
@@ -278,9 +278,9 @@ msgstr ""
 msgid "Row Background Type"
 msgstr ""
 
-#: views/meta_panel.php:340 views/shortcodes/default/popups/blog.php:26
-#: views/shortcodes/default/popups/blog.php:179
-#: views/shortcodes/default/popups/blog.php:199
+#: views/meta_panel.php:340 views/shortcodes/default/popups/blog.php:39
+#: views/shortcodes/default/popups/blog.php:192
+#: views/shortcodes/default/popups/blog.php:212
 #: views/shortcodes/default/popups/image.php:27
 #: views/shortcodes/default/popups/testimonials.php:96
 #: views/shortcodes/diplomat/popups/menu.php:26
@@ -320,7 +320,7 @@ msgstr ""
 msgid "Background Image"
 msgstr ""
 
-#: views/shortcodes/default/blog.php:228
+#: views/shortcodes/default/blog.php:233
 #: views/shortcodes/diplomat/imggallery.php:180
 msgid "Load More"
 msgstr ""
@@ -508,185 +508,205 @@ msgid "Author"
 msgstr ""
 
 #: views/shortcodes/default/popups/blog.php:8
+msgid "Default Options"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:9
+msgid "Advanced Blog Options"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:21
 msgid "Blog Type"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:13
+#: views/shortcodes/default/popups/blog.php:26
 msgid "Choose necessary layout for displaying posts."
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:22
+#: views/shortcodes/default/popups/blog.php:35
 msgid "Effect for Appearing Post"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:29
+#: views/shortcodes/default/popups/blog.php:42
 #: views/shortcodes/default/popups/pricing_tables.php:158
 msgid "Opacity 2x Run"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:30
+#: views/shortcodes/default/popups/blog.php:43
 #: views/shortcodes/default/popups/pricing_tables.php:159
 msgid "Scale"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:38
+#: views/shortcodes/default/popups/blog.php:51
 #: views/shortcodes/default/popups/pricing_tables.php:167
 msgid "Effect for Appearing Post."
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:48
+#: views/shortcodes/default/popups/blog.php:61
 #: views/shortcodes/diplomat/popups/imggallery.php:97
 #: views/shortcodes/tmm_events_calendar/popups/tmm_events_list.php:84
 msgid "Category"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:64
+#: views/shortcodes/default/popups/blog.php:77
 msgid "Tag"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:80
+#: views/shortcodes/default/popups/blog.php:93
 #: views/shortcodes/diplomat/popups/imggallery.php:46
 msgid "Layout"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:84
+#: views/shortcodes/default/popups/blog.php:97
 msgid "Fullwidth"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:85
+#: views/shortcodes/default/popups/blog.php:98
 #: views/shortcodes/diplomat/popups/imggallery.php:50
 msgid "2 Columns"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:86
+#: views/shortcodes/default/popups/blog.php:99
 #: views/shortcodes/diplomat/popups/imggallery.php:51
 msgid "3 Columns"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:87
+#: views/shortcodes/default/popups/blog.php:100
 #: views/shortcodes/diplomat/popups/imggallery.php:52
 msgid "4 Columns"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:101
+#: views/shortcodes/default/popups/blog.php:114
 msgid "Order By"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:116
+#: views/shortcodes/default/popups/blog.php:129
 #: views/shortcodes/default/popups/testimonials.php:75
 msgid "Order"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:120
+#: views/shortcodes/default/popups/blog.php:133
 #: views/shortcodes/default/popups/testimonials.php:80
 msgid "DESC"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:121
+#: views/shortcodes/default/popups/blog.php:134
 #: views/shortcodes/default/popups/testimonials.php:79
 msgid "ASC"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:133
+#: views/shortcodes/default/popups/blog.php:146
 msgid "Posts Per Page"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:147
+#: views/shortcodes/default/popups/blog.php:160
 msgid "Posts Per Load"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:161
+#: views/shortcodes/default/popups/blog.php:174
 msgid "Posts"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:165
+#: views/shortcodes/default/popups/blog.php:178
 msgid "Example: 56,73,119. It has the most hight priority!"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:175
+#: views/shortcodes/default/popups/blog.php:188
 msgid "Exclude Posts"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:180
+#: views/shortcodes/default/popups/blog.php:193
 msgid "Posts With Featured Image"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:181
+#: views/shortcodes/default/popups/blog.php:194
 msgid "Posts Without Featured Image"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:184
-#: views/shortcodes/default/popups/blog.php:206
+#: views/shortcodes/default/popups/blog.php:197
+#: views/shortcodes/default/popups/blog.php:219
 msgid "Choose post formats that will not be included in current query."
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:194
+#: views/shortcodes/default/popups/blog.php:207
 msgid "Exclude Post Formats"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:200
+#: views/shortcodes/default/popups/blog.php:213
 msgid "Gallery Post"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:201
+#: views/shortcodes/default/popups/blog.php:214
 msgid "Quote Post"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:202
+#: views/shortcodes/default/popups/blog.php:215
 msgid "Video Post"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:203
+#: views/shortcodes/default/popups/blog.php:216
 msgid "Audio Post"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:216
+#: views/shortcodes/default/popups/blog.php:229
 msgid "Title Symbols Count"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:220
+#: views/shortcodes/default/popups/blog.php:233
 msgid "Truncate post titles depending on symbols number you want."
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:229
+#: views/shortcodes/default/popups/blog.php:242
 msgid "Show / Hide Post Excerpt"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:233
+#: views/shortcodes/default/popups/blog.php:246
 msgid "If checked, post excerpts will be shown according to layout."
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:242
+#: views/shortcodes/default/popups/blog.php:255
 msgid "Excerpt Symbols Count"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:246
+#: views/shortcodes/default/popups/blog.php:259
 msgid "Truncate excerpt depending on symbols number you want."
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:255
+#: views/shortcodes/default/popups/blog.php:268
 msgid "Show/Hide Pagination"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:259
+#: views/shortcodes/default/popups/blog.php:272
 msgid "Enable Pagination"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:269
-#: views/shortcodes/default/popups/blog.php:273
+#: views/shortcodes/default/popups/blog.php:282
+#: views/shortcodes/default/popups/blog.php:286
 msgid "Show/Hide Border Bottom"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:283
+#: views/shortcodes/default/popups/blog.php:296
 msgid "Load Posts By Scrolling"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:297
+#: views/shortcodes/default/popups/blog.php:310
 msgid "Show/Hide Tags"
 msgstr ""
 
-#: views/shortcodes/default/popups/blog.php:311
+#: views/shortcodes/default/popups/blog.php:324
 msgid "Show/Hide Author"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:342
+msgid "Image opacity"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:346
+msgid "Image opacity on hover"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:356
+msgid "Image background"
 msgstr ""
 
 #: views/shortcodes/default/popups/button.php:8
@@ -830,12 +850,12 @@ msgid "Enter Symbol"
 msgstr ""
 
 #: views/shortcodes/default/popups/google_map.php:9
-#: views/shortcodes/default/popups/tmm_video.php:36
+#: views/shortcodes/default/popups/tmm_video.php:60
 msgid "Height"
 msgstr ""
 
 #: views/shortcodes/default/popups/google_map.php:24
-#: views/shortcodes/default/popups/tmm_video.php:22
+#: views/shortcodes/default/popups/tmm_video.php:46
 msgid "Width"
 msgstr ""
 
@@ -1321,6 +1341,15 @@ msgstr ""
 msgid ""
 "Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg  http://vimeo."
 "com/22439234 or upload self hosted video"
+msgstr ""
+
+#: views/shortcodes/default/popups/tmm_video.php:22
+msgid "Cover Image"
+msgstr ""
+
+#: views/shortcodes/default/popups/tmm_video.php:33
+#: views/shortcodes/default/popups/tmm_video.php:37
+msgid "Show Cover Image Only on Mobiles"
 msgstr ""
 
 #: views/shortcodes/default/popups/tooltip.php:9
