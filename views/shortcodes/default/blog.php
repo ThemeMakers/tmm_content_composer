@@ -106,10 +106,10 @@ switch($blog_type){
         $blog_type = 'masonry';
         $posts_list .= ' masonry';
         $columns = ($columns!='fullwidth') ? $columns : 2;
-        $data_columns = "data-columns='".$columns."'";
-        $data_titlesymbols = "data-titlesymbols='".$title_symbols."'";
-        $data_exerptsymbols = "data-excerptsymbols='".$excerpt_symbols."'";
-        $data_showexcerpt = "data-showexcerpt='" . $show_excerpt . "'";
+        $data_columns = "data-columns='". esc_attr($columns) ."'";
+        $data_titlesymbols = "data-titlesymbols='". esc_attr($title_symbols) ."'";
+        $data_exerptsymbols = "data-excerptsymbols='". esc_attr($excerpt_symbols) ."'";
+        $data_showexcerpt = "data-showexcerpt='" . esc_attr($show_excerpt) . "'";
 
         break;
 }
@@ -147,7 +147,7 @@ $_REQUEST['image_background'] = (isset($image_background) && $image_background!=
 
  ?>
 
-	<div class="row <?php echo (!empty($posts_list)) ? $posts_list : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?> <?php echo (!empty($data_titlesymbols)) ? $data_titlesymbols : ''; ?> <?php echo (!empty($data_exerptsymbols)) ? $data_exerptsymbols : ''; ?> <?php echo (!empty($data_showexcerpt)) ? $data_showexcerpt : ''; ?> >
+	<div class="row <?php echo (!empty($posts_list)) ? esc_attr($posts_list) : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?> <?php echo (!empty($data_titlesymbols)) ? $data_titlesymbols : ''; ?> <?php echo (!empty($data_exerptsymbols)) ? $data_exerptsymbols : ''; ?> <?php echo (!empty($data_showexcerpt)) ? $data_showexcerpt : ''; ?> >
         
         <?php 
         if ($blog_type!='masonry'){
@@ -158,7 +158,7 @@ $_REQUEST['image_background'] = (isset($image_background) && $image_background!=
 
                 the_post(); ?>
 
-                    <article class="<?php echo $columns_class ?>">
+                    <article class="<?php echo esc_attr($columns_class) ?>">
 
                         <div id="post-<?php the_ID(); ?>" <?php post_class($post_class);?>>
 
@@ -230,7 +230,7 @@ $_REQUEST['image_background'] = (isset($image_background) && $image_background!=
         </div>
         
 		<div class='post-load-more'>
-			<a class='load-more button secondary middle' data-loadbyscroll="<?php echo $load_by_scrolling ?>" data-page-load="2" data-posts-per-load="<?php echo $posts_per_load ?>" data-posts="<?php echo $next_posts ?>" href='#load-more'><?php _e('Load More', TMM_CC_TEXTDOMAIN) ?></a>
+			<a class='load-more button secondary middle' data-loadbyscroll="<?php echo esc_attr($load_by_scrolling); ?>" data-page-load="2" data-posts-per-load="<?php echo esc_attr($posts_per_load); ?>" data-posts="<?php echo esc_attr($next_posts); ?>" href='#load-more'><?php _e('Load More', TMM_CC_TEXTDOMAIN) ?></a>
 		</div><!--/ .post-load-more-->
 
     <?php

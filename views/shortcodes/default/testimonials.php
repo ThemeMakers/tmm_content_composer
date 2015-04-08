@@ -28,7 +28,7 @@ $query = new WP_Query($args);
 
 			<?php if ($show_photo){ ?>
 				<div class="author-thumb">
-					<img src="<?php echo TMM_Helper::get_post_featured_image(get_the_ID(), '85*85'); ?>" alt="<?php the_title(); ?>">
+					<img src="<?php echo esc_url(TMM_Helper::get_post_featured_image(get_the_ID(), '85*85')); ?>" alt="<?php the_title(); ?>">
 				</div>
 			<?php } ?>
 

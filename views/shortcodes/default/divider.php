@@ -3,4 +3,4 @@
 $style = $content;
 ?>
 <div class="clear"></div>
-<div class="<?php echo $style ?>"></div>
+<div class="<?php echo esc_attr($style); ?>"></div>

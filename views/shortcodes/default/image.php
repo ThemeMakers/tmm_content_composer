@@ -21,23 +21,23 @@ $classAbs = "";
 			
 	// Styles
 	if (!empty($styles)) {
-		$styles = 'style="' . $styles . '"';
+		$styles = 'style="' . esc_attr($styles) . '"';
 	}       
 
         //if ($action != "none"){
             // Link Start
             if ($action == "link") {
-                    $html.= '<a title="' . $link_title . '" class="'.$align.'" href="' . $image_action_link . '" target="' . $target . '">';
+                    $html.= '<a title="' . esc_attr($link_title) . '" class="'. esc_attr($align) .'" href="' . esc_url($image_action_link) . '" target="' . esc_attr($target) . '">';
             }
             
             if ($action=='lightbox'){
                 tmm_enqueue_script('magnific');
                 tmm_enqueue_style('magnific');
-                $html.= '<a title="' . $image_alt . '" class="single-image-link '.$align.'" href="' . $image_url . '">';
+                $html.= '<a title="' . esc_attr($image_alt) . '" class="single-image-link '. esc_attr($align) .'" href="' . esc_url($image_url) . '">';
             }
 
             $src = TMM_Content_Composer::resize_image($image_url, $image_size_alias);
-            $html.= '<img class="' . $classAbs . $classAnim . $effect . $align . '" alt="' . $image_alt . '" '. $styles .' src="' . $src . '" />';
+            $html.= '<img class="' . $classAbs . $classAnim . $effect . $align . '" alt="' . esc_attr($image_alt) . '" '. $styles .' src="' . esc_url($src) . '" />';
 
             // Link End
             if ($action == "link" || $action == "lightbox") { 

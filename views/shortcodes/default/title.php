@@ -73,7 +73,7 @@ if (isset($text_transform) && $text_transform) {
 
 // Styles
 if (!empty($styles)) {
-	$styles = 'style="' . $styles . '"';
+	$styles = 'style="' . esc_attr($styles) . '"';
 }
 
 // General Styles
@@ -101,15 +101,15 @@ if (!empty($title_effect)&&($title_effect!='none')){
 $content = str_replace("`", "'", $content);
 
 if ( isset($title_type) && $title_type=='section') {
-    $html.= '<' . $type . ' class="section-title ' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '>';
+    $html.= '<' . $type . ' class="section-title ' . esc_attr($css_class) . '" ' . $styles . '>' . esc_html($content) . '</' . $type . '>';
 
 } else if ( isset($title_type) && $title_type=='section-alternate') {
 
-	$html.= '<' . $type . ' class="section-title-alternate ' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '>';
+	$html.= '<' . $type . ' class="section-title-alternate ' . esc_attr($css_class) . '" ' . $styles . '>' . esc_html($content) . '</' . $type . '>';
 
 } else {
 
-	$html.= '<' . $type . ' class="' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '>';
+	$html.= '<' . $type . ' class="' . esc_attr($css_class) . '" ' . $styles . '>' . esc_html($content) . '</' . $type . '>';
 
 }
 

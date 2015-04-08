@@ -16,10 +16,10 @@ switch($type){
                 <?php if (!empty($content)){ ?>
                     <?php foreach ($content as $key => $text){ ?>
                     <li>
-                            <i class="content-icon <?php echo $icons[$key] ?>"></i>
+                            <i class="content-icon <?php echo esc_attr($icons[$key]) ?>"></i>
                             <h2><?php echo $titles[$key] ?></h2>
 
-                            <div class="hover-box" data-color="<?php echo $colors[$key*4] ?>" data-color-state="<?php echo $colors[$key*4+1] ?>" data-text-hover="<?php echo $colors[$key*4+2] ?>" data-color-hover="<?php echo $colors[$key*4+3] ?>"></div><!--/ .hover-box-->
+                            <div class="hover-box" data-color="<?php echo esc_attr($colors[$key * 4]) ?>" data-color-state="<?php echo esc_attr($colors[$key * 4 + 1]) ?>" data-text-hover="<?php echo $colors[$key*4+2] ?>" data-color-hover="<?php echo $colors[$key*4+3] ?>"></div><!--/ .hover-box-->
                             <div class="extra-content">
 
                                     <div class="extra-table">
