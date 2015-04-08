@@ -42,7 +42,7 @@ $all_menu_items = TMM_Content_Composer::get_all_menu_items();
 			'description' => ''
 		));
 		?>
-		<div class="iconsweets first_icon <?php echo $view_icon_group; ?>"></div>
+		<div class="iconsweets first_icon <?php echo esc_attr($view_icon_group); ?>"></div>
 
 	</div><!--/ .one-half-->
 
@@ -227,7 +227,7 @@ $all_menu_items = TMM_Content_Composer::get_all_menu_items();
 		));
 		?>
 
-		<div class="iconsweets second_icon <?php echo $view_icon_group; ?>"></div>
+		<div class="iconsweets second_icon <?php echo esc_attr($view_icon_group); ?>"></div>
 
 	</div><!--/ .one-half-->
 
@@ -411,7 +411,7 @@ $all_menu_items = TMM_Content_Composer::get_all_menu_items();
 		));
 		?>
 
-		<div class="iconsweets third_icon <?php echo $view_icon_group; ?>"></div>
+		<div class="iconsweets third_icon <?php echo esc_attr($view_icon_group); ?>"></div>
 
 	</div><!--/ .one-half-->
 

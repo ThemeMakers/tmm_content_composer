@@ -22,7 +22,7 @@ switch($archives_type){
 				<?php
 				foreach ($archive_list as $list){
 					?>
-					<li><a href="<?php echo $list['href'] ?>"><?php echo $list['title'] ?></a></li>
+					<li><a href="<?php echo esc_url($list['href']); ?>"><?php echo esc_html($list['title']); ?></a></li>
 				<?
 				}
 				?>

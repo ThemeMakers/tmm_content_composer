@@ -65,9 +65,9 @@ if ($gallery_type === 'albums') {
 				}
 				?>
 
-				<li data-pile="<?php echo $image['post_slug'] ?>">
-					<a href="<?php echo TMM_Content_Composer::resize_image($image['imgurl'], ''); ?>" data-group="<?php echo $data_group ?>" class="item-overlay gallery popup-link-<?php echo $data_group; ?>">
-						<img src="<?php echo TMM_Content_Composer::resize_image($image['imgurl'], $image_size); ?>" />
+				<li data-pile="<?php echo esc_attr($image['post_slug']) ?>">
+					<a href="<?php echo esc_url(TMM_Content_Composer::resize_image($image['imgurl'], '')); ?>" data-group="<?php echo esc_attr($data_group) ?>" class="item-overlay gallery popup-link-<?php echo $data_group; ?>">
+						<img src="<?php echo esc_url(TMM_Content_Composer::resize_image($image['imgurl'], $image_size)); ?>" />
 					</a>
 				</li>
 
@@ -76,7 +76,7 @@ if ($gallery_type === 'albums') {
 			}
 		} ?>
 
-		<input type="hidden" class="tp_groups" value="<?php echo $data_group ?>">
+		<input type="hidden" class="tp_groups" value="<?php echo esc_attr($data_group) ?>">
 	</ul><!--/ .tp-grid-->
 
 	<?php
@@ -177,7 +177,7 @@ if ($gallery_type === 'albums') {
 		</div>
 
 		<div class="portfolio-paging">
-			<a  href="#" data-total="<?php echo $count_images_by_cat; ?>" data-loaded="<?php echo implode(',', array_keys($loaded_images)); ?>" data-perpage="<?php echo $posts_per_page ?>" data-perload="<?php echo $posts_per_load ?>" data-category="<?php echo !empty($gal_category_slugs) ? implode(',', $gal_category_slugs) : 'all'; ?>" data-showcategories="<?php echo $show_categories ?>" class="load-more"><?php _e('Load More', TMM_CC_TEXTDOMAIN); ?></a>
+			<a  href="#" data-total="<?php echo esc_attr($count_images_by_cat); ?>" data-loaded="<?php echo esc_attr(implode(',', array_keys($loaded_images))); ?>" data-perpage="<?php echo esc_attr($posts_per_page); ?>" data-perload="<?php echo esc_attr($posts_per_load); ?>" data-category="<?php echo !empty($gal_category_slugs) ? esc_attr(implode(',', $gal_category_slugs)) : 'all'; ?>" data-showcategories="<?php echo esc_attr($show_categories); ?>" class="load-more"><?php _e('Load More', TMM_CC_TEXTDOMAIN); ?></a>
 		</div><!--/ .portfolio-paging-->
 
 	<?php } ?>

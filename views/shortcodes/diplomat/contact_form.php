@@ -15,7 +15,7 @@ if (!empty($contact_form['inputs'])) {
 
 	<form method="post" class="contact-form" enctype="multipart/form-data">
 
-		<input type="hidden" name="contact_form_name" value="<?php echo $form_name ?>" />
+		<input type="hidden" name="contact_form_name" value="<?php echo esc_attr($form_name) ?>" />
 
         <?php
         foreach ($contact_form['inputs'] as $key => $input){
@@ -26,7 +26,7 @@ if (!empty($contact_form['inputs'])) {
                 case "email":
                     ?>
 					<p class="tmmFormStyling form-input-email">
-                        <input id="email_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="email" name="<?php echo $name ?>" value="<?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+                        <input id="email_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="email" name="<?php echo esc_attr($name) ?>" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php echo esc_attr($input['label']) ?><?php echo($input['is_required'] ? " *" : "") ?>" />
                     </p>
                     <?php
                     break;
@@ -34,7 +34,7 @@ if (!empty($contact_form['inputs'])) {
                 case "textinput":
                     ?>
                     <p class="tmmFormStyling form-input-text">
-                        <input id="name_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo $name ?>" value="<?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+                        <input id="name_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo esc_attr($name) ?>" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php echo esc_attr($input['label']) ?><?php echo($input['is_required'] ? " *" : "") ?>" />
                     </p>
                     <?php
                     break;
@@ -42,7 +42,7 @@ if (!empty($contact_form['inputs'])) {
 	            case "website":
 		            ?>
 		            <p class="tmmFormStyling form-input-website">
-			            <input id="url_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="url" name="<?php echo $name ?>" value="<?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+			            <input id="url_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="url" name="<?php echo esc_attr($name) ?>" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php echo esc_attr($input['label']) ?><?php echo($input['is_required'] ? " *" : "") ?>" />
 		            </p>
 		            <?php
 		            break;
@@ -54,7 +54,7 @@ if (!empty($contact_form['inputs'])) {
 					if (!empty($input['label'])) {
 						?>
 
-						<h2 class="info-title"><?php echo $input['label']; ?></h2>
+						<h2 class="info-title"><?php echo esc_html($input['label']); ?></h2>
 
 						<?php
 					}
@@ -67,7 +67,7 @@ if (!empty($contact_form['inputs'])) {
 
 		                    <p class="tmmFormStyling form-checkbox">
 				                <input id="cb_<?php echo $item_id ?>" type="checkbox" <?php echo($input['is_required'] ? "required" : "") ?> name="<?php echo $name ?>[]" value="cb_<?php echo $key ?>" class="tmm-checkbox" />
-				                <label for="cb_<?php echo $item_id ?>"><?php echo $item ?></label>
+				                <label for="cb_<?php echo $item_id ?>"><?php echo esc_html($item) ?></label>
 		                    </p>
 
 		                    <?php
@@ -78,7 +78,7 @@ if (!empty($contact_form['inputs'])) {
 	                if ($input['optional_field']) {
 		                ?>
 
-		                <h6 class="form-title"><?php _e('Other', TMM_THEME_TEXTDOMAIN); ?></h6>
+		                <h6 class="form-title"><?php esc_html_e('Other', TMM_THEME_TEXTDOMAIN); ?></h6>
 		                <p class="tmmFormStyling form-textarea">
 			                <textarea name="<?php echo $name ?>[]"></textarea>
 		                </p>
@@ -95,7 +95,7 @@ if (!empty($contact_form['inputs'])) {
 	                if (!empty($input['label'])) {
 		                ?>
 
-		                <h2 class="info-title"><?php echo $input['label']; ?></h2>
+		                <h2 class="info-title"><?php echo esc_html($input['label']); ?></h2>
 
 	                    <?php
 	                }
@@ -107,8 +107,8 @@ if (!empty($contact_form['inputs'])) {
 		                    ?>
 
 		                    <p class="tmmFormStyling form-radio">
-			                    <input id="cb_<?php echo $item_id ?>" type="radio" name="<?php echo $name ?>" value="<?php echo $item ?>" class="tmm-radio" <?php echo($input['is_required'] ? "required" : "") ?> />
-			                    <label for="cb_<?php echo $item_id ?>"><?php echo $item ?></label>
+			                    <input id="cb_<?php echo $item_id ?>" type="radio" name="<?php echo esc_attr($name) ?>" value="<?php echo esc_attr($item) ?>" class="tmm-radio" <?php echo($input['is_required'] ? "required" : "") ?> />
+			                    <label for="cb_<?php echo $item_id ?>"><?php echo esc_html($item) ?></label>
 		                    </p>
 
 	                    <?php }
@@ -120,7 +120,7 @@ if (!empty($contact_form['inputs'])) {
                     $select_options = explode(",", $input['options']);
                     ?>
                     <p class="tmmFormStyling form-select">
-                        <select id="select_<?php echo $unique_id ?>" name="<?php echo $name ?>"<?php echo($input['is_required'] ? " required" : "") ?>>
+                        <select id="select_<?php echo $unique_id ?>" name="<?php echo esc_attr($name) ?>"<?php echo($input['is_required'] ? " required" : "") ?>>
                             <?php
                             if (!empty($input['label'])) {
 	                            ?>
@@ -135,7 +135,7 @@ if (!empty($contact_form['inputs'])) {
 	                            foreach ($select_options as $value) {
 		                            ?>
 
-                                    <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
+                                    <option value="<?php echo esc_attr($value); ?>"><?php echo esc_html($value); ?></option>
 
                                     <?php
 	                            }
@@ -152,7 +152,7 @@ if (!empty($contact_form['inputs'])) {
 		            if (!empty($input['label'])) {
 			            ?>
 
-			            <h2 class="info-title"><?php echo $input['label']; ?></h2>
+			            <h2 class="info-title"><?php echo esc_html($input['label']); ?></h2>
 
 		                <?php
 		            }
@@ -172,7 +172,7 @@ if (!empty($contact_form['inputs'])) {
 				            foreach ($countries as $country_code => $country_name ) {
 					            ?>
 
-					            <option <?php selected($country_code, 'US'); ?> value="<?php echo $country_code; ?>"><?php echo $country_name; ?></option>
+					            <option <?php selected($country_code, 'US'); ?> value="<?php echo esc_attr($country_code); ?>"><?php echo esc_html($country_name); ?></option>
 
 				                <?php
 				            }
@@ -181,7 +181,7 @@ if (!empty($contact_form['inputs'])) {
 		            </p>
 
 		            <p class="tmmFormStyling form-input-city">
-			            <input id="city_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo $name ?>[city]" value="<?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?>" placeholder="<?php _e('City ', TMM_THEME_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+			            <input id="city_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo $name ?>[city]" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php esc_attr_e('City ', TMM_THEME_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
 		            </p>
 
 		            <div class="row tmmFormStyling">
@@ -193,7 +193,7 @@ if (!empty($contact_form['inputs'])) {
 						            foreach ($states as $state_code => $state_name ) {
 							            ?>
 
-							            <option value="<?php echo $state_code; ?>"><?php echo $state_name; ?></option>
+							            <option value="<?php echo esc_attr($state_code); ?>"><?php echo esc_html($state_name); ?></option>
 
 						                <?php
 						            }
@@ -202,13 +202,13 @@ if (!empty($contact_form['inputs'])) {
 				            </p>
 
 				            <p class="tmmFormStyling form-input-country" style="display: none;">
-					            <input id="county_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="hidden" class="tmm-county-input" name="<?php echo $name ?>[state]" value="<?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?>" placeholder="<?php _e('State', TMM_THEME_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+					            <input id="county_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="hidden" class="tmm-county-input" name="<?php echo $name ?>[state]" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php esc_attr_e('State', TMM_THEME_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
 				            </p>
 			            </div>
 
 			            <div class="large-6 columns">
 				            <p class="tmmFormStyling form-input-zip">
-					            <input id="zip_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo $name ?>[zip]" value="<?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?>" placeholder="<?php _e('Zip Code ', TMM_THEME_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+					            <input id="zip_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo $name ?>[zip]" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php esc_attr_e('Zip Code ', TMM_THEME_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
 				            </p>
 			            </div>
 
@@ -223,7 +223,7 @@ if (!empty($contact_form['inputs'])) {
 	                }
 	                ?>
 	                <p class="tmmFormStyling form-textarea">
-		                <textarea id="message_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> name="<?php echo $name ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" ><?php echo !empty($_POST[$name]) ? $_POST[$name]  : ''; ?></textarea>
+		                <textarea id="message_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> name="<?php echo esc_attr($name) ?>" placeholder="<?php echo esc_attr($input['label']) ?><?php echo($input['is_required'] ? " *" : "") ?>" ><?php echo !empty($_POST[$name]) ? esc_html($_POST[$name]) : ''; ?></textarea>
 	                </p>
                     <?php
 	                break;
@@ -253,7 +253,7 @@ if (!empty($contact_form['inputs'])) {
         <?php } ?>
 
         <p class="tmmFormStyling form-submit">
-	        <button class="button middle <?php echo $contact_form['submit_button'] ?>" type="submit"><?php echo ($contact_form['submit_button_text']) ? $contact_form['submit_button_text'] : '<i class="icon-paper-plane-2"></i>'?></button>
+	        <button class="button middle <?php echo esc_attr($contact_form['submit_button']) ?>" type="submit"><?php echo ($contact_form['submit_button_text']) ? esc_html($contact_form['submit_button_text']) : '<i class="icon-paper-plane-2"></i>'?></button>
         </p>
 
 		<div class="contact_form_responce" style="display: none;"><ul></ul></div>

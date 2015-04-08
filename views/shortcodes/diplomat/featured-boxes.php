@@ -100,24 +100,24 @@
 
 <ul class="block-with-icons">
 	<li >
-		<a href="<?php echo (!empty($first_link_url)) ? $first_link_url : '#'; ?>">
-			<i class="<?php echo $first_icon; ?>"></i>
-			<?php if (!empty($first_title)){ ?><h5><?php echo $first_title ?></h5><?php } ?>
-			<?php if (!empty($first_description)){ ?><span><?php echo $first_description ?></span><?php } ?>
+		<a href="<?php echo (!empty($first_link_url)) ? esc_url($first_link_url) : '#'; ?>">
+			<i class="<?php echo esc_attr($first_icon); ?>"></i>
+			<?php if (!empty($first_title)){ ?><h5><?php echo esc_html($first_title) ?></h5><?php } ?>
+			<?php if (!empty($first_description)){ ?><span><?php echo esc_html($first_description) ?></span><?php } ?>
 		</a>
 	</li>
 	<li>
-		<a href="<?php echo (!empty($second_link_url)) ? $second_link_url : '#'; ?>">
-			<i class="<?php echo $second_icon; ?>"></i>
-			<?php if (!empty($second_title)){ ?><h5><?php echo $second_title ?></h5><?php } ?>
-			<?php if (!empty($second_description)){ ?><span><?php echo $second_description ?></span><?php } ?>
+		<a href="<?php echo (!empty($second_link_url)) ? esc_url($second_link_url) : '#'; ?>">
+			<i class="<?php echo esc_attr($second_icon); ?>"></i>
+			<?php if (!empty($second_title)){ ?><h5><?php echo esc_html($second_title) ?></h5><?php } ?>
+			<?php if (!empty($second_description)){ ?><span><?php echo esc_html($second_description) ?></span><?php } ?>
 		</a>
 	</li>
 	<li>
-		<a href="<?php echo (!empty($third_link_url)) ? $third_link_url : '#'; ?>">
-			<i class="<?php echo $third_icon; ?>"></i>
-			<?php if (!empty($third_title)){ ?><h5><?php echo $third_title ?></h5><?php } ?>
-			<?php if (!empty($third_description)){ ?><span><?php echo $third_description ?></span><?php } ?>
+		<a href="<?php echo (!empty($third_link_url)) ?  esc_url($third_link_url) : '#'; ?>">
+			<i class="<?php echo esc_attr($third_icon); ?>"></i>
+			<?php if (!empty($third_title)){ ?><h5><?php echo esc_html($third_title) ?></h5><?php } ?>
+			<?php if (!empty($third_description)){ ?><span><?php echo esc_html($third_description) ?></span><?php } ?>
 		</a>
 	</li>
 </ul>
