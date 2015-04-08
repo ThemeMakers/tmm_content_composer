@@ -25,6 +25,18 @@ if (isset($cover_id)) {
 	$cover_id = '';
 }
 
+if (!empty($width)) {
+	$width = (int) $width;
+} else {
+	$width = '100%';
+}
+
+if (!empty($height)) {
+	$height = (int) $height;
+} else {
+	$height = '100%';
+}
+
 ?>
 
 <div class="image-post">
@@ -40,7 +52,7 @@ if (isset($cover_id)) {
 			}
 			?>
 
-			<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" width="<?php echo $width ?>" height="<?php echo (!isset($width) || empty($width)) ? '' : $height ?>" src="http://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent&amp;rel=0&amp;controls=0&amp;showinfo=0"></iframe>
+			<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" width="<?php echo $width ?>" height="<?php echo ($width === '100%' ? '' : $height); ?>" src="http://www.youtube.com/embed/<?php echo esc_url($source_code) ?>?wmode=transparent&amp;rel=0&amp;controls=0&amp;showinfo=0"></iframe>
 			<?php
 
 			break;
@@ -52,7 +64,7 @@ if (isset($cover_id)) {
 				$source_code = $source_code[count($source_code) - 1];
 			}
 			?>
-			<iframe class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" width="<?php echo $width ?>" height="<?php echo (!isset($width) || empty($width)) ? '' : $height ?>" src="http://player.vimeo.com/video/<?php echo $source_code ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=f6e200"></iframe>
+			<iframe class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" width="<?php echo $width ?>" height="<?php echo ($width === '100%' ? '' : $height); ?>" src="http://player.vimeo.com/video/<?php echo esc_url($source_code) ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=f6e200"></iframe>
 			<?php
 			break;
 
@@ -64,8 +76,8 @@ if (isset($cover_id)) {
 			$cover = isset($cover_image) ? $cover_image : $cover;
 			?>
 
-			<video  poster="<?php echo $cover ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
-				<source type="video/mp4" src="<?php echo $source_code ?>" />
+			<video  poster="<?php echo esc_url($cover) ?>" controls="controls" width="<?php echo $width; ?>" height="<?php echo $height; ?>">
+				<source type="video/mp4" src="<?php echo esc_url($source_code) ?>" />
 			</video>
 
 			<?php
@@ -82,8 +94,8 @@ if (isset($cover_id)) {
 			$cover = isset($cover_image) ? $cover_image : $cover;
 			?>
 
-			<video poster="<?php echo $cover ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
-				<source type="video/ogg" src="<?php echo $source_code ?>" />
+			<video poster="<?php echo esc_url($cover) ?>" controls="controls" width="<?php echo $width; ?>" height="<?php echo $height; ?>">
+				<source type="video/ogg" src="<?php echo esc_url($source_code) ?>" />
 			</video>
 
 			<?php
@@ -98,8 +110,8 @@ if (isset($cover_id)) {
 			$cover = isset($cover_image) ? $cover_image : $cover;
 			?>
 
-			<video poster="<?php echo $cover ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
-				<source type="video/webm" src="<?php echo $source_code ?>" />
+			<video poster="<?php echo esc_url($cover) ?>" controls="controls" width="<?php echo $width; ?>" height="<?php echo $height; ?>">
+				<source type="video/webm" src="<?php echo esc_url($source_code) ?>" />
 			</video>
 
 			<?php
@@ -111,7 +123,7 @@ if (isset($cover_id)) {
 			$cover = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, '') : '';
 			if (!empty($cover)) {
 				?>
-				<img src="<?php echo TMM_Content_Composer::resize_image_cover($cover, $image_size); ?>" alt="<?php _e('Unsupported video format', TMM_CC_TEXTDOMAIN) ?>" />
+				<img src="<?php echo esc_url(TMM_Content_Composer::resize_image($cover, $image_size)); ?>" alt="<?php _e('Unsupported video format', TMM_CC_TEXTDOMAIN) ?>" />
 			<?php
 			}else{
 				_e('Unsupported video format', TMM_CC_TEXTDOMAIN);
