@@ -1,5 +1,5 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">	
+<div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
 	<div class="fullwidth">
 		<?php
@@ -12,7 +12,21 @@
 			'description' => __('Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg  http://vimeo.com/22439234 or upload self hosted video', TMM_CC_TEXTDOMAIN)
 		));
 		?>
-       
+
+	</div><!--/ .one-half-->
+
+	<div class="fullwidth">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'upload',
+			'title' => __('Cover Image', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'cover_image',
+			'id' => '',
+			'default_value' => TMM_Content_Composer::set_default_value('cover_image', ''),
+			'description' => ''
+		));
+		?>
+
 	</div><!--/ .one-half-->
 
 	<div class="one-half">
@@ -47,17 +61,17 @@
 
 <!-- --------------------------  PROCESSOR  --------------------------- -->
 <script type="text/javascript">
-	
-	
+
+
 	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
-	jQuery(function() {		
+	jQuery(function() {
 		tmm_ext_shortcodes.changer(shortcode_name);
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
-		
+
 	});
-	
-	
+
+
 </script>
 

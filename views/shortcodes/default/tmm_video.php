@@ -12,6 +12,19 @@ foreach ($allows_array as $key => $needle) {
 
 $image_size = "1036*576";
 
+if (isset($cover_id)) {
+	global $is_iphone;
+	$is_mobiles = wp_is_mobile() || $is_iphone || stripos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false;
+
+	if ($is_mobiles) {
+		$cover_id = (int) $cover_id;
+	} else {
+		$cover_id = '';
+	}
+} else {
+	$cover_id = '';
+}
+
 ?>
 
 <div class="image-post">
@@ -47,7 +60,7 @@ $image_size = "1036*576";
 
 			$source_code = $content;
 
-			$cover = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, $image_size) : '';
+			$cover = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, '') : '';
 			$cover = isset($cover_image) ? $cover_image : $cover;
 			?>
 
@@ -65,7 +78,7 @@ $image_size = "1036*576";
 
 			$source_code = $content;
 
-			$cover = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, $image_size) : '';
+			$cover = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, '') : '';
 			$cover = isset($cover_image) ? $cover_image : $cover;
 			?>
 
@@ -81,7 +94,7 @@ $image_size = "1036*576";
 		case $allows_array[4]:
 
 			$source_code = $content;
-			$cover = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, $image_size) : '';
+			$cover = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, '') : '';
 			$cover = isset($cover_image) ? $cover_image : $cover;
 			?>
 
