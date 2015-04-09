@@ -164,7 +164,7 @@ if (!empty($contact_form['inputs'])) {
 				            if (!empty($input['label'])) {
 					            ?>
 
-					            <option value="0"><?php echo $input['label'] . ($input['is_required'] ? ' *' : ''); ?></option>
+					            <option value="0"><?php echo esc_html($input['label']) . ($input['is_required'] ? ' *' : ''); ?></option>
 
 				            <?php
 				            }
@@ -230,7 +230,7 @@ if (!empty($contact_form['inputs'])) {
 
 	            case 'title':
 		            ?>
-		            <<?php echo $input['title_heading']; ?> class="info-title"><?php echo $input['label']; ?></<?php echo $input['title_heading']; ?>>
+		            <<?php echo $input['title_heading']; ?> class="info-title"><?php echo esc_html($input['label']); ?></<?php echo $input['title_heading']; ?>>
 					<?php
 		            break;
 
