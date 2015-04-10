@@ -111,6 +111,9 @@ switch($blog_type){
         $data_exerptsymbols = "data-excerptsymbols='". esc_attr($excerpt_symbols) ."'";
         $data_showexcerpt = "data-showexcerpt='" . esc_attr($show_excerpt) . "'";
 
+        $data_imagebackground = (isset($image_background) && $image_background!='#272729') ? "data-imagebackground='" . esc_attr($image_background) . "'" : '';
+        $data_imageopacity = (isset($image_opacity) &&  $image_opacity!='0.3') ? "data-imageopacity='" . esc_attr($image_opacity) . "'" : '';
+
         break;
 }
 
@@ -143,11 +146,9 @@ $_REQUEST['show_author'] = $show_author;
 $_REQUEST['image_opacity'] = (isset($image_opacity) && $image_opacity!='0.3') ? $image_opacity : '';
 $_REQUEST['image_background'] = (isset($image_background) && $image_background!='#272729') ? $image_background : '';
 
-
-
  ?>
 
-	<div class="row <?php echo (!empty($posts_list)) ? esc_attr($posts_list) : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?> <?php echo (!empty($data_titlesymbols)) ? $data_titlesymbols : ''; ?> <?php echo (!empty($data_exerptsymbols)) ? $data_exerptsymbols : ''; ?> <?php echo (!empty($data_showexcerpt)) ? $data_showexcerpt : ''; ?> >
+	<div class="row <?php echo (!empty($posts_list)) ? esc_attr($posts_list) : ''; ?>" <?php echo (!empty($data_columns)) ? $data_columns : ''; ?> <?php echo (!empty($data_titlesymbols)) ? $data_titlesymbols : ''; ?> <?php echo (!empty($data_exerptsymbols)) ? $data_exerptsymbols : ''; ?> <?php echo (!empty($data_showexcerpt)) ? $data_showexcerpt : ''; ?> <?php echo (!empty($data_imagebackground)) ? $data_imagebackground : ''; ?> <?php echo (!empty($data_imageopacity)) ? $data_imageopacity : ''; ?> >
         
         <?php 
         if ($blog_type!='masonry'){
@@ -185,6 +186,9 @@ $_REQUEST['image_background'] = (isset($image_background) && $image_background!=
                     $data['title_symbols'] = $title_symbols;
                     $data['excerpt_symbols'] = $excerpt_symbols;
                     $data['show_excerpt'] = $show_excerpt;
+                    $data['image_opacity'] = (isset($image_opacity) && $image_opacity!='0.3') ? $image_opacity : '';
+                    $data['image_background'] = (isset($image_background) && $image_background!='#272729') ? $image_background : '';
+
                     echo TMM::draw_html('post/masonry_piece', $data);
                 }
             } 
