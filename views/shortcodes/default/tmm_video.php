@@ -34,13 +34,13 @@ if (isset($cover_image_on_mobiles) && $cover_image_on_mobiles === '1') {
 }
 
 if (!empty($width)) {
-	$width = (int) $width;
+	$width = strrpos($width, '%') === false ? (int) $width : (int) $width . '%';
 } else {
 	$width = '100%';
 }
 
 if (!empty($height)) {
-	$height = (int) $height;
+	$height = strrpos($height, '%') === false ? (int) $height : (int) $height . '%';
 } else {
 	$height = '100%';
 }
