@@ -83,6 +83,10 @@ $original_query = $wp_query;
 $wp_query = new WP_Query($args);
 $posts_array = $wp_query->posts;
 
+//echo '<pre>';
+//print_r($posts_array);
+//echo '</pre>';
+
 $posts_list = 'post-list';
 $data_columns = '';
 
@@ -180,6 +184,7 @@ $_REQUEST['image_background'] = (isset($image_background) && $image_background!=
 
                 for ($i = 0; $i < $posts_per_load; $i++) { 
                     $post = $posts_array[$i];
+
                     $data = array();			
                     $data['post_key'] = $i;
                     $data['columns'] = $columns;
@@ -254,7 +259,7 @@ wp_reset_postdata();
     ?>
 	<script type="text/javascript">
 		jQuery(function() {
-            jQuery(".masonry").init_masonry(<?php echo ($columns!='fullwidth') ? $columns : '2' ?>, <?php echo $load_with_animation ?>);
+            jQuery(".masonry").init_masonry(<?php echo ($columns!='fullwidth') ? $columns : '2' ?>);
 		});
 	</script>
 
