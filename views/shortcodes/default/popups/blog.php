@@ -442,6 +442,13 @@
 					optionExcerpt.slideUp(300);
 					optionClassic.slideUp(300);
 					break;
+				case 'blog-second-alt':
+					optionDefault.slideDown(300);
+					optionMasonry.slideUp(300);
+					optionBorder.slideDown(300);
+					optionExcerpt.slideDown(300);
+					optionClassic.slideUp(300);
+					break;
 				case 'blog-third':
 					optionDefault.slideDown(300);
 					optionMasonry.slideUp(300);

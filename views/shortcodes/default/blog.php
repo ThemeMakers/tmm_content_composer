@@ -83,10 +83,6 @@ $original_query = $wp_query;
 $wp_query = new WP_Query($args);
 $posts_array = $wp_query->posts;
 
-//echo '<pre>';
-//print_r($posts_array);
-//echo '</pre>';
-
 $posts_list = 'post-list';
 $data_columns = '';
 
@@ -99,6 +95,9 @@ switch($blog_type){
         break;
     case 'blog-second':
         $post_class .= ($show_border_bottom) ? ' border post-alternate-2' : ' post-alternate-2';
+        break;
+    case 'blog-second-alt':
+        $post_class .= ($show_border_bottom) ? ' border post-alternate-2-alt' : ' post-alternate-2-alt';
         break;
     case 'blog-third':
         $post_class .= ' post-alternate-3';
