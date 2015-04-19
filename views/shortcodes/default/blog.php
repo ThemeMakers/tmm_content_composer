@@ -90,14 +90,14 @@ switch($blog_type){
     case 'blog-classic':
         $post_class .= ($show_border_bottom) ? ' border post-classic' : ' post-classic';
         break;
+	case 'blog-classic-alt':
+		$post_class .= ($show_border_bottom) ? ' border post-classic' : ' post-classic';
+		break;
     case 'blog-first':
         $post_class .= ($show_border_bottom) ? ' border post-alternate-1' :' post-alternate-1';
         break;
     case 'blog-second':
         $post_class .= ($show_border_bottom) ? ' border post-alternate-2' : ' post-alternate-2';
-        break;
-    case 'blog-second-alt':
-        $post_class .= ($show_border_bottom) ? ' border post-alternate-2-alt' : ' post-alternate-2-alt';
         break;
     case 'blog-third':
         $post_class .= ' post-alternate-3';

@@ -428,6 +428,13 @@
 					optionExcerpt.slideDown(300);
 					optionClassic.slideDown(300);
 					break;
+				case 'blog-classic-alt':
+					optionDefault.slideDown(300);
+					optionMasonry.slideUp(300);
+					optionBorder.slideDown(300);
+					optionExcerpt.slideDown(300);
+					optionClassic.slideUp(300);
+					break;
 				case 'blog-masonry':
 					optionDefault.slideUp(300);
 					optionMasonry.slideDown(300);
@@ -440,13 +447,6 @@
 					optionMasonry.slideUp(300);
 					optionBorder.slideDown(300);
 					optionExcerpt.slideUp(300);
-					optionClassic.slideUp(300);
-					break;
-				case 'blog-second-alt':
-					optionDefault.slideDown(300);
-					optionMasonry.slideUp(300);
-					optionBorder.slideDown(300);
-					optionExcerpt.slideDown(300);
 					optionClassic.slideUp(300);
 					break;
 				case 'blog-third':
