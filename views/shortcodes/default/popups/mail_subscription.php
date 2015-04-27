@@ -34,7 +34,7 @@
 			'title' => __('Email Placeholder', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'placeholder',
 			'default_value' => TMM_Content_Composer::set_default_value('placeholder', 'Enter your email'),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('Type your email placeholder here.', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
@@ -48,7 +48,7 @@
 			'title' => __('Show zip code field', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'zipcode',
 			'is_checked' => TMM_Content_Composer::set_default_value('zipcode', true),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('Check this to display zip code field.', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
