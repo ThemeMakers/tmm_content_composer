@@ -55,22 +55,13 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 			}
 
 			if ($('.masonry').length) {
-
 				$('.masonry').effect({
-					effect: 'swipeDownEffect',
+					effect: 'translateEffect',
 					speed: 200,
 					beforeCall : function (el) {
-						$(el).find('.cover').addClass(this.effect);
+						$(el).find('.box').addClass(this.effect);
 					}
-				});
-
-				$('.masonry').effect({
-					effect: 'showMeEffect',
-					speed: 200,
-					beforeCall : function (el) {
-						$(el).find('article').addClass(this.effect).addClass('shown');
-					}
-				});
+				})
 			}
 
 			if ($('.clients-items').length) {
@@ -153,7 +144,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 			var container = $(this), elements;
 				o.beforeCall(container);
 				o.getData ? elements = container.find('.' + o.effect) : elements = container.find('[data-effect]');
-			//container.on('start', function () {
+			container.on('start', function () {
 				elements.each(function (i) {
 					var element = $(this);
 					setTimeout(function () {
@@ -163,7 +154,7 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
 						}, i * o.speed);
 					}, (i * o.speed));
 				});
-			//});
+			});
 		});
 	};
 	

@@ -38,7 +38,7 @@
                                                                                                 
                                 shortcodes_list.append(html)
                                     .on('click.tmm_shortcodes_icon', 'a', function() {
-                                
+                                        
                                         if(!shortcodes_list.find('a').hasClass('active')){
                                             $(this).addClass('active');
                                        
@@ -72,8 +72,8 @@
                 ed.on("dblClick", function(e) {
                     
                     var tag = $(e.target).data('tag');
-                    var sc_id = $(e.target).data('scid');
-
+                    var sc_id = $(e.target).data('scid');                 
+                    
                     if ((tag != undefined) && (sc_id != undefined)) {
                         window.parent.tinyMCE.get(self.get_active_editor()).plugins.tmm_tiny_shortcodes.edit_shortcode(tag, sc_id);
                     } else {
@@ -81,7 +81,7 @@
                     }
 
                 });
-
+                    
                 ed.on("BeforeSetContent", function(ed, o) {
                     ed.content = self.toHTML(ed.content);
 
@@ -128,7 +128,7 @@
                         popup_class: 'tmm-popup-single-shortcode',
                         open: function() {
 	                        var cur_popup = $('.tmm-popup-single-shortcode');
-
+                                
                             /* events handlers */
 	                        cur_popup.find('.tmm_button_upload').on('click', function() {
 		                        var input_object = jQuery(this).prev('input, textarea'),
@@ -269,7 +269,7 @@
                             self.cache(props.sc_id, '[' + tag + ' ' + properties + (conts ? ']' + conts + '[/' + tag + ']' : ']'));
                             var _properties = properties.replace(/ sc_id="[^"]+"/, '').replace(/="([^"]+)"/g, ': $1;');
                             var shortcode_icon_url = self.get_shortcode_icon_url(tag);
-                            return '<img src="' + shortcode_icon_url + '" data-mce-placeholder="true" data-tag="' + tag + '" data-scid="' + props.sc_id + '" class="shortcode-placeholder mceItem scid-' + props.sc_id + '" title="' + tag.toUpperCase() + ' ' + _properties + '" />';
+                            return '<img src="' + shortcode_icon_url + '" data-mce-placeholder="true" data-tag="' + tag + '" data-scid="' + props.sc_id + '" class="shortcode-placeholder scid-' + props.sc_id + '" title="' + tag.toUpperCase() + ' ' + _properties + '" />';
 
                         });
             },
@@ -293,7 +293,7 @@
                     if(tmm_ext_shortcodes_items[i]['key'] == tag){
                         name = tmm_ext_shortcodes_items[i]['name'];
                     }
-                }
+                }           
                 
                 self.open_shortcode_popup({name: tag, title: tmm_lang['shortcode_edit'] + ': ' + name, mode: 'edit', text: shortcode_text, sc_id: sc_id});
 
