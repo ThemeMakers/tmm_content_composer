@@ -20,6 +20,7 @@
 		
 	</div>
 		
+		
 	<br />
 	<br />
 
@@ -63,52 +64,51 @@
 </div>
 
 
-<!-- --------------------------  PROCESSOR  --------------------------- -->
-
 <script type="text/javascript">
-	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
+	
+	(function($){
+		
+		var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
 
-	jQuery(function() {
-		jQuery("#list_items").sortable({
-			stop: function(event, ui) {
-				tmm_ext_shortcodes.accordion_changer(shortcode_name);
-			}
-		});
-
-		//***
-		tmm_ext_shortcodes.accordion_changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
-			tmm_ext_shortcodes.accordion_changer(shortcode_name);
-		});
-
-
-		//*****
-
-		jQuery(".js_add_accordion_item").on('click',function() {
-			var clone = jQuery(".list_item:last").clone(true);
-			var last_row = jQuery(".list_item:last");
-			jQuery(clone).insertAfter(last_row, clone);
-			jQuery(".list_item:last").find('input[type=text]').val("");
-			jQuery(".list_item:last").find('textarea').val("");
-			//***
-			var icon_class = jQuery(".list_item:first").find('select').val();
-			jQuery(".list_item:last").find('select').val(icon_class);
-			tmm_ext_shortcodes.accordion_changer(shortcode_name);
-			return false;
-		});
-
-		jQuery(".js_delete_accordion_item").life('click',function() {
-			if (jQuery(".list_item").length > 1) {
-				jQuery(this).parents('li').hide(200, function() {
-					jQuery(this).remove();
+		$(function() {
+			
+			$("#list_items").sortable({
+				stop: function(event, ui) {
 					tmm_ext_shortcodes.accordion_changer(shortcode_name);
-				});
-			}
+				}
+			});
 
-			return false;
+			tmm_ext_shortcodes.accordion_changer(shortcode_name);
+			
+			$("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+				tmm_ext_shortcodes.accordion_changer(shortcode_name);
+			});
+
+			$(".js_add_accordion_item").on('click',function() {
+				var clone = $(".list_item:last").clone(true);
+				$("#list_items").append(clone);
+				clone.find('input[type=text], textarea').val('')
+									.filter('textarea').text('');
+				
+				tmm_ext_shortcodes.accordion_changer(shortcode_name);
+				return false;
+			});
+
+			$(".js_delete_accordion_item").life('click',function() {
+				if ($(".list_item").length > 1) {
+					$(this).parents('li').hide(200, function() {
+						$(this).remove();
+						tmm_ext_shortcodes.accordion_changer(shortcode_name);
+					});
+				}
+
+				return false;
+			});
+
 		});
-
-	});
+		
+	}(jQuery));
+	
 </script>
 
 

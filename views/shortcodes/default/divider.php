@@ -8,22 +8,16 @@ switch ($style) {
 		<div class="separator"></div>
 		<?php
 		break;
-	case 'divider':
+	case 'empty';
 		?>
 		<div class="clear"></div>
-		<div class="divider"></div>
-		<?php
-		break;
-	case 'double-divider';
-		?>
-		<div class="clear"></div>
-		<div class="double-divider"></div>
+		<div class="white-space"></div>
 		<?php
 		break;
 	default:
 		?>
 		<div class="clear"></div>
-		<div class="divider"></div>
+		<div class="separator"></div>
 		<?php
 		break;
 }

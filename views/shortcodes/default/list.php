@@ -1,25 +1,25 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
-$list_type = 0;
-$styles_array = array();
-if (!isset($styles)) {
-	$list_type = 1;
-} else {
-	$styles_array = explode('^', $styles);
-}
-$content = explode('^', $content);
-if ($list_type == 0) {
-	$list_type = 'ul';
-} else {
-	$list_type = 'ol';
-}
-$colors = explode('^', $colors);
+if (!defined('ABSPATH')) exit;
 
-?>
-<<?php echo $list_type ?> class="list">
-<?php if (!empty($content)): ?>
-	<?php foreach ($content as $key => $text) : ?>
-		<li class="<?php echo $styles_array[$key] ?>" <?php if (!empty($colors[$key])) : ?> style="color: <?php echo $colors[$key] ?>" <?php endif; ?>><?php echo $text ?></li>
-	<?php endforeach; ?>
-<?php endif; ?>
-</<?php echo $list_type ?>>
+$content = explode('^', $content);
+
+if ($list_style === 'unordered') {
+	$list_style = 'ul';
+} else {
+	$list_style = 'ol';
+}
+
+$list_html = '<'.$list_style.' class="list '.$list_type.'">';
+
+if (!empty($content)) {
+
+	foreach ($content as $key => $text) {
+
+		$list_html .= '<li>'.$text.'</li>';
+
+	}
+}
+
+$list_html .= '</'.$list_style.'>';
+
+echo $list_html;

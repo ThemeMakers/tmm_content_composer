@@ -3,8 +3,6 @@
 
 	<div class="one-half">
 		<h4 class="label"><?php _e('Category', TMM_CC_TEXTDOMAIN); ?></h4>
-
-		<label class="sel">
 		<?php
 		wp_dropdown_categories(array(
 			'show_option_all' => __('All categories', TMM_CC_TEXTDOMAIN),
@@ -15,8 +13,6 @@
 			'selected' => TMM_Content_Composer::set_default_value('posts_category', 0),
 		))
 		?>
-		</label>
-
 	</div><!--/ .on-half-->
 
 	<div class="one-half">
@@ -91,7 +87,7 @@
 	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
 	jQuery(function() {
 		jQuery("#posts_category").attr('data-shortcode-field', 'posts_category')
-			                    .addClass('js_shortcode_template_changer');
+								.addClass('js_shortcode_template_changer');
 
 		tmm_ext_shortcodes.changer(shortcode_name);
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {

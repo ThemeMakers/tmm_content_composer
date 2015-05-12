@@ -1,7 +1,2 @@
-<?php
-if (!defined('ABSPATH')) exit;
-
-wp_enqueue_style('tmm_tooltipster');
-wp_enqueue_script('tmm_tooltipster');
-?>
-<span title="<?php echo $tooltip ?>" class="highlight tooltip tooltipstered"><?php echo $content ?></span>
+<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
+<a href="<?php echo $link ? $link : 'javascript:void();' ?>" target="<?php echo $link_target ?>" class="tooltip" title="<?php echo $tooltip ?>"><?php echo $content ?></a>

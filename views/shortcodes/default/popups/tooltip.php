@@ -1,5 +1,39 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">	
+<div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
+
+	<div class="one-half">
+		
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Enter Link', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'link',
+			'id' => 'link',
+			'default_value' => TMM_Content_Composer::set_default_value('link', ''),
+			'description' => ''
+		));
+		?>	
+		
+	</div>
+
+	<div class="one-half">
+		
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Link target', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'link_target',
+			'id' => 'type',
+			'options' => array(
+				'_self' => __('_self', TMM_CC_TEXTDOMAIN),
+				'_blank' => __('_blank', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('link_target', '_self'),
+			'description' => ''
+		));
+		?>
+		
+	</div>
 	
     <div class="fullwidth">
 
@@ -38,6 +72,5 @@
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
-
 	});
 </script>

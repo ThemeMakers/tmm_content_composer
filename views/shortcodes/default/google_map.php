@@ -28,30 +28,20 @@ if (!isset($maptype)) {
 	$maptype = 'image';
 }
 
-$slide_up = (isset($slide_up) && $slide_up) ? true : false;
-
 if (isset($latitude) && $latitude !== '' && isset($longitude) && $longitude !== '') {
 
 	if ($mode == 'map') {
-        if ($slide_up){
-            $height = $height + 260;
 		?>
-            <div class="google_map_expand">
-                <div id="map_extended" class="google_map_toggle" data-height="<?php echo $height-260; ?>" style="height: <?php echo $height-260 ?>px;">
-        <?php } ?>             
-                    <div class="google_map" id="google_map_<?php echo $inique_id ?>" style="height: <?php echo $height ?>px;"></div>
-        <?php if ($slide_up){ ?>           
-                </div>
-				<span class="google_map_close"></span>
-			</div>		
-        <?php } ?>
+
+		<div class="google_map" id="google_map_<?php echo $inique_id ?>" style="height: <?php echo $height ?>px;"></div>
+
 		<script type="text/javascript">
 			jQuery(function() {
 				gmt_init_map(<?php echo $latitude ?>,<?php echo $longitude ?>, "google_map_<?php echo $inique_id ?>", <?php echo $zoom ?>, "<?php echo $maptype ?>", "<?php echo $content ?>", "<?php echo $enable_marker ?>", "<?php echo $enable_popup ?>", "<?php echo $enable_scrollwheel ?>",<?php echo $js_controls ?>, "<?php echo @$marker_is_draggable ?>");
 			});
 		</script>
 
-	<?php
+		<?php
 	} else {
 
 		$marker_string = '';
@@ -60,22 +50,11 @@ if (isset($latitude) && $latitude !== '' && isset($longitude) && $longitude !== 
 		}
 
 		$location_mode_string = 'center=' . $latitude . ',' . $longitude;
-		
-         if ($slide_up){
-            $height = $height + 260;
 		?>
-            <div class="google_map_expand">
-                <div id="map_extended" class="google_map_toggle" data-height="<?php echo $height-260; ?>" style="height: <?php echo $height-260 ?>px;">
-        <?php } ?> 
 
-                <img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false">
-        
-        <?php if ($slide_up){ ?>           
-                </div>
-				<span class="google_map_close"></span>
-			</div>		
-        <?php } ?>
-	<?php
+		<img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false">
+
+		<?php
 	}
 
 }

@@ -3,7 +3,7 @@
 $titles_array = explode('^', $titles);
 $content_array = explode('^', $content);
 ?>
-<div class="acc-box <?php echo $type_style ?>">
+<div class="acc-box">
 	<?php if (!empty($content_array)): ?>
 		<?php foreach ($content_array as $key => $value) : ?>
 			<span data-mode="<?php echo $type ?>" class="acc-trigger"><a href="#"><?php echo $titles_array[$key] ?></a></span>

@@ -30,45 +30,34 @@ $classAbs = "";
 	if (!empty($margin_right))  { $styles .= 'margin-right: ' . (int) $margin_right . 'px; '; }
 	if (!empty($margin_top))    { $styles .= 'margin-top: ' . (int) $margin_top . 'px; '; }
 	if (!empty($margin_bottom)) { $styles .= 'margin-bottom: ' . (int) $margin_bottom . 'px; '; }
-			
+
+	// Image Position Absolute
+	if (@$pos_abs) {
+		$classAbs .= "absolute-image ";
+	}
+	
 	// Styles
 	if (!empty($styles)) {
 		$styles = 'style="' . $styles . '"';
-	}       
-        if ($parallax && $action == "none"){
-            $html.='<section class="section padding-off parallax parallax-bg-2 bg-black-color">';
-            $html.='<div class="full-bg-image" style="background-image:url('.$image_url.')"></div>';
-            $html.='<div id="fullscreen" class="full-screen"></div>';
-        }       
-        
-        if($overlay  && $action == "none"){
-            $html.='<div class="parallax-overlay"></div>';
-        }
-        
-        if ($action != "none" || ($action == "none" && !$parallax)){
-            // Link Start
-            if ($action == "link") {
-                    $html.= '<a title="' . $link_title . '" class="link-icon slide-image active-link '.$align.'" href="' . $image_action_link . '" target="' . $target . '">';
-            }
-            
-            if ($action=='lightbox'){
-                tmm_enqueue_script('magnific');
-                tmm_enqueue_style('magnific');
-                $html.= '<a title="' . $image_alt . '" class="slide-image image-link active-link plus-icon '.$align.'" href="' . $image_url . '">';
-               
-            }
+	}
+	
+	// Animation
+	if ($img_animated) { 
+		$classAnim .= 'animate-image ';
+		if (!empty($effect_animation)) { $effect .= $effect_animation; } 
+	}
+	
+	// Link Start
+	if ($action == "link") {
+		$html.= '<a title="' . $link_title . '" class="single-image link-icon active-link" href="' . $image_action_link . '" target="' . $target . '">';
+	}
 
-                    $src = TMM_Content_Composer::resize_image($image_url, $image_size_alias);
-                    $html.= '<img class="' . $classAbs . $classAnim . $effect . $align . '" alt="' . $image_alt . '" '. $styles .' src="' . $src . '" />';
-
-            // Link End
-            if ($action == "link" || $action == "lightbox") { 
-                    $html .= '</a>'; 
-            }
-        }
-        
-        if ($parallax && $action == "none"){
-            $html.='</section>';
-        }
+		$src = TMM_Helper::resize_image($image_url, $image_size_alias);
+		$html.= '<img data-effect="'. $effect .'" class="custom-frame ' . $classAbs . $classAnim . $effect . $align . '" alt="' . $image_alt . '" '. $styles .' src="' . $src . '" />';
+	
+	// Link End
+	if ($action == "link") { 
+		$html .= '</a>'; 
+	}
 
 echo $html;

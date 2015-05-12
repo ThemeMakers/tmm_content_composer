@@ -13,7 +13,27 @@
 		));
 		?>
 
-    </div><!--/ .one-half-->	
+    </div><!--/ .one-half-->
+
+
+	<div class="one-half">
+		<?php /*
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Audio format', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'format',
+			'id' => 'format',
+			'options' => array(
+				'other' => __('Other', TMM_CC_TEXTDOMAIN),
+				'wav' => __('Wav', TMM_CC_TEXTDOMAIN),
+				'ogg' => __('Ogg', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('format', 'other'),
+			'description' => ''
+		));*/
+		?>
+
+	</div><!--/ .one-half-->
 
     <div class="clear"></div>
 

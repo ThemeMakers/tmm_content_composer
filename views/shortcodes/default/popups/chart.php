@@ -74,7 +74,7 @@
 			'title' => __('Font Family', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'font_family',
 			'id' => 'font_family',
-			'options' => tmm_get_fonts_array(),
+			'options' => TMM_HelperFonts::get_fonts_array(),
 			'default_value' => TMM_Content_Composer::set_default_value('font_family', ''),
 			'description' => ''
 		));
@@ -112,7 +112,7 @@
 			'shortcode_field' => 'chart_titles',
 			'id' => 'chart_titles',
 			'default_value' => TMM_Content_Composer::set_default_value('chart_titles', ''),
-			'description' => __('Example:', TMM_CC_TEXTDOMAIN) . '<br />Pie => Task,Hours per Day<br />
+			'description' => __('Example', TMM_CC_TEXTDOMAIN) . 'Pie => Task,Hours per Day<br />
 			Bar, Column, Line, Area => Year, Sales, Expenses<br />
 			Combo => Month,Bolivia,Ecuador,Madagascar,Papua New Guinea,Rwanda,Average<br />
 			Geochart => Country,Popularity<br />'
@@ -129,10 +129,10 @@
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
-			'description' => __('Example:', TMM_CC_TEXTDOMAIN) . '<br />Pie => sleep:2,eat:2,work:2<br />
+			'description' => __('Example', TMM_CC_TEXTDOMAIN) . 'Pie => sleep:2,eat:2,work:2<br />
 			Bar, Column => 2004:1000:400,2005:980:570,2006:800:300<br />
 			Line, Area => 2004:1000:400,2005:1170:460,2006:660:1120,2007:1030:540<br />
-			Combo => 2004/05:165:938:522:998:450:614.6,2005/06:135:1120:599:1268:288:682,2006/07:157:1167:587:807:397:623,2007/08:139:1110:615:968:215:609.4,2008/09:136:691:629:1026:366:569.6<br />
+			Combo => 2004/05:165:938:522:998:450:614.6, 2005/06:135:1120:599:1268:288:682, 2006/07:157:1167:587:807:397:623, 2007/08:139:1110:615:968:215:609.4, 2008/09:136:691:629:1026:366:569.6<br />
 			Geochart => Germany:200,France:300,United States:400<br />'
 		));
 		?>
@@ -142,12 +142,13 @@
 	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
+			'type' => 'color',
 			'title' => __('Background Color', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'bgcolor',
 			'id' => 'bgcolor',
 			'default_value' => TMM_Content_Composer::set_default_value('bgcolor', ''),
-			'description' => ''
+			'description' => '',
+			'display' => 1
 		));
 		?>
 
@@ -164,8 +165,9 @@
 		tmm_ext_shortcodes.changer(shortcode_name);
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
+			colorizator();
 		});
-		
+		colorizator();
 	});
 </script>
 

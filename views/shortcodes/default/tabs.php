@@ -5,7 +5,7 @@ $content_array = explode('^', $content);
 ?>
 
 <?php if (!empty($content_array)): ?>
-	<div class="tabs-holder <?php echo $type_style ?>">
+	<div class="tabs-holder">
 
 		<ul class="tabs-nav clearfix">
 			<?php foreach ($titles_array as $key => $value) : ?>

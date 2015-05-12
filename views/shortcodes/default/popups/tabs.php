@@ -1,7 +1,6 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
-	
-		
+			
 	<div class="fullwidth">
 
 		<h4 class="label"><?php _e('Items', TMM_CC_TEXTDOMAIN); ?></h4>
@@ -65,26 +64,24 @@
 
 			//***** 
 			jQuery(".js_add_accordion_item").on('click',function() {
-			var clone = jQuery(".list_item:last").clone(true);
-					var last_row = jQuery(".list_item:last");
-						jQuery(clone).insertAfter(last_row, clone);
-				jQuery(".list_item:last").find('input[type=text]').val("");
-				//***
-				var icon_class = jQuery(".list_item:first").find('select').val();
-				jQuery(".list_item:last").find('select').val(icon_class);
-					tmm_ext_shortcodes.accordion_changer(shortcode_name);
+				var clone = jQuery(".list_item:last").clone(true);
+				jQuery("#list_items").append(clone);
+				clone.find('input[type=text], textarea').val('')
+									.filter('textarea').text('');
+								
+				tmm_ext_shortcodes.accordion_changer(shortcode_name);
 				return false;
-				});
+			});
 
-				jQuery(".js_delete_accordion_item").life('click',function() {
-					if (jQuery(".list_item").length > 1) {
+			jQuery(".js_delete_accordion_item").life('click',function() {
+				if (jQuery(".list_item").length > 1) {
 					jQuery(this).parents('li').hide(200, function() {
 					jQuery(this).remove();
 					tmm_ext_shortcodes.accordion_changer(shortcode_name);
 					});
 				}
-				
-					return false;
+
+				return false;
 			});
 			
 		});

@@ -2,26 +2,26 @@
 $column_class = '';
 switch ($count) {
 	case 2:
-		$column_class = 'col-sm-6';
+		$column_class = 'eight columns';
 		break;
 	case 3:
-		$column_class = 'col-sm-4';
+		$column_class = 'one-third column';
 		break;
 	case 4:
-		$column_class = 'col-sm-3';
+		$column_class = 'four columns';
 		break;
 }
 
 $args = array();
 if ($posts_category > 0) {
-	$args = array('numberposts' => $count, 'category' => $posts_category, 'suppress_filters' => false);
+	$args = array('numberposts' => $count, 'category' => $posts_category);
 } else {
-	$args = array('numberposts' => $count, 'suppress_filters' => false);
+	$args = array('numberposts' => $count);
 }
 
 $posts = get_posts($args);
 
-echo '<div class="row"><div class="entry">';
+echo '<div class="entry row_margin">';
 
 foreach ($posts as $post) {
 	echo '<div class="' . $column_class . '">';
@@ -29,7 +29,7 @@ foreach ($posts as $post) {
 	echo '</div>';
 }
 
-echo '</div></div>';
+echo '</div>';
 
 ?>
 <div class="clear"></div>
