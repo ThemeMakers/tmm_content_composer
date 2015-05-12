@@ -176,7 +176,8 @@ class TMM_Layout_Constructor {
                     wp_enqueue_script('mediaelement');
 				break;
             
-                case 'ogv': ?>
+                case 'ogv':                    
+                    ?>
                     <div class="mb-wrapper">
                         <video id="example_video" class="" width="100%" height="100%" >
                             <source src="<?php echo $video_options['video_url'] ?>" type='video/ogg' />
@@ -187,7 +188,8 @@ class TMM_Layout_Constructor {
                     wp_enqueue_script('mediaelement');
 				break;
             
-                case 'webm': ?>
+                case 'webm':                    
+                    ?>
                     <div class="mb-wrapper">
                         <video id="example_video" class="" width="100%" height="100%" >
                             <source src="<?php echo $video_options['video_url'] ?>" type='video/webm' />
@@ -199,7 +201,16 @@ class TMM_Layout_Constructor {
 				break;
             
 				default:
-					_e('Unsupported video format', TMM_CC_TEXTDOMAIN);
+                    $cover = $video_options['bg_cover'];
+                    $image_size = "2000*1345";
+                    if (!empty($cover)) {            
+                        ?>
+                    <div class="full-bg-image full-bg-image-scroll" style="background-image: url('<?php echo TMM_Content_Composer::resize_image_cover($cover, $image_size); ?>');"></div>
+                         
+                         <?php 
+                    }else{
+                        _e('Unsupported video format', TMM_CC_TEXTDOMAIN);
+                    }					
 					break;
 			}
 

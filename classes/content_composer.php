@@ -124,14 +124,18 @@ class TMM_Content_Composer {
 		wp_register_style('tmm_tooltipster', TMM_CC_URL . 'css/tooltipster.css');
 		wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/jquery.tooltipster.min.js', array('jquery'), false, true);
 
-		wp_register_style('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.css');
-		wp_register_style('tmm_owltheme', TMM_CC_URL . 'js/owl-carousel/owl.theme.css');
-		wp_register_style('tmm_owltransitions', TMM_CC_URL . 'js/owl-carousel/owl.transitions.css');
-		wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.min.js', array('jquery'), false, true);
+		//wp_register_style('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.css');
+		//wp_register_style('tmm_owltheme', TMM_CC_URL . 'js/owl-carousel/owl.theme.css');
+		//wp_register_style('tmm_owltransitions', TMM_CC_URL . 'js/owl-carousel/owl.transitions.css');
+		//wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.min.js', array('jquery'), false, true);
+
+		wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
+		//wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
+		wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/shortcodes_layout.css');
 
 		wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/jquery.modernizr.min.js', array('jquery'), false, true);
-		wp_enqueue_script('tmm_config', TMM_CC_URL . 'js/config.js', array('jquery'), false, true);
-		wp_enqueue_script('tmm_plugins', TMM_CC_URL . 'js/plugins.js', array('jquery'), false, true);
+		//wp_enqueue_script('tmm_config', TMM_CC_URL . 'js/config.js', array('jquery'), false, true);
+		//wp_enqueue_script('tmm_plugins', TMM_CC_URL . 'js/plugins.js', array('jquery'), false, true);
 
 		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/layout_front.css');
 		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_front.js', array('jquery', 'tmm_modernizr'), false, true);
@@ -143,10 +147,6 @@ class TMM_Content_Composer {
 				var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 			</script>
 			<?php
-
-			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
-			wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/shortcodes_layout.css');
 
 			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_front.css');
 			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/shortcodes_front.js', array('jquery', 'mediaelement', 'tmm_owlcarousel'), false, true);
@@ -187,6 +187,23 @@ class TMM_Content_Composer {
 			return TMM_Helper::resize_image($src, $size);
 		}
 		return $src;
+	}
+    
+	public static function resize_image_cover($src, $size, $show_cap = true) {
+		if (empty($size)) {
+            return $src;
+        }
+        $al = explode('*', $size);
+        $new_img_src = aq_resize($src, $al[0], $al[1], true);
+
+        if (!$new_img_src) {
+            if ($show_cap) {
+                
+                return 'http://placehold.it/' . $al[0] . 'x' . $al[1] . '&amp;text=UNSUPPORTED VIDEO FORMAT';
+            }
+        }
+
+        return $new_img_src;
 	}
 
 	public static function get_post_featured_image($post_id, $size) {
@@ -270,17 +287,6 @@ class TMM_Content_Composer {
             'post_modified' => 'post_modified', 'modified_gmt' => 'modified_gmt', 'post_modified_gmt' => 'post_modified_gmt',
             'menu_order' => 'menu_order', 'parent' => 'parent', 'post_parent' => 'post_parent',
             'rand' => 'rand', 'comment_count' => 'comment_count', 'author' => 'author', 'post_author' => 'post_author'
-		);
-	}
-    
-     public static function get_blog_type() {
-		return array(
-			'blog-classic' => __('Blog Classic', TMM_CC_TEXTDOMAIN),
-			'blog-medium' => __('Blog Medium', TMM_CC_TEXTDOMAIN),
-			'blog-masonry' => __('Blog Masonry', TMM_CC_TEXTDOMAIN),
-			'blog-grid' => __('Blog Grid', TMM_CC_TEXTDOMAIN),
-			'blog-grid-overlay' => __('Grid Overlay', TMM_CC_TEXTDOMAIN),
-			'blog-grid-layout' => __('Grid Multi Layout', TMM_CC_TEXTDOMAIN)
 		);
 	}
 
