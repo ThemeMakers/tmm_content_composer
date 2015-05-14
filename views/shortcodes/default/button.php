@@ -68,7 +68,29 @@ if (!empty($styles)) {
         }
 }
 $type = (isset($type)) ? $type : 'default';
+    switch ($type){
+        case 'roll':
+            ?>
+			<div class="button-overflow">
+				<a href="<?php echo esc_url($url) ?>" <?php echo ($roll_styles ? $roll_styles : '') ?> class="button-roll">
+					<span data-hover="<?php echo esc_attr($text) ?>"><?php echo esc_html($text) ?></span>
+				</a>
+			</div>
 
-?>
-
-<a href="<?php echo $url ?>" <?php echo ($styles ? $styles : '') ?> class="button <?php echo $size ?> <?php echo $type ?>"><?php echo $text ?></a>
+            <?php
+            break;
+        case 'orange-roll':
+            ?>
+	            <div class="button-overflow">
+		            <a href="<?php echo esc_url($url) ?>" <?php echo ($roll_styles ? $roll_styles : '') ?> class="button-roll  orange-roll">
+			            <span data-hover="<?php echo esc_attr($text) ?>"><?php echo esc_html($text) ?></span>
+		            </a>
+	            </div>
+            <?php
+            break;
+        default:
+            ?>
+                <a href="<?php echo esc_url($url) ?>" <?php echo ($styles ? $styles : '') ?> class="button <?php echo esc_attr($size) ?> <?php echo (isset($color)) ? esc_attr($color) : '' ?>"><?php echo esc_html($text) ?></a>
+            <?php
+            break;
+    }

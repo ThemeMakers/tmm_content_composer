@@ -9,9 +9,9 @@
 			'shortcode_field' => 'content',
 			'id' => '',
 			'options' => array(
-				'separator' => __('Line', TMM_CC_TEXTDOMAIN),
-				'divider' => __('Dashed', TMM_CC_TEXTDOMAIN),
-				'double-divider' => __('Double Divider', 'tmm_shortcodes'),
+				'separator' => __('Solid Long', TMM_CC_TEXTDOMAIN),
+				'divider' => __('Solid Short', TMM_CC_TEXTDOMAIN),
+				'empty' => __('Empty Space', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('content', 'separator'),
 			'description' => ''

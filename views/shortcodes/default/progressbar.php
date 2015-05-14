@@ -10,10 +10,10 @@ $percentages = explode('^', $percentage);
 
 		<div class="progress-bar">
 			<div class="progressbar-title-wrap">
-				<div class="progressbar-title"><?php echo $titles[$key] ?></div>
+				<div class="progressbar-title"><?php echo esc_html($titles[$key]) ?></div>
 			</div><!--/ .progressbar-title-wrap-->
 			<div class="bar-outer">
-				<div data-progress="<?php echo $percentages[$key] ?>" class="bar" style="background-color: <?php echo $color; ?>"></div>
+				<div data-progress="<?php echo esc_attr($percentages[$key]) ?>" class="bar" style="background-color: <?php echo $color; ?>"></div>
 			</div><!--/ .bar-outer-->
 			<span class="percent">0%</span>
 		</div><!--/ .progress-bar-->

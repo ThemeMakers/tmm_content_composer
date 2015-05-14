@@ -55,7 +55,7 @@
 		?>	
 
 	</div><!--/ .one-half-->
-
+        
     <div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -64,20 +64,21 @@
 			'shortcode_field' => 'type',
 			'id' => 'button_type',
 			'options' => array(
-	            'default' => 'Default',
-	            'secondary' => 'Secondary',
-            ),
+                                    'default' => 'Default',
+                                    'roll' => 'Roll Button',
+                                    'orange-roll' => 'Orange Roll Button'
+                                    ),
 			'default_value' => TMM_Content_Composer::set_default_value('type', ''),
 			'description' => ''
 		));
-		?>
+		?>	
 
 	</div><!--/ .one-half-->
-
+        
         <div class="one-half">
-
+            
         </div><!--/ .one-half-->
-
+        
         <div class="colors">
         
             <div class="one-half">
@@ -88,7 +89,7 @@
                             'title' => __('Text Color', TMM_CC_TEXTDOMAIN),
                             'shortcode_field' => 'text_color',
                             'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('text_color', ''),
+                            'default_value' => TMM_Content_Composer::set_default_value('text_color', '#f85c37'),
                             'description' => '',
                             'display' => 1
                     ));
@@ -104,7 +105,7 @@
                             'title' => __('Mouseover Text Color', TMM_CC_TEXTDOMAIN),
                             'shortcode_field' => 'mouseover_text_color',
                             'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('mouseover_text_color', ''),
+                            'default_value' => TMM_Content_Composer::set_default_value('mouseover_text_color', '#fff'),
                             'description' => '',
                             'display' => 1
                     ));
@@ -120,7 +121,7 @@
                             'title' => __('Background Color', TMM_CC_TEXTDOMAIN),
                             'shortcode_field' => 'bg_color',
                             'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('bg_color', ''),
+                            'default_value' => TMM_Content_Composer::set_default_value('bg_color', '#fff'),
                             'description' => '',
                             'display' => 1
                     )); ?>
@@ -148,7 +149,7 @@
                             'title' => __('Mouseover Background Color', TMM_CC_TEXTDOMAIN),
                             'shortcode_field' => 'mouseover_bg_color',
                             'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('mouseover_bg_color', ''),
+                            'default_value' => TMM_Content_Composer::set_default_value('mouseover_bg_color', '#f85c37'),
                             'description' => '',
                             'display' => 1
                     )); ?>
@@ -176,7 +177,7 @@
                             'title' => __('Border Color', TMM_CC_TEXTDOMAIN),
                             'shortcode_field' => 'border_color',
                             'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('border_color', ''),
+                            'default_value' => TMM_Content_Composer::set_default_value('border_color', '#cfcfcf'),
                             'description' => '',
                             'display' => 1
                     )); ?>
@@ -204,7 +205,7 @@
                             'title' => __('Mouseover Border Color', TMM_CC_TEXTDOMAIN),
                             'shortcode_field' => 'mouseover_border_color',
                             'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('mouseover_border_color', ''),
+                            'default_value' => TMM_Content_Composer::set_default_value('mouseover_border_color', '#f85c37'),
                             'description' => '',
                             'display' => 1
                     ));

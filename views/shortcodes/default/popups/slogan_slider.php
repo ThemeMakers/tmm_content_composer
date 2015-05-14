@@ -314,8 +314,8 @@
                     jQuery('.list-table').each(function(){
                         jQuery(this).find('tr:eq( 1 )').hide();
                     });
-                    jQuery('.h1_fade_in').parent().hide();
-                    jQuery('.h1_fade_out').parent().hide();
+                    jQuery('.h1_fade_in').parents('td').hide();
+                    jQuery('.h1_fade_out').parents('td').hide();
                 }                
                 
 		jQuery("#list_items").sortable({

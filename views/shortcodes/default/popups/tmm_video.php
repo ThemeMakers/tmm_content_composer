@@ -14,6 +14,20 @@
 		?>
        
 	</div><!--/ .one-half-->
+    
+	<div class="fullwidth">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'upload',
+			'title' => __('Cover Image', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'cover_image',
+			'id' => '',
+			'default_value' => TMM_Content_Composer::set_default_value('cover_image', ''),
+			'description' => ''
+		));
+		?>
+       
+	</div><!--/ .one-half-->
 
 	<div class="one-half">
 		<?php

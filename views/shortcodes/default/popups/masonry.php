@@ -10,11 +10,11 @@
 			'shortcode_field' => 'columns',
 			'id' => '',
 			'options' => array(
-                                'col-2' => __('2 Columns', TMM_CC_TEXTDOMAIN),
+				'col-2' => __('2 Columns', TMM_CC_TEXTDOMAIN),
 				'col-3' => __('3 Columns', TMM_CC_TEXTDOMAIN),
 				'col-4' => __('4 Columns', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('columns', 3),
+			'default_value' => TMM_Content_Composer::set_default_value('columns', 'col-3'),
 			'description' => ''
 		)); 
 		?>

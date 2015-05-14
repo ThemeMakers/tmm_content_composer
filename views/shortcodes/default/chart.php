@@ -26,28 +26,28 @@ switch ($type) {
 			google.setOnLoadCallback(<?php echo "drawPieChart" . $unique_id; ?>);
 			function <?php echo "drawPieChart" . $unique_id; ?>() {
 				var data = google.visualization.arrayToDataTable([
-		<?php if (!empty($content)): ?>
-						[<?php echo $chart_titles_js; ?>],
-			<?php foreach ($content as $key => $value) : $data = explode(':', $value); ?>
-								[<?php
-				if (!empty($data)) {
-					foreach ($data as $kk => $val) {
-						if ($kk > 0) {
-							echo ',';
-						}
+					<?php if (!empty($content)): ?>
+									[<?php echo $chart_titles_js; ?>],
+						<?php foreach ($content as $key => $value) : $data = explode(':', $value); ?>
+											[<?php
+							if (!empty($data)) {
+								foreach ($data as $kk => $val) {
+									if ($kk > 0) {
+										echo ',';
+									}
 
-						if ($kk == 0) {
-							echo "'";
-						}
-						echo $val;
-						if ($kk == 0) {
-							echo "'";
-						}
-					}
-				}
-				?>],
-			<?php endforeach; ?>
-		<?php endif; ?>
+									if ($kk == 0) {
+										echo "'";
+									}
+									echo $val;
+									if ($kk == 0) {
+										echo "'";
+									}
+								}
+							}
+							?>],
+						<?php endforeach; ?>
+					<?php endif; ?>
 					]);
 					var options = {
 						title: '<?php echo $title ?>',
@@ -61,7 +61,6 @@ switch ($type) {
 
 		</script>
 
-
 		<?php
 		break;
 
@@ -70,52 +69,49 @@ switch ($type) {
 		?>
 
 		<script type="text/javascript">
-				google.load("visualization", "1", {packages:["corechart"]});
-				google.setOnLoadCallback(<?php echo "drawBarChart" . $unique_id; ?>);
-				function <?php echo "drawBarChart" . $unique_id; ?>() {
-					var data = google.visualization.arrayToDataTable([
-		<?php if (!empty($content)): ?>
-							[<?php echo $chart_titles_js; ?>],
-			<?php foreach ($content as $key => $value) : $data = explode(':', $value); ?>
-									[<?php
-				if (!empty($data)) {
-					foreach ($data as $kk => $val) {
-						if ($kk > 0) {
-							echo ',';
-						}
+			google.load("visualization", "1", {packages:["corechart"]});
+			google.setOnLoadCallback(<?php echo "drawBarChart" . $unique_id; ?>);
+			function <?php echo "drawBarChart" . $unique_id; ?>() {
+				var data = google.visualization.arrayToDataTable([
+					<?php if (!empty($content)): ?>
+										[<?php echo $chart_titles_js; ?>],
+						<?php foreach ($content as $key => $value) : $data = explode(':', $value); ?>
+												[<?php
+							if (!empty($data)) {
+								foreach ($data as $kk => $val) {
+									if ($kk > 0) {
+										echo ',';
+									}
 
-						if ($kk == 0) {
-							echo "'";
-						}
-						echo $val;
-						if ($kk == 0) {
-							echo "'";
-						}
-					}
-				}
-				?>],
-			<?php endforeach; ?>
-		<?php endif; ?>
+									if ($kk == 0) {
+										echo "'";
+									}
+									echo $val;
+									if ($kk == 0) {
+										echo "'";
+									}
+								}
+							}
+							?>],
+						<?php endforeach; ?>
+					<?php endif; ?>
 						]);
 						var options = {
 							title: '<?php echo $title ?>',
 							backgroundColor:'<?php echo $bgcolor ?>',
 							fontName:'<?php echo $font_family ?>',
 							fontSize: '<?php echo $font_size ?>',
-		<?php if ($type == 'bar'): ?>
+							<?php if ($type == 'bar'): ?>
 								vAxis: {title: '<?php echo $chart_titles[0] ?>'},
-		<?php else: ?>
+							<?php else: ?>
 								hAxis: {title: '<?php echo $chart_titles[0] ?>'},
-		<?php endif; ?>
+							<?php endif; ?>
 						}
-
-
-
-		<?php if ($type == 'bar'): ?>
+					<?php if ($type == 'bar'): ?>
 							var chart = new google.visualization.BarChart(document.getElementById('chart_<?php echo $unique_id; ?>'));
-		<?php else: ?>
+					<?php else: ?>
 							var chart = new google.visualization.ColumnChart(document.getElementById('chart_<?php echo $unique_id; ?>'));
-		<?php endif; ?>
+					<?php endif; ?>
 
 						chart.draw(data, options);
 					}
@@ -132,32 +128,32 @@ switch ($type) {
 		?>
 
 		<script type="text/javascript">
-					google.load('visualization', '1', {'packages': ['geochart']});
-					google.setOnLoadCallback(<?php echo "drawRegionsMap" . $unique_id; ?>);
-					function <?php echo "drawRegionsMap" . $unique_id; ?>() {
-						var data = google.visualization.arrayToDataTable([
-		<?php if (!empty($content)): ?>
-								[<?php echo $chart_titles_js; ?>],
-			<?php foreach ($content as $key => $value) : $data = explode(':', $value); ?>
-										[<?php
-				if (!empty($data)) {
-					foreach ($data as $kk => $val) {
-						if ($kk > 0) {
-							echo ',';
-						}
+			google.load('visualization', '1', {'packages': ['geochart']});
+			google.setOnLoadCallback(<?php echo "drawRegionsMap" . $unique_id; ?>);
+			function <?php echo "drawRegionsMap" . $unique_id; ?>() {
+				var data = google.visualization.arrayToDataTable([
+					<?php if (!empty($content)): ?>
+						[<?php echo $chart_titles_js; ?>],
+							<?php foreach ($content as $key => $value) : $data = explode(':', $value); ?>
+							[<?php
+								if (!empty($data)) {
+									foreach ($data as $kk => $val) {
+										if ($kk > 0) {
+											echo ',';
+										}
 
-						if ($kk == 0) {
-							echo "'";
-						}
-						echo $val;
-						if ($kk == 0) {
-							echo "'";
-						}
-					}
-				}
-				?>],
-			<?php endforeach; ?>
-		<?php endif; ?>
+										if ($kk == 0) {
+											echo "'";
+										}
+										echo $val;
+										if ($kk == 0) {
+											echo "'";
+										}
+									}
+								}
+								?>],
+							<?php endforeach; ?>
+						<?php endif; ?>
 							]);
 							var options = {};
 							var chart = new google.visualization.GeoChart(document.getElementById('chart_<?php echo $unique_id; ?>'));
@@ -170,22 +166,19 @@ switch ($type) {
 		<?php
 		break;
 
-
-
-
 	case 'line': case 'area':
 		$content = explode(',', $content);
 		?>
 
 		<script type="text/javascript">
-						google.load("visualization", "1", {packages:["corechart"]});
-						google.setOnLoadCallback(<?php echo "drawChart" . $unique_id; ?>);
-						function <?php echo "drawChart" . $unique_id; ?>() {
-							var data = google.visualization.arrayToDataTable([
-		<?php if (!empty($content)): ?>
-									[<?php echo $chart_titles_js; ?>],
+			google.load("visualization", "1", {packages:["corechart"]});
+			google.setOnLoadCallback(<?php echo "drawChart" . $unique_id; ?>);
+			function <?php echo "drawChart" . $unique_id; ?>() {
+				var data = google.visualization.arrayToDataTable([
+			<?php if (!empty($content)): ?>
+				[<?php echo $chart_titles_js; ?>],
 			<?php foreach ($content as $key => $value) : $data = explode(':', $value); ?>
-											[<?php
+				[<?php
 				if (!empty($data)) {
 					foreach ($data as $kk => $val) {
 						if ($kk > 0) {
@@ -204,47 +197,42 @@ switch ($type) {
 				?>],
 			<?php endforeach; ?>
 		<?php endif; ?>
-								]);
-								var options = {
-									title: '<?php echo $title ?>',
-									backgroundColor:'<?php echo $bgcolor ?>',
-									fontName:'<?php echo $font_family ?>',
-									fontSize: '<?php echo $font_size ?>',
+			]);
+			var options = {
+				title: '<?php echo $title ?>',
+				backgroundColor:'<?php echo $bgcolor ?>',
+				fontName:'<?php echo $font_family ?>',
+				fontSize: '<?php echo $font_size ?>',
 		<?php if ($type == 'area'): ?>
-										hAxis: {title: '<?php echo $chart_titles[0] ?>'},
+				hAxis: {title: '<?php echo $chart_titles[0] ?>'},
 		<?php endif; ?>
-								}
-
-
-
+			}
 		<?php if ($type == 'line'): ?>
-									var chart = new google.visualization.LineChart(document.getElementById('chart_<?php echo $unique_id; ?>'));
+				var chart = new google.visualization.LineChart(document.getElementById('chart_<?php echo $unique_id; ?>'));
 		<?php else: ?>
-									var chart = new google.visualization.AreaChart(document.getElementById('chart_<?php echo $unique_id; ?>'));
+				var chart = new google.visualization.AreaChart(document.getElementById('chart_<?php echo $unique_id; ?>'));
 		<?php endif; ?>
-								chart.draw(data, options);
-							}
+				chart.draw(data, options);
+		}
 
 		</script>
 
-
 		<?php
 		break;
-
 
 	case 'combo':
 		$content = explode(',', $content);
 		?>
 
 		<script type="text/javascript">
-							google.load('visualization', '1', {'packages': ['corechart']});
-							google.setOnLoadCallback(<?php echo "drawVisualization" . $unique_id; ?>);
-							function <?php echo "drawVisualization" . $unique_id; ?>() {
-								var data = google.visualization.arrayToDataTable([
+			google.load('visualization', '1', {'packages': ['corechart']});
+			google.setOnLoadCallback(<?php echo "drawVisualization" . $unique_id; ?>);
+			function <?php echo "drawVisualization" . $unique_id; ?>() {
+				var data = google.visualization.arrayToDataTable([
 		<?php if (!empty($content)): ?>
-										[<?php echo $chart_titles_js; ?>],
+				[<?php echo $chart_titles_js; ?>],
 			<?php foreach ($content as $key => $value) : $data = explode(':', $value); ?>
-												[<?php
+				[<?php
 				if (!empty($data)) {
 					foreach ($data as $kk => $val) {
 						if ($kk > 0) {
@@ -263,57 +251,50 @@ switch ($type) {
 				?>],
 			<?php endforeach; ?>
 		<?php endif; ?>
-									]);
-									var options = {
-										title : '<?php echo $title ?>',
-										backgroundColor:'<?php echo $bgcolor ?>',
-										fontName:'<?php echo $font_family ?>',
-										fontSize: '<?php echo $font_size ?>',
-										//vAxis: {title: "Cups"},
-										//hAxis: {title: "Month"},
-										seriesType: "bars",
-										series: {5: {type: "line"}}
-									};
-									var chart = new google.visualization.ComboChart(document.getElementById('chart_<?php echo $unique_id; ?>'));
-									chart.draw(data, options);
-								}
+			]);
+			var options = {
+				title : '<?php echo $title ?>',
+				backgroundColor:'<?php echo $bgcolor ?>',
+				fontName:'<?php echo $font_family ?>',
+				fontSize: '<?php echo $font_size ?>',
+				//vAxis: {title: "Cups"},
+				//hAxis: {title: "Month"},
+				seriesType: "bars",
+				series: {5: {type: "line"}}
+			};
+			var chart = new google.visualization.ComboChart(document.getElementById('chart_<?php echo $unique_id; ?>'));
+			chart.draw(data, options);
+		}
 
 		</script>
-
-
-
 		<?php
 		break;
-
-
 	case 'table':
 		$content = explode('~', $content);
 		?>
 
 		<script type='text/javascript'>
-								google.load('visualization', '1', {packages:['table']});
-								google.setOnLoadCallback(<?php echo "drawTable_" . $unique_id; ?>);
-								function <?php echo "drawTable_" . $unique_id; ?>() {
-									var data = new google.visualization.DataTable();
+			google.load('visualization', '1', {packages:['table']});
+			google.setOnLoadCallback(<?php echo "drawTable_" . $unique_id; ?>);
+			function <?php echo "drawTable_" . $unique_id; ?>() {
+				var data = new google.visualization.DataTable();
 		<?php if (!empty($chart_titles) AND is_array($chart_titles)): ?>
 			<?php foreach ($chart_titles as $key => $value):$data = explode(':', $value); ?>
-												data.addColumn('<?php echo $data[0] ?>', '<?php echo $data[1] ?>');
+				data.addColumn('<?php echo $data[0] ?>', '<?php echo $data[1] ?>');
 			<?php endforeach; ?>
 		<?php endif; ?>
 
-									data.addRows([
+		data.addRows([
 		<?php if (!empty($content)): ?>
 			<?php foreach ($content as $key => $value):$data = explode('~', $value); ?>
-													[<?php echo $value ?>],
+		[<?php echo $value ?>],
 			<?php endforeach; ?>
 		<?php endif; ?>
-									]);
-									var table = new google.visualization.Table(document.getElementById('chart_<?php echo $unique_id; ?>'));
-									table.draw(data, {showRowNumber: true});
-								}
+			]);
+			var table = new google.visualization.Table(document.getElementById('chart_<?php echo $unique_id; ?>'));
+			table.draw(data, {showRowNumber: true});
+		}
 		</script>
-
-
 
 		<?php
 		break;

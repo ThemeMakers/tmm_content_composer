@@ -115,17 +115,17 @@ if ( isset($bg_center) && $bg_center) {
 
 // Styles
 if (!empty($styles)) {
-	$styles = 'style="' . $styles . '"';
+	$styles = 'style="' . esc_attr($styles) . '"';
 }
 
 // General Styles
 if (!empty($general_styles)) {
-	$general_styles = 'style="' . $general_styles . '"';
+	$general_styles = 'style="' . esc_attr($general_styles) . '"';
 }
 
 // Single Styles
 if (!empty($single_styles)) {
-	$single_styles = 'style="' . $single_styles . '"';
+	$single_styles = 'style="' . esc_attr($single_styles) . '"';
 }
 
 
@@ -143,11 +143,7 @@ if (!empty($title_effect)&&($title_effect!='none')){
 $content = str_replace("`", "'", $content);
 
 if ( isset($title_type) && $title_type=='section'){
-    $html.= '<div class="section-title"><' . $type . ' class="htitle ' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '>';
-	if (isset($title_description) && !empty($title_description)){
-		$html.= '<h4 class="hdesc">'.$title_description.'</h4>';
-	}
-	$html.= '</div>';
+    $html.= '<div class="section-title"><' . $type . ' class="' . esc_attr($css_class) . '" ' . $styles . '>' . esc_html($content) . '</' . $type . '></div>';
 }else{   
     
     if (isset($word_animate) && $word_animate){
@@ -167,14 +163,14 @@ if ( isset($title_type) && $title_type=='section'){
             $css_content = 'inner-content';
         }
         
-        $html.= '<div class=" extraRadius ' . $css_class . '" ' . $general_styles . '><div class="' . $css_content . '">'; 
+        $html.= '<div class=" extraRadius ' . esc_attr($css_class) . '" ' . $general_styles . '><div class="' . esc_attr($css_content) . '">';
         foreach ($content as $title){
-            $html.= '<' . $type . ' ' .$single_styles . '>' . $title . '</' . $type . '>';
+            $html.= '<' . $type . ' ' .$single_styles . '>' . esc_html($title) . '</' . $type . '>';
         }
         $html.= '</div></div>';         
         
     }else{
-        $html.= '<' . $type . ' class="' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '>';
+        $html.= '<' . $type . ' class="' . esc_attr($css_class) . '" ' . $styles . '>' . esc_html($content) . '</' . $type . '>';
     }
 }
 

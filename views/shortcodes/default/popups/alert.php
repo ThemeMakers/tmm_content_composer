@@ -27,7 +27,6 @@
 				'success' => __('Success', TMM_CC_TEXTDOMAIN),
 				'info' => __('Info', TMM_CC_TEXTDOMAIN),
 				'notice' => __('Notice', TMM_CC_TEXTDOMAIN),
-				'transparent' => __('Transparent', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type', 'notice'),
 			'description' => ''

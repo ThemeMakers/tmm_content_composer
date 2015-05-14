@@ -21,9 +21,9 @@ $slides_count = ceil(count($images)/$items_per_slide);
                     <?php for ($i=$items_per_slide*($k-1); $i<($items_per_slide*$k); $i++){                        
                         if(isset($images[$i])){
                             ?>
-                                <li>
-	                                <a href="<?php echo(!empty($links[$i]) ? $links[$i] : '#') ?>"><img alt="" src="<?php echo TMM_Content_Composer::resize_image($images[$i], '') ?>"></a>
-                                </li>
+                            <li>
+                                <a href="<?php echo(!empty($links[$i]) ? esc_url($links[$i]) : '#') ?>"><img alt="" src="<?php echo esc_url(TMM_Content_Composer::resize_image($images[$i], '')) ?>"></a>
+                            </li>
                             <?php
                             }
                         } ?>
@@ -46,7 +46,7 @@ $slides_count = ceil(count($images)/$items_per_slide);
                     paginationSpeed: 400,
                     singleItem: true,
                     theme : "owl-theme",
-                    transitionStyle : "<?php echo (isset($animation_type)&&(!empty($animation_type))) ? $animation_type : 'scaleToFade' ?>"
+                    transitionStyle : "<?php echo (isset($animation_type)&&(!empty($animation_type))) ? esc_js($animation_type) : 'scaleToFade' ?>"
 
                 });
             }

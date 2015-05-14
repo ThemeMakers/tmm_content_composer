@@ -11,44 +11,28 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$row_style = TMM_Layout_Constructor::get_row_bg($tmm_layout_constructor_row, $row);
 		
 		$section_class = 'section padding-off';
-
-		if ($tmm_layout_constructor_row[$row]['section_content']=='1'){
-			$section_class .=' section-content';
-		}
-		if ($tmm_layout_constructor_row[$row]['bg_type']=='none'){
-			$section_class .=' background-color-off';
-		}
+                        
 		if ($tmm_layout_constructor_row[$row]['full_width'] == 1 && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
 			$section_class .= ' theme-default-bg';
 		}
-		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_custom_type'] == 'image') {
+		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'custom') {
 			$section_class .= ' parallax';
 		}
-
-		$margin_top = (isset($tmm_layout_constructor_row[$row]['margin_top'])) ? $tmm_layout_constructor_row[$row]['margin_top'] : '';
-		$margin_bottom = (isset($tmm_layout_constructor_row[$row]['margin_bottom'])) ? $tmm_layout_constructor_row[$row]['margin_bottom'] : '';
-		$section_style = 'style="';
-		if ($margin_top != ''){
-			$section_style .= 'margin-top:' . $margin_top . 'px;';
-		}
-		if ($margin_bottom != ''){
-			$section_style .= 'margin-bottom:' . $margin_bottom . 'px;';
-		}
-		$section_style .= '"';
-
-		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){
-			?>
-
-			<div class="container">
-
-		<?php
-		}
+		 
+        
 		?>
 
-		<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>" <?php echo $section_style ?>>
+		<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>">
                 
             <?php
-
+			if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&($row_displaying=='full_width')){
+				?>
+                    
+				<div class="container">
+				
+				<?php
+			} 
+                
                 if (isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom' && $tmm_layout_constructor_row[$row]['bg_custom_type']=='color'){
                     ?>
                     <div style="<?php echo (!empty($tmm_layout_constructor_row[$row]['bg_color'])) ? 'background-color: ' . $tmm_layout_constructor_row[$row]["bg_color"] . '' : ''; ?>" class="full-bg-image"></div>
@@ -69,6 +53,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 					$top = ($post->post_type=='page' && empty($post->post_content) && $first_row['bg_custom_type']=='video') ? '0' : '100px';
 					$video_options=array(
 						'video_url' => $tmm_layout_constructor_row[$row]['bg_video'], 
+						'bg_cover' => isset($tmm_layout_constructor_row[$row]['bg_cover']) ? $tmm_layout_constructor_row[$row]['bg_cover'] : '', 
 						'video_type' => $video_type,
 						'video_quality' => 'default',
 						'top' => $top,
@@ -96,7 +81,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				}                                         
                             $bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';                               
 							$padding_top = (isset($tmm_layout_constructor_row[$row]['padding_top'])) ? $tmm_layout_constructor_row[$row]['padding_top'] : 0;                   
-							$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : 0;
+							$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : 0;                           
 							$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
 							$row_center = (isset($tmm_layout_constructor_row[$row]['row_center'])&&($tmm_layout_constructor_row[$row]['row_center']==true)) ? true : false;
 							
@@ -134,12 +119,12 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 							}                    
 									?>	                       
 
-									<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
+									<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>				
 
 										<?php foreach ($row_data as $uniqid => $column){ ?>
 
 											<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
-											<div class="columns <?php echo (!empty($row_center)&&($row_center==true)) ? 'col-sm-push-2 col-sm-pull-2 ' :  ''?><?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
+											<div class="<?php echo (!empty($row_center)&&($row_center==true)) ? 'col-sm-push-2 col-sm-pull-2 ' :  ''?><?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
 
 										<?php } ?>
 												
@@ -165,19 +150,19 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 						
 						<?php
 					}
-
+					
+			if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&($row_displaying=='full_width')){
+				?>
+						
+				</div><!--/ .container-->
+			
+				<?php
+			}
 			?>
                              
-		</div><!--/ .section -->
+		</div>
 
     <?php
-		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){
-			?>
-
-			</div><!--/ .container-->
-
-		<?php
-		}
 	} 
 
 } 

@@ -5,19 +5,6 @@
 
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Type', 'tmm_shortcodes'),
-			'shortcode_field' => 'type',
-			'id' => '',
-			'options' => array(
-				'default' => __('Default', TMM_CC_TEXTDOMAIN),
-				'secondary' => __('Secondary', TMM_CC_TEXTDOMAIN),
-			),
-			'default_value' => TMM_Content_Composer::set_default_value('type', 'default'),
-			'description' => __('Select type of you dropcap', TMM_CC_TEXTDOMAIN)
-		));
-
-		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
 			'title' => __('Enter Symbol', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',

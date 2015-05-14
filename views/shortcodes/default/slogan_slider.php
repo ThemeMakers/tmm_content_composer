@@ -25,13 +25,12 @@
                     <?php  foreach ($h1_items as $key => $h1){ ?>
                     
                         <div class="item">
-                            <<?php echo $h1_heading_type[$key] ?>>
+                            <<?php echo $h1_heading_type[$key] ?> style="color:<?php echo $h1_color[$key] ?>">
                                 <?php echo $h1_items[$key]; ?>
                             </<?php echo $h1_heading_type[$key] ?>>
                         </div>
                         
-                    <?php } ?> 
-                       
+                    <?php } ?>
 
                 </div><!--/ .cycle-rotator-->
             <?php
@@ -46,8 +45,8 @@
 
                     <li class="item">
                         <div class="slogan align-center">
-                            <<?php echo $h1_heading_type[$key] ?> style="color:<?php echo $h1_color[$key] ?>" data-from-effect="<?php echo $h1_fade_in[$key] ?>" data-to-effect="<?php echo $h1_fade_out[$key] ?>"><?php echo $h1_items[$key] ?></<?php echo $h1_heading_type[$key] ?>>
-                            <<?php echo $h2_heading_type[$key] ?> style="color:<?php echo $h2_color[$key] ?>" data-from-effect="<?php echo $h2_fade_in[$key] ?>" data-to-effect="<?php echo $h2_fade_out[$key] ?>"><?php echo $h2_items[$key] ?></<?php echo $h2_heading_type[$key] ?>>
+                            <<?php echo $h1_heading_type[$key] ?> style="color:<?php echo $h1_color[$key] ?>" data-from-effect="<?php echo $h1_fade_in[$key] ?>" data-to-effect="<?php echo $h1_fade_out[$key] ?>"><?php echo esc_html($h1_items[$key]) ?></<?php echo $h1_heading_type[$key] ?>>
+                            <<?php echo $h2_heading_type[$key] ?> style="color:<?php echo $h2_color[$key] ?>" data-from-effect="<?php echo $h2_fade_in[$key] ?>" data-to-effect="<?php echo $h2_fade_out[$key] ?>"><?php echo esc_html($h2_items[$key]) ?></<?php echo $h2_heading_type[$key] ?>>
                         </div>
                     </li>
 

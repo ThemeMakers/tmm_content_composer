@@ -19,7 +19,7 @@ $colors = explode('^', $colors);
 <<?php echo $list_type ?> class="list">
 <?php if (!empty($content)): ?>
 	<?php foreach ($content as $key => $text) : ?>
-		<li class="<?php echo $styles_array[$key] ?>" <?php if (!empty($colors[$key])) : ?> style="color: <?php echo $colors[$key] ?>" <?php endif; ?>><?php echo $text ?></li>
+		<li class="<?php echo esc_attr($styles_array[$key]) ?>" <?php if (!empty($colors[$key])) : ?> style="color: <?php echo $colors[$key] ?>" <?php endif; ?>><?php echo esc_html($text) ?></li>
 	<?php endforeach; ?>
 <?php endif; ?>
 </<?php echo $list_type ?>>

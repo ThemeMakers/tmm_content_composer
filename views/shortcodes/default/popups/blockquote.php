@@ -22,26 +22,13 @@
 			'title' => __('Text Color', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'type',
 			'type' => 'select',
-            'default_value' => '',
+                        'default_value' => '',
 			'description' => '',
-            'options' => array(
-                                'type-1' => 'type-1',
-                                'type-bg-color' => 'type-bg-color',
-                                ),
+                        'options' => array(
+                                            'type-1' => 'type-1',
+                                            'type-2' => 'type-2',
+                                            ),
 			'default_value' => TMM_Content_Composer::set_default_value('type', 'type-1'),
-			'id' => '',
-			'display' => 1
-		));
-		?>
-    </div>
-    <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'title' => __('Author', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'author',
-			'type' => 'text',            
-			'description' => '',                        
-			'default_value' => TMM_Content_Composer::set_default_value('author', ''),
 			'id' => '',
 			'display' => 1
 		));

@@ -80,9 +80,6 @@
 				<input type="hidden" id="row_overlay_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['row_overlay'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][row_overlay]" />
 				<input type="hidden" id="row_padding_top_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['padding_top'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][padding_top]" />
 				<input type="hidden" id="row_padding_bottom_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['padding_bottom'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][padding_bottom]" />
-				<input type="hidden" id="row_margin_top_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['margin_top'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][margin_top]" />
-				<input type="hidden" id="row_margin_bottom_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['margin_bottom'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][margin_bottom]" />
-				<input type="hidden" id="row_section_content_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['section_content'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][section_content]" />
 
 			</li>
 
@@ -103,7 +100,7 @@
 			'row' => '__ROW_ID__',
 			'uniqid' => '__UNIQUE_ID__',
 			'css_class' => 'element1-4',
-			'front_css_class' => 'medium-3',
+			'front_css_class' => 'col-sm-3',
 			'value' => '1/4',
 			'content' => '',
 			'title' => '',
@@ -129,14 +126,14 @@
 			<input type="hidden" id="row_lc_displaying___ROW_ID__" value="default" name="tmm_layout_constructor_row[__ROW_ID__][lc_displaying]" />
 			<input type="hidden" id="row_full_width___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][full_width]" />
 			<input type="hidden" id="row_content_full_width___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][content_full_width]" />
-			<input type="hidden" id="row_bg_type___ROW_ID__" value="custom" name="tmm_layout_constructor_row[__ROW_ID__][bg_type]" />
+			<input type="hidden" id="row_bg_type___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_type]" />
 			<input type="hidden" id="row_bg_data___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_data]" />
-			<input type="hidden" id="row_bg_custom_color___ROW_ID__" value="#fff" name="tmm_layout_constructor_row[__ROW_ID__][bg_color]" />
+			<input type="hidden" id="row_bg_custom_color___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_color]" />
             
 			<input type="hidden" id="row_bg_custom_type___ROW_ID__" value="none" name="tmm_layout_constructor_row[__ROW_ID__][bg_custom_type]" />
             
 			<input type="hidden" id="row_bg_custom_image___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_image]" />
-			<input type="hidden" id="row_bg_custom_video___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video]" />
+			<input type="hidden" id="row_bg_custom_video___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video]" />			
 			<input type="hidden" id="row_bg_custom_opacity___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][bg_opacity]" />
 			<input type="hidden" id="row_bg_is_cover___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][bg_cover]" />
 			<input type="hidden" id="row_bg_attachment___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_attachment]" />
@@ -144,11 +141,8 @@
 			<input type="hidden" id="row_align___ROW_ID__" value="left" name="tmm_layout_constructor_row[__ROW_ID__][row_align]" />
             <input type="hidden" id="row_center___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][row_center]" />
             <input type="hidden" id="row_overlay___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][row_overlay]" />
-			<input type="hidden" id="row_padding_top___ROW_ID__" value="55" name="tmm_layout_constructor_row[__ROW_ID__][padding_top]" />
-			<input type="hidden" id="row_padding_bottom___ROW_ID__" value="55" name="tmm_layout_constructor_row[__ROW_ID__][padding_bottom]" />
-			<input type="hidden" id="row_margin_top___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][margin_top]" />
-			<input type="hidden" id="row_margin_bottom___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][margin_bottom]" />
-			<input type="hidden" id="row_section_content___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][section_content]" />
+			<input type="hidden" id="row_padding_top___ROW_ID__" value="80" name="tmm_layout_constructor_row[__ROW_ID__][padding_top]" />
+			<input type="hidden" id="row_padding_bottom___ROW_ID__" value="80" name="tmm_layout_constructor_row[__ROW_ID__][padding_bottom]" />
 
 		</li>
 
@@ -196,8 +190,7 @@
                 'id' => 'row_lc_displaying',
                 'options' => array(
                     'default' => __('Below content matching its layout', TMM_CC_TEXTDOMAIN),
-                    'before_full_width' => __('Before main content with separate layout options', TMM_CC_TEXTDOMAIN),
-		   			'full_width' => __('Below main content with separate layout options', TMM_CC_TEXTDOMAIN)
+                    'full_width' => __('Below main content with separate layout options', TMM_CC_TEXTDOMAIN)
                 ),
                 'default_value' => TMM_Content_Composer::set_default_value('row_lc_displaying', 'default'),
                 'description' => ''
@@ -243,8 +236,8 @@
 				'title' => __('Padding top', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_padding_top',
 				'type' => 'text',
-				'description' => 'Default Value 55px',
-				'default_value' => TMM_Content_Composer::set_default_value('padding_top', '55'),
+				'description' => 'Default Value 80px',
+				'default_value' => TMM_Content_Composer::set_default_value('padding_top', '80'),
 				'id' => 'row_padding_top'
 			));
 
@@ -252,27 +245,9 @@
 				'title' => __('Padding bottom', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_padding_bottom',
 				'type' => 'text',
-				'description' => 'Default Value 55px',
-				'default_value' => TMM_Content_Composer::set_default_value('padding_bottom', '55'),
+				'description' => 'Default Value 80px',
+				'default_value' => TMM_Content_Composer::set_default_value('padding_bottom', '80'),
 				'id' => 'row_padding_bottom'
-			));
-
-			TMM_Content_Composer::html_option(array(
-				'title' => __('Margin top', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'row_margin_top',
-				'type' => 'text',
-				'description' => 'Default Value 30px',
-				'default_value' => TMM_Content_Composer::set_default_value('margin_top', '30'),
-				'id' => 'row_margin_top'
-			));
-
-			TMM_Content_Composer::html_option(array(
-				'title' => __('Margin bottom', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'row_margin_bottom',
-				'type' => 'text',
-				'description' => 'Default Value 30px',
-				'default_value' => TMM_Content_Composer::set_default_value('margin_bottom', '30'),
-				'id' => 'row_margin_bottom'
 			));
 
             TMM_Content_Composer::html_option(array(
@@ -298,15 +273,6 @@
                 'description' => ''
             ));
 
-			TMM_Content_Composer::html_option(array(
-                'type' => 'checkbox',
-                'title' => __('Use as Section Content', TMM_CC_TEXTDOMAIN),
-                'shortcode_field' => 'row_section_content',
-                'id' => 'row_section_content',
-                'is_checked'=>TMM_Content_Composer::set_default_value('row_section_content', 0),
-                'description' => ''
-            ));
-
             ?>
         </div>
 
@@ -323,7 +289,7 @@
 					'default' => __('Default Theme Color', TMM_CC_TEXTDOMAIN),
 					'custom' => __('Custom', TMM_CC_TEXTDOMAIN),
 				),
-				'default_value' => 'none',
+				'default_value' => 'default',
 				'description' => ''
 			));
 			?>			
@@ -394,6 +360,17 @@
                         'title' => __('Background Video', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'row_background_video',
                         'id' => 'row_background_video',
+                        'default_value' => '',
+                        'description' => 'Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg http://vimeo.com/22439234 or upload self hosted video'
+                    ));
+                    ?>
+                    
+                    <?php
+                    TMM_Content_Composer::html_option(array(
+                        'type' => 'upload',
+                        'title' => __('Cover Image', TMM_CC_TEXTDOMAIN),
+                        'shortcode_field' => 'row_background_cover',
+                        'id' => 'row_background_cover',
                         'default_value' => '',
                         'description' => 'Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg http://vimeo.com/22439234 or upload self hosted video'
                     ));
