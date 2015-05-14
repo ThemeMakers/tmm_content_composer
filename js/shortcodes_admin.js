@@ -6,19 +6,19 @@ var TMM_APP_SHORTCODES = function() {
 				jQuery(this.context).on(types, this.selector, data, fn);
 				return this;
 			};
-
+			//***
 			if (!jQuery("#tmm_shortcodes_html_buffer").size()) {
 				jQuery('body').append('<div id="tmm_shortcodes_html_buffer" style="display: none;"></div>');
 			}
 			self.html_buffer = jQuery("#tmm_shortcodes_html_buffer");
-
+			//***
 			jQuery(".js_shortcode_checkbox_self_update").life('click', function() {
 				if (jQuery(this).is(':checked')) {
 					jQuery(this).val(1);
 				} else {
 					jQuery(this).val(0);
 				}
-
+				//***
 				try {
 					self.changer(shortcode_name);
 				} catch (e) {
@@ -51,7 +51,7 @@ var TMM_APP_SHORTCODES = function() {
 						content = jQuery(value).val();
 					} else {
 						//save_as_one for dynamic lists
-						var vals = jQuery(value).val();
+						var vals = ''+jQuery(value).val();
 						vals = vals.replace(/\"/gi, "\'");
 						if (!jQuery(value).hasClass('save_as_one')) {
 							begin_string = begin_string + " " + shortcode_field + '="' + vals + '"';
@@ -83,7 +83,7 @@ var TMM_APP_SHORTCODES = function() {
 					}
 				});
 			}
-
+			//***
 			var shortcode_text = begin_string + ']' + content + end_string;
 			self.insert_html_in_buffer(shortcode_text);
 		},
@@ -95,7 +95,7 @@ var TMM_APP_SHORTCODES = function() {
 				var shortcode_field = jQuery(value).attr('data-shortcode-field');
 				begin_string = begin_string + " " + shortcode_field + '="' + jQuery(value).val() + '"';
 			});
-
+			//*****
 			var heads_values = 'heads_values="';
 			var heads = jQuery("#google_table_headers .google_table_cols > li").find(".google_table_col");
 			jQuery.each(heads, function(key, value) {
@@ -108,7 +108,7 @@ var TMM_APP_SHORTCODES = function() {
 				heads_values = heads_values + vals;
 			});
 			heads_values = heads_values + '"';
-
+			//*****
 			var head_items_types = 'heads_types="';
 			var heads_types = jQuery("#google_table_headers .google_table_cols > li").find(".google_table_type");
 			jQuery.each(heads_types, function(key, value) {
@@ -139,9 +139,9 @@ var TMM_APP_SHORTCODES = function() {
 				}
 
 			});
-
+			//*****
 			var shortcode_text = begin_string + ' ' + heads_values + ' ' + head_items_types + ']' + table_rows + end_string;
-
+			//*****
 			self.insert_html_in_buffer(shortcode_text);
 		},
 		price_table_changer: function(shortcode) {
@@ -153,7 +153,7 @@ var TMM_APP_SHORTCODES = function() {
 				var shortcode_field = jQuery(value).attr('data-shortcode-field');
 				begin_string = begin_string + " " + shortcode_field + '="' + jQuery(value).val() + '"';
 			});
-
+			//****
 			var content = "";
 			var list = jQuery("#price_tables_list > li");
 			jQuery.each(list, function(index, li) {
@@ -175,7 +175,7 @@ var TMM_APP_SHORTCODES = function() {
 				price_table_shortcode = price_table_shortcode + 'button_link="' + button_link + '" ';
 				var featured = jQuery(li).find(".featured_price_list").val();
 				price_table_shortcode = price_table_shortcode + 'featured="' + featured + '"__PRICE_TABLE_CLOSE__';
-
+				//***
 				var features = jQuery(li).find("ul.features li input[type=text]");
 				var features_string = "";
 				jQuery.each(features, function(i, feature) {
@@ -189,6 +189,7 @@ var TMM_APP_SHORTCODES = function() {
 				content = content + price_table_shortcode;
 			});
 
+			//****
 			var shortcode_text = begin_string + ']' + content + end_string;
 			self.insert_html_in_buffer(shortcode_text);
 		},
@@ -197,7 +198,7 @@ var TMM_APP_SHORTCODES = function() {
 			var begin_string = "[" + shortcode;
 			var end_string = "[/" + shortcode + "]";
 			//list_type: ul == 0
-
+			//***
 			if (list_type == 0) {
 				var list_item_styles = 'styles="';
 
@@ -209,7 +210,7 @@ var TMM_APP_SHORTCODES = function() {
 				});
 				list_item_styles = list_item_styles + '"';
 			}
-
+			//***
 			var list_item_colors = 'colors="';
 			jQuery.each(jQuery(".list_item_color"), function(key, value) {
 				if (key > 0) {
@@ -218,7 +219,7 @@ var TMM_APP_SHORTCODES = function() {
 				list_item_colors = list_item_colors + value.value;
 			});
 			list_item_colors = list_item_colors + '"';
-
+			//***
 			var list_item_content = "";
 			jQuery.each(jQuery(".list_item_content"), function(key, value) {
 				if (key > 0) {
@@ -227,7 +228,7 @@ var TMM_APP_SHORTCODES = function() {
 				value.value = value.value.replace(/\"/gi, "\'");
 				list_item_content = list_item_content + value.value;
 			});
-
+			//***
 			var shortcode_text = "";
 			if (list_type == 0) {
 				shortcode_text = begin_string + ' ' + list_item_styles + ' ' + list_item_colors + ']' + list_item_content + end_string;
@@ -242,6 +243,7 @@ var TMM_APP_SHORTCODES = function() {
 			var end_string = "[/" + shortcode + "]";
 			//list_type: ul == 0
 
+			//***
 			var list_item_content = "";
 			jQuery.each(jQuery(".album_item_content"), function(key, value) {
 				if (key > 0) {
@@ -250,7 +252,7 @@ var TMM_APP_SHORTCODES = function() {
 				value.value = value.value.replace(/\"/gi, "\'");
 				list_item_content = list_item_content + value.value;
 			});
-
+			//***
 			var shortcode_text = begin_string + ' layout="' + jQuery('#album_layout').val() + '"]' + list_item_content + end_string;
 			self.insert_html_in_buffer(shortcode_text);
 		},
@@ -335,6 +337,7 @@ var TMM_APP_SHORTCODES = function() {
 
 			var end_string = "[/" + shortcode + "]";
 
+			//***
 			var type_style = jQuery('#type_style').val();
 			if (type_style === undefined) {
 				type_style = "";
@@ -353,7 +356,8 @@ var TMM_APP_SHORTCODES = function() {
 				value.value = value.value.replace(/\"/gi, "\'");
 				accordion_item_title = accordion_item_title + value.value;
 			});
-
+			//***
+			//***
 			var accordion_item_content = "";
 			jQuery.each(jQuery(".accordion_item_content"), function(key, value) {
 				if (key > 0) {
@@ -361,7 +365,7 @@ var TMM_APP_SHORTCODES = function() {
 				}
 				accordion_item_content = accordion_item_content + value.value;
 			});
-
+			//***
 			var shortcode_text = begin_string + ' titles="' + accordion_item_title + '"' + ' type="' + type + '" ' + ' type_style="' + type_style + '"' + ']' + accordion_item_content + end_string;
 
 			self.insert_html_in_buffer(shortcode_text);
@@ -372,94 +376,72 @@ var TMM_APP_SHORTCODES = function() {
 
 			var end_string = "[/" + shortcode + "]";	
                         
-			var items_per_slide = jQuery('#items_per_slide').val();
+                        var items_per_slide = jQuery('#items_per_slide').val();
 			if (items_per_slide === undefined) {
-				items_per_slide = "";
+                            items_per_slide = "";
 			}
                         
-			var animation_type = jQuery('#animation_type').val();
+                        var animation_type = jQuery('#animation_type').val();
 			if (animation_type === undefined) {
-				animation_type = "";
+                            animation_type = "";
 			}
 
 			var accordion_item_title = "";
 			jQuery.each(jQuery(".accordion_item_title"), function(key, value) {
-				if (key > 0) {
-						accordion_item_title = accordion_item_title + '^';
-				}
-				value.value = value.value.replace(/\"/gi, "\'");
-				accordion_item_title = accordion_item_title + value.value;
+                            if (key > 0) {
+                                    accordion_item_title = accordion_item_title + '^';
+                            }
+                            value.value = value.value.replace(/\"/gi, "\'");
+                            accordion_item_title = accordion_item_title + value.value;
 			});
 			
 			var accordion_item_content = "";
 			jQuery.each(jQuery(".accordion_item_content"), function(key, value) {
-				if (key > 0) {
-						accordion_item_content = accordion_item_content + '^';
-				}
-				accordion_item_content = accordion_item_content + value.value;
+                            if (key > 0) {
+                                    accordion_item_content = accordion_item_content + '^';
+                            }
+                            accordion_item_content = accordion_item_content + value.value;
 			});
 			
-			var shortcode_text = begin_string + ' items_per_slide="' + items_per_slide + '" animation_type="' + animation_type + '" titles="' + accordion_item_title + '"' + ']' + accordion_item_content + end_string;
+                        var shortcode_text = begin_string + ' items_per_slide="' + items_per_slide + '" animation_type="' + animation_type + '" titles="' + accordion_item_title + '"' + ']' + accordion_item_content + end_string;			
 
 			self.insert_html_in_buffer(shortcode_text);
 		},
-		gallery_changer : function(shortcode){
-			var begin_string = "[" + shortcode;
-			var end_string = "[/" + shortcode + "]";
-			var images = "";
-
-			jQuery.each(jQuery(".tmm-gallery-item-val"), function(key, value){
-				if (key > 0) {
-					images = images + '^';
-				}
-				value.value = value.value.replace(/\"/gi, "\'");
-				images = images + value.value;
-			});
-
-			var effect = jQuery('#transition_effect').val();
-			if (effect === undefined) {
-				effect = "";
-			}
-
-			var shortcode_text = begin_string + ' images="' + images + '" effect="' + effect + '"]' + end_string;
-			self.insert_html_in_buffer(shortcode_text);
-
-		},
-		menu_changer:function(shortcode){
-			var begin_string = "[" + shortcode;
-			var end_string = "[/" + shortcode + "]";
-
-			var menu_titles = "";
-			jQuery.each(jQuery(".link_text"), function(key, value) {
-				if (key > 0) {
-						menu_titles = menu_titles + '^';
-					}
-					value.value = value.value.replace(/\"/gi, "\'");
-					menu_titles = menu_titles + value.value;
-			});
-
-			var menu_links = "";
-			jQuery.each(jQuery(".link_url"), function(key, value) {
-				if (key > 0) {
-						menu_links = menu_links + '^';
-					}
-					value.value = value.value.replace(/\"/gi, "\'");
-					menu_links = menu_links + value.value;
-			});
-
-			var menu_icons = "";
-			jQuery.each(jQuery(".icon_type"), function(key, value) {
-				if (key > 0) {
-						menu_icons = menu_icons + '^';
-					}
-					value.value = value.value.replace(/\"/gi, "\'");
-					menu_icons = menu_icons + value.value;
-			});
-
-			var shortcode_text = begin_string + ' menu_titles="' + menu_titles + '" menu_links="' + menu_links + '" menu_icons="' + menu_icons + '"]' + end_string;
-			self.insert_html_in_buffer(shortcode_text);
-
-		},
+                menu_changer:function(shortcode){
+                    var begin_string = "[" + shortcode;
+                    var end_string = "[/" + shortcode + "]";
+                    
+                    var menu_titles = "";                    
+                    jQuery.each(jQuery(".link_text"), function(key, value) {
+                        if (key > 0) {
+                                menu_titles = menu_titles + '^';
+                            }
+                            value.value = value.value.replace(/\"/gi, "\'");
+                            menu_titles = menu_titles + value.value;
+                    });
+                    
+                    var menu_links = "";                    
+                    jQuery.each(jQuery(".link_url"), function(key, value) {
+                        if (key > 0) {
+                                menu_links = menu_links + '^';
+                            }
+                            value.value = value.value.replace(/\"/gi, "\'");
+                            menu_links = menu_links + value.value;
+                    });
+                    
+                    var menu_icons = "";                    
+                    jQuery.each(jQuery(".icon_type"), function(key, value) {
+                        if (key > 0) {
+                                menu_icons = menu_icons + '^';
+                            }
+                            value.value = value.value.replace(/\"/gi, "\'");
+                            menu_icons = menu_icons + value.value;
+                    });
+                    
+                    var shortcode_text = begin_string + ' menu_titles="' + menu_titles + '" menu_links="' + menu_links + '" menu_icons="' + menu_icons + '"]' + end_string;			
+                    self.insert_html_in_buffer(shortcode_text);
+                    
+                },
        text_slider_changer: function(shortcode) {
 
 			var begin_string = "[" + shortcode;

@@ -14,48 +14,6 @@
 }
 
 /* -------------------------------------------------- */
-/*	Nav
-/* -------------------------------------------------- */
-
-.owl-nav-out {
-	-webkit-transform-origin: -50% 50%;
-	transform-origin: -50% 50%;
-	-webkit-animation: scaleDown 0.5s forwards cubic-bezier(0.7, 0, 0.3, 1);
-	animation: scaleDown 0.5s forwards cubic-bezier(0.7, 0, 0.3, 1);
-}
-
-.owl-nav-in {
-	-webkit-transform-origin: 150% 50%;
-	transform-origin: 150% 50%;
-	-webkit-animation: scaleUp 0.5s forwards cubic-bezier(0.7, 0, 0.3, 1);
-	animation: scaleUp 0.5s forwards cubic-bezier(0.7, 0, 0.3, 1);
-}
-
-@keyframes scaleUp {
-	from {
-		transform: scale(0);
-	}
-	to {
-		transform: scale(1);
-		opacity: 1;
-	}
-}
-
-@-webkit-keyframes scaleDown {
-	to {
-		-webkit-transform: scale(0);
-		opacity: 0;
-	}
-}
-
-@keyframes scaleDown {
-	to {
-		transform: scale(0);
-		opacity: 0;
-	}
-}
-
-/* -------------------------------------------------- */
 /*	Fade
 /* -------------------------------------------------- */
 

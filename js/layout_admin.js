@@ -16,37 +16,37 @@
                         'value': '1/4',
                         'name': 'One fourth',
                         'css_class': 'element1-4',
-						'front_css_class': 'medium-3'
+						'front_css_class': 'col-sm-3'
                     },
                     {
                         'value': '1/3',
                         'name': 'One third',
                         'css_class': 'element1-3',
-						'front_css_class': 'medium-4'
+						'front_css_class': 'col-sm-4'
                     },
                     {
                         'value': '1/2',
                         'name': 'One half',
                         'css_class': 'element1-2',
-						'front_css_class': 'medium-6'
+						'front_css_class': 'col-sm-6'
                     },
                     {
                         'value': '2/3',
                         'name': 'Two thirds',
                         'css_class': 'element2-3',
-						'front_css_class': 'medium-8'
+						'front_css_class': 'col-sm-8'
                     },
                     {
                         'value': '3/4',
                         'name': 'Three Fourth',
                         'css_class': 'element3-4',
-						'front_css_class': 'medium-9'
+						'front_css_class': 'col-sm-9'
                     },
                     {
                         'value': '1',
                         'name': 'Full width',
                         'css_class': 'element1-1',
-						'front_css_class': 'medium-12'
+						'front_css_class': 'col-sm-12'
                     }
                 ];
 
@@ -340,18 +340,16 @@
                             bg_type = $('#row_bg_type_' + row_id).val(),                            
                             padding_top = $('#row_padding_top_' + row_id).val(),
                             padding_bottom = $('#row_padding_bottom_' + row_id).val(),
-                            margin_top = $('#row_margin_top_' + row_id).val(),
-                            margin_bottom = $('#row_margin_bottom_' + row_id).val(),
                             bg_color = $('#row_bg_custom_color_' + row_id).val(),
                             bg_custom_type = $('#row_bg_custom_type_' + row_id).val(),
                             bg_opacity = $('#row_bg_custom_opacity_' + row_id).val(),
                             bg_image = $('#row_bg_custom_image_' + row_id).val(),
                             bg_video = $('#row_bg_custom_video_' + row_id).val(),
+                            bg_cover = $('#row_bg_is_cover_' + row_id).val(),
                             bg_attachment = $('#row_bg_attachment_' + row_id).val(),
                             bg_is_cover = $('#row_bg_is_cover_' + row_id).val(),
                             align = $('#row_align_' + row_id).val(),
                             center = $('#row_center_' + row_id).val(),
-                            section_content = $('#row_section_content_' + row_id).val(),
                             overlay = $('#row_overlay_' + row_id).val(),
                             bg_fullscreen = $('#row_bg_fullscreen_' + row_id).val(),
                             custom_box = cur_popup.find('#row_background_image_box'),
@@ -361,10 +359,10 @@
                             box_row_full_fidth  = cur_popup.find('.row_full_width'),                 
                             box_content_full_fidth  = cur_popup.find('.content_full_width');                 
                         
-                        if (lc_displaying == 'full_width' || lc_displaying == 'before_full_width'){
+                        if (lc_displaying == 'full_width'){
                             box_row_full_fidth.show();
                         }
-                        if (full_width == 1 && (lc_displaying == 'full_width' || lc_displaying == 'before_full_width')){
+                        if (full_width == 1 && lc_displaying == 'full_width'){
                                 box_content_full_fidth.show();
                             }
                         
@@ -377,6 +375,7 @@
                             cur_popup.find('#row_background_color').val(bg_color).next('.bgpicker').css('background-color', bg_color);
                             cur_popup.find('#row_background_image').val(bg_image);
                             cur_popup.find('#row_background_video').val(bg_video);
+                            cur_popup.find('#row_background_cover').val(bg_cover);
                             cur_popup.find('#row_background_opacity').val(bg_opacity);
                             cur_popup.find('#row_bg_attachment').val(bg_attachment);
                             cur_popup.find('#row_background_is_cover').val(bg_is_cover);
@@ -406,17 +405,9 @@
                         cur_popup.find('#row_background_type').val(bg_type);                        
                         cur_popup.find('#row_padding_top').val(padding_top);
                         cur_popup.find('#row_padding_bottom').val(padding_bottom);
-                        cur_popup.find('#row_margin_top').val(margin_top);
-                        cur_popup.find('#row_margin_bottom').val(margin_bottom);
                         cur_popup.find('#row_align').val(align);                                        
-                        cur_popup.find('#row_section_content').val(section_content);
+                        cur_popup.find('#row_center').val(center);
                         
-                        if(section_content == 1){
-                            cur_popup.find('#row_section_content').attr('checked', 'checked');
-                        }else{
-                            cur_popup.find('#row_section_content').removeAttr('checked');
-                        }
-
                         if(center == 1){
                             cur_popup.find('#row_center').attr('checked', 'checked');
                         }else{
@@ -441,7 +432,6 @@
                                     box_content_full_fidth.slideUp();
                                     break;
                                 case 'full_width':
-                                case 'before_full_width':
                                     box_row_full_fidth.slideDown();
                                     if (cur_popup.find('#row_full_width').val()=='1'){
                                          box_content_full_fidth.slideDown();
@@ -511,45 +501,38 @@
                                     break;
                             }
                         });
-                        
-                        cur_popup.find('.tmm_button_upload').on('click', function() {
-                            var input_object = $(this).prev('input, textarea'),
-                                frame = wp.media({
-                                    title: wp.media.view.l10n.chooseImage,
-                                    multiple: false,
-                                    library: { type: 'image' }
-                                });
 
-                            frame.on( 'select', function() {
-                                var selection = frame.state().get('selection');
-                                selection.each(function(attachment) {
-                                    var url = attachment.attributes.url;
-                                    input_object.val(url).trigger('change');
-                                });
-                            }).open();
+	                    cur_popup.find('.tmm_button_upload').on('click', function() {
+		                    var input_object = $(this).prev('input, textarea'),
+			                    type = $(this).data('type'),
+			                    title = wp.media.view.l10n.chooseImage;
 
-                            return false;
-                        });
-                        
-                        cur_popup.find('.tmm_button_upload_video').on('click', function()
-                        {
-                            var input_object = jQuery(this).prev('input, textarea'),
-                                frame = wp.media({
-                                title: wp.media.view.l10n.chooseImage,
-                                multiple: false,
-                                library: { type: 'video' }
-                            });
+		                    if (!type) {
+			                    type = 'image';
+		                    } else if (type === 'audio') {
+			                    title = wp.media.view.l10n.audioAddSourceTitle;
+		                    } else if (type === 'video') {
+			                    title = wp.media.view.l10n.videoAddSourceTitle;
+		                    }
 
-	                        frame.on( 'select', function() {
-	                            var selection = frame.state().get('selection');
-	                            selection.each(function(attachment) {
-	                                var url = attachment.attributes.url;
-	                                input_object.val(url).trigger('change');
-	                            });
-	                        });
+		                    var frame = wp.media({
+			                    title: title,
+			                    multiple: false,
+			                    library: { type: type }
+		                    });
 
-	                        frame.open();
-                        });
+		                    frame.on( 'select', function() {
+			                    var selection = frame.state().get('selection');
+			                    selection.each(function(attachment) {
+				                    var url = attachment.attributes.url;
+				                    input_object.val(url).trigger('change');
+			                    });
+		                    });
+
+		                    frame.open();
+
+		                    return false;
+	                    });
                         
                         cur_popup.find('.tmm-popup-content input[type=checkbox]').on('click', function() {
                             var is_checked = $(this).is(':checked');
@@ -570,7 +553,6 @@
                         cur_popup.find('#row_background_type').off('change');
 	                    cur_popup.find('#row_bg_custom_type').off('change');
                         cur_popup.find('.tmm_button_upload').off('click');
-                        cur_popup.find('.tmm_button_upload_video').off('click');
                         cur_popup.find('.tmm-popup-content input[type=checkbox]').off('click');
                     },
                     save: function() {
@@ -581,29 +563,29 @@
                             bg_type = cur_popup.find('#row_background_type').val(),                            
                             padding_top = cur_popup.find('#row_padding_top').val(),
                             padding_bottom = cur_popup.find('#row_padding_bottom').val(),
-                            margin_top = cur_popup.find('#row_margin_top').val(),
-                            margin_bottom = cur_popup.find('#row_margin_bottom').val(),
                             bg_color = cur_popup.find('#row_background_color').val(),
                             bg_custom_type = cur_popup.find('#row_bg_custom_type').val(),
                             bg_opacity = cur_popup.find('#row_background_opacity').val(),
                             bg_image = cur_popup.find('#row_background_image').val(),
                             bg_video = cur_popup.find('#row_background_video').val(),
+                            bg_cover = cur_popup.find('#row_background_cover').val(),
                             bg_attachment = cur_popup.find('#row_bg_attachment').val(),
                             bg_is_cover = cur_popup.find('#row_background_is_cover').val(),
                             align = cur_popup.find('#row_align').val(),
                             center = cur_popup.find('#row_center').val(),
-                            section_content = cur_popup.find('#row_section_content').val(),
                             overlay = cur_popup.find('#row_overlay').val(),
                             bg_fullscreen = cur_popup.find('#row_bg_fullscreen').val();                           
                     
-                        if (bg_type === 'custom') {                            
+                        if (bg_type === 'custom') {        
+                            
                             $('#row_bg_custom_color_' + row_id).val(bg_color);
                             $('#row_bg_custom_type_' + row_id).val(bg_custom_type);
                             $('#row_bg_custom_opacity_' + row_id).val(bg_opacity);
                             $('#row_bg_custom_image_' + row_id).val(bg_image);
                             $('#row_bg_custom_video_' + row_id).val(bg_video);
+                            $('#row_bg_is_cover_' + row_id).val(bg_cover);
                             $('#row_bg_attachment_' + row_id).val(bg_attachment);
-                            $('#row_bg_is_cover_' + row_id).val(bg_is_cover);
+                            
                         }
                         
                         $('#row_lc_displaying_' + row_id).val(lc_displaying);
@@ -612,11 +594,8 @@
                         $('#row_bg_type_' + row_id).val(bg_type);                        
                         $('#row_padding_top_' + row_id).val(padding_top);
                         $('#row_padding_bottom_' + row_id).val(padding_bottom);
-                        $('#row_margin_top_' + row_id).val(margin_top);
-                        $('#row_margin_bottom_' + row_id).val(margin_bottom);
                         $('#row_align_' + row_id).val(align);
                         $('#row_center_' + row_id).val(center);
-                        $('#row_section_content_' + row_id).val(section_content);
                         $('#row_overlay_' + row_id).val(overlay);                                                                                
                         $('#row_bg_fullscreen_' + row_id).val(bg_fullscreen);
                         

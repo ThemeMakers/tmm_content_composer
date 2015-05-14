@@ -54,54 +54,6 @@ body {
 /*	Animation
 /* ---------------------------------------------------------------------- */
 
-
-
-	.swipeDownEffect{
-		-webkit-transform: translateY(-100%);
-		transform: translateY(-100%);
-	}
-	.swipeDownEffectRun{
-		-webkit-animation: swipeDown 1s cubic-bezier(0.6,0,0.4,1) forwards 1;
-		animation: swipeDown 1s cubic-bezier(0.6,0,0.4,1) forwards 1;
-	}
-	@-webkit-keyframes swipeDown {
-		50%, 60% { -webkit-transform: translateY(0); }
-		100%     { -webkit-transform: translateY(100%); }
-	}
-	@keyframes swipeDown {
-		50%, 60% { transform: translateY(0); }
-		100%     { transform: translateY(100%); }
-	}
-
-	.swipeDownEffectRun::after {
-		-webkit-animation: fadeOut 1s ease forwards;
-		animation: fadeOut 1s ease forwards;
-		-webkit-animation-delay: inherit;
-		animation-delay: inherit;
-	}
-	@-webkit-keyframes fadeOut {
-		50%, 60% { opacity: 1; }
-		100%     { opacity: 0; }
-	}
-	@keyframes fadeOut {
-		50%, 60% { opacity: 1; }
-		100%     { opacity: 0; }
-	}
-
-	.showMeEffect{
-		opacity: 0;
-		-webkit-transition:  opacity .35s ease-in-out;
-		transition: opacity .35s ease-in-out;
-		-webkit-animation-fill-mode: both;
-		animation-fill-mode: both;
-	}
-
-	.masonry article.showMeEffectRun, .touch .showMeEffect {
-		opacity: 1;
-		-webkit-animation-duration: 0.2s;
-		animation-duration: 0.2s;
-	}
-
 	/* -------------------------------------------------- */
 	/*	Opacity
 	/* -------------------------------------------------- */
