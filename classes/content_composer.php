@@ -129,6 +129,10 @@ class TMM_Content_Composer {
 		wp_register_style('tmm_owltransitions', TMM_CC_URL . 'js/owl-carousel/owl.transitions.css');
 		wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.min.js', array('jquery'), false, true);
 
+		wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
+		wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
+		wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/shortcodes_layout.css');
+
 		wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/jquery.modernizr.min.js', array('jquery'), false, true);
 		wp_enqueue_script('tmm_config', TMM_CC_URL . 'js/config.js', array('jquery'), false, true);
 		wp_enqueue_script('tmm_plugins', TMM_CC_URL . 'js/plugins.js', array('jquery'), false, true);
@@ -143,10 +147,6 @@ class TMM_Content_Composer {
 				var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 			</script>
 			<?php
-
-			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
-			wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/shortcodes_layout.css');
 
 			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_front.css');
 			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/shortcodes_front.js', array('jquery', 'mediaelement', 'tmm_owlcarousel'), false, true);
@@ -187,6 +187,23 @@ class TMM_Content_Composer {
 			return TMM_Helper::resize_image($src, $size);
 		}
 		return $src;
+	}
+    
+	public static function resize_image_cover($src, $size, $show_cap = true) {
+		if (empty($size)) {
+            return $src;
+        }
+        $al = explode('*', $size);
+        $new_img_src = aq_resize($src, $al[0], $al[1], true);
+
+        if (!$new_img_src) {
+            if ($show_cap) {
+                
+                return 'http://placehold.it/' . $al[0] . 'x' . $al[1] . '&amp;text=UNSUPPORTED VIDEO FORMAT';
+            }
+        }
+
+        return $new_img_src;
 	}
 
 	public static function get_post_featured_image($post_id, $size) {
@@ -272,17 +289,6 @@ class TMM_Content_Composer {
             'rand' => 'rand', 'comment_count' => 'comment_count', 'author' => 'author', 'post_author' => 'post_author'
 		);
 	}
-    
-     public static function get_blog_type() {
-		return array(
-			'blog-classic' => __('Blog Classic', TMM_CC_TEXTDOMAIN),
-			'blog-medium' => __('Blog Medium', TMM_CC_TEXTDOMAIN),
-			'blog-masonry' => __('Blog Masonry', TMM_CC_TEXTDOMAIN),
-			'blog-grid' => __('Blog Grid', TMM_CC_TEXTDOMAIN),
-			'blog-grid-overlay' => __('Grid Overlay', TMM_CC_TEXTDOMAIN),
-			'blog-grid-layout' => __('Grid Multi Layout', TMM_CC_TEXTDOMAIN)
-		);
-	}
 
 	public static function set_default_value($key, $default_value = '') {
 		if (isset($_REQUEST["shortcode_mode_edit"]) AND !empty($_REQUEST["shortcode_mode_edit"])) {
@@ -326,12 +332,32 @@ class TMM_Content_Composer {
 					<?php
 				}
 
+				if (!isset($data['multiple'])) {
+					$data['multiple'] = false;
+				}
+
 				if (!empty($data['options'])) {
+					if ($data['multiple']){
+						$default_value = explode(',', $data['default_value']);
+					}
 					?>
 					<label class="sel">
-						<select <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" id="<?php echo $data['id'] ?>">
-							<?php foreach ($data['options'] as $key => $text) { ?>
-								<option <?php selected($data['default_value'], $key); ?> value="<?php echo $key ?>"><?php echo $text ?></option>
+						<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" id="<?php echo isset($data['id']) ? esc_attr($data['id']) : ''; ?>">
+							<?php foreach ($data['options'] as $key => $text) {
+
+								$selected = '';
+								if ($data['multiple']) {
+									foreach ($default_value as $value) {
+										if (selected($value, $key)) {
+											$selected = selected($value, $key, false);
+										}
+									}
+								}else{
+									$selected = selected($data['default_value'], $key, false);
+								}
+								?>
+								<option <?php echo $selected; ?> value="<?php echo esc_attr($key); ?>"><?php echo esc_html($text); ?></option>
+
 							<?php } ?>
 						</select>
 					</label>
@@ -367,28 +393,26 @@ class TMM_Content_Composer {
 				break;
 
 			case 'upload':
-				?>
-				<?php if (!empty($data['title'])): ?>
-				<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
-			<?php endif; ?>
-
-				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a title="" class="button tmm_button_upload" href="#">
-					<?php _e('Browse', TMM_CC_TEXTDOMAIN); ?>
-				</a>
-				<span class="preset_description"><?php echo $data['description'] ?></span>
-				<?php
-				break;
-
 			case 'upload_video':
+			case 'upload_audio':
+				if ($data['type'] === 'upload_video') {
+					$type = 'video';
+				} else if ($data['type'] === 'upload_audio') {
+					$type = 'audio';
+				} else {
+					$type = 'image';
+				}
 				?>
-				<?php if (!empty($data['title'])): ?>
-				<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
-			<?php endif; ?>
 
-				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;"><?php _e('Browse', TMM_CC_TEXTDOMAIN); ?></a>
-				<span class="preset_description"><?php echo $data['description'] ?></span>
+				<?php if (!empty($data['title'])): ?>
+				<h4 class="label" for="<?php echo esc_attr($data['id']); ?>"><?php echo esc_html($data['title']); ?></h4>
+				<?php endif; ?>
+
+				<input type="text" id="<?php echo esc_attr($data['id']); ?>" value="<?php echo esc_attr($data['default_value']); ?>" class="js_shortcode_template_changer data-input data-upload <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" />
+				<a title="" class="button tmm_button_upload" data-type="<?php echo esc_attr($type); ?>" href="#">
+					<?php esc_html_e('Browse', TMM_CC_TEXTDOMAIN); ?>
+				</a>
+				<span class="preset_description"><?php echo esc_html($data['description']); ?></span>
 				<?php
 				break;
 
