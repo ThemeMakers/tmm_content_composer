@@ -117,7 +117,7 @@ if (!empty($folio_category)) {
             
         <?php } ?>
 
-    <section id="portfolio_items_<?php echo $uniqid; ?>" class="portfolio-items popup-gallery folio-popup col-<?php echo esc_attr($layout) ?>" data-columns="<?php echo esc_attr($layout) ?>" data-overlay="<?php  ($hover_effect == 'colored') ? true : false; ?>">
+    <section id="portfolio_items_<?php echo $uniqid; ?>" class="portfolio-items popup-gallery folio-popup col-<?php echo esc_attr($layout) ?>" data-columns="<?php echo esc_attr($layout) ?>" data-overlay="<?php echo ($hover_effect == 'colored') ? true : false; ?>">
 
         <?php
         foreach ($folio_images as $key => $image) {
