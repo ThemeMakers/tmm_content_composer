@@ -13,10 +13,10 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 	    $padding_top = 80;
 	    $padding_bottom = 80;
 
-	    if (isset($tmm_layout_constructor_row[$row]['padding_top']) && $tmm_layout_constructor_row[$row]['padding_top'] !== '') {
+	    if (isset($tmm_layout_constructor_row[$row]['padding_top'])) {
 	        $padding_top = (int) $tmm_layout_constructor_row[$row]['padding_top'];
 	    }
-	    if (isset($tmm_layout_constructor_row[$row]['padding_bottom']) && $tmm_layout_constructor_row[$row]['padding_bottom'] !== '') {
+	    if (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) {
 		    $padding_bottom = (int) $tmm_layout_constructor_row[$row]['padding_bottom'];
 	    }
 
