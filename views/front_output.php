@@ -7,22 +7,44 @@ $first_row = current($tmm_layout_constructor_row);
 foreach ($tmm_layout_constructor as $row => $row_data) {   
     
     if (!empty($row_data) && ($tmm_layout_constructor_row[$row]['lc_displaying']==$row_displaying)) {
-        
+
+	    $section_style = '';
+	    $section_style_attr = '';
+	    $padding_top = 80;
+	    $padding_bottom = 80;
+
+	    if (isset($tmm_layout_constructor_row[$row]['padding_top']) && $tmm_layout_constructor_row[$row]['padding_top'] !== '') {
+	        $padding_top = (int) $tmm_layout_constructor_row[$row]['padding_top'];
+	    }
+	    if (isset($tmm_layout_constructor_row[$row]['padding_bottom']) && $tmm_layout_constructor_row[$row]['padding_bottom'] !== '') {
+		    $padding_bottom = (int) $tmm_layout_constructor_row[$row]['padding_bottom'];
+	    }
+
+	    if ($padding_top !== 80) {
+		    $section_style .= 'padding-top:'.$padding_top.'px;';
+	    }
+	    if ($padding_bottom !== 80) {
+		    $section_style .= 'padding-bottom:'.$padding_bottom.'px;';
+	    }
+
+	    if (!empty($section_style)) {
+		    $section_style_attr = ' style="' . $section_style . '"';
+	    }
+
 		$row_style = TMM_Layout_Constructor::get_row_bg($tmm_layout_constructor_row, $row);
 		
-		$section_class = 'section padding-off';
-                        
+		$section_class = 'section';
+
 		if ($tmm_layout_constructor_row[$row]['full_width'] == 1 && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
 			$section_class .= ' theme-default-bg';
 		}
 		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'custom') {
 			$section_class .= ' parallax';
 		}
-		 
-        
+
 		?>
 
-		<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>">
+		<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
                 
             <?php
 			if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&($row_displaying=='full_width')){
@@ -79,12 +101,10 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 							
 						<?php
 				}                                         
-                            $bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';                               
-							$padding_top = (isset($tmm_layout_constructor_row[$row]['padding_top'])) ? $tmm_layout_constructor_row[$row]['padding_top'] : 0;                   
-							$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : 0;                           
+                            $bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
 							$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
 							$row_center = (isset($tmm_layout_constructor_row[$row]['row_center'])&&($tmm_layout_constructor_row[$row]['row_center']==true)) ? true : false;
-							
+
 							$row_class = 'row';
 							if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
 								$row_class .= ' theme-default-bg';
@@ -97,14 +117,8 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 							if (!empty($bg_color)) {
 								//$row_style_attr .= 'background:'.$bg_color.'; ';
 							}
-							if ($padding_top > 0) {
-								$row_style_attr .= 'padding-top:'.$padding_top.'px; ';
-							}
-							if ($padding_bottom > 0) {
-								$row_style_attr .= 'padding-bottom:'.$padding_bottom.'px; ';
-							}
-							if (!empty($align)) {
-								$row_style_attr .= 'text-align:'.$align.'; ';
+							if (!empty($align) && $align !== 'left') {
+								$row_style_attr .= 'text-align:'.$align.';';
 							}
 							if (!empty($row_style_attr)) {
 								$row_style_attr = ' style="'.$row_style_attr.'"';
