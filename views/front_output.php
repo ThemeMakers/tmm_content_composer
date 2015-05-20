@@ -20,6 +20,11 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		    $padding_bottom = (int) $tmm_layout_constructor_row[$row]['padding_bottom'];
 	    }
 
+	    if ($tmm_layout_constructor_row[$row]['padding_top'] === '' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '') {
+		    $padding_top = 80;
+		    $padding_bottom = 80;
+	    }
+
 	    if ($padding_top !== 80) {
 		    $section_style .= 'padding-top:'.$padding_top.'px;';
 	    }
@@ -34,6 +39,10 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$row_style = TMM_Layout_Constructor::get_row_bg($tmm_layout_constructor_row, $row);
 		
 		$section_class = 'section';
+
+	    if ($tmm_layout_constructor_row[$row]['padding_top'] === '' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '') {
+		    $section_class .= ' padding-off';
+	    }
 
 		if ($tmm_layout_constructor_row[$row]['full_width'] == 1 && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
 			$section_class .= ' theme-default-bg';
