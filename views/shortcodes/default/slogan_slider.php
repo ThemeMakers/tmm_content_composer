@@ -16,9 +16,6 @@
         case 'owlcarousel':
             
             tmm_enqueue_script('owlcarousel');
-            tmm_enqueue_style('owlcarousel');
-            tmm_enqueue_style('owltheme');                                                            
-            tmm_enqueue_style('owltransitions'); 
             ?>
                 <div class="cycle-rotator align-center">
                     

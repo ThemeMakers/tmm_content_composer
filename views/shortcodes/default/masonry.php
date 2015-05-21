@@ -1,19 +1,12 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
 wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/shortcodes/jquery.masonry.min.js');
-wp_enqueue_style('tmm_mediaelement');
 wp_enqueue_script('mediaelement');
-
 tmm_enqueue_script('owlcarousel');
-tmm_enqueue_style('owlcarousel');
-tmm_enqueue_style('owltheme');                                                            
-tmm_enqueue_style('owltransitions'); 
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 if (is_plugin_active('tmm_grid_slider/index.php')){
-    wp_enqueue_style('tmm_grid_accordion_css', TMM_Grid_Slider::get_application_uri() . 'css/accordion.css');
-    wp_enqueue_style('tmm_grid_slider_custom_css', TMM_Grid_Slider::get_application_uri() . 'css/slider_custom.css');
     wp_enqueue_script('tmm_grid_slider_easing_js', TMM_Grid_Slider::get_application_uri() . 'js/jquery.animation.easing.js', array('jquery'));
     wp_enqueue_script('tmm_grid_slider_front_js', TMM_Grid_Slider::get_application_uri() . 'js/jquery.accordion.js', array('jquery'));
 }

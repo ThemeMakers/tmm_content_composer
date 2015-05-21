@@ -3,10 +3,7 @@
 
 	<?php	
 	tmm_enqueue_script('owlcarousel');
-    tmm_enqueue_style('owlcarousel');
-    tmm_enqueue_style('owltheme');                                                            
-    tmm_enqueue_style('owltransitions');
-    
+
     $uniqid = uniqid();	
 	
 	$args = array();

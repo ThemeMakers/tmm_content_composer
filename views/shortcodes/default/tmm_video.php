@@ -75,7 +75,6 @@ switch ($video_type) {
            
         <?php    
         
-	    wp_enqueue_style('tmm_mediaelement');
 	    wp_enqueue_script('mediaelement');
         break;
     
@@ -92,7 +91,6 @@ switch ($video_type) {
             </video>                    
            
         <?php
-	    wp_enqueue_style('tmm_mediaelement');
 	    wp_enqueue_script('mediaelement');
         break;
     
@@ -108,7 +106,6 @@ switch ($video_type) {
             </video>                    
            
         <?php
-	    wp_enqueue_style('tmm_mediaelement');
 	    wp_enqueue_script('mediaelement');
         break;
 
