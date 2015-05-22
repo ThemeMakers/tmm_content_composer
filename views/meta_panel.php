@@ -68,6 +68,9 @@
                 
 				<input type="hidden" id="row_bg_custom_image_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_image'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_image]" />
 				<input type="hidden" id="row_bg_custom_video_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_video'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_video]" />
+				<input type="hidden" id="row_bg_custom_video_mute_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_video_mute'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_video_mute]" />
+				<input type="hidden" id="row_bg_custom_video_loop_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_video_loop'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_video_loop]" />
+
 				<input type="hidden" id="row_bg_custom_opacity_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_opacity'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_opacity]" />
 				<input type="hidden" id="row_bg_is_cover_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_cover'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_cover]" />
 				<input type="hidden" id="row_bg_attachment_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_attachment'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_attachment]" />
@@ -133,7 +136,9 @@
 			<input type="hidden" id="row_bg_custom_type___ROW_ID__" value="none" name="tmm_layout_constructor_row[__ROW_ID__][bg_custom_type]" />
             
 			<input type="hidden" id="row_bg_custom_image___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_image]" />
-			<input type="hidden" id="row_bg_custom_video___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video]" />			
+			<input type="hidden" id="row_bg_custom_video_mute___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video_mute]" />
+			<input type="hidden" id="row_bg_custom_video_loop___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video_loop]" />
+			<input type="hidden" id="row_bg_custom_video___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video]" />
 			<input type="hidden" id="row_bg_custom_opacity___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][bg_opacity]" />
 			<input type="hidden" id="row_bg_is_cover___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][bg_cover]" />
 			<input type="hidden" id="row_bg_attachment___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_attachment]" />
@@ -372,9 +377,34 @@
                         'shortcode_field' => 'row_background_cover',
                         'id' => 'row_background_cover',
                         'default_value' => '',
-                        'description' => 'Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg http://vimeo.com/22439234 or upload self hosted video'
+                        'description' => ''
                     ));
                     ?>
+
+					<?php
+					TMM_Content_Composer::html_option(array(
+						'type' => 'checkbox',
+						'title' => __('Mute audio on video', TMM_CC_TEXTDOMAIN),
+						'shortcode_field' => 'row_background_video_mute',
+						'id' => 'row_bg_video_mute',
+						'default_value' => 0,
+						'is_checked'=>false,
+						'description' => __('Mute audio on video', TMM_CC_TEXTDOMAIN),
+					));
+					?>
+
+					<?php
+					TMM_Content_Composer::html_option(array(
+						'type' => 'checkbox',
+						'title' => __('Repeat videos automatically', TMM_CC_TEXTDOMAIN),
+						'shortcode_field' => 'row_background_video_loop',
+						'id' => 'row_bg_video_loop',
+						'default_value' => 1,
+						'is_checked'=>true,
+						'description' => __('Repeat videos automatically', TMM_CC_TEXTDOMAIN),
+					));
+					?>
+
                 </div>
 
 

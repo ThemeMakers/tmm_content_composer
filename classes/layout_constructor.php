@@ -139,6 +139,9 @@ class TMM_Layout_Constructor {
 	public static function display_rowbg_video($video_options) {
 		?>
 		<?php if (isset($video_options['video_url']) AND ! empty($video_options['video_url'])) {
+
+			$mute = $video_options['mute'] ? 1 : 0;
+			$loop = $video_options['loop'] ? 1 : 0;
             
 			switch ($video_options['video_type']) {
                 
@@ -149,10 +152,38 @@ class TMM_Layout_Constructor {
 						$source_code = $source_code[0];
 					}
 					?>
+
 					<div class="mb-wrapper">
-						<iframe  class="fitwidth" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent&autoplay=1&controls=0&loop=1"  allowfullscreen></iframe>
+						<div id="ytplayer" class="fitwidth"></div>
 					</div>
-					<?php break; 
+					<script>
+
+						var tag = document.createElement('script');
+						tag.src = "https://www.youtube.com/player_api";
+						var firstScriptTag = document.getElementsByTagName('script')[0];
+						firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+						var player;
+						function onYouTubePlayerAPIReady() {
+							player = new YT.Player('ytplayer', {
+								height: '100%',
+								width: '100%',
+								videoId: '<?php echo $source_code ?>',
+								playerVars: { 'autoplay': 1, 'controls': 0, 'wmode':'transparent', 'loop':'<?php echo $loop ?>', 'playlist':'<?php echo $source_code ?>' },
+								events: {
+									'onReady': onPlayerReady}
+							});
+
+						}
+
+						function onPlayerReady(event) {
+							var mute = <?php echo $mute; ?>;
+							if (mute == 1){
+								event.target.mute();
+							}
+						}
+
+					</script>
+					<?php break;
 
 				case 'vimeo':
                     $source_code = explode("/", $video_options['video_url']);
@@ -161,12 +192,33 @@ class TMM_Layout_Constructor {
                     }
                     ?>
                     <div class="mb-wrapper">
-                        <iframe src="http://player.vimeo.com/video/<?php echo $source_code ?>?autoplay=1&loop=1&portrait=0&controls=0&showinfo=0&autohide=1&rel=0&wmode=transparent"></iframe>
+						<script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+                        <iframe id="vimeo_player" src="http://player.vimeo.com/video/<?php echo $source_code ?>?api=1&loop=<?php echo $loop ?>&player_id=vimeo_player&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div><!--/ .mb-wrapper-->
+					<script>
+
+						(function($) {
+							$(function() {
+								var iframe = $('#vimeo_player')[0];
+								var player = $f(iframe);
+								var status = $('.status');
+								var mute = <?php echo $mute; ?>;
+
+								// When the player is ready, add listeners for pause, finish, and playProgress
+								player.addEvent('ready', function() {
+									if (mute == 1){
+										player.api('setVolume', '0');
+									}
+								});
+
+							});
+						})(jQuery);
+
+					</script>
 				<?php break; 
                 
                 case 'mp4': ?>
-                    <div class="mb-wrapper">
+                    <div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
                         <video id="example_video" class="" width="100%" height="100%" >
                             <source src="<?php echo $video_options['video_url'] ?>" type='video/mp4' />
                         </video>
@@ -177,7 +229,7 @@ class TMM_Layout_Constructor {
             
                 case 'ogv':                    
                     ?>
-                    <div class="mb-wrapper">
+                    <div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
                         <video id="example_video" class="" width="100%" height="100%" >
                             <source src="<?php echo $video_options['video_url'] ?>" type='video/ogg' />
                         </video>
@@ -188,7 +240,7 @@ class TMM_Layout_Constructor {
             
                 case 'webm':                    
                     ?>
-                    <div class="mb-wrapper">
+                    <div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
                         <video id="example_video" class="" width="100%" height="100%" >
                             <source src="<?php echo $video_options['video_url'] ?>" type='video/webm' />
                         </video>
