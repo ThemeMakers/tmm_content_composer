@@ -33,7 +33,7 @@ if (isset($cover_image_on_mobiles) && $cover_image_on_mobiles === '1') {
 }
 ?>
 
-<!--<div style="height: 100%">-->
+<div style="height: 100%">
 
 <?php
 switch ($video_type) {
@@ -122,4 +122,4 @@ switch ($video_type) {
 }
 ?>
 
-<!--</div>-->
+</div>
