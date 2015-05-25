@@ -60,7 +60,7 @@ $featured_image_alias = TMM_Portfolio::get_folio_alias($layout);
 $folio_terms = TMM_Portfolio::get_folio_tags();
 
 $folio_category = (!empty($folio_category) && $folio_category !== 'null') ? explode(',', $folio_category) : array();
-$folio_images = TMM_Portfolio::get_folio_images(); // all images array
+$folio_images = TMM_Portfolio::get_folio_images($display_images); // all images array
 $loaded_images = array();
 $folio_category_slugs = array();
 
@@ -117,7 +117,7 @@ if (!empty($folio_category)) {
             
         <?php } ?>
 
-    <section id="portfolio_items_<?php echo $uniqid; ?>" class="portfolio-items popup-gallery folio-popup col-<?php echo esc_attr($layout) ?>" data-columns="<?php echo esc_attr($layout) ?>" data-overlay="<?php echo ($hover_effect == 'colored') ? true : false; ?>">
+    <section id="portfolio_items_<?php echo $uniqid; ?>" class="portfolio-items popup-gallery folio-popup col-<?php echo esc_attr($layout) ?>" data-columns="<?php echo esc_attr($layout) ?>" data-overlay="<?php echo ($hover_effect == 'colored') ? true : false; ?>" data-display="<?php echo $display_images ?>">
 
         <?php
         foreach ($folio_images as $key => $image) {
@@ -147,6 +147,7 @@ if (!empty($folio_category)) {
                 $data['show_categories'] = $show_categories;
                 $data['show_overlay'] = ($hover_effect == 'colored') ? true : false;
                 $data['col'] = $layout;
+                $data['display_images'] = $display_images;
                 echo TMM::draw_html('portfolio/shortcodes/folio_article', $data);
             }
 

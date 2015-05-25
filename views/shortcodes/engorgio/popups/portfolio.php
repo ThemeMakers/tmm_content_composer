@@ -34,21 +34,23 @@ if ($folio_terms) {
 	</div><!--/ .one-half-->
 
 	<div class="one-half">
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Hover Appearance Effect', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'hover_effect',
-			'id' => 'hover_effect',
+			'title' => __('Display', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'display_images',
+			'id' => '',
 			'options' => array(
-				'colored' => __('Colored with info', TMM_CC_TEXTDOMAIN),
-				'without_effect' => __('Without any effect', TMM_CC_TEXTDOMAIN),
+				'cover' => __('Cover Images', TMM_CC_TEXTDOMAIN),
+				'inside' => __('Images From Portfolio', TMM_CC_TEXTDOMAIN)
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('hover_effect', 'colored'),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'default_value' => TMM_Content_Composer::set_default_value('display_images', 'cover'),
+			'description' => ''
 		));
 		?>
-	</div>
+
+	</div><!--/ .one-half-->
 
 	<div class="one-half">
 
@@ -64,6 +66,23 @@ if ($folio_terms) {
 		?>
 
 	</div><!--/ .one-half-->
+
+	<div class="one-half">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Hover Appearance Effect', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'hover_effect',
+			'id' => 'hover_effect',
+			'options' => array(
+				'colored' => __('Colored with info', TMM_CC_TEXTDOMAIN),
+				'without_effect' => __('Without any effect', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('hover_effect', 'colored'),
+			'description' => __('', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+	</div>
         
     <div class="one-half">
 
