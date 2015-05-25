@@ -381,6 +381,8 @@
                             cur_popup.find('#row_background_opacity').val(bg_opacity);
                             cur_popup.find('#row_bg_attachment').val(bg_attachment);
                             cur_popup.find('#row_background_is_cover').val(bg_is_cover);
+                            cur_popup.find('#row_bg_video_mute').val(bg_video_mute);
+                            cur_popup.find('#row_bg_video_loop').val(bg_video_loop);
                              
                             if (bg_custom_type === 'color'){
                                 custom_box_color.show();
@@ -554,8 +556,10 @@
                             var is_checked = $(this).is(':checked');
                             if (is_checked) {
                                 $(this).attr('checked', 'checked');
+                                $(this).val('1');
                             } else {
                                 $(this).removeAttr('checked');
+                                $(this).val('0');
                             }
                         });
                         
@@ -594,8 +598,8 @@
                             overlay = cur_popup.find('#row_overlay').val(),
                             bg_fullscreen = cur_popup.find('#row_bg_fullscreen').val();                           
                     
-                        if (bg_type === 'custom') {        
-                            
+                        if (bg_type === 'custom') {
+
                             $('#row_bg_custom_color_' + row_id).val(bg_color);
                             $('#row_bg_custom_type_' + row_id).val(bg_custom_type);
                             $('#row_bg_custom_opacity_' + row_id).val(bg_opacity);

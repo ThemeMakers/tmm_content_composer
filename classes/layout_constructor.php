@@ -180,6 +180,15 @@ class TMM_Layout_Constructor {
 							if (mute == 1){
 								event.target.mute();
 							}
+
+							var loop = <?php echo $loop ?>;
+
+							if (loop == 1){
+								player.setLoop(true);
+							}else{
+								player.setLoop(false);
+							}
+
 						}
 
 					</script>
