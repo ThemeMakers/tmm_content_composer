@@ -143,7 +143,7 @@ if (!empty($title_effect)&&($title_effect!='none')){
 $content = str_replace("`", "'", $content);
 
 if ( isset($title_type) && $title_type=='section'){
-    $html.= '<div class="section-title"><' . $type . ' class="' . esc_attr($css_class) . '" ' . $styles . '>' . esc_html($content) . '</' . $type . '></div>';
+    $html.= '<div class="section-title"><' . $type . ' class="' . esc_attr($css_class) . '" ' . $styles . '>' . $content . '</' . $type . '></div>';
 }else{   
     
     if (isset($word_animate) && $word_animate){
@@ -170,7 +170,7 @@ if ( isset($title_type) && $title_type=='section'){
         $html.= '</div></div>';         
         
     }else{
-        $html.= '<' . $type . ' class="' . esc_attr($css_class) . '" ' . $styles . '>' . esc_html($content) . '</' . $type . '>';
+        $html.= '<' . $type . ' class="' . esc_attr($css_class) . '" ' . $styles . '>' . $content . '</' . $type . '>';
     }
 }
 
