@@ -35,7 +35,7 @@ function contact_form_submit(_this, contact_form_attachments) {
 			jQuery(form_self).find(".contact_form_responce ul").addClass("error type-2");
 			jQuery.each(response.info, function(input_name, input_label) {
 				jQuery(form_self).find("[name=" + input_name + "]").addClass("wrong-data");
-				jQuery(form_self).find(".contact_form_responce ul").append('<li>' + lang_enter_correctly + ' "' + input_label + '"!</li>');
+				jQuery(form_self).find(".contact_form_responce ul").append('<li>' + tmm_mail_l10n.wrong_field_value + ' "' + input_label + '"!</li>');
 			});
 
 			$response.show(450);
@@ -45,12 +45,12 @@ function contact_form_submit(_this, contact_form_attachments) {
 			jQuery(form_self).find(".contact_form_responce ul").addClass("success type-2");
 
 			if (response.info == 'succsess') {
-				jQuery(form_self).find(".contact_form_responce ul").append('<li>' + lang_sended_succsessfully + '!</li>');
+				jQuery(form_self).find(".contact_form_responce ul").append('<li>' + tmm_mail_l10n.success + '!</li>');
 				$response.show(450).delay(1800).hide(400);
 			}
 
 			if (response.info == 'server_fail') {
-				jQuery(form_self).find(".contact_form_responce ul").append('<li>' + lang_server_failed + '!</li>');
+				jQuery(form_self).find(".contact_form_responce ul").append('<li>' + tmm_mail_l10n.fail + '!</li>');
 			}
 
 			jQuery(form_self).find("[type=text],[type=email],textarea,checkbox").val("");
@@ -75,5 +75,5 @@ function contact_form_submit(_this, contact_form_attachments) {
 function update_capcha(form_object, hash) {
 	jQuery(form_object).find("[name=verify]").val("");
 	jQuery(form_object).find("[name=verify_code]").val(hash);
-	jQuery(form_object).find(".contact_form_capcha").attr('src', capcha_image_url + '?hash=' + hash);
+	jQuery(form_object).find(".contact_form_capcha").attr('src', tmm_mail_l10n.captcha_image_url + '?hash=' + hash);
 }
