@@ -71,7 +71,7 @@ switch ($video_type) {
             
             <video  poster="<?php echo esc_url($cover) ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
                 <source type="video/mp4" src="<?php echo esc_url($source_code) ?>" />
-            </video>                    
+            </video>
            
         <?php    
         
@@ -88,7 +88,7 @@ switch ($video_type) {
             
             <video poster="<?php echo esc_url($cover) ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
                 <source type="video/ogg" src="<?php echo esc_url($source_code) ?>" />
-            </video>                    
+            </video>
            
         <?php
 	    wp_enqueue_script('mediaelement');
@@ -103,7 +103,7 @@ switch ($video_type) {
             
             <video poster="<?php echo esc_url($cover) ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
                 <source type="video/webm" src="<?php echo esc_url($source_code) ?>" />
-            </video>                    
+            </video>
            
         <?php
 	    wp_enqueue_script('mediaelement');
