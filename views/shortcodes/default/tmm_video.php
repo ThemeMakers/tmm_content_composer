@@ -33,7 +33,7 @@ if (isset($cover_image_on_mobiles) && $cover_image_on_mobiles === '1') {
 }
 ?>
 
-<div style="height: 100%">
+<div class="video_wrapper" style="height: 100%; display:none;">
 
 <?php
 switch ($video_type) {
@@ -69,7 +69,7 @@ switch ($video_type) {
         $cover = isset($cover_image) ? $cover_image : $cover;
         ?>
             
-            <video  poster="<?php echo esc_url($cover) ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
+            <video poster="<?php echo esc_url($cover) ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
                 <source type="video/mp4" src="<?php echo esc_url($source_code) ?>" />
             </video>
            
