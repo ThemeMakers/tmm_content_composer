@@ -33,16 +33,18 @@ if (isset($cover_image_on_mobiles) && $cover_image_on_mobiles === '1') {
 	}
 }
 
-if (!empty($width)) {
-	$width = strrpos($width, '%') === false ? (int) $width : (int) $width . '%';
-} else {
-	$width = '100%';
-}
+if ($video_type != $allows_array[0] ){
+	if (!empty($width)) {
+		$width = strrpos($width, '%') === false ? (int) $width : (int) $width . '%';
+	} else {
+		$width = '100%';
+	}
 
-if (!empty($height)) {
-	$height = strrpos($height, '%') === false ? (int) $height : (int) $height . '%';
-} else {
-	$height = '100%';
+	if (!empty($height)) {
+		$height = strrpos($height, '%') === false ? (int) $height : (int) $height . '%';
+	} else {
+		$height = '100%';
+	}
 }
 
 ?>
