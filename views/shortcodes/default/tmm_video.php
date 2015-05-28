@@ -31,9 +31,19 @@ if (isset($cover_image_on_mobiles) && $cover_image_on_mobiles === '1') {
         $cover_image = '';
     }
 }
+
+$style = "height: 100%;";
+
+if(($video_type != $allows_array[0]) && ($video_type != $allows_array[1] )){
+    $style .= " display:none;";
+}
+
+$style = 'style="' . $style . '"';
+
+
 ?>
 
-<div class="video_wrapper" style="height: 100%; display:none;">
+<div class="video_wrapper" <?php echo $style; ?>>
 
 <?php
 switch ($video_type) {
