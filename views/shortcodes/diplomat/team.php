@@ -54,7 +54,7 @@ if (!empty($staff)){
 
                 <ul class="social-icons style-fall">
                     <?php if (!empty($custom["email"])){ ?>
-                        <li class="mail"><a target="_blank" href="mailto:<?php echo esc_attr($custom["email"]); ?>"><?php esc_html_e('Email', TMM_CC_TEXTDOMAIN) ?></a></li>
+                        <li class="email"><a target="_blank" href="mailto:<?php echo esc_attr($custom["email"]); ?>"><?php esc_html_e('Email', TMM_CC_TEXTDOMAIN) ?></a></li>
                     <?php } ?>
                     <?php if (!empty($custom["twitter"])){ ?>
                         <li class="twitter"><a target="_blank" href="<?php echo esc_url($custom["twitter"]); ?>"><?php esc_html_e('Twitter', TMM_CC_TEXTDOMAIN) ?></a></li>
