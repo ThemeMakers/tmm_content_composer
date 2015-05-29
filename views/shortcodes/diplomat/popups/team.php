@@ -41,8 +41,8 @@
 		}
 		?>
 
-		<h4 class="label"><?php _e('Staff', TMM_CC_TEXTDOMAIN); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add staff item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<h4 class="label"><?php _e('Team', TMM_CC_TEXTDOMAIN); ?></h4>
+		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add team member', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 			<?php foreach ($albums_edit_data as $staff_id) : ?>
@@ -74,7 +74,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add staff item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add team member', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 	</div>
 
