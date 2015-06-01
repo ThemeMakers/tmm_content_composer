@@ -75,10 +75,14 @@ if (($blog_type!='blog-masonry')&&($exclude_post_formats!='none')) {
     );
 }
 
+global $wp_query;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+if( is_front_page() ){
+    $paged = (get_query_var('page')) ? get_query_var('page') : 1;
+}
 $args['paged'] = $paged;
 
-global $wp_query;
 $original_query = $wp_query;
 $wp_query = new WP_Query($args);
 $posts_array = $wp_query->posts;
