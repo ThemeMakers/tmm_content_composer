@@ -12,6 +12,7 @@
 			'options' => array(
 				4 => __('Four Columns', TMM_CC_TEXTDOMAIN),
 				3 => __('Three Columns', TMM_CC_TEXTDOMAIN),
+				2 => __('Two Columns', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('layout', 1),
 			'description' => ''

@@ -3,14 +3,20 @@ if (!defined('ABSPATH')) exit();
 
 $staff = explode('^', $staff);
 
-$cols_class = 'col-sm-6 col-lg-4';
+$cols_class = 'medium-6 columns';
 
-if ($layout == 3) {
-	$cols_class = 'col-sm-4';
+if ($layout == 2) {
+	$cols_class = 'medium-6 columns';
+} else if ($layout == 3) {
+	$cols_class = 'medium-4 columns';
 } else if ($layout == 4) {
-	$cols_class = 'col-sm-3';
+	$cols_class = 'medium-3 columns';
 }
+?>
 
+<div class="row">
+
+<?php
 if (!empty($staff)){
 
     foreach ($staff as $post_id) {
@@ -41,7 +47,7 @@ if (!empty($staff)){
                     <img src="<?php echo esc_url(TMM_Content_Composer::get_post_featured_image($post_id, '560*390')); ?>" alt="" />
                 </div><!--/ .team-entry-image-->
 
-                <h4 class="team-entry-title"><?php echo esc_html(get_the_title($post_id)); ?></h4>
+                <h4><?php echo esc_html(get_the_title($post_id)); ?></h4>
                 <span class="team-position">
                     <?php echo $position; ?>
                 </span>
@@ -52,7 +58,7 @@ if (!empty($staff)){
                     </p>
                 </div><!--/ .team-entry-body-->
 
-                <ul class="social-icons style-fall">
+                <ul class="social-icons">
                     <?php if (!empty($custom["email"])){ ?>
                         <li class="email"><a target="_blank" href="mailto:<?php echo esc_attr($custom["email"]); ?>"><?php esc_html_e('Email', TMM_CC_TEXTDOMAIN) ?></a></li>
                     <?php } ?>
@@ -74,6 +80,9 @@ if (!empty($staff)){
                     <?php if (!empty($custom["skype"])){ ?>
                         <li class="skype"><a target="_blank" href="<?php echo esc_url($custom["skype"]); ?>"><?php esc_html_e('Skype', TMM_CC_TEXTDOMAIN) ?></a></li>
                     <?php } ?>
+                    <?php if (!empty($custom["cv"])){ ?>
+                        <li class="cv last"><a target="_self" href="<?php echo esc_url($custom["cv"]); ?>"><?php esc_html_e('CV', TMM_CC_TEXTDOMAIN) ?></a></li>
+                    <?php } ?>
                 </ul><!--/ .social-icons-->
 
             </article><!--/ .team-entry-->
@@ -86,3 +95,4 @@ if (!empty($staff)){
 }
 ?>
 
+</div>
