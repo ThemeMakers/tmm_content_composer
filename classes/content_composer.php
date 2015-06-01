@@ -121,9 +121,31 @@ class TMM_Content_Composer {
 		wp_deregister_style('wp-mediaelement');
 		wp_enqueue_style('tmm_mediaelement', TMM_CC_URL . 'css/mediaelement/mediaelementplayer.css');
 
-		wp_register_script('tmm_contact_form', TMM_CC_URL . 'js/shortcodes/contact_form.js');
+		wp_enqueue_style('tmm_composer_front', TMM_CC_URL . 'css/front.css');
 
-		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/layout_front.css');
+		if (!class_exists('TMM')) {
+
+			$translation_array = array(
+				'ajaxurl' => admin_url('admin-ajax.php'),
+			);
+			wp_localize_script('tmm_composer_theme', 'tmm_l10n', $translation_array);
+
+			wp_enqueue_style('tmm_owlcarousel', TMM_CC_URL . 'css/owl-carousel/owl.carousel.css');
+			wp_enqueue_style('tmm_owltheme', TMM_CC_URL . 'css/owl-carousel/owl.theme.css');
+			wp_enqueue_style('tmm_owltransitions', TMM_CC_URL . 'css/owl-carousel/owl.transitions.css');
+			wp_enqueue_style('tmm_tooltipster', TMM_CC_URL . 'css/tooltipster.css');
+			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
+			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
+			wp_enqueue_style('tmm_composer_theme', TMM_CC_URL . 'css/theme.css');
+			wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/layout.css');
+
+			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/min/jquery.modernizr.min.js', array('jquery'));
+			wp_enqueue_script('tmm_composer_vendor', TMM_CC_URL . 'js/vendor.js', array('jquery'), false, true);
+			wp_enqueue_script('tmm_composer_theme', TMM_CC_URL . 'js/theme.js', array('jquery'), false, true);
+			wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/min/jquery.tooltipster.min.js', array('jquery'), false, true);
+			wp_register_script('tmm_mixitup', TMM_CC_URL . '/js/min/jquery.mixitup.min.js', array('jquery'), false, true);
+		}
+
 		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_front.js', array('jquery', 'tmm_modernizr'), false, true);
 
 		$tmm_lang = array(
@@ -133,29 +155,8 @@ class TMM_Content_Composer {
 			'fail' => __('Server failed. Send later', TMM_CC_TEXTDOMAIN),
 		);
 
+		wp_register_script('tmm_contact_form', TMM_CC_URL . 'js/shortcodes/contact_form.js');
 		wp_localize_script('tmm_contact_form', 'tmm_mail_l10n', $tmm_lang);
-
-		if (!class_exists('TMM')) {
-
-			?>
-			<script type="text/javascript">
-				var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
-			</script>
-			<?php
-			wp_enqueue_style('tmm_owlcarousel', TMM_CC_URL . 'css/owl-carousel/owl.carousel.css');
-			wp_enqueue_style('tmm_owltheme', TMM_CC_URL . 'css/owl-carousel/owl.theme.css');
-			wp_enqueue_style('tmm_owltransitions', TMM_CC_URL . 'css/owl-carousel/owl.transitions.css');
-			wp_enqueue_style('tmm_tooltipster', TMM_CC_URL . 'css/tooltipster.css');
-			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_front.css');
-			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
-			wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/shortcodes_layout.css');
-
-			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/min/jquery.modernizr.min.js', array('jquery'));
-			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/shortcodes_front.js', array('jquery', 'mediaelement', 'tmm_owlcarousel'), false, true);
-			wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/min/jquery.tooltipster.min.js', array('jquery'), false, true);
-			wp_register_script('tmm_mixitup', TMM_CC_URL . '/js/min/jquery.mixitup.min.js', array('jquery'), false, true);
-		}
 	}
 
 	public static function mce_buttons($buttons) {
