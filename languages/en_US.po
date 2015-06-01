@@ -1,21 +1,22 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2015-04-27 22:14+0100\n"
-"PO-Revision-Date: 2015-04-27 22:14+0100\n"
+"POT-Creation-Date: 2015-06-01 18:55+0100\n"
+"PO-Revision-Date: 2015-06-01 18:56+0100\n"
 "Last-Translator: ThemeMakers Team <support@webtemplatemasters.com>\n"
 "Language-Team: ThemeMakers Team <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.6\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: index.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -137,8 +138,8 @@ msgid "Browse"
 msgstr ""
 
 #: classes/layout_constructor.php:202
-#: views/shortcodes/default/tmm_video.php:134
-#: views/shortcodes/default/tmm_video.php:137
+#: views/shortcodes/default/tmm_video.php:136
+#: views/shortcodes/default/tmm_video.php:139
 msgid "Unsupported video format"
 msgstr ""
 
@@ -324,7 +325,7 @@ msgstr ""
 msgid "Background Image"
 msgstr ""
 
-#: views/shortcodes/default/blog.php:241
+#: views/shortcodes/default/blog.php:245
 #: views/shortcodes/diplomat/imggallery.php:180
 msgid "Load More"
 msgstr ""
@@ -471,6 +472,7 @@ msgstr ""
 #: views/shortcodes/default/popups/socialicons.php:77
 #: views/shortcodes/default/popups/tabs.php:28
 #: views/shortcodes/diplomat/popups/menu.php:87
+#: views/shortcodes/diplomat/popups/team.php:67
 msgid "Remove"
 msgstr ""
 
@@ -567,6 +569,7 @@ msgstr ""
 
 #: views/shortcodes/default/popups/blog.php:93
 #: views/shortcodes/diplomat/popups/imggallery.php:46
+#: views/shortcodes/diplomat/popups/team.php:9
 msgid "Layout"
 msgstr ""
 
@@ -1581,6 +1584,51 @@ msgstr ""
 msgid "No one Layerslider group exists"
 msgstr ""
 
+#: views/shortcodes/diplomat/popups/team.php:13
+msgid "Four Columns"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/team.php:14
+msgid "Three Columns"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/team.php:44
+msgid "Team"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/team.php:45
+#: views/shortcodes/diplomat/popups/team.php:77
+msgid "Add team member"
+msgstr ""
+
+#: views/shortcodes/diplomat/team.php:57
+msgid "Email"
+msgstr ""
+
+#: views/shortcodes/diplomat/team.php:60
+msgid "Twitter"
+msgstr ""
+
+#: views/shortcodes/diplomat/team.php:63
+msgid "Facebook"
+msgstr ""
+
+#: views/shortcodes/diplomat/team.php:66
+msgid "Linkedin"
+msgstr ""
+
+#: views/shortcodes/diplomat/team.php:69
+msgid "Instagram"
+msgstr ""
+
+#: views/shortcodes/diplomat/team.php:72
+msgid "Dribbble"
+msgstr ""
+
+#: views/shortcodes/diplomat/team.php:75
+msgid "Skype"
+msgstr ""
+
 #: views/shortcodes/tmm_events_calendar/popups/tmm_events_calendar.php:8
 msgid "Display event featured image in the tooltip"
 msgstr ""
@@ -1619,4 +1667,24 @@ msgstr ""
 
 #: views/shortcodes/tmm_events_calendar/popups/tmm_events_list.php:60
 msgid "Display events period selector"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "ThemeMakers Visual Content Composer"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://webtemplatemasters.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Universal Layout Composer with Shortcodes Package"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ThemeMakers"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://themeforest.net/user/ThemeMakers"
 msgstr ""
