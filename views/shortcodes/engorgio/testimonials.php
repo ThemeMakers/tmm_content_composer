@@ -2,9 +2,7 @@
 <div class="widget widget_testimonials">
 
 	<?php	
-	tmm_enqueue_script('owlcarousel');
-
-    $uniqid = uniqid();	
+    $uniqid = uniqid();
 	
 	$args = array();
 

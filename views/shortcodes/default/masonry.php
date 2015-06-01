@@ -1,8 +1,7 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
-wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/shortcodes/jquery.masonry.min.js');
+wp_enqueue_script('tmm_masonry');
 wp_enqueue_script('mediaelement');
-tmm_enqueue_script('owlcarousel');
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 

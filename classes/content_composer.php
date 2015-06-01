@@ -146,7 +146,6 @@ class TMM_Content_Composer {
 			wp_register_script('tmm_mixitup', TMM_CC_URL . '/js/min/jquery.mixitup.min.js', array('jquery'), false, true);
 		}
 
-		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_front.js', array('jquery', 'tmm_modernizr'), false, true);
 
 		$tmm_lang = array(
 			'captcha_image_url' => get_template_directory_uri() . '/helper/capcha/image.php/',
@@ -155,8 +154,10 @@ class TMM_Content_Composer {
 			'fail' => __('Server failed. Send later', TMM_CC_TEXTDOMAIN),
 		);
 
-		wp_register_script('tmm_contact_form', TMM_CC_URL . 'js/shortcodes/contact_form.js');
-		wp_localize_script('tmm_contact_form', 'tmm_mail_l10n', $tmm_lang);
+		wp_register_script('tmm_masonry', TMM_CC_URL . 'js/min/jquery.masonry.min.js', false, true);
+		wp_register_script('tmm_composer_front', TMM_CC_URL . 'js/front.js', array('jquery'), false, true);
+		wp_localize_script('tmm_composer_front', 'tmm_mail_l10n', $tmm_lang);
+		wp_enqueue_script('tmm_composer_front');
 	}
 
 	public static function mce_buttons($buttons) {

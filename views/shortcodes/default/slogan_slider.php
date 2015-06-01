@@ -14,8 +14,6 @@
     
     switch($type){
         case 'owlcarousel':
-            
-            tmm_enqueue_script('owlcarousel');
             ?>
                 <div class="cycle-rotator align-center">
                     
