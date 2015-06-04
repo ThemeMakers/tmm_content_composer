@@ -143,7 +143,6 @@
 				return;
 			}
             if (value == 'grid_slider'){
-                console.log('grid_slider');
                 jQuery(".native_sliders_groups2").hide();
 				jQuery("#layerslider_slidegroups2").hide();
 				jQuery("#shortcode_sliders_aliases").hide();
