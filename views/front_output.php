@@ -110,61 +110,62 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 						
 						<div class="fullscreen-entry">
 							
+				<?php
+				}
+
+				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
+				$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
+				$row_center = (isset($tmm_layout_constructor_row[$row]['row_center'])&&($tmm_layout_constructor_row[$row]['row_center']==true)) ? true : false;
+
+				$row_class = 'row';
+				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
+					$row_class .= ' theme-default-bg';
+				}
+
+				$row_style_attr = '';
+				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] != 'custom' && isset($row_style['style_custom_color'])) {
+					$row_style_attr .= $row_style['style_custom_color'];
+				}
+				if (!empty($bg_color)) {
+					//$row_style_attr .= 'background:'.$bg_color.'; ';
+				}
+				if (!empty($align) && $align !== 'left') {
+					$row_style_attr .= 'text-align:'.$align.';';
+				}
+				if (!empty($row_style_attr)) {
+					$row_style_attr = ' style="'.$row_style_attr.'"';
+				}
+
+				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
+					?>
+
+					<div class="container">
+
+					<?php
+				}
+						?>
+
+					<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
+
+						<?php foreach ($row_data as $uniqid => $column){ ?>
+
+							<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
+							<div class="<?php echo (!empty($row_center)&&($row_center==true)) ? 'col-sm-push-2 col-sm-pull-2 ' :  ''?><?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
+
+						<?php } ?>
+
+						<div class="clearfix"></div>
+
+					</div>
+
 						<?php
-				}                                         
-                            $bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
-							$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
-							$row_center = (isset($tmm_layout_constructor_row[$row]['row_center'])&&($tmm_layout_constructor_row[$row]['row_center']==true)) ? true : false;
+				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
+					?>
 
-							$row_class = 'row';
-							if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
-								$row_class .= ' theme-default-bg';
-							}
-							
-							$row_style_attr = '';
-							if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] != 'custom' && isset($row_style['style_custom_color'])) {
-								$row_style_attr .= $row_style['style_custom_color'];
-							}
-							if (!empty($bg_color)) {
-								//$row_style_attr .= 'background:'.$bg_color.'; ';
-							}
-							if (!empty($align) && $align !== 'left') {
-								$row_style_attr .= 'text-align:'.$align.';';
-							}
-							if (!empty($row_style_attr)) {
-								$row_style_attr = ' style="'.$row_style_attr.'"';
-							}
+					</div><!--/ .container -->
 
-							if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
-								?>
-							
-								<div class="container">
-											
-								<?php
-							}                    
-									?>	                       
-
-									<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>				
-
-										<?php foreach ($row_data as $uniqid => $column){ ?>
-
-											<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
-											<div class="<?php echo (!empty($row_center)&&($row_center==true)) ? 'col-sm-push-2 col-sm-pull-2 ' :  ''?><?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
-
-										<?php } ?>
-												
-										<div class="clearfix"></div>
-												
-									</div>
-									
-									<?php
-							if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
-								?>
-									
-								</div><!--/ .container -->
-										
-								<?php
-							}                    
+					<?php
+				}
                     
 					if (isset($tmm_layout_constructor_row[$row]['bg_fullscreen']) && $tmm_layout_constructor_row[$row]['bg_fullscreen'] == true) {
 							?>
@@ -173,7 +174,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 						
                         </div><!--/ .full-screen-->
 						
-						<?php
+					<?php
 					}
 					
 			if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&($row_displaying=='full_width')){

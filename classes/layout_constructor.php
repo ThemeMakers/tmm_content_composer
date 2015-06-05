@@ -162,15 +162,25 @@ class TMM_Layout_Constructor {
 						tag.src = "https://www.youtube.com/player_api";
 						var firstScriptTag = document.getElementsByTagName('script')[0];
 						firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-						var player;
+						var player,
+							playerVars,
+							loop = <?php echo $loop ?>;
+
+						if (loop){
+							playerVars = {'autoplay': 1, 'controls': 0, 'wmode':'transparent', 'loop': true, 'playlist': '<?php echo $source_code ?>', 'showinfo': 0 }
+						} else {
+							playerVars = {'autoplay': 1, 'controls': 0, 'wmode':'transparent', 'showinfo': 0 }
+						}
+
 						function onYouTubePlayerAPIReady() {
 							player = new YT.Player('ytplayer', {
+								playerVars: playerVars,
+								videoId: '<?php echo $source_code ?>',
 								height: '100%',
 								width: '100%',
-								videoId: '<?php echo $source_code ?>',
-								playerVars: { 'autoplay': 1, 'controls': 0, 'wmode':'transparent', 'loop':'<?php echo $loop ?>', 'playlist':'<?php echo $source_code ?>' },
 								events: {
-									'onReady': onPlayerReady}
+									'onReady': onPlayerReady
+								}
 							});
 
 						}
@@ -180,15 +190,6 @@ class TMM_Layout_Constructor {
 							if (mute == 1){
 								event.target.mute();
 							}
-
-							var loop = <?php echo $loop ?>;
-
-							if (loop == 1){
-								player.setLoop(true);
-							}else{
-								player.setLoop(false);
-							}
-
 						}
 
 					</script>
