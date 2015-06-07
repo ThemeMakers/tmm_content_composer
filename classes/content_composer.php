@@ -131,8 +131,6 @@ class TMM_Content_Composer {
 			wp_localize_script('tmm_composer_theme', 'tmm_l10n', $translation_array);
 
 			wp_enqueue_style('tmm_owlcarousel', TMM_CC_URL . 'css/owl-carousel/owl.carousel.css');
-			wp_enqueue_style('tmm_owltheme', TMM_CC_URL . 'css/owl-carousel/owl.theme.css');
-			wp_enqueue_style('tmm_owltransitions', TMM_CC_URL . 'css/owl-carousel/owl.transitions.css');
 			wp_enqueue_style('tmm_tooltipster', TMM_CC_URL . 'css/tooltipster.css');
 			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
 			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
