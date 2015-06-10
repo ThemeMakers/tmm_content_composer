@@ -64,6 +64,7 @@ $folio_terms = TMM_Portfolio::get_folio_tags();
 
 $folio_category = (!empty($folio_category) && $folio_category !== 'null') ? explode(',', $folio_category) : array();
 $folio_images = TMM_Portfolio::get_folio_images($display_images, $skills, $clients); // all images array
+
 $loaded_images = array();
 $folio_category_slugs = array();
 
