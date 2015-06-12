@@ -38,6 +38,25 @@ if ($gal_terms) {
 
 	</div><!--/ .one-half-->
 
+	<div class="one-half">
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Display', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'display_images',
+			'id' => '',
+			'options' => array(
+				'cover' => __('Cover Images', TMM_CC_TEXTDOMAIN),
+				'inside' => __('Images From Gallery', TMM_CC_TEXTDOMAIN)
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('display_images', 'cover'),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .one-half-->
+
 	<div class="one-half option-default">
 
 		<?php

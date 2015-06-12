@@ -14,7 +14,9 @@ if ($gallery_type === 'albums') {
 	tmm_enqueue_script('mixitup');
 }
 
-$gal_images = TMM_Gallery::get_galleries_images(); // all images array
+$display_images = isset($display_images) ? $display_images : 'cover';
+
+$gal_images = TMM_Gallery::get_galleries_images($display_images); // all images array
 $gal_terms = TMM_Gallery::get_gallery_tags();
 $image_size = TMM_Gallery::get_gallery_image_alias($gallery_type);
 $gal_category = (!empty($gal_category) && $gal_category !== 'null') ? explode(',', $gal_category) : array();
@@ -115,7 +117,7 @@ if ($gallery_type === 'albums') {
 
 		<?php } ?>
 
-		<section id="portfolio_items_<?php echo $uniqid; ?>" class="portfolio-items popup-gallery col-<?php echo $layout ?>">
+		<section id="portfolio_items_<?php echo $uniqid; ?>" class="portfolio-items popup-gallery col-<?php echo $layout ?>" data-display="<?php echo $display_images ?>">
 
 			<?php
 			foreach ($gal_images as $key => $image) {
@@ -143,6 +145,7 @@ if ($gallery_type === 'albums') {
 					$data['post_key'] = $key;
 					$data['galleries'] = $gal_images;
 					$data['show_categories'] = $show_categories;
+					$data['display_images'] = $display_images;
 					echo TMM::draw_html('gallery/shortcodes/gallery_article', $data);
 				}
 
