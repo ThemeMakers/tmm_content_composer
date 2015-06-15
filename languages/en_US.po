@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2015-06-01 18:55+0100\n"
-"PO-Revision-Date: 2015-06-01 18:56+0100\n"
+"POT-Creation-Date: 2015-06-15 20:45+0100\n"
+"PO-Revision-Date: 2015-06-15 20:45+0100\n"
 "Last-Translator: ThemeMakers Team <support@webtemplatemasters.com>\n"
 "Language-Team: ThemeMakers Team <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
@@ -326,7 +326,7 @@ msgid "Background Image"
 msgstr ""
 
 #: views/shortcodes/default/blog.php:245
-#: views/shortcodes/diplomat/imggallery.php:180
+#: views/shortcodes/diplomat/imggallery.php:183
 msgid "Load More"
 msgstr ""
 
@@ -472,7 +472,7 @@ msgstr ""
 #: views/shortcodes/default/popups/socialicons.php:77
 #: views/shortcodes/default/popups/tabs.php:28
 #: views/shortcodes/diplomat/popups/menu.php:87
-#: views/shortcodes/diplomat/popups/team.php:67
+#: views/shortcodes/diplomat/popups/team.php:68
 msgid "Remove"
 msgstr ""
 
@@ -558,7 +558,7 @@ msgid "Effect for Appearing Post."
 msgstr ""
 
 #: views/shortcodes/default/popups/blog.php:61
-#: views/shortcodes/diplomat/popups/imggallery.php:97
+#: views/shortcodes/diplomat/popups/imggallery.php:116
 #: views/shortcodes/tmm_events_calendar/popups/tmm_events_list.php:84
 msgid "Category"
 msgstr ""
@@ -568,7 +568,7 @@ msgid "Tag"
 msgstr ""
 
 #: views/shortcodes/default/popups/blog.php:93
-#: views/shortcodes/diplomat/popups/imggallery.php:46
+#: views/shortcodes/diplomat/popups/imggallery.php:65
 #: views/shortcodes/diplomat/popups/team.php:9
 msgid "Layout"
 msgstr ""
@@ -578,17 +578,17 @@ msgid "Fullwidth"
 msgstr ""
 
 #: views/shortcodes/default/popups/blog.php:98
-#: views/shortcodes/diplomat/popups/imggallery.php:50
+#: views/shortcodes/diplomat/popups/imggallery.php:69
 msgid "2 Columns"
 msgstr ""
 
 #: views/shortcodes/default/popups/blog.php:99
-#: views/shortcodes/diplomat/popups/imggallery.php:51
+#: views/shortcodes/diplomat/popups/imggallery.php:70
 msgid "3 Columns"
 msgstr ""
 
 #: views/shortcodes/default/popups/blog.php:100
-#: views/shortcodes/diplomat/popups/imggallery.php:52
+#: views/shortcodes/diplomat/popups/imggallery.php:71
 msgid "4 Columns"
 msgstr ""
 
@@ -1300,7 +1300,7 @@ msgid "Count"
 msgstr ""
 
 #: views/shortcodes/default/popups/testimonials.php:57
-#: views/shortcodes/diplomat/imggallery.php:103
+#: views/shortcodes/diplomat/imggallery.php:105
 msgid "All"
 msgstr ""
 
@@ -1514,29 +1514,41 @@ msgstr ""
 msgid "Gallery Type"
 msgstr ""
 
-#: views/shortcodes/diplomat/popups/imggallery.php:67
-#: views/shortcodes/diplomat/popups/imggallery.php:71
+#: views/shortcodes/diplomat/popups/imggallery.php:46
+msgid "Display"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/imggallery.php:50
+msgid "Cover Images"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/imggallery.php:51
+msgid "Images From Gallery"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/imggallery.php:86
+#: views/shortcodes/diplomat/popups/imggallery.php:90
 msgid "Posts per page"
 msgstr ""
 
-#: views/shortcodes/diplomat/popups/imggallery.php:82
-#: views/shortcodes/diplomat/popups/imggallery.php:86
+#: views/shortcodes/diplomat/popups/imggallery.php:101
+#: views/shortcodes/diplomat/popups/imggallery.php:105
 msgid "Posts per load"
 msgstr ""
 
-#: views/shortcodes/diplomat/popups/imggallery.php:113
+#: views/shortcodes/diplomat/popups/imggallery.php:132
 msgid "Enable Gallery Filter"
 msgstr ""
 
-#: views/shortcodes/diplomat/popups/imggallery.php:117
+#: views/shortcodes/diplomat/popups/imggallery.php:136
 msgid "Enable Folio Filter"
 msgstr ""
 
-#: views/shortcodes/diplomat/popups/imggallery.php:124
+#: views/shortcodes/diplomat/popups/imggallery.php:143
 msgid "Show categories"
 msgstr ""
 
-#: views/shortcodes/diplomat/popups/imggallery.php:128
+#: views/shortcodes/diplomat/popups/imggallery.php:147
 msgid "Show/Hide Categories"
 msgstr ""
 
@@ -1592,41 +1604,49 @@ msgstr ""
 msgid "Three Columns"
 msgstr ""
 
-#: views/shortcodes/diplomat/popups/team.php:44
-msgid "Team"
+#: views/shortcodes/diplomat/popups/team.php:15
+msgid "Two Columns"
 msgstr ""
 
 #: views/shortcodes/diplomat/popups/team.php:45
-#: views/shortcodes/diplomat/popups/team.php:77
+msgid "Team"
+msgstr ""
+
+#: views/shortcodes/diplomat/popups/team.php:46
+#: views/shortcodes/diplomat/popups/team.php:78
 msgid "Add team member"
 msgstr ""
 
-#: views/shortcodes/diplomat/team.php:57
+#: views/shortcodes/diplomat/team.php:63
 msgid "Email"
 msgstr ""
 
-#: views/shortcodes/diplomat/team.php:60
+#: views/shortcodes/diplomat/team.php:66
 msgid "Twitter"
 msgstr ""
 
-#: views/shortcodes/diplomat/team.php:63
+#: views/shortcodes/diplomat/team.php:69
 msgid "Facebook"
 msgstr ""
 
-#: views/shortcodes/diplomat/team.php:66
+#: views/shortcodes/diplomat/team.php:72
 msgid "Linkedin"
 msgstr ""
 
-#: views/shortcodes/diplomat/team.php:69
+#: views/shortcodes/diplomat/team.php:75
 msgid "Instagram"
 msgstr ""
 
-#: views/shortcodes/diplomat/team.php:72
+#: views/shortcodes/diplomat/team.php:78
 msgid "Dribbble"
 msgstr ""
 
-#: views/shortcodes/diplomat/team.php:75
+#: views/shortcodes/diplomat/team.php:81
 msgid "Skype"
+msgstr ""
+
+#: views/shortcodes/diplomat/team.php:84
+msgid "CV"
 msgstr ""
 
 #: views/shortcodes/tmm_events_calendar/popups/tmm_events_calendar.php:8
