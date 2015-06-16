@@ -158,7 +158,6 @@ if (!empty($contact_form['inputs'])) {
 		<div class="contact_form_responce" style="display: none;"><ul></ul></div>
 	</form>
 
-
 	<?php
 }
 ?>
