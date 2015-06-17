@@ -5,7 +5,7 @@ wp_enqueue_script('mediaelement');
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-if (is_plugin_active('tmm_grid_slider/index.php')){
+if (class_exists('TMM_Grid_Slider')){
     wp_enqueue_script('tmm_grid_slider_easing_js', TMM_Grid_Slider::get_application_uri() . 'js/jquery.animation.easing.js', array('jquery'));
     wp_enqueue_script('tmm_grid_slider_front_js', TMM_Grid_Slider::get_application_uri() . 'js/jquery.accordion.js', array('jquery'));
 }
