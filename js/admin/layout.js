@@ -345,6 +345,7 @@
                             bg_opacity = $('#row_bg_custom_opacity_' + row_id).val(),
                             bg_image = $('#row_bg_custom_image_' + row_id).val(),
                             bg_video = $('#row_bg_custom_video_' + row_id).val(),
+                            bg_video_panel = $('#row_bg_custom_video_panel_' + row_id).val(),
                             bg_video_mute = $('#row_bg_custom_video_mute_' + row_id).val(),
                             bg_video_loop = $('#row_bg_custom_video_loop_' + row_id).val(),
                             bg_cover = $('#row_bg_is_cover_' + row_id).val(),
@@ -381,6 +382,7 @@
                             cur_popup.find('#row_background_opacity').val(bg_opacity);
                             cur_popup.find('#row_bg_attachment').val(bg_attachment);
                             cur_popup.find('#row_background_is_cover').val(bg_is_cover);
+                            cur_popup.find('#row_bg_video_panel').val(bg_video_panel);
                             cur_popup.find('#row_bg_video_mute').val(bg_video_mute);
                             cur_popup.find('#row_bg_video_loop').val(bg_video_loop);
                              
@@ -413,6 +415,12 @@
                         cur_popup.find('#row_align').val(align);                                        
                         cur_popup.find('#row_center').val(center);
 
+
+                        if (bg_video_panel == 1){
+                            cur_popup.find('#row_bg_video_panel').attr('checked', 'checked');
+                        }else{
+                            cur_popup.find('#row_bg_video_panel').removeAttr('checked');
+                        }
 
                         if (bg_video_mute == 1){
                             cur_popup.find('#row_bg_video_mute').attr('checked', 'checked');
@@ -588,6 +596,7 @@
                             bg_opacity = cur_popup.find('#row_background_opacity').val(),
                             bg_image = cur_popup.find('#row_background_image').val(),
                             bg_video = cur_popup.find('#row_background_video').val(),
+                            bg_video_panel = cur_popup.find('#row_bg_video_panel').val(),
                             bg_video_mute = cur_popup.find('#row_bg_video_mute').val(),
                             bg_video_loop = cur_popup.find('#row_bg_video_loop').val(),
                             bg_cover = cur_popup.find('#row_background_cover').val(),
@@ -605,6 +614,7 @@
                             $('#row_bg_custom_opacity_' + row_id).val(bg_opacity);
                             $('#row_bg_custom_image_' + row_id).val(bg_image);
                             $('#row_bg_custom_video_' + row_id).val(bg_video);
+                            $('#row_bg_custom_video_panel_' + row_id).val(bg_video_panel);
                             $('#row_bg_custom_video_mute_' + row_id).val(bg_video_mute);
                             $('#row_bg_custom_video_loop_' + row_id).val(bg_video_loop);
                             $('#row_bg_is_cover_' + row_id).val(bg_cover);

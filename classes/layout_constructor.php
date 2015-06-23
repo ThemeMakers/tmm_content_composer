@@ -137,8 +137,8 @@ class TMM_Layout_Constructor {
 	}
 
 	public static function display_rowbg_video($video_options) {
-		?>
-		<?php if (isset($video_options['video_url']) AND ! empty($video_options['video_url'])) {
+
+		if (isset($video_options['video_url']) AND ! empty($video_options['video_url'])) {
 
 			$mute = $video_options['mute'] ? 1 : 0;
 			$loop = $video_options['loop'] ? 1 : 0;
@@ -182,7 +182,6 @@ class TMM_Layout_Constructor {
 									'onReady': onPlayerReady
 								}
 							});
-
 						}
 
 						function onPlayerReady(event) {

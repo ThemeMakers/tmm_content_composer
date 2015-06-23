@@ -68,6 +68,7 @@
                 
 				<input type="hidden" id="row_bg_custom_image_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_image'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_image]" />
 				<input type="hidden" id="row_bg_custom_video_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_video'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_video]" />
+				<input type="hidden" id="row_bg_custom_video_panel_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_video_panel'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_video_panel]" />
 				<input type="hidden" id="row_bg_custom_video_mute_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_video_mute'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_video_mute]" />
 				<input type="hidden" id="row_bg_custom_video_loop_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]) ? @$tmm_layout_constructor_row[$row]['bg_video_loop'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_video_loop]" />
 
@@ -136,6 +137,7 @@
 			<input type="hidden" id="row_bg_custom_type___ROW_ID__" value="none" name="tmm_layout_constructor_row[__ROW_ID__][bg_custom_type]" />
             
 			<input type="hidden" id="row_bg_custom_image___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_image]" />
+			<input type="hidden" id="row_bg_custom_video_panel___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video_panel]" />
 			<input type="hidden" id="row_bg_custom_video_mute___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video_mute]" />
 			<input type="hidden" id="row_bg_custom_video_loop___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video_loop]" />
 			<input type="hidden" id="row_bg_custom_video___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video]" />
@@ -380,6 +382,18 @@
                         'description' => ''
                     ));
                     ?>
+
+					<?php
+					TMM_Content_Composer::html_option(array(
+						'type' => 'checkbox',
+						'title' => __('Show / Hide video control panel', TMM_CC_TEXTDOMAIN),
+						'shortcode_field' => 'row_background_video_panel',
+						'id' => 'row_bg_video_panel',
+						'default_value' => 1,
+						'is_checked'=>true,
+						'description' => __('Show / Hide video control panel', TMM_CC_TEXTDOMAIN),
+					));
+					?>
 
 					<?php
 					TMM_Content_Composer::html_option(array(

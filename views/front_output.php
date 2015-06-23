@@ -88,6 +88,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 						'video_type' => $video_type,
 						'video_quality' => 'default',
 						'top' => $top,
+						'panel' => $tmm_layout_constructor_row[$row]['bg_video_panel'],
 						'mute' => $tmm_layout_constructor_row[$row]['bg_video_mute'],
 						'loop' => $tmm_layout_constructor_row[$row]['bg_video_loop'],
 						'containment' => '#section_'.$row
