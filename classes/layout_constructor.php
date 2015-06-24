@@ -138,6 +138,8 @@ class TMM_Layout_Constructor {
 
 	public static function display_rowbg_video($video_options) {
 
+
+
 		if (isset($video_options['video_url']) AND ! empty($video_options['video_url'])) {
 
 			$mute = $video_options['mute'] ? 1 : 0;
@@ -192,6 +194,24 @@ class TMM_Layout_Constructor {
 						}
 
 					</script>
+					<?php
+					if (isset($video_options['panel']) && $video_options['panel']){
+					?>
+						<div id="video_control_panel">
+							<a id="control-label" href="#">
+								<i class="icon-wrench"></i>
+							</a>
+							<ul class="control_buttons">
+								<li><a onclick="player.playVideo();" href="javascript:void(0);"><?php _e('Play', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a onclick="player.pauseVideo();" href="javascript:void(0);"><?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a onclick="player.stopVideo();" href="javascript:void(0);"><?php _e('Stop', TMM_CC_TEXTDOMAIN); ?></a></li>
+
+								<li><a onclick="player.mute();" href="javascript:void(0);"><?php _e('Mute', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a onclick="player.unMute();" href="javascript:void(0);"><?php _e('unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
+							</ul>
+						</div>
+						<?php
+					}?>
 					<?php break;
 
 				case 'vimeo':
@@ -220,10 +240,42 @@ class TMM_Layout_Constructor {
 									}
 								});
 
+								$('.bt_video').bind('click', function() {
+									player.api($(this).text().toLowerCase());
+									return false;
+								});
+								$('.bt_mute').bind('click', function() {
+									player.api('setVolume', '0');
+									return false;
+								});
+
+								$('.bt_unmute').bind('click', function() {
+									player.api('setVolume', '1');
+									return false;
+								});
+
 							});
 						})(jQuery);
 
 					</script>
+
+					<?php
+					if (isset($video_options['panel']) && $video_options['panel']){
+						?>
+						<div id="video_control_panel">
+							<a id="control-label" href="#">
+								<i class="icon-wrench"></i>
+							</a>
+							<ul class="control_buttons">
+								<li><a class="bt_video" href=""><?php _e('Play', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_video" href=""><?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_mute" href=""><?php _e('Mute', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_unmute" href=""><?php _e('unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
+							</ul>
+						</div>
+					<?php
+					}?>
+
 				<?php break; 
                 
                 case 'mp4': ?>
@@ -234,6 +286,23 @@ class TMM_Layout_Constructor {
                     </div>
                     <?php
                     wp_enqueue_script('mediaelement');
+
+					if (isset($video_options['panel']) && $video_options['panel']){
+						?>
+						<div id="video_control_panel">
+							<a id="control-label" href="#">
+								<i class="icon-wrench"></i>
+							</a>
+							<ul class="control_buttons">
+								<li><a class="bt_play" href=""><?php _e('Play', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_pause" href=""><?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_mute" href=""><?php _e('Mute', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_unmute" href=""><?php _e('unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
+							</ul>
+						</div>
+					<?php
+					}
+
 				break;
             
                 case 'ogv':                    
@@ -245,6 +314,23 @@ class TMM_Layout_Constructor {
                     </div>
                     <?php
                     wp_enqueue_script('mediaelement');
+
+					if (isset($video_options['panel']) && $video_options['panel']){
+						?>
+						<div id="video_control_panel">
+							<a id="control-label" href="#">
+								<i class="icon-wrench"></i>
+							</a>
+							<ul class="control_buttons">
+								<li><a class="bt_play" href=""><?php _e('Play', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_pause" href=""><?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_mute" href=""><?php _e('Mute', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_unmute" href=""><?php _e('unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
+							</ul>
+						</div>
+					<?php
+					}
+
 				break;
             
                 case 'webm':                    
@@ -256,6 +342,23 @@ class TMM_Layout_Constructor {
                     </div>
                     <?php
                     wp_enqueue_script('mediaelement');
+
+					if (isset($video_options['panel']) && $video_options['panel']){
+						?>
+						<div id="video_control_panel">
+							<a id="control-label" href="#">
+								<i class="icon-wrench"></i>
+							</a>
+							<ul class="control_buttons">
+								<li><a class="bt_play" href=""><?php _e('Play', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_pause" href=""><?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_mute" href=""><?php _e('Mute', TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="bt_unmute" href=""><?php _e('unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
+							</ul>
+						</div>
+					<?php
+					}
+
 				break;
             
 				default:
