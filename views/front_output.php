@@ -92,8 +92,10 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 						'mute' => $tmm_layout_constructor_row[$row]['bg_video_mute'],
 						'loop' => $tmm_layout_constructor_row[$row]['bg_video_loop'],
 						'containment' => '#section_'.$row
-					);                        
+					);
+
 					echo TMM_Layout_Constructor::display_rowbg_video($video_options);
+
 				}                   
                                 
 				if (isset($tmm_layout_constructor_row[$row]['row_overlay']) && $tmm_layout_constructor_row[$row]['row_overlay'] == true && isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom'){

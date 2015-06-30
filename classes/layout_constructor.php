@@ -181,170 +181,202 @@ class TMM_Layout_Constructor {
 		<?php
 	}
 
+
 	public static function display_rowbg_video($video_options) {
 
-		if (isset($video_options['video_url']) AND ! empty($video_options['video_url'])) {
+		if (TMM_Layout_Constructor::check_user_agent('mobile')){
 
-			$mute = $video_options['mute'] ? 1 : 0;
-			$loop = $video_options['loop'] ? 1 : 0;
-            
-			switch ($video_options['video_type']) {
-                
-				case 'youtube':
-					$source_code = explode("?v=", $video_options['video_url']);
-					$source_code = explode("&", $source_code[1]);
-					if (is_array($source_code)) {
-						$source_code = $source_code[0];
-					}
-					?>
+			if (isset($video_options['bg_cover']) && !empty($video_options['bg_cover'])){
+				?>
+				<div style="<?php echo (!empty($video_options['bg_cover'])) ? 'background-image: url(' . $video_options['bg_cover'] . ');' : ''; ?>" class="full-bg-image full-bg-image-scroll"></div>
+				<?php
+			}
 
-					<div class="mb-wrapper">
-						<div id="ytplayer" class="fitwidth"></div>
-					</div>
-					<script>
+		}else{
 
-						var tag = document.createElement('script');
-						tag.src = "https://www.youtube.com/player_api";
-						var firstScriptTag = document.getElementsByTagName('script')[0];
-						firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-						var player,
-							playerVars,
-							loop = <?php echo $loop ?>;
+			if (isset($video_options['video_url']) AND ! empty($video_options['video_url'])) {
 
-						if (loop){
-							playerVars = {'autoplay': 1, 'controls': 0, 'wmode':'transparent', 'loop': true, 'playlist': '<?php echo $source_code ?>', 'showinfo': 0 }
-						} else {
-							playerVars = {'autoplay': 1, 'controls': 0, 'wmode':'transparent', 'showinfo': 0 }
+				$mute = $video_options['mute'] ? 1 : 0;
+				$loop = $video_options['loop'] ? 1 : 0;
+
+				switch ($video_options['video_type']) {
+
+					case 'youtube':
+						$source_code = explode("?v=", $video_options['video_url']);
+						$source_code = explode("&", $source_code[1]);
+						if (is_array($source_code)) {
+							$source_code = $source_code[0];
 						}
+						?>
 
-						function onYouTubePlayerAPIReady() {
-							player = new YT.Player('ytplayer', {
-								playerVars: playerVars,
-								videoId: '<?php echo $source_code ?>',
-								height: '100%',
-								width: '100%',
-								events: {
-									'onReady': onPlayerReady
-								}
-							});
-						}
+						<div class="mb-wrapper">
+							<div id="ytplayer" class="fitwidth"></div>
+						</div>
+						<script>
 
-						function onPlayerReady(event) {
-							var mute = <?php echo $mute; ?>;
-							if (mute == 1){
-								event.target.mute();
+							var tag = document.createElement('script');
+							tag.src = "https://www.youtube.com/player_api";
+							var firstScriptTag = document.getElementsByTagName('script')[0];
+							firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+							var player,
+								playerVars,
+								loop = <?php echo $loop ?>;
+
+							if (loop){
+								playerVars = {'autoplay': 1, 'controls': 0, 'wmode':'transparent', 'loop': true, 'playlist': '<?php echo $source_code ?>', 'showinfo': 0 }
+							} else {
+								playerVars = {'autoplay': 1, 'controls': 0, 'wmode':'transparent', 'showinfo': 0 }
 							}
-						}
 
-					</script>
-
-					<?php
-					break;
-
-				case 'vimeo':
-                    $source_code = explode("/", $video_options['video_url']);
-                    if (is_array($source_code)) {
-                        $source_code = $source_code[count($source_code) - 1];
-                    }
-                    ?>
-                    <div class="mb-wrapper">
-						<script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
-                        <iframe id="vimeo_player" src="http://player.vimeo.com/video/<?php echo $source_code ?>?api=1&loop=<?php echo $loop ?>&player_id=vimeo_player&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    </div><!--/ .mb-wrapper-->
-					<script>
-
-						(function($) {
-							$(function() {
-								var iframe = $('#vimeo_player')[0];
-								var player = $f(iframe);
-								var status = $('.status');
-								var mute = <?php echo $mute; ?>;
-
-								// When the player is ready, add listeners for pause, finish, and playProgress
-								player.addEvent('ready', function() {
-									if (mute == 1){
-										player.api('setVolume', '0');
+							function onYouTubePlayerAPIReady() {
+								player = new YT.Player('ytplayer', {
+									playerVars: playerVars,
+									videoId: '<?php echo $source_code ?>',
+									height: '100%',
+									width: '100%',
+									events: {
+										'onReady': onPlayerReady
 									}
 								});
+							}
 
-								$('.bt_video').bind('click', function() {
-									player.api($(this).text().toLowerCase());
-									return false;
+							function onPlayerReady(event) {
+								var mute = <?php echo $mute; ?>;
+								if (mute == 1){
+									event.target.mute();
+								}
+							}
+
+						</script>
+
+						<?php
+						break;
+
+					case 'vimeo':
+						$source_code = explode("/", $video_options['video_url']);
+						if (is_array($source_code)) {
+							$source_code = $source_code[count($source_code) - 1];
+						}
+						?>
+						<div class="mb-wrapper">
+							<script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+							<iframe id="vimeo_player" src="http://player.vimeo.com/video/<?php echo $source_code ?>?api=1&loop=<?php echo $loop ?>&player_id=vimeo_player&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div><!--/ .mb-wrapper-->
+						<script>
+
+							(function($) {
+								$(function() {
+									var iframe = $('#vimeo_player')[0];
+									var player = $f(iframe);
+									var status = $('.status');
+									var mute = <?php echo $mute; ?>;
+
+									// When the player is ready, add listeners for pause, finish, and playProgress
+									player.addEvent('ready', function() {
+										if (mute == 1){
+											player.api('setVolume', '0');
+										}
+									});
+
+									$('.bt_video').bind('click', function() {
+										player.api($(this).text().toLowerCase());
+										return false;
+									});
+									$('.bt_mute').bind('click', function() {
+										player.api('setVolume', '0');
+										return false;
+									});
+
+									$('.bt_unmute').bind('click', function() {
+										player.api('setVolume', '1');
+										return false;
+									});
+
 								});
-								$('.bt_mute').bind('click', function() {
-									player.api('setVolume', '0');
-									return false;
-								});
+							})(jQuery);
 
-								$('.bt_unmute').bind('click', function() {
-									player.api('setVolume', '1');
-									return false;
-								});
+						</script>
 
-							});
-						})(jQuery);
+						<?php break;
 
-					</script>
+					case 'mp4': ?>
+						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
+							<video id="example_video" class="" width="100%" height="100%" >
+								<source src="<?php echo $video_options['video_url'] ?>" type='video/mp4' />
+							</video>
+						</div>
+						<?php
+						wp_enqueue_script('mediaelement');
 
-				<?php break; 
-                
-                case 'mp4': ?>
-                    <div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
-                        <video id="example_video" class="" width="100%" height="100%" >
-                            <source src="<?php echo $video_options['video_url'] ?>" type='video/mp4' />
-                        </video>
-                    </div>
-                    <?php
-                    wp_enqueue_script('mediaelement');
+						break;
 
-				break;
-            
-                case 'ogv':                    
-                    ?>
-                    <div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
-                        <video id="example_video" class="" width="100%" height="100%" >
-                            <source src="<?php echo $video_options['video_url'] ?>" type='video/ogg' />
-                        </video>
-                    </div>
-                    <?php
-                    wp_enqueue_script('mediaelement');
+					case 'ogv':
+						?>
+						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
+							<video id="example_video" class="" width="100%" height="100%" >
+								<source src="<?php echo $video_options['video_url'] ?>" type='video/ogg' />
+							</video>
+						</div>
+						<?php
+						wp_enqueue_script('mediaelement');
 
-				break;
-            
-                case 'webm':                    
-                    ?>
-                    <div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
-                        <video id="example_video" class="" width="100%" height="100%" >
-                            <source src="<?php echo $video_options['video_url'] ?>" type='video/webm' />
-                        </video>
-                    </div>
-                    <?php
-                    wp_enqueue_script('mediaelement');
+						break;
 
-				break;
-            
-				default:
-                    $cover = $video_options['bg_cover'];
-                    $image_size = "2000*1345";
-                    if (!empty($cover)) {            
-                        ?>
-                    <div class="full-bg-image full-bg-image-scroll" style="background-image: url('<?php echo TMM_Content_Composer::resize_image_cover($cover, $image_size); ?>');"></div>
-                         
-                         <?php 
-                    }else{
-                        _e('Unsupported video format', TMM_CC_TEXTDOMAIN);
-                    }					
-					break;
+					case 'webm':
+						?>
+						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
+							<video id="example_video" class="" width="100%" height="100%" >
+								<source src="<?php echo $video_options['video_url'] ?>" type='video/webm' />
+							</video>
+						</div>
+						<?php
+						wp_enqueue_script('mediaelement');
+
+						break;
+
+					default:
+						$cover = $video_options['bg_cover'];
+						$image_size = "2000*1345";
+						if (!empty($cover)) {
+							?>
+							<div class="full-bg-image full-bg-image-scroll" style="background-image: url('<?php echo TMM_Content_Composer::resize_image_cover($cover, $image_size); ?>');"></div>
+
+						<?php
+						}else{
+							_e('Unsupported video format', TMM_CC_TEXTDOMAIN);
+						}
+						break;
+				}
+
+				if (isset($video_options['panel']) && $video_options['panel']){
+
+					TMM_Layout_Constructor::get_video_control_panel($video_options['video_type']);
+
+				}
+
 			}
-
-			if (isset($video_options['panel']) && $video_options['panel']){
-
-				TMM_Layout_Constructor::get_video_control_panel($video_options['video_type']);
-
-			}
-
 		}
 
+	}
+
+	public static function check_user_agent ( $type = NULL ) {
+		$user_agent = strtolower ( $_SERVER['HTTP_USER_AGENT'] );
+		if ( $type == 'bot' ) {
+			if ( preg_match ( "/googlebot|adsbot|yahooseeker|yahoobot|msnbot|watchmouse|pingdom\.com|feedfetcher-google/", $user_agent ) ) {
+				return true;
+			}
+		} else if ( $type == 'browser' ) {
+			if ( preg_match ( "/mozilla\/|opera\//", $user_agent ) ) {
+				return true;
+			}
+		} else if ( $type == 'mobile' ) {
+			if ( preg_match ( "/phone|iphone|itouch|ipod|symbian|android|htc_|htc-|palmos|blackberry|opera mini|iemobile|windows ce|nokia|fennec|hiptop|kindle|mot |mot-|webos\/|samsung|sonyericsson|^sie-|nintendo/", $user_agent ) ) {
+				return true;
+			} else if ( preg_match ( "/mobile|pda;|avantgo|eudoraweb|minimo|netfront|brew|teleca|lg;|lge |wap;| wap /", $user_agent ) ) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

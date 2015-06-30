@@ -379,7 +379,7 @@
                         'shortcode_field' => 'row_background_cover',
                         'id' => 'row_background_cover',
                         'default_value' => '',
-                        'description' => ''
+                        'description' => 'Only for Mobiles'
                     ));
                     ?>
 
