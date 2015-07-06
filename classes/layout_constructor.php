@@ -140,29 +140,22 @@ class TMM_Layout_Constructor {
 		switch ($video_type){
 			case 'youtube':
 				?>
-				<li><a onclick="player.playVideo();" href="javascript:void(0);"><?php _e('Play', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a onclick="player.pauseVideo();" href="javascript:void(0);"><?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a onclick="player.mute();" href="javascript:void(0);"><?php _e('Mute', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a onclick="player.unMute();" href="javascript:void(0);"><?php _e('unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
+				<li><a class="bt_play" onclick="player.pauseVideo();" href="javascript:void(0);"><?php _e('Play / Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
+				<li><a class="bt_mute" onclick="player.mute();" href="javascript:void(0);"><?php _e('Mute / unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
 				<?php
 				break;
 			case 'vimeo':
 				?>
-				<li><a class="bt_video" href="#"><?php _e('Play', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a class="bt_video" href="#"><?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a class="bt_mute" href="#"><?php _e('Mute', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a class="bt_unmute" href="#"><?php _e('unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
-
+				<li><a class="bt_play" data-click="pause" href="#"><?php _e('Play / Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
+				<li><a class="bt_mute"  data-click="mute" href="#"><?php _e('Mute / unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
 				<?php
 				break;
 			case 'mp4':
 			case 'ogv':
 			case 'webm':
 				?>
-				<li><a class="bt_play" href="#"><?php _e('Play', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a class="bt_pause" href="#"><?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a class="bt_mute" href="#"><?php _e('Mute', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a class="bt_unmute" href="#"><?php _e('unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
+				<li><a class="bt_play" data-click="pause" href="#"><?php _e('Play / Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
+				<li><a class="bt_mute" data-click="mute" href="#"><?php _e('Mute / unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
 				<?php
 				break;
 		}
@@ -244,7 +237,35 @@ class TMM_Layout_Constructor {
 								var mute = <?php echo $mute; ?>;
 								if (mute == 1){
 									event.target.mute();
+									jQuery('.bt_mute').attr({'onclick': 'player.unMute();'});
 								}
+
+
+								jQuery('.bt_play').on('click', function(){
+									var $this = jQuery(this),
+										attrclick = $this.attr('onclick');
+
+									if (attrclick == 'player.playVideo();'){
+										$this.attr({'onclick': 'player.pauseVideo();'});
+									}else{
+										$this.attr({'onclick': 'player.playVideo();'});
+									}
+
+								});
+
+								jQuery('.bt_mute').on('click', function(){
+									var $this = jQuery(this),
+										attrclick = $this.attr('onclick');
+
+									if (attrclick == 'player.unMute();'){
+										$this.attr({'onclick': 'player.mute();'});
+									}else{
+										$this.attr({'onclick': 'player.unMute();'});
+									}
+
+								});
+
+
 							}
 
 						</script>
@@ -275,20 +296,35 @@ class TMM_Layout_Constructor {
 									player.addEvent('ready', function() {
 										if (mute == 1){
 											player.api('setVolume', '0');
+											$('.bt_mute').attr({'data-click': 'unMute'});
 										}
 									});
 
-									$('.bt_video').bind('click', function() {
-										player.api($(this).text().toLowerCase());
-										return false;
-									});
-									$('.bt_mute').bind('click', function() {
-										player.api('setVolume', '0');
+									$('.bt_play').on('click', function() {
+										var $this = $(this),
+											attrclick = $(this).attr('data-click');
+
+										if (attrclick == 'play'){
+											$this.attr({'data-click': 'pause'});
+											player.api('play');
+										}else{
+											$this.attr({'data-click': 'play'});
+											player.api('pause');
+										}
 										return false;
 									});
 
-									$('.bt_unmute').bind('click', function() {
-										player.api('setVolume', '1');
+									$('.bt_mute').on('click', function() {
+										var $this = $(this),
+											attrclick = $(this).attr('data-click');
+
+										if (attrclick == 'mute'){
+											$this.attr({'data-click': 'unMute'});
+											player.api('setVolume', '0');
+										}else{
+											$this.attr({'data-click': 'mute'});
+											player.api('setVolume', '1');
+										}
 										return false;
 									});
 
