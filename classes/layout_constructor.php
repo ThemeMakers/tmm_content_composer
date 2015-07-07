@@ -136,39 +136,21 @@ class TMM_Layout_Constructor {
 		}
 	}
 
-	public static function get_video_control_buttons($video_type){
-		switch ($video_type){
-			case 'youtube':
-				?>
-				<li><a class="bt_play" onclick="player.pauseVideo();" href="javascript:void(0);"><?php _e('Play / Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a class="bt_mute" onclick="player.mute();" href="javascript:void(0);"><?php _e('Mute / unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<?php
-				break;
-			case 'vimeo':
-				?>
-				<li><a class="bt_play" data-click="pause" href="#"><?php _e('Play / Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a class="bt_mute"  data-click="mute" href="#"><?php _e('Mute / unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<?php
-				break;
-			case 'mp4':
-			case 'ogv':
-			case 'webm':
-				?>
-				<li><a class="bt_play" data-click="pause" href="#"><?php _e('Play / Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<li><a class="bt_mute" data-click="mute" href="#"><?php _e('Mute / unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
-				<?php
-				break;
-		}
+	public static function get_video_control_buttons(){
+		?>
+		<li><a class="bt_play" data-click="pause" href="#"><?php _e('Play / Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
+		<li><a class="bt_mute" data-click="mute" href="#"><?php _e('Mute / unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
+		<?php
 	}
 
-	public static function get_video_control_panel($video_type){
+	public static function get_video_control_panel(){
 		?>
 		<div id="video_control_panel">
 			<a id="control-label" href="#">
 				<i class="icon-wrench"></i>
 			</a>
 			<ul class="control_buttons">
-				<?php TMM_Layout_Constructor::get_video_control_buttons($video_type); ?>
+				<?php TMM_Layout_Constructor::get_video_control_buttons(); ?>
 			</ul>
 		</div>
 		<?php
@@ -237,35 +219,36 @@ class TMM_Layout_Constructor {
 								var mute = <?php echo $mute; ?>;
 								if (mute == 1){
 									event.target.mute();
-									jQuery('.bt_mute').attr({'onclick': 'player.unMute();'});
+									jQuery('.bt_mute').attr({'data-click': 'unMute'});
 								}
-
 
 								jQuery('.bt_play').on('click', function(){
 									var $this = jQuery(this),
-										attrclick = $this.attr('onclick');
+										attrclick = $this.attr('data-click');
 
-									if (attrclick == 'player.playVideo();'){
-										$this.attr({'onclick': 'player.pauseVideo();'});
+									if (attrclick == 'play'){
+										$this.attr({'data-click': 'pause'});
+										player.playVideo();
 									}else{
-										$this.attr({'onclick': 'player.playVideo();'});
+										$this.attr({'data-click': 'play'});
+										player.pauseVideo();
 									}
-
+									return false;
 								});
 
 								jQuery('.bt_mute').on('click', function(){
 									var $this = jQuery(this),
-										attrclick = $this.attr('onclick');
+										attrclick = $this.attr('data-click');
 
-									if (attrclick == 'player.unMute();'){
-										$this.attr({'onclick': 'player.mute();'});
+									if (attrclick == 'mute'){
+										$this.attr({'data-click': 'unMute'});
+										player.mute();
 									}else{
-										$this.attr({'onclick': 'player.unMute();'});
+										$this.attr({'data-click': 'mute'});
+										player.unMute();
 									}
-
+									return false;
 								});
-
-
 							}
 
 						</script>
@@ -386,7 +369,7 @@ class TMM_Layout_Constructor {
 
 				if (isset($video_options['panel']) && $video_options['panel']){
 
-					TMM_Layout_Constructor::get_video_control_panel($video_options['video_type']);
+					TMM_Layout_Constructor::get_video_control_panel();
 
 				}
 
