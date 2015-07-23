@@ -79,7 +79,7 @@ if ($folio_terms) {
 				'without_effect' => __('Without any effect', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('hover_effect', 'colored'),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('Hover appearance effect', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 	</div>
