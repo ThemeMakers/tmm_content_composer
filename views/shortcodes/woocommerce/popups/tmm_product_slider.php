@@ -10,14 +10,14 @@
 			'shortcode_field' => 'product_type',
 			'id' => 'tmm_product_type',
 			'options' => array(
-				'newest' => __('Newest', TMM_CC_TEXTDOMAIN),
+				'recent_products' => __('Recent', TMM_CC_TEXTDOMAIN),
 				'featured_products' => __('Featured', TMM_CC_TEXTDOMAIN),
 				//'top_rated' => __('Top Rated', TMM_CC_TEXTDOMAIN),
 				'best_selling' => __('Best Selling', TMM_CC_TEXTDOMAIN),
-				'for_sale' => __('Sale Products', TMM_CC_TEXTDOMAIN),
+				'sale_products' => __('Sale Products', TMM_CC_TEXTDOMAIN),
 				//'custom' => __('Select Products', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('product_type', ''),
+			'default_value' => TMM_Content_Composer::set_default_value('product_type', 'recent_products'),
 			'description' => ''
 		));
 		?>
