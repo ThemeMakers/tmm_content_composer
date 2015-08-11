@@ -138,8 +138,8 @@ class TMM_Layout_Constructor {
 
 	public static function get_video_control_buttons(){
 		?>
-		<li><a class="bt_play" data-click="pause" href="#"><?php _e('Play / Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
-		<li><a class="bt_mute" data-click="mute" href="#"><?php _e('Mute / unMute', TMM_CC_TEXTDOMAIN); ?></a></li>
+		<li><a class="bt_play" data-click="pause" href="#"><i class="icon-play"></i> <?php _e('Play', TMM_CC_TEXTDOMAIN); ?> | <i class="icon-pause"></i> <?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
+		<li><a class="bt_mute" data-click="mute" href="#"><i class="icon-volume-off"></i> <?php _e('Mute', TMM_CC_TEXTDOMAIN); ?> | <i class="icon-volume-up"></i> <?php _e('Unmute', TMM_CC_TEXTDOMAIN); ?></a></li>
 		<?php
 	}
 
