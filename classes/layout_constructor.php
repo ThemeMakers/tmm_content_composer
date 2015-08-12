@@ -138,14 +138,14 @@ class TMM_Layout_Constructor {
 
 	public static function get_video_control_buttons(){
 		?>
-		<li><a class="bt_play" data-click="pause" href="#"><i class="icon-play"></i> <?php _e('Play', TMM_CC_TEXTDOMAIN); ?> | <i class="icon-pause"></i> <?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></a></li>
-		<li><a class="bt_mute" data-click="mute" href="#"><i class="icon-volume-off"></i> <?php _e('Mute', TMM_CC_TEXTDOMAIN); ?> | <i class="icon-volume-up"></i> <?php _e('Unmute', TMM_CC_TEXTDOMAIN); ?></a></li>
+		<li><a class="bt_play" data-click="pause" href="#"><span><i class="icon-play"></i><?php _e('Play', TMM_CC_TEXTDOMAIN); ?></span><span><i class="icon-pause"></i><?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></span></a></li>
+		<li><a class="bt_mute" data-click="mute" href="#"><span><i class="icon-volume-off"></i><?php _e('Mute', TMM_CC_TEXTDOMAIN); ?></span><span><i class="icon-volume-up"></i><?php _e('Unmute', TMM_CC_TEXTDOMAIN); ?></span></a></li>
 		<?php
 	}
 
 	public static function get_video_control_panel(){
 		?>
-		<div id="video_control_panel">
+		<div class="video_control_panel" style="display: none">
 			<h6><?php _e('Video Controls', TMM_CC_TEXTDOMAIN); ?>:</h6>
 			<ul class="control_buttons">
 				<?php TMM_Layout_Constructor::get_video_control_buttons(); ?>
@@ -218,7 +218,17 @@ class TMM_Layout_Constructor {
 								if (mute == 1){
 									event.target.mute();
 									jQuery('.bt_mute').attr({'data-click': 'unMute'});
+									jQuery('.icon-volume-off').parent('span').hide();
+									jQuery('.icon-volume-up').parent('span').show();
+								}else{
+									jQuery('.icon-volume-off').parent('span').show();
+									jQuery('.icon-volume-up').parent('span').hide();
 								}
+
+								jQuery('.video_control_panel').show();
+
+								jQuery('.icon-play').parent('span').hide();
+								jQuery('.icon-pause').parent('span').show();
 
 								jQuery('.bt_play').on('click', function(){
 									var $this = jQuery(this),
@@ -227,9 +237,13 @@ class TMM_Layout_Constructor {
 									if (attrclick == 'play'){
 										$this.attr({'data-click': 'pause'});
 										player.playVideo();
+										jQuery('.icon-play').parent('span').hide();
+										jQuery('.icon-pause').parent('span').show();
 									}else{
 										$this.attr({'data-click': 'play'});
 										player.pauseVideo();
+										jQuery('.icon-play').parent('span').show();
+										jQuery('.icon-pause').parent('span').hide();
 									}
 									return false;
 								});
@@ -241,9 +255,13 @@ class TMM_Layout_Constructor {
 									if (attrclick == 'mute'){
 										$this.attr({'data-click': 'unMute'});
 										player.mute();
+										jQuery('.icon-volume-off').parent('span').hide();
+										jQuery('.icon-volume-up').parent('span').show();
 									}else{
 										$this.attr({'data-click': 'mute'});
 										player.unMute();
+										jQuery('.icon-volume-off').parent('span').show();
+										jQuery('.icon-volume-up').parent('span').hide();
 									}
 									return false;
 								});
@@ -278,8 +296,17 @@ class TMM_Layout_Constructor {
 										if (mute == 1){
 											player.api('setVolume', '0');
 											$('.bt_mute').attr({'data-click': 'unMute'});
+											jQuery('.icon-volume-off').parent('span').hide();
+											jQuery('.icon-volume-up').parent('span').show();
+										}else{
+											jQuery('.icon-volume-off').parent('span').show();
+											jQuery('.icon-volume-up').parent('span').hide();
 										}
 									});
+
+									jQuery('.icon-play').parent('span').hide();
+									jQuery('.icon-pause').parent('span').show();
+									jQuery('.video_control_panel').show();
 
 									$('.bt_play').on('click', function() {
 										var $this = $(this),
@@ -288,9 +315,13 @@ class TMM_Layout_Constructor {
 										if (attrclick == 'play'){
 											$this.attr({'data-click': 'pause'});
 											player.api('play');
+											jQuery('.icon-play').parent('span').hide();
+											jQuery('.icon-pause').parent('span').show();
 										}else{
 											$this.attr({'data-click': 'play'});
 											player.api('pause');
+											jQuery('.icon-play').parent('span').show();
+											jQuery('.icon-pause').parent('span').hide();
 										}
 										return false;
 									});
@@ -302,9 +333,13 @@ class TMM_Layout_Constructor {
 										if (attrclick == 'mute'){
 											$this.attr({'data-click': 'unMute'});
 											player.api('setVolume', '0');
+											jQuery('.icon-volume-off').parent('span').hide();
+											jQuery('.icon-volume-up').parent('span').show();
 										}else{
 											$this.attr({'data-click': 'mute'});
 											player.api('setVolume', '1');
+											jQuery('.icon-volume-off').parent('span').show();
+											jQuery('.icon-volume-up').parent('span').hide();
 										}
 										return false;
 									});
