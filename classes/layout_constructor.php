@@ -146,9 +146,7 @@ class TMM_Layout_Constructor {
 	public static function get_video_control_panel(){
 		?>
 		<div id="video_control_panel">
-			<a id="control-label" href="#">
-				<i class="icon-wrench"></i>
-			</a>
+			<h6><?php _e('Video Controls', TMM_CC_TEXTDOMAIN); ?>:</h6>
 			<ul class="control_buttons">
 				<?php TMM_Layout_Constructor::get_video_control_buttons(); ?>
 			</ul>
