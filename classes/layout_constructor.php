@@ -138,15 +138,14 @@ class TMM_Layout_Constructor {
 
 	public static function get_video_control_buttons(){
 		?>
-		<li><a class="bt_play" data-click="pause" href="#"><span><i class="icon-play"></i><?php _e('Play', TMM_CC_TEXTDOMAIN); ?></span><span><i class="icon-pause"></i><?php _e('Pause', TMM_CC_TEXTDOMAIN); ?></span></a></li>
-		<li><a class="bt_mute" data-click="mute" href="#"><span><i class="icon-volume-off"></i><?php _e('Mute', TMM_CC_TEXTDOMAIN); ?></span><span><i class="icon-volume-up"></i><?php _e('Unmute', TMM_CC_TEXTDOMAIN); ?></span></a></li>
+		<li><a class="bt_play" data-click="pause" href="#"><span><i class="icon-play"></i></span><span><i class="icon-pause-2"></i></span></a></li>
+		<li><a class="bt_mute" data-click="mute" href="#"><span><i class="icon-volume-up"></i></span><span><i class="icon-volume-off"></i></span></a></li>
 		<?php
 	}
 
 	public static function get_video_control_panel(){
 		?>
-		<div class="video_control_panel" style="display: none">
-			<h6><?php _e('Video Controls', TMM_CC_TEXTDOMAIN); ?>:</h6>
+		<div class="video_control_panel">
 			<ul class="control_buttons">
 				<?php TMM_Layout_Constructor::get_video_control_buttons(); ?>
 			</ul>
@@ -228,7 +227,7 @@ class TMM_Layout_Constructor {
 								jQuery('.video_control_panel').show();
 
 								jQuery('.icon-play').parent('span').hide();
-								jQuery('.icon-pause').parent('span').show();
+								jQuery('.icon-pause-2').parent('span').show();
 
 								jQuery('.bt_play').on('click', function(){
 									var $this = jQuery(this),
@@ -238,12 +237,12 @@ class TMM_Layout_Constructor {
 										$this.attr({'data-click': 'pause'});
 										player.playVideo();
 										jQuery('.icon-play').parent('span').hide();
-										jQuery('.icon-pause').parent('span').show();
+										jQuery('.icon-pause-2').parent('span').show();
 									}else{
 										$this.attr({'data-click': 'play'});
 										player.pauseVideo();
 										jQuery('.icon-play').parent('span').show();
-										jQuery('.icon-pause').parent('span').hide();
+										jQuery('.icon-pause-2').parent('span').hide();
 									}
 									return false;
 								});
@@ -305,7 +304,7 @@ class TMM_Layout_Constructor {
 									});
 
 									jQuery('.icon-play').parent('span').hide();
-									jQuery('.icon-pause').parent('span').show();
+									jQuery('.icon-pause-2').parent('span').show();
 									jQuery('.video_control_panel').show();
 
 									$('.bt_play').on('click', function() {
@@ -316,12 +315,12 @@ class TMM_Layout_Constructor {
 											$this.attr({'data-click': 'pause'});
 											player.api('play');
 											jQuery('.icon-play').parent('span').hide();
-											jQuery('.icon-pause').parent('span').show();
+											jQuery('.icon-pause-2').parent('span').show();
 										}else{
 											$this.attr({'data-click': 'play'});
 											player.api('pause');
 											jQuery('.icon-play').parent('span').show();
-											jQuery('.icon-pause').parent('span').hide();
+											jQuery('.icon-pause-2').parent('span').hide();
 										}
 										return false;
 									});
