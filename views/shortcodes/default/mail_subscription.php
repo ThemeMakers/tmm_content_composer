@@ -25,10 +25,10 @@
 
 	        <div class="row collapse">
 		        <div class="medium-6 large-6 columns">
-			        <input id="zipcode_<?php echo $unique_id ?>" required type="text" name="zipcode" value="" placeholder="<?php esc_attr_e('Zip code', TMM_THEME_TEXTDOMAIN); ?>" />
+			        <input id="zipcode_<?php echo $unique_id ?>" required type="text" name="zipcode" value="" placeholder="<?php esc_attr_e('Zip code', TMM_CC_TEXTDOMAIN); ?>" />
 		        </div>
 		        <div class="medium-6 large-6 columns">
-			        <button href="#" class="button submit middle right"><?php esc_attr_e('Submit', TMM_THEME_TEXTDOMAIN); ?></button>
+			        <button href="#" class="button submit middle right"><?php esc_attr_e('Submit', TMM_CC_TEXTDOMAIN); ?></button>
 		        </div>
 	        </div>
 

@@ -78,7 +78,7 @@ if (!empty($contact_form['inputs'])) {
 	                if ($input['optional_field']) {
 		                ?>
 
-		                <h6 class="form-title"><?php esc_html_e('Other', TMM_THEME_TEXTDOMAIN); ?></h6>
+		                <h6 class="form-title"><?php esc_html_e('Other', TMM_CC_TEXTDOMAIN); ?></h6>
 		                <p class="tmmFormStyling form-textarea">
 			                <textarea name="<?php echo $name ?>[]"></textarea>
 		                </p>
@@ -181,7 +181,7 @@ if (!empty($contact_form['inputs'])) {
 		            </p>
 
 		            <p class="tmmFormStyling form-input-city">
-			            <input id="city_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo $name ?>[city]" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php esc_attr_e('City ', TMM_THEME_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+			            <input id="city_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo $name ?>[city]" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php esc_attr_e('City ', TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
 		            </p>
 
 		            <div class="row tmmFormStyling">
@@ -202,13 +202,13 @@ if (!empty($contact_form['inputs'])) {
 				            </p>
 
 				            <p class="tmmFormStyling form-input-country" style="display: none;">
-					            <input id="county_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="hidden" class="tmm-county-input" name="<?php echo $name ?>[state]" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php esc_attr_e('State', TMM_THEME_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+					            <input id="county_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="hidden" class="tmm-county-input" name="<?php echo $name ?>[state]" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php esc_attr_e('State', TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
 				            </p>
 			            </div>
 
 			            <div class="large-6 columns">
 				            <p class="tmmFormStyling form-input-zip">
-					            <input id="zip_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo $name ?>[zip]" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php esc_attr_e('Zip Code ', TMM_THEME_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+					            <input id="zip_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo $name ?>[zip]" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php esc_attr_e('Zip Code ', TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? " *" : "") ?>" />
 				            </p>
 			            </div>
 
