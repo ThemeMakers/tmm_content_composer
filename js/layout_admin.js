@@ -16,37 +16,37 @@
                         'value': '1/4',
                         'name': 'One fourth',
                         'css_class': 'element1-4',
-						'front_css_class': 'medium-3'
+						'front_css_class': 'col-sm-3'
                     },
                     {
                         'value': '1/3',
                         'name': 'One third',
                         'css_class': 'element1-3',
-						'front_css_class': 'medium-4'
+						'front_css_class': 'col-sm-4'
                     },
                     {
                         'value': '1/2',
                         'name': 'One half',
                         'css_class': 'element1-2',
-						'front_css_class': 'medium-6'
+						'front_css_class': 'col-sm-6'
                     },
                     {
                         'value': '2/3',
                         'name': 'Two thirds',
                         'css_class': 'element2-3',
-						'front_css_class': 'medium-8'
+						'front_css_class': 'col-sm-8'
                     },
                     {
                         'value': '3/4',
                         'name': 'Three Fourth',
                         'css_class': 'element3-4',
-						'front_css_class': 'medium-9'
+						'front_css_class': 'col-sm-9'
                     },
                     {
                         'value': '1',
                         'name': 'Full width',
                         'css_class': 'element1-1',
-						'front_css_class': 'medium-12'
+						'front_css_class': 'col-sm-12'
                     }
                 ];
 

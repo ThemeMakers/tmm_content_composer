@@ -134,12 +134,12 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 							}                    
 									?>	                       
 
-									<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
+									<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>				
 
 										<?php foreach ($row_data as $uniqid => $column){ ?>
 
 											<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
-											<div class="columns <?php echo (!empty($row_center)&&($row_center==true)) ? 'col-sm-push-2 col-sm-pull-2 ' :  ''?><?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
+											<div class="<?php echo (!empty($row_center)&&($row_center==true)) ? 'col-sm-push-2 col-sm-pull-2 ' :  ''?><?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
 
 										<?php } ?>
 												

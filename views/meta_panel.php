@@ -103,7 +103,7 @@
 			'row' => '__ROW_ID__',
 			'uniqid' => '__UNIQUE_ID__',
 			'css_class' => 'element1-4',
-			'front_css_class' => 'medium-3',
+			'front_css_class' => 'col-sm-3',
 			'value' => '1/4',
 			'content' => '',
 			'title' => '',
@@ -133,7 +133,7 @@
 			<input type="hidden" id="row_bg_data___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_data]" />
 			<input type="hidden" id="row_bg_custom_color___ROW_ID__" value="#fff" name="tmm_layout_constructor_row[__ROW_ID__][bg_color]" />
             
-			<input type="hidden" id="row_bg_custom_type___ROW_ID__" value="none" name="tmm_layout_constructor_row[__ROW_ID__][bg_custom_type]" />
+			<input type="hidden" id="row_bg_custom_type___ROW_ID__" value="color" name="tmm_layout_constructor_row[__ROW_ID__][bg_custom_type]" />
             
 			<input type="hidden" id="row_bg_custom_image___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_image]" />
 			<input type="hidden" id="row_bg_custom_video___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_video]" />
@@ -323,7 +323,7 @@
 					'default' => __('Default Theme Color', TMM_CC_TEXTDOMAIN),
 					'custom' => __('Custom', TMM_CC_TEXTDOMAIN),
 				),
-				'default_value' => 'none',
+				'default_value' => 'default',
 				'description' => ''
 			));
 			?>			
