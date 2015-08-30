@@ -167,14 +167,11 @@ if (!empty($folio_category)) {
 <?php if ($count_images_by_cat > $posts_per_page) {	?>
 
     <div class="folio-loader">
-        <div id="infscr-loading">
-            <div id="circleG">
-                <div id="circleG_1" class="circleG">
-                </div>
-                <div id="circleG_2" class="circleG">
-                </div>
-                <div id="circleG_3" class="circleG">
-                </div>
+        <div class="infscr-loading">
+            <div class="tmm_loading">
+                <div class="circleG circleG_1"></div>
+                <div class="circleG circleG_2"></div>
+                <div class="circleG circleG_3"></div>
             </div>
         </div>
     </div>

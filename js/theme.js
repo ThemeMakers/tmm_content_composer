@@ -109,7 +109,7 @@
 
 				if ((post_key) && (test_post_key != post_key)) {
 
-					$('#infscr-loading').animate({opacity: 'show'}, 300);
+					$('.infscr-loading').animate({opacity: 'show'}, 300);
 
 					var data = {
 						action: "folio_get_masonry_piece",
@@ -143,7 +143,7 @@
 							setTimeout(function() {
 								$('#post-area').masonry('reload');
 								$('.masonry_piece_' + post_key).animate({'opacity': 1}, 777);
-								$('#infscr-loading').animate({opacity: 'hide'}, 800);
+								$('.infscr-loading').animate({opacity: 'hide'}, 800);
 								$('#content').fitVids();
 							}, 200);
 
@@ -258,7 +258,7 @@
 		});
 
 		$container.animate({'opacity': 1}, 777, function() {
-			jQuery('#infscr-loading').animate({opacity: 'hide'}, 333);
+			jQuery('.infscr-loading').animate({opacity: 'hide'}, 333);
 		});
 
 	};
