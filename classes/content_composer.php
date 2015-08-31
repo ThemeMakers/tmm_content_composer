@@ -32,6 +32,12 @@ class TMM_Content_Composer {
 			add_filter('the_content', array('TMM_Layout_Constructor', 'the_content'), 999);
 		}
 
+		/* Use wptexturize */
+		if (!TMM::get_option('use_wptexturize')) {
+			remove_filter('the_content', 'wptexturize');
+		}
+		add_filter('tmm_add_general_theme_option', array(__CLASS__, 'add_texturize_option'), 10);
+
 		TMM_Shortcode::register();
 	}
 
@@ -157,6 +163,21 @@ class TMM_Content_Composer {
 
 		wp_localize_script('tmm_composer_front', 'tmm_mail_l10n', $tmm_lang);
 		wp_enqueue_script('tmm_composer_front');
+	}
+
+	public static function add_texturize_option($options) {
+
+		if (is_array($options)) {
+			$options['use_wptexturize'] = array(
+				'title' => __('Use wptexturize', TMM_CC_TEXTDOMAIN),
+				'type' => 'checkbox',
+				'default_value' => 0,
+				'description' => '',
+				'custom_html' => ''
+			);
+		}
+
+		return $options;
 	}
 
 	public static function mce_buttons($buttons) {
