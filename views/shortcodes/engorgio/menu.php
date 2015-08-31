@@ -4,7 +4,9 @@ $links = explode('^', $menu_links);
 $icons = explode('^', $menu_icons);
 ?>
 <?php if (!empty($titles)){ 
-    
+    ?>
+     <ul>
+    <?php
      foreach ($titles as $key=>$title){
         ?>    
         <li class="menu-item <?php echo (isset($icons[$key])&&($icons[$key]!='none')) ? 'menu_item_icon' : ''; ?>">
@@ -12,5 +14,7 @@ $icons = explode('^', $menu_icons);
         </li>    
         <?php 
         }
-        
-    }
+     ?>
+     </ul>
+     <?php
+     }
