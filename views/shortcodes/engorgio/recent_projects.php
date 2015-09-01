@@ -7,7 +7,7 @@ $column_class = '';
 $args = array('numberposts' => $count, 'post_type' => TMM_Portfolio::$slug, 'suppress_filters' => false);
 $posts = get_posts($args);
 ?>
-<section class="portfolio-items popup-gallery recent_folio col-<?php echo $template ?>">
+<div class="portfolio-items popup-gallery recent_folio col-<?php echo $template ?>">
     
     <?php foreach ($posts as $post){ ?>  
     
@@ -31,4 +31,4 @@ $posts = get_posts($args);
     
     <?php } ?>
     
-</section>
+</div>
