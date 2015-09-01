@@ -121,7 +121,7 @@ if (!empty($folio_category)) {
             
         <?php } ?>
 
-    <section id="portfolio_items_<?php echo $uniqid; ?>" class="portfolio-items popup-gallery folio-popup col-<?php echo esc_attr($layout) ?>" data-columns="<?php echo esc_attr($layout) ?>" data-overlay="<?php echo ($hover_effect == 'colored') ? true : false; ?>" data-display="<?php echo $display_images ?>" data-skills="<?php echo $skills ?>" data-clients="<?php echo $clients ?>">
+    <div id="portfolio_items_<?php echo $uniqid; ?>" class="portfolio-items popup-gallery folio-popup col-<?php echo esc_attr($layout) ?>" data-columns="<?php echo esc_attr($layout) ?>" data-overlay="<?php echo ($hover_effect == 'colored') ? true : false; ?>" data-display="<?php echo $display_images ?>" data-skills="<?php echo $skills ?>" data-clients="<?php echo $clients ?>">
 
         <?php
         foreach ($folio_images as $key => $image) {
@@ -160,7 +160,7 @@ if (!empty($folio_category)) {
         }
         ?>
 
-    </section><!--/ .portfolio-items-->
+    </div><!--/ .portfolio-items-->
 
 </div><!--/ .filter-holder-->
 
