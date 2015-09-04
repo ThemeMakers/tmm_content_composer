@@ -133,19 +133,6 @@
 		?>
 
 	</div><!--/ .one-half-->
-    
-    <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Enable Slide Up Effect', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'slide_up',
-			'id' => 'slide_up',
-			'is_checked' => TMM_Content_Composer::set_default_value('slide_up', 1),
-			'description' => __('Show with Slide Up Effect', TMM_CC_TEXTDOMAIN)
-		));
-		?>		
-	</div><!--/ .one-half-->
 
 	<div class="one-half">
 		<?php
@@ -227,12 +214,12 @@
 			'type' => 'textarea',
 			'title' => __('Html Content', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
-			'id' => '',
+			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
 			'description' => ''
 		));
 		?>
-	</div><!--/ .one-half--> 
+	</div><!--/ .one-half-->
 
 </div>
 
@@ -265,7 +252,7 @@
 		});
 
 		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
 

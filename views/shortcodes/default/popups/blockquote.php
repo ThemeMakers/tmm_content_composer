@@ -8,7 +8,7 @@
 			'type' => 'textarea',
 			'title' => __('Enter text', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
-			'id' => '',
+			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
 			'description' => ''
 		));
@@ -16,38 +16,6 @@
 
 
     </div><!--/ .fullwidth-->
-    <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'title' => __('Text Color', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'type',
-			'type' => 'select',
-            'default_value' => '',
-			'description' => '',
-            'options' => array(
-                                'type-1' => 'type-1',
-                                'type-bg-color' => 'type-bg-color',
-                                ),
-			'default_value' => TMM_Content_Composer::set_default_value('type', 'type-1'),
-			'id' => '',
-			'display' => 1
-		));
-		?>
-    </div>
-    <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'title' => __('Author', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'author',
-			'type' => 'text',            
-			'description' => '',                        
-			'default_value' => TMM_Content_Composer::set_default_value('author', ''),
-			'id' => '',
-			'display' => 1
-		));
-		?>
-    </div>
-    
 
 </div><!--/ .tmm_shortcode_template->
 		  
@@ -57,7 +25,7 @@
 
 	jQuery(function() {
 		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
 

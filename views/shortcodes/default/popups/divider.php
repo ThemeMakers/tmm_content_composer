@@ -9,9 +9,8 @@
 			'shortcode_field' => 'content',
 			'id' => '',
 			'options' => array(
-				'separator' => __('Line', TMM_CC_TEXTDOMAIN),
-				'divider' => __('Dashed', TMM_CC_TEXTDOMAIN),
-				'double-divider' => __('Double Divider', 'tmm_shortcodes'),
+				'separator' => __('Solid', TMM_CC_TEXTDOMAIN),
+				'empty' => __('Empty Space', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('content', 'separator'),
 			'description' => ''
@@ -29,9 +28,10 @@
 
 	jQuery(function() {
 		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
+
 	});
 </script>
 

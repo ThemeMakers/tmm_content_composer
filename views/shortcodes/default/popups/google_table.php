@@ -69,72 +69,74 @@
 
 	</div><!--/ .one-half-->
 
-	<?php
-	$head_types_array = array(
-		'string' => __('string', TMM_CC_TEXTDOMAIN),
-		'number' => __('number', TMM_CC_TEXTDOMAIN)
-	);
-	if (isset($_REQUEST["shortcode_mode_edit"])) {
-		$cols = (int) $_REQUEST["shortcode_mode_edit"]['cols'];
-		$heads_types = explode('^', $_REQUEST["shortcode_mode_edit"]['heads_types']);
-		$heads_values = explode('^', $_REQUEST["shortcode_mode_edit"]['heads_values']);
-		$rows_data = explode('__GOOGLE_TABLE_ROW__', $_REQUEST["shortcode_mode_edit"]['content']);
-	} else {
-		$cols = 3;
-		$heads_types = array('string', 'string', 'string');
-		$heads_values = array('', '', '');
-		$rows_data = array('^^', '^^', '^^');
-	}
-	?>
+
+<?php
+$head_types_array = array(
+	'string' => __('string', TMM_CC_TEXTDOMAIN),
+	'number' => __('number', TMM_CC_TEXTDOMAIN)
+);
+if (isset($_REQUEST["shortcode_mode_edit"])) {
+	$cols = (int) $_REQUEST["shortcode_mode_edit"]['cols'];
+	$heads_types = explode('^', $_REQUEST["shortcode_mode_edit"]['heads_types']);
+	$heads_values = explode('^', $_REQUEST["shortcode_mode_edit"]['heads_values']);
+	$rows_data = explode('__GOOGLE_TABLE_ROW__', $_REQUEST["shortcode_mode_edit"]['content']);
+} else {
+	$cols = 3;
+	$heads_types = array('string', 'string', 'string');
+	$heads_values = array('', '', '');
+	$rows_data = array('^^', '^^', '^^');
+}
+?>
 
 
-	<h4 for="google_table_headers" class="label"><?php _e('Table headers', TMM_CC_TEXTDOMAIN); ?></h4>
-	<ul id="google_table_headers">
+<h4 for="google_table_headers" class="label"><?php _e('Table headers', TMM_CC_TEXTDOMAIN); ?></h4>
+<ul id="google_table_headers">
 
+
+	<li>
+		<ul class="google_table_cols">
+
+			<?php foreach ($heads_values as $key => $head_value) : ?>
+				<li style="width: <?php echo((int) 100 / $cols) ?>%;">
+					<?php
+					TMM_Content_Composer::html_option(array(
+						'type' => 'select',
+						'title' => '',
+						'shortcode_field' => '',
+						'id' => '',
+						'options' => $head_types_array,
+						'default_value' => $heads_types[$key],
+						'description' => '',
+						'css_classes' => 'google_table_type'
+					));
+					?><br />
+					<input type="text" class="google_table_col" value="<?php echo $head_value ?>" />
+				</li>
+			<?php endforeach; ?>
+
+		</ul>
+	</li>
+
+
+</ul>
+<br />
+<div style="clear: both;"></div>
+<h4 for="google_table" class="label"><?php _e('Table data', TMM_CC_TEXTDOMAIN); ?></h4>
+<ul id="google_table">
+
+	<?php foreach ($rows_data as $key => $row_data) : ?>
+		<?php $row_data = explode('^', $row_data); ?>
 		<li>
 			<ul class="google_table_cols">
-
-				<?php foreach ($heads_values as $key => $head_value) : ?>
-					<li style="width: <?php echo((int) 100 / $cols) ?>%;">
-						<?php
-						TMM_Content_Composer::html_option(array(
-							'type' => 'select',
-							'title' => '',
-							'shortcode_field' => '',
-							'id' => '',
-							'options' => $head_types_array,
-							'default_value' => $heads_types[$key],
-							'description' => '',
-							'css_classes' => 'google_table_type'
-						));
-						?><br />
-						<input type="text" class="google_table_col" value="<?php echo $head_value ?>" />
+				<?php foreach ($row_data as $key => $val) : ?>
+					<li style="width: <?php echo((int) 100 / count($row_data)) ?>%;">
+						<input type="text" class="google_table_col" value="<?php echo $val ?>" />
 					</li>
 				<?php endforeach; ?>
-
 			</ul>
 		</li>
-
-	</ul>
-	<br />
-	<div style="clear: both;"></div>
-	<h4 for="google_table" class="label"><?php _e('Table data', TMM_CC_TEXTDOMAIN); ?></h4>
-	<ul id="google_table">
-
-		<?php foreach ($rows_data as $key => $row_data) : ?>
-			<?php $row_data = explode('^', $row_data); ?>
-			<li>
-				<ul class="google_table_cols">
-					<?php foreach ($row_data as $key => $val) : ?>
-						<li style="width: <?php echo((int) 100 / count($row_data)) ?>%;">
-							<input type="text" class="google_table_col" value="<?php echo $val ?>" />
-						</li>
-					<?php endforeach; ?>
-				</ul>
-			</li>
-		<?php endforeach; ?>
-	</ul>
-
+	<?php endforeach; ?>
+</ul>
 
 </div>
 
@@ -145,11 +147,11 @@
 	jQuery(function() {
 
 		tmm_ext_shortcodes.google_table_changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.google_table_changer(shortcode_name);
 		});
 
-		jQuery(".google_table_col, .google_table_type").on('keyup, change', function() {
+		jQuery(".google_table_col, .google_table_type").on('click change keyup', function() {
 			tmm_ext_shortcodes.google_table_changer(shortcode_name);
 		});
 
@@ -215,6 +217,6 @@
 			tmm_ext_shortcodes.google_table_changer(shortcode_name);
 
 		});
-		
+
 	});
 </script>

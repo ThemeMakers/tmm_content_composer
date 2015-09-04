@@ -9,7 +9,7 @@
 			'type' => 'textarea',
 			'title' => __('Enter Text', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
-			'id' => '',
+			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
 			'description' => ''
 		));
@@ -27,7 +27,6 @@
 				'success' => __('Success', TMM_CC_TEXTDOMAIN),
 				'info' => __('Info', TMM_CC_TEXTDOMAIN),
 				'notice' => __('Notice', TMM_CC_TEXTDOMAIN),
-				'transparent' => __('Transparent', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type', 'notice'),
 			'description' => ''
@@ -45,9 +44,8 @@
 	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
 	jQuery(function() {
 		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
-		
 	});
 </script>

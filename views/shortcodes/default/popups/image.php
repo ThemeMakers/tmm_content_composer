@@ -7,11 +7,75 @@
 			'type' => 'upload',
 			'title' => __('Image URL', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
-			'id' => '',
+			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
 			'description' => ''
 		));
 		?>
+
+	</div><!--/ .one-half-->
+
+
+	<div class="one-half">
+
+		<?php
+		$action = TMM_Content_Composer::set_default_value('action', 'none');
+		//***
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Action', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'action',
+			'id' => 'img_shortcode_action',
+			'options' => array(
+				'none' => __('No link on image', TMM_CC_TEXTDOMAIN),
+				'link' => __('Open link', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => $action,
+			'description' => ''
+		));
+		?>
+
+		<div id="image_action_link" style="display: <?php echo($action == 'none' ? 'none' : 'block') ?>;">
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'text',
+				'title' => __('Image Action Link', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'image_action_link',
+				'id' => 'image_action_link',
+				'default_value' => TMM_Content_Composer::set_default_value('image_action_link', '#'),
+				'description' => ''
+			));
+			?>
+
+			<br />
+
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => __('Link Target', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'target',
+				'id' => 'target',
+				'options' => array(
+					'_self' => __('Self', TMM_CC_TEXTDOMAIN),
+					'_blank' => __('Blank', TMM_CC_TEXTDOMAIN),
+				),
+				'default_value' => TMM_Content_Composer::set_default_value('target', '_self'),
+				'description' => ''
+			));
+			?>
+			
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'checkbox',
+				'title' => __('Open in Fancybox', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'fancybox',
+				'id' => 'fancybox',
+				'is_checked' => TMM_Content_Composer::set_default_value('fancybox', 0),
+				'description' => ''
+			));
+			?>	
+
+		</div>
 
 	</div><!--/ .one-half-->
 
@@ -34,26 +98,23 @@
 		));
 		?>
 
-
 	</div><!--/ .one-half-->
 
 	<div class="one-half">
 
 		<?php
-
 		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
+			'type' => 'select',
 			'title' => __('Size', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'image_size_alias',
 			'id' => 'image_size_alias',
+			'options' => TMM_OptionsHelper::get_theme_image_sizes_aliases(),
 			'default_value' => TMM_Content_Composer::set_default_value('image_size_alias', ''),
-			'description' => __('width*height. Fore example: 500*300. Empty field means full size', TMM_CC_TEXTDOMAIN),
+			'description' => ''
 		));
 		?>
 
-
 	</div><!--/ .one-half-->
-
 
 	<div class="one-half">
 		<?php
@@ -67,7 +128,21 @@
 		));
 		?>
 
-	</div><!--/ .one-half-->	
+	</div><!--/ .one-half-->
+
+	<div class="one-half">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Link Title', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'link_title',
+			'id' => 'link_title',
+			'default_value' => TMM_Content_Composer::set_default_value('link_title', ''),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .one-half-->
 
 	<div class="one-half">
 		<?php
@@ -124,99 +199,7 @@
 		?>
 
 	</div><!--/ .one-half-->
-    
-    <div class="one-half">
 
-		<?php
-		$action = TMM_Content_Composer::set_default_value('action', 'none');
-
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Action', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'action',
-			'id' => 'img_shortcode_action',
-			'options' => array(
-				'none' => __('No link on image', TMM_CC_TEXTDOMAIN),
-				'link' => __('Open link', TMM_CC_TEXTDOMAIN),
-				'lightbox' => __('Open Image in lightbox', TMM_CC_TEXTDOMAIN),
-			),
-			'default_value' => $action,
-			'description' => ''
-		));
-		?>
-
-
-		<div id="image_action_link" style="display: <?php echo($action == 'link' ? 'block' : 'none') ?>;">
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'type' => 'text',
-				'title' => __('Image Action Link', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'image_action_link',
-				'id' => 'image_action_link',
-				'default_value' => TMM_Content_Composer::set_default_value('image_action_link', '#'),
-				'description' => ''
-			));
-			?>
-
-			<br />
-
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'type' => 'select',
-				'title' => __('Link Target', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'target',
-				'id' => 'target',
-				'options' => array(
-					'_self' => __('Self', TMM_CC_TEXTDOMAIN),
-					'_blank' => __('Blank', TMM_CC_TEXTDOMAIN),
-				),
-				'default_value' => TMM_Content_Composer::set_default_value('target', '_self'),
-				'description' => ''
-			));
-			?>
-            
-            <br />
-            
-            <?php
-            TMM_Content_Composer::html_option(array(
-                    'type' => 'text',
-                    'title' => __('Link Title', TMM_CC_TEXTDOMAIN),
-                    'shortcode_field' => 'link_title',
-                    'id' => 'link_title',
-                    'default_value' => TMM_Content_Composer::set_default_value('link_title', ''),
-                    'description' => ''
-                ));
-            ?>
-
-		</div>
-        
-        <div id="image_without_link" style="display: <?php echo($action == 'none' ? 'block' : 'none') ?>;">
-            <?php
-            TMM_Content_Composer::html_option(array(
-                        'type' => 'checkbox',
-                        'title' => __('Parallax Image (On / Off)', TMM_CC_TEXTDOMAIN),
-                        'shortcode_field' => 'parallax',
-                        'id' => 'parallax',
-                        'is_checked' => TMM_Content_Composer::set_default_value('parallax', 0),
-                        'description' => ''
-                ));
-            ?>	
-            <?php
-            TMM_Content_Composer::html_option(array(
-                        'type' => 'checkbox',
-                        'title' => __('Parallax Overlay (On / Off)', TMM_CC_TEXTDOMAIN),
-                        'shortcode_field' => 'overlay',
-                        'id' => 'overlay',
-                        'is_checked' => TMM_Content_Composer::set_default_value('overlay', 0),
-                        'description' => ''
-                ));
-                ?>
-            
-            
-        </div>
-
-	</div><!--/ .one-half-->
-       
 </div>
 
 
@@ -227,24 +210,14 @@
 	jQuery(function() {
 
 		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
 
 		jQuery('#img_shortcode_action').on('change', function() {
 			jQuery("#image_action_link").hide(300);
-            jQuery("#image_without_link").show(300);
 			if (jQuery(this).val() == 'link') {
 				jQuery("#image_action_link").show(300);
-				jQuery("#image_without_link").hide(300);
-                jQuery("#parallax").val('');
-                jQuery("#overlay").val('');
-			}
-			if (jQuery(this).val() == 'lightbox') {
-				jQuery("#image_action_link").hide(300);
-				jQuery("#image_without_link").hide(300);
-                jQuery("#parallax").val('');
-                jQuery("#overlay").val('');
 			}
 		});
 		
@@ -267,6 +240,29 @@
 
 		$align.on('change', function() { checkAlign(jQuery(this)); });	
 		
-	});	
+		var $img_animated = jQuery("#img_animated");
+		
+		function slideDownUp (el) {
+			if (el.is(':checked')) {
+				jQuery('.hide').slideDown(300);
+			} else {
+				jQuery('.hide').slideUp(300);
+			}	
+		}
+		
+		slideDownUp($img_animated)
+
+		$img_animated.on('click', function () {
+			slideDownUp(jQuery(this));
+		});
+
+	});
+
+	function app_shortcode_border_align_values(self) {
+		jQuery("#image_border_align_values").hide(300);
+		if (jQuery(self).val() == 1) {
+			jQuery("#image_border_align_values").show(300);
+		}
+	}
 
 </script>
