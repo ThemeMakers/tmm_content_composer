@@ -188,7 +188,7 @@ function contact_form_submit(_this, contact_form_attachments) {
 		attachments: contact_form_attachments,
 		values: jQuery(_this).serialize()
 	};
-	jQuery.post(ajaxurl, data, function(response) {
+	jQuery.post(tmm_l10n.ajaxurl, data, function(response) {
 		response = jQuery.parseJSON(response);
 		if (response.is_errors) {
 
