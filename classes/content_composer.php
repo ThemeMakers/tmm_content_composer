@@ -75,6 +75,8 @@ class TMM_Content_Composer {
 		/* Cardealer compatibility: set off old popup files */
 		wp_deregister_style('tmm_theme_popup');
 		wp_deregister_script('tmm_popup');
+		wp_dequeue_style('tmm_theme_popup');
+		wp_dequeue_script('tmm_popup');
 
 		global $pagenow;
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' ) {
