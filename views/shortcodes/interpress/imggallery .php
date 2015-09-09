@@ -28,9 +28,9 @@ foreach ($images as $key=>$info) {
 		<div class="grid">
 
 			<?php foreach ($galleries as $gallery ): ?>
-				<figure id="image-<?php echo $gallery['id'] ?>">
+				<figure id="image-<?php echo esc_attr($gallery['id']) ?>">
 					<a class="post-image plus-link" href="#">
-						<img src="<?php echo TMM_Helper::get_image($gallery['url'], '400*300') ?>" alt=""/>
+						<img src="<?php echo esc_url(TMM_Helper::get_image($gallery['url'], '400*300')) ?>" alt=""/>
 					</a>
 				</figure>
 			<?php endforeach; ?>
@@ -45,7 +45,7 @@ foreach ($images as $key=>$info) {
 
 			<div class="grid-item">
 				<div class="extra-cell">
-					<img class="dummy-img" src="<?php echo $gallery['url'] ?>" />
+					<img class="dummy-img" src="<?php echo esc_url($gallery['url']) ?>" />
 				</div>
 			</div><!--/ .grid-item-->
 

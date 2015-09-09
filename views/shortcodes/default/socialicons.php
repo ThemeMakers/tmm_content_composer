@@ -9,8 +9,8 @@ $links = explode('^', $links);
 	<ul class="social-icons style-fall">
 
 		<?php foreach ($social_types as $key => $type) : ?>
-			<li class="<?php echo $type ?>">
-				<a href="<?php echo $links[$key] ?>"></a>
+			<li class="<?php echo esc_attr($type) ?>">
+				<a href="<?php echo esc_url($links[$key]) ?>"></a>
 			</li>
 		<?php endforeach; ?>
 

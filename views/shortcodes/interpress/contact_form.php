@@ -17,7 +17,7 @@ if (!empty($contact_form['inputs'])) {
 
 	<form method="post" class="contact-form" enctype="multipart/form-data">
 
-		<input type="hidden" name="contact_form_name" value="<?php echo $form_name ?>" />
+		<input type="hidden" name="contact_form_name" value="<?php echo esc_attr($form_name) ?>" />
             
             <?php if ($form_type!='default'){ ?>
 
@@ -34,7 +34,7 @@ if (!empty($contact_form['inputs'])) {
                         case "email":
                             ?>
                             <p class="input-block type-input">
-                                <input id="email_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="email" name="<?php echo $name ?>" value="<?php echo(!empty($_POST) ? $dont_fill_inputs ? "" : $_POST[$name]  : "") ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+                                <input id="email_<?php echo esc_attr($unique_id) ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="email" name="<?php echo esc_attr($name) ?>" value="<?php echo(!empty($_POST) ? esc_attr($dont_fill_inputs) ? "" : esc_attr($_POST[$name]) : "") ?>" placeholder="<?php echo esc_attr($input['label']) ?><?php echo($input['is_required'] ? " *" : "") ?>" />
                             </p>
                             <?php
                             break;
@@ -42,7 +42,7 @@ if (!empty($contact_form['inputs'])) {
                         case "textinput":
                             ?>
                             <p class="input-block type-input">
-                                <input id="name_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo $name ?>" value="<?php echo(!empty($_POST) ? $dont_fill_inputs ? "" : $_POST[$name]  : "") ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+                                <input id="name_<?php echo esc_attr($unique_id) ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo esc_attr($name) ?>" value="<?php echo(!empty($_POST) ? esc_attr($dont_fill_inputs) ? "" : esc_attr($_POST[$name]) : "") ?>" placeholder="<?php echo esc_attr($input['label']) ?><?php echo($input['is_required'] ? " *" : "") ?>" />
                             </p>
                             <?php
                             break;
@@ -51,7 +51,7 @@ if (!empty($contact_form['inputs'])) {
                         case "checkbox":
                             ?>
                             <p class="input-block">						
-                                <input type="checkbox" name="<?php echo $name ?>" value="0" class="contact_form_option_checkbox" /><?php echo $input['label'] ?>						
+                                <input type="checkbox" name="<?php echo $name ?>" value="0" class="contact_form_option_checkbox" /><?php echo esc_html($input['label']) ?>
                             </p>
                             <?php
                             break;
@@ -64,7 +64,7 @@ if (!empty($contact_form['inputs'])) {
 
                                     <?php foreach ($radio_items as $item) : ?>
                                         <label>
-                                            <input type="radio" name="<?php echo $name ?>" value="<?php echo $item ?>" />&nbsp;<?php echo $item ?>
+                                            <input type="radio" name="<?php echo esc_attr($name) ?>" value="<?php echo esc_attr($item) ?>" />&nbsp;<?php echo esc_html($item) ?>
                                         </label>
                                     <?php endforeach; ?>
 
@@ -76,7 +76,7 @@ if (!empty($contact_form['inputs'])) {
                         case "website":
                             ?>
                             <p class="input-block type-input">
-                                <input id="url_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="url" name="<?php echo $name ?>" value="<?php echo(!empty($_POST) ? $dont_fill_inputs ? "" : $_POST[$name]  : "") ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+                                <input id="url_<?php echo esc_attr($unique_id) ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="url" name="<?php echo esc_attr($name) ?>" value="<?php echo(!empty($_POST) ?  esc_attr($dont_fill_inputs) ? "" : esc_attr($_POST[$name]) : "") ?>" placeholder="<?php echo esc_attr($input['label']) ?><?php echo($input['is_required'] ? " *" : "") ?>" />
                             </p>
                             <?php
                             break;				
@@ -85,11 +85,11 @@ if (!empty($contact_form['inputs'])) {
                             $select_options = explode(",", $input['options']);
                             ?>
                             <p class="input-block sel">
-	                            <label for="url_<?php echo $unique_id ?>"><?php echo $input['label'] ?><?php echo($input['is_required'] ? ': <span class="required">(' . __('required', TMM_CC_TEXTDOMAIN) . ')</span>' : '') ?></label>
-	                            <select id="url_<?php echo $unique_id ?>" name="<?php echo $name ?>">
+	                            <label for="url_<?php echo esc_attr($unique_id) ?>"><?php echo esc_html($input['label']) ?><?php echo($input['is_required'] ? ': <span class="required">(' . __('required', TMM_CC_TEXTDOMAIN) . ')</span>' : '') ?></label>
+	                            <select id="url_<?php echo esc_attr($unique_id) ?>" name="<?php echo esc_attr($name) ?>">
 		                            <?php if (!empty($select_options)): ?>
                                         <?php foreach ($select_options as $value) : ?>
-                                            <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
+                                            <option value="<?php echo esc_attr($value); ?>"><?php echo esc_html($value); ?></option>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
                                 </select>
@@ -118,11 +118,11 @@ if (!empty($contact_form['inputs'])) {
                             <?php
 
                             if (empty($name)) {
-                                    $name = "messagebody";
+                                $name = "messagebody";
                             }
                             ?>
                                 <p class="input-block">
-                                        <textarea id="message_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> name="<?php echo $name ?>" placeholder="<?php echo $input['label'] ?><?php echo($input['is_required'] ? " *" : "") ?>" ><?php echo(!empty($_POST) ? $dont_fill_inputs ? "" : $_POST[$name]  : "") ?></textarea>
+                                    <textarea id="message_<?php echo esc_attr($unique_id) ?>" <?php echo($input['is_required'] ? "required" : "") ?> name="<?php echo esc_attr($name) ?>" placeholder="<?php echo esc_attr($input['label']) ?><?php echo($input['is_required'] ? " *" : "") ?>" ><?php echo(!empty($_POST) ? $dont_fill_inputs ? "" : $_POST[$name]  : "") ?></textarea>
                                 </p>
                             <?php
                         }
@@ -157,7 +157,6 @@ if (!empty($contact_form['inputs'])) {
                                 
 		<div class="contact_form_responce" style="display: none;"><ul></ul></div>
 	</form>
-
 
 	<?php
 }

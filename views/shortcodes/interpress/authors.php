@@ -22,7 +22,7 @@
 								</div><!--/ .author-image-->
 
 								<div class="our-author-entry">
-									<h5 class="our-author-name"><?php echo $user->display_name ?></h5>
+									<h5 class="our-author-name"><?php echo esc_html($user->display_name) ?></h5>
 
 									<p>
 										<?php echo stripslashes($user->description); ?>

@@ -8,7 +8,7 @@ $icons = explode('^', $menu_icons);
      foreach ($titles as $key=>$title){
         ?>    
         <li class="menu-item <?php echo (isset($icons[$key])&&($icons[$key]!='none')) ? 'menu_item_icon' : ''; ?>">
-            <a href="<?php echo $links[$key] ?>"><?php if (isset($icons[$key])&&($icons[$key]!='none')){ ?><i class="<?php echo $icons[$key] ?>"></i><?php } ?><?php echo $title ?></a>
+            <a href="<?php echo esc_url($links[$key]) ?>"><?php if (isset($icons[$key])&&($icons[$key]!='none')){ ?><i class="<?php echo esc_attr($icons[$key]) ?>"></i><?php } ?><?php echo esc_html($title) ?></a>
         </li>    
         <?php 
         }

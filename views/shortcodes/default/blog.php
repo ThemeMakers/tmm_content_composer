@@ -84,9 +84,9 @@ if (isset($post_carousel) && $post_carousel){
     tmm_enqueue_style('owltransitions');
 }
 
- ?>
+?>
 
-	<div id="post-area" class="<?php echo $post_area ?> <?php echo $count_column ?> <?php echo $blog_type ?>" <?php if (!empty($data_columns)) echo $data_columns; ?>>
+	<div id="post-area" class="<?php echo esc_attr($post_area) ?> <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?>>
         
         <?php 
         if ($blog_type!='masonry'){           
@@ -160,7 +160,7 @@ if (isset($post_carousel) && $post_carousel){
         </div>
         
 		<div class='post-load-more'>
-			<a class='load-more button secondary middle' data-loadbyscroll="<?php echo $load_by_scrolling ?>" data-page-load="2" data-posts-per-load="<?php echo $posts_per_load ?>" data-posts="<?php echo $next_posts ?>" href='#load-more'><?php _e('Load More', TMM_CC_TEXTDOMAIN) ?></a>
+			<a class='load-more button secondary middle' data-loadbyscroll="<?php echo esc_attr($load_by_scrolling) ?>" data-page-load="2" data-posts-per-load="<?php echo esc_attr($posts_per_load) ?>" data-posts="<?php echo esc_attr($next_posts) ?>" href='#load-more'><?php _e('Load More', TMM_CC_TEXTDOMAIN) ?></a>
 		</div><!--/ .post-load-more-->
 
     <?php
@@ -180,7 +180,7 @@ wp_reset_postdata();
 	<script type="text/javascript">
 		jQuery(function() {
 			//jQuery(".masonry").imagesLoaded(function() {
-				jQuery(".masonry").init_masonry(<?php echo $columns ?>, <?php echo $load_with_animation ?>);
+				jQuery(".masonry").init_masonry(<?php echo esc_js($columns) ?>, <?php echo esc_js($load_with_animation) ?>);
 			//});
 		});
 	</script>

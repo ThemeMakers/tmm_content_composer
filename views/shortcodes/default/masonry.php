@@ -56,7 +56,7 @@ if ($show_pinterest){
       
 <div class="">
 
-    <div id="post-area" class="masonry <?php echo $columns ?>" style="opacity: 0;">
+    <div id="post-area" class="masonry <?php echo esc_attr($columns) ?>" style="opacity: 0;">
 	<?php if (!empty($posts_array)){ ?>
         <?php
             for ($i = 0; $i < $posts_per_load; $i++) {
@@ -94,8 +94,8 @@ if ($show_pinterest){
 
                         switch ($post_pod_type) {
                             case 'audio':
-                                    echo do_shortcode('[tmm_audio]' . $post_type_values[$post_pod_type] . '[/tmm_audio]');
-                                    break;
+                                echo do_shortcode('[tmm_audio]' . $post_type_values[$post_pod_type] . '[/tmm_audio]');
+                                break;
                             case 'video':
                                 $video_width = '';
                                 $video_height = '';
@@ -161,10 +161,10 @@ if ($show_pinterest){
                                         ?>
                                          <ul class="grid-post">
                                             <?php foreach ($gall as $key => $item){ ?>
-                                            <li class="<?php echo $item['image_type'] ?>">
-                                                    <a href="<?php echo $post_link ?>" class="slide-image link-icon">
-                                                            <img src="<?php echo TMM_Content_Composer::resize_image($item['url'], '520*310'); ?>" alt="" />
-                                                    </a>
+                                            <li class="<?php echo esc_attr($item['image_type']) ?>">
+                                                <a href="<?php echo esc_url($post_link) ?>" class="slide-image link-icon">
+                                                    <img src="<?php echo esc_url(TMM_Content_Composer::resize_image($item['url'], '520*310')); ?>" alt="" />
+                                                </a>
                                             </li>
                                             <?php } ?>
 
@@ -180,23 +180,23 @@ if ($show_pinterest){
 
                                     default:
                                          if (!empty($gall)){ ?>
-                                            <div class="image-slider">
+                                             <div class="image-slider">
 
-                                                <?php foreach ($gall as $key => $source_url){ ?>
+                                                 <?php foreach ($gall as $key => $source_url){ ?>
 
-                                                                <div class="item">
-                                                                    <a class="slide-image link-icon" href="<?php echo $post_link ?>">
-                                                                        <?php if (isset($_REQUEST['sidebar_position']) && $_REQUEST['sidebar_position'] != 'no_sidebar'): ?>
-                                                                                <img src="<?php echo TMM_Content_Composer::resize_image($source_url, '1035*550'); ?>" alt="<?php echo $post->post_title; ?>" />
-                                                                        <?php else: ?>
-                                                                                <img src="<?php echo TMM_Content_Composer::resize_image($source_url, '1035*550'); ?>" alt="<?php echo $post->post_title; ?>" />
-                                                                        <?php endif; ?>
-                                                                    </a>
-                                                                </div><!--/ .item-->
+                                                    <div class="item">
+                                                        <a class="slide-image link-icon" href="<?php echo esc_url($post_link) ?>">
+                                                            <?php if (isset($_REQUEST['sidebar_position']) && $_REQUEST['sidebar_position'] != 'no_sidebar'): ?>
+                                                                <img src="<?php echo esc_url(TMM_Content_Composer::resize_image($source_url, '1035*550')); ?>" alt="<?php echo esc_attr($post->post_title); ?>" />
+                                                            <?php else: ?>
+                                                                <img src="<?php echo esc_url(TMM_Content_Composer::resize_image($source_url, '1035*550')); ?>" alt="<?php echo esc_attr($post->post_title); ?>" />
+                                                            <?php endif; ?>
+                                                        </a>
+                                                    </div><!--/ .item-->
 
-                                                <?php }; ?>
+                                                 <?php }; ?>
 
-                                            </div><!--/ .image-slider-->
+                                             </div><!--/ .image-slider-->
                                         <?php
                                         }
                                         break;
@@ -208,11 +208,11 @@ if ($show_pinterest){
                                 ?>
                                 <?php if (has_post_thumbnail($post->ID)){ ?>
 
-                                    <a href="<?php echo $post_link ?>" class="slide-image link-icon">
+                                    <a href="<?php echo esc_url($post_link) ?>" class="slide-image link-icon">
                                         <?php if ($_REQUEST['sidebar_position'] != 'no_sidebar'): ?>
-                                                <img src="<?php echo TMM_Content_Composer::get_post_featured_image($post->ID, '1035*550'); ?>" alt="<?php echo $post->post_title; ?>" />
+                                            <img src="<?php echo esc_url(TMM_Content_Composer::get_post_featured_image($post->ID, '1035*550')); ?>" alt="<?php echo esc_attr($post->post_title); ?>" />
                                         <?php else: ?>
-                                                <img src="<?php echo TMM_Content_Composer::get_post_featured_image($post->ID, '1035*550'); ?>" alt="<?php echo $post->post_title; ?>" />
+                                            <img src="<?php echo esc_url(TMM_Content_Composer::get_post_featured_image($post->ID, '1035*550')); ?>" alt="<?php echo esc_attr($post->post_title); ?>" />
                                         <?php endif; ?>
                                     </a>
 
@@ -227,31 +227,31 @@ if ($show_pinterest){
                     <?php if ($post_pod_type!='quote'){ ?>
 
                     <h4 class="entry-title">                                            
-                            <a href="<?php echo $post_link ?>"><?php echo $post->post_title ?></a>
+                        <a href="<?php echo esc_attr($post_link) ?>"><?php echo esc_html($post->post_title) ?></a>
                     </h4><!--/ .entry-title-->
 
                     <div class="post-meta clearfix">
-                            <a class="post-format-type" href="<?php echo $post_link ?>"><span class="post-format <?php echo $icon_class ?>"></span></a>                                               
-                            <span class="entry-date"><a href="<?php echo home_url() ?>/<?php echo get_the_date('Y/m') ?>"><?php echo get_the_date('M d, Y') ?></a></span>                                                                                             
-                            <span><a href="<?php echo $post_link ?>#comments"><?php echo get_comments_number(); _e(' Comments', TMM_CC_TEXTDOMAIN); ?></a></span>
+                        <a class="post-format-type" href="<?php echo esc_url($post_link) ?>"><span class="post-format <?php echo esc_attr($icon_class) ?>"></span></a>
+                        <span class="entry-date"><a href="<?php echo home_url() ?>/<?php echo get_the_date('Y/m') ?>"><?php echo get_the_date('M d, Y') ?></a></span>
+                        <span><a href="<?php echo esc_url($post_link) ?>#comments"><?php echo get_comments_number(); _e(' Comments', TMM_CC_TEXTDOMAIN); ?></a></span>
                     </div><!--/ .entry-meta-->
 
                     <p>
-                       <?php
+                        <?php
                             if (class_exists('TMM') && TMM::get_option("excerpt_symbols_count")) {
                                 if (empty($post->post_excerpt)) {
                                     $txt = do_shortcode($post->post_content);
                                     $txt = strip_tags($txt);
                                     if (function_exists('mb_substr')) {
-                                            echo do_shortcode(mb_substr($txt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
+                                        echo do_shortcode(mb_substr($txt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
                                     } else {
-                                            echo do_shortcode(substr($txt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
+                                        echo do_shortcode(substr($txt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
                                     }
                                 } else {
                                     if (function_exists('mb_substr')) {
-                                            echo do_shortcode(mb_substr($post->post_excerpt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
+                                        echo do_shortcode(mb_substr($post->post_excerpt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
                                     } else {
-                                            echo do_shortcode(substr($post->post_excerpt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
+                                        echo do_shortcode(substr($post->post_excerpt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
                                     }
                                 }
                             } else {
@@ -259,10 +259,12 @@ if ($show_pinterest){
                             }
                             ?>
                     </p>
+
                     <?php } ?>
+
                     <footer class="post-footer clearfix">
 
-                        <a href="<?php echo $post_link ?>" class="button">Read More</a>
+                        <a href="<?php echo esc_url($post_link) ?>" class="button"><?php esc_html_e('Read More', TMM_CC_TEXTDOMAIN) ?></a>
 
                         <div class="share-entry">
 
@@ -283,11 +285,11 @@ if ($show_pinterest){
                             }
                             ?>
 
-                            <a data-post_id="<?php echo $post->ID ?>" class="social-like <?php echo $vote_class ?>" href="#"><span class="count"><?php echo $vote_count; ?></span></a>
+                            <a data-post_id="<?php echo esc_attr($post->ID) ?>" class="social-like <?php echo esc_attr($vote_class) ?>" href="#"><span class="count"><?php echo esc_html($vote_count); ?></span></a>
 
                             <div class="side-share">
 
-                                    <?php TMM_Content_Composer::display_share_buttons('square', $post->ID, $buttons); ?>
+                                <?php TMM_Content_Composer::display_share_buttons('square', $post->ID, $buttons); ?>
 
                             </div><!--/ .side-share-->
                         </div><!--/ .share-entry-->
@@ -312,7 +314,7 @@ if ($show_pinterest){
                             }
                         }
                         ?>                        
-            <div id="masonryjaxloader" data-buttons="<?php echo implode(",", $buttons) ?>" data-category="<?php echo $category ?>" data-page-load="2" data-posts-per-load="<?php echo $posts_per_load ?>" data-posts="<?php echo $next_posts ?>"></div>
+                        <div id="masonryjaxloader" data-buttons="<?php echo implode(",", $buttons) ?>" data-category="<?php echo esc_attr($category) ?>" data-page-load="2" data-posts-per-load="<?php echo esc_attr($posts_per_load) ?>" data-posts="<?php echo esc_attr($next_posts) ?>"></div>
                     <?php }; ?>
 
         <?php } ?>
@@ -335,7 +337,7 @@ if ($show_pinterest){
 <div class="clear"></div>
 <?php  if (count($posts_array) > $posts_per_load) { ?>
 <div class="masonry-paging">
-    <a href="#" data-loadbyscroll="<?php echo $load_by_scrolling; ?>" class="masonry_view_more_button"><?php _e('More', TMM_CC_TEXTDOMAIN); ?></a>
+    <a href="#" data-loadbyscroll="<?php echo esc_attr($load_by_scrolling); ?>" class="masonry_view_more_button"><?php _e('More', TMM_CC_TEXTDOMAIN); ?></a>
 </div>
 <?php } ?>
 
@@ -352,7 +354,7 @@ if ($show_pinterest){
 	<script type="text/javascript">
 		jQuery(function() {
 			jQuery("#post-area.masonry").imagesLoaded(function() {
-				jQuery("#post-area.masonry").init_masonry(<?php echo $columns ?>, <?php echo $load_with_animation ?>);
+				jQuery("#post-area.masonry").init_masonry(<?php echo esc_js($columns)  ?>, <?php echo esc_js($load_with_animation) ?>);
 			});
 		});
 	</script>

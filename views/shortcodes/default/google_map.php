@@ -39,7 +39,7 @@ if (isset($latitude) && $latitude !== '' && isset($longitude) && $longitude !== 
             <div class="google_map_expand">
                 <div id="map_extended" class="google_map_toggle" data-height="<?php echo $height-260; ?>" style="height: <?php echo $height-260 ?>px;">
         <?php } ?>             
-                    <div class="google_map" id="google_map_<?php echo $inique_id ?>" style="height: <?php echo $height ?>px;"></div>
+                    <div class="google_map" id="google_map_<?php echo esc_attr($inique_id) ?>" style="height: <?php echo $height ?>px;"></div>
         <?php if ($slide_up){ ?>           
                 </div>
 				<span class="google_map_close"></span>
@@ -47,7 +47,7 @@ if (isset($latitude) && $latitude !== '' && isset($longitude) && $longitude !== 
         <?php } ?>
 		<script type="text/javascript">
 			jQuery(function() {
-				gmt_init_map(<?php echo $latitude ?>,<?php echo $longitude ?>, "google_map_<?php echo $inique_id ?>", <?php echo $zoom ?>, "<?php echo $maptype ?>", "<?php echo $content ?>", "<?php echo $enable_marker ?>", "<?php echo $enable_popup ?>", "<?php echo $enable_scrollwheel ?>",<?php echo $js_controls ?>, "<?php echo @$marker_is_draggable ?>");
+				gmt_init_map(<?php echo esc_js($latitude) ?>,<?php echo esc_js($longitude) ?>, "google_map_<?php echo esc_js($inique_id) ?>", <?php echo esc_js($zoom) ?>, "<?php echo esc_js($maptype) ?>", "<?php echo esc_js($content) ?>", "<?php echo esc_js($enable_marker) ?>", "<?php echo esc_js($enable_popup) ?>", "<?php echo esc_js($enable_scrollwheel) ?>",<?php echo esc_js($js_controls) ?>, "<?php echo esc_js(@$marker_is_draggable) ?>");
 			});
 		</script>
 
