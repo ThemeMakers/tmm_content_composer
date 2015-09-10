@@ -27,14 +27,18 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 		$margin_top = (isset($tmm_layout_constructor_row[$row]['margin_top'])) ? $tmm_layout_constructor_row[$row]['margin_top'] : '';
 		$margin_bottom = (isset($tmm_layout_constructor_row[$row]['margin_bottom'])) ? $tmm_layout_constructor_row[$row]['margin_bottom'] : '';
-		$section_style = 'style="';
+
+		//$section_style = 'style="';
+		$section_style = '';
 		if ($margin_top != ''){
 			$section_style .= 'margin-top:' . $margin_top . 'px;';
 		}
 		if ($margin_bottom != ''){
 			$section_style .= 'margin-bottom:' . $margin_bottom . 'px;';
 		}
-		$section_style .= '"';
+		if($section_style != ''){
+			$section_style = 'style="'.$section_style.'"';
+		}
 
 		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){
 			?>
@@ -49,8 +53,8 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
                 
             <?php
 
-                if (isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom' && $tmm_layout_constructor_row[$row]['bg_custom_type']=='color'){
-                    ?>
+                if (isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom' && $tmm_layout_constructor_row[$row]['bg_custom_type']=='color' && $tmm_layout_constructor_row[$row]["bg_color"]!='#fff'){
+					?>
                     <div style="<?php echo (!empty($tmm_layout_constructor_row[$row]['bg_color'])) ? 'background-color: ' . $tmm_layout_constructor_row[$row]["bg_color"] . '' : ''; ?>" class="full-bg-image"></div>
                     <?php
                 }
