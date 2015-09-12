@@ -2,17 +2,21 @@
 <?php
 
 $image_url = $content;
-$effect = "";
 $styles = "";
 $html = "";
-$classAnim = "";
-$classAbs = "";
+	
+// Margins
+if (!empty($margin_left))   { $styles .= 'margin-left: ' . (int) $margin_left . 'px; '; }
+if (!empty($margin_right))  { $styles .= 'margin-right: ' . (int) $margin_right . 'px; '; }
+if (!empty($margin_top))    { $styles .= 'margin-top: ' . (int) $margin_top . 'px; '; }
+if (!empty($margin_bottom)) { $styles .= 'margin-bottom: ' . (int) $margin_bottom . 'px; '; }
 
-	// Align 
-	if (!empty($translate_x)) {
-		$styles .= "left: " . (int) $translate_x . "%;";
-	}
+// Styles
+if (!empty($styles)) {
+	$styles = 'style="' . $styles . '"';
+}
 
+<<<<<<< HEAD
 	// Delay
 	if (!empty($delay)) {
 		$styles .= "-webkit-transition-delay: " . $delay . "s;";
@@ -59,5 +63,26 @@ $classAbs = "";
 	if ($action == "link") { 
 		$html .= '</a>'; 
 	}
+=======
+// Fancybox
+if ($fancybox) {
+	$src = TMM_Helper::resize_image($image_url, '');
+	$image_action_link = $src;
+	$link_class = 'fancybox';
+} else {
+	$src = TMM_Helper::resize_image($image_url, $image_size_alias);
+	$link_class = 'link-icon';
+}
+
+if ($action == "link") {
+	$html.= '<a title="' . $link_title . '" class="single-image ' . $link_class . '" ' . $styles . '  href="' . $image_action_link . '" target="' . $target . '">';
+}
+
+$html.= '<img class="' . $align . '" alt="' . $image_alt . '" '. ($action == "link" ? '' : $styles) .' src="' . $src . '" />';
+
+if ($action == "link") { 
+	$html .= '</a>'; 
+}	
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 
 echo $html;

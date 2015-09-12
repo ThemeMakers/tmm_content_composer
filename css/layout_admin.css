@@ -274,7 +274,19 @@
 					color: #f6a828;
 				}
 
-
+/*  Cardealer compatibility  */
+.tmm-lc-column-wrapper.col-md-1  { width: 8.333333333333332%;  }
+.tmm-lc-column-wrapper.col-md-2  { width: 16.666666666666664%; }
+.tmm-lc-column-wrapper.col-md-3  { width: 25%;  }
+.tmm-lc-column-wrapper.col-md-4  { width: 33.33333333333333%; }
+.tmm-lc-column-wrapper.col-md-5  { width: 41.66666666666667%; }
+.tmm-lc-column-wrapper.col-md-6  { width: 50%;  }
+.tmm-lc-column-wrapper.col-md-7  { width: 58.333333333333336%; }
+.tmm-lc-column-wrapper.col-md-8  { width: 66.66666666666666%;  }
+.tmm-lc-column-wrapper.col-md-9  { width: 75%;  }
+.tmm-lc-column-wrapper.col-md-10 { width: 83.33333333333334%; }
+.tmm-lc-column-wrapper.col-md-11 { width: 91.66666666666666%; }
+.tmm-lc-column-wrapper.col-md-12 { width: 100%; }
 
 @media only screen and (max-width: 960px) {
     .tmm-lc-column-wrapper {

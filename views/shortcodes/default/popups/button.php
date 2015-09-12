@@ -7,7 +7,11 @@
 			'type' => 'text',
 			'title' => __('Buttons Text', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
+<<<<<<< HEAD
 			'id' => '',
+=======
+			'id' => 'content',
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
 			'description' => ''
 		));
@@ -26,6 +30,7 @@
 		));
 		?>
 	</div><!--/ .one-half-->
+<<<<<<< HEAD
 
 	<div class="one-half">
 
@@ -66,6 +71,19 @@
 			'shortcode_field' => 'top_indent',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('top_indent', ''),
+=======
+
+	<div class="one-half">
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Color', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'color',
+			'id' => 'color',
+			'options' => TMM_OptionsHelper::get_theme_buttons(),
+			'default_value' => TMM_Content_Composer::set_default_value('color', ''),
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 			'description' => ''
 		));
 		?>	
@@ -82,10 +100,14 @@
 
 	jQuery(function() {
 		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 	});
 </script>
 

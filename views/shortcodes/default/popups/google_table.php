@@ -147,11 +147,11 @@ if (isset($_REQUEST["shortcode_mode_edit"])) {
 	jQuery(function() {
 
 		tmm_ext_shortcodes.google_table_changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.google_table_changer(shortcode_name);
 		});
 
-		jQuery(".google_table_col, .google_table_type").on('keyup, change', function() {
+		jQuery(".google_table_col, .google_table_type").on('click change keyup', function() {
 			tmm_ext_shortcodes.google_table_changer(shortcode_name);
 		});
 
@@ -217,6 +217,6 @@ if (isset($_REQUEST["shortcode_mode_edit"])) {
 			tmm_ext_shortcodes.google_table_changer(shortcode_name);
 
 		});
-		
+
 	});
 </script>

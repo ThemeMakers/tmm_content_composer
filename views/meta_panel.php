@@ -85,8 +85,13 @@
 		$col_data = array(
 			'row' => '__ROW_ID__',
 			'uniqid' => '__UNIQUE_ID__',
+<<<<<<< HEAD
 			'css_class' => 'element1-4',
 			'front_css_class' => 'four columns',
+=======
+			'css_class' => 'col-md-3',
+			'front_css_class' => 'col-md-3',
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 			'value' => '1/4',
 			'content' => '',
 			'title' => '',
@@ -204,8 +209,13 @@
 				'title' => __('Padding top', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_padding_top',
 				'type' => 'text',
+<<<<<<< HEAD
 				'description' => 'Default Value 80px',
 				'default_value' => TMM_Content_Composer::set_default_value('padding_top', '80'),
+=======
+				'description' => 'Default Value 0px',
+				'default_value' => TMM_Content_Composer::set_default_value('padding_top', '0'),
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 				'id' => 'row_padding_top'
 			));
 
@@ -213,8 +223,13 @@
 				'title' => __('Padding bottom', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_padding_bottom',
 				'type' => 'text',
+<<<<<<< HEAD
 				'description' => 'Default Value 80px',
 				'default_value' => TMM_Content_Composer::set_default_value('padding_bottom', '80'),
+=======
+				'description' => 'Default Value 15px',
+				'default_value' => TMM_Content_Composer::set_default_value('padding_bottom', '15'),
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 				'id' => 'row_padding_bottom'
 			));
 

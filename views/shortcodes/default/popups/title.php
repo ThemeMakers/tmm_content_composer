@@ -14,7 +14,11 @@
 		?>
 
 	</div><!--/ .one-half-->
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -77,13 +81,24 @@
 			'shortcode_field' => 'font_weight',
 			'id' => 'font_weight',
 			'options' => array(
+<<<<<<< HEAD
+=======
+				'' => __('Default', TMM_CC_TEXTDOMAIN),
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 				'normal' => __('Normal', TMM_CC_TEXTDOMAIN),
 				'200' => 200,
 				'400' => 400,
 				'600' => 600,
+<<<<<<< HEAD
 				'700' => 700
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('font_weight', '400'),
+=======
+				'800' => 800,
+				'bold' => __('Bold', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('font_weight', ''),
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 			'description' => ''
 		));
 		?>
@@ -97,11 +112,31 @@
 			'shortcode_field' => 'align',
 			'id' => 'align',
 			'options' => array(
+<<<<<<< HEAD
 				'left' => 'Left',
 				'right' => 'Right',
 				'center' => 'Center',
+=======
+				'left' => __('Left', TMM_CC_TEXTDOMAIN),
+				'right' => __('Right', TMM_CC_TEXTDOMAIN),
+				'center' => __('Center', TMM_CC_TEXTDOMAIN),
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('align', 'left'),
+			'description' => ''
+		));
+		?>
+		
+		<?php
+<<<<<<< HEAD
+		
+=======
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Show border under the title', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'section_title',
+			'id' => 'section_title',
+			'is_checked' => TMM_Content_Composer::set_default_value('section_title', 0),
 			'description' => ''
 		));
 		?>
@@ -110,13 +145,27 @@
 
 	<div class="one-half">
 		<?php
-		
+		$font_families = TMM_HelperFonts::get_google_fonts();
+		$google_fonts_array = array();
+		foreach ($font_families as $key => $value) {
+			$index = explode(":", $value);
+			$index = str_replace(' ', '_', $index[0]);
+			$google_fonts_array[$index] = $value;
+		}
+
+		//***
+
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Font Family', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'font_family',
 			'id' => 'font_family',
+<<<<<<< HEAD
 			'options' => TMM_HelperFonts::get_fonts_array(),
+=======
+			'options' => $google_fonts_array,
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 			'default_value' => TMM_Content_Composer::set_default_value('font_family', ''),
 			'description' => ''
 		));
@@ -132,11 +181,17 @@
 			'type' => 'color',
 			'description' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('color', ''),
+<<<<<<< HEAD
 			'id' => '',
 			'display' => 1
 		));
 		?>
 
+=======
+			'id' => ''
+		));
+		?>
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 	</div>
 
 	<div class="one-half">
@@ -150,6 +205,11 @@
 			'description' => ''
 		));
 		?>
+<<<<<<< HEAD
+=======
+
+	</div><!--/ .one-half-->
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 
 	</div><!--/ .one-half-->
 	
@@ -157,11 +217,16 @@
 
 
 <!-- --------------------------  PROCESSOR  --------------------------- -->
+
 <script type="text/javascript">
 	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
 	jQuery(function() {
 		tmm_ext_shortcodes.changer(shortcode_name);
+<<<<<<< HEAD
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+=======
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 			tmm_ext_shortcodes.changer(shortcode_name);
 			colorizator();
 		});

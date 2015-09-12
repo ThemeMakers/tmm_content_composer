@@ -74,7 +74,11 @@
 			'title' => __('Font Family', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'font_family',
 			'id' => 'font_family',
+<<<<<<< HEAD
 			'options' => TMM_HelperFonts::get_fonts_array(),
+=======
+			'options' => TMM_HelperFonts::get_content_fonts(),
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 			'default_value' => TMM_Content_Composer::set_default_value('font_family', ''),
 			'description' => ''
 		));
@@ -127,7 +131,7 @@
 			'type' => 'text',
 			'title' => __('Chart Data', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
-			'id' => '',
+			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
 			'description' => __('Example', TMM_CC_TEXTDOMAIN) . 'Pie => sleep:2,eat:2,work:2<br />
 			Bar, Column => 2004:1000:400,2005:980:570,2006:800:300<br />
@@ -163,11 +167,15 @@
 
 	jQuery(function() {
 		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 			colorizator();
 		});
+<<<<<<< HEAD
 		colorizator();
+=======
+
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 	});
 </script>
 

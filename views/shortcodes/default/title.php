@@ -5,6 +5,10 @@
 
 $html = "";
 $styles = "";
+<<<<<<< HEAD
+=======
+$css_class = "";
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 
 if (!isset($letter_spacing)) {
 	$letter_spacing = '';
@@ -16,7 +20,11 @@ if (!isset($align)) {
 
 // Font Weight
 if (!empty($font_weight)) {
+<<<<<<< HEAD
 	$styles.="font-weight: " . $font_weight . ";";
+=======
+	$styles.="font-weight: ". $font_weight .";";
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 }
 
 // Letter spacing
@@ -51,6 +59,7 @@ if (!empty($color)) {
 
 // Styles
 if (!empty($styles)) {
+<<<<<<< HEAD
 	$styles = 'style="' . $styles . '"';
 }
 
@@ -58,3 +67,16 @@ if (!empty($styles)) {
 $content = str_replace("`", "'", $content);
 $html.= '<' . $type . ' ' . $styles . '>' . $content . '</' . $type . '>';
 echo $html;
+=======
+	$styles = ' style="' . $styles . '"';
+}
+
+if ($section_title) {
+	$css_class .= 'class="section-title"';
+}
+
+//Output Html
+
+$html.= '<' . $type . ' ' . $css_class . $styles . '>' . $content . '</' . $type . '>';
+echo $html;
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa

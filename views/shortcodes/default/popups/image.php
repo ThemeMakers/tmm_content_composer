@@ -7,7 +7,7 @@
 			'type' => 'upload',
 			'title' => __('Image URL', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
-			'id' => '',
+			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
 			'description' => ''
 		));
@@ -35,7 +35,10 @@
 		));
 		?>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 		<div id="image_action_link" style="display: <?php echo($action == 'none' ? 'none' : 'block') ?>;">
 			<?php
 			TMM_Content_Composer::html_option(array(
@@ -64,6 +67,20 @@
 				'description' => ''
 			));
 			?>
+<<<<<<< HEAD
+=======
+			
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'checkbox',
+				'title' => __('Open in Fancybox', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'fancybox',
+				'id' => 'fancybox',
+				'is_checked' => TMM_Content_Composer::set_default_value('fancybox', 0),
+				'description' => ''
+			));
+			?>	
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 
 		</div>
 
@@ -88,26 +105,27 @@
 		));
 		?>
 
-
 	</div><!--/ .one-half-->
 
 	<div class="one-half">
 
 		<?php
+<<<<<<< HEAD
 		
+=======
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
+			'type' => 'select',
 			'title' => __('Size', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'image_size_alias',
 			'id' => 'image_size_alias',
+			'options' => TMM_OptionsHelper::get_theme_image_sizes_aliases(),
 			'default_value' => TMM_Content_Composer::set_default_value('image_size_alias', ''),
-			'description' => __('width*height. Fore example: 500*300. Empty field means full size', TMM_CC_TEXTDOMAIN),
+			'description' => ''
 		));
 		?>
 
-
 	</div><!--/ .one-half-->
-
 
 	<div class="one-half">
 		<?php
@@ -192,6 +210,7 @@
 		?>
 
 	</div><!--/ .one-half-->
+<<<<<<< HEAD
 	
 	<div class="fullwidth">
 		
@@ -296,6 +315,8 @@
 		</div>
 		
 	</div>
+=======
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 
 </div>
 
@@ -307,7 +328,7 @@
 	jQuery(function() {
 
 		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
 
@@ -352,7 +373,11 @@
 		$img_animated.on('click', function () {
 			slideDownUp(jQuery(this));
 		});
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 	});
 
 	function app_shortcode_border_align_values(self) {

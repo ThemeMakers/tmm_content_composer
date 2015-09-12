@@ -19,8 +19,12 @@
 		?>
 		
 	</div>
+<<<<<<< HEAD
 		
 		
+=======
+	
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 	<br />
 	<br />
 
@@ -78,6 +82,12 @@
 				}
 			});
 
+<<<<<<< HEAD
+=======
+		//***
+		tmm_ext_shortcodes.accordion_changer(shortcode_name);
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 			tmm_ext_shortcodes.accordion_changer(shortcode_name);
 			
 			$("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
@@ -94,6 +104,7 @@
 				return false;
 			});
 
+<<<<<<< HEAD
 			$(".js_delete_accordion_item").life('click',function() {
 				if ($(".list_item").length > 1) {
 					$(this).parents('li').hide(200, function() {
@@ -104,11 +115,38 @@
 
 				return false;
 			});
+=======
+		jQuery(".js_add_accordion_item").click(function() {
+			var clone = jQuery(".list_item:last").clone(true);
+			var last_row = jQuery(".list_item:last");
+			jQuery(clone).insertAfter(last_row, clone);
+			jQuery(".list_item:last").find('input[type=text]').val("");
+			//***
+			var icon_class = jQuery(".list_item:first").find('select').val();
+			jQuery(".list_item:last").find('select').val(icon_class);
+			tmm_ext_shortcodes.accordion_changer(shortcode_name);
+			return false;
+		});
+
+		jQuery(".js_delete_accordion_item").click(function() {
+			if (jQuery(".list_item").length > 1) {
+				jQuery(this).parents('li').hide(200, function() {
+					jQuery(this).remove();
+					tmm_ext_shortcodes.accordion_changer(shortcode_name);
+				});
+			}
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 
 		});
+<<<<<<< HEAD
 		
 	}(jQuery));
 	
+=======
+
+
+	});
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 </script>
 
 

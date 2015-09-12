@@ -49,3 +49,12 @@ function tmm_cc_register() {
 }
 
 add_action( 'init', 'tmm_cc_register' );
+
+/**
+ * Deactivate old Shortcodes and Layout Constructor plugins
+ */
+function tmm_cc_activation() {
+	deactivate_plugins( array('tmm_layout_constructor/index.php', 'tmm_shortcodes/index.php') );
+}
+
+register_activation_hook(__FILE__, 'tmm_cc_activation');

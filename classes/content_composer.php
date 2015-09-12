@@ -32,6 +32,12 @@ class TMM_Content_Composer {
 			add_filter('the_content', array('TMM_Layout_Constructor', 'the_content'), 999);
 		}
 
+		/* Use wptexturize */
+		if (!TMM::get_option('use_wptexturize')) {
+			remove_filter('the_content', 'wptexturize');
+		}
+		add_filter('tmm_add_general_theme_option', array(__CLASS__, 'add_texturize_option'), 10);
+
 		TMM_Shortcode::register();
 	}
 
@@ -66,16 +72,22 @@ class TMM_Content_Composer {
 	}
 
 	public static function admin_enqueue_scripts() {
+		/* Cardealer compatibility: set off old popup files */
+		wp_deregister_style('tmm_theme_popup');
+		wp_deregister_script('tmm_popup');
+		wp_dequeue_style('tmm_theme_popup');
+		wp_dequeue_script('tmm_popup');
+
 		global $pagenow;
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' ) {
 			wp_enqueue_style('tmm_popup', TMM_CC_URL . 'css/popup.css');
-			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/popup.js', array('jquery'));
+			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/admin/popup.js', array('jquery'));
 
-			wp_enqueue_style('tmm_colorpicker', TMM_CC_URL . 'js/colorpicker/colorpicker.css');
-			wp_enqueue_script('tmm_colorpicker', TMM_CC_URL . 'js/colorpicker/colorpicker.js', array('jquery'));
+			wp_enqueue_style('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker/colorpicker.css');
+			wp_enqueue_script('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker/colorpicker.js', array('jquery'));
 
 			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_admin.css');
-			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/shortcodes_admin.js', array('jquery'), false, true);
+			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/admin/shortcodes.js', array('jquery'), false, true);
 
 			?>
 			<script type="text/javascript">
@@ -99,7 +111,7 @@ class TMM_Content_Composer {
 		}
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' ) {
 			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/layout_admin.css');
-			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable'), false, true);
+			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/admin/layout.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable'), false, true);
 
 			?>
 			<script type="text/javascript">
@@ -109,7 +121,7 @@ class TMM_Content_Composer {
 				tmm_lang['column_popup_title'] = "<?php _e("Column content editor", TMM_CC_TEXTDOMAIN) ?>";
 				tmm_lang['row_popup_title'] = "<?php _e("Row editor", TMM_CC_TEXTDOMAIN) ?>";
 			</script>
-			<?php
+		<?php
 		}
 
 	}
@@ -117,10 +129,58 @@ class TMM_Content_Composer {
 	public static function enqueue_scripts() {
 		wp_deregister_style('mediaelement');
 		wp_deregister_style('wp-mediaelement');
-		wp_register_style('tmm_mediaelement', TMM_CC_URL . 'js/shortcodes/mediaelement/mediaelementplayer.css');
+		wp_enqueue_style('tmm_mediaelement', TMM_CC_URL . 'css/mediaelement/mediaelementplayer.css');
 
+<<<<<<< HEAD
 		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/layout_front.css');
 		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_front.js', array('jquery', 'tmm_modernizr'), false, true);
+=======
+		wp_enqueue_style('tmm_composer_front', TMM_CC_URL . 'css/front.css');
+
+		if (!class_exists('TMM')) {
+
+			$translation_array = array(
+				'ajaxurl' => admin_url('admin-ajax.php'),
+			);
+			wp_localize_script('tmm_composer_theme', 'tmm_l10n', $translation_array);
+
+			wp_enqueue_style('tmm_tooltipster', TMM_CC_URL . 'css/tooltipster.css');
+			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
+			wp_enqueue_style('tmm_composer_theme', TMM_CC_URL . 'css/theme.css');
+
+			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/min/jquery.modernizr.min.js', array('jquery'));
+			wp_enqueue_script('tmm_composer_theme', TMM_CC_URL . 'js/theme.js', array('jquery'), false, true);
+			wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/min/jquery.tooltipster.min.js', array('jquery'), false, true);
+		}
+
+
+		$tmm_lang = array(
+			'captcha_image_url' => get_template_directory_uri() . '/helper/capcha/image.php/',
+			'wrong_field_value' => __('Please enter correct', TMM_CC_TEXTDOMAIN),
+			'success' => __('Your message has been sent successfully!', TMM_CC_TEXTDOMAIN),
+			'fail' => __('Server failed. Send later', TMM_CC_TEXTDOMAIN),
+		);
+
+		wp_register_script('tmm_composer_front', TMM_CC_URL . 'js/min/front.min.js', array('jquery'), false, true);
+
+		wp_localize_script('tmm_composer_front', 'tmm_mail_l10n', $tmm_lang);
+		//wp_enqueue_script('tmm_composer_front');
+	}
+
+	public static function add_texturize_option($options) {
+
+		if (is_array($options)) {
+			$options['use_wptexturize'] = array(
+				'title' => __('Use wptexturize', TMM_CC_TEXTDOMAIN),
+				'type' => 'checkbox',
+				'default_value' => 0,
+				'description' => '',
+				'custom_html' => ''
+			);
+		}
+
+		return $options;
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 	}
 
 	public static function mce_buttons($buttons) {
@@ -130,7 +190,7 @@ class TMM_Content_Composer {
 	}
 
 	public static function mce_add_plugin($plugin_array) {
-		$plugin_array['tmm_tiny_shortcodes'] = TMM_CC_URL . '/js/editor.js';
+		$plugin_array['tmm_tiny_shortcodes'] = TMM_CC_URL . '/js/admin/editor.js';
 		return $plugin_array;
 	}
 
@@ -174,6 +234,23 @@ class TMM_Content_Composer {
         }
 
         return $new_img_src;
+	}
+
+	public static function resize_image_cover($src, $size, $show_cap = true) {
+		if (empty($size)) {
+			return $src;
+		}
+		$al = explode('*', $size);
+		$new_img_src = aq_resize($src, $al[0], $al[1], true);
+
+		if (!$new_img_src) {
+			if ($show_cap) {
+
+				return 'http://placehold.it/' . $al[0] . 'x' . $al[1] . '&amp;text=UNSUPPORTED VIDEO FORMAT';
+			}
+		}
+
+		return $new_img_src;
 	}
 
 	public static function get_post_featured_image($post_id, $size) {
@@ -253,10 +330,17 @@ class TMM_Content_Composer {
 	public static function get_post_sort_array() {
 		return array(
 			'ID' => 'ID', 'date' => 'date', 'post_date' => 'post_date', 'title' => 'title',
+<<<<<<< HEAD
             'post_title' => 'post_title', 'name' => 'name', 'post_name' => 'post_name', 'modified' => 'modified',
             'post_modified' => 'post_modified', 'modified_gmt' => 'modified_gmt', 'post_modified_gmt' => 'post_modified_gmt',
             'menu_order' => 'menu_order', 'parent' => 'parent', 'post_parent' => 'post_parent',
             'rand' => 'rand', 'comment_count' => 'comment_count', 'author' => 'author', 'post_author' => 'post_author'
+=======
+			'post_title' => 'post_title', 'name' => 'name', 'post_name' => 'post_name', 'modified' => 'modified',
+			'post_modified' => 'post_modified', 'modified_gmt' => 'modified_gmt', 'post_modified_gmt' => 'post_modified_gmt',
+			'menu_order' => 'menu_order', 'parent' => 'parent', 'post_parent' => 'post_parent',
+			'rand' => 'rand', 'comment_count' => 'comment_count', 'author' => 'author', 'post_author' => 'post_author'
+>>>>>>> 8d00ba59b51362d63fac8bbfa1b6eeee98d1bbaa
 		);
 	}
 
@@ -281,7 +365,7 @@ class TMM_Content_Composer {
 				if (!empty($data['title'])) {
 					?>
 					<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
-					<?php
+				<?php
 				}
 				?>
 
@@ -299,20 +383,40 @@ class TMM_Content_Composer {
 				if (!empty($data['title'])) {
 					?>
 					<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
-					<?php
+				<?php
+				}
+
+				if (!isset($data['multiple'])) {
+					$data['multiple'] = false;
 				}
 
 				if (!empty($data['options'])) {
+					if ($data['multiple']){
+						$default_value = explode(',', $data['default_value']);
+					}
 					?>
 					<label class="sel">
-						<select <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" id="<?php echo $data['id'] ?>">
-							<?php foreach ($data['options'] as $key => $text) { ?>
-								<option <?php selected($data['default_value'], $key); ?> value="<?php echo $key ?>"><?php echo $text ?></option>
+						<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" id="<?php echo isset($data['id']) ? esc_attr($data['id']) : ''; ?>">
+							<?php foreach ($data['options'] as $key => $text) {
+
+								$selected = '';
+								if ($data['multiple']) {
+									foreach ($default_value as $value) {
+										if (selected($value, $key)) {
+											$selected = selected($value, $key, false);
+										}
+									}
+								}else{
+									$selected = selected($data['default_value'], $key, false);
+								}
+								?>
+								<option <?php echo $selected; ?> value="<?php echo esc_attr($key); ?>"><?php echo esc_html($text); ?></option>
+
 							<?php } ?>
 						</select>
 					</label>
 					<div class="preset_description"><?php echo $data['description'] ?></div>
-					<?php
+				<?php
 				}
 
 				break;
@@ -330,7 +434,7 @@ class TMM_Content_Composer {
 
 			case 'color':
 				?>
-                <div class="list-item-color" <?php echo (isset($data['display']) && ($data['display']==0)) ? 'style="display:none"' : '' ?>>
+				<div class="list-item-color" <?php echo (isset($data['display']) && ($data['display']==0)) ? 'style="display:none"' : '' ?>>
 					<?php if (!empty($data['title'])): ?>
 						<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
 					<?php endif; ?>
@@ -343,28 +447,26 @@ class TMM_Content_Composer {
 				break;
 
 			case 'upload':
-				?>
-				<?php if (!empty($data['title'])): ?>
-				<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
-			<?php endif; ?>
-
-				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a title="" class="button tmm_button_upload" href="#">
-					<?php _e('Browse', TMM_CC_TEXTDOMAIN); ?>
-				</a>
-				<span class="preset_description"><?php echo $data['description'] ?></span>
-				<?php
-				break;
-
 			case 'upload_video':
+			case 'upload_audio':
+				if ($data['type'] === 'upload_video') {
+					$type = 'video';
+				} else if ($data['type'] === 'upload_audio') {
+					$type = 'audio';
+				} else {
+					$type = 'image';
+				}
 				?>
+
 				<?php if (!empty($data['title'])): ?>
-				<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
+				<h4 class="label" for="<?php echo esc_attr($data['id']); ?>"><?php echo esc_html($data['title']); ?></h4>
 			<?php endif; ?>
 
-				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;"><?php _e('Browse', TMM_CC_TEXTDOMAIN); ?></a>
-				<span class="preset_description"><?php echo $data['description'] ?></span>
+				<input type="text" id="<?php echo esc_attr($data['id']); ?>" value="<?php echo esc_attr($data['default_value']); ?>" class="js_shortcode_template_changer data-input data-upload <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" />
+				<a title="" class="button tmm_button_upload" data-type="<?php echo esc_attr($type); ?>" href="#">
+					<?php esc_html_e('Browse', TMM_CC_TEXTDOMAIN); ?>
+				</a>
+				<span class="preset_description"><?php echo esc_html($data['description']); ?></span>
 				<?php
 				break;
 
