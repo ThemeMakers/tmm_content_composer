@@ -1,0 +1,439 @@
+/* ---------------------------------------------------------------------- */
+/*	Page Styles 
+/* ---------------------------------------------------------------------- */
+
+.section-full-width { 
+    overflow: hidden;
+    position: relative;
+    z-index: 6;
+}
+
+.section-full-width.parallax {
+	width: 100%;
+	z-index: 0;
+}
+
+/* Page Header BG */
+
+body {
+	overflow-x: hidden;
+}
+
+.page-header-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+/* Full BG Image */
+
+.full-bg-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-position: 50% 50%;
+}
+
+.no-touch .full-bg-image { background-size: cover; }
+
+.no-touch .full-bg-image-scroll {
+    -webkit-transition: all 0.24s; 
+    transition: all 0.24s;
+}
+
+.no-touch .full-bg-image-fixed {
+	background-attachment: fixed;
+	background-repeat: repeat;
+}
+
+/* ---------------------------------------------------------------------- */
+/*	Animation
+/* ---------------------------------------------------------------------- */
+
+	/* -------------------------------------------------- */
+	/*	Opacity
+	/* -------------------------------------------------- */
+
+	.opacityEffect { 
+		opacity: 0; 
+		-webkit-transition: opacity .4s ease-in-out;
+				transition: opacity .4s ease-in-out;
+		-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;				
+	}
+	
+	.touch .opacityEffect { opacity: 1; }
+	.opacityEffectRun	  { opacity: 1; }		
+	
+	/* -------------------------------------------------- */
+	/*	Scale
+	/* -------------------------------------------------- */
+
+	.scaleEffect {
+		opacity: 0;
+		-webkit-transform: scale(0.1);
+				transform: scale(0.1);
+		-webkit-transition: -webkit-transform .4s ease-in-out;
+				transition: transform .4s ease-in-out;
+		-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;			
+	}
+	
+	.touch .scaleEffect {
+		opacity: 1;
+		-webkit-animation-name: scaleEffectRun;
+				animation-name: scaleEffectRun;
+		-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+				animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+		-webkit-transform: scale(1);
+				transform: scale(1);		
+	}
+
+	.scaleEffectRun {
+		opacity: 1;
+		-webkit-animation-name: scaleEffectRun;
+				animation-name: scaleEffectRun;
+		-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+				animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+		-webkit-transform: scale(1);
+				transform: scale(1);
+	}
+
+	/* -------------------------------------------------- */
+	/*	Rotate
+	/* -------------------------------------------------- */
+
+	.rotateEffect {
+		opacity: 0;
+		-webkit-transform: rotate(0deg) scale(0.1);
+				transform: rotate(0deg) scale(0.1);
+		-webkit-transition: -webkit-transform .35s ease-in-out, opacity .35s ease-in-out;
+				transition: transform .35s ease-in-out, opacity .35s ease-in-out;
+		-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;					
+	}
+	
+	.touch .rotateEffect {
+		opacity: 1;
+		-webkit-animation-name: rotateEffectRun;
+				animation-name: rotateEffectRun;
+		-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+		-webkit-animation-timing-function: ease;
+				animation-timing-function: ease;
+		-webkit-transform: rotate(360deg) scale(1);
+				transform: rotate(360deg) scale(1);
+	}
+
+	.rotateEffectRun {
+		opacity: 1;
+		-webkit-animation-name: rotateEffectRun;
+				animation-name: rotateEffectRun;
+		-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+		-webkit-animation-timing-function: ease;
+				animation-timing-function: ease;
+		-webkit-transform: rotate(360deg) scale(1);
+				transform: rotate(360deg) scale(1);
+	}
+
+	/* -------------------------------------------------- */
+	/*	Slide Right
+	/* -------------------------------------------------- */
+
+	.slideRightEffect {
+		opacity: 0;
+		-webkit-transform: translateX(-15%);
+				transform: translateX(-15%);
+		-webkit-transition: -webkit-transform .45s ease-in-out, opacity .45s ease-in-out;
+				transition: transform .45s ease-in-out, opacity .45s ease-in-out;	
+		-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;		
+	}
+	
+	.touch .slideRightEffect {
+		opacity: 1;
+		-webkit-animation-name: slideRightEffectRun;
+				animation-name: slideRightEffectRun;
+		-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		-webkit-transform: translateX(0);
+				transform: translateX(0);		
+	}
+
+	.slideRightEffectRun {
+		opacity: 1;
+		-webkit-animation-name: slideRightEffectRun;
+				animation-name: slideRightEffectRun;
+		-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		-webkit-transform: translateX(0);
+				transform: translateX(0);
+	}
+
+	/* -------------------------------------------------- */
+	/*	Slide Left
+	/* -------------------------------------------------- */
+
+	.slideLeftEffect {
+		opacity: 0;
+		-webkit-transform: translateX(15%);
+				transform: translateX(15%);
+		-webkit-transition: -webkit-transform .45s ease-in-out, opacity .45s ease-in-out;
+				transition: transform .45s ease-in-out, opacity .45s ease-in-out;
+		-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;		
+	}
+	
+	.touch .slideLeftEffect {
+		opacity: 1;
+		-webkit-animation-name: slideLeftEffectRun;
+				animation-name: slideLeftEffectRun;
+		-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		-webkit-transform: translateX(0);
+				transform: translateX(0);
+	}
+
+	.slideLeftEffectRun {
+		opacity: 1;
+		-webkit-animation-name: slideLeftEffectRun;
+				animation-name: slideLeftEffectRun;
+		-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		-webkit-transform: translateX(0);
+				transform: translateX(0);
+	}	
+
+	/* -------------------------------------------------- */
+	/*	Slide Down
+	/* -------------------------------------------------- */
+
+	.slideDownEffect {
+		opacity: 0;
+		-webkit-transform: translateY(-15%);
+				transform: translateY(-15%);
+		-webkit-transition: -webkit-transform .35s ease-in-out, opacity .35s ease-in-out;
+				transition: transform .35s ease-in-out, opacity .35s ease-in-out;		
+		-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;		
+	}
+	
+	.touch .slideDownEffect {
+		opacity: 1;
+		-webkit-animation-name: slideDownEffectRun;
+				animation-name: slideDownEffectRun;
+		-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		-webkit-transform: translateY(0);
+				transform: translateY(0);
+	}
+
+	.slideDownEffectRun {
+		opacity: 1;
+		-webkit-animation-name: slideDownEffectRun;
+				animation-name: slideDownEffectRun;
+		-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+		-webkit-animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+				animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		-webkit-transform: translateY(0);
+				transform: translateY(0);
+	}	
+
+	/* -------------------------------------------------- */
+	/*	Slide Up
+	/* -------------------------------------------------- */
+
+	.slideUpEffect {
+		opacity: 0;
+		-webkit-transform: translateY(15%);
+				transform: translateY(15%);
+		-webkit-transition-timing-function: ease-in-out;
+				transition-timing-function: ease-in-out;
+		-webkit-transition-duration: .35s;
+				transition-duration: .35s;
+		-webkit-transition-property: all;
+				transition-property: all;
+		-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;			
+	}
+	
+	.touch .slideUpEffect {
+		opacity: 1;
+		-webkit-animation-name: slideUpEffectRun;
+				animation-name: slideUpEffectRun;
+		-webkit-transform: translateY(0);
+				transform: translateY(0);	
+	}
+
+	.slideUpEffectRun {
+		opacity: 1;
+		-webkit-animation-name: slideUpEffectRun;
+				animation-name: slideUpEffectRun;
+		-webkit-transform: translateY(0);
+				transform: translateY(0);		
+	}	
+
+	/* -------------------------------------------------- */
+	/*	Slide Custom Up
+	/* -------------------------------------------------- */
+
+	.slideUp {
+		-webkit-transform: translateY(100%);
+				transform: translateY(100%);
+		-webkit-transition-timing-function: ease-in-out;
+				transition-timing-function: ease-in-out;
+		-webkit-transition-duration: .35s;
+				transition-duration: .35s;
+		-webkit-transition-property: all;
+				transition-property: all;
+		-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;				
+	}
+	
+	.touch .slideUp {
+		-webkit-animation-name: slideUpRun;
+				animation-name: slideUpRun;
+		-webkit-transform: translateY(0);
+				transform: translateY(0);	
+	}
+
+	.slideUpRun {
+		-webkit-animation-name: slideUpRun;
+				animation-name: slideUpRun;
+		-webkit-transform: translateY(0);
+				transform: translateY(0);		
+	}	
+
+	/* -------------------------------------------------- */
+	/*	Other Effects
+	/* -------------------------------------------------- */
+
+	.translateEffect {
+		opacity: 0;
+		-webkit-transition: -webkit-transform .30s ease-in-out, opacity .30s ease-in-out;
+				transition: transform .30s ease-in-out, opacity .30s ease-in-out;		
+		-webkit-transform: translateY(10%);
+				transform: translateY(10%);
+		-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;			
+	}
+	
+	.touch .translateEffect {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+				transform: translateY(0);
+	}
+	
+	.translateEffectRun {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+				transform: translateY(0);
+	}	
+
+/* ---------------------------------------------------------------------- */
+/*	Function Animation
+/* ---------------------------------------------------------------------- */
+
+/* Scale */
+
+@-webkit-keyframes scaleEffectRun {
+	0%   { -webkit-transform: scale(0.1); opacity: 0; }
+	100% { -webkit-transform: scale(1); opacity: 1; }
+}
+
+@keyframes scaleEffectRun {
+	0%   { transform: scale(0.1); opacity: 0; }
+	100% { transform: scale(1); opacity: 1; }
+}
+
+/* Rotate */
+
+@-webkit-keyframes rotateEffectRun {
+	0%   { -webkit-transform: rotate(0deg) scale(0.1); }
+	100% { -webkit-transform: rotate(360deg) scale(1); }
+}
+
+@keyframes rotateEffectRun {
+	0%   { transform: rotate(0deg) scale(0.1); }
+	100% { transform: rotate(360deg) scale(1); }
+}
+
+/* SlideLeft */
+
+@-webkit-keyframes slideLeftEffectRun {
+	0%   { -webkit-transform: translateX(15%); }
+	100% { -webkit-transform: translateX(0);  }
+}
+
+@keyframes slideLeftEffectRun {
+	0%   { transform: translateX(15%); }
+	100% { transform: translateX(0); }
+}
+
+/* SlideRight */
+
+@-webkit-keyframes slideRightEffectRun {
+	0%	 { -webkit-transform: translateX(-15%); }
+	100% { -webkit-transform: translateX(0); }
+}
+
+@keyframes slideRightEffectRun {
+	0%   { transform: translateX(-15%); }
+	100% { transform: translateX(0); }
+}
+
+/* SlideDown */
+
+@-webkit-keyframes slideDownEffectRun {
+	0%   { -webkit-transform: translateY(-15%); }
+	100% { -webkit-transform: translateY(0); }
+}
+
+@keyframes slideDownEffectRun {
+	0%   { transform: translateY(-15%); }
+	100% { transform: translateY(0); }
+}
+
+/* SlideUp */
+
+@-webkit-keyframes slideUpEffectRun {
+	0%	 { -webkit-transform: translateY(15%); }
+	100% { -webkit-transform: translateY(0); }
+}
+
+@keyframes slideUpEffectRun {
+	0%	 { transform: translateY(15%); }
+	100% { transform: translateY(0); }
+}
+
+/* For Shortcode Image SlideUp */
+
+@-webkit-keyframes slideUpRun {
+	0%	 { -webkit-transform: translateY(100%); }
+	100% { -webkit-transform: translateY(0); }
+}
+
+@keyframes slideUpRun {
+	0%	 { transform: translateY(100%); }
+	100% { transform: translateY(0); }
+}
