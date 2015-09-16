@@ -144,11 +144,11 @@
 			<input type="hidden" id="row_align___ROW_ID__" value="left" name="tmm_layout_constructor_row[__ROW_ID__][row_align]" />
             <input type="hidden" id="row_center___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][row_center]" />
             <input type="hidden" id="row_overlay___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][row_overlay]" />
-			<input type="hidden" id="row_padding_top___ROW_ID__" value="55" name="tmm_layout_constructor_row[__ROW_ID__][padding_top]" />
-			<input type="hidden" id="row_padding_bottom___ROW_ID__" value="55" name="tmm_layout_constructor_row[__ROW_ID__][padding_bottom]" />
-			<input type="hidden" id="row_margin_top___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][margin_top]" />
-			<input type="hidden" id="row_margin_bottom___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][margin_bottom]" />
-			<input type="hidden" id="row_section_content___ROW_ID__" value="30" name="tmm_layout_constructor_row[__ROW_ID__][section_content]" />
+			<input type="hidden" id="row_padding_top___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][padding_top]" />
+			<input type="hidden" id="row_padding_bottom___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][padding_bottom]" />
+			<input type="hidden" id="row_margin_top___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][margin_top]" />
+			<input type="hidden" id="row_margin_bottom___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][margin_bottom]" />
+			<input type="hidden" id="row_section_content___ROW_ID__" value="1" name="tmm_layout_constructor_row[__ROW_ID__][section_content]" />
 
 		</li>
 
@@ -197,7 +197,7 @@
                 'options' => array(
                     'default' => __('Below content matching its layout', TMM_CC_TEXTDOMAIN),
                     'before_full_width' => __('Before main content with separate layout options', TMM_CC_TEXTDOMAIN),
-		   			'full_width' => __('Below main content with separate layout options', TMM_CC_TEXTDOMAIN)
+		   			'full_width' => __('After main content with separate layout options', TMM_CC_TEXTDOMAIN)
                 ),
                 'default_value' => TMM_Content_Composer::set_default_value('row_lc_displaying', 'default'),
                 'description' => ''
@@ -300,10 +300,10 @@
 
 			TMM_Content_Composer::html_option(array(
                 'type' => 'checkbox',
-                'title' => __('Use as Section Content', TMM_CC_TEXTDOMAIN),
+                'title' => __('Use as default content blockt', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'row_section_content',
                 'id' => 'row_section_content',
-                'is_checked'=>TMM_Content_Composer::set_default_value('row_section_content', 0),
+                'is_checked'=>TMM_Content_Composer::set_default_value('row_section_content', 1),
                 'description' => ''
             ));
 

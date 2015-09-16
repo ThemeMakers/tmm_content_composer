@@ -210,4 +210,16 @@ class TMM_Shortcode {
 		return ob_get_clean();
 	}
 
+	public static function remove_empty_tags($content){
+		$tags = array(
+			'<p>[' => '[',
+			']</p>' => ']',
+			']<br>' => ']',
+			']<br />' => ']'
+		);
+
+		$content = strtr($content, $tags);
+		return $content;
+	}
+
 }
