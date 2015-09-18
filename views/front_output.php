@@ -59,7 +59,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&($row_displaying=='full_width')){
 			?>
 
-			<div class="container">
+			<div class="container-fluid">
 
 				<?php
 				}
