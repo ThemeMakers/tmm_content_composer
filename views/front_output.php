@@ -6,6 +6,18 @@ $first_row = current($tmm_layout_constructor_row);
 
 foreach ($tmm_layout_constructor as $row => $row_data) {
 
+	if (!isset($tmm_layout_constructor_row[$row]['lc_displaying'])) {
+		$tmm_layout_constructor_row[$row]['lc_displaying'] = 'default';
+	}
+
+	if (!isset($tmm_layout_constructor_row[$row]['full_width'])) {
+		$tmm_layout_constructor_row[$row]['full_width'] = '0';
+	}
+
+	if (!isset($tmm_layout_constructor_row[$row]['content_full_width'])) {
+		$tmm_layout_constructor_row[$row]['content_full_width'] = '0';
+	}
+
 	if (!empty($row_data) && ($tmm_layout_constructor_row[$row]['lc_displaying']==$row_displaying)) {
 
 		$section_style = '';
@@ -59,7 +71,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&($row_displaying=='full_width')){
 			?>
 
-			<div class="container-fluid">
+			<div class="container">
 
 				<?php
 				}
