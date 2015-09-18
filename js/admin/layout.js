@@ -538,31 +538,22 @@
 
 						cur_popup.find('.tmm_button_upload').on('click', function() {
 							var input_object = $(this).prev('input, textarea'),
-								frame = wp.media({
-									title: wp.media.view.l10n.chooseImage,
-									multiple: false,
-									library: { type: 'image' }
-								});
+								type = $(this).data('type'),
+								title = wp.media.view.l10n.chooseImage;
 
-							frame.on( 'select', function() {
-								var selection = frame.state().get('selection');
-								selection.each(function(attachment) {
-									var url = attachment.attributes.url;
-									input_object.val(url).trigger('change');
-								});
-							}).open();
+							if (!type) {
+								type = 'image';
+							} else if (type === 'audio') {
+								title = wp.media.view.l10n.audioAddSourceTitle;
+							} else if (type === 'video') {
+								title = wp.media.view.l10n.videoAddSourceTitle;
+							}
 
-							return false;
-						});
-
-						cur_popup.find('.tmm_button_upload_video').on('click', function()
-						{
-							var input_object = jQuery(this).prev('input, textarea'),
-								frame = wp.media({
-									title: wp.media.view.l10n.chooseImage,
-									multiple: false,
-									library: { type: 'video' }
-								});
+							var frame = wp.media({
+								title: title,
+								multiple: false,
+								library: { type: type }
+							});
 
 							frame.on( 'select', function() {
 								var selection = frame.state().get('selection');
@@ -573,6 +564,8 @@
 							});
 
 							frame.open();
+
+							return false;
 						});
 
 						cur_popup.find('.tmm-popup-content input[type=checkbox]').on('click', function() {
@@ -594,7 +587,6 @@
 						cur_popup.find('#row_background_type').off('change');
 						cur_popup.find('#row_bg_custom_type').off('change');
 						cur_popup.find('.tmm_button_upload').off('click');
-						cur_popup.find('.tmm_button_upload_video').off('click');
 						cur_popup.find('.tmm-popup-content input[type=checkbox]').off('click');
 					},
 					save: function() {
