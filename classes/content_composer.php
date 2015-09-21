@@ -263,6 +263,29 @@ class TMM_Content_Composer {
 		return $post_categories;
 	}
 
+	public static function get_post_tags() {
+		$post_tags = array(
+			0 => __('All Tags', TMM_CC_TEXTDOMAIN)
+		);
+
+		$args = array(
+			'orderby' => 'name',
+			'order' => 'ASC',
+			'hide_empty' => 0,
+			'child_of' => 0,
+			'hierarchical' => true,
+			'number' => NULL
+		);
+
+		$tags = get_tags($args);
+
+		foreach ($tags as $value) {
+			$post_tags[$value->term_id] = $value->name;
+		}
+
+		return $post_tags;
+	}
+
 	public static function get_post_sort_array() {
 		return array(
 			'ID' => 'ID', 'date' => 'date', 'post_date' => 'post_date', 'title' => 'title',
@@ -322,21 +345,41 @@ class TMM_Content_Composer {
 
 				if (!empty($data['title'])) {
 					?>
-					<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
-					<?php
+					<h4 class="label" for="<?php echo isset($data['id']) ? esc_attr($data['id']) : '' ?>"><?php echo esc_html($data['title']); ?></h4>
+				<?php
+				}
+
+				if (!isset($data['multiple'])) {
+					$data['multiple'] = false;
 				}
 
 				if (!empty($data['options'])) {
+					if ($data['multiple']){
+						$default_value = explode(',', $data['default_value']);
+					}
 					?>
 					<label class="sel">
-						<select <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" id="<?php echo $data['id'] ?>">
-							<?php foreach ($data['options'] as $key => $text) { ?>
-								<option <?php selected($data['default_value'], $key); ?> value="<?php echo $key ?>"><?php echo $text ?></option>
+						<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" id="<?php echo isset($data['id']) ? esc_attr($data['id']) : ''; ?>">
+							<?php foreach ($data['options'] as $key => $text) {
+
+								$selected = '';
+								if ($data['multiple']) {
+									foreach ($default_value as $value) {
+										if (selected($value, $key)) {
+											$selected = selected($value, $key, false);
+										}
+									}
+								}else{
+									$selected = selected($data['default_value'], $key, false);
+								}
+								?>
+								<option <?php echo $selected; ?> value="<?php echo esc_attr($key); ?>"><?php echo esc_html($text); ?></option>
+
 							<?php } ?>
 						</select>
 					</label>
-					<div class="preset_description"><?php echo $data['description'] ?></div>
-					<?php
+					<div class="preset_description"><?php echo esc_html($data['description']); ?></div>
+				<?php
 				}
 
 				break;

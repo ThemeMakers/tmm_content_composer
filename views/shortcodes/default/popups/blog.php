@@ -40,6 +40,38 @@
 		?>
 	</div>
 
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'multiple' => true,
+			'title' => __('Category', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'category',
+			'id' => 'category',
+			'options' => TMM_Content_Composer::get_post_categories(),
+			'default_value' => TMM_Content_Composer::set_default_value('category', ''),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'multiple' => true,
+			'title' => __('Tag', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'tag',
+			'id' => 'tag',
+			'options' => TMM_Content_Composer::get_post_tags(),
+			'default_value' => TMM_Content_Composer::set_default_value('tag', ''),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
 	<div class="one-half option-columns">
 
 		<?php
@@ -61,20 +93,7 @@
 
 	</div><!--/ .one-half-->
 
-	<div class="one-half option-default">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Category', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'category',
-			'id' => 'category',
-			'options' => TMM_Content_Composer::get_post_categories(),
-			'default_value' => TMM_Content_Composer::set_default_value('category', ''),
-			'description' => ''
-		));
-		?>
 
-	</div><!--/ .ona-half-->
 
 	<div class="one-half option-default">
 
@@ -146,6 +165,47 @@
 			'id' => 'posts',
 			'default_value' => TMM_Content_Composer::set_default_value('posts', ''),
 			'description' => __('Example: 56,73,119. It has the most hight priority!', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Exclude Posts', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'exclude_post_types',
+			'id' => 'exclude_posts',
+			'options' => array(
+				'none' => __('None', TMM_CC_TEXTDOMAIN),
+				'post-with-image' => __('Posts With Featured Image', TMM_CC_TEXTDOMAIN),
+				'post-without-image' => __('Posts Without Featured Image', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_types', 'none'),
+			'description' => __('Choose post formats that will not be included in current query.', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Exclude Post Formats', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'exclude_post_formats',
+			'id' => 'exclude_post_formats',
+			'multiple' => true,
+			'options' => array(
+				'none' => __('None', TMM_CC_TEXTDOMAIN),
+				'post-format-gallery' => __('Gallery Post', TMM_CC_TEXTDOMAIN),
+				'post-format-quote' => __('Quote Post', TMM_CC_TEXTDOMAIN),
+				'post-format-video' => __('Video Post', TMM_CC_TEXTDOMAIN),
+				'post-format-audio' => __('Audio Post', TMM_CC_TEXTDOMAIN)
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_formats', 'none'),
+			'description' => __('Choose post formats that will not be included in current query.', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
