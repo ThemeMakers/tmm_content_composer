@@ -211,6 +211,19 @@
 
 	</div><!--/ .ona-half-->
 
+	<div class="one-half">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Title Symbols Count', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'title_symbols',
+			'id' => 'posts',
+			'default_value' => TMM_Content_Composer::set_default_value('title_symbols', '25'),
+			'description' => __('Truncate post titles depending on symbols number you want.', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+	</div><!--/ .ona-half-->
+
 	<div class="one-half option-default">
 
 		<?php

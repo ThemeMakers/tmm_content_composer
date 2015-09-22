@@ -51,8 +51,11 @@ var TMM_APP_SHORTCODES = function() {
 						content = jQuery(value).val();
 					} else {
 						//save_as_one for dynamic lists
-						var vals = jQuery(value).val();
+
+						var vals = '' + jQuery(value).val();
+
 						vals = vals.replace(/\"/gi, "\'");
+
 						if (!jQuery(value).hasClass('save_as_one')) {
 							begin_string = begin_string + " " + shortcode_field + '="' + vals + '"';
 						} else {

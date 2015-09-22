@@ -128,6 +128,8 @@ if (isset($post_carousel) && $post_carousel){
     tmm_enqueue_style('owltransitions');
 }
 
+$_REQUEST['title_symbols'] = $title_symbols;
+
 ?>
 
 	<div id="post-area" class="<?php echo esc_attr($post_area) ?> <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?>>
