@@ -162,6 +162,7 @@ $_REQUEST['title_symbols'] = $title_symbols;
                     $post = $posts_array[$i];
                     $data = array();			
                     $data['post_key'] = $i;
+                    $data['title_symbols'] = $title_symbols;
                     echo TMM::draw_html('post/masonry_piece', $data);
                 }
             } 
