@@ -24,7 +24,7 @@ if ( ! defined( 'ICL_LANGUAGE_CODE' ) ) {
 
 $query = new WP_Query( $args );
 
-$orderby = 'post_date_gmt';
+$orderby = 'post_date';
 $order   = 'DESC';
 //step 1
 $request = str_replace( "SQL_CALC_FOUND_ROWS", "", $query->request );
