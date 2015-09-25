@@ -1,7 +1,7 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
 $inique_id = uniqid();
-wp_enqueue_script('tmm_theme_map_api_js', 'http://maps.google.com/maps/api/js?sensor=false');
+wp_enqueue_script('tmm_theme_map_api_js', 'https://maps.googleapis.com/maps/api/js?sensor=false');
 wp_enqueue_script('tmm_composer_front');
 
 if (!isset($mode)) {
