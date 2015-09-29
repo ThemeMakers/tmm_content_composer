@@ -12,6 +12,10 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		
 		$section_class = 'section';
 
+		if ($tmm_layout_constructor_row[$row]['padding_top'] === '0' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '0') {
+			$section_class .= ' padding-off';
+		}
+
 		if ($tmm_layout_constructor_row[$row]['section_content']=='1'){
 			$section_class .=' section-content';
 		}
@@ -99,8 +103,8 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				}
 
 				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
-				$padding_top = (isset($tmm_layout_constructor_row[$row]['padding_top'])) ? $tmm_layout_constructor_row[$row]['padding_top'] : 0;
-				$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : 0;
+				$padding_top = (isset($tmm_layout_constructor_row[$row]['padding_top'])) ? $tmm_layout_constructor_row[$row]['padding_top'] : '';
+				$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : '';
 				$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
 				$row_center = (isset($tmm_layout_constructor_row[$row]['row_center'])&&($tmm_layout_constructor_row[$row]['row_center']==true)) ? true : false;
 
@@ -116,10 +120,10 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				if (!empty($bg_color)) {
 					//$row_style_attr .= 'background:'.$bg_color.'; ';
 				}
-				if ($padding_top > 0) {
+				if ($padding_top != '') {
 					$row_style_attr .= 'padding-top:'.$padding_top.'px; ';
 				}
-				if ($padding_bottom > 0) {
+				if ($padding_bottom != '') {
 					$row_style_attr .= 'padding-bottom:'.$padding_bottom.'px; ';
 				}
 				if (!empty($align) && ($align != 'left')) {
