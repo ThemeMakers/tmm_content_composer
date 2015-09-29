@@ -15,7 +15,7 @@
         ?>
     </div>
 
-	<div class="one-half">
+	<div class="one-half option-default">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
