@@ -12,6 +12,7 @@ $path = 'content/' . $blog_type . '/content';
 $args = array(
 	'orderby' => $orderby,
 	'order' => $order,
+    'ignore_sticky_posts' => true,
 	'post_status' => array('publish')
 );
 
@@ -185,6 +186,7 @@ $_REQUEST['title_symbols'] = $title_symbols;
                 $next_posts = $next_posts . $str . ",";
             }
         }
+
         ?>
 
         <div class="masonry-loader spinner">
