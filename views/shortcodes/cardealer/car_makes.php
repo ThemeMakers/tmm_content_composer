@@ -58,7 +58,7 @@ $args = array(
 
 			<li class="cat-item cat-item-<?php echo $term->term_id; ?>">
 				<?php if($show_logo && $src != ''){ ?><img src="<?php echo $src; ?>" /><?php } ?>
-				<a title="<?php echo sprintf(__('View all ads filed under %s', TMM_CC_TEXTDOMAIN), $term->name); ?>" href="<?php echo home_url(); ?>/carproducer/<?php echo $term->slug; ?>/"><?php echo $term->name; ?></a> (<?php echo $count; ?>)
+				<a title="<?php echo sprintf(__('View all ads filed under %s', TMM_CC_TEXTDOMAIN), $term->name); ?>" href="<?php echo get_term_link($term->slug, 'carproducer'); ?>"><?php echo $term->name; ?> (<?php echo $count; ?>)&#x200E;</a>
 			</li>
 
 		<?php
