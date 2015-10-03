@@ -230,21 +230,37 @@
 
 	<?php
 	TMM_Content_Composer::html_option(array(
+		'type' => 'select',
 		'title' => __('Padding top', TMM_CC_TEXTDOMAIN),
 		'shortcode_field' => 'row_padding_top',
-		'type' => 'text',
-		'description' => 'Default Value 0px',
+		'id' => 'row_padding_top',
+		'options' => array(
+			'0' => __('No Top Padding', TMM_CC_TEXTDOMAIN),
+			'20' => __('20 PX', TMM_CC_TEXTDOMAIN),
+			'40' => __('40 PX', TMM_CC_TEXTDOMAIN),
+			'60' => __('60 PX', TMM_CC_TEXTDOMAIN),
+			'80' => __('80 PX', TMM_CC_TEXTDOMAIN),
+			'100' => __('100 PX', TMM_CC_TEXTDOMAIN)
+		),
 		'default_value' => TMM_Content_Composer::set_default_value('padding_top', '0'),
-		'id' => 'row_padding_top'
+		'description' => __('Default Value 0px', TMM_CC_TEXTDOMAIN)
 	));
 
 	TMM_Content_Composer::html_option(array(
+		'type' => 'select',
 		'title' => __('Padding bottom', TMM_CC_TEXTDOMAIN),
 		'shortcode_field' => 'row_padding_bottom',
-		'type' => 'text',
-		'description' => 'Default Value 15px',
-				'default_value' => TMM_Content_Composer::set_default_value('padding_bottom', '15'),
-		'id' => 'row_padding_bottom'
+		'id' => 'row_padding_bottom',
+		'options' => array(
+			'0' => __('No Top Padding', TMM_CC_TEXTDOMAIN),
+			'20' => __('20 PX', TMM_CC_TEXTDOMAIN),
+			'40' => __('40 PX', TMM_CC_TEXTDOMAIN),
+			'60' => __('60 PX', TMM_CC_TEXTDOMAIN),
+			'80' => __('80 PX', TMM_CC_TEXTDOMAIN),
+			'100' => __('100 PX', TMM_CC_TEXTDOMAIN)
+		),
+		'default_value' => TMM_Content_Composer::set_default_value('padding_bottom', '0'),
+		'description' => 'Default Value 0'
 	));
 
 	TMM_Content_Composer::html_option(array(
@@ -257,7 +273,7 @@
 			'right' => 'Right',
 			'center' => 'Center',
 		),
-		'default_value' => TMM_Content_Composer::set_default_value('align', 'center'),
+		'default_value' => TMM_Content_Composer::set_default_value('align', 'left'),
 		'description' => ''
 	));
 

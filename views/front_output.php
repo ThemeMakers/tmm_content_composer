@@ -23,7 +23,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$section_style = '';
 		$section_style_attr = '';
 		$padding_top = 0;
-		$padding_bottom = 15;
+		$padding_bottom = 0;
 
 		if (isset($tmm_layout_constructor_row[$row]['padding_top'])) {
 			$padding_top = (int) $tmm_layout_constructor_row[$row]['padding_top'];
@@ -34,14 +34,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 		if ($tmm_layout_constructor_row[$row]['padding_top'] === '' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '') {
 			$padding_top = 0;
-			$padding_bottom = 15;
-		}
-
-		if ($padding_top !== 0) {
-			$section_style .= 'padding-top:'.$padding_top.'px;';
-		}
-		if ($padding_bottom !== 0) {
-			$section_style .= 'padding-bottom:'.$padding_bottom.'px;';
+			$padding_bottom = 0;
 		}
 
 		if (!empty($section_style)) {
@@ -52,8 +45,48 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 		$section_class = 'section';
 
-		if ($tmm_layout_constructor_row[$row]['padding_top'] === '' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '') {
+		if ($tmm_layout_constructor_row[$row]['padding_top'] === '0' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '0') {
 			$section_class .= ' padding-off';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['padding_top'] === '20') {
+			$section_class .= ' padding-top-20';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['padding_top'] === '40') {
+			$section_class .= ' padding-top-40';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['padding_top'] === '60') {
+			$section_class .= ' padding-top-60';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['padding_top'] === '80') {
+			$section_class .= ' padding-top-80';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['padding_top'] === '100') {
+			$section_class .= ' padding-top-100';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['padding_bottom'] === '20') {
+			$section_class .= ' padding-bottom-20';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['padding_bottom'] === '40') {
+			$section_class .= ' padding-bottom-40';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['padding_bottom'] === '60') {
+			$section_class .= ' padding-bottom-60';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['padding_bottom'] === '80') {
+			$section_class .= ' padding-bottom-80';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['padding_bottom'] === '100') {
+			$section_class .= ' padding-bottom-100';
 		}
 
 		if ($tmm_layout_constructor_row[$row]['full_width'] == 1 && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
