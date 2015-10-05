@@ -121,7 +121,7 @@ class TMM_Content_Composer {
 				tmm_lang['row_delete'] = "<?php _e("Sure about row deleting?", TMM_CC_TEXTDOMAIN) ?>";
 				tmm_lang['empty_title'] = "<?php _e("Empty title", TMM_CC_TEXTDOMAIN) ?>";
 				tmm_lang['column_popup_title'] = "<?php _e("Column content editor", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['row_popup_title'] = "<?php _e("Row editor", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['row_popup_title'] = "<?php _e("Section editor", TMM_CC_TEXTDOMAIN) ?>";
 			</script>
 		<?php
 		}
