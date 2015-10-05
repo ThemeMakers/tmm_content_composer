@@ -109,20 +109,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				<?php
 				}
 
-				if (isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom' && $tmm_layout_constructor_row[$row]['bg_custom_type']=='color'){
-					?>
-					<div style="<?php echo (!empty($tmm_layout_constructor_row[$row]['bg_color'])) ? 'background-color: ' . $tmm_layout_constructor_row[$row]["bg_color"] . '' : ''; ?>" class="full-bg-image"></div>
-				<?php
-				}
-
-				if (isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom' && $tmm_layout_constructor_row[$row]['bg_custom_type']=='image'){
-					?>
-
-					<div style="<?php echo (!empty($tmm_layout_constructor_row[$row]['bg_image'])) ? 'background-image: url(' . $tmm_layout_constructor_row[$row]["bg_image"] . ');' : ''; ?>" class="full-bg-image full-bg-image-<?php echo $tmm_layout_constructor_row[$row]['bg_attachment'] ?>"></div>
-
-				<?php
-				}
-
 				if (!empty($tmm_layout_constructor_row[$row]['bg_video']) && $tmm_layout_constructor_row[$row]['bg_custom_type']=='video' && $row_style['bg_type'] == 'custom'){
 					$video_type = TMM_Layout_Constructor::get_video_type($tmm_layout_constructor_row[$row]['bg_video']);
 
@@ -147,75 +133,55 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				<?php
 				}
 
-				if (isset($tmm_layout_constructor_row[$row]['bg_fullscreen']) && $tmm_layout_constructor_row[$row]['bg_fullscreen'] == true) {
+				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
+				$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
+
+				$row_class = 'row';
+				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
+					$row_class .= ' theme-default-bg';
+				}
+
+				$row_style_attr = '';
+				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] != 'custom' && isset($row_style['style_custom_color'])) {
+					$row_style_attr .= $row_style['style_custom_color'];
+				}
+				if (!empty($bg_color)) {
+					//$row_style_attr .= 'background:'.$bg_color.'; ';
+				}
+				if (!empty($align) && $align !== 'left') {
+					$row_style_attr .= 'text-align:'.$align.';';
+				}
+				if (!empty($row_style_attr)) {
+					$row_style_attr = ' style="'.$row_style_attr.'"';
+				}
+
+				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
 				?>
 
-				<div id="fullscreen" class="full-screen">
-
-					<div class="fullscreen-entry">
-
-						<?php
-						}
-
-						$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
-						$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
-
-						$row_class = 'row';
-						if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
-							$row_class .= ' theme-default-bg';
-						}
-
-						$row_style_attr = '';
-						if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] != 'custom' && isset($row_style['style_custom_color'])) {
-							$row_style_attr .= $row_style['style_custom_color'];
-						}
-						if (!empty($bg_color)) {
-							//$row_style_attr .= 'background:'.$bg_color.'; ';
-						}
-						if (!empty($align) && $align !== 'left') {
-							$row_style_attr .= 'text-align:'.$align.';';
-						}
-						if (!empty($row_style_attr)) {
-							$row_style_attr = ' style="'.$row_style_attr.'"';
-						}
-
-						if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
-						?>
-
-						<div class="container">
-
-							<?php
-							}
-							?>
-
-							<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
-
-								<?php foreach ($row_data as $uniqid => $column){ ?>
-
-									<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
-									<div class="<?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
-
-								<?php } ?>
-
-								<div class="clearfix"></div>
-
-							</div>
-
-							<?php
-							if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
-							?>
-
-						</div><!--/ .container -->
+				<div class="container">
 
 					<?php
 					}
-
-					if (isset($tmm_layout_constructor_row[$row]['bg_fullscreen']) && $tmm_layout_constructor_row[$row]['bg_fullscreen'] == true) {
 					?>
 
-					</div><!--/ .fullscreen-entry-->
+					<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
 
-				</div><!--/ .full-screen-->
+						<?php foreach ($row_data as $uniqid => $column){ ?>
+
+							<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
+							<div class="<?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
+
+						<?php } ?>
+
+						<div class="clearfix"></div>
+
+					</div>
+
+					<?php
+					if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
+					?>
+
+				</div><!--/ .container -->
 
 			<?php
 			}
