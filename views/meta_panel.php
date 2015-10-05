@@ -78,6 +78,7 @@
 				<input type="hidden" id="row_overlay_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['row_overlay']) ? $tmm_layout_constructor_row[$row]['row_overlay'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][row_overlay]" />
 				<input type="hidden" id="row_padding_top_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['padding_top']) ? $tmm_layout_constructor_row[$row]['padding_top'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][padding_top]" />
 				<input type="hidden" id="row_padding_bottom_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['padding_bottom']) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][padding_bottom]" />
+				<input type="hidden" id="row_border_top_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['border_top']) ? $tmm_layout_constructor_row[$row]['border_top'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][border_top]" />
 
 			</li>
 
@@ -139,7 +140,8 @@
 		<input type="hidden" id="row_align___ROW_ID__" value="left" name="tmm_layout_constructor_row[__ROW_ID__][row_align]" />
 		<input type="hidden" id="row_overlay___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][row_overlay]" />
 		<input type="hidden" id="row_padding_top___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][padding_top]" />
-		<input type="hidden" id="row_padding_bottom___ROW_ID__" value="15" name="tmm_layout_constructor_row[__ROW_ID__][padding_bottom]" />
+		<input type="hidden" id="row_padding_bottom___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][padding_bottom]" />
+		<input type="hidden" id="row_border_top___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][border_top]" />
 
 	</li>
 
@@ -182,7 +184,7 @@
 	<?php
 	TMM_Content_Composer::html_option(array(
 		'type' => 'select',
-		'title' => __('Row content displaying', TMM_CC_TEXTDOMAIN),
+		'title' => __('Row Content Displaying', TMM_CC_TEXTDOMAIN),
 		'shortcode_field' => 'row_lc_displaying',
 		'id' => 'row_lc_displaying',
 		'options' => array(
@@ -194,7 +196,7 @@
 	));
 	?>
 
-	<div class="content_full_width">
+	<div class="row_full_width" style="display: none;">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
@@ -208,11 +210,7 @@
 			'default_value' => TMM_Content_Composer::set_default_value('container_width', 0),
 			'description' => ''
 		));
-		?>
-	</div>
 
-	<div class="content_full_width">
-		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Container Height', TMM_CC_TEXTDOMAIN),
@@ -226,13 +224,28 @@
 			'default_value' => TMM_Content_Composer::set_default_value('container_height', 0),
 			'description' => ''
 		));
+
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Content Align', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'row_align',
+			'id' => 'row_align',
+			'options' => array(
+				'left' => 'Left',
+				'right' => 'Right',
+				'center' => 'Center',
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('align', 'left'),
+			'description' => ''
+		));
+
 		?>
 	</div>
 
 	<?php
 	TMM_Content_Composer::html_option(array(
 		'type' => 'select',
-		'title' => __('Offset top', TMM_CC_TEXTDOMAIN),
+		'title' => __('Offset Top', TMM_CC_TEXTDOMAIN),
 		'shortcode_field' => 'row_padding_top',
 		'id' => 'row_padding_top',
 		'options' => array(
@@ -249,11 +262,11 @@
 
 	TMM_Content_Composer::html_option(array(
 		'type' => 'select',
-		'title' => __('Offset bottom', TMM_CC_TEXTDOMAIN),
+		'title' => __('Offset Bottom', TMM_CC_TEXTDOMAIN),
 		'shortcode_field' => 'row_padding_bottom',
 		'id' => 'row_padding_bottom',
 		'options' => array(
-			'0' => __('No Top Padding', TMM_CC_TEXTDOMAIN),
+			'0' => __('No Bottom Padding', TMM_CC_TEXTDOMAIN),
 			'20' => __('20 PX', TMM_CC_TEXTDOMAIN),
 			'40' => __('40 PX', TMM_CC_TEXTDOMAIN),
 			'60' => __('60 PX', TMM_CC_TEXTDOMAIN),
@@ -261,20 +274,21 @@
 			'100' => __('100 PX', TMM_CC_TEXTDOMAIN)
 		),
 		'default_value' => TMM_Content_Composer::set_default_value('padding_bottom', '0'),
-		'description' => 'Default Value 0'
+		'description' => 'Default Value 0px'
 	));
 
 	TMM_Content_Composer::html_option(array(
 		'type' => 'select',
-		'title' => __('Content Align', TMM_CC_TEXTDOMAIN),
-		'shortcode_field' => 'row_align',
-		'id' => 'row_align',
+		'title' => __('Border Top', TMM_CC_TEXTDOMAIN),
+		'shortcode_field' => 'row_border_top',
+		'id' => 'row_border_top',
 		'options' => array(
-			'left' => 'Left',
-			'right' => 'Right',
-			'center' => 'Center',
+			'0' => __('No Top Border', TMM_CC_TEXTDOMAIN),
+			'1' => __('Border Style 1', TMM_CC_TEXTDOMAIN),
+			'2' => __('Border Style 2', TMM_CC_TEXTDOMAIN),
+			'3' => __('Border Style 3', TMM_CC_TEXTDOMAIN),
 		),
-		'default_value' => TMM_Content_Composer::set_default_value('align', 'left'),
+		'default_value' => TMM_Content_Composer::set_default_value('border_top', '0'),
 		'description' => ''
 	));
 

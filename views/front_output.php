@@ -18,16 +18,20 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$tmm_layout_constructor_row[$row]['container_height'] = '0';
 	}
 
-	if (!empty($row_data) && ($tmm_layout_constructor_row[$row]['lc_displaying']==$row_displaying)) {
+	if (!isset($tmm_layout_constructor_row[$row]['border_top'])) {
+		$tmm_layout_constructor_row[$row]['border_top'] = '0';
+	}
 
-		$section_style = '';
-		$section_style_attr = '';
+	if (!empty($row_data) && ($tmm_layout_constructor_row[$row]['lc_displaying'] == $row_displaying)) {
+
 		$padding_top = 0;
 		$padding_bottom = 0;
+		$border_top = 0;
 
 		if (isset($tmm_layout_constructor_row[$row]['padding_top'])) {
 			$padding_top = (int) $tmm_layout_constructor_row[$row]['padding_top'];
 		}
+
 		if (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) {
 			$padding_bottom = (int) $tmm_layout_constructor_row[$row]['padding_bottom'];
 		}
@@ -37,14 +41,38 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$padding_bottom = 0;
 		}
 
-		if (!empty($section_style)) {
-			$section_style_attr = ' style="' . $section_style . '"';
+		if (isset($tmm_layout_constructor_row[$row]['border_top'])) {
+			$border_top = (int) $tmm_layout_constructor_row[$row]['border_top'];
 		}
 
 		$row_style = TMM_Layout_Constructor::get_row_bg($tmm_layout_constructor_row, $row);
+		$section_class = '';
+		$container_class = 'container';
 
-		$section_class = 'section';
+		if ($row_displaying === 'full_width') {
+			$section_class .= 'section';
 
+			if ($tmm_layout_constructor_row[$row]['container_width'] == 1) {
+				$container_class = 'container-fluid';
+			}
+
+			if ($tmm_layout_constructor_row[$row]['container_height'] == 1) {
+				$section_class .= ' viewport-50';
+			} else if ($tmm_layout_constructor_row[$row]['container_height'] == 2) {
+				$section_class .= ' viewport-100';
+			}
+
+			$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : 'left';
+
+			if (!empty($align) && $align === 'right') {
+				$section_class .= ' content-right';
+			} else if (!empty($align) && $align === 'center') {
+				$section_class .= ' content-center';
+			}
+
+		}
+
+		/* padding */
 		if ($tmm_layout_constructor_row[$row]['padding_top'] === '0' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '0') {
 			$section_class .= ' padding-off';
 		}
@@ -89,33 +117,33 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_class .= ' padding-bottom-100';
 		}
 
+		/* border top */
+		if ($tmm_layout_constructor_row[$row]['border_top'] === '1') {
+			$section_class .= ' brd-1';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['border_top'] === '2') {
+			$section_class .= ' brd-2';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['border_top'] === '3') {
+			$section_class .= ' brd-3';
+		}
+
+		/* background */
 		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'custom') {
 			$section_class .= ' parallax';
 		}
 
-		if ($tmm_layout_constructor_row[$row]['container_width'] == 1) {
-			$container_class = 'container-fluid';
-		} else {
-			$container_class = 'container';
-		}
-
-		$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : 'left';
-
-		if (!empty($align) && $align === 'right') {
-			$section_class .= ' content-right';
-		} else if (!empty($align) && $align === 'center') {
-			$section_class .= ' content-center';
-		}
-
-		if ($tmm_layout_constructor_row[$row]['container_height'] == 1) {
-			$section_class .= ' viewport-50';
-		} else if ($tmm_layout_constructor_row[$row]['container_height'] == 2) {
-			$section_class .= ' viewport-100';
+		if ($row_displaying === 'default') {
+			$container_class .= $section_class;
 		}
 
 		?>
 
-		<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
+		<?php if ($row_displaying === 'full_width') { ?>
+		<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>">
+		<?php } ?>
 
 			<div class="<?php echo $container_class; ?>">
 
@@ -180,7 +208,9 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 			</div><!--/ .container-->
 
+		<?php if ($row_displaying === 'full_width') { ?>
 		</section>
+		<?php } ?>
 
 	<?php
 	}
