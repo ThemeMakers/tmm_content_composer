@@ -51,7 +51,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$row_class = 'row';
 
 		if ($row_displaying === 'full_width') {
-			$section_class .= 'section';
+			$section_class .= '';
 
 			if ($tmm_layout_constructor_row[$row]['container_width'] == 1) {
 				$container_class = 'container-fluid';

@@ -1,8 +1,8 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 
 <input type="hidden" name="tmm_meta_saving" value="1" />
-<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php _e("Add New Row", TMM_CC_TEXTDOMAIN) ?></a>
-<a href="#" class="tmm-lc-paste-row button button-large"><?php _e("Insert Clipboard Row here", TMM_CC_TEXTDOMAIN) ?></a><br />
+<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php _e("Add New Section", TMM_CC_TEXTDOMAIN) ?></a>
+<a href="#" class="tmm-lc-paste-row button button-large"><?php _e("Insert Clipboard Section here", TMM_CC_TEXTDOMAIN) ?></a><br />
 
 <ul id="tmm_lc_rows" class="tmm-lc-rows">
 
@@ -15,10 +15,10 @@
 			<li id="tmm_lc_row_<?php echo $row ?>" class="tmm-lc-row">
 
 				<div class="tmm-lc-row-buttons-wrapper">
-					<a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php _e("Add Row to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php _e("Add Column to Section", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php _e("Add Section to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php _e("Section Editor", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php _e("Delete Section", TMM_CC_TEXTDOMAIN) ?>"></a>
 				</div>
 
 				<div class="tmm-lc-columns" id="tmm_lc_columns_<?php echo $row ?>">
@@ -184,7 +184,7 @@
 	<?php
 	TMM_Content_Composer::html_option(array(
 		'type' => 'select',
-		'title' => __('Row Content Displaying', TMM_CC_TEXTDOMAIN),
+		'title' => __('Section Content Position', TMM_CC_TEXTDOMAIN),
 		'shortcode_field' => 'row_lc_displaying',
 		'id' => 'row_lc_displaying',
 		'options' => array(
@@ -197,6 +197,7 @@
 	?>
 
 	<div class="row_full_width" style="display: none;">
+		<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
@@ -210,7 +211,11 @@
 			'default_value' => TMM_Content_Composer::set_default_value('container_width', 0),
 			'description' => ''
 		));
+		?>
+		</div>
 
+		<div class="one-half">
+		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Container Height', TMM_CC_TEXTDOMAIN),
@@ -224,7 +229,10 @@
 			'default_value' => TMM_Content_Composer::set_default_value('container_height', 0),
 			'description' => ''
 		));
+		?>
+		</div>
 
+		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Content Align', TMM_CC_TEXTDOMAIN),
@@ -306,7 +314,7 @@
 	<?php
 	TMM_Content_Composer::html_option(array(
 		'type' => 'select',
-		'title' => __('Row Background Type', TMM_CC_TEXTDOMAIN),
+		'title' => __('Section Background Type', TMM_CC_TEXTDOMAIN),
 		'shortcode_field' => 'row_background_type',
 		'id' => 'row_background_type',
 		'options' => array(

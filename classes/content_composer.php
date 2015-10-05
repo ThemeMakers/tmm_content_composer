@@ -358,26 +358,25 @@ class TMM_Content_Composer {
 						$default_value = explode(',', $data['default_value']);
 					}
 					?>
-					<label class="sel">
-						<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" id="<?php echo isset($data['id']) ? esc_attr($data['id']) : ''; ?>">
-							<?php foreach ($data['options'] as $key => $text) {
 
-								$selected = '';
-								if ($data['multiple']) {
-									foreach ($default_value as $value) {
-										if (selected($value, $key)) {
-											$selected = selected($value, $key, false);
-										}
+					<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" id="<?php echo isset($data['id']) ? esc_attr($data['id']) : ''; ?>">
+						<?php foreach ($data['options'] as $key => $text) {
+
+							$selected = '';
+							if ($data['multiple']) {
+								foreach ($default_value as $value) {
+									if (selected($value, $key)) {
+										$selected = selected($value, $key, false);
 									}
-								}else{
-									$selected = selected($data['default_value'], $key, false);
 								}
-								?>
-								<option <?php echo $selected; ?> value="<?php echo esc_attr($key); ?>"><?php echo esc_html($text); ?></option>
+							}else{
+								$selected = selected($data['default_value'], $key, false);
+							}
+							?>
+							<option <?php echo $selected; ?> value="<?php echo esc_attr($key); ?>"><?php echo esc_html($text); ?></option>
 
-							<?php } ?>
-						</select>
-					</label>
+						<?php } ?>
+					</select>
 					<div class="preset_description"><?php echo $data['description'] ?></div>
 				<?php
 				}
