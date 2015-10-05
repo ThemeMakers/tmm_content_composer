@@ -57,7 +57,8 @@
 				</div>
 
 				<input type="hidden" id="row_lc_displaying_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['lc_displaying']) ? $tmm_layout_constructor_row[$row]['lc_displaying'] : 'default') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][lc_displaying]" />
-				<input type="hidden" id="row_content_full_width_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['content_full_width']) ? $tmm_layout_constructor_row[$row]['content_full_width'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][content_full_width]" />
+				<input type="hidden" id="row_container_width_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['container_width']) ? $tmm_layout_constructor_row[$row]['container_width'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][container_width]" />
+				<input type="hidden" id="row_container_height_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['container_height']) ? $tmm_layout_constructor_row[$row]['container_height'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][container_height]" />
 				<input type="hidden" id="row_bg_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['bg_type']) ? $tmm_layout_constructor_row[$row]['bg_type'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_type]" />
 				<input type="hidden" id="row_bg_data_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['bg_data']) ? $tmm_layout_constructor_row[$row]['bg_data'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_data]" />
 				<input type="hidden" id="row_bg_custom_color_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['bg_color']) ? $tmm_layout_constructor_row[$row]['bg_color'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_color]" />
@@ -121,7 +122,8 @@
 		<div class="tmm-lc-columns" id="tmm_lc_columns___ROW_ID__"></div>
 
 		<input type="hidden" id="row_lc_displaying___ROW_ID__" value="default" name="tmm_layout_constructor_row[__ROW_ID__][lc_displaying]" />
-		<input type="hidden" id="row_content_full_width___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][content_full_width]" />
+		<input type="hidden" id="row_container_width___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][container_width]" />
+		<input type="hidden" id="row_container_height___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][container_height]" />
 		<input type="hidden" id="row_bg_type___ROW_ID__" value="none" name="tmm_layout_constructor_row[__ROW_ID__][bg_type]" />
 		<input type="hidden" id="row_bg_data___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_data]" />
 		<input type="hidden" id="row_bg_custom_color___ROW_ID__" value="#fff" name="tmm_layout_constructor_row[__ROW_ID__][bg_color]" />
@@ -197,13 +199,31 @@
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Container Width', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'row_content_full_width',
-			'id' => 'row_content_full_width',
+			'shortcode_field' => 'row_container_width',
+			'id' => 'row_container_width',
 			'options' => array(
 				0 => __('Fixed Width', TMM_CC_TEXTDOMAIN),
 				1 => __('Full Width', TMM_CC_TEXTDOMAIN)
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('content_full_width', 0),
+			'default_value' => TMM_Content_Composer::set_default_value('container_width', 0),
+			'description' => ''
+		));
+		?>
+	</div>
+
+	<div class="content_full_width">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Container Height', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'row_container_height',
+			'id' => 'row_container_height',
+			'options' => array(
+				0 => __('Auto', TMM_CC_TEXTDOMAIN),
+				1 => __('50% of Screen', TMM_CC_TEXTDOMAIN),
+				2 => __('100% of Screen', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('container_height', 0),
 			'description' => ''
 		));
 		?>

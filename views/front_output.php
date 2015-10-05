@@ -10,8 +10,12 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$tmm_layout_constructor_row[$row]['lc_displaying'] = 'default';
 	}
 
-	if (!isset($tmm_layout_constructor_row[$row]['content_full_width'])) {
-		$tmm_layout_constructor_row[$row]['content_full_width'] = '0';
+	if (!isset($tmm_layout_constructor_row[$row]['container_width'])) {
+		$tmm_layout_constructor_row[$row]['container_width'] = '0';
+	}
+
+	if (!isset($tmm_layout_constructor_row[$row]['container_height'])) {
+		$tmm_layout_constructor_row[$row]['container_height'] = '0';
 	}
 
 	if (!empty($row_data) && ($tmm_layout_constructor_row[$row]['lc_displaying']==$row_displaying)) {
@@ -85,25 +89,33 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_class .= ' padding-bottom-100';
 		}
 
-//		if ($tmm_layout_constructor_row[$row]['full_width'] == 1 && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
-//			$section_class .= ' theme-default-bg';
-//		}
 		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'custom') {
 			$section_class .= ' parallax';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['container_width'] == 1) {
+			$container_class = 'container-fluid';
+		} else {
+			$container_class = 'container';
+		}
+
+		$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : 'left';
+
+		if (!empty($align) && $align === 'right') {
+			$section_class .= ' content-right';
+		} else if (!empty($align) && $align === 'center') {
+			$section_class .= ' content-center';
+		}
+
+		if ($tmm_layout_constructor_row[$row]['container_height'] == 1) {
+			$section_class .= ' viewport-50';
+		} else if ($tmm_layout_constructor_row[$row]['container_height'] == 2) {
+			$section_class .= ' viewport-100';
 		}
 
 		?>
 
 		<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
-
-			<?php
-			if ($tmm_layout_constructor_row[$row]['content_full_width'] == 1) {
-				$container_class = 'container-fluid';
-			} else {
-				$container_class = 'container';
-			}
-
-			?>
 
 			<div class="<?php echo $container_class; ?>">
 
@@ -133,7 +145,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				}
 
 				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
-				$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
 
 				$row_class = 'row';
 				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
@@ -147,9 +158,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				if (!empty($bg_color)) {
 					//$row_style_attr .= 'background:'.$bg_color.'; ';
 				}
-				if (!empty($align) && $align !== 'left') {
-					$row_style_attr .= 'text-align:'.$align.';';
-				}
+
 				if (!empty($row_style_attr)) {
 					$row_style_attr = ' style="'.$row_style_attr.'"';
 				}
@@ -170,8 +179,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				</div>
 
 			</div><!--/ .container-->
-
-
 
 		</section>
 

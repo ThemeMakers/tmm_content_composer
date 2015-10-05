@@ -359,13 +359,11 @@
 
 						var cur_popup = $('.tmm-popup-edit-row'),
 							lc_displaying = $('#row_lc_displaying_' + row_id).val(),
-							full_width = $('#row_full_width_' + row_id).val(),
-							content_full_width = $('#row_content_full_width_' + row_id).val(),
+							container_width = $('#row_container_width_' + row_id).val(),
+							container_height = $('#row_container_height_' + row_id).val(),
 							bg_type = $('#row_bg_type_' + row_id).val(),
 							padding_top = $('#row_padding_top_' + row_id).val(),
 							padding_bottom = $('#row_padding_bottom_' + row_id).val(),
-							margin_top = $('#row_margin_top_' + row_id).val(),
-							margin_bottom = $('#row_margin_bottom_' + row_id).val(),
 							bg_color = $('#row_bg_custom_color_' + row_id).val(),
 							bg_custom_type = $('#row_bg_custom_type_' + row_id).val(),
 							bg_opacity = $('#row_bg_custom_opacity_' + row_id).val(),
@@ -375,22 +373,12 @@
 							bg_is_cover = $('#row_bg_is_cover_' + row_id).val(),
 							align = $('#row_align_' + row_id).val(),
 							center = $('#row_center_' + row_id).val(),
-							section_content = $('#row_section_content_' + row_id).val(),
 							overlay = $('#row_overlay_' + row_id).val(),
 							bg_fullscreen = $('#row_bg_fullscreen_' + row_id).val(),
 							custom_box = cur_popup.find('#row_background_image_box'),
 							custom_box_color = cur_popup.find('#row_background_color_box'),
 							custom_box_image = cur_popup.find('.bg_custom_type_image'),
-							custom_box_video = cur_popup.find('.bg_custom_type_video'),
-							box_row_full_fidth  = cur_popup.find('.row_full_width'),
-							box_content_full_fidth  = cur_popup.find('.content_full_width');
-
-						if (lc_displaying == 'full_width' || lc_displaying == 'before_full_width'){
-							box_row_full_fidth.show();
-						}
-						if (full_width == 1 && (lc_displaying == 'full_width' || lc_displaying == 'before_full_width')){
-							box_content_full_fidth.show();
-						}
+							custom_box_video = cur_popup.find('.bg_custom_type_video');
 
 						if(!bg_type){
 							bg_type = 'none';
@@ -425,21 +413,12 @@
 						}
 
 						cur_popup.find('#row_lc_displaying').val(lc_displaying);
-						cur_popup.find('#row_full_width').val(full_width);
-						cur_popup.find('#row_content_full_width').val(content_full_width);
+						cur_popup.find('#row_container_width').val(container_width);
+						cur_popup.find('#row_container_height').val(container_height);
 						cur_popup.find('#row_background_type').val(bg_type);
 						cur_popup.find('#row_padding_top').val(padding_top);
 						cur_popup.find('#row_padding_bottom').val(padding_bottom);
-						cur_popup.find('#row_margin_top').val(margin_top);
-						cur_popup.find('#row_margin_bottom').val(margin_bottom);
 						cur_popup.find('#row_align').val(align);
-						cur_popup.find('#row_section_content').val(section_content);
-
-						if(section_content == 1){
-							cur_popup.find('#row_section_content').attr('checked', 'checked');
-						}else{
-							cur_popup.find('#row_section_content').removeAttr('checked');
-						}
 
 						if(center == 1){
 							cur_popup.find('#row_center').attr('checked', 'checked');
@@ -456,37 +435,6 @@
 						self.colorizator();
 
 						/* events handlers */
-
-						cur_popup.find('#row_lc_displaying').on('change', function(){
-							var val = $(this).val();
-							switch(val){
-								case 'default':
-									box_row_full_fidth.slideUp();
-									box_content_full_fidth.slideUp();
-									break;
-								case 'full_width':
-								case 'before_full_width':
-									box_row_full_fidth.slideDown();
-									if (cur_popup.find('#row_full_width').val()=='1'){
-										box_content_full_fidth.slideDown();
-									}
-									break;
-							}
-						});
-
-						cur_popup.find('#row_full_width').on('change', function(){
-							var val = $(this).val();
-
-							switch(val){
-								case '1':
-									box_content_full_fidth.slideDown();
-									break;
-								case '0':
-									box_content_full_fidth.slideUp();
-									break;
-							}
-						});
-
 						cur_popup.find('#row_background_type').on('change', function() {
 							var val = $(this).val();
 
@@ -582,8 +530,6 @@
 						template_wrapper.html(template_html);
 						/* remove events handlers */
 						var cur_popup = $('.tmm-popup-edit-row');
-						cur_popup.find('#row_lc_displaying').off('change');
-						cur_popup.find('#row_full_width').off('change');
 						cur_popup.find('#row_background_type').off('change');
 						cur_popup.find('#row_bg_custom_type').off('change');
 						cur_popup.find('.tmm_button_upload').off('click');
@@ -592,13 +538,11 @@
 					save: function() {
 						var cur_popup = $('.tmm-popup-edit-row'),
 							lc_displaying = cur_popup.find('#row_lc_displaying').val(),
-							full_width = cur_popup.find('#row_full_width').val(),
-							content_full_width = cur_popup.find('#row_content_full_width').val(),
+							container_width = cur_popup.find('#row_container_width').val(),
+							container_height = cur_popup.find('#row_container_height').val(),
 							bg_type = cur_popup.find('#row_background_type').val(),
 							padding_top = cur_popup.find('#row_padding_top').val(),
 							padding_bottom = cur_popup.find('#row_padding_bottom').val(),
-							margin_top = cur_popup.find('#row_margin_top').val(),
-							margin_bottom = cur_popup.find('#row_margin_bottom').val(),
 							bg_color = cur_popup.find('#row_background_color').val(),
 							bg_custom_type = cur_popup.find('#row_bg_custom_type').val(),
 							bg_opacity = cur_popup.find('#row_background_opacity').val(),
@@ -608,9 +552,19 @@
 							bg_is_cover = cur_popup.find('#row_background_is_cover').val(),
 							align = cur_popup.find('#row_align').val(),
 							center = cur_popup.find('#row_center').val(),
-							section_content = cur_popup.find('#row_section_content').val(),
 							overlay = cur_popup.find('#row_overlay').val(),
 							bg_fullscreen = cur_popup.find('#row_bg_fullscreen').val();
+
+						$('#row_lc_displaying_' + row_id).val(lc_displaying);
+						$('#row_container_width_' + row_id).val(container_width);
+						$('#row_container_height_' + row_id).val(container_height);
+						$('#row_bg_type_' + row_id).val(bg_type);
+						$('#row_padding_top_' + row_id).val(padding_top);
+						$('#row_padding_bottom_' + row_id).val(padding_bottom);
+						$('#row_align_' + row_id).val(align);
+						$('#row_center_' + row_id).val(center);
+						$('#row_overlay_' + row_id).val(overlay);
+						$('#row_bg_fullscreen_' + row_id).val(bg_fullscreen);
 
 						if (bg_type === 'custom') {
 							$('#row_bg_custom_color_' + row_id).val(bg_color);
@@ -621,20 +575,6 @@
 							$('#row_bg_attachment_' + row_id).val(bg_attachment);
 							$('#row_bg_is_cover_' + row_id).val(bg_is_cover);
 						}
-
-						$('#row_lc_displaying_' + row_id).val(lc_displaying);
-						$('#row_full_width_' + row_id).val(full_width);
-						$('#row_content_full_width_' + row_id).val(content_full_width);
-						$('#row_bg_type_' + row_id).val(bg_type);
-						$('#row_padding_top_' + row_id).val(padding_top);
-						$('#row_padding_bottom_' + row_id).val(padding_bottom);
-						$('#row_margin_top_' + row_id).val(margin_top);
-						$('#row_margin_bottom_' + row_id).val(margin_bottom);
-						$('#row_align_' + row_id).val(align);
-						$('#row_center_' + row_id).val(center);
-						$('#row_section_content_' + row_id).val(section_content);
-						$('#row_overlay_' + row_id).val(overlay);
-						$('#row_bg_fullscreen_' + row_id).val(bg_fullscreen);
 
 					}
 				};
