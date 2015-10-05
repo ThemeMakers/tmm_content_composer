@@ -105,7 +105,7 @@ switch($blog_type) {
 	break;
 	case 'blog-medium':
 		$post_area = 'post-list';
-		$post_class = 'post-entry';
+		$post_class .= ' post-entry';
 	break;		
 	case 'blog-masonry':
         $blog_type = 'masonry';

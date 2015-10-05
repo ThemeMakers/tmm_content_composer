@@ -295,8 +295,6 @@
 
 	</div><!--/ .one-half-->
 
-
-
 </div>
 
 <!-- --------------------------  PROCESSOR  --------------------------- -->
@@ -346,13 +344,18 @@
 					option_masonry.slideUp();
 					option_carousel.slideUp();
 					break;
-				case 'blog-grid':
 				case 'blog-grid-overlay':
 				case 'blog-grid-layout':
 					option_columns.slideDown(300);
 					option_default.slideDown(300);
 					option_masonry.slideUp();
 					option_carousel.slideDown(300);
+					break;
+				case 'blog-grid':
+					option_columns.slideDown(300);
+					option_default.slideDown(300);
+					option_masonry.slideUp();
+					option_carousel.slideUp(300);
 					break;
 			}
 		}
