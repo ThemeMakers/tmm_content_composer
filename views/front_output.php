@@ -10,10 +10,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$tmm_layout_constructor_row[$row]['lc_displaying'] = 'default';
 	}
 
-	if (!isset($tmm_layout_constructor_row[$row]['full_width'])) {
-		$tmm_layout_constructor_row[$row]['full_width'] = '0';
-	}
-
 	if (!isset($tmm_layout_constructor_row[$row]['content_full_width'])) {
 		$tmm_layout_constructor_row[$row]['content_full_width'] = '0';
 	}
@@ -89,26 +85,29 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_class .= ' padding-bottom-100';
 		}
 
-		if ($tmm_layout_constructor_row[$row]['full_width'] == 1 && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
-			$section_class .= ' theme-default-bg';
-		}
+//		if ($tmm_layout_constructor_row[$row]['full_width'] == 1 && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
+//			$section_class .= ' theme-default-bg';
+//		}
 		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'custom') {
 			$section_class .= ' parallax';
 		}
 
 		?>
 
-		<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
+		<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
 
 			<?php
-			if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&($row_displaying=='full_width')){
+			if ($tmm_layout_constructor_row[$row]['content_full_width'] == 1) {
+				$container_class = 'container-fluid';
+			} else {
+				$container_class = 'container';
+			}
+
 			?>
 
-			<div class="container">
+			<div class="<?php echo $container_class; ?>">
 
 				<?php
-				}
-
 				if (!empty($tmm_layout_constructor_row[$row]['bg_video']) && $tmm_layout_constructor_row[$row]['bg_custom_type']=='video' && $row_style['bg_type'] == 'custom'){
 					$video_type = TMM_Layout_Constructor::get_video_type($tmm_layout_constructor_row[$row]['bg_video']);
 
@@ -155,47 +154,26 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 					$row_style_attr = ' style="'.$row_style_attr.'"';
 				}
 
-				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
 				?>
 
-				<div class="container">
+				<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
 
-					<?php
-					}
-					?>
+					<?php foreach ($row_data as $uniqid => $column){ ?>
 
-					<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
+						<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
+						<div class="<?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
 
-						<?php foreach ($row_data as $uniqid => $column){ ?>
+					<?php } ?>
 
-							<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
-							<div class="<?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
+					<div class="clearfix"></div>
 
-						<?php } ?>
-
-						<div class="clearfix"></div>
-
-					</div>
-
-					<?php
-					if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
-					?>
-
-				</div><!--/ .container -->
-
-			<?php
-			}
-
-			if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&($row_displaying=='full_width')){
-			?>
+				</div>
 
 			</div><!--/ .container-->
 
-		<?php
-		}
-		?>
 
-		</div>
+
+		</section>
 
 	<?php
 	}

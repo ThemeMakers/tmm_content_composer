@@ -57,7 +57,6 @@
 				</div>
 
 				<input type="hidden" id="row_lc_displaying_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['lc_displaying']) ? $tmm_layout_constructor_row[$row]['lc_displaying'] : 'default') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][lc_displaying]" />
-				<input type="hidden" id="row_full_width_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['full_width']) ? $tmm_layout_constructor_row[$row]['full_width'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][full_width]" />
 				<input type="hidden" id="row_content_full_width_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['content_full_width']) ? $tmm_layout_constructor_row[$row]['content_full_width'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][content_full_width]" />
 				<input type="hidden" id="row_bg_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['bg_type']) ? $tmm_layout_constructor_row[$row]['bg_type'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_type]" />
 				<input type="hidden" id="row_bg_data_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['bg_data']) ? $tmm_layout_constructor_row[$row]['bg_data'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_data]" />
@@ -122,7 +121,6 @@
 		<div class="tmm-lc-columns" id="tmm_lc_columns___ROW_ID__"></div>
 
 		<input type="hidden" id="row_lc_displaying___ROW_ID__" value="default" name="tmm_layout_constructor_row[__ROW_ID__][lc_displaying]" />
-		<input type="hidden" id="row_full_width___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][full_width]" />
 		<input type="hidden" id="row_content_full_width___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][content_full_width]" />
 		<input type="hidden" id="row_bg_type___ROW_ID__" value="none" name="tmm_layout_constructor_row[__ROW_ID__][bg_type]" />
 		<input type="hidden" id="row_bg_data___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_data]" />
@@ -194,33 +192,16 @@
 	));
 	?>
 
-	<div class="row_full_width" style="display: none;">
+	<div class="content_full_width">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Row Full Width', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'row_full_width',
-			'id' => 'row_full_width',
-			'options' => array(
-				0 => __('No', TMM_CC_TEXTDOMAIN),
-				1 => __('Yes', TMM_CC_TEXTDOMAIN)
-			),
-			'default_value' => TMM_Content_Composer::set_default_value('full_width', 0),
-			'description' => ''
-		));
-		?>
-	</div>
-
-	<div class="content_full_width" style="display: none;">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Content Full Width', TMM_CC_TEXTDOMAIN),
+			'title' => __('Container Width', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'row_content_full_width',
 			'id' => 'row_content_full_width',
 			'options' => array(
-				0 => __('No', TMM_CC_TEXTDOMAIN),
-				1 => __('Yes', TMM_CC_TEXTDOMAIN)
+				0 => __('Fixed Width', TMM_CC_TEXTDOMAIN),
+				1 => __('Full Width', TMM_CC_TEXTDOMAIN)
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('content_full_width', 0),
 			'description' => ''
@@ -231,7 +212,7 @@
 	<?php
 	TMM_Content_Composer::html_option(array(
 		'type' => 'select',
-		'title' => __('Padding top', TMM_CC_TEXTDOMAIN),
+		'title' => __('Offset top', TMM_CC_TEXTDOMAIN),
 		'shortcode_field' => 'row_padding_top',
 		'id' => 'row_padding_top',
 		'options' => array(
@@ -248,7 +229,7 @@
 
 	TMM_Content_Composer::html_option(array(
 		'type' => 'select',
-		'title' => __('Padding bottom', TMM_CC_TEXTDOMAIN),
+		'title' => __('Offset bottom', TMM_CC_TEXTDOMAIN),
 		'shortcode_field' => 'row_padding_bottom',
 		'id' => 'row_padding_bottom',
 		'options' => array(
