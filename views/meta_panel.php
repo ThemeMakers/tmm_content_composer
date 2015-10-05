@@ -239,6 +239,21 @@
 			'description' => ''
 		));
 
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Border Top', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'row_border_top',
+			'id' => 'row_border_top',
+			'options' => array(
+				'0' => __('No Top Border', TMM_CC_TEXTDOMAIN),
+				'1' => __('Border Style 1', TMM_CC_TEXTDOMAIN),
+				'2' => __('Border Style 2', TMM_CC_TEXTDOMAIN),
+				'3' => __('Border Style 3', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('border_top', '0'),
+			'description' => ''
+		));
+
 		?>
 	</div>
 
@@ -275,21 +290,6 @@
 		),
 		'default_value' => TMM_Content_Composer::set_default_value('padding_bottom', '0'),
 		'description' => 'Default Value 0px'
-	));
-
-	TMM_Content_Composer::html_option(array(
-		'type' => 'select',
-		'title' => __('Border Top', TMM_CC_TEXTDOMAIN),
-		'shortcode_field' => 'row_border_top',
-		'id' => 'row_border_top',
-		'options' => array(
-			'0' => __('No Top Border', TMM_CC_TEXTDOMAIN),
-			'1' => __('Border Style 1', TMM_CC_TEXTDOMAIN),
-			'2' => __('Border Style 2', TMM_CC_TEXTDOMAIN),
-			'3' => __('Border Style 3', TMM_CC_TEXTDOMAIN),
-		),
-		'default_value' => TMM_Content_Composer::set_default_value('border_top', '0'),
-		'description' => ''
 	));
 
 	?>

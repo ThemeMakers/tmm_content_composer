@@ -48,6 +48,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$row_style = TMM_Layout_Constructor::get_row_bg($tmm_layout_constructor_row, $row);
 		$section_class = '';
 		$container_class = 'container';
+		$row_class = 'row';
 
 		if ($row_displaying === 'full_width') {
 			$section_class .= 'section';
@@ -68,6 +69,19 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				$section_class .= ' content-right';
 			} else if (!empty($align) && $align === 'center') {
 				$section_class .= ' content-center';
+			}
+
+			/* border top */
+			if ($tmm_layout_constructor_row[$row]['border_top'] === '1') {
+				$section_class .= ' brd-1';
+			}
+
+			if ($tmm_layout_constructor_row[$row]['border_top'] === '2') {
+				$section_class .= ' brd-2';
+			}
+
+			if ($tmm_layout_constructor_row[$row]['border_top'] === '3') {
+				$section_class .= ' brd-3';
 			}
 
 		}
@@ -117,35 +131,22 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_class .= ' padding-bottom-100';
 		}
 
-		/* border top */
-		if ($tmm_layout_constructor_row[$row]['border_top'] === '1') {
-			$section_class .= ' brd-1';
-		}
-
-		if ($tmm_layout_constructor_row[$row]['border_top'] === '2') {
-			$section_class .= ' brd-2';
-		}
-
-		if ($tmm_layout_constructor_row[$row]['border_top'] === '3') {
-			$section_class .= ' brd-3';
-		}
-
 		/* background */
 		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'custom') {
 			$section_class .= ' parallax';
 		}
 
 		if ($row_displaying === 'default') {
-			$container_class .= $section_class;
+			$row_class .= $section_class;
 		}
 
 		?>
 
 		<?php if ($row_displaying === 'full_width') { ?>
 		<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>">
-		<?php } ?>
 
 			<div class="<?php echo $container_class; ?>">
+		<?php } ?>
 
 				<?php
 				if (!empty($tmm_layout_constructor_row[$row]['bg_video']) && $tmm_layout_constructor_row[$row]['bg_custom_type']=='video' && $row_style['bg_type'] == 'custom'){
@@ -174,7 +175,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
 
-				$row_class = 'row';
 				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
 					$row_class .= ' theme-default-bg';
 				}
@@ -206,9 +206,9 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 				</div>
 
+		<?php if ($row_displaying === 'full_width') { ?>
 			</div><!--/ .container-->
 
-		<?php if ($row_displaying === 'full_width') { ?>
 		</section>
 		<?php } ?>
 
