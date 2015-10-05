@@ -86,7 +86,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 		}
 
-		/* padding */
+		/* Offset Options */
 		if ($tmm_layout_constructor_row[$row]['padding_top'] === '0' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '0') {
 			$section_class .= ' padding-off';
 		}

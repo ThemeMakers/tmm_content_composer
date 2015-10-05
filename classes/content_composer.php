@@ -80,16 +80,13 @@ class TMM_Content_Composer {
 
 		global $pagenow;
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' ) {
-			wp_enqueue_style('tmm_popup', TMM_CC_URL . 'css/popup.css');
+			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc-admin.css');
 			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/admin/popup.js', array('jquery'));
 
 			wp_enqueue_style('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker/colorpicker.css');
 			wp_enqueue_script('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker/colorpicker.js', array('jquery'));
 
-			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_admin.css');
 			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/admin/shortcodes.js', array('jquery'), false, true);
-
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
 
 			?>
 			<script type="text/javascript">
@@ -112,7 +109,6 @@ class TMM_Content_Composer {
 		<?php
 		}
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' ) {
-			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/layout_admin.css');
 			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/admin/layout.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable'), false, true);
 
 			?>
@@ -129,11 +125,9 @@ class TMM_Content_Composer {
 	}
 
 	public static function enqueue_scripts() {
-		wp_deregister_style('mediaelement');
 		wp_deregister_style('wp-mediaelement');
-		wp_enqueue_style('tmm_mediaelement', TMM_CC_URL . 'css/mediaelement/mediaelementplayer.css');
 
-		wp_enqueue_style('tmm_composer_front', TMM_CC_URL . 'css/front.css');
+		wp_enqueue_style('tmm_composer_theme', TMM_CC_URL . 'css/style-lc.css');
 
 		if (!class_exists('TMM')) {
 
@@ -141,10 +135,6 @@ class TMM_Content_Composer {
 				'ajaxurl' => admin_url('admin-ajax.php'),
 			);
 			wp_localize_script('tmm_composer_theme', 'tmm_l10n', $translation_array);
-
-			wp_enqueue_style('tmm_tooltipster', TMM_CC_URL . 'css/tooltipster.css');
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
-			wp_enqueue_style('tmm_composer_theme', TMM_CC_URL . 'css/theme.css');
 
 			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/min/jquery.modernizr.min.js', array('jquery'));
 			wp_enqueue_script('tmm_composer_theme', TMM_CC_URL . 'js/theme.js', array('jquery'), false, true);
