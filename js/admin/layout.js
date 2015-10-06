@@ -367,6 +367,7 @@
 							border_top = $('#row_border_top_' + row_id).val(),
 							bg_type = $('#row_bg_type_' + row_id).val(),
 							bg_color = $('#row_bg_custom_color_' + row_id).val(),
+							bg_color_type = $('#row_bg_color_type_' + row_id).val(),
 							bg_image = $('#row_bg_custom_image_' + row_id).val(),
 							bg_video = $('#row_bg_custom_video_' + row_id).val(),
 							bg_attachment = $('#row_bg_attachment_' + row_id).val(),
@@ -395,6 +396,7 @@
 						}
 
 						if (bg_type !== 'none') {
+							cur_popup.find('#row_background_color_type').val(bg_color_type).next('.bgpicker').css('background-color', bg_color_type);
 							cur_popup.find('#row_background_color').val(bg_color).next('.bgpicker').css('background-color', bg_color);
 							cur_popup.find('#row_background_image').val(bg_image);
 							cur_popup.find('#row_background_video').val(bg_video);
@@ -520,6 +522,7 @@
 							padding_bottom = cur_popup.find('#row_padding_bottom').val(),
 							border_top = cur_popup.find('#row_border_top').val(),
 							bg_type = cur_popup.find('#row_background_type').val(),
+							bg_color_type = cur_popup.find('#row_background_color_type').val(),
 							bg_color = cur_popup.find('#row_background_color').val(),
 							bg_image = cur_popup.find('#row_background_image').val(),
 							bg_attachment = cur_popup.find('#row_bg_attachment').val(),
@@ -535,6 +538,7 @@
 						$('#row_padding_bottom_' + row_id).val(padding_bottom);
 						$('#row_border_top_' + row_id).val(border_top);
 						$('#row_bg_type_' + row_id).val(bg_type);
+						$('#row_bg_color_type_' + row_id).val(bg_color_type);
 						$('#row_bg_custom_color_' + row_id).val(bg_color);
 						$('#row_bg_custom_image_' + row_id).val(bg_image);
 						$('#row_bg_attachment_' + row_id).val(bg_attachment);

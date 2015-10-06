@@ -59,9 +59,10 @@
 				<input type="hidden" id="row_lc_displaying_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['lc_displaying']) ? $tmm_layout_constructor_row[$row]['lc_displaying'] : 'default') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][lc_displaying]" />
 				<input type="hidden" id="row_container_width_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['container_width']) ? $tmm_layout_constructor_row[$row]['container_width'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][container_width]" />
 				<input type="hidden" id="row_container_height_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['container_height']) ? $tmm_layout_constructor_row[$row]['container_height'] : 0) ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][container_height]" />
-				<input type="hidden" id="row_bg_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['bg_type']) ? $tmm_layout_constructor_row[$row]['bg_type'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_type]" />
+				<input type="hidden" id="row_bg_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['bg_type']) ? $tmm_layout_constructor_row[$row]['bg_type'] : 'none') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_type]" />
 				<input type="hidden" id="row_bg_data_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['bg_data']) ? $tmm_layout_constructor_row[$row]['bg_data'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_data]" />
 				<input type="hidden" id="row_bg_custom_color_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['bg_color']) ? $tmm_layout_constructor_row[$row]['bg_color'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_color]" />
+				<input type="hidden" id="row_bg_color_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['bg_color_type']) ? $tmm_layout_constructor_row[$row]['bg_color_type'] : '0') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_color_type]" />
 
 				<input type="hidden" id="row_bg_custom_type_<?php echo $row ?>" value="<?php echo (isset($tmm_layout_constructor_row[$row]['bg_custom_type']) ? $tmm_layout_constructor_row[$row]['bg_custom_type'] : '') ?>" name="tmm_layout_constructor_row[<?php echo $row ?>][bg_custom_type]" />
 
@@ -128,6 +129,7 @@
 		<input type="hidden" id="row_bg_type___ROW_ID__" value="none" name="tmm_layout_constructor_row[__ROW_ID__][bg_type]" />
 		<input type="hidden" id="row_bg_data___ROW_ID__" value="" name="tmm_layout_constructor_row[__ROW_ID__][bg_data]" />
 		<input type="hidden" id="row_bg_custom_color___ROW_ID__" value="#fff" name="tmm_layout_constructor_row[__ROW_ID__][bg_color]" />
+		<input type="hidden" id="row_bg_custom_color_type___ROW_ID__" value="0" name="tmm_layout_constructor_row[__ROW_ID__][bg_color_type]" />
 
 		<input type="hidden" id="row_bg_custom_type___ROW_ID__" value="none" name="tmm_layout_constructor_row[__ROW_ID__][bg_custom_type]" />
 
@@ -323,7 +325,7 @@
 			'image' => __('Image', TMM_CC_TEXTDOMAIN),
 			//'video' => __('Video', TMM_CC_TEXTDOMAIN)
 		),
-		'default_value' => 'none',
+		'default_value' => TMM_Content_Composer::set_default_value('background_type', 'none'),
 		'description' => ''
 	));
 	?>
@@ -345,7 +347,7 @@
 				'bg-color-4' => __('Light Blue', TMM_CC_TEXTDOMAIN),
 				'custom' => __('Custom', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => 'none',
+			'default_value' => TMM_Content_Composer::set_default_value('background_color_type', '0'),
 			'description' => ''
 		));
 		?>
@@ -390,8 +392,8 @@
 			'shortcode_field' => 'row_bg_attachment',
 			'id' => 'row_bg_attachment',
 			'options' => array(
-				'scroll' => __('scroll', TMM_CC_TEXTDOMAIN),
-				'fixed' => __('fixed', TMM_CC_TEXTDOMAIN)
+				'1' => __('scroll', TMM_CC_TEXTDOMAIN),
+				'0' => __('fixed', TMM_CC_TEXTDOMAIN)
 			),
 			'default_value' => 'scroll',
 			'description' => ''

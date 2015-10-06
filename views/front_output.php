@@ -45,10 +45,11 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$border_top = (int) $tmm_layout_constructor_row[$row]['border_top'];
 		}
 
-		$row_style = TMM_Layout_Constructor::get_row_bg($tmm_layout_constructor_row, $row);
 		$section_class = '';
+		$section_style_attr = '';
 		$container_class = 'container';
 		$row_class = 'row';
+		$row_style_attr = '';
 
 		if ($row_displaying === 'full_width') {
 			$section_class .= '';
@@ -132,70 +133,50 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		}
 
 		/* background */
-		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'image') {
-			$section_class .= ' parallax';
+		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] !== 'none') {
+
+			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && !empty($tmm_layout_constructor_row[$row]['bg_image'])) {
+				$section_class .= ' parallax';
+				$section_style_attr .= 'background-image: url(' . $tmm_layout_constructor_row[$row]["bg_image"] . ');';
+			}
+
+			if (!empty($tmm_layout_constructor_row[$row]['bg_color_type'])) {
+
+				if ($tmm_layout_constructor_row[$row]['bg_color_type'] === 'custom') {
+					$section_style_attr .= 'background:'.$tmm_layout_constructor_row[$row]['bg_color'].'; ';
+				} else {
+					$section_class .= ' ' . $tmm_layout_constructor_row[$row]['bg_color_type'];
+				}
+
+			}
+
 		}
 
 		if ($row_displaying === 'default') {
 			$row_class .= $section_class;
+			$row_style_attr .= $section_style_attr;
+		}
+
+		/* wrap section and row styles */
+		if (!empty($section_style_attr)) {
+			$section_style_attr = ' style="' . $section_style_attr . '"';
+		}
+
+		if (!empty($row_style_attr)) {
+			$row_style_attr = ' style="'.$row_style_attr.'"';
 		}
 
 		?>
 
 		<?php if ($row_displaying === 'full_width') { ?>
-		<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>">
+		<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
 
 			<div class="<?php echo $container_class; ?>">
 		<?php } ?>
 
-				<?php
-				if (!empty($tmm_layout_constructor_row[$row]['bg_video']) && $tmm_layout_constructor_row[$row]['bg_custom_type']=='video' && $row_style['bg_type'] == 'custom'){
-					$video_type = TMM_Layout_Constructor::get_video_type($tmm_layout_constructor_row[$row]['bg_video']);
+				<div <?php if ($row_displaying === 'default') { ?>id="<?php echo 'section_'.$row ?>"<?php } ?> class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
 
-					$top = ($post->post_type=='page' && empty($post->post_content) && $first_row['bg_custom_type']=='video') ? '0' : '100px';
-					$video_options=array(
-						'video_url' => $tmm_layout_constructor_row[$row]['bg_video'],
-						'video_type' => $video_type,
-						'video_quality' => 'default',
-						'top' => $top,
-						'containment' => '#section_'.$row
-					);
-
-					echo TMM_Layout_Constructor::display_rowbg_video($video_options);
-
-				}
-
-				if (isset($tmm_layout_constructor_row[$row]['row_overlay']) && $tmm_layout_constructor_row[$row]['row_overlay'] == true && isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom'){
-					?>
-
-					<div class="parallax-overlay"></div>
-
-				<?php
-				}
-
-				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
-
-				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
-					$row_class .= ' theme-default-bg';
-				}
-
-				$row_style_attr = '';
-				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] != 'custom' && isset($row_style['style_custom_color'])) {
-					$row_style_attr .= $row_style['style_custom_color'];
-				}
-				if (!empty($bg_color)) {
-					//$row_style_attr .= 'background:'.$bg_color.'; ';
-				}
-
-				if (!empty($row_style_attr)) {
-					$row_style_attr = ' style="'.$row_style_attr.'"';
-				}
-
-				?>
-
-				<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
-
-					<?php foreach ($row_data as $uniqid => $column){ ?>
+					<?php foreach ($row_data as $uniqid => $column) { ?>
 
 						<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
 						<div class="<?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
@@ -210,6 +191,37 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			</div><!--/ .container-->
 
 		</section>
+		<?php } ?>
+
+		<?php if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && !empty($tmm_layout_constructor_row[$row]['bg_image']) && !empty($tmm_layout_constructor_row[$row]['bg_attachment'])) { ?>
+			<script type="text/javascript">
+				function on(el, eventName, handler) {
+					if (el.addEventListener) {
+						el.addEventListener(eventName, handler);
+					} else {
+						el.attachEvent('on' + eventName, handler);
+					}
+				}
+
+				var section = document.querySelector('#section_<?php echo $row; ?>');
+
+				// checks if the element is vertically visible
+				function isVisible( el ){
+					return ( ( window.innerHeight + window.scrollY > el.offsetTop ) && (window.scrollY < el.offsetTop + el.offsetHeight ) );
+				}
+
+				function bgScroll( el ){
+					if( isVisible( el ) ) {
+						el.style.backgroundPosition = '0 ' + ( el.offsetTop - window.scrollY ) / 3 + 'px';
+					}
+				}
+
+				on( window, 'scroll', function(){
+
+					bgScroll( section );
+
+				});
+			</script>
 		<?php } ?>
 
 	<?php
