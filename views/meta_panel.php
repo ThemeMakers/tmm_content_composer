@@ -321,7 +321,7 @@
 			'none' => __('Transparent (default)', TMM_CC_TEXTDOMAIN),
 			'color' => __('Color', TMM_CC_TEXTDOMAIN),
 			'image' => __('Image', TMM_CC_TEXTDOMAIN),
-			'video' => __('Video', TMM_CC_TEXTDOMAIN)
+			//'video' => __('Video', TMM_CC_TEXTDOMAIN)
 		),
 		'default_value' => 'none',
 		'description' => ''
@@ -338,11 +338,12 @@
 			'shortcode_field' => 'row_background_color_type',
 			'id' => 'row_background_color_type',
 			'options' => array(
-				'none' => __('None', TMM_CC_TEXTDOMAIN),
-				'white' => __('White', TMM_CC_TEXTDOMAIN),
-				'silver' => __('Silver', TMM_CC_TEXTDOMAIN),
-				'light_gray' => __('Light Gray', TMM_CC_TEXTDOMAIN),
-				'light_blue' => __('Light Blue', TMM_CC_TEXTDOMAIN),
+				'0' => __('None', TMM_CC_TEXTDOMAIN),
+				'bg-color-1' => __('White', TMM_CC_TEXTDOMAIN),
+				'bg-color-2' => __('Silver', TMM_CC_TEXTDOMAIN),
+				'bg-color-3' => __('Light Gray', TMM_CC_TEXTDOMAIN),
+				'bg-color-4' => __('Light Blue', TMM_CC_TEXTDOMAIN),
+				'custom' => __('Custom', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => 'none',
 			'description' => ''
