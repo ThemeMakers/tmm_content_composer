@@ -318,109 +318,113 @@
 		'shortcode_field' => 'row_background_type',
 		'id' => 'row_background_type',
 		'options' => array(
-			'none' => __('None', TMM_CC_TEXTDOMAIN),
-			//'default' => __('Default Theme Color', TMM_CC_TEXTDOMAIN),
-			'custom' => __('Custom', TMM_CC_TEXTDOMAIN),
+			'none' => __('Transparent (default)', TMM_CC_TEXTDOMAIN),
+			'color' => __('Color', TMM_CC_TEXTDOMAIN),
+			'image' => __('Image', TMM_CC_TEXTDOMAIN),
+			'video' => __('Video', TMM_CC_TEXTDOMAIN)
 		),
 		'default_value' => 'none',
 		'description' => ''
 	));
 	?>
 
-	<div id="row_background_image_box" style="display: none;">
+	<div id="row_background_color_box" style="display: none;">
 
+		<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Custom Background Type', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'row_background_custom_type',
-			'id' => 'row_bg_custom_type',
+			'title' => __('Preinstalled BG Colors', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'row_background_color_type',
+			'id' => 'row_background_color_type',
 			'options' => array(
-				'color' => __('Color', TMM_CC_TEXTDOMAIN),
-				'image' => __('Image', TMM_CC_TEXTDOMAIN),
-				'video' => __('Video', TMM_CC_TEXTDOMAIN)
+				'none' => __('None', TMM_CC_TEXTDOMAIN),
+				'white' => __('White', TMM_CC_TEXTDOMAIN),
+				'silver' => __('Silver', TMM_CC_TEXTDOMAIN),
+				'light_gray' => __('Light Gray', TMM_CC_TEXTDOMAIN),
+				'light_blue' => __('Light Blue', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => 'color',
+			'default_value' => 'none',
 			'description' => ''
 		));
 		?>
-
-		<div id="row_background_color_box" style="display: none;">
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'title' => __('Background Color', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'row_background_color',
-				'type' => 'color',
-				'description' => '',
-				'default_value' => '',
-				'id' => 'row_background_color',
-				'display' =>1
-			));
-			?>
 		</div>
 
-
-		<div class="bg_custom_type_image" style="display: none;">
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'type' => 'upload',
-				'title' => __('Background Image', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'row_background_image',
-				'id' => 'row_background_image',
-				'default_value' => '',
-				'description' => ''
-			));
-			?>
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'type' => 'select',
-				'title' => __('Background Attachment', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'row_bg_attachment',
-				'id' => 'row_bg_attachment',
-				'options' => array(
-					'scroll' => __('scroll', TMM_CC_TEXTDOMAIN),
-					'fixed' => __('fixed', TMM_CC_TEXTDOMAIN)
-				),
-				'default_value' => 'scroll',
-				'description' => ''
-			));
-			?>
-		</div>
-		<div class="bg_custom_type_video" style="display: none;">
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'type' => 'upload_video',
-				'title' => __('Background Video', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'row_background_video',
-				'id' => 'row_background_video',
-				'default_value' => '',
-				'description' => 'Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg http://vimeo.com/22439234 or upload self hosted video'
-			));
-			?>
-		</div>
-
-
+		<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Row Background Fullscreen', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'row_background_fullscreen',
-			'id' => 'row_bg_fullscreen',
-			'default_value' => 0,
-			'is_checked'=>false,
-			'description' => __('Set The Row Background Image Fullscreen', TMM_CC_TEXTDOMAIN),
+			'title' => __('Custom Background Color', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'row_background_color',
+			'type' => 'color',
+			'description' => '',
+			'default_value' => '',
+			'id' => 'row_background_color',
+			'display' =>1
 		));
 		?>
+		</div>
 
+	</div>
+
+	<div class="bg_custom_type_image" style="display: none;">
+
+		<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'row_overlay',
-			'id' => 'row_overlay',
-			'is_checked'=>TMM_Content_Composer::set_default_value('overlay', false),
-			'description' => 'Set overlay on background image'
+			'type' => 'upload',
+			'title' => __('Background Image', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'row_background_image',
+			'id' => 'row_background_image',
+			'default_value' => '',
+			'description' => ''
 		));
+		?>
+		</div>
+
+		<div class="one-half">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Background Attachment', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'row_bg_attachment',
+			'id' => 'row_bg_attachment',
+			'options' => array(
+				'scroll' => __('scroll', TMM_CC_TEXTDOMAIN),
+				'fixed' => __('fixed', TMM_CC_TEXTDOMAIN)
+			),
+			'default_value' => 'scroll',
+			'description' => ''
+		));
+		?>
+		</div>
+
+	</div>
+
+	<div class="bg_custom_type_video" style="display: none;">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'upload_video',
+			'title' => __('Background Video', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'row_background_video',
+			'id' => 'row_background_video',
+			'default_value' => '',
+			'description' => 'Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg http://vimeo.com/22439234 or upload self hosted video'
+		));
+		?>
+	</div>
+
+	<div id="row_background_image_box" style="display: none;">
+
+
+		<?php
+//		TMM_Content_Composer::html_option(array(
+//			'type' => 'checkbox',
+//			'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
+//			'shortcode_field' => 'row_overlay',
+//			'id' => 'row_overlay',
+//			'is_checked'=>TMM_Content_Composer::set_default_value('overlay', false),
+//			'description' => 'Set overlay on background image'
+//		));
 		?>
 
 	</div>
@@ -428,14 +432,14 @@
 	<div id="row_background_opacity_box" style="display: none;">
 
 		<?php
-		TMM_Content_Composer::html_option(array(
-			'title' => __('Opacity', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'row_background_opacity',
-			'type' => 'text',
-			'description' => 'min:0, max:100',
-			'default_value' => 100,
-			'id' => 'row_background_opacity'
-		));
+//		TMM_Content_Composer::html_option(array(
+//			'title' => __('Opacity', TMM_CC_TEXTDOMAIN),
+//			'shortcode_field' => 'row_background_opacity',
+//			'type' => 'text',
+//			'description' => 'min:0, max:100',
+//			'default_value' => 100,
+//			'id' => 'row_background_opacity'
+//		));
 		?>
 
 	</div>

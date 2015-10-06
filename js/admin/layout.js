@@ -367,16 +367,11 @@
 							border_top = $('#row_border_top_' + row_id).val(),
 							bg_type = $('#row_bg_type_' + row_id).val(),
 							bg_color = $('#row_bg_custom_color_' + row_id).val(),
-							bg_custom_type = $('#row_bg_custom_type_' + row_id).val(),
-							bg_opacity = $('#row_bg_custom_opacity_' + row_id).val(),
 							bg_image = $('#row_bg_custom_image_' + row_id).val(),
 							bg_video = $('#row_bg_custom_video_' + row_id).val(),
 							bg_attachment = $('#row_bg_attachment_' + row_id).val(),
-							bg_is_cover = $('#row_bg_is_cover_' + row_id).val(),
-							//center = $('#row_center_' + row_id).val(),
-							overlay = $('#row_overlay_' + row_id).val(),
-							bg_fullscreen = $('#row_bg_fullscreen_' + row_id).val(),
-							custom_box = cur_popup.find('#row_background_image_box'),
+							//bg_opacity = $('#row_bg_custom_opacity_' + row_id).val(),
+							//overlay = $('#row_overlay_' + row_id).val(),
 							custom_box_color = cur_popup.find('#row_background_color_box'),
 							custom_box_image = cur_popup.find('.bg_custom_type_image'),
 							custom_box_video = cur_popup.find('.bg_custom_type_video'),
@@ -399,46 +394,29 @@
 							bg_type = 'none';
 						}
 
-						if (bg_type === 'custom') {
-							cur_popup.find('#row_bg_custom_type').val(bg_custom_type);
+						if (bg_type !== 'none') {
 							cur_popup.find('#row_background_color').val(bg_color).next('.bgpicker').css('background-color', bg_color);
 							cur_popup.find('#row_background_image').val(bg_image);
 							cur_popup.find('#row_background_video').val(bg_video);
-							cur_popup.find('#row_background_opacity').val(bg_opacity);
 							cur_popup.find('#row_bg_attachment').val(bg_attachment);
-							cur_popup.find('#row_background_is_cover').val(bg_is_cover);
+							//cur_popup.find('#row_background_is_cover').val(bg_is_cover);
+							//cur_popup.find('#row_background_opacity').val(bg_opacity);
 
-							if (bg_custom_type === 'color'){
+							if (bg_type === 'color'){
 								custom_box_color.show();
 							}
-							if ((bg_custom_type === 'image')){
+							if ((bg_type === 'image')){
 								custom_box_image.show();
 							}
-							if (bg_custom_type === 'video'){
+							if (bg_type === 'video'){
 								custom_box_video.show();
 							}
 
-							custom_box.show();
-
-							if (bg_is_cover == 1) {
-								cur_popup.find('#row_background_is_cover').attr('checked', 'checked');
-							}else{
-								cur_popup.find('#row_background_is_cover').removeAttr('checked');
-							}
 						}
 
-						//if(center == 1){
-						//	cur_popup.find('#row_center').attr('checked', 'checked');
-						//}else{
-						//	cur_popup.find('#row_center').removeAttr('checked');
+						//if (overlay == 1){
+						//	cur_popup.find('#row_overlay').attr('checked', 'checked').val('1');
 						//}
-
-						if (overlay == 1){
-							cur_popup.find('#row_overlay').attr('checked', 'checked').val('1');
-						}
-						if (bg_fullscreen == 1){
-							cur_popup.find('#row_bg_fullscreen').attr('checked', 'checked').val('1');
-						}
 						self.colorizator();
 
 						/* events handlers */
@@ -456,50 +434,29 @@
 						cur_popup.find('#row_background_type').on('change', function() {
 							var val = $(this).val();
 
-							switch (val) {
-								case 'custom':
-									custom_box.slideDown();
+							if (val === 'none') {
+								custom_box_color.slideUp();
+								custom_box_image.slideUp();
+								custom_box_video.slideUp();
+							} else {
 
-									if (bg_custom_type === 'color' || bg_custom_type==='none'){
-										custom_box_color.slideDown();
-									}
-									if ((bg_custom_type === 'image')){
-										custom_box_image.slideDown();
-									}
-									if (bg_custom_type === 'video'){
-										custom_box_video.slideDown();
-									}
-									break;
-								case 'default':
-								case 'none':
-									custom_box.slideUp();
-									break;
-								default:
-									break;
-							}
-						});
-
-						cur_popup.find('#row_bg_custom_type').on('change', function(){
-							var val = $(this).val();
-							switch(val){
-								case 'color':
+								if (val === 'color'){
 									custom_box_color.slideDown();
 									custom_box_image.slideUp();
 									custom_box_video.slideUp();
-									break;
-								case 'image':
+								}
+								if (val === 'image'){
 									custom_box_image.slideDown();
 									custom_box_color.slideUp();
 									custom_box_video.slideUp();
-									break;
-								case 'video':
+								}
+								if (val === 'video'){
 									custom_box_video.slideDown();
 									custom_box_color.slideUp();
 									custom_box_image.slideUp();
-									break;
-								default:
-									break;
+								}
 							}
+
 						});
 
 						cur_popup.find('.tmm_button_upload').on('click', function() {
@@ -550,7 +507,6 @@
 						var cur_popup = $('.tmm-popup-edit-row');
 						cur_popup.find('#row_lc_displaying').off('change');
 						cur_popup.find('#row_background_type').off('change');
-						cur_popup.find('#row_bg_custom_type').off('change');
 						cur_popup.find('.tmm_button_upload').off('click');
 						cur_popup.find('.tmm-popup-content input[type=checkbox]').off('click');
 					},
@@ -565,15 +521,11 @@
 							border_top = cur_popup.find('#row_border_top').val(),
 							bg_type = cur_popup.find('#row_background_type').val(),
 							bg_color = cur_popup.find('#row_background_color').val(),
-							bg_custom_type = cur_popup.find('#row_bg_custom_type').val(),
-							bg_opacity = cur_popup.find('#row_background_opacity').val(),
 							bg_image = cur_popup.find('#row_background_image').val(),
-							bg_video = cur_popup.find('#row_background_video').val(),
 							bg_attachment = cur_popup.find('#row_bg_attachment').val(),
-							bg_is_cover = cur_popup.find('#row_background_is_cover').val(),
-							//center = cur_popup.find('#row_center').val(),
-							overlay = cur_popup.find('#row_overlay').val(),
-							bg_fullscreen = cur_popup.find('#row_bg_fullscreen').val();
+							bg_video = cur_popup.find('#row_background_video').val();
+							//bg_opacity = cur_popup.find('#row_background_opacity').val(),
+							//overlay = cur_popup.find('#row_overlay').val(),
 
 						$('#row_lc_displaying_' + row_id).val(lc_displaying);
 						$('#row_container_width_' + row_id).val(container_width);
@@ -583,19 +535,12 @@
 						$('#row_padding_bottom_' + row_id).val(padding_bottom);
 						$('#row_border_top_' + row_id).val(border_top);
 						$('#row_bg_type_' + row_id).val(bg_type);
-						//$('#row_center_' + row_id).val(center);
-						$('#row_overlay_' + row_id).val(overlay);
-						$('#row_bg_fullscreen_' + row_id).val(bg_fullscreen);
-
-						if (bg_type === 'custom') {
-							$('#row_bg_custom_color_' + row_id).val(bg_color);
-							$('#row_bg_custom_type_' + row_id).val(bg_custom_type);
-							$('#row_bg_custom_opacity_' + row_id).val(bg_opacity);
-							$('#row_bg_custom_image_' + row_id).val(bg_image);
-							$('#row_bg_custom_video_' + row_id).val(bg_video);
-							$('#row_bg_attachment_' + row_id).val(bg_attachment);
-							$('#row_bg_is_cover_' + row_id).val(bg_is_cover);
-						}
+						$('#row_bg_custom_color_' + row_id).val(bg_color);
+						$('#row_bg_custom_image_' + row_id).val(bg_image);
+						$('#row_bg_attachment_' + row_id).val(bg_attachment);
+						$('#row_bg_custom_video_' + row_id).val(bg_video);
+						//$('#row_overlay_' + row_id).val(overlay);
+						//$('#row_bg_custom_opacity_' + row_id).val(bg_opacity);
 
 					}
 				};
