@@ -119,7 +119,7 @@ class TMM_Shortcode {
 			$results = array();
 		}
 
-		self::$shortcodes_keys_by_folders['default'][] = 'price_table';
+		self::$shortcodes_keys_by_folders['cardealer'][] = 'price_table';
 		self::$shortcodes_keys_by_folders['default'][] = 'google_table_row';
 
 
