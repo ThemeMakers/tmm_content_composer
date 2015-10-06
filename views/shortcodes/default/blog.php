@@ -228,9 +228,7 @@ wp_reset_postdata();
     ?>
 	<script type="text/javascript">
 		jQuery(function() {
-			//jQuery(".masonry").imagesLoaded(function() {
-				jQuery(".masonry").init_masonry(<?php echo esc_js($columns) ?>, <?php echo esc_js($load_with_animation) ?>);
-			//});
+            jQuery(".masonry").init_masonry(<?php echo esc_js($columns) ?>, <?php echo esc_js($load_with_animation) ?>);
 		});
 	</script>
 

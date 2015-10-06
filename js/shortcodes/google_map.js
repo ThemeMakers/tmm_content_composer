@@ -75,4 +75,3 @@ function merge_objects_options(obj1, obj2) {
 	}
 	return obj3;
 }
-
