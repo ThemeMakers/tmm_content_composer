@@ -56,6 +56,12 @@
 		&.brd-1 {
 			border-top: 1px solid rgba(0, 0, 0, 0.5);
 		}
+		&.brd-2 {
+			border-top: 1px solid rgba(0, 0, 0, 0.3);
+		}
+		&.brd-3 {
+			border-top: 1px dashed rgba(0, 0, 0, 0.5);
+		}
 
 		// Parallax Option
 		&.parallax {
@@ -72,9 +78,28 @@
 			min-height: 100vh;
 		}
 
-		// TODO: Remove this sample
-		&.sport {
-			background-image: linear-gradient( to bottom, rgba( #222222, 0.3), rgba( #222222, 0.3 )), url( 'http://lorempixel.com/g/1600/900/sports/' );
+		// Background Colors
+		&.bg-color-1 {
+			background-color: #fff;  // White
+		}
+		&.bg-color-2 {
+			background-color: #c0c0c0;  // Silver
+		}
+		&.bg-color-3 {
+			background-color: #e4e4e4;  // Light Gray
+		}
+		&.bg-color-4 {
+			background-color: #deeff5;	// Light Blue
+		}
+
+		// Overlay layer
+		> .overlay {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(255,255,255,0.8);
 		}
 	}
 }

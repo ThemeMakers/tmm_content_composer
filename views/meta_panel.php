@@ -371,7 +371,7 @@
 
 	<div class="bg_custom_type_image" style="display: none;">
 
-		<div class="one-half">
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'upload',
@@ -381,11 +381,7 @@
 			'default_value' => '',
 			'description' => ''
 		));
-		?>
-		</div>
 
-		<div class="one-half">
-		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Background Attachment', TMM_CC_TEXTDOMAIN),
@@ -399,7 +395,6 @@
 			'description' => ''
 		));
 		?>
-		</div>
 
 	</div>
 
