@@ -50,6 +50,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$container_class = 'container';
 		$row_class = 'row';
 		$row_style_attr = '';
+		$display_overlay = false;
 
 		if ($row_displaying === 'full_width') {
 			$section_class .= '';
@@ -145,6 +146,27 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 			}
 
+			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && !empty($tmm_layout_constructor_row[$row]['bg_overlay'])) {
+				$display_overlay = true;
+				$overlay_style_attr = '';
+
+				if (!empty($tmm_layout_constructor_row[$row]['bg_overlay_color'])) {
+					$overlay_style_attr .= TMM_Content_Composer::hex2RGB($tmm_layout_constructor_row[$row]['bg_overlay_color'], true);
+				} else {
+					$overlay_style_attr .= '0,0,0';
+				}
+
+				if (isset($tmm_layout_constructor_row[$row]['bg_overlay_opacity'])) {
+					$overlay_style_attr .= ',' . intval($tmm_layout_constructor_row[$row]['bg_overlay_opacity']) / 100;
+				} else {
+					$overlay_style_attr .= ',1';
+				}
+
+				if (!empty($overlay_style_attr)) {
+					$overlay_style_attr = ' style="background-color:rgba(' . $overlay_style_attr . ')"';
+				}
+			}
+
 			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'color' && !empty($tmm_layout_constructor_row[$row]['bg_color_type'])) {
 
 				if ($tmm_layout_constructor_row[$row]['bg_color_type'] === 'custom') {
@@ -177,6 +199,11 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 		<?php if ($row_displaying === 'full_width') { ?>
 		<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
+
+			<?php
+			if ($display_overlay) { ?>
+			<div class="overlay"<?php echo $overlay_style_attr; ?>></div>
+			<?php } ?>
 
 			<div class="<?php echo $container_class; ?>">
 		<?php } ?>

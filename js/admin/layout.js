@@ -361,6 +361,7 @@
 							box_full_width  = cur_popup.find('#row_full_width_box'),
 							box_color = cur_popup.find('#row_bg_color_box'),
 							box_image = cur_popup.find('#row_bg_image_box'),
+							box_overlay = cur_popup.find('#row_bg_overlay_box'),
 							box_video = cur_popup.find('#row_bg_video_box'),
 							current_values = {},
 							option,
@@ -374,6 +375,12 @@
 							if (temp.length) {
 								temp.val(current_values[option]);
 							}
+
+							if (option === 'bg_overlay' && current_values[option] === '1'){
+								temp.attr('checked', 'checked').val('1');
+								box_overlay.show();
+							}
+
 						}
 
 						if (current_values['lc_displaying'] == 'full_width'){
@@ -391,6 +398,7 @@
 						}
 
 						self.colorizator();
+						self.ui_slider();
 
 						/* events handlers */
 						cur_popup.find('#row_lc_displaying').on('change', function(){
@@ -400,6 +408,16 @@
 								box_full_width.slideDown();
 							} else {
 								box_full_width.slideUp();
+							}
+
+						});
+
+						cur_popup.find('#row_bg_overlay').on('click', function(){
+
+							if ( $(this).is(':checked')) {
+								box_overlay.slideDown();
+							} else {
+								box_overlay.slideUp();
 							}
 
 						});
@@ -480,6 +498,7 @@
 						var cur_popup = $('.tmm-popup-edit-row');
 						cur_popup.find('#row_lc_displaying').off('change');
 						cur_popup.find('#row_bg_type').off('change');
+						cur_popup.find('#row_bg_overlay').off('click');
 						cur_popup.find('.tmm_button_upload').off('click');
 						cur_popup.find('.tmm-popup-content input[type=checkbox]').off('click');
 					},
@@ -543,6 +562,39 @@
 					});
 
 				});
+			},
+			ui_slider: function() {
+
+				$('.tmm-popup-edit-row').find('.ui-slider-item').each(function (key, item) {
+					var max_value = $(item).data('max-value'),
+						min_value = $(item).data('min-value'),
+						id = $(item).find('.range-amount-value-hidden').attr('id'),
+						value = $(item).find('.range-amount-value-hidden').attr('value');
+
+					var slider = $(item).find('.' + id).slider({
+						range: 'max',
+						animate: true,
+						value: parseFloat(value, 10),
+						step: 1,
+						min: parseInt(min_value, 10),
+						max: parseInt(max_value, 10),
+						slide: function (event, ui) {
+							$(item).find('.range-amount-value').val(ui.value);
+							$(item).find('.range-amount-value-hidden').val(ui.value);
+						}
+					});
+
+					$(item).find('.range-amount-value').val(value);
+
+					$(item).find('.range-amount-value').life('change', function () {
+						var value = parseFloat($(this).val(), 10);
+						slider.slider("value", value);
+						$(item).find('.range-amount-value-hidden').val(value);
+					});
+
+
+				});
+
 			}
 
 		};
