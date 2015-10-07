@@ -153,3 +153,23 @@ function merge_objects_options(obj1, obj2) {
 	}
 	return obj3;
 }
+
+/**
+ * Section background parallax
+ */
+jQuery(window).on('scroll', function(){
+	bg_parallax();
+});
+
+bg_parallax();
+
+function bg_parallax(el) {
+	jQuery('.bg-scroll').each(function( i ) {
+		// checks if the element is vertically visible
+		var isVisible = ( window.innerHeight + window.scrollY > this.offsetTop ) && (window.scrollY < this.offsetTop + this.offsetHeight );
+
+		if(isVisible) {
+			this.style.backgroundPosition = '0 ' + ( this.offsetTop - window.scrollY ) / 3 + 'px';
+		}
+	});
+}

@@ -138,9 +138,14 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && !empty($tmm_layout_constructor_row[$row]['bg_image'])) {
 				$section_class .= ' parallax';
 				$section_style_attr .= 'background-image: url(' . $tmm_layout_constructor_row[$row]["bg_image"] . ');';
+
+				if (!empty($tmm_layout_constructor_row[$row]['bg_attachment'])) {
+					$section_class .= ' bg-scroll';
+				}
+
 			}
 
-			if (!empty($tmm_layout_constructor_row[$row]['bg_color_type'])) {
+			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'color' && !empty($tmm_layout_constructor_row[$row]['bg_color_type'])) {
 
 				if ($tmm_layout_constructor_row[$row]['bg_color_type'] === 'custom') {
 					$section_style_attr .= 'background:'.$tmm_layout_constructor_row[$row]['bg_color'].'; ';
@@ -151,6 +156,8 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			}
 
 		}
+
+		$section_class = trim($section_class);
 
 		if ($row_displaying === 'default') {
 			$row_class .= $section_class;
@@ -191,37 +198,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			</div><!--/ .container-->
 
 		</section>
-		<?php } ?>
-
-		<?php if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && !empty($tmm_layout_constructor_row[$row]['bg_image']) && !empty($tmm_layout_constructor_row[$row]['bg_attachment'])) { ?>
-			<script type="text/javascript">
-				function on(el, eventName, handler) {
-					if (el.addEventListener) {
-						el.addEventListener(eventName, handler);
-					} else {
-						el.attachEvent('on' + eventName, handler);
-					}
-				}
-
-				var section = document.querySelector('#section_<?php echo $row; ?>');
-
-				// checks if the element is vertically visible
-				function isVisible( el ){
-					return ( ( window.innerHeight + window.scrollY > el.offsetTop ) && (window.scrollY < el.offsetTop + el.offsetHeight ) );
-				}
-
-				function bgScroll( el ){
-					if( isVisible( el ) ) {
-						el.style.backgroundPosition = '0 ' + ( el.offsetTop - window.scrollY ) / 3 + 'px';
-					}
-				}
-
-				on( window, 'scroll', function(){
-
-					bgScroll( section );
-
-				});
-			</script>
 		<?php } ?>
 
 	<?php

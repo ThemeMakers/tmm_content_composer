@@ -358,67 +358,38 @@
 						template_wrapper.empty();
 
 						var cur_popup = $('.tmm-popup-edit-row'),
-							lc_displaying = $('#row_lc_displaying_' + row_id).val(),
-							container_width = $('#row_container_width_' + row_id).val(),
-							container_height = $('#row_container_height_' + row_id).val(),
-							align = $('#row_align_' + row_id).val(),
-							padding_top = $('#row_padding_top_' + row_id).val(),
-							padding_bottom = $('#row_padding_bottom_' + row_id).val(),
-							border_top = $('#row_border_top_' + row_id).val(),
-							bg_type = $('#row_bg_type_' + row_id).val(),
-							bg_color = $('#row_bg_custom_color_' + row_id).val(),
-							bg_color_type = $('#row_bg_color_type_' + row_id).val(),
-							bg_image = $('#row_bg_custom_image_' + row_id).val(),
-							bg_video = $('#row_bg_custom_video_' + row_id).val(),
-							bg_attachment = $('#row_bg_attachment_' + row_id).val(),
-							//bg_opacity = $('#row_bg_custom_opacity_' + row_id).val(),
-							//overlay = $('#row_overlay_' + row_id).val(),
-							custom_box_color = cur_popup.find('#row_background_color_box'),
-							custom_box_image = cur_popup.find('.bg_custom_type_image'),
-							custom_box_video = cur_popup.find('.bg_custom_type_video'),
-							box_row_full_width  = cur_popup.find('.row_full_width');
+							box_full_width  = cur_popup.find('#row_full_width_box'),
+							box_color = cur_popup.find('#row_bg_color_box'),
+							box_image = cur_popup.find('#row_bg_image_box'),
+							box_video = cur_popup.find('#row_bg_video_box'),
+							current_values = {},
+							option,
+							temp;
 
-						cur_popup.find('#row_lc_displaying').val(lc_displaying);
-						cur_popup.find('#row_container_width').val(container_width);
-						cur_popup.find('#row_container_height').val(container_height);
-						cur_popup.find('#row_align').val(align);
-						cur_popup.find('#row_padding_top').val(padding_top);
-						cur_popup.find('#row_padding_bottom').val(padding_bottom);
-						cur_popup.find('#row_border_top').val(border_top);
-						cur_popup.find('#row_background_type').val(bg_type);
+						for (option in tmm_cc_row_options) {
 
-						if (lc_displaying == 'full_width'){
-							box_row_full_width.show();
+							current_values[option] = $('#row_' + option + '_' + row_id).val();
+							temp = cur_popup.find('#row_' + option);
+
+							if (temp.length) {
+								temp.val(current_values[option]);
+							}
 						}
 
-						if(!bg_type){
-							bg_type = 'none';
+						if (current_values['lc_displaying'] == 'full_width'){
+							box_full_width.show();
 						}
 
-						if (bg_type !== 'none') {
-							cur_popup.find('#row_background_color_type').val(bg_color_type).next('.bgpicker').css('background-color', bg_color_type);
-							cur_popup.find('#row_background_color').val(bg_color).next('.bgpicker').css('background-color', bg_color);
-							cur_popup.find('#row_background_image').val(bg_image);
-							cur_popup.find('#row_background_video').val(bg_video);
-							cur_popup.find('#row_bg_attachment').val(bg_attachment);
-							//cur_popup.find('#row_background_is_cover').val(bg_is_cover);
-							//cur_popup.find('#row_background_opacity').val(bg_opacity);
-
-							if (bg_type === 'color'){
-								custom_box_color.show();
-							}
-							if ((bg_type === 'image')){
-								custom_box_image.show();
-							}
-							if (bg_type === 'video'){
-								custom_box_video.show();
-							}
-
+						if (current_values['bg_type'] === 'color'){
+							box_color.show();
+						}
+						if ((current_values['bg_type'] === 'image')){
+							box_image.show();
+						}
+						if (current_values['bg_type'] === 'video'){
+							box_video.show();
 						}
 
-						//if (overlay == 1){
-						//	cur_popup.find('#row_overlay').attr('checked', 'checked').val('1');
-						//}
 						self.colorizator();
 
 						/* events handlers */
@@ -426,36 +397,36 @@
 							var val = $(this).val();
 
 							if (val === 'full_width') {
-								box_row_full_width.slideDown();
+								box_full_width.slideDown();
 							} else {
-								box_row_full_width.slideUp();
+								box_full_width.slideUp();
 							}
 
 						});
 
-						cur_popup.find('#row_background_type').on('change', function() {
+						cur_popup.find('#row_bg_type').on('change', function() {
 							var val = $(this).val();
 
 							if (val === 'none') {
-								custom_box_color.slideUp();
-								custom_box_image.slideUp();
-								custom_box_video.slideUp();
+								box_color.slideUp();
+								box_image.slideUp();
+								box_video.slideUp();
 							} else {
 
 								if (val === 'color'){
-									custom_box_color.slideDown();
-									custom_box_image.slideUp();
-									custom_box_video.slideUp();
+									box_color.slideDown();
+									box_image.slideUp();
+									box_video.slideUp();
 								}
 								if (val === 'image'){
-									custom_box_image.slideDown();
-									custom_box_color.slideUp();
-									custom_box_video.slideUp();
+									box_image.slideDown();
+									box_color.slideUp();
+									box_video.slideUp();
 								}
 								if (val === 'video'){
-									custom_box_video.slideDown();
-									custom_box_color.slideUp();
-									custom_box_image.slideUp();
+									box_video.slideDown();
+									box_color.slideUp();
+									box_image.slideUp();
 								}
 							}
 
@@ -508,43 +479,21 @@
 						/* remove events handlers */
 						var cur_popup = $('.tmm-popup-edit-row');
 						cur_popup.find('#row_lc_displaying').off('change');
-						cur_popup.find('#row_background_type').off('change');
+						cur_popup.find('#row_bg_type').off('change');
 						cur_popup.find('.tmm_button_upload').off('click');
 						cur_popup.find('.tmm-popup-content input[type=checkbox]').off('click');
 					},
 					save: function() {
 						var cur_popup = $('.tmm-popup-edit-row'),
-							lc_displaying = cur_popup.find('#row_lc_displaying').val(),
-							container_width = cur_popup.find('#row_container_width').val(),
-							container_height = cur_popup.find('#row_container_height').val(),
-							align = cur_popup.find('#row_align').val(),
-							padding_top = cur_popup.find('#row_padding_top').val(),
-							padding_bottom = cur_popup.find('#row_padding_bottom').val(),
-							border_top = cur_popup.find('#row_border_top').val(),
-							bg_type = cur_popup.find('#row_background_type').val(),
-							bg_color_type = cur_popup.find('#row_background_color_type').val(),
-							bg_color = cur_popup.find('#row_background_color').val(),
-							bg_image = cur_popup.find('#row_background_image').val(),
-							bg_attachment = cur_popup.find('#row_bg_attachment').val(),
-							bg_video = cur_popup.find('#row_background_video').val();
-							//bg_opacity = cur_popup.find('#row_background_opacity').val(),
-							//overlay = cur_popup.find('#row_overlay').val(),
+							option,
+							temp;
 
-						$('#row_lc_displaying_' + row_id).val(lc_displaying);
-						$('#row_container_width_' + row_id).val(container_width);
-						$('#row_container_height_' + row_id).val(container_height);
-						$('#row_align_' + row_id).val(align);
-						$('#row_padding_top_' + row_id).val(padding_top);
-						$('#row_padding_bottom_' + row_id).val(padding_bottom);
-						$('#row_border_top_' + row_id).val(border_top);
-						$('#row_bg_type_' + row_id).val(bg_type);
-						$('#row_bg_color_type_' + row_id).val(bg_color_type);
-						$('#row_bg_custom_color_' + row_id).val(bg_color);
-						$('#row_bg_custom_image_' + row_id).val(bg_image);
-						$('#row_bg_attachment_' + row_id).val(bg_attachment);
-						$('#row_bg_custom_video_' + row_id).val(bg_video);
-						//$('#row_overlay_' + row_id).val(overlay);
-						//$('#row_bg_custom_opacity_' + row_id).val(bg_opacity);
+						for (option in tmm_cc_row_options) {
+
+							temp = cur_popup.find('#row_' + option).val();
+							$('#row_' + option + '_' + row_id).val( temp );
+
+						}
 
 					}
 				};

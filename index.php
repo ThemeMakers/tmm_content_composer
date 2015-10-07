@@ -58,3 +58,20 @@ function tmm_cc_activation() {
 }
 
 register_activation_hook(__FILE__, 'tmm_cc_activation');
+
+$tmm_row_options = array(
+	'lc_displaying' => 'default',
+	'container_width' => 0,
+	'container_height' => 0,
+	'align' => 'left',
+	'border_top' => 0,
+	'padding_top' => 0,
+	'padding_bottom' => 20,
+	'bg_type' => 'none',
+	'bg_color_type' => 0,
+	'bg_color' => '',
+	'bg_image' => '',
+	'bg_attachment' => 1,
+);
+
+$GLOBALS['tmm_row_options'] = $tmm_row_options;

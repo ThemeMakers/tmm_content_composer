@@ -112,6 +112,9 @@ class TMM_Content_Composer {
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' ) {
 			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/admin/layout.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable'), false, true);
 
+			global $tmm_row_options;
+			wp_localize_script('tmm_layout_constructor', 'tmm_cc_row_options', $tmm_row_options);
+
 			?>
 			<script type="text/javascript">
 				tmm_lang['column_delete'] = "<?php _e("Sure about column deleting?", TMM_CC_TEXTDOMAIN) ?>";
