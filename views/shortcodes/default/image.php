@@ -39,10 +39,6 @@ $classAbs = "";
             $html.='<section class="section padding-off parallax parallax-bg-2 bg-black-color">';
             $html.='<div class="full-bg-image" style="background-image:url('. esc_url($image_url) .')"></div>';
             $html.='<div id="fullscreen" class="full-screen"></div>';
-        }       
-        
-        if($overlay  && $action == "none"){
-            $html.='<div class="parallax-overlay"></div>';
         }
         
         if ($action != "none" || ($action == "none" && !$parallax)){
