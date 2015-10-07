@@ -146,7 +146,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 			}
 
-			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && !empty($tmm_layout_constructor_row[$row]['bg_overlay'])) {
+			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && $row_displaying === 'full_width' && !empty($tmm_layout_constructor_row[$row]['bg_overlay'])) {
 				$display_overlay = true;
 				$overlay_style_attr = '';
 
@@ -179,12 +179,13 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 		}
 
-		$section_class = trim($section_class);
-
 		if ($row_displaying === 'default') {
 			$row_class .= $section_class;
+			$row_class = trim($row_class);
 			$row_style_attr .= $section_style_attr;
 		}
+
+		$section_class = trim($section_class);
 
 		/* wrap section and row styles */
 		if (!empty($section_style_attr)) {

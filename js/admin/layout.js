@@ -193,11 +193,11 @@
 								lc_column_options = '&nbsp;<span id="tmm_lc_column_options"></span>';
 							$('#wp-'+self.active_editor_id+'-editor-tools').prepend(lc_title).find('#wp-'+self.active_editor_id+'-media-buttons').append(lc_column_options);
 							/* column options settings */
-							//$('#tmm_lc_column_options').append($('#tmm_lc_column_effects').html());
-							//$('.tmm-lc-column-effects-selector').val($("#item_" + item_id).find('.js_effect').val());
-							//$('.tmm-lc-column-effects-selector').change(function() {
-							//	$("#item_" + item_id).find('.js_effect').val($(this).val());
-							//});
+							$('#tmm_lc_column_options').append($('#tmm_lc_column_effects').html());
+							$('.tmm-lc-column-effects-selector').val($("#item_" + item_id).find('.js_effect').val());
+							$('.tmm-lc-column-effects-selector').change(function() {
+								$("#item_" + item_id).find('.js_effect').val($(this).val());
+							});
 							tmm_info_popup_hide();
 						},
 						close: function() {
@@ -358,7 +358,7 @@
 						template_wrapper.empty();
 
 						var cur_popup = $('.tmm-popup-edit-row'),
-							box_full_width  = cur_popup.find('#row_full_width_box'),
+							box_full_width  = cur_popup.find('.row_full_width_box'),
 							box_color = cur_popup.find('#row_bg_color_box'),
 							box_image = cur_popup.find('#row_bg_image_box'),
 							box_overlay = cur_popup.find('#row_bg_overlay_box'),

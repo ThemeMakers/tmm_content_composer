@@ -399,7 +399,9 @@ class TMM_Content_Composer {
 
 						<?php } ?>
 					</select>
+					<?php if (!empty($data['description'])) { ?>
 					<div class="preset_description"><?php echo $data['description'] ?></div>
+					<?php } ?>
 				<?php
 				}
 
