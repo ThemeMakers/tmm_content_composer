@@ -220,9 +220,9 @@ global $tmm_row_options;
 			'shortcode_field' => 'row_align',
 			'id' => 'row_align',
 			'options' => array(
-				'left' => 'Left',
-				'right' => 'Right',
-				'center' => 'Center',
+				'left' => __('Left', TMM_CC_TEXTDOMAIN),
+				'right' => __('Right', TMM_CC_TEXTDOMAIN),
+				'center' => __('Center', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => $tmm_row_options['align'],
 			'description' => ''
@@ -283,7 +283,7 @@ global $tmm_row_options;
 				'100' => __('100 PX', TMM_CC_TEXTDOMAIN)
 			),
 			'default_value' => $tmm_row_options['padding_bottom'],
-			'description' => 'Default Value 20px'
+			'description' => __('Default Value 20px', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 	</div>
