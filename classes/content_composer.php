@@ -134,8 +134,6 @@ class TMM_Content_Composer {
 		wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/shortcodes_layout.css');
 
 		wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/jquery.modernizr.min.js', array('jquery'), false, true);
-		wp_enqueue_script('tmm_config', TMM_CC_URL . 'js/config.js', array('jquery'), false, true);
-		wp_enqueue_script('tmm_plugins', TMM_CC_URL . 'js/plugins.js', array('jquery'), false, true);
 
 		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/layout_front.css');
 		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_front.js', array('jquery', 'tmm_modernizr'), false, true);
