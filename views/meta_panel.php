@@ -132,14 +132,17 @@ global $tmm_row_options;
 	<?php
 	$effects = array(
 		'' => __("No effects", TMM_CC_TEXTDOMAIN),
-		'elementFade' => __('Element Fade', TMM_CC_TEXTDOMAIN),
-		'opacity2x' => __('Opacity', TMM_CC_TEXTDOMAIN),
-		'slideRight' => __('Slide Right', TMM_CC_TEXTDOMAIN),
-		'slideLeft' => __('Slide Left', TMM_CC_TEXTDOMAIN),
-		'slideDown' => __('Slide Down', TMM_CC_TEXTDOMAIN),
+		'swipeDownEffect' => __('Swipe Down', TMM_CC_TEXTDOMAIN),
+		'showMeEffect' => __('Show Me', TMM_CC_TEXTDOMAIN),
+		'opacityEffect' => __('Opacity', TMM_CC_TEXTDOMAIN),
+		'scaleEffect' => __('Scale', TMM_CC_TEXTDOMAIN),
+		'rotateEffect' => __('Rotate', TMM_CC_TEXTDOMAIN),
+		'slideRightEffect' => __('Slide Right', TMM_CC_TEXTDOMAIN),
+		'slideLeftEffect' => __('Slide Left', TMM_CC_TEXTDOMAIN),
+		'slideDownEffect' => __('Slide Down', TMM_CC_TEXTDOMAIN),
+		'slideUpEffect' => __('Slide Up', TMM_CC_TEXTDOMAIN),
 		'slideUp' => __('Slide Up', TMM_CC_TEXTDOMAIN),
-		'slideUp2x' => __('Slide Up 2x', TMM_CC_TEXTDOMAIN),
-		'extraRadius' => __('Extra Radius', TMM_CC_TEXTDOMAIN)
+		'translateEffect' => __('Translate', TMM_CC_TEXTDOMAIN),
 	);
 
 	TMM_Content_Composer::html_option(array(

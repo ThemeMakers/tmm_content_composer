@@ -1,3 +1,245 @@
+/*
+ * jQuery.appear
+ * https://github.com/bas2k/jquery.appear/
+ *
+ * Copyright (c) 2012-2014 Alexander Brovikov
+ * Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
+ */
+(function ($) {
+	$.fn.appear = function (options) {
+
+		var transEndEventNames = {
+				'WebkitTransition': 'webkitTransitionEnd',
+				'MozTransition': 'transitionend',
+				'OTransition': 'oTransitionEnd',
+				'msTransition': 'MSTransitionEnd',
+				'transition': 'transitionend'
+			},
+			transEndEventName = transEndEventNames[ Modernizr.prefixed('transition') ];
+
+		appearingSpeed = tmm_l10n.appearing_speed ? tmm_l10n.appearing_speed : 50;
+
+		var settings = $.extend({
+			data: undefined,
+			speedAddClass: appearingSpeed,
+			speedRemoveClass: 100,
+			// X & Y accuracy
+			accX: 0,
+			accY: 0
+		}, options);
+
+		return this.each(function (id) {
+
+			var t = $(this);
+
+			//whether the element is currently visible
+			t.appeared = false;
+
+			var w = $(window),
+				check = function () {
+
+					//is the element hidden?
+					if (!t.is(':visible')) {
+
+						//it became hidden
+						t.appeared = false;
+						return;
+					}
+
+					//is the element inside the visible window?
+					var a = w.scrollLeft(),
+						b = w.scrollTop(),
+						o = t.offset(),
+						x = o.left,
+						y = o.top,
+
+						ax = settings.accX,
+						ay = settings.accY,
+						th = t.height(),
+						wh = w.height(),
+						tw = t.width(),
+						ww = w.width();
+
+					if (y + th + ay >= b &&
+						y <= b + wh + ay &&
+						x + tw + ax >= a &&
+						x <= a + ww + ax) {
+
+						//trigger the custom event
+						if (!t.appeared) t.trigger('appear', settings.data);
+
+					} else {
+
+						//it scrolled out of view
+						t.appeared = false;
+					}
+				};
+
+			var fn = function (e) {
+				if (e.data) {
+
+					id = !id ? 1 : id;
+
+					setTimeout(function() {
+						$(e.currentTarget).addClass(e.data + 'Run').one(transEndEventName, function () {
+							$(this).removeClass(e.data);
+						});
+					}, id * settings.speedAddClass);
+				}
+			}
+
+			//create a modified fn with some additional logic
+			var modifiedFn = function () {
+
+				//mark the element as visible
+				t.appeared = true;
+
+				//trigger the original fn
+				fn.apply(this, arguments);
+			};
+
+			//bind the modified fn to the element
+			t.bind('appear', settings.data, modifiedFn);
+
+			//check whenever the window scrolls
+			w.scroll(check);
+
+			//check whenever the dom changes
+			$.fn.appear.checks.push(check);
+
+			//check now
+			(check)();
+		});
+	};
+
+	//keep a queue of appearance checks
+	$.extend($.fn.appear, {
+
+		checks: [],
+		timeout: null,
+
+		//process the queue
+		checkAll: function() {
+			var length = $.fn.appear.checks.length;
+			if (length > 0) while (length--) ($.fn.appear.checks[length])();
+		},
+
+		//check the queue asynchronously
+		run: function() {
+			if ($.fn.appear.timeout) clearTimeout($.fn.appear.timeout);
+			$.fn.appear.timeout = setTimeout($.fn.appear.checkAll, 20);
+		}
+	});
+
+	//run checks when these methods are called
+	$.each(['append', 'prepend', 'after', 'before', 'attr',
+		'removeAttr', 'addClass', 'removeClass', 'toggleClass',
+		'remove', 'css', 'show', 'hide'], function(i, n) {
+		var old = $.fn[n];
+
+		if (old) {
+			$.fn[n] = function() {
+				var r = old.apply(this, arguments);
+				$.fn.appear.run();
+				return r;
+			}
+		}
+	});
+
+})(jQuery);
+
+/**
+ * Layout effects
+ */
+(function ($) {
+
+	$(function () {
+
+		if ($('.swipeDownEffect').length) {
+			$('.swipeDownEffect').appear({
+				accX: 0,
+				accY: -150,
+				data: 'swipeDownEffect'
+			});
+		}
+
+		if ($('.showMeEffect').length) {
+			$('.showMeEffect').appear({
+				accX: 0,
+				accY: -150,
+				data: 'showMeEffect'
+			});
+		}
+
+		if ($('.opacityEffect').length) {
+			$('.opacityEffect').appear({
+				accX: 0,
+				accY: 300,
+				data: 'opacityEffect'
+			});
+		}
+
+		if ($('.scaleEffect').length) {
+			$('.scaleEffect').appear({
+				accX: 0,
+				accY: 300,
+				data: 'scaleEffect'
+			});
+		}
+
+		if ($('.rotateEffect').length) {
+			$('.rotateEffect').appear({
+				accX: 0,
+				accY: 300,
+				data: 'rotateEffect'
+			});
+		}
+
+		if ($('.slideRightEffect').length) {
+			$('.slideRightEffect').appear({
+				accX: 0,
+				accY: -150,
+				data: 'slideRightEffect'
+			});
+		}
+
+		if ($('.slideLeftEffect').length) {
+			$('.slideLeftEffect').appear({
+				accX: 0,
+				accY: -150,
+				data: 'slideLeftEffect'
+			});
+		}
+
+		if ($('.slideDownEffect').length) {
+			$('.slideDownEffect').appear({
+				accX: 0,
+				accY: -150,
+				data: 'slideDownEffect'
+			});
+		}
+
+		if ($('.slideUpEffect').length) {
+			$('.slideUpEffect').appear({
+				accX: 0,
+				accY: 300,
+				data: 'slideUpEffect'
+			});
+		}
+
+		if ($('.slideUp').length) {
+			$('.slideUp').appear({
+				accX: 0,
+				accY: 300,
+				data: 'slideUp',
+				speedAddClass: 200
+			});
+		}
+
+	});
+
+}(jQuery));
+
 /**
  * Contact form
  */
