@@ -4,7 +4,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Text in echo
-#: views/shortcodes/engorgio/masonry.php:237
+#: views/shortcodes/interpress/masonry.php:237
 msgid " Comments"
 msgstr ""
 
@@ -14,19 +14,19 @@ msgid "$19.95"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 msgid "2 Columns"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 #: views/shortcodes/default/popups/recent_projects.php:24
 #: views/shortcodes/default/popups/portfolio.php:87
 msgid "3 Columns"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 #: views/shortcodes/default/popups/recent_projects.php:24
 #: views/shortcodes/default/popups/portfolio.php:87
 msgid "4 Columns"
@@ -77,17 +77,17 @@ msgstr ""
 
 #. Text in echo
 #: views/shortcodes/default/popups/progressbar.php:81
-#: views/shortcodes/engorgio/popups/counter.php:96
+#: views/shortcodes/interpress/popups/counter.php:96
 msgid "Add bar item"
 msgstr ""
 
 #. Text in echo
-#: views/shortcodes/engorgio/popups/slogan_slider.php:283
+#: views/shortcodes/interpress/popups/slogan_slider.php:283
 #: views/shortcodes/default/popups/clients.php:27
 #: views/shortcodes/default/popups/clients.php:71
-#: views/shortcodes/engorgio/popups/socialicons.php:88
+#: views/shortcodes/interpress/popups/socialicons.php:88
 #: views/shortcodes/default/popups/accordion.php:59
-#: views/shortcodes/engorgio/popups/services.php:188
+#: views/shortcodes/interpress/popups/services.php:188
 #: views/shortcodes/default/popups/tabs.php:41
 msgid "Add item"
 msgstr ""
@@ -139,7 +139,7 @@ msgid "All categories"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
+#: views/shortcodes/interpress/popups/counter.php:102
 msgid "Animation"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 
 #. Text in function
 #: views/shortcodes/default/popups/chart.php:143
-#: views/shortcodes/engorgio/popups/services.php:151
+#: views/shortcodes/interpress/popups/services.php:151
 #: views/shortcodes/default/popups/title.php:361
 #: views/meta_panel.php:393
 #: views/shortcodes/default/popups/button.php:166
@@ -183,7 +183,7 @@ msgid "Background Height (px)"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/services.php:151
+#: views/shortcodes/interpress/popups/services.php:151
 msgid "Background Hover Color"
 msgstr ""
 
@@ -238,7 +238,7 @@ msgid "Blank"
 msgstr ""
 
 #. Text in echo
-#: views/shortcodes/engorgio/popups/services.php:84
+#: views/shortcodes/interpress/popups/services.php:84
 msgid "Blocks"
 msgstr ""
 
@@ -300,7 +300,7 @@ msgid "Buttons Text"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 #: views/shortcodes/default/popups/recent_posts.php:5
 #: views/shortcodes/default/popups/blog.php:110
 msgid "Category"
@@ -352,14 +352,14 @@ msgid "Close"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:149
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
+#: views/shortcodes/interpress/popups/slogan_slider.php:149
+#: views/shortcodes/interpress/popups/slogan_slider.php:264
 #: views/shortcodes/default/popups/title.php:361
 msgid "Color"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/services.php:38
+#: views/shortcodes/interpress/popups/services.php:38
 msgid "Colorized"
 msgstr ""
 
@@ -396,7 +396,7 @@ msgstr ""
 
 #. Text in echo
 #: views/shortcodes/default/popups/accordion.php:51
-#: views/shortcodes/engorgio/popups/services.php:173
+#: views/shortcodes/interpress/popups/services.php:173
 #: views/shortcodes/default/popups/tabs.php:33
 #: views/shortcodes/default/popups/single_post.php:161
 msgid "Content"
@@ -444,7 +444,7 @@ msgid "DESC"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
+#: views/shortcodes/interpress/popups/counter.php:102
 msgid "Data Speed"
 msgstr ""
 
@@ -562,17 +562,17 @@ msgid "Enable Slide Up Effect"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/detail_box.php:28
+#: views/shortcodes/interpress/popups/detail_box.php:28
 msgid "Enter Address"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/detail_box.php:28
+#: views/shortcodes/interpress/popups/detail_box.php:28
 msgid "Enter Email"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/detail_box.php:28
+#: views/shortcodes/interpress/popups/detail_box.php:28
 msgid "Enter Phone"
 msgstr ""
 
@@ -641,14 +641,14 @@ msgid "Extra Radius"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:149
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
+#: views/shortcodes/interpress/popups/slogan_slider.php:149
+#: views/shortcodes/interpress/popups/slogan_slider.php:264
 msgid "Fade in effect"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:149
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
+#: views/shortcodes/interpress/popups/slogan_slider.php:149
+#: views/shortcodes/interpress/popups/slogan_slider.php:264
 msgid "Fade out effect"
 msgstr ""
 
@@ -779,7 +779,7 @@ msgid "Layerslider plugins groups"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 #: views/shortcodes/default/popups/staff.php:25
 #: views/shortcodes/default/popups/portfolio.php:87
 msgid "Layout"
@@ -811,7 +811,7 @@ msgid "Line Chart"
 msgstr ""
 
 #. Text in echo
-#: views/shortcodes/engorgio/popups/services.php:170
+#: views/shortcodes/interpress/popups/services.php:170
 msgid "Link"
 msgstr ""
 
@@ -841,12 +841,12 @@ msgid "List Type"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 msgid "Load Posts By Scrolling"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 msgid "Load Posts With Animation"
 msgstr ""
 
@@ -907,7 +907,7 @@ msgid "Mode"
 msgstr ""
 
 #. Text in echo
-#: views/shortcodes/engorgio/masonry.php:339
+#: views/shortcodes/interpress/masonry.php:339
 msgid "More"
 msgstr ""
 
@@ -973,7 +973,7 @@ msgid "None"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/services.php:38
+#: views/shortcodes/interpress/popups/services.php:38
 #: views/shortcodes/default/popups/title.php:361
 msgid "Normal"
 msgstr ""
@@ -992,7 +992,7 @@ msgstr ""
 #: views/shortcodes/default/popups/title.php:361
 #: views/meta_panel.php:152
 #: views/meta_panel.php:393
-#: views/shortcodes/engorgio/popups/counter.php:102
+#: views/shortcodes/interpress/popups/counter.php:102
 #: views/shortcodes/default/popups/pricing_tables.php:148
 msgid "Opacity"
 msgstr ""
@@ -1098,7 +1098,7 @@ msgid "Posts"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 msgid "Posts Per Load"
 msgstr ""
 
@@ -1135,7 +1135,7 @@ msgstr ""
 
 #. Text in echo
 #: views/shortcodes/default/popups/progressbar.php:19
-#: views/shortcodes/engorgio/popups/counter.php:32
+#: views/shortcodes/interpress/popups/counter.php:32
 msgid "Progress bars"
 msgstr ""
 
@@ -1161,15 +1161,15 @@ msgstr ""
 
 #. Text in echo
 #: views/shortcodes/default/popups/progressbar.php:71
-#: views/shortcodes/engorgio/popups/slogan_slider.php:44
+#: views/shortcodes/interpress/popups/slogan_slider.php:44
 #: views/shortcodes/default/popups/clients.php:57
-#: views/shortcodes/engorgio/popups/socialicons.php:78
+#: views/shortcodes/interpress/popups/socialicons.php:78
 #: views/shortcodes/default/popups/accordion.php:46
-#: views/shortcodes/engorgio/popups/services.php:177
+#: views/shortcodes/interpress/popups/services.php:177
 #: views/shortcodes/default/popups/staff.php:67
 #: views/shortcodes/default/popups/list.php:167
 #: views/shortcodes/default/popups/tabs.php:28
-#: views/shortcodes/engorgio/popups/counter.php:86
+#: views/shortcodes/interpress/popups/counter.php:86
 msgid "Remove"
 msgstr ""
 
@@ -1229,7 +1229,7 @@ msgid "Sale Products"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
+#: views/shortcodes/interpress/popups/counter.php:102
 #: views/shortcodes/default/popups/pricing_tables.php:148
 msgid "Scale"
 msgstr ""
@@ -1311,12 +1311,12 @@ msgid "Show \"Read more\" button"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 msgid "Show / Hide Facebook"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 msgid "Show / Hide Google+"
 msgstr ""
 
@@ -1326,12 +1326,12 @@ msgid "Show / Hide Icons"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 msgid "Show / Hide Pinterest"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 msgid "Show / Hide Twitter"
 msgstr ""
 
@@ -1372,7 +1372,7 @@ msgid "Show post type media"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/masonry.php:81
+#: views/shortcodes/interpress/popups/masonry.php:81
 msgid "Show posts from selected category"
 msgstr ""
 
@@ -1458,22 +1458,22 @@ msgid "Slide Up 2x"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
+#: views/shortcodes/interpress/popups/counter.php:102
 msgid "SlideDown"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
+#: views/shortcodes/interpress/popups/counter.php:102
 msgid "SlideLeft"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
+#: views/shortcodes/interpress/popups/counter.php:102
 msgid "SlideRight"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:102
+#: views/shortcodes/interpress/popups/counter.php:102
 msgid "SlideUp"
 msgstr ""
 
@@ -1483,12 +1483,12 @@ msgid "Slider groups"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:5
+#: views/shortcodes/interpress/popups/slogan_slider.php:5
 msgid "Slider type"
 msgstr ""
 
 #. Text in echo
-#: views/shortcodes/engorgio/popups/masonry.php:80
+#: views/shortcodes/interpress/popups/masonry.php:80
 msgid "Social Share Buttons"
 msgstr ""
 
@@ -1568,7 +1568,7 @@ msgid "Testimonials"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/services.php:151
+#: views/shortcodes/interpress/popups/services.php:151
 #: views/shortcodes/default/popups/blockquote.php:20
 #: views/shortcodes/default/popups/button.php:166
 msgid "Text Color"
@@ -1604,9 +1604,9 @@ msgstr ""
 #: views/shortcodes/default/popups/chart.php:143
 #: views/shortcodes/default/popups/progressbar.php:56
 #: views/shortcodes/default/popups/accordion.php:45
-#: views/shortcodes/engorgio/popups/services.php:167
+#: views/shortcodes/interpress/popups/services.php:167
 #: views/shortcodes/default/popups/icon.php:86
-#: views/shortcodes/engorgio/popups/counter.php:70
+#: views/shortcodes/interpress/popups/counter.php:70
 msgid "Title"
 msgstr ""
 
@@ -1626,12 +1626,12 @@ msgid "Title Text"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
+#: views/shortcodes/interpress/popups/slogan_slider.php:264
 msgid "Title Text 1"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
+#: views/shortcodes/interpress/popups/slogan_slider.php:264
 msgid "Title Text 2"
 msgstr ""
 
@@ -1661,10 +1661,10 @@ msgid "Top Rated"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/slogan_slider.php:149
-#: views/shortcodes/engorgio/popups/slogan_slider.php:264
+#: views/shortcodes/interpress/popups/slogan_slider.php:149
+#: views/shortcodes/interpress/popups/slogan_slider.php:264
 #: views/shortcodes/default/popups/accordion.php:6
-#: views/shortcodes/engorgio/popups/services.php:38
+#: views/shortcodes/interpress/popups/services.php:38
 msgid "Type"
 msgstr ""
 
@@ -1750,12 +1750,12 @@ msgid "fixed"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:70
+#: views/shortcodes/interpress/popups/counter.php:70
 msgid "from"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/socialicons.php:64
+#: views/shortcodes/interpress/popups/socialicons.php:64
 msgid "http://"
 msgstr ""
 
@@ -1785,7 +1785,7 @@ msgid "string"
 msgstr ""
 
 #. Text in function
-#: views/shortcodes/engorgio/popups/counter.php:70
+#: views/shortcodes/interpress/popups/counter.php:70
 msgid "to"
 msgstr ""
 
