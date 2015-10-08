@@ -178,7 +178,7 @@ global $tmm_row_options;
 	?>
 
 	<div class="row_full_width_box" style="display: none;">
-		<div class="one-half">
+		<div class="one-half inner-left">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
@@ -195,7 +195,7 @@ global $tmm_row_options;
 		?>
 		</div>
 
-		<div class="one-half">
+		<div class="one-half inner-right">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
@@ -246,7 +246,7 @@ global $tmm_row_options;
 		?>
 	</div>
 
-	<div class="one-half">
+	<div class="one-half inner-left">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
@@ -267,7 +267,7 @@ global $tmm_row_options;
 		?>
 	</div>
 
-	<div class="one-half">
+	<div class="one-half inner-right">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
@@ -311,7 +311,7 @@ global $tmm_row_options;
 
 	<div id="row_bg_color_box" style="display: none;">
 
-		<div class="one-half">
+		<div class="one-half inner-left">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
@@ -332,7 +332,7 @@ global $tmm_row_options;
 		?>
 		</div>
 
-		<div class="one-half">
+		<div class="one-half inner-right">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'title' => __('Custom Background Color', TMM_CC_TEXTDOMAIN),
@@ -390,7 +390,7 @@ global $tmm_row_options;
 
 			<div id="row_bg_overlay_box" style="display: none;">
 
-				<div class="one-half">
+				<div class="one-half inner-left">
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'title' => __('Overlay Color', TMM_CC_TEXTDOMAIN),
@@ -404,7 +404,7 @@ global $tmm_row_options;
 				?>
 				</div>
 
-				<div class="one-half">
+				<div class="one-half inner-right">
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'title' => __('Overlay Opacity', TMM_CC_TEXTDOMAIN),

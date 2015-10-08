@@ -190,10 +190,10 @@
 							QTags._buttonsInit();
 							/* add custom elements */
 							var lc_title = '<input type="text" placeholder="' + tmm_lang['empty_title'] + '" value="' + title + '" class="tmm-lc-column-title-input" /><br />',
-								lc_column_options = '&nbsp;<span id="tmm_lc_column_options"></span>';
+								lc_column_options = '<span class="tmm_lc_column_options"></span>';
 							$('#wp-'+self.active_editor_id+'-editor-tools').prepend(lc_title).find('#wp-'+self.active_editor_id+'-media-buttons').append(lc_column_options);
 							/* column options settings */
-							$('#tmm_lc_column_options').append($('#tmm_lc_column_effects').html());
+							$('.tmm_lc_column_options').append($('#tmm_lc_column_effects').html());
 							$('.tmm-lc-column-effects-selector').val($("#item_" + item_id).find('.js_effect').val());
 							$('.tmm-lc-column-effects-selector').change(function() {
 								$("#item_" + item_id).find('.js_effect').val($(this).val());

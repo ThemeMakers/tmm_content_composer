@@ -118,6 +118,44 @@
 	right: 0;
 	bottom: 50px;
 	position: absolute;
+
+	/* -------------------------------------------------- */
+	/*	Media Options
+	/* -------------------------------------------------- */
+
+	#wp-layout_constructor_editor-editor-tools {
+		> input {
+			margin-bottom: 10px;
+		}
+	}
+
+	#wp-layout_constructor_editor-media-buttons {
+		margin: 2px auto 0;
+
+		> button {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.tmm_lc_column_options {
+			display: inline-block;
+			vertical-align: top;
+			margin-left: 10px;
+			width: 110px;
+
+			.data-select {
+				height: 28px;
+				line-height: 24px;
+				padding: 2px 5px;
+				box-sizing: border-box;
+				font-size: 12px;
+				background-position:
+				calc(100% - 14px) calc(1em - 2px),
+				calc(100% - 8px) calc(1em - 2px),
+				0;
+			}
+		}
+	}
 }
 
 /* -------------------------------------------------- */
@@ -142,6 +180,16 @@
 	display: inline-block;
 	margin: 0 1%;
 	vertical-align: top;
+
+	&.inner-left {
+		margin-left: 0;
+		margin-right: 2%;
+	}
+
+	&.inner-right {
+		margin-left: 2%;
+		margin-right: 0;
+	}
 }
 
 .tmm-popup-content .one-fourth { width: 22.5%; }
