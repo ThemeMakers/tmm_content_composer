@@ -416,7 +416,7 @@ global $tmm_row_options;
 					'type' => 'slider',
 					'min' => '0',
 					'max' => '100',
-					'description' => __('min:0; max:100', TMM_CC_TEXTDOMAIN),
+					'description' => '',
 					'default_value' => $tmm_row_options['bg_overlay_opacity'],
 				));
 				?>

@@ -489,12 +489,15 @@ class TMM_Content_Composer {
 				<?php if (!empty($data['title'])): ?>
 				<h4 class="label" for="<?php echo esc_attr($data['id']); ?>"><?php echo esc_html($data['title']); ?></h4>
 				<?php endif; ?>
-				<div class="clearfix ui-slider-item" data-min-value="<?php echo $data['min'] ?>" data-max-value="<?php echo $data['max'] ?>">
-					<input type="text" class="range-amount-value" value="<?php echo @$data['default_value'] ?>" />
-					<input type="hidden" value="<?php echo $data['default_value'] ?>" class="range-amount-value-hidden" id="<?php echo $data['id'] ?>" />
-					<div class="slider-range <?php echo $data['id'] ?>"></div>
+				<input class="slider" type="range" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" min="<?php echo $data['min'] ?>" max="<?php echo $data['max'] ?>">
+				<div class="clearfix">
+					<div class="alignleft"><?php echo $data['min'] ?></div>
+					<input type="text" class="slider-text <?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" />
+					<div class="alignright"><?php echo $data['max'] ?></div>
 				</div>
-				<span class="preset_description"><?php echo $data['description'] ?></span>
+				<?php if (!empty($data['description'])) { ?>
+				<div class="preset_description"><?php echo $data['description'] ?></div>
+				<?php } ?>
 
 				<?php
 				break;
