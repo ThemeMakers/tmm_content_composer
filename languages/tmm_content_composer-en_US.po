@@ -1,0 +1,1523 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ThemeMakers Visual Content Composer\n"
+"POT-Creation-Date: 2015-10-08 18:01+0200\n"
+"PO-Revision-Date: 2015-10-08 18:01+0200\n"
+"Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
+"Language-Team: Alex TM <support@webtemplatemasters.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: index.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: classes/content_composer.php:66
+msgid "ThemeMakers Layout Constructor"
+msgstr ""
+
+#: classes/content_composer.php:102
+msgid "Loading ..."
+msgstr ""
+
+#: classes/content_composer.php:103
+msgid "Close"
+msgstr ""
+
+#: classes/content_composer.php:104
+msgid "Apply"
+msgstr ""
+
+#: classes/content_composer.php:105
+msgid "There is no options for shortcode!"
+msgstr ""
+
+#: classes/content_composer.php:106
+msgid "Shortcode updated!"
+msgstr ""
+
+#: classes/content_composer.php:107
+msgid "Insert Shortcode"
+msgstr ""
+
+#: classes/content_composer.php:108
+msgid "Edit shortcode"
+msgstr ""
+
+#: classes/content_composer.php:120
+msgid "Sure about column deleting?"
+msgstr ""
+
+#: classes/content_composer.php:121
+msgid "Sure about row deleting?"
+msgstr ""
+
+#: classes/content_composer.php:122 views/column_item.php:13
+msgid "Empty title"
+msgstr ""
+
+#: classes/content_composer.php:123
+msgid "Column content editor"
+msgstr ""
+
+#: classes/content_composer.php:124
+msgid "Section editor"
+msgstr ""
+
+#: classes/content_composer.php:151
+msgid "Please enter correct"
+msgstr ""
+
+#: classes/content_composer.php:152
+msgid "Your message has been sent successfully!"
+msgstr ""
+
+#: classes/content_composer.php:153
+msgid "Server failed. Send later"
+msgstr ""
+
+#: classes/content_composer.php:166
+msgid "Use wptexturize"
+msgstr ""
+
+#: classes/content_composer.php:249 index.php:40
+#: views/shortcodes/default/popups/title.php:41
+#: views/shortcodes/default/popups/title.php:80
+msgid "Default"
+msgstr ""
+
+#: classes/content_composer.php:250
+msgid "Default-white"
+msgstr ""
+
+#: classes/content_composer.php:261
+#: views/shortcodes/cardealer/popups/recent_cars.php:111
+msgid "Small"
+msgstr ""
+
+#: classes/content_composer.php:262
+#: views/shortcodes/cardealer/popups/recent_cars.php:112
+msgid "Middle"
+msgstr ""
+
+#: classes/content_composer.php:263
+#: views/shortcodes/cardealer/popups/recent_cars.php:113
+msgid "Large"
+msgstr ""
+
+#: classes/content_composer.php:271
+msgid "All Categories"
+msgstr ""
+
+#: classes/content_composer.php:453
+msgid "Browse"
+msgstr ""
+
+#: classes/layout_constructor.php:202 views/shortcodes/default/tmm_video.php:27
+msgid "Unsupported video format"
+msgstr ""
+
+#: classes/shortcode.php:43
+msgid "Price table"
+msgstr ""
+
+#: classes/shortcode.php:44
+msgid "Google table row"
+msgstr ""
+
+#: views/column_item.php:16 views/meta_panel.php:110
+msgid "Edit"
+msgstr ""
+
+#: views/column_item.php:17 views/meta_panel.php:111
+msgid "Delete"
+msgstr ""
+
+#: views/meta_panel.php:7
+msgid "Add New Section"
+msgstr ""
+
+#: views/meta_panel.php:8
+msgid "Insert Clipboard Section here"
+msgstr ""
+
+#: views/meta_panel.php:21
+msgid "Add Column to Section"
+msgstr ""
+
+#: views/meta_panel.php:22
+msgid "Add Section to Clipboard"
+msgstr ""
+
+#: views/meta_panel.php:23
+msgid "Section Editor"
+msgstr ""
+
+#: views/meta_panel.php:24
+msgid "Delete Section"
+msgstr ""
+
+#: views/meta_panel.php:108
+msgid "Add Column"
+msgstr ""
+
+#: views/meta_panel.php:109
+msgid "Add to Clipboard"
+msgstr ""
+
+#: views/meta_panel.php:134
+msgid "No effects"
+msgstr ""
+
+#: views/meta_panel.php:135
+msgid "Swipe Down"
+msgstr ""
+
+#: views/meta_panel.php:136
+msgid "Show Me"
+msgstr ""
+
+#: views/meta_panel.php:137
+msgid "Opacity"
+msgstr ""
+
+#: views/meta_panel.php:138
+msgid "Scale"
+msgstr ""
+
+#: views/meta_panel.php:139
+msgid "Rotate"
+msgstr ""
+
+#: views/meta_panel.php:140
+msgid "Slide Right"
+msgstr ""
+
+#: views/meta_panel.php:141
+msgid "Slide Left"
+msgstr ""
+
+#: views/meta_panel.php:142
+msgid "Slide Down"
+msgstr ""
+
+#: views/meta_panel.php:143 views/meta_panel.php:144
+msgid "Slide Up"
+msgstr ""
+
+#: views/meta_panel.php:145
+msgid "Translate"
+msgstr ""
+
+#: views/meta_panel.php:151
+msgid "Layout constructor"
+msgstr ""
+
+#: views/meta_panel.php:171
+msgid "Section Content Position"
+msgstr ""
+
+#: views/meta_panel.php:175
+msgid "Below content matching its layout"
+msgstr ""
+
+#: views/meta_panel.php:176
+msgid "Below main content with separate layout options"
+msgstr ""
+
+#: views/meta_panel.php:188
+msgid "Container Width"
+msgstr ""
+
+#: views/meta_panel.php:192
+msgid "Fixed Width"
+msgstr ""
+
+#: views/meta_panel.php:193
+msgid "Full Width"
+msgstr ""
+
+#: views/meta_panel.php:205
+msgid "Container Height"
+msgstr ""
+
+#: views/meta_panel.php:209
+msgid "Auto"
+msgstr ""
+
+#: views/meta_panel.php:210
+#, php-format
+msgid "50% of Screen"
+msgstr ""
+
+#: views/meta_panel.php:211
+#, php-format
+msgid "100% of Screen"
+msgstr ""
+
+#: views/meta_panel.php:222
+msgid "Content Align"
+msgstr ""
+
+#: views/meta_panel.php:226 views/shortcodes/cardealer/popups/slider.php:48
+#: views/shortcodes/default/popups/image.php:92
+#: views/shortcodes/default/popups/title.php:102
+msgid "Left"
+msgstr ""
+
+#: views/meta_panel.php:227 views/shortcodes/cardealer/popups/slider.php:47
+#: views/shortcodes/default/popups/image.php:93
+#: views/shortcodes/default/popups/title.php:103
+msgid "Right"
+msgstr ""
+
+#: views/meta_panel.php:228 views/shortcodes/default/popups/image.php:94
+#: views/shortcodes/default/popups/title.php:104
+msgid "Center"
+msgstr ""
+
+#: views/meta_panel.php:236
+msgid "Border Top"
+msgstr ""
+
+#: views/meta_panel.php:240
+msgid "No Top Border"
+msgstr ""
+
+#: views/meta_panel.php:241
+msgid "Border Style 1"
+msgstr ""
+
+#: views/meta_panel.php:242
+msgid "Border Style 2"
+msgstr ""
+
+#: views/meta_panel.php:243
+msgid "Border Style 3"
+msgstr ""
+
+#: views/meta_panel.php:256
+msgid "Offset Top"
+msgstr ""
+
+#: views/meta_panel.php:260
+msgid "No Top Padding"
+msgstr ""
+
+#: views/meta_panel.php:261 views/meta_panel.php:282
+msgid "20 PX"
+msgstr ""
+
+#: views/meta_panel.php:262 views/meta_panel.php:283
+msgid "40 PX"
+msgstr ""
+
+#: views/meta_panel.php:263 views/meta_panel.php:284
+msgid "60 PX"
+msgstr ""
+
+#: views/meta_panel.php:264 views/meta_panel.php:285
+msgid "80 PX"
+msgstr ""
+
+#: views/meta_panel.php:265 views/meta_panel.php:286
+msgid "100 PX"
+msgstr ""
+
+#: views/meta_panel.php:268
+msgid "Default Value 0px"
+msgstr ""
+
+#: views/meta_panel.php:277
+msgid "Offset Bottom"
+msgstr ""
+
+#: views/meta_panel.php:281
+msgid "No Bottom Padding"
+msgstr ""
+
+#: views/meta_panel.php:289
+msgid "Default Value 20px"
+msgstr ""
+
+#: views/meta_panel.php:301
+msgid "Section Background Type"
+msgstr ""
+
+#: views/meta_panel.php:305
+msgid "Transparent (default)"
+msgstr ""
+
+#: views/meta_panel.php:306 views/shortcodes/default/popups/button.php:35
+#: views/shortcodes/default/popups/title.php:152
+msgid "Color"
+msgstr ""
+
+#: views/meta_panel.php:307 views/shortcodes/default/popups/google_map.php:43
+msgid "Image"
+msgstr ""
+
+#: views/meta_panel.php:321
+msgid "Preinstalled BG Colors"
+msgstr ""
+
+#: views/meta_panel.php:325 views/shortcodes/default/popups/image.php:91
+#: views/shortcodes/woocommerce/popups/tmm_recent_products.php:43
+msgid "None"
+msgstr ""
+
+#: views/meta_panel.php:326
+msgid "White"
+msgstr ""
+
+#: views/meta_panel.php:327
+msgid "Silver"
+msgstr ""
+
+#: views/meta_panel.php:328
+msgid "Light Gray"
+msgstr ""
+
+#: views/meta_panel.php:329
+msgid "Light Blue"
+msgstr ""
+
+#: views/meta_panel.php:330
+msgid "Custom"
+msgstr ""
+
+#: views/meta_panel.php:341
+msgid "Custom Background Color"
+msgstr ""
+
+#: views/meta_panel.php:359
+msgid "Background Image"
+msgstr ""
+
+#: views/meta_panel.php:368
+msgid "Background Attachment"
+msgstr ""
+
+#: views/meta_panel.php:372
+msgid "scroll"
+msgstr ""
+
+#: views/meta_panel.php:373
+msgid "fixed"
+msgstr ""
+
+#: views/meta_panel.php:385
+msgid "Overlay"
+msgstr ""
+
+#: views/meta_panel.php:389
+msgid "Set overlay on background image"
+msgstr ""
+
+#: views/meta_panel.php:399
+msgid "Overlay Color"
+msgstr ""
+
+#: views/meta_panel.php:413
+msgid "Overlay Opacity"
+msgstr ""
+
+#: views/shortcodes/cardealer/car_locations.php:22
+#: views/shortcodes/cardealer/car_locations.php:41
+#: views/shortcodes/cardealer/car_locations.php:56
+#, php-format
+msgid "View all posts filed under %s"
+msgstr ""
+
+#: views/shortcodes/cardealer/car_makes.php:61
+#, php-format
+msgid "View all ads filed under %s"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_locations.php:8
+msgid "Hierarchy level"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_locations.php:12
+msgid "Countries"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_locations.php:13
+msgid "States"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_locations.php:14
+msgid "Cities"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_locations.php:17
+msgid "Show locations by level"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_locations.php:23
+msgid "Hide empty locations"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_locations.php:27
+msgid "Hide locations whithout related cars"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_makes.php:8
+msgid "Hide empty producers"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_makes.php:22
+msgid "Display car make logos along with their names"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_makes.php:36
+msgid "Display only cars, that have their logo"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:9
+msgid "Dealers Number"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:24
+msgid "Display Order"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:28
+msgid "Latest First"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:29
+msgid "Oldest First"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:30
+msgid "Random"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:44
+#: views/shortcodes/cardealer/popups/dealers.php:72
+msgid "All"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:45
+msgid "All without Administrator"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:46
+msgid "Administrator"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:55
+msgid "Dealer Type"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:91
+msgid "Specific Dealer"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:109
+msgid "Display Dealer Logo"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:124
+msgid "Display Dealer Bio"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:139
+msgid "Display Phone"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:154
+msgid "Display Cell Phone"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:169
+msgid "Display Fax"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:184
+msgid "Display Email"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:199
+msgid "Display Skype ID"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:214
+msgid "Display Website Url"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:229
+msgid "Display Postal Address"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:244
+msgid "Display Map Location"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:259
+msgid "Excerpt Bio symbol count"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/pricing_tables.php:92
+msgid "Table Count"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/pricing_tables.php:115
+msgid "Row Count"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/pricing_tables.php:129
+msgid "Starter Package"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/pricing_tables.php:129
+msgid "19.95"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/pricing_tables.php:129
+msgid "Details"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/pricing_tables.php:177
+msgid "Enter text here"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/pricing_tables.php:182
+msgid "Button Text"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/pricing_tables.php:184
+msgid "Button Link"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/pricing_tables.php:186
+#: views/shortcodes/cardealer/popups/pricing_tables.php:190
+msgid "Is Featured"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:11
+msgid "Display country"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:22
+msgid "Display state"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:33
+msgid "Display city"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:44
+msgid "Display condition"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:55
+msgid "Display producers &amp; models"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:66
+msgid "Display price range"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:77
+msgid "Display year range"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:88
+msgid "Search button position"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:92
+msgid "First column"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:93
+msgid "Second column"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:94
+msgid "Third column"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:117
+msgid "Select default country"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:146
+msgid "Select default state"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:167
+msgid "Display mileage"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:178
+msgid "Display fuel type"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:189
+msgid "Display gearbox"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:200
+msgid "Display body type"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:211
+msgid "Display doors count"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:222
+msgid "Display colors"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:233
+msgid "Display advanced search"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:9
+#: views/shortcodes/default/popups/accordion.php:45
+#: views/shortcodes/default/popups/chart.php:32
+#: views/shortcodes/default/popups/tabs.php:26
+msgid "Title"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:20
+msgid "Show details button"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:31
+msgid "Show link to all cars"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:42
+msgid "Enable Currency Converter"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:57
+msgid "Enter number of cars"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:68
+msgid "Show layout switcher"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:80
+msgid "View Mode"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:84
+#: views/shortcodes/cardealer/recent_cars.php:66
+msgid "Grid View"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:85
+#: views/shortcodes/cardealer/recent_cars.php:69
+msgid "List View"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:96
+msgid "Slide featured cars images on hover"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:107
+msgid "Thumbnail size"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:9
+msgid "Choose slider"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:12
+msgid "Car Posts"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:21
+msgid "Images count"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:32
+msgid "Display sidebar (widgets defined in Cars Slider Sidebar)"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:43
+msgid "Slider sidebar position"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:58
+msgid "Display caption"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:73
+msgid "Animation type"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:77
+msgid "Fade"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:78
+msgid "Slide"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:88
+msgid "Enable animation loop"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:99
+msgid "Enable slideshow"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:110
+msgid "Reverse the animation direction"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:121
+msgid "Randomize slide order"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:132
+msgid "Slideshow speed"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:136
+msgid "Set the speed of the slideshow cycling, in milliseconds"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:143
+msgid "Animation speed"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:147
+msgid "Set the speed of animations, in milliseconds"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:154
+msgid "Init delay"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/slider.php:158
+msgid "Set an initialization delay, in milliseconds"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/staff.php:25
+msgid "Staff"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/staff.php:26
+#: views/shortcodes/cardealer/popups/staff.php:58
+msgid "Add staff item"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/staff.php:48
+#: views/shortcodes/default/popups/accordion.php:46
+#: views/shortcodes/default/popups/list.php:88
+#: views/shortcodes/default/popups/tabs.php:27
+msgid "Remove"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:117
+#: views/shortcodes/cardealer/quicksearch.php:153
+#: views/shortcodes/cardealer/quicksearch.php:171
+#: views/shortcodes/cardealer/quicksearch.php:193
+#: views/shortcodes/cardealer/quicksearch.php:211
+#: views/shortcodes/cardealer/quicksearch.php:233
+#: views/shortcodes/cardealer/quicksearch.php:305
+#: views/shortcodes/cardealer/quicksearch.php:322
+#: views/shortcodes/cardealer/quicksearch.php:382
+#: views/shortcodes/cardealer/quicksearch.php:399
+#: views/shortcodes/cardealer/quicksearch.php:418
+#: views/shortcodes/cardealer/quicksearch.php:434
+#: views/shortcodes/cardealer/quicksearch.php:457
+#: views/shortcodes/cardealer/quicksearch.php:470
+#: views/shortcodes/cardealer/quicksearch.php:545
+msgid "Any"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:191
+msgid "Condition"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:194
+msgid "Only new cars"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:195
+msgid "Only damaged cars"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:196
+msgid "Only used cars"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:209
+msgid "Make"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:231
+msgid "Model"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:260
+#: views/shortcodes/cardealer/quicksearch.php:359
+#: views/shortcodes/cardealer/quicksearch.php:485
+#: views/shortcodes/cardealer/quicksearch.php:561
+msgid "Search"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:266
+#: views/shortcodes/cardealer/quicksearch.php:365
+#: views/shortcodes/cardealer/quicksearch.php:491
+msgid "Advanced"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:282
+#: views/shortcodes/cardealer/quicksearch.php:288
+msgid "Price"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:282
+msgid "min"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:288
+msgid "max"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:302
+#: views/shortcodes/cardealer/quicksearch.php:319
+msgid "Year"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:302
+#: views/shortcodes/cardealer/quicksearch.php:344
+msgid "from"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:319
+#: views/shortcodes/cardealer/quicksearch.php:350
+msgid "to"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:344
+#: views/shortcodes/cardealer/quicksearch.php:350
+msgid "Mileage"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:379
+msgid "Fuel Type"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:396
+msgid "Gearbox"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:415
+msgid "Body Type"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:432
+msgid "Door Count"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:455
+msgid "Interior Color"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:468
+msgid "Exterior Color"
+msgstr ""
+
+#: views/shortcodes/cardealer/recent_cars.php:99
+msgid "Show all cars"
+msgstr ""
+
+#: views/shortcodes/cardealer/staff.php:60
+#: views/shortcodes/cardealer/staff.php:61
+msgid "Facebook"
+msgstr ""
+
+#: views/shortcodes/cardealer/staff.php:65
+#: views/shortcodes/cardealer/staff.php:66
+msgid "Twitter"
+msgstr ""
+
+#: views/shortcodes/cardealer/staff.php:70
+#: views/shortcodes/cardealer/staff.php:71
+msgid "Google+"
+msgstr ""
+
+#: views/shortcodes/cardealer/staff.php:80
+msgid "Office"
+msgstr ""
+
+#: views/shortcodes/cardealer/staff.php:97
+msgid "Mobile"
+msgstr ""
+
+#: views/shortcodes/cardealer/staff.php:114
+msgid "Fax"
+msgstr ""
+
+#: views/shortcodes/cardealer/staff.php:130
+#: views/shortcodes/default/contact_details.php:15
+msgid "Email"
+msgstr ""
+
+#: views/shortcodes/default/contact_details.php:4
+msgid "Address Info"
+msgstr ""
+
+#: views/shortcodes/default/contact_details.php:7
+msgid "Phone"
+msgstr ""
+
+#: views/shortcodes/default/contact_details.php:11
+msgid "FAX"
+msgstr ""
+
+#: views/shortcodes/default/contact_form.php:102
+msgid "Are you human?"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:9
+#: views/shortcodes/default/popups/tmm_video.php:8
+msgid "Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:13
+msgid "Accordion"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:14
+msgid "Toggle"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:28
+#: views/shortcodes/default/popups/accordion.php:59
+#: views/shortcodes/default/popups/tabs.php:8
+#: views/shortcodes/default/popups/tabs.php:40
+msgid "Add item"
+msgstr ""
+
+#: views/shortcodes/default/popups/accordion.php:51
+#: views/shortcodes/default/popups/tabs.php:32
+msgid "Content"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:10
+msgid "Enter Text"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:22
+#: views/shortcodes/default/popups/divider.php:8
+msgid "Select Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:26
+msgid "Error"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:27
+msgid "Success"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:28
+msgid "Info"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:29
+msgid "Notice"
+msgstr ""
+
+#: views/shortcodes/default/popups/blockquote.php:9
+msgid "Enter text"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:8
+msgid "Buttons Text"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:21
+msgid "URL"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:25
+msgid "http://forums.webtemplatemasters.com/"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:9
+msgid "Chart Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:13
+msgid "Pie Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:14
+msgid "Bar Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:15
+msgid "Column Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:16
+msgid "Geochart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:17
+msgid "Line Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:18
+msgid "Area Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:19
+msgid "Combo Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:46
+msgid "Chart Width"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:60
+msgid "Chart Height"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:74
+#: views/shortcodes/default/popups/title.php:138
+msgid "Font Family"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:96
+#: views/shortcodes/default/popups/title.php:48
+msgid "Font Size"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:111
+msgid "Chart Titles"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:115
+#: views/shortcodes/default/popups/chart.php:132
+msgid "Example"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:128
+msgid "Chart Data"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:146
+msgid "Background Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/contact_details.php:9
+msgid "Enter Address"
+msgstr ""
+
+#: views/shortcodes/default/popups/contact_details.php:20
+msgid "Enter Phone"
+msgstr ""
+
+#: views/shortcodes/default/popups/contact_details.php:31
+msgid "Enter Fax"
+msgstr ""
+
+#: views/shortcodes/default/popups/contact_details.php:42
+msgid "Enter Email"
+msgstr ""
+
+#: views/shortcodes/default/popups/contact_form.php:11
+msgid "Choose Contact Form"
+msgstr ""
+
+#: views/shortcodes/default/popups/divider.php:12
+msgid "Solid"
+msgstr ""
+
+#: views/shortcodes/default/popups/divider.php:13
+msgid "Empty Space"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:9
+#: views/shortcodes/default/popups/tmm_video.php:54
+msgid "Height"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:24
+#: views/shortcodes/default/popups/tmm_video.php:40
+msgid "Width"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:38
+msgid "Mode"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:42
+msgid "Map"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:56
+msgid "Location mode"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:60
+#: views/shortcodes/default/popups/google_map.php:105
+msgid "Address"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:61
+msgid "Coordinates"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:75
+msgid "Marker Latitude"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:79
+#: views/shortcodes/default/popups/google_map.php:95
+msgid ""
+"Point on which the viewport will be centered. If not given and no markers "
+"are defined the viewport defaults to world view. In address Location mode it "
+"is calculated automatically!"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:91
+msgid "Marker Longitude"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:126
+msgid "Zoom"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:131
+msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:141
+msgid "Enable Scrollwheel"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:145
+msgid "Set to false to disable zooming with your mouses scrollwheel."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:154
+msgid "Maptype"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:158
+msgid "ROADMAP"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:159
+msgid "SATELLITE"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:160
+msgid "HYBRID"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:161
+msgid "TERRAIN"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:175
+msgid "Enable Marker"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:179
+msgid "Set to false to disable display a marker in the viewport."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:188
+msgid "Enable Popup"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:192
+msgid ""
+"If true the info window for this marker will be shown when the map finished "
+"loading. If html is empty this option will be ignored."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:202
+msgid "Marker is draggable"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:206
+msgid "Set marker draggable"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:215
+msgid "Html Content"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:14
+msgid "Rows count"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:29
+msgid "Columns count"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:46
+msgid "Show Row Number"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:52
+msgid "Yes"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:58
+msgid "No"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:75
+msgid "string"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:76
+msgid "number"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:92
+msgid "Table headers"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:124
+msgid "Table data"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:8
+msgid "Image URL"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:26
+msgid "Action"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:30
+msgid "No link on image"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:31
+msgid "Open link"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:42
+msgid "Image Action Link"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:55
+msgid "Link Target"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:59
+msgid "Self"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:60
+msgid "Blank"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:70
+msgid "Open in Fancybox"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:87
+#: views/shortcodes/default/popups/title.php:98
+msgid "Align"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:108
+msgid "Size"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:123
+msgid "Image Alt"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:137
+msgid "Link Title"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:151
+msgid "Top Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:165
+msgid "Right Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:179
+#: views/shortcodes/default/popups/title.php:166
+msgid "Bottom Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:193
+msgid "Left Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:8
+msgid "Type 1"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:9
+msgid "Type 2"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:10
+msgid "Type 3"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:37
+msgid "List Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:43
+msgid "Unordered"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:49
+msgid "Ordered"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:61
+msgid "List Styles"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:62
+#: views/shortcodes/default/popups/list.php:98
+msgid "Add list item"
+msgstr ""
+
+#: views/shortcodes/default/popups/tabs.php:6
+msgid "Items"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:8
+msgid "Title Text"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:22
+msgid "Title Heading"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:63
+msgid "Letter spacing (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:76
+msgid "Font weight"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:81
+msgid "Normal"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:86
+msgid "Bold"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:114
+msgid "Show border under the title"
+msgstr ""
+
+#: views/shortcodes/default/popups/tmm_audio.php:8
+msgid "Link to Audio"
+msgstr ""
+
+#: views/shortcodes/default/popups/tmm_video.php:26
+msgid "Youtube or Vimeo link"
+msgstr ""
+
+#: views/shortcodes/default/popups/tmm_video.php:30
+msgid ""
+"Examples:https://www.youtube.com/watch?v=_EBYf3lYSEg or http://vimeo."
+"com/22439234"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_recent_products.php:7
+#: views/shortcodes/woocommerce/popups/tmm_special_products.php:7
+msgid "Products Per Page"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_recent_products.php:20
+#: views/shortcodes/woocommerce/popups/tmm_special_products.php:20
+msgid "Columns"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_recent_products.php:53
+msgid "Select Category"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_recent_products.php:58
+msgid "Display products by selected category"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_single_product.php:30
+msgid "Select Product"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_single_product.php:35
+msgid "Select single product by title"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_single_product.php:44
+msgid "Product SKU"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_single_product.php:48
+msgid "Display single product by SKU."
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_special_products.php:33
+msgid "Featured"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_special_products.php:35
+msgid "Best Selling"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_special_products.php:36
+msgid "Sale Products"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_special_products.php:41
+msgid "Select Products Type"
+msgstr ""
+
+#: views/shortcodes/woocommerce/popups/tmm_special_products.php:46
+msgid "Select products type"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "ThemeMakers Visual Content Composer"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://webtemplatemasters.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Universal Layout Composer with Shortcodes Package"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ThemeMakers"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://themeforest.net/user/ThemeMakers"
+msgstr ""
