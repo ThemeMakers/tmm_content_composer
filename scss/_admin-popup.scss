@@ -334,13 +334,13 @@
 	linear-gradient(135deg, #777 50%, transparent 50%),
 	linear-gradient(to right, #777, #777);
 	background-position:
-	calc(100% - 21px) calc(1em + 2px),
-	calc(100% - 14px) calc(1em + 2px),
-	0;
+		calc(100% - 22px) 1em,
+		calc(100% - 14px) 1em,
+		0;
 	background-size:
-	8px 7px,
-	8px 7px,
-	0;
+		8px 8px,
+		8px 8px,
+		0;
 	background-repeat: no-repeat;
 }
 
