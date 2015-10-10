@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2015-10-08 18:01+0200\n"
-"PO-Revision-Date: 2015-10-08 18:01+0200\n"
+"POT-Creation-Date: 2015-10-10 20:26+0200\n"
+"PO-Revision-Date: 2015-10-10 20:26+0200\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
@@ -131,6 +131,22 @@ msgstr ""
 
 #: classes/shortcode.php:44
 msgid "Google table row"
+msgstr ""
+
+#: index.php:41
+msgid "Arial"
+msgstr ""
+
+#: index.php:42
+msgid "Tahoma"
+msgstr ""
+
+#: index.php:43
+msgid "Verdana"
+msgstr ""
+
+#: index.php:44
+msgid "Calibri"
 msgstr ""
 
 #: views/column_item.php:16 views/meta_panel.php:110

@@ -5,7 +5,7 @@
  * Description: Universal Layout Composer with Shortcodes Package
  * Author: ThemeMakers
  * Author URI: http://themeforest.net/user/ThemeMakers
- * Version: 1.1.0
+ * Version: 1.2.0
  * Text Domain: tmm_content_composer
 */
 
@@ -38,10 +38,10 @@ function tmm_cc_register() {
 		function tmm_get_fonts_array() {
 			return array(
 				'' => __('Default', TMM_CC_TEXTDOMAIN),
-				'Arial' => 'Arial',
-				'Tahoma' => 'Tahoma',
-				'Verdana' => 'Verdana',
-				'Calibri' => 'Calibri',
+				'Arial' => __('Arial', TMM_CC_TEXTDOMAIN),
+				'Tahoma' => __('Tahoma', TMM_CC_TEXTDOMAIN),
+				'Verdana' => __('Verdana', TMM_CC_TEXTDOMAIN),
+				'Calibri' => __('Calibri', TMM_CC_TEXTDOMAIN),
 			);
 		}
 	}
