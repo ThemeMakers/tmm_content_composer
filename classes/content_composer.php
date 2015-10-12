@@ -491,8 +491,8 @@ class TMM_Content_Composer {
 				<?php endif; ?>
 				<input class="slider" type="range" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" min="<?php echo $data['min'] ?>" max="<?php echo $data['max'] ?>">
 				<div class="clearfix">
-					<div class="alignleft"><?php echo $data['min'] ?></div>
 					<input type="text" class="slider-text <?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" />
+					<div class="alignleft"><?php echo $data['min'] ?></div>
 					<div class="alignright"><?php echo $data['max'] ?></div>
 				</div>
 				<?php if (!empty($data['description'])) { ?>
