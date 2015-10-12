@@ -236,6 +236,16 @@
 			});
 		}
 
+		if ($('.translateEffect').length) {
+			$('.translateEffect').appear({
+				accX: 0,
+				accY: 300,
+				data: 'translateEffect',
+				speedAddClass: 200
+			});
+		}
+
+
 	});
 
 }(jQuery));
