@@ -402,15 +402,16 @@
 						}
 
 						self.colorizator();
+						self.ui_slider();
 
 						/* events handlers */
-						cur_popup.find('#row_bg_overlay_opacity').on('change', function(){
-							cur_popup.find('.slider-text.row_bg_overlay_opacity').val( $(this).val() );
-						});
-
-						cur_popup.find('.slider-text.row_bg_overlay_opacity').on('change', function(){
-							cur_popup.find('#row_bg_overlay_opacity').val( $(this).val() );
-						});
+						//cur_popup.find('#row_bg_overlay_opacity').on('change', function(){
+						//	cur_popup.find('.slider-text.row_bg_overlay_opacity').val( $(this).val() );
+						//});
+						//
+						//cur_popup.find('.slider-text.row_bg_overlay_opacity').on('change', function(){
+						//	cur_popup.find('#row_bg_overlay_opacity').val( $(this).val() );
+						//});
 
 						cur_popup.find('#row_lc_displaying').on('change', function(){
 
@@ -508,8 +509,8 @@
 						template_wrapper.html(template_html);
 						/* remove events handlers */
 						var cur_popup = $('.tmm-popup-edit-row');
-						cur_popup.find('#row_bg_overlay_opacity').off('change');
-						cur_popup.find('.slider-text.row_bg_overlay_opacity').off('change');
+						//cur_popup.find('#row_bg_overlay_opacity').off('change');
+						//cur_popup.find('.slider-text.row_bg_overlay_opacity').off('change');
 						cur_popup.find('#row_lc_displaying').off('change');
 						cur_popup.find('#row_bg_type').off('change');
 						cur_popup.find('#row_bg_overlay').off('click');
@@ -576,6 +577,39 @@
 					});
 
 				});
+			},
+			ui_slider: function() {
+
+				$('.tmm-popup-edit-row').find('.ui-slider-item').each(function (key, item) {
+					var max_value = $(item).data('max-value'),
+						min_value = $(item).data('min-value'),
+						id = $(item).find('.range-amount-value-hidden').attr('id'),
+						value = $(item).find('.range-amount-value-hidden').attr('value');
+
+					var slider = $(item).find('.' + id).slider({
+						range: 'max',
+						animate: true,
+						value: parseFloat(value, 10),
+						step: 1,
+						min: parseInt(min_value, 10),
+						max: parseInt(max_value, 10),
+						slide: function (event, ui) {
+							$(item).find('.range-amount-value').val(ui.value);
+							$(item).find('.range-amount-value-hidden').val(ui.value);
+						}
+					});
+
+					$(item).find('.range-amount-value').val(value);
+
+					$(item).find('.range-amount-value').life('change', function () {
+						var value = parseFloat($(this).val(), 10);
+						slider.slider("value", value);
+						$(item).find('.range-amount-value-hidden').val(value);
+					});
+
+
+				});
+
 			}
 
 		};
