@@ -268,7 +268,7 @@ $uniqid = uniqid();
 						</div><!--/ .advanced-row-->
 
 					<?php } ?>
-				<? } ?>
+				<?php } ?>
 
 			</div>
 			<div class="col-md-4">
@@ -367,7 +367,7 @@ $uniqid = uniqid();
 						</div><!--/ .advanced-row-->
 
 					<?php } ?>
-				<? } ?>
+				<?php } ?>
 
 			</div>
 			<div class="col-md-4">
@@ -510,7 +510,7 @@ $uniqid = uniqid();
 
 				<?php if (!empty($attributes_array)) { ?>
 				<h4><?php _e($block_name, TMM_CC_TEXTDOMAIN); ?></h4>
-				<? } ?>
+				<?php } ?>
 
 				<?php foreach ($attributes_array as $key => $value) : ?>
 
