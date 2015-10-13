@@ -58,17 +58,17 @@ $i = 0;
 			<ul class="social-icons">
 				<?php if ( ! empty( $custom["facebook"] ) ): ?>
 					<li><b><?php _e( 'Facebook', TMM_CC_TEXTDOMAIN ) ?>:</b>&nbsp;<a
-							href="<?php echo $custom["facebook"] ?>" title="<?php _e('Facebook', 'cardealer'); ?>"><i class="icon-facebook-squared"></i></a>
+							href="<?php echo $custom["facebook"] ?>" title="<?php _e('Facebook', TMM_CC_TEXTDOMAIN); ?>"><i class="icon-facebook-squared"></i></a>
 					</li>
 				<?php endif; ?>
 				<?php if ( ! empty( $custom["twitter"] ) ): ?>
 					<li><b><?php _e( 'Twitter', TMM_CC_TEXTDOMAIN ) ?>:</b>&nbsp;<a
-							href="<?php echo $custom["twitter"] ?>" title="<?php _e('Twitter', 'cardealer'); ?>"><i class="icon-twitter-squared"></i></a>
+							href="<?php echo $custom["twitter"] ?>" title="<?php _e('Twitter', TMM_CC_TEXTDOMAIN); ?>"><i class="icon-twitter-squared"></i></a>
 					</li>
 				<?php endif; ?>
 				<?php if ( ! empty( $custom["gplus"] ) ): ?>
 					<li><b><?php _e( 'Google+', TMM_CC_TEXTDOMAIN ) ?>:</b>&nbsp;<a
-							href="<?php echo $custom["gplus"] ?>" title="<?php _e('Google+', 'cardealer'); ?>"><i class="icon-gplus-squared"></i></a>
+							href="<?php echo $custom["gplus"] ?>" title="<?php _e('Google+', TMM_CC_TEXTDOMAIN); ?>"><i class="icon-gplus-squared"></i></a>
 					</li>
 				<?php endif; ?>
 			</ul>
