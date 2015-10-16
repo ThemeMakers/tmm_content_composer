@@ -490,7 +490,7 @@ class TMM_Content_Composer {
 				<h4 class="label" for="<?php echo esc_attr($data['id']); ?>"><?php echo esc_html($data['title']); ?></h4>
 				<?php endif; ?>
 				<div class="clearfix ui-slider-item" data-min-value="<?php echo $data['min'] ?>" data-max-value="<?php echo $data['max'] ?>">
-					<input type="text" class="range-amount-value" value="<?php echo @$data['default_value'] ?>" />
+					<input type="text" readonly class="range-amount-value" value="<?php echo @$data['default_value'] ?>" />
 					<input type="hidden" value="<?php echo $data['default_value'] ?>" class="range-amount-value-hidden" id="<?php echo $data['id'] ?>" />
 					<div class="slider-range <?php echo $data['id'] ?>"></div>
 				</div>
