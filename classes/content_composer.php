@@ -35,9 +35,9 @@ class TMM_Content_Composer {
 			if (!TMM::get_option('use_wptexturize')) {
 				remove_filter('the_content', 'wptexturize');
 			}
+			add_filter('tmm_add_general_theme_option', array(__CLASS__, 'add_texturize_option'), 10);
 		}
 
-		add_filter('tmm_add_general_theme_option', array(__CLASS__, 'add_texturize_option'), 10);
 
 		TMM_Shortcode::register();
 	}
