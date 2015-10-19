@@ -229,7 +229,7 @@ $uniqid = uniqid();
 						<div class="col-xs-6">
 							<p>
 								<label for="tmm_qs_model_<?php echo $uniqid; ?>"><?php _e("Model", TMM_CC_TEXTDOMAIN) ?>:</label>
-								<select id="tmm_qs_model_<?php echo $uniqid; ?>" class="qs_carmodel" name="carmodels" <?php if ($carproducer == 0): ?>disabled=""<?php endif; ?>>
+								<select id="tmm_qs_model_<?php echo $uniqid; ?>" class="qs_carmodel" name="carmodels" <?php if ($carproducer == 0) { ?>disabled=""<?php } ?>>
 									<option value="0"><?php _e("Any", TMM_CC_TEXTDOMAIN) ?></option>
 									<?php
 									if ($carproducer > 0) {
@@ -523,9 +523,9 @@ $uniqid = uniqid();
 								<input id="<?php echo $key.'_'.$uniqid; ?>" type="checkbox" <?php echo (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key]) ? 'checked=""' : ''; ?> class="js_option_checkbox" value="<?php echo (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key]) ? '1' : '0'; ?>" name="advanced[<?php echo $specification_key ?>][<?php echo $key ?>]">
 								<label class="check" for="<?php echo $key.'_'.$uniqid; ?>">
 									<strong><?php _e($value['name'], TMM_CC_TEXTDOMAIN); ?></strong>
-									<?php if (!empty($value['description'])): ?>
+									<?php if (!empty($value['description'])) { ?>
 										<i class="description"><?php _e($value['description'], TMM_CC_TEXTDOMAIN); ?></i>
-									<?php endif; ?>
+									<?php } ?>
 								</label>
 							</p>
 						</fieldset>
@@ -538,16 +538,16 @@ $uniqid = uniqid();
 							<p>
 								<label for="<?php echo $key.'_'.$uniqid; ?>">
 									<?php _e($value['name'], TMM_CC_TEXTDOMAIN); ?>
-									<?php if (!empty($value['description'])): ?>
+									<?php if (!empty($value['description'])) { ?>
 										<span data-description="<?php _e($value['description'], TMM_CC_TEXTDOMAIN); ?>"></span>
-									<?php endif; ?>
+									<?php } ?>
 								</label>
 
 								<select id="<?php echo $key.'_'.$uniqid; ?>" name="advanced[<?php echo $specification_key ?>][<?php echo $key ?>]">
 									<option value="0"><?php _e("Any", TMM_CC_TEXTDOMAIN) ?></option>
-									<?php foreach ($value['values'] as $val_key => $val_name) : ?>
-										<option <?php if (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key] == $val_key): ?>selected<?php endif; ?> value="<?php echo $val_key ?>"><?php _e($val_name, TMM_CC_TEXTDOMAIN); ?></option>
-									<?php endforeach; ?>
+									<?php foreach ($value['values'] as $val_key => $val_name) { ?>
+										<option <?php if (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key] == $val_key) { ?>selected<?php } ?> value="<?php echo $val_key ?>"><?php _e($val_name, TMM_CC_TEXTDOMAIN); ?></option>
+									<?php } ?>
 								</select>
 							</p>
 						</fieldset>
