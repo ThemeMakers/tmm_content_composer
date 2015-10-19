@@ -7,10 +7,7 @@ class TMM_Content_Composer {
 
 	protected static $instance = null;
 
-	protected $slug = 'tmm_theme_features';
-
 	private function __construct() {
-		load_plugin_textdomain( $this->slug, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 		add_action('add_meta_boxes', array(__CLASS__, 'add_meta_box'));
 
