@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2015-06-15 20:45+0100\n"
-"PO-Revision-Date: 2015-06-15 20:45+0100\n"
-"Last-Translator: ThemeMakers Team <support@webtemplatemasters.com>\n"
-"Language-Team: ThemeMakers Team <support@webtemplatemasters.com>\n"
+"POT-Creation-Date: 2015-10-20 21:09+0200\n"
+"PO-Revision-Date: 2015-10-20 21:09+0200\n"
+"Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
+"Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.1\n"
+"X-Generator: Poedit 1.8.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -20,120 +20,120 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: classes/content_composer.php:59
+#: classes/content_composer.php:56
 msgid "ThemeMakers Layout Constructor"
 msgstr ""
 
-#: classes/content_composer.php:92
+#: classes/content_composer.php:89
 msgid "Loading ..."
 msgstr ""
 
-#: classes/content_composer.php:93
+#: classes/content_composer.php:90
 msgid "Close"
 msgstr ""
 
-#: classes/content_composer.php:94
+#: classes/content_composer.php:91
 msgid "Apply"
 msgstr ""
 
-#: classes/content_composer.php:95
+#: classes/content_composer.php:92
 msgid "There is no options for shortcode!"
 msgstr ""
 
-#: classes/content_composer.php:96
+#: classes/content_composer.php:93
 msgid "Shortcode updated!"
 msgstr ""
 
-#: classes/content_composer.php:97
+#: classes/content_composer.php:94
 msgid "Insert Shortcode"
 msgstr ""
 
-#: classes/content_composer.php:98
+#: classes/content_composer.php:95
 msgid "Edit shortcode"
 msgstr ""
 
-#: classes/content_composer.php:108
+#: classes/content_composer.php:105
 msgid "Sure about column deleting?"
 msgstr ""
 
-#: classes/content_composer.php:109
+#: classes/content_composer.php:106
 msgid "Sure about row deleting?"
 msgstr ""
 
-#: classes/content_composer.php:110 views/column_item.php:13
+#: classes/content_composer.php:107 views/column_item.php:13
 msgid "Empty title"
 msgstr ""
 
-#: classes/content_composer.php:111
+#: classes/content_composer.php:108
 msgid "Column content editor"
 msgstr ""
 
-#: classes/content_composer.php:112
+#: classes/content_composer.php:109
 msgid "Row editor"
 msgstr ""
 
-#: classes/content_composer.php:208 index.php:40
+#: classes/content_composer.php:205 index.php:40
 #: views/shortcodes/default/popups/title.php:45
 #: views/shortcodes/default/popups/title.php:85
 #: views/shortcodes/diplomat/popups/imggallery.php:21
 msgid "Default"
 msgstr ""
 
-#: classes/content_composer.php:209
+#: classes/content_composer.php:206
 msgid "Default-white"
 msgstr ""
 
-#: classes/content_composer.php:220
+#: classes/content_composer.php:217
 msgid "Small"
 msgstr ""
 
-#: classes/content_composer.php:221
+#: classes/content_composer.php:218
 msgid "Middle"
 msgstr ""
 
-#: classes/content_composer.php:222
+#: classes/content_composer.php:219
 msgid "Large"
 msgstr ""
 
-#: classes/content_composer.php:230
+#: classes/content_composer.php:227
 msgid "All Categories"
 msgstr ""
 
-#: classes/content_composer.php:265
+#: classes/content_composer.php:262
 msgid "All Tags"
 msgstr ""
 
-#: classes/content_composer.php:330
+#: classes/content_composer.php:327
 msgid "Blog Classic"
 msgstr ""
 
-#: classes/content_composer.php:331
+#: classes/content_composer.php:328
 msgid "Blog Classic Alternate"
 msgstr ""
 
-#: classes/content_composer.php:332
+#: classes/content_composer.php:329
 msgid "Blog Masonry"
 msgstr ""
 
-#: classes/content_composer.php:333
+#: classes/content_composer.php:330
 #: views/shortcodes/default/popups/dropcap.php:13
 msgid "Type 1"
 msgstr ""
 
-#: classes/content_composer.php:334
+#: classes/content_composer.php:331
 #: views/shortcodes/default/popups/dropcap.php:14
 msgid "Type 2"
 msgstr ""
 
-#: classes/content_composer.php:335
+#: classes/content_composer.php:332
 msgid "Type 3"
 msgstr ""
 
-#: classes/content_composer.php:336
+#: classes/content_composer.php:333
 msgid "Type 4"
 msgstr ""
 
-#: classes/content_composer.php:466
+#: classes/content_composer.php:463
 msgid "Browse"
 msgstr ""
 
