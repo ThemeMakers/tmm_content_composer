@@ -3,7 +3,6 @@
 } ?>
 <?php
 $cars_count = (int) $content;
-wp_reset_query();
 global $wp_query;
 global $wpdb;
 $args                   = array();
@@ -88,7 +87,7 @@ $car_watch_list   = TMM_Ext_PostType_Car::get_watch_list();
 		}
 	}
 
-	wp_reset_query();
+	wp_reset_postdata();
 	?>
 
 </div>
