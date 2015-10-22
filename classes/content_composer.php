@@ -64,7 +64,10 @@ class TMM_Content_Composer {
 
 	public static function admin_enqueue_scripts() {
 		global $pagenow;
-		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' ) {
+
+		$screen = get_current_screen();
+
+		if ($screen->base === 'toplevel_page_gf_edit_forms' || $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' ) {
 			wp_enqueue_style('tmm_popup', TMM_CC_URL . 'css/popup.css');
 			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/popup.js', array('jquery'));
 
@@ -321,7 +324,7 @@ class TMM_Content_Composer {
 		);
 		return $def_values[$val];
 	}
-    
+
 	public static function get_blog_type() {
 		$types = array(
 			'blog-classic' => __('Blog Classic', TMM_CC_TEXTDOMAIN),
@@ -506,4 +509,4 @@ class TMM_Content_Composer {
 		}
 	}
 
-} 
+}
