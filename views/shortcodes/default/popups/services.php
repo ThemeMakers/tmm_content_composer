@@ -261,6 +261,7 @@
             jQuery(".list_item:last").find('.list_item_title').val('');
             jQuery(".list_item:last").find('.list_item_hover_title').val('');
             jQuery(".list_item:last").find('.list_item_content').text('');
+			jQuery(".list_item:last").find('.list_item_link').val('');
             item_color.each(function(id,el){
                 var inp = jQuery(el).find('input[type=text]');
                 switch (id){

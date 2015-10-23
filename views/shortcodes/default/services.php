@@ -24,7 +24,21 @@ switch($type){
 
                             <div class="extra-table">
                                 <div class="extra-inner">
-                                    <h4><?php echo esc_html($hover_titles[$key]) ?></h4>
+                                    <h4>
+                                        <?php
+                                        if (!empty($links[$key])){?>
+                                            <a href="<?php echo esc_url( $links[$key]); ?>">
+                                            <?php
+                                        }
+                                        ?>
+                                        <?php echo esc_html($hover_titles[$key]) ?>
+                                        <?php if (!empty($links[$key])){
+                                            ?>
+                                            </a>
+                                        <?php
+                                         }?>
+
+                                    </h4>
                                     <p>
                                         <?php echo esc_html($text) ?>
                                     </p>
@@ -50,7 +64,20 @@ switch($type){
                 <div class="ca-shortcode">
                     <i class="ca-icon <?php echo esc_attr($icons[$key]) ?>"></i>
                     <div class="ca-content">
-                        <h4 class="ca-title"><?php echo esc_html($titles[$key]) ?></h4>
+                        <h4 class="ca-title">
+                            <?php
+                            if (!empty($links[$key])){?>
+                            <a href="<?php echo esc_url( $links[$key]); ?>">
+                                <?php
+                                }
+                                ?>
+                            <?php echo esc_html($titles[$key]) ?>
+                                <?php if (!empty($links[$key])){
+                                ?>
+                            </a>
+                        <?php
+                        }?>
+                        </h4>
                         <p>
                             <?php echo esc_html($text) ?>
                         </p>
