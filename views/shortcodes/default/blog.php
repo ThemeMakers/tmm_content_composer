@@ -129,11 +129,19 @@ if (isset($post_carousel) && $post_carousel){
     tmm_enqueue_style('owltransitions');
 }
 
+$data_infinity = '';
+$infinity_class = '';
+
+if (isset($infinity_pagination) && $infinity_pagination ){
+    $data_infinity  = 'data-infinity="true"';
+    $infinity_class = 'infinity';
+}
+
 $_REQUEST['title_symbols'] = $title_symbols;
 
 ?>
 
-	<div id="post-area" class="<?php echo esc_attr($post_area) ?> <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?>>
+	<div id="post-area" class="<?php echo esc_attr($post_area) ?> <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?> <?php echo esc_attr($infinity_class) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?> <?php if(!empty($data_infinity)) echo $data_infinity; ?>>
         
         <?php 
         if ($blog_type!='masonry'){           
@@ -149,9 +157,11 @@ $_REQUEST['title_symbols'] = $title_symbols;
                 <article id="post-<?php the_ID(); ?>" <?php post_class($post_class); ?>>
                     <?php get_template_part( $path, 'content' ); ?>
                 </article>
+
                     
             <?php }
             }
+
         
         } else{
             if (!empty($posts_array)){

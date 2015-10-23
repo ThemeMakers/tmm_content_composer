@@ -267,6 +267,20 @@
 
 	</div><!--/ .ona-half-->
 
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Infinity Pagination', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'infinity_pagination',
+			'id' => 'infinity_pagination',
+			'is_checked' => TMM_Content_Composer::set_default_value('infinity_pagination', 0),
+			'description' => __('Infinity Pagination', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
 	<div class="one-half option-carousel">
 		<?php
 		TMM_Content_Composer::html_option(array(
