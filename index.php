@@ -7,7 +7,7 @@
  * Author URI: http://themeforest.net/user/ThemeMakers
  * Version: 1.0.1
  * Text Domain: tmm_content_composer
-*/
+ */
 
 define('TMM_CC_DIR', plugin_dir_path( __FILE__ ));
 define('TMM_CC_URL', plugin_dir_url( __FILE__ ));
@@ -17,10 +17,10 @@ require_once TMM_CC_DIR.'classes/content_composer.php';
 require_once TMM_CC_DIR.'classes/layout_constructor.php';
 require_once TMM_CC_DIR.'classes/shortcode.php';
 
-/* Register */
+/**
+ * Register
+ */
 function tmm_cc_register() {
-
-	load_plugin_textdomain( 'tmm_content_composer', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 	TMM_Content_Composer::get_instance();
 
@@ -51,3 +51,12 @@ function tmm_cc_register() {
 }
 
 add_action( 'init', 'tmm_cc_register' );
+
+/**
+ * Load plugin textdomain.
+ */
+function tmm_cc_load_textdomain() {
+	load_plugin_textdomain( 'tmm_content_composer', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+}
+
+add_action( 'plugins_loaded', 'tmm_cc_load_textdomain' );
