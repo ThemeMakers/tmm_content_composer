@@ -131,17 +131,36 @@ if (isset($post_carousel) && $post_carousel){
 
 $data_infinity = '';
 $infinity_class = '';
+$data_next_posts = '';
 
 if (isset($infinity_pagination) && $infinity_pagination ){
+
     $data_infinity  = 'data-infinity="true"';
     $infinity_class = 'infinity';
+
+    $args['posts_per_page'] = '-1';
+    $all_wp_query = new WP_Query($args);
+
+    $all_posts_array = $all_wp_query->posts;
+
+    if (!empty($all_posts_array)){
+        $count = count($all_posts_array);
+        $next_posts = '';
+        for ($i = $posts_per_load; $i < $count; $i++) {
+            if (isset($all_posts_array[$i])) {
+                $str = $all_posts_array[$i]->ID;
+                $next_posts = $next_posts . $str . ",";
+            }
+        }
+        $data_next_posts = 'data-nextposts="' . $next_posts . '"';
+    }
 }
 
 $_REQUEST['title_symbols'] = $title_symbols;
 
 ?>
 
-	<div id="post-area" class="<?php echo esc_attr($post_area) ?> <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?> <?php echo esc_attr($infinity_class) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?> <?php if(!empty($data_infinity)) echo $data_infinity; ?>>
+	<div id="post-area" class="<?php echo esc_attr($post_area) ?> <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?> <?php echo esc_attr($infinity_class) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?> <?php if(!empty($data_infinity)) echo $data_infinity; ?> <?php if(!empty($data_next_posts)) echo $data_next_posts; ?>>
         
         <?php 
         if ($blog_type!='masonry'){           
