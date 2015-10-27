@@ -29,7 +29,7 @@ $js_controls.='}';
 if (isset($location_mode)) {
 	if ($location_mode == 'address') {
 		$address = str_replace(' ', '+', $address);
-		$geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
+		$geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
 		$output = json_decode($geocode);
 		if ($output->status != 'OVER_QUERY_LIMIT') {
 			$latitude = $output->results[0]->geometry->location->lat;

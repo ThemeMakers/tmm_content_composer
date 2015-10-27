@@ -1,5 +1,5 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <?php
 $unique_id = uniqid();
 $heads_values = explode('^', $heads_values);
