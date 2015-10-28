@@ -502,6 +502,8 @@ $uniqid = uniqid();
 
 	</form><!--/ .form-panel-->
 
+	<?php if (!empty($show_advanced_options)) { ?>
+
 	<form class="advanced_car_search_panel" action="/">
 
 		<div class="car_adv_search hide">
@@ -567,5 +569,7 @@ $uniqid = uniqid();
 		</div>
 
 	</form><!--/ .advanced_car_search_panel-->
+
+	<?php } ?>
 
 </div><!--/ .quicksearch-container-->
