@@ -1,5 +1,5 @@
 <?php
-wp_enqueue_script("tmm_shortcode_google_api_js", 'https://maps.google.com/maps/api/js?sensor=false');
+wp_enqueue_script("tmm_shortcode_google_api_js", 'http://maps.google.com/maps/api/js?sensor=false');
 wp_enqueue_script("tmm_shortcode_google_map_js", TMM_CC_URL . '/js/shortcodes/google_map.js');
 
 $inique_id = uniqid();
@@ -11,7 +11,7 @@ if (!isset($mode)) {
 
 if (isset($location_mode) && $location_mode == 'address') {
 	$address = str_replace(' ', '+', $address);
-	$geocode = @file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
+	$geocode = @file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
 	if($geocode){
 		$output = json_decode($geocode);
 		if (isset($output->status) && $output->status != 'OVER_QUERY_LIMIT') {
