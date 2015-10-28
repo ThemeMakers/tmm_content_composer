@@ -104,7 +104,7 @@
 										</dl><!--/ .auto-detailed-->
 
 										<span class="heading">
-											<?php tmm_get_car_price($car_id, 1); ?>
+											<?php echo esc_html( tmm_get_car_price($car_id) ); ?>
 										</span>
 
 									</div><!--/ .caption-entry-->
