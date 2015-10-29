@@ -32,8 +32,8 @@
 						$car_fuel_type = tmm_get_car_option('fuel_type', $car_id);
 						$car_transmission = tmm_get_car_option('transmission', $car_id);
 						$car_body = tmm_get_car_option('body', $car_id);
-						$car_engine_size = $car['data']['car_engine_size'];
-						$car_mileage = $car['data']['car_mileage'];
+						$car_engine_size = tmm_get_car_engine($car_id);
+						$car_mileage = tmm_get_car_mileage($car_id);
 
 						$slider_img_src = TMM_Ext_PostType_Car::get_car_cover_image($car_id, 'homeslide', (int) TMM::get_option('show_slider_as', TMM_APP_CARDEALER_PREFIX));
 
@@ -81,18 +81,16 @@
 											<?php if( !empty($car_engine_size) || !empty($car_fuel_type) || !empty($car_mileage) ){ ?>
 											<dd class="media-hidden">
 												<?php
-												if(!empty($car_engine_size)){
-													echo $car_engine_size . TMM::get_option('engine_capacity_unit', TMM_APP_CARDEALER_PREFIX) . ' ';
-												}
+												echo esc_html( $car_engine_size ) . ' ';
+
 												if(!empty($car_fuel_type)){
 													echo $car_fuel_type;
 													if(!empty($car_mileage)){
 														echo ' ';
 													}
 												}
-												if(!empty($car_mileage)){
-													echo $car_mileage.' '.TMM::get_option('distance_unit', TMM_APP_CARDEALER_PREFIX);
-												}
+
+												echo esc_html( $car_mileage );
 												?>
 											</dd>
 											<?php } ?>
