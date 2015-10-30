@@ -63,6 +63,12 @@ class TMM_Content_Composer {
 	}
 
 	public static function admin_enqueue_scripts() {
+
+		wp_deregister_style('tmm_theme_popup');
+		wp_deregister_script('tmm_popup');
+		wp_dequeue_style('tmm_theme_popup');
+		wp_dequeue_script('tmm_popup');
+
 		global $pagenow;
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' ) {
 			wp_enqueue_style('tmm_popup', TMM_CC_URL . 'css/popup.css');
@@ -100,6 +106,8 @@ class TMM_Content_Composer {
 			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/layout_admin.css');
 			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable'), false, true);
 
+			global $tmm_row_options;
+			wp_localize_script('tmm_layout_constructor', 'tmm_cc_row_options', $tmm_row_options);
 			?>
 			<script type="text/javascript">
 				tmm_lang['column_delete'] = "<?php _e("Sure about column deleting?", TMM_CC_TEXTDOMAIN) ?>";

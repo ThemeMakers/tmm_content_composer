@@ -60,3 +60,25 @@ function tmm_cc_load_textdomain() {
 }
 
 add_action( 'plugins_loaded', 'tmm_cc_load_textdomain' );
+
+$tmm_row_options = array(
+	'lc_displaying' => 'default',
+	'full_width' => 0,
+	'content_full_width' => 0,
+	'padding_top' => 55,
+	'padding_bottom' => 55,
+	'margin_top' => 30,
+	'margin_bottom' =>30,
+	'align' => 'center',
+	'row_section_content' => 1,
+	'bg_type' => 'none',
+	'bg_custom_type' => 'color',
+	'background_color' => '#ffffff',
+	'background_image' => '',
+	'bg_attachment' => 'scroll',
+	'background_video' => '',
+	'bg_fullscreen' => 0,
+	'overlay' => 0
+);
+
+$GLOBALS['tmm_row_options'] = $tmm_row_options;

@@ -106,7 +106,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				$padding_top = (isset($tmm_layout_constructor_row[$row]['padding_top'])) ? $tmm_layout_constructor_row[$row]['padding_top'] : '';
 				$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : '';
 				$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
-				$row_center = (isset($tmm_layout_constructor_row[$row]['row_center'])&&($tmm_layout_constructor_row[$row]['row_center']==true)) ? true : false;
 
 				$row_class = 'row';
 				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
@@ -149,7 +148,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 							$content = TMM_Shortcode::remove_empty_tags($column['content']);
 							$content = do_shortcode(shortcode_unautop($content));
 							?>
-							<div class="<?php echo (!empty($row_center)&&($row_center==true)) ? 'col-sm-push-2 col-sm-pull-2 ' :  ''?><?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
+							<div class="<?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
 
 						<?php } ?>
 

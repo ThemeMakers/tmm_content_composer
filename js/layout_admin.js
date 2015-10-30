@@ -350,7 +350,6 @@
                             bg_attachment = $('#row_bg_attachment_' + row_id).val(),
                             bg_is_cover = $('#row_bg_is_cover_' + row_id).val(),
                             align = $('#row_align_' + row_id).val(),
-                            center = $('#row_center_' + row_id).val(),
                             section_content = $('#row_section_content_' + row_id).val(),
                             overlay = $('#row_overlay_' + row_id).val(),
                             bg_fullscreen = $('#row_bg_fullscreen_' + row_id).val(),
@@ -415,12 +414,6 @@
                             cur_popup.find('#row_section_content').attr('checked', 'checked');
                         }else{
                             cur_popup.find('#row_section_content').removeAttr('checked');
-                        }
-
-                        if(center == 1){
-                            cur_popup.find('#row_center').attr('checked', 'checked');
-                        }else{
-                            cur_popup.find('#row_center').removeAttr('checked');
                         }
                         
                         if (overlay == 1){
@@ -591,7 +584,6 @@
                             bg_attachment = cur_popup.find('#row_bg_attachment').val(),
                             bg_is_cover = cur_popup.find('#row_background_is_cover').val(),
                             align = cur_popup.find('#row_align').val(),
-                            center = cur_popup.find('#row_center').val(),
                             section_content = cur_popup.find('#row_section_content').val(),
                             overlay = cur_popup.find('#row_overlay').val(),
                             bg_fullscreen = cur_popup.find('#row_bg_fullscreen').val();                           
@@ -615,7 +607,6 @@
                         $('#row_margin_top_' + row_id).val(margin_top);
                         $('#row_margin_bottom_' + row_id).val(margin_bottom);
                         $('#row_align_' + row_id).val(align);
-                        $('#row_center_' + row_id).val(center);
                         $('#row_section_content_' + row_id).val(section_content);
                         $('#row_overlay_' + row_id).val(overlay);                                                                                
                         $('#row_bg_fullscreen_' + row_id).val(bg_fullscreen);

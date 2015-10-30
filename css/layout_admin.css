@@ -108,6 +108,17 @@
 	font-size: 12px;
 }
 
+.tmm-popup-content select {
+	-moz-appearance: none;
+	background-color: white;
+	background-image: linear-gradient(45deg, transparent 50%, #777 50%), linear-gradient(135deg, #777 50%, transparent 50%), linear-gradient(to right, #777, #777);
+	background-position: calc(100% - 22px) 1em, calc(100% - 14px) 1em, 0 center;
+	background-repeat: no-repeat;
+	background-size: 8px 8px, 8px 8px, 0 auto;
+	border-radius: 0;
+	display: inline-block;
+}
+
 
 /* -------------------------------------------------- */
 /*	Column Layout
