@@ -43,6 +43,52 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_style = 'style="'.$section_style.'"';
 		}
 
+		/* background */
+		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] !== 'none') {
+
+			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && !empty($tmm_layout_constructor_row[$row]['bg_image'])) {
+				$section_class .= ' parallax';
+				$section_style_attr .= 'background-image: url(' . $tmm_layout_constructor_row[$row]["bg_image"] . ');';
+
+				if (!empty($tmm_layout_constructor_row[$row]['bg_attachment'])) {
+					$section_class .= ' bg-scroll';
+				}
+
+			}
+
+			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && $row_displaying === 'full_width' && !empty($tmm_layout_constructor_row[$row]['bg_overlay'])) {
+				$display_overlay = true;
+				$overlay_style_attr = '';
+
+				if (!empty($tmm_layout_constructor_row[$row]['bg_overlay_color'])) {
+					$overlay_style_attr .= TMM_Content_Composer::hex2RGB($tmm_layout_constructor_row[$row]['bg_overlay_color'], true);
+				} else {
+					$overlay_style_attr .= '0,0,0';
+				}
+
+				if (isset($tmm_layout_constructor_row[$row]['bg_overlay_opacity'])) {
+					$overlay_style_attr .= ',' . intval($tmm_layout_constructor_row[$row]['bg_overlay_opacity']) / 100;
+				} else {
+					$overlay_style_attr .= ',1';
+				}
+
+				if (!empty($overlay_style_attr)) {
+					$overlay_style_attr = ' style="background-color:rgba(' . $overlay_style_attr . ')"';
+				}
+			}
+
+			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'color' && !empty($tmm_layout_constructor_row[$row]['bg_color_type'])) {
+
+				if ($tmm_layout_constructor_row[$row]['bg_color_type'] === 'custom') {
+					$section_style_attr .= 'background:'.$tmm_layout_constructor_row[$row]['bg_color'].'; ';
+				} else {
+					$section_class .= ' ' . $tmm_layout_constructor_row[$row]['bg_color_type'];
+				}
+
+			}
+
+		}
+
 		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){
 			?>
 
@@ -55,20 +101,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>" <?php echo $section_style ?>>
                 
             <?php
-
-                if (isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom' && $tmm_layout_constructor_row[$row]['bg_custom_type']=='color' && $tmm_layout_constructor_row[$row]["bg_color"]!='#fff'){
-					?>
-                    <div style="<?php echo (!empty($tmm_layout_constructor_row[$row]['bg_color'])) ? 'background-color: ' . $tmm_layout_constructor_row[$row]["bg_color"] . '' : ''; ?>" class="full-bg-image"></div>
-                    <?php
-                }
-                
-				if (isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom' && $tmm_layout_constructor_row[$row]['bg_custom_type']=='image'){
-					?>
-					
-					<div style="<?php echo (!empty($tmm_layout_constructor_row[$row]['bg_image'])) ? 'background-image: url(' . $tmm_layout_constructor_row[$row]["bg_image"] . ');' : ''; ?>" class="full-bg-image full-bg-image-<?php echo $tmm_layout_constructor_row[$row]['bg_attachment'] ?>"></div>
-					
-					<?php
-				}                                                                   
                     
 				if (!empty($tmm_layout_constructor_row[$row]['bg_video']) && $tmm_layout_constructor_row[$row]['bg_custom_type']=='video' && $row_style['bg_type'] == 'custom'){
 					$video_type = TMM_Layout_Constructor::get_video_type($tmm_layout_constructor_row[$row]['bg_video']);
@@ -82,24 +114,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 						'containment' => '#section_'.$row
 					);                        
 					echo TMM_Layout_Constructor::display_rowbg_video($video_options);
-				}                   
-                                
-				if (isset($tmm_layout_constructor_row[$row]['row_overlay']) && $tmm_layout_constructor_row[$row]['row_overlay'] == true && isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom'){
-					?>
-					
-					<div class="parallax-overlay"></div>
-					
-					<?php
-				} 
-                    
-				if (isset($tmm_layout_constructor_row[$row]['bg_fullscreen']) && $tmm_layout_constructor_row[$row]['bg_fullscreen'] == true) {
-					?>
-					
-					<div id="fullscreen" class="full-screen">
-						
-						<div class="fullscreen-entry">
-							
-						<?php
 				}
 
 				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
@@ -116,9 +130,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] != 'custom' && isset($row_style['style_custom_color'])) {
 					$row_style_attr .= $row_style['style_custom_color'];
 				}
-				if (!empty($bg_color)) {
-					//$row_style_attr .= 'background:'.$bg_color.'; ';
-				}
+
 				if ($padding_top != '') {
 					$row_style_attr .= 'padding-top:'.$padding_top.'px; ';
 				}
@@ -164,16 +176,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 					<?php
 				}
-                    
-					if (isset($tmm_layout_constructor_row[$row]['bg_fullscreen']) && $tmm_layout_constructor_row[$row]['bg_fullscreen'] == true) {
-							?>
-								
-                             </div><!--/ .fullscreen-entry-->
-						
-                        </div><!--/ .full-screen-->
-						
-						<?php
-					}
 
 			?>
                              

@@ -378,7 +378,7 @@ global $tmm_row_options;
                 'title' => __('Use as default content blockt', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'row_section_content',
                 'id' => 'row_section_content',
-                'is_checked'=> $tmm_row_options['row_section_content'],
+                'is_checked'=> $tmm_row_options['section_content'],
                 'description' => ''
             ));
             ?>
@@ -427,7 +427,7 @@ global $tmm_row_options;
                         'shortcode_field' => 'row_background_color',
                         'type' => 'color',
                         'description' => '',
-                        'default_value' => $tmm_row_options['background_color'],
+                        'default_value' => $tmm_row_options['bg_color'],
                         'id' => 'row_background_color',
                         'display' =>1
                     ));
@@ -442,7 +442,7 @@ global $tmm_row_options;
                         'title' => __('Background Image', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'row_background_image',
                         'id' => 'row_background_image',
-                        'default_value' => $tmm_row_options['background_image'],
+                        'default_value' => $tmm_row_options['bg_image'],
                         'description' => ''
                     ));
                     ?>
@@ -473,7 +473,6 @@ global $tmm_row_options;
                     ));
                     ?>
                 </div>
-
 
 				<?php
 				TMM_Content_Composer::html_option(array(
