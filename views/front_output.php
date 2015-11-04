@@ -43,6 +43,10 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_style = 'style="'.$section_style.'"';
 		}
 
+		echo '<pre>';
+		print_r($tmm_layout_constructor_row[$row]);
+		echo '</pre>';
+
 		/* background */
 		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] !== 'none') {
 
@@ -77,17 +81,19 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				}
 			}
 
-			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'color' && !empty($tmm_layout_constructor_row[$row]['bg_color_type'])) {
+			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'color' && !empty($tmm_layout_constructor_row[$row]['bg_color'])) {
 
-				if ($tmm_layout_constructor_row[$row]['bg_color_type'] === 'custom') {
-					$section_style_attr .= 'background:'.$tmm_layout_constructor_row[$row]['bg_color'].'; ';
-				} else {
-					$section_class .= ' ' . $tmm_layout_constructor_row[$row]['bg_color_type'];
-				}
+				$section_style_attr .= 'background:'.$tmm_layout_constructor_row[$row]['bg_color'].'; ';
 
 			}
 
 		}
+
+		/* wrap section and row styles */
+		if (!empty($section_style_attr)) {
+			$section_style_attr = ' style="' . $section_style_attr . '"';
+		}
+
 
 		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){
 			?>
@@ -98,7 +104,9 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		}
 		?>
 
-		<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>" <?php echo $section_style ?>>
+	<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
+
+		<!--<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>" <?php echo $section_style ?>>-->
                 
             <?php
                     

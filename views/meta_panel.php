@@ -428,7 +428,7 @@ global $tmm_row_options;
                         'type' => 'color',
                         'description' => '',
                         'default_value' => $tmm_row_options['bg_color'],
-                        'id' => 'row_background_color',
+                        'id' => 'row_bg_color',
                         'display' =>1
                     ));
                     ?>

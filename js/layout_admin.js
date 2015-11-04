@@ -342,7 +342,7 @@
                             padding_bottom = $('#row_padding_bottom_' + row_id).val(),
                             margin_top = $('#row_margin_top_' + row_id).val(),
                             margin_bottom = $('#row_margin_bottom_' + row_id).val(),
-                            bg_color = $('#row_bg_custom_color_' + row_id).val(),
+                            bg_color = $('#row_bg_color_' + row_id).val(),
                             bg_custom_type = $('#row_bg_custom_type_' + row_id).val(),
                             bg_opacity = $('#row_bg_custom_opacity_' + row_id).val(),
                             bg_image = $('#row_bg_custom_image_' + row_id).val(),
@@ -372,8 +372,9 @@
                         }                        
                         
                         if (bg_type === 'custom') {
+                            console.log('bg_color='+bg_color);
                             cur_popup.find('#row_bg_custom_type').val(bg_custom_type); 
-                            cur_popup.find('#row_background_color').val(bg_color).next('.bgpicker').css('background-color', bg_color);
+                            cur_popup.find('#row_bg_color').val(bg_color).next('.bgpicker').css('background-color', bg_color);
                             cur_popup.find('#row_background_image').val(bg_image);
                             cur_popup.find('#row_background_video').val(bg_video);
                             cur_popup.find('#row_background_opacity').val(bg_opacity);
@@ -576,7 +577,7 @@
                             padding_bottom = cur_popup.find('#row_padding_bottom').val(),
                             margin_top = cur_popup.find('#row_margin_top').val(),
                             margin_bottom = cur_popup.find('#row_margin_bottom').val(),
-                            bg_color = cur_popup.find('#row_background_color').val(),
+                            bg_color = cur_popup.find('#row_bg_color').val(),
                             bg_custom_type = cur_popup.find('#row_bg_custom_type').val(),
                             bg_opacity = cur_popup.find('#row_background_opacity').val(),
                             bg_image = cur_popup.find('#row_background_image').val(),
@@ -589,7 +590,7 @@
                             bg_fullscreen = cur_popup.find('#row_bg_fullscreen').val();                           
                     
                         if (bg_type === 'custom') {                            
-                            $('#row_bg_custom_color_' + row_id).val(bg_color);
+                            $('#row_bg_color_' + row_id).val(bg_color);
                             $('#row_bg_custom_type_' + row_id).val(bg_custom_type);
                             $('#row_bg_custom_opacity_' + row_id).val(bg_opacity);
                             $('#row_bg_custom_image_' + row_id).val(bg_image);
@@ -642,21 +643,21 @@
 
                 $.each(pickers, function(key, picker) {
                        
-                        var bg_hex_color = $(picker).prev('.bg_hex_color');
+                    var bg_hex_color = $(picker).prev('.bg_hex_color');
 
-                        if (!$(bg_hex_color).val()) {
-                                $(bg_hex_color).val();
+                    if (!$(bg_hex_color).val()) {
+                        $(bg_hex_color).val();
+                    }
+
+                    $(picker).css('background-color', $(bg_hex_color).val()).ColorPicker({
+                        color: $(bg_hex_color).val(),
+                        onChange: function(hsb, hex, rgb) {
+                            console.log('change');
+                            $(picker).css('backgroundColor', '#' + hex);
+                            $(bg_hex_color).val('#' + hex);
+                            $(bg_hex_color).trigger('change');
                         }
-                        
-                        $(picker).css('background-color', $(bg_hex_color).val()).ColorPicker({
-                                color: $(bg_hex_color).val(),
-                                onChange: function(hsb, hex, rgb) {
-                                   
-                                        $(picker).css('backgroundColor', '#' + hex);
-                                        $(bg_hex_color).val('#' + hex);
-                                        $(bg_hex_color).trigger('change');
-                                }
-                        });
+                    });
 
                 });
             }
