@@ -105,7 +105,7 @@ if ($show_pinterest){
 
                             <div class="post-meta clearfix">
                                 <a class="post-format-type" href="<?php echo esc_url($post_link); ?>"><span class="post-format <?php echo esc_attr($icon_class) ?>"></span></a>
-                                <span class="entry-date"><a href="<?php echo esc_attr(home_url()) ?>/<?php echo get_the_date('Y/m') ?>"><?php echo get_the_date('M d, Y') ?></a></span>
+                                <span class="entry-date"><a href="<?php echo esc_attr(home_url()) ?>/<?php echo get_the_date('Y/m') ?>"><?php echo get_the_date('M d, Y', $post->ID) ?></a></span>
                                 <span><a href="<?php echo esc_attr($post_link) ?>#comments"><?php echo get_comments_number(); _e(' Comments', TMM_CC_TEXTDOMAIN); ?></a></span>
                             </div><!--/ .entry-meta-->
 
