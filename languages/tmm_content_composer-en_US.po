@@ -1,126 +1,123 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2015-07-24 00:31+0100\n"
-"PO-Revision-Date: 2015-07-24 00:31+0100\n"
+"POT-Creation-Date: 2015-10-31 21:09+0100\n"
+"PO-Revision-Date: 2015-10-31 21:09+0100\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.7\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: index.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: classes/content_composer.php:59
+#: classes/content_composer.php:62
 msgid "ThemeMakers Layout Constructor"
 msgstr ""
 
-#: classes/content_composer.php:92
+#: classes/content_composer.php:95
 msgid "Loading ..."
 msgstr ""
 
-#: classes/content_composer.php:93
+#: classes/content_composer.php:96
 msgid "Close"
 msgstr ""
 
-#: classes/content_composer.php:94
+#: classes/content_composer.php:97
 msgid "Apply"
 msgstr ""
 
-#: classes/content_composer.php:95
+#: classes/content_composer.php:98
 msgid "There is no options for shortcode!"
 msgstr ""
 
-#: classes/content_composer.php:96
+#: classes/content_composer.php:99
 msgid "Shortcode updated!"
 msgstr ""
 
-#: classes/content_composer.php:97
+#: classes/content_composer.php:100
 msgid "Insert Shortcode"
 msgstr ""
 
-#: classes/content_composer.php:98
+#: classes/content_composer.php:101
 msgid "Edit shortcode"
 msgstr ""
 
-#: classes/content_composer.php:108
+#: classes/content_composer.php:111
 msgid "Sure about column deleting?"
 msgstr ""
 
-#: classes/content_composer.php:109
+#: classes/content_composer.php:112
 msgid "Sure about row deleting?"
 msgstr ""
 
-#: classes/content_composer.php:110 views/column_item.php:13
+#: classes/content_composer.php:113 views/column_item.php:13
 msgid "Empty title"
 msgstr ""
 
-#: classes/content_composer.php:111
+#: classes/content_composer.php:114
 msgid "Column content editor"
 msgstr ""
 
-#: classes/content_composer.php:112
+#: classes/content_composer.php:115
 msgid "Row editor"
 msgstr ""
 
-#: classes/content_composer.php:150
+#: classes/content_composer.php:153
 msgid "Please enter correct"
 msgstr ""
 
-#: classes/content_composer.php:151
+#: classes/content_composer.php:154
 msgid "Your message has been sent successfully!"
 msgstr ""
 
-#: classes/content_composer.php:152
+#: classes/content_composer.php:155
 msgid "Server failed. Send later"
 msgstr ""
 
-#: classes/content_composer.php:234 index.php:40
+#: classes/content_composer.php:169
+msgid "Use wptexturize"
+msgstr ""
+
+#: classes/content_composer.php:252 index.php:42
 #: views/shortcodes/default/popups/title.php:58
 msgid "Default"
 msgstr ""
 
-#: classes/content_composer.php:235
+#: classes/content_composer.php:253
 msgid "Default-white"
 msgstr ""
 
-#: classes/content_composer.php:246
+#: classes/content_composer.php:264
 msgid "Small"
 msgstr ""
 
-#: classes/content_composer.php:247
+#: classes/content_composer.php:265
 msgid "Middle"
 msgstr ""
 
-#: classes/content_composer.php:248
+#: classes/content_composer.php:266
 msgid "Large"
 msgstr ""
 
-#: classes/content_composer.php:256
+#: classes/content_composer.php:274
 msgid "All Categories"
 msgstr ""
 
-#: classes/content_composer.php:419
+#: classes/content_composer.php:437
 msgid "Browse"
 msgstr ""
 
-#: classes/layout_constructor.php:141
-msgid "Play / Pause"
-msgstr ""
-
-#: classes/layout_constructor.php:142
-msgid "Mute / unMute"
-msgstr ""
-
-#: classes/layout_constructor.php:365
+#: classes/layout_constructor.php:397
 #: views/shortcodes/default/tmm_video.php:126
 #: views/shortcodes/default/tmm_video.php:129
 msgid "Unsupported video format"
@@ -300,7 +297,7 @@ msgid "Color"
 msgstr ""
 
 #: views/meta_panel.php:314 views/shortcodes/default/popups/google_map.php:43
-#: views/shortcodes/engorgio/recent_projects.php:34
+#: views/shortcodes/engorgio/recent_projects.php:23
 msgid "Image"
 msgstr ""
 
@@ -375,7 +372,7 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: views/shortcodes/default/masonry.php:208
+#: views/shortcodes/default/masonry.php:204
 msgid "More"
 msgstr ""
 
@@ -1665,11 +1662,11 @@ msgstr ""
 msgid "Show/Hide Photo"
 msgstr ""
 
-#: views/shortcodes/engorgio/portfolio.php:183
+#: views/shortcodes/engorgio/portfolio.php:180
 msgid "Load More"
 msgstr ""
 
-#: views/shortcodes/engorgio/recent_projects.php:35
+#: views/shortcodes/engorgio/recent_projects.php:24
 msgid "Permalink"
 msgstr ""
 
@@ -1753,4 +1750,24 @@ msgstr ""
 
 #: views/shortcodes/woocommerce/popups/tmm_special_products.php:46
 msgid "Select products type"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "ThemeMakers Visual Content Composer"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://webtemplatemasters.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Universal Layout Composer with Shortcodes Package"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ThemeMakers"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://themeforest.net/user/ThemeMakers"
 msgstr ""
