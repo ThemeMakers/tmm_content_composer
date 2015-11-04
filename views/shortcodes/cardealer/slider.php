@@ -81,7 +81,7 @@
 											<?php if( !empty($car_engine_size) || !empty($car_fuel_type) || !empty($car_mileage) ){ ?>
 											<dd class="media-hidden">
 												<?php
-												echo esc_html( $car_engine_size ) . ' ';
+												echo $car_engine_size . ' ';
 
 												if(!empty($car_fuel_type)){
 													echo $car_fuel_type;
