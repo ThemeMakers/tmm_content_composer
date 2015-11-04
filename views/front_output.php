@@ -43,10 +43,11 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_style = 'style="'.$section_style.'"';
 		}
 
-		echo '<pre>';
-		print_r($tmm_layout_constructor_row[$row]);
-		echo '</pre>';
+		//echo '<pre>';
+	//	print_r($tmm_layout_constructor_row[$row]);
+	//	echo '</pre>';
 
+		$section_style_attr = '';
 		/* background */
 		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] !== 'none') {
 
@@ -187,7 +188,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 			?>
                              
-		</div><!--/ .section -->
+		</section><!--/ .section -->
 
     <?php
 		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){
