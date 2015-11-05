@@ -345,7 +345,7 @@
                             bg_color = $('#row_bg_color_' + row_id).val(),
                             bg_custom_type = $('#row_bg_custom_type_' + row_id).val(),
                             bg_opacity = $('#row_bg_custom_opacity_' + row_id).val(),
-                            bg_image = $('#row_bg_custom_image_' + row_id).val(),
+                            bg_image = $('#row_bg_image_' + row_id).val(),
                             bg_video = $('#row_bg_custom_video_' + row_id).val(),
                             bg_attachment = $('#row_bg_attachment_' + row_id).val(),
                             bg_is_cover = $('#row_bg_is_cover_' + row_id).val(),
@@ -372,10 +372,10 @@
                         }                        
                         
                         if (bg_type === 'custom') {
-                            console.log('bg_color='+bg_color);
+
                             cur_popup.find('#row_bg_custom_type').val(bg_custom_type); 
                             cur_popup.find('#row_bg_color').val(bg_color).next('.bgpicker').css('background-color', bg_color);
-                            cur_popup.find('#row_background_image').val(bg_image);
+                            cur_popup.find('#row_bg_image').val(bg_image);
                             cur_popup.find('#row_background_video').val(bg_video);
                             cur_popup.find('#row_background_opacity').val(bg_opacity);
                             cur_popup.find('#row_bg_attachment').val(bg_attachment);
@@ -423,7 +423,8 @@
                         if (bg_fullscreen == 1){
                             cur_popup.find('#row_bg_fullscreen').attr('checked', 'checked').val('1');
                         }
-                        self.colorizator();	                        
+                        self.colorizator();
+                        self.ui_slider();
                         
                         /* events handlers */
                         
@@ -580,7 +581,7 @@
                             bg_color = cur_popup.find('#row_bg_color').val(),
                             bg_custom_type = cur_popup.find('#row_bg_custom_type').val(),
                             bg_opacity = cur_popup.find('#row_background_opacity').val(),
-                            bg_image = cur_popup.find('#row_background_image').val(),
+                            bg_image = cur_popup.find('#row_bg_image').val(),
                             bg_video = cur_popup.find('#row_background_video').val(),
                             bg_attachment = cur_popup.find('#row_bg_attachment').val(),
                             bg_is_cover = cur_popup.find('#row_background_is_cover').val(),
@@ -593,7 +594,7 @@
                             $('#row_bg_color_' + row_id).val(bg_color);
                             $('#row_bg_custom_type_' + row_id).val(bg_custom_type);
                             $('#row_bg_custom_opacity_' + row_id).val(bg_opacity);
-                            $('#row_bg_custom_image_' + row_id).val(bg_image);
+                            $('#row_bg_image_' + row_id).val(bg_image);
                             $('#row_bg_custom_video_' + row_id).val(bg_video);
                             $('#row_bg_attachment_' + row_id).val(bg_attachment);
                             $('#row_bg_is_cover_' + row_id).val(bg_is_cover);
@@ -652,7 +653,6 @@
                     $(picker).css('background-color', $(bg_hex_color).val()).ColorPicker({
                         color: $(bg_hex_color).val(),
                         onChange: function(hsb, hex, rgb) {
-                            console.log('change');
                             $(picker).css('backgroundColor', '#' + hex);
                             $(bg_hex_color).val('#' + hex);
                             $(bg_hex_color).trigger('change');
@@ -660,6 +660,39 @@
                     });
 
                 });
+            },
+            ui_slider: function() {
+
+                $('.tmm-popup-edit-row').find('.ui-slider-item').each(function (key, item) {
+                    var max_value = $(item).data('max-value'),
+                        min_value = $(item).data('min-value'),
+                        id = $(item).find('.range-amount-value-hidden').attr('id'),
+                        value = $(item).find('.range-amount-value-hidden').attr('value');
+
+                    var slider = $(item).find('.' + id).slider({
+                        range: 'max',
+                        animate: true,
+                        value: parseFloat(value, 10),
+                        step: 1,
+                        min: parseInt(min_value, 10),
+                        max: parseInt(max_value, 10),
+                        slide: function (event, ui) {
+                            $(item).find('.range-amount-value').val(ui.value);
+                            $(item).find('.range-amount-value-hidden').val(ui.value);
+                        }
+                    });
+
+                    $(item).find('.range-amount-value').val(value);
+
+                    $(item).find('.range-amount-value').life('change', function () {
+                        var value = parseFloat($(this).val(), 10);
+                        slider.slider("value", value);
+                        $(item).find('.range-amount-value-hidden').val(value);
+                    });
+
+
+                });
+
             }
             
         };

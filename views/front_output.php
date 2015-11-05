@@ -25,9 +25,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		if ($tmm_layout_constructor_row[$row]['full_width'] == 1 && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
 			$section_class .= ' theme-default-bg';
 		}
-		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_custom_type'] == 'image') {
-			$section_class .= ' parallax';
-		}
 
 		$margin_top = (isset($tmm_layout_constructor_row[$row]['margin_top'])) ? $tmm_layout_constructor_row[$row]['margin_top'] : '';
 		$margin_bottom = (isset($tmm_layout_constructor_row[$row]['margin_bottom'])) ? $tmm_layout_constructor_row[$row]['margin_bottom'] : '';
@@ -44,14 +41,14 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		}
 
 		//echo '<pre>';
-	//	print_r($tmm_layout_constructor_row[$row]);
-	//	echo '</pre>';
+		//print_r($tmm_layout_constructor_row[$row]);
+		//echo '</pre>';
 
 		$section_style_attr = '';
 		/* background */
 		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] !== 'none') {
 
-			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && !empty($tmm_layout_constructor_row[$row]['bg_image'])) {
+			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'image' && !empty($tmm_layout_constructor_row[$row]['bg_image'])) {
 				$section_class .= ' parallax';
 				$section_style_attr .= 'background-image: url(' . $tmm_layout_constructor_row[$row]["bg_image"] . ');';
 
@@ -188,7 +185,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 			?>
                              
-		</section><!--/ .section -->
+	</section><!--/ .section -->
 
     <?php
 		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){

@@ -75,10 +75,12 @@ $tmm_row_options = array(
 	'bg_custom_type' => 'color',
 	'bg_color' => '#ffffff',
 	'bg_image' => '',
-	'bg_attachment' => 'scroll',
+	'bg_attachment' => '1',
 	'background_video' => '',
 	'bg_fullscreen' => 0,
-	'overlay' => 0
+	'overlay' => 0,
+	'bg_overlay_color' => '#ffffff',
+	'bg_overlay_opacity' => 100
 );
 
 $GLOBALS['tmm_row_options'] = $tmm_row_options;

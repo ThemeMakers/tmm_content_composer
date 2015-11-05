@@ -104,7 +104,7 @@ class TMM_Content_Composer {
 		}
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' ) {
 			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/layout_admin.css');
-			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable'), false, true);
+			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable', 'jquery-ui-slider'), false, true);
 
 			global $tmm_row_options;
 			wp_localize_script('tmm_layout_constructor', 'tmm_cc_row_options', $tmm_row_options);
@@ -468,11 +468,17 @@ class TMM_Content_Composer {
 
 			case 'slider':
 				?>
-
-				<input data-default-value="<?php echo @$data['default_value'] ?>" type="text" id="<?php echo $data['id'] ?>" name="<?php echo $data['name'] ?>" value="<?php echo $data['value'] ?>" data-min-value="<?php echo $data['min'] ?>" data-max-value="<?php echo $data['max'] ?>" class="ui_slider_item" />
-
-				<span class="preset_description"><?php echo $data['description'] ?></span>
-
+				<?php if (!empty($data['title'])): ?>
+					<h4 class="label" for="<?php echo esc_attr($data['id']); ?>"><?php echo esc_html($data['title']); ?></h4>
+				<?php endif; ?>
+				<div class="clearfix ui-slider-item" data-min-value="<?php echo $data['min'] ?>" data-max-value="<?php echo $data['max'] ?>">
+					<input type="text" readonly class="range-amount-value" value="<?php echo @$data['default_value'] ?>" />
+					<input type="hidden" value="<?php echo $data['default_value'] ?>" class="range-amount-value-hidden" id="<?php echo $data['id'] ?>" />
+					<div class="slider-range <?php echo $data['id'] ?>"></div>
+				</div>
+				<?php if (!empty($data['description'])) { ?>
+					<div class="preset_description"><?php echo $data['description'] ?></div>
+				<?php } ?>
 				<?php
 				break;
 		}

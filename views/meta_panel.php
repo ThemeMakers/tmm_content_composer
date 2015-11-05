@@ -441,7 +441,7 @@ global $tmm_row_options;
                         'type' => 'upload',
                         'title' => __('Background Image', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'row_background_image',
-                        'id' => 'row_background_image',
+                        'id' => 'row_bg_image',
                         'default_value' => $tmm_row_options['bg_image'],
                         'description' => ''
                     ));
@@ -453,8 +453,8 @@ global $tmm_row_options;
 					'shortcode_field' => 'row_bg_attachment',
 					'id' => 'row_bg_attachment',
 					'options' => array(
-						'scroll' => __('scroll', TMM_CC_TEXTDOMAIN),
-						'fixed' => __('fixed', TMM_CC_TEXTDOMAIN)
+						'1' => __('scroll', TMM_CC_TEXTDOMAIN),
+						'0' => __('fixed', TMM_CC_TEXTDOMAIN)
 					),
 					'default_value' => $tmm_row_options['bg_attachment'],
 					'description' => ''
@@ -492,10 +492,43 @@ global $tmm_row_options;
 					'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
 					'shortcode_field' => 'row_overlay',
 					'id' => 'row_overlay',
-					'is_checked'=>TMM_Content_Composer::set_default_value('overlay', false),
+					'is_checked'=> $tmm_row_options['overlay'],
 					'description' => 'Set overlay on background image'
                 ));
                 ?>
+
+				<div id="row_bg_overlay_box" style="display: none;">
+
+					<div class="one-half inner-left">
+						<?php
+						TMM_Content_Composer::html_option(array(
+							'title' => __('Overlay Color', TMM_CC_TEXTDOMAIN),
+							'shortcode_field' => 'row_bg_overlay_color',
+							'id' => 'row_bg_overlay_color',
+							'type' => 'color',
+							'description' => '',
+							'default_value' => $tmm_row_options['bg_overlay_color'],
+							'display' => 1
+						));
+						?>
+					</div>
+
+					<div class="one-half inner-right">
+						<?php
+						TMM_Content_Composer::html_option(array(
+							'title' => __('Overlay Opacity', TMM_CC_TEXTDOMAIN),
+							'shortcode_field' => 'row_bg_overlay_opacity',
+							'id' => 'row_bg_overlay_opacity',
+							'type' => 'slider',
+							'min' => '0',
+							'max' => '100',
+							'description' => '',
+							'default_value' => $tmm_row_options['bg_overlay_opacity'],
+						));
+						?>
+					</div>
+
+				</div>
 
 			</div>
 
