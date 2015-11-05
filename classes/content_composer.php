@@ -139,7 +139,6 @@ class TMM_Content_Composer {
 
 			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/min/jquery.modernizr.min.js', array('jquery'));
 			wp_enqueue_script('tmm_composer_theme', TMM_CC_URL . 'js/theme.js', array('jquery'), false, true);
-			wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/min/jquery.tooltipster.min.js', array('jquery'), false, true);
 		}
 
 

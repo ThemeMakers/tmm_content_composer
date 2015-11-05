@@ -1,6 +1,4 @@
 <?php
-wp_enqueue_script('tmm_cardealer_quicksearch', TMM_Ext_Car_Dealer::get_application_uri() . '/js/widgets/quicksearch.min.js');
-
 $car_condition = 0;
 $carlocation = array(0);
 $carproducer = 0;
