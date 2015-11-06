@@ -358,19 +358,24 @@
                             custom_box_image = cur_popup.find('.bg_custom_type_image'),
                             custom_box_video = cur_popup.find('.bg_custom_type_video'),
                             box_row_full_fidth  = cur_popup.find('.row_full_width'),                 
-                            box_content_full_fidth  = cur_popup.find('.content_full_width');                 
+                            box_content_full_fidth  = cur_popup.find('.content_full_width'),
+                            box_overlay = cur_popup.find('#row_bg_overlay_box');
                         
                         if (lc_displaying == 'full_width' || lc_displaying == 'before_full_width'){
                             box_row_full_fidth.show();
                         }
                         if (full_width == 1 && (lc_displaying == 'full_width' || lc_displaying == 'before_full_width')){
-                                box_content_full_fidth.show();
-                            }
+                            box_content_full_fidth.show();
+                        }
+
+                        if (overlay == '1'){
+                            box_overlay.show();
+                        }
                         
                         if(!bg_type){
                             bg_type = 'none';
-                        }                        
-                        
+                        }
+
                         if (bg_type === 'custom') {
 
                             cur_popup.find('#row_bg_custom_type').val(bg_custom_type); 
@@ -399,6 +404,9 @@
                                 cur_popup.find('#row_background_is_cover').removeAttr('checked');
                             }
                         }
+
+
+
                      
                         cur_popup.find('#row_lc_displaying').val(lc_displaying);
                         cur_popup.find('#row_full_width').val(full_width);
@@ -427,6 +435,16 @@
                         self.ui_slider();
                         
                         /* events handlers */
+
+                        cur_popup.find('#row_overlay').on('click', function(){
+
+                            if ( $(this).is(':checked')) {
+                                box_overlay.slideDown();
+                            } else {
+                                box_overlay.slideUp();
+                            }
+
+                        });
                         
                         cur_popup.find('#row_lc_displaying').on('change', function(){
                             var val = $(this).val();

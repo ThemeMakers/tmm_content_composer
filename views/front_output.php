@@ -11,6 +11,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$row_style = TMM_Layout_Constructor::get_row_bg($tmm_layout_constructor_row, $row);
 		
 		$section_class = 'section';
+		$display_overlay = false;
 
 		if ($tmm_layout_constructor_row[$row]['padding_top'] === '0' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '0') {
 			$section_class .= ' padding-off';
@@ -40,9 +41,9 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_style = 'style="'.$section_style.'"';
 		}
 
-		//echo '<pre>';
-		//print_r($tmm_layout_constructor_row[$row]);
-		//echo '</pre>';
+		echo '<pre>';
+		print_r($tmm_layout_constructor_row[$row]);
+		echo '</pre>';
 
 		$section_style_attr = '';
 		/* background */
@@ -58,7 +59,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 			}
 
-			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && $row_displaying === 'full_width' && !empty($tmm_layout_constructor_row[$row]['bg_overlay'])) {
+			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'image'  && !empty($tmm_layout_constructor_row[$row]['overlay'])) {
 				$display_overlay = true;
 				$overlay_style_attr = '';
 
@@ -104,7 +105,10 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 	<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
 
-		<!--<div id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>" <?php echo $section_style ?>>-->
+		<?php
+		if ($display_overlay) { ?>
+			<div class="overlay"<?php echo $overlay_style_attr; ?>></div>
+		<?php } ?>
                 
             <?php
                     
