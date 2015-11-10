@@ -41,9 +41,9 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_style = 'style="'.$section_style.'"';
 		}
 
-		echo '<pre>';
-		print_r($tmm_layout_constructor_row[$row]);
-		echo '</pre>';
+		//echo '<pre>';
+		//print_r($tmm_layout_constructor_row[$row]);
+		//echo '</pre>';
 
 		$section_style_attr = '';
 		/* background */
