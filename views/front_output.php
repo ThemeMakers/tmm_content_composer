@@ -218,8 +218,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 					<?php } ?>
 
-					<div class="clearfix"></div>
-
 				</div>
 
 		<?php if ($row_displaying === 'full_width') { ?>
