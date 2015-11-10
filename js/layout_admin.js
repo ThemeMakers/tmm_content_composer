@@ -359,7 +359,33 @@
                             custom_box_video = cur_popup.find('.bg_custom_type_video'),
                             box_row_full_fidth  = cur_popup.find('.row_full_width'),                 
                             box_content_full_fidth  = cur_popup.find('.content_full_width'),
-                            box_overlay = cur_popup.find('#row_bg_overlay_box');
+                            box_overlay = cur_popup.find('#row_bg_overlay_box'),
+                            current_values = {},
+                            option,
+                            temp;
+
+
+                        for (option in tmm_cc_row_options) {
+
+                            current_values[option] = $('#row_' + option + '_' + row_id).val();
+                            temp = cur_popup.find('#row_' + option);
+
+                            console.log('current_values[option]='+current_values[option]);
+
+                            if (temp.length) {
+                                temp.val(current_values[option]);
+                            }
+
+                            if (option === 'bg_overlay' && current_values[option] === '1'){
+                                temp.attr('checked', 'checked').val('1');
+                                box_overlay.show();
+                            }
+
+                            if (option === 'bg_overlay_opacity'){
+                                cur_popup.find('.slider-text.row_bg_overlay_opacity').val(current_values[option]);
+                            }
+
+                        }
                         
                         if (lc_displaying == 'full_width' || lc_displaying == 'before_full_width'){
                             box_row_full_fidth.show();
@@ -378,6 +404,7 @@
 
                         if (bg_type === 'custom') {
 
+                            /*
                             cur_popup.find('#row_bg_custom_type').val(bg_custom_type); 
                             cur_popup.find('#row_bg_color').val(bg_color).next('.bgpicker').css('background-color', bg_color);
                             cur_popup.find('#row_bg_image').val(bg_image);
@@ -385,7 +412,7 @@
                             cur_popup.find('#row_background_opacity').val(bg_opacity);
                             cur_popup.find('#row_bg_attachment').val(bg_attachment);
                             cur_popup.find('#row_background_is_cover').val(bg_is_cover);
-                             
+                             */
                             if (bg_custom_type === 'color'){
                                 custom_box_color.show();
                             }                            
@@ -405,9 +432,7 @@
                             }
                         }
 
-
-
-                     
+                        /*
                         cur_popup.find('#row_lc_displaying').val(lc_displaying);
                         cur_popup.find('#row_full_width').val(full_width);
                         cur_popup.find('#row_content_full_width').val(content_full_width);
@@ -418,7 +443,8 @@
                         cur_popup.find('#row_margin_bottom').val(margin_bottom);
                         cur_popup.find('#row_align').val(align);                                        
                         cur_popup.find('#row_section_content').val(section_content);
-                        
+                        */
+
                         if(section_content == 1){
                             cur_popup.find('#row_section_content').attr('checked', 'checked');
                         }else{
@@ -588,25 +614,16 @@
                     },
                     save: function() {
                         var cur_popup = $('.tmm-popup-edit-row'),
-                            lc_displaying = cur_popup.find('#row_lc_displaying').val(),
-                            full_width = cur_popup.find('#row_full_width').val(),
-                            content_full_width = cur_popup.find('#row_content_full_width').val(),
-                            bg_type = cur_popup.find('#row_background_type').val(),                            
-                            padding_top = cur_popup.find('#row_padding_top').val(),
-                            padding_bottom = cur_popup.find('#row_padding_bottom').val(),
-                            margin_top = cur_popup.find('#row_margin_top').val(),
-                            margin_bottom = cur_popup.find('#row_margin_bottom').val(),
-                            bg_color = cur_popup.find('#row_bg_color').val(),
-                            bg_custom_type = cur_popup.find('#row_bg_custom_type').val(),
-                            bg_opacity = cur_popup.find('#row_background_opacity').val(),
-                            bg_image = cur_popup.find('#row_bg_image').val(),
-                            bg_video = cur_popup.find('#row_background_video').val(),
-                            bg_attachment = cur_popup.find('#row_bg_attachment').val(),
-                            bg_is_cover = cur_popup.find('#row_background_is_cover').val(),
-                            align = cur_popup.find('#row_align').val(),
-                            section_content = cur_popup.find('#row_section_content').val(),
-                            overlay = cur_popup.find('#row_overlay').val(),
-                            bg_fullscreen = cur_popup.find('#row_bg_fullscreen').val();                           
+                            option,
+                            temp;
+
+                        for (option in tmm_cc_row_options) {
+
+                            temp = cur_popup.find('#row_' + option).val();
+                            $('#row_' + option + '_' + row_id).val( temp );
+
+                        }
+                        /*
                     
                         if (bg_type === 'custom') {                            
                             $('#row_bg_color_' + row_id).val(bg_color);
@@ -630,8 +647,8 @@
                         $('#row_section_content_' + row_id).val(section_content);
                         $('#row_overlay_' + row_id).val(overlay);                                                                                
                         $('#row_bg_fullscreen_' + row_id).val(bg_fullscreen);
-                        
-                        }
+                        */
+                    }
                 };
                 $.tmm_popup(popup_params);
                 
