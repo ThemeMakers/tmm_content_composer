@@ -141,7 +141,6 @@ global $tmm_row_options;
 		'slideLeftEffect' => __('Slide Left', TMM_CC_TEXTDOMAIN),
 		'slideDownEffect' => __('Slide Down', TMM_CC_TEXTDOMAIN),
 		'slideUpEffect' => __('Slide Up', TMM_CC_TEXTDOMAIN),
-		'slideUp' => __('Slide Up', TMM_CC_TEXTDOMAIN),
 		'translateEffect' => __('Translate', TMM_CC_TEXTDOMAIN),
 	);
 
