@@ -25,7 +25,7 @@
 
 .showMeEffect{
 	opacity: 0;
-	@include transform-transition(opacity .35s ease-in-out);
+	@include transition(opacity .35s ease-in-out);
 	@include animation(both);
 }
 
@@ -40,7 +40,7 @@
 
 .opacityEffect {
 	opacity: 0;
-	@include transform-transition(opacity .4s ease-in-out);
+	@include transition(opacity .4s ease-in-out);
 	@include animation(both);
 }
 
