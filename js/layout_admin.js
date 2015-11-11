@@ -337,19 +337,9 @@
                             lc_displaying = $('#row_lc_displaying_' + row_id).val(),                            
                             full_width = $('#row_full_width_' + row_id).val(),                            
                             content_full_width = $('#row_content_full_width_' + row_id).val(),
-                            bg_type = $('#row_bg_type_' + row_id).val(),                            
-                            padding_top = $('#row_padding_top_' + row_id).val(),
-                            padding_bottom = $('#row_padding_bottom_' + row_id).val(),
-                            margin_top = $('#row_margin_top_' + row_id).val(),
-                            margin_bottom = $('#row_margin_bottom_' + row_id).val(),
-                            bg_color = $('#row_bg_color_' + row_id).val(),
+                            bg_type = $('#row_bg_type_' + row_id).val(),
                             bg_custom_type = $('#row_bg_custom_type_' + row_id).val(),
-                            bg_opacity = $('#row_bg_custom_opacity_' + row_id).val(),
-                            bg_image = $('#row_bg_image_' + row_id).val(),
-                            bg_video = $('#row_bg_custom_video_' + row_id).val(),
-                            bg_attachment = $('#row_bg_attachment_' + row_id).val(),
                             bg_is_cover = $('#row_bg_is_cover_' + row_id).val(),
-                            align = $('#row_align_' + row_id).val(),
                             section_content = $('#row_section_content_' + row_id).val(),
                             overlay = $('#row_overlay_' + row_id).val(),
                             bg_fullscreen = $('#row_bg_fullscreen_' + row_id).val(),
@@ -364,13 +354,10 @@
                             option,
                             temp;
 
-
                         for (option in tmm_cc_row_options) {
 
                             current_values[option] = $('#row_' + option + '_' + row_id).val();
                             temp = cur_popup.find('#row_' + option);
-
-                            console.log('current_values[option]='+current_values[option]);
 
                             if (temp.length) {
                                 temp.val(current_values[option]);
@@ -404,15 +391,6 @@
 
                         if (bg_type === 'custom') {
 
-                            /*
-                            cur_popup.find('#row_bg_custom_type').val(bg_custom_type); 
-                            cur_popup.find('#row_bg_color').val(bg_color).next('.bgpicker').css('background-color', bg_color);
-                            cur_popup.find('#row_bg_image').val(bg_image);
-                            cur_popup.find('#row_background_video').val(bg_video);
-                            cur_popup.find('#row_background_opacity').val(bg_opacity);
-                            cur_popup.find('#row_bg_attachment').val(bg_attachment);
-                            cur_popup.find('#row_background_is_cover').val(bg_is_cover);
-                             */
                             if (bg_custom_type === 'color'){
                                 custom_box_color.show();
                             }                            
@@ -431,19 +409,6 @@
                                 cur_popup.find('#row_background_is_cover').removeAttr('checked');
                             }
                         }
-
-                        /*
-                        cur_popup.find('#row_lc_displaying').val(lc_displaying);
-                        cur_popup.find('#row_full_width').val(full_width);
-                        cur_popup.find('#row_content_full_width').val(content_full_width);
-                        cur_popup.find('#row_background_type').val(bg_type);                        
-                        cur_popup.find('#row_padding_top').val(padding_top);
-                        cur_popup.find('#row_padding_bottom').val(padding_bottom);
-                        cur_popup.find('#row_margin_top').val(margin_top);
-                        cur_popup.find('#row_margin_bottom').val(margin_bottom);
-                        cur_popup.find('#row_align').val(align);                                        
-                        cur_popup.find('#row_section_content').val(section_content);
-                        */
 
                         if(section_content == 1){
                             cur_popup.find('#row_section_content').attr('checked', 'checked');
@@ -502,7 +467,7 @@
                             }
                         });
                         
-                        cur_popup.find('#row_background_type').on('change', function() {
+                        cur_popup.find('#row_bg_type').on('change', function() {
                             var val = $(this).val();                    
                             
                             switch (val) {
@@ -623,31 +588,6 @@
                             $('#row_' + option + '_' + row_id).val( temp );
 
                         }
-                        /*
-                    
-                        if (bg_type === 'custom') {                            
-                            $('#row_bg_color_' + row_id).val(bg_color);
-                            $('#row_bg_custom_type_' + row_id).val(bg_custom_type);
-                            $('#row_bg_custom_opacity_' + row_id).val(bg_opacity);
-                            $('#row_bg_image_' + row_id).val(bg_image);
-                            $('#row_bg_custom_video_' + row_id).val(bg_video);
-                            $('#row_bg_attachment_' + row_id).val(bg_attachment);
-                            $('#row_bg_is_cover_' + row_id).val(bg_is_cover);
-                        }
-                        
-                        $('#row_lc_displaying_' + row_id).val(lc_displaying);
-                        $('#row_full_width_' + row_id).val(full_width);
-                        $('#row_content_full_width_' + row_id).val(content_full_width);
-                        $('#row_bg_type_' + row_id).val(bg_type);                        
-                        $('#row_padding_top_' + row_id).val(padding_top);
-                        $('#row_padding_bottom_' + row_id).val(padding_bottom);
-                        $('#row_margin_top_' + row_id).val(margin_top);
-                        $('#row_margin_bottom_' + row_id).val(margin_bottom);
-                        $('#row_align_' + row_id).val(align);
-                        $('#row_section_content_' + row_id).val(section_content);
-                        $('#row_overlay_' + row_id).val(overlay);                                                                                
-                        $('#row_bg_fullscreen_' + row_id).val(bg_fullscreen);
-                        */
                     }
                 };
                 $.tmm_popup(popup_params);
