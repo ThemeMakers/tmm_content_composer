@@ -44,10 +44,6 @@ global $tmm_row_options;
 								'content' => $column['content'],
 								'title' => $column['title'],
 								'effect' => @$column['effect'],
-								'row_align' => @$column['row_align'],
-								'row_overlay' => @$column['row_overlay'],
-								'padding_top' => @$column['padding_top'],
-								'padding_bottom' => @$column['padding_bottom'],
 							);
 
 							TMM_Layout_Constructor::draw_column_item($col_data);
