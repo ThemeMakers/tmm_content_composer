@@ -196,30 +196,34 @@ var TMM_APP_SHORTCODES = function() {
 
 			var begin_string = "[" + shortcode;
 			var end_string = "[/" + shortcode + "]";
-			//list_type: ul == 0
 
-			if (list_type == 0) {
-				var list_item_styles = 'styles="';
+			/* list styles */
+			var list_item_styles = 'styles="';
 
-				jQuery.each(jQuery(".list_item_style"), function(key, value) {
-					if (key > 0) {
-						list_item_styles = list_item_styles + '^';
-					}
-					list_item_styles = list_item_styles + value.value;
-				});
-				list_item_styles = list_item_styles + '"';
-			}
+			jQuery.each(jQuery(".list_item_style"), function(key, value) {
+				if (key > 0) {
+					list_item_styles = list_item_styles + '^';
+				}
+				list_item_styles = list_item_styles + value.value;
+			});
 
+			list_item_styles = list_item_styles + '"';
+
+			/* list colors */
 			var list_item_colors = 'colors="';
+
 			jQuery.each(jQuery(".list_item_color"), function(key, value) {
 				if (key > 0) {
 					list_item_colors = list_item_colors + '^';
 				}
 				list_item_colors = list_item_colors + value.value;
 			});
+
 			list_item_colors = list_item_colors + '"';
 
+			/* list content */
 			var list_item_content = "";
+
 			jQuery.each(jQuery(".list_item_content"), function(key, value) {
 				if (key > 0) {
 					list_item_content = list_item_content + '^';
@@ -228,12 +232,9 @@ var TMM_APP_SHORTCODES = function() {
 				list_item_content = list_item_content + value.value;
 			});
 
-			var shortcode_text = "";
-			if (list_type == 0) {
-				shortcode_text = begin_string + ' ' + list_item_styles + ' ' + list_item_colors + ']' + list_item_content + end_string;
-			} else {
-				shortcode_text = begin_string + ' ' + list_item_colors + ']' + list_item_content + end_string;
-			}
+			/* shortcode */
+			var shortcode_text = begin_string + ' list_type="' + list_type + '" ' + list_item_styles + ' ' + list_item_colors + ']' + list_item_content + end_string;
+
 			self.insert_html_in_buffer(shortcode_text);
 		},
 		album_changer: function(shortcode) {
