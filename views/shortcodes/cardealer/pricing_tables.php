@@ -1,5 +1,5 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<section class="pricing-table col<?php echo $count ?> clearfix">
+<section class="pricing-table row">
 	<?php
 	$content = str_replace('__PRICE_TABLE__', '[price_table count="' . $count . '"', $content);
 	$content = str_replace('__PRICE_TABLE_CLOSE__', ']', $content);
