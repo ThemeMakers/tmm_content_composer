@@ -17,9 +17,31 @@ $car_mileage_from = 0;
 $car_mileage_to = 0;
 $adv_params = array();
 $car_transmission = '';
+$widget_class = '';
+$styles = '';
+
+// Background Color
+if ($bg_color != '#f4f4f4') {
+	$styles.="background-color: " . $bg_color . "; ";
+}
+
+// Styles
+if (!empty($styles)) {
+	$styles = ' style="' . $styles . '"';
+}
 
 if (!isset($button_position)) {
 	$button_position = 3;
+}
+
+if (!isset($search_widget_offset)) {
+	$search_widget_offset = 'default';
+}
+
+if ($search_widget_offset == 'default') {
+	$widget_class .= '';
+} else {
+	$widget_class .= 'no-padding';
 }
 
 if (isset($_GET['car_condition'])) {
@@ -99,9 +121,9 @@ $locations_captions_on_search_widget = explode(',', $locations_captions_on_searc
 $uniqid = uniqid();
 ?>
 
-<div class="quicksearch-container">
+<div class="quicksearch-container <?php echo $widget_class ?>" <?php echo $styles ?>>
 
-	<div class="quicksearch_load_area" style="display: none;"></div>
+	<div class="quicksearch_load_area"></div>
 
 	<form class="car_form_search" action="<?php echo $searching_page; ?>">
 

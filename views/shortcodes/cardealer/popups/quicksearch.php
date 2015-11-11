@@ -3,8 +3,6 @@
 
 	<div class="one-half">
 
-		<div class="one-half">
-
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
@@ -98,61 +96,66 @@
 		));
 		?>
 
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'title' => __('Widget Background', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'bg_color',
+			'id' => 'bg_color',
+			'type' => 'color',
+			'description' => '',
+			'default_value' => TMM_Content_Composer::set_default_value('bg_color', '#f4f4f4')
+		));
+		?>
+
+		<div id="selected_location0_cont" <?php echo TMM_Content_Composer::set_default_value('show_location0', 1) == 1 ? 'style="display:none"' : ''; ?>>
+
+			<?php
+			$terms = TMM_Ext_PostType_Car::get_locations(0);
+			$countries = array();
+
+			foreach ($terms as $term) {
+				$countries[$term->id] = $term->name;
+			}
+
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => __('Select default country', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'selected_location0',
+				'id' => 'selected_location0',
+				'options' => $countries,
+				'default_value' => TMM_Content_Composer::set_default_value('selected_location0', 0),
+				'description' => ''
+			));
+			?>
+
 		</div>
 
-		<div class="one-half">
+		<div id="selected_location1_cont" <?php echo TMM_Content_Composer::set_default_value('show_location1', 1) == 1 ? 'style="display:none"' : ''; ?>>
 
-			<div id="selected_location0_cont" <?php echo TMM_Content_Composer::set_default_value('show_location0', 1) == 1 ? 'style="display:none"' : ''; ?>>
+			<?php
+			$parent_id = TMM_Content_Composer::set_default_value('selected_location0', 0);
+			$states = array();
 
-				<?php
-				$terms = TMM_Ext_PostType_Car::get_locations(0);
-				$countries = array();
+			if ($parent_id > 0) {
+				$terms = TMM_Ext_PostType_Car::get_locations(  );
 
 				foreach ($terms as $term) {
-					$countries[$term->id] = $term->name;
+					$states[$term->id] = $term->name;
 				}
+			} else {
+				$states[0] = '';
+			}
 
-				TMM_Content_Composer::html_option(array(
-					'type' => 'select',
-					'title' => __('Select default country', TMM_CC_TEXTDOMAIN),
-					'shortcode_field' => 'selected_location0',
-					'id' => 'selected_location0',
-					'options' => $countries,
-					'default_value' => TMM_Content_Composer::set_default_value('selected_location0', 0),
-					'description' => ''
-				));
-				?>
-
-			</div>
-
-			<div id="selected_location1_cont" <?php echo TMM_Content_Composer::set_default_value('show_location1', 1) == 1 ? 'style="display:none"' : ''; ?>>
-
-				<?php
-				$parent_id = TMM_Content_Composer::set_default_value('selected_location0', 0);
-				$states = array();
-
-				if ($parent_id > 0) {
-					$terms = TMM_Ext_PostType_Car::get_locations(  );
-
-					foreach ($terms as $term) {
-						$states[$term->id] = $term->name;
-					}
-				} else {
-					$states[0] = '';
-				}
-
-				TMM_Content_Composer::html_option(array(
-					'type' => 'select',
-					'title' => __('Select default state', TMM_CC_TEXTDOMAIN),
-					'shortcode_field' => 'selected_location1',
-					'id' => 'selected_location1',
-					'options' => $states,
-					'default_value' => TMM_Content_Composer::set_default_value('selected_location1', 0),
-					'description' => ''
-				));
-				?>
-
-			</div>
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => __('Select default state', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'selected_location1',
+				'id' => 'selected_location1',
+				'options' => $states,
+				'default_value' => TMM_Content_Composer::set_default_value('selected_location1', 0),
+				'description' => ''
+			));
+			?>
 
 		</div>
 
@@ -238,6 +241,21 @@
 		));
 		?>
 
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Search Widget Offset', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'search_widget_offset',
+			'id' => 'search_widget_offset',
+			'options' => array(
+					'default' => __('Default Offset', TMM_CC_TEXTDOMAIN),
+					'none' => __('No Offset', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('search_widget_offset', 'default'),
+			'description' => ''
+		));
+		?>
+
 	</div>
 
 </div><!--/ .tmm_shortcode_template->
@@ -251,7 +269,9 @@
 		tmm_ext_shortcodes.changer(shortcode_name);
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
+			colorizator();
 		});
+		colorizator();
 
 		jQuery('#selected_location0_cont select').on('change', function(){
 			var select = jQuery('#selected_location1_cont select'),
