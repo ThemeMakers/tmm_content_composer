@@ -63,7 +63,7 @@
 			'title' => __('Letter spacing (px)', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'letter_spacing',
 			'id' => 'letter_spacing',
-			'default_value' => TMM_Content_Composer::set_default_value('letter_spacing', ''),
+			'default_value' => TMM_Content_Composer::set_default_value('letter_spacing', '0'),
 			'description' => ''
 		));
 		?>
@@ -77,7 +77,7 @@
 			'shortcode_field' => 'font_weight',
 			'id' => 'font_weight',
 			'options' => array(
-				'' => __('Default', TMM_CC_TEXTDOMAIN),
+				'default' => __('Default', TMM_CC_TEXTDOMAIN),
 				'normal' => __('Normal', TMM_CC_TEXTDOMAIN),
 				'200' => 200,
 				'400' => 400,
@@ -85,7 +85,7 @@
 				'800' => 800,
 				'bold' => __('Bold', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('font_weight', ''),
+			'default_value' => TMM_Content_Composer::set_default_value('font_weight', 'default'),
 			'description' => ''
 		));
 		?>
@@ -166,7 +166,7 @@
 			'title' => __('Bottom Indent (px)', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'bottom_indent',
 			'id' => 'bottom_indent',
-			'default_value' => TMM_Content_Composer::set_default_value('bottom_indent', ''),
+			'default_value' => TMM_Content_Composer::set_default_value('bottom_indent', 'inherit'),
 			'description' => ''
 		));
 		?>

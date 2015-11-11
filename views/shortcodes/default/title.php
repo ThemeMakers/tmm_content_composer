@@ -7,21 +7,35 @@ $html = "";
 $styles = "";
 $css_class = "";
 
+
+
+if (!isset($font_weight)) {
+	$font_weight = 'default';
+}
+
 if (!isset($letter_spacing)) {
-	$letter_spacing = '';
+	$letter_spacing = '0';
 }
 
 if (!isset($align)) {
-	$align = '';
+	$align = 'left';
+}
+
+if (!isset($bottom_indent)) {
+	$bottom_indent = 'inherit';
+}
+
+if (!isset($font_size)) {
+	$font_size = 'default';
 }
 
 // Font Weight
-if (!empty($font_weight)) {
+if ($font_weight != 'default') {
 	$styles.="font-weight: ". $font_weight .";";
 }
 
 // Letter spacing
-if (!empty($letter_spacing)) {
+if ($letter_spacing != '0') {
 	$styles.="letter-spacing:{$letter_spacing}px;";
 }
 // Align
@@ -30,7 +44,7 @@ if ($align != 'left') {
 }
 
 // Bottom Indent
-if (!empty($bottom_indent)) {
+if ($bottom_indent != 'inherit') {
 	$styles.="margin-bottom: " . $bottom_indent . "px; ";
 }
 
