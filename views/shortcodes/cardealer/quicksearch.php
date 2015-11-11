@@ -1,4 +1,6 @@
 <?php
+wp_enqueue_script('tmm_composer_front');
+
 $car_condition = 0;
 $carlocation = array(0);
 $carproducer = 0;
