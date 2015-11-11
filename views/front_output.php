@@ -213,8 +213,15 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 					<?php foreach ($row_data as $uniqid => $column) { ?>
 
-						<?php $content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
-						<div class="<?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
+						<?php
+						$content = preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content']));
+						$col_class = $column['front_css_class'];
+
+						if (!empty($column['effect'])) {
+							$col_class .= ' ' . $column['effect'];
+						}
+						?>
+						<div class="<?php echo $col_class ?>"><?php echo $content ?></div>
 
 					<?php } ?>
 
