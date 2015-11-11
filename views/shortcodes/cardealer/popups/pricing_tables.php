@@ -97,6 +97,7 @@
 				2 => 2,
 				3 => 3,
 				4 => 4,
+				6 => 6,
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('count', 1),
 			'description' => ''
