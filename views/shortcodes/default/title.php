@@ -25,7 +25,7 @@ if (!empty($letter_spacing)) {
 	$styles.="letter-spacing:{$letter_spacing}px;";
 }
 // Align
-if (!empty($align)) {
+if ($align != 'left') {
 	$styles.="text-align: " . $align . "; ";
 }
 
