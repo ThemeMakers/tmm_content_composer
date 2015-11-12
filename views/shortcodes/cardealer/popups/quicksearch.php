@@ -103,7 +103,7 @@
 			'id' => 'bg_color',
 			'type' => 'color',
 			'description' => '',
-			'default_value' => TMM_Content_Composer::set_default_value('bg_color', '#f4f4f4')
+			'default_value' => TMM_Content_Composer::set_default_value('bg_color', '')
 		));
 		?>
 

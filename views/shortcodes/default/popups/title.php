@@ -30,7 +30,7 @@
 				'h5' => 'H5',
 				'h6' => 'H6',
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('type', 'H1'),
+			'default_value' => TMM_Content_Composer::set_default_value('type', 'h1'),
 			'description' => ''
 		));
 		?>
@@ -38,18 +38,19 @@
 
 	<div class="one-half">
 		<?php
-		$font_size = array('default' => __('Default', TMM_CC_TEXTDOMAIN));
+		$font_size = array('' => __('Default', TMM_CC_TEXTDOMAIN));
+
 		for ($i = 8; $i <= 72; $i++) {
 			$font_size[$i] = $i;
 		}
-		//***
+
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Font Size', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'font_size',
 			'id' => 'font_size',
 			'options' => $font_size,
-			'default_value' => TMM_Content_Composer::set_default_value('font_size', 'default'),
+			'default_value' => TMM_Content_Composer::set_default_value('font_size', ''),
 			'description' => ''
 		));
 		?>
@@ -77,7 +78,7 @@
 			'shortcode_field' => 'font_weight',
 			'id' => 'font_weight',
 			'options' => array(
-				'default' => __('Default', TMM_CC_TEXTDOMAIN),
+				'' => __('Default', TMM_CC_TEXTDOMAIN),
 				'normal' => __('Normal', TMM_CC_TEXTDOMAIN),
 				'200' => 200,
 				'400' => 400,
@@ -85,7 +86,7 @@
 				'800' => 800,
 				'bold' => __('Bold', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('font_weight', 'default'),
+			'default_value' => TMM_Content_Composer::set_default_value('font_weight', ''),
 			'description' => ''
 		));
 		?>
@@ -166,7 +167,7 @@
 			'title' => __('Bottom Indent (px)', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'bottom_indent',
 			'id' => 'bottom_indent',
-			'default_value' => TMM_Content_Composer::set_default_value('bottom_indent', 'inherit'),
+			'default_value' => TMM_Content_Composer::set_default_value('bottom_indent', ''),
 			'description' => ''
 		));
 		?>

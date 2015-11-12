@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-	if (jQuery('.widget.search-panel').length) {
+	if (jQuery('.car_form_search').length) {
 		var app_cardealer_widget_quicksearch = new THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH();
 		app_cardealer_widget_quicksearch.init();
 	}
