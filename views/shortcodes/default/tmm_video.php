@@ -7,6 +7,7 @@ $image_size = "840*500";
 
 $video_types = array(
 	'youtube.com',
+	'youtu.be',
 	'vimeo.com',
 	'.mp4',
 	'.ogv',
@@ -43,6 +44,7 @@ if (isset($cover_image_on_mobiles) && $cover_image_on_mobiles === '1') {
 
 switch ($video_type) {
 	case $video_types[0]:
+	case $video_types[1]:
 
 		$source_code = explode("?v=", $content);
 		$source_code = explode("&", $source_code[1]);
@@ -55,7 +57,7 @@ switch ($video_type) {
 
 		break;
 
-	case $video_types[1]:
+	case $video_types[2]:
 
 		$source_code = explode("/", $content);
 		if (is_array($source_code)) {
@@ -66,9 +68,9 @@ switch ($video_type) {
 		<?php
 		break;
 
-	case $video_types[2]:
 	case $video_types[3]:
 	case $video_types[4]:
+	case $video_types[5]:
 
 		$source_code = $content;
 
