@@ -3,11 +3,16 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+		compass: {
+			dist: {
+				options: {
+					//sourcemap: true,
+					config: 'config.rb'
+				}
+			}
+		},
 		uglify: {
-			options: {
-				compress: false
-			},
-			tmm_content_composer: {
+			dist: {
 				files: {
 					'js/min/front.min.js': [
 						'js/front.js',
@@ -21,15 +26,21 @@ module.exports = function(grunt) {
 				files: [
 					'js/*.js',
 				],
-				tasks: ['uglify:tmm_content_composer']
+				tasks: ['uglify']
+			},
+			styles: {
+				files: [
+					'scss/*.scss'
+				],
+				tasks: ['compass']
 			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-compass');
 
 	grunt.registerTask('default', ['watch']);
-	grunt.registerTask('tmm_content_composer', ['uglify:tmm_content_composer']);
 
 };
