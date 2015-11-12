@@ -421,7 +421,7 @@ function bg_parallax(el) {
 		var isVisible = ( window.innerHeight + window.scrollY > this.offsetTop ) && (window.scrollY < this.offsetTop + this.offsetHeight );
 
 		if(isVisible) {
-			this.style.backgroundPosition = '0 ' + ( this.offsetTop - window.scrollY ) / 3 + 'px';
+			this.style.backgroundPosition = '50% ' + ( this.offsetTop - window.scrollY ) / 3 + 'px';
 		}
 	});
 }
