@@ -15,11 +15,22 @@ switch($type){
                 <?php if (!empty($content)){ ?>
                     <?php foreach ($content as $key => $text){
 
-		                $colors = explode(',', $colors);
-		                $text_color = 'color: rgb(' . TMM_Content_Composer::hex2RGB( $colors[$key * 4], 1 ) . ');';
-		                $bg_color .= 'background-color: rgb(' . TMM_Content_Composer::hex2RGB( $colors[$key * 4 + 1], 1 ) . ');';
-		                $hover_text_color = 'color: rgb(' . TMM_Content_Composer::hex2RGB( $colors[$key * 4 + 2], 1 ) . ');';
-		                $hover_bg_color = 'background-color: rgb(' . TMM_Content_Composer::hex2RGB( $colors[$key * 4 + 3], 1 ) . ');';
+		                $text_color = '';
+		                $bg_color = '';
+		                $hover_text_color = '';
+		                $hover_bg_color = '';
+
+		                if (!empty($colors)) {
+
+			                if (!is_array($colors)) {
+				                $colors = explode(',', $colors);
+			                }
+
+			                $text_color = 'color: rgb(' . TMM_Content_Composer::hex2RGB( $colors[$key * 4], 1 ) . ');';
+			                $bg_color = 'background-color: rgb(' . TMM_Content_Composer::hex2RGB( $colors[$key * 4 + 1], 1 ) . ');';
+			                $hover_text_color = 'color: rgb(' . TMM_Content_Composer::hex2RGB( $colors[$key * 4 + 2], 1 ) . ');';
+			                $hover_bg_color = 'background-color: rgb(' . TMM_Content_Composer::hex2RGB( $colors[$key * 4 + 3], 1 ) . ');';
+		                }
 		                ?>
                     <li style="<?php echo $text_color.$bg_color; ?>">
                         <i class="content-icon <?php echo esc_attr($icons[$key]) ?>"></i>
