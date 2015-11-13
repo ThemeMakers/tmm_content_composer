@@ -41,10 +41,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_style = 'style="'.$section_style.'"';
 		}
 
-		//echo '<pre>';
-		//print_r($tmm_layout_constructor_row[$row]);
-		//echo '</pre>';
-
 		$section_style_attr = '';
 		/* background */
 		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] !== 'none') {
@@ -80,6 +76,25 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				}
 			}
 
+			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'video' && !empty($tmm_layout_constructor_row[$row]['bg_video'])) {
+				$video_type = TMM_Layout_Constructor::get_video_type($tmm_layout_constructor_row[$row]['bg_video']);
+
+				$top = ($post->post_type=='page' && empty($post->post_content) && $first_row['bg_custom_type']=='video') ? '0' : '100px';
+				$video_options=array(
+					'video_url' => $tmm_layout_constructor_row[$row]['bg_video'],
+					'bg_cover' => isset($tmm_layout_constructor_row[$row]['bg_cover']) ? $tmm_layout_constructor_row[$row]['bg_cover'] : '',
+					'video_type' => $video_type,
+					'video_quality' => 'default',
+					'top' => $top,
+					'panel' => $tmm_layout_constructor_row[$row]['bg_video_panel'],
+					'mute' => $tmm_layout_constructor_row[$row]['bg_video_mute'],
+					'loop' => $tmm_layout_constructor_row[$row]['bg_video_loop'],
+					'containment' => '#section_'.$row
+				);
+
+				echo TMM_Layout_Constructor::display_rowbg_video($video_options);
+			}
+
 			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'color' && !empty($tmm_layout_constructor_row[$row]['bg_color'])) {
 
 				$section_style_attr .= 'background:'.$tmm_layout_constructor_row[$row]['bg_color'].'; ';
@@ -111,20 +126,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		<?php } ?>
                 
             <?php
-                    
-				if (!empty($tmm_layout_constructor_row[$row]['bg_video']) && $tmm_layout_constructor_row[$row]['bg_custom_type']=='video' && $row_style['bg_type'] == 'custom'){
-					$video_type = TMM_Layout_Constructor::get_video_type($tmm_layout_constructor_row[$row]['bg_video']);
-
-					$top = ($post->post_type=='page' && empty($post->post_content) && $first_row['bg_custom_type']=='video') ? '0' : '100px';
-					$video_options=array(
-						'video_url' => $tmm_layout_constructor_row[$row]['bg_video'], 
-						'video_type' => $video_type,
-						'video_quality' => 'default',
-						'top' => $top,
-						'containment' => '#section_'.$row
-					);                        
-					echo TMM_Layout_Constructor::display_rowbg_video($video_options);
-				}
 
 				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
 				$padding_top = (isset($tmm_layout_constructor_row[$row]['padding_top'])) ? $tmm_layout_constructor_row[$row]['padding_top'] : '';

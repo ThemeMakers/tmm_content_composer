@@ -410,12 +410,48 @@ global $tmm_row_options;
                     TMM_Content_Composer::html_option(array(
                         'type' => 'upload_video',
                         'title' => __('Background Video', TMM_CC_TEXTDOMAIN),
-                        'shortcode_field' => 'row_background_video',
-                        'id' => 'row_background_video',
-                        'default_value' => $tmm_row_options['background_video'],
+                        'shortcode_field' => 'row_bg_video',
+                        'id' => 'row_bg_video',
+                        'default_value' => $tmm_row_options['bg_video'],
                         'description' => 'Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg http://vimeo.com/22439234 or upload self hosted video'
                     ));
                     ?>
+
+					<?php
+					TMM_Content_Composer::html_option(array(
+						'type' => 'checkbox',
+						'title' => __('Show / Hide video control panel', TMM_CC_TEXTDOMAIN),
+						'shortcode_field' => 'row_background_video_panel',
+						'id' => 'row_bg_video_panel',
+						'default_value' => $tmm_row_options['bg_video_panel'],
+						'is_checked'=>true,
+						'description' => __('Show / Hide video control panel', TMM_CC_TEXTDOMAIN),
+					));
+					?>
+
+					<?php
+					TMM_Content_Composer::html_option(array(
+						'type' => 'checkbox',
+						'title' => __('Mute audio on video', TMM_CC_TEXTDOMAIN),
+						'shortcode_field' => 'row_background_video_mute',
+						'id' => 'row_bg_video_mute',
+						'default_value' => $tmm_row_options['bg_video_mute'],
+						'is_checked'=>false,
+						'description' => __('Mute audio on video', TMM_CC_TEXTDOMAIN),
+					));
+					?>
+
+					<?php
+					TMM_Content_Composer::html_option(array(
+						'type' => 'checkbox',
+						'title' => __('Repeat videos automatically', TMM_CC_TEXTDOMAIN),
+						'shortcode_field' => 'row_background_video_loop',
+						'id' => 'row_bg_video_loop',
+						'default_value' => $tmm_row_options['bg_video_loop'],
+						'is_checked'=>true,
+						'description' => __('Repeat videos automatically', TMM_CC_TEXTDOMAIN),
+					));
+					?>
                 </div>
 
 				<?php
