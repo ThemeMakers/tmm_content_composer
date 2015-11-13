@@ -425,3 +425,34 @@ function bg_parallax(el) {
 		}
 	});
 }
+
+/**
+ * Services shortcode (touch event handler for mobiles)
+ */
+
+(function ($) {
+
+	$(function () {
+
+		var content_boxes = $('content-boxes');
+
+		if (content_boxes.length) {
+
+			if (Modernizr.touch) {
+
+				content_boxes.on('touchstart', 'li', function (e) {
+					e.preventDefault();
+
+					if ($(this).hasClass('active')) {
+						$(this).removeClass('active');
+					} else {
+						$(this).siblings('li').removeClass('active').end().addClass('active');
+					}
+				});
+
+			}
+		}
+
+	});
+
+}(jQuery));
