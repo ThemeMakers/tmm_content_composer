@@ -109,7 +109,7 @@ if (!empty($contact_form['inputs'])) {
 		<?php endif; ?>
 
 		<p class="input-block">
-			<button class="button <?php echo $contact_form['submit_button'] ?> medium" type="submit"><?php _e($contact_form['submit_button_text'], TMM_CC_TEXTDOMAIN); ?></button>
+			<button class="lc-button <?php echo $contact_form['submit_button'] ?> medium" type="submit"><?php _e($contact_form['submit_button_text'], TMM_CC_TEXTDOMAIN); ?></button>
 		</p>
 
 	</form>
