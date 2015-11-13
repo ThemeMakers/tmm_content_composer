@@ -274,6 +274,15 @@
 			tmm_ext_shortcodes.services_changer(shortcode_name);
 		});
 
+		jQuery("#type_icon_top").life('click', function() {
+			jQuery(".list-item-color").slideUp(200);
+            jQuery(".colorized_hover_title").slideUp(200);
+            jQuery("h5.title_content").slideDown(200);
+            jQuery("h5.hover_title_content").slideUp(200);
+			jQuery("#list_type").val(2);
+			tmm_ext_shortcodes.services_changer(shortcode_name);
+		});
+
 		jQuery(".js_add_list_item").on('click', function() {
 			var clone = jQuery(".list_item:last").clone(false);
 			var last_row = jQuery(".list_item:last");
