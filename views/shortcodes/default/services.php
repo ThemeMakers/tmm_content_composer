@@ -56,6 +56,33 @@ switch($type){
         
         <?php
         break;
+    case '2':
+        ?>
+        <div class="ca-shortcode">
+            <i class="ca-icon <?php echo esc_attr($icons[$key]) ?>"></i>
+            <div class="ca-content">
+                <h4 class="ca-title">
+                    <?php
+                    if (!empty($links[$key])){?>
+                    <a href="<?php echo esc_url( $links[$key]); ?>">
+                        <?php
+                        }
+                        ?>
+                        <?php echo esc_html($titles[$key]) ?>
+                        <?php if (!empty($links[$key])){
+                        ?>
+                    </a>
+                <?php
+                }?>
+                </h4>
+                <p>
+                    <?php echo esc_html($text) ?>
+                </p>
+            </div>
+        </div><!--/ .ca-shortcode-->
+
+        <?php
+        break;
     default:
         
         if (!empty($content)){ 

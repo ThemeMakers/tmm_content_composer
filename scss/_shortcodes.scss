@@ -1,0 +1,161 @@
+/* -------------------------------------------------- */
+/* Variables
+/* -------------------------------------------------- */
+
+$services-icon-color							: #ff600a;
+$services-icon-size								: 36px;
+
+
+/* -------------------------------------------------- */
+/* Services Icons at Left
+/* -------------------------------------------------- */
+
+.ca-shortcode {
+	margin-bottom: 10px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	i {
+		&.ca-icon {
+			float: left;
+			margin-right: 15px;
+			width: auto;
+
+			&:before {
+				padding-top: 7px;
+				color: $services-icon-color;
+				font-size: $services-icon-size;
+			}
+		}
+	}
+
+	&:hover {
+		i {
+			&.ca-icon {
+				&:before {
+					@include transform-transition(.45s ease-in-out, opacity .45s ease-in-out);
+					@include animation(wobble-vertical ease-in-out 2s both);
+				}
+			}
+		}
+	}
+
+
+	.ca-title {
+		margin-bottom: 0;
+	}
+
+	.ca-content {
+		display: table;
+	}
+}
+
+/* -------------------------------------------------- */
+/*	Services hover Boxes with Icons
+/* -------------------------------------------------- */
+
+.content-boxes {
+	font-size: 0;
+
+	> ul {
+		> li {
+			position: relative;
+			display: inline-block;
+			overflow: hidden;
+			padding: 60px 15px;
+			width: 100%;
+			min-height: 310px;
+			border: 1px solid #fff;
+			background-color: #f85c37;
+			color: #fff;
+			vertical-align: top;
+			text-align: center;
+
+			.content-icon {
+				display: block;
+				margin-bottom: 50px;
+
+				&[class*="icon-"] {
+					&:before {
+						font-size: 60px;
+					}
+				}
+			}
+
+			h2 {
+				margin-bottom: 0;
+				color: #fff;
+				text-transform: uppercase;
+				font-weight: 300;
+				line-height: 1.2em;
+			}
+
+			.hover-box {
+				position: absolute;
+				top: -100%;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #262626;
+				color: #fff;
+				font-size: 14px;
+
+				@include transition(top .20s ease);
+			}
+
+			.extra-content {
+				position: absolute;
+				left: 0;
+				opacity: 0;
+				width: 100%;
+				height: 100%;
+				bottom: -100%;
+
+				@include transition(bottom .20s ease, opacity .15s ease);
+			}
+
+			.extra-table {
+				display: table;
+				overflow: hidden;
+				width: 100%;
+				height: 100%;
+				vertical-align: middle;
+				text-align: center;
+			}
+
+			.extra-inner {
+				display: table-cell;
+				padding: 0 30px;
+				width: 100%;
+				height: 100%;
+				font-size: 14px;
+				vertical-align: middle;
+
+				h4 {
+					text-transform: uppercase;
+				}
+
+				> * {
+					color: #fff;
+				}
+			}
+
+			&:hover,
+			&.active {
+				.hover-box {
+					top: 0;
+				}
+
+				.extra-content {
+					bottom: 0;
+					opacity: 1;
+
+					-webkit-transition-delay: .15s;
+					transition-delay: .15s;
+				}
+			}
+		}
+	}
+}
