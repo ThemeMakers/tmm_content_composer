@@ -238,27 +238,21 @@ class TMM_Content_Composer {
 	}
 
 	public static function get_theme_buttons() {
-		if (class_exists('TMM_OptionsHelper')) {
-			$buttons = TMM_OptionsHelper::get_theme_buttons();
-		}else{
-			$buttons = array(
-				'default' => __('Default', TMM_CC_TEXTDOMAIN),
-				'default-white' => __('Default-white', TMM_CC_TEXTDOMAIN)
-			);
-		}
+		$buttons = array(
+			'default' => __('Default Grey', TMM_CC_TEXTDOMAIN),
+			'orange' => __('Orange', TMM_CC_TEXTDOMAIN)
+		);
+
 		return $buttons;
 	}
 
 	public static function get_theme_buttons_sizes() {
-		if (class_exists('TMM_OptionsHelper')) {
-			$button_sizes = TMM_OptionsHelper::get_theme_buttons_sizes();
-		}else{
-			$button_sizes = array(
-				'small' => __('Small', TMM_CC_TEXTDOMAIN),
-				'middle' => __('Middle', TMM_CC_TEXTDOMAIN),
-				'large' => __('Large', TMM_CC_TEXTDOMAIN),
-			);
-		}
+		$button_sizes = array(
+			'small' => __('Small', TMM_CC_TEXTDOMAIN),
+			'middle' => __('Middle', TMM_CC_TEXTDOMAIN),
+			'large' => __('Large', TMM_CC_TEXTDOMAIN),
+		);
+
 		return $button_sizes;
 	}
 

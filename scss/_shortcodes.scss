@@ -6,10 +6,16 @@
 $services-icon-color							: #ff600a;
 $services-icon-size								: 36px;
 
-// Services: Icons at Left
-$services-alt-icon-color						: #ff600a;
+// Services: Icons at Top
+$services-alt-title-color						: #232527;
+$services-alt-font-color						: #7e858b;
+$services-alt-icon-color						: #232527;
+$services-alt-icon-color-hover					: #ffffff;
 $services-alt-icon-size							: 42px;
 $services-alt-icon-border-color					: #ff600a;
+$services-alt-icon-border-color-hover			: #ff600a;
+$services-alt-icon-bg-color						: transparent;
+$services-alt-icon-bg-color-hover				: #ff600a;
 
 // Services: hover Boxes with Icons
 $services-alt-1-icon-size						: 60px;
@@ -19,6 +25,40 @@ $services-alt-1-border-color					: #ffffff;
 $services-alt-1-title-color						: #ffffff;
 $services-alt-1-font-color						: #ffffff;
 $services-alt-1-cover-font-color				: #ffffff;
+
+// Buttons
+$lc-button-default-text-color					: #ffffff;
+$lc-button-default-text-color-hover				: #ffffff;
+$lc-button-default-icon-color					: #ffffff;
+$lc-button-default-icon-color-hover				: #ffffff;
+$lc-button-default-bg-color						: #7f858b;
+$lc-button-default-bg-color-hover				: #ff600a;
+$lc-button-default-border-radius				: 0;
+$lc-button-default-border-width					: 0;
+$lc-button-default-border-style					: solid;
+$lc-button-default-border-color					: transparent;
+$lc-button-default-border-color-hover			: transparent;
+
+$lc-button-small-text-size						: 12px;
+$lc-button-small-icon-size						: 12px;
+$lc-button-small-text-padding					: 5px 15px;
+
+$lc-button-middle-text-size						: 14px;
+$lc-button-middle-icon-size						: 14px;
+$lc-button-middle-text-padding					: 8px 20px;
+
+$lc-button-large-text-size						: 16px;
+$lc-button-large-icon-size						: 16px;
+$lc-button-large-text-padding					: 15px 25px;
+
+$lc-button-orange-text-color					: #ffffff;
+$lc-button-orange-text-color-hover				: #ffffff;
+$lc-button-orange-icon-color					: #ffffff;
+$lc-button-orange-icon-color-hover				: #ffffff;
+$lc-button-orange-bg-color						: #ff600a;
+$lc-button-orange-bg-color-hover				: #7f858b;
+$lc-button-orange-border-color					: transparent;
+$lc-button-orange-border-color-hover			: transparent;
 
 /* -------------------------------------------------- */
 /* Services: Icons at Left
@@ -79,16 +119,42 @@ $services-alt-1-cover-font-color				: #ffffff;
 
 	i {
 		&.ca-icon {
+			width: 94px;
+			height: 94px;
+			position: relative;
 			margin: 0 auto 20px;
 			display: block;
 			text-align: center;
+			z-index: 1;
 
 			&:before {
+				margin: 0;
 				padding: 25px;
 				border: 1px solid $services-alt-icon-border-color;
 				border-radius: 50%;
 				color: $services-alt-icon-color;
 				font-size: $services-alt-icon-size;
+				background-color: $services-alt-icon-bg-color;
+			}
+
+			&:after {
+				pointer-events: none;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				content: '';
+				-webkit-box-sizing: content-box;
+				-moz-box-sizing: content-box;
+				box-sizing: content-box;
+
+				top: 0;
+				left: 0;
+				padding: 0;
+				z-index: -1;
+				opacity: 0;
+				@include box-shadow(0 0 0 2px rgba(255,255,255,0.1));
+				@include transform(scale(0.9));
 			}
 		}
 	}
@@ -97,21 +163,40 @@ $services-alt-1-cover-font-color				: #ffffff;
 		i {
 			&.ca-icon {
 				&:before {
+					border: 1px solid $services-alt-icon-border-color-hover;
+					color: $services-alt-icon-color-hover;
+					background-color: $services-alt-icon-bg-color-hover;
 					@include transform-transition(.45s ease-in-out, opacity .45s ease-in-out);
-					@include animation(wobble-vertical ease-in-out 2s both);
+				}
+				&:after {
+					@include animation(sonarEffect 1.3s ease-out 75ms);
 				}
 			}
 		}
 	}
 
-
-	.ca-title {
-		margin-bottom: 0;
-	}
-
 	.ca-content {
 		display: table;
 		text-align: center;
+		color: $services-alt-font-color;
+
+		h3 {
+			color: $services-alt-title-color;
+		}
+	}
+}
+
+/* sonarEffect */
+@include keyframes(sonarEffect) {
+	0% {opacity: 0.3;}
+	30% {
+		opacity: 0.5;
+		box-shadow: 0 0 0 2px lighten($services-alt-icon-bg-color-hover, 10%), 0 0 10px 10px lighten($services-alt-icon-bg-color-hover, 20%), 0 0 0 10px lighten($services-alt-icon-bg-color-hover, 50%);
+	}
+	100% {
+		box-shadow: 0 0 0 2px lighten($services-alt-icon-bg-color-hover, 10%), 0 0 10px 10px lighten($services-alt-icon-bg-color-hover, 20%), 0 0 0 10px lighten($services-alt-icon-bg-color-hover, 50%);
+		-webkit-transform: scale(1.5);
+		opacity: 0;
 	}
 }
 
@@ -219,4 +304,112 @@ $services-alt-1-cover-font-color				: #ffffff;
 			}
 		}
 	}
+}
+
+/* -------------------------------------------------- */
+/*	Buttons
+/* -------------------------------------------------- */
+
+.lc-button {
+	overflow: hidden;
+	display: inline-block;
+	outline: none;
+	vertical-align: baseline;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	color: $lc-button-default-text-color;
+	background-color: $lc-button-default-bg-color;
+	border-width: $lc-button-default-border-width;
+	border-style: $lc-button-default-border-style;
+	border-color: $lc-button-default-border-color;
+	border-radius: $lc-button-default-border-radius;
+
+	@include border-radius($lc-button-default-border-radius);
+	@include transition(background-color .25s ease-in-out, color .35s ease-in-out);
+
+	&[class*="icon-"] {
+		color: $lc-button-default-icon-color;
+	}
+
+	&:hover {
+		color: $lc-button-default-text-color-hover;
+		background-color: $lc-button-default-bg-color-hover;
+		border-color: $lc-button-default-border-color-hover;
+
+		&[class*="icon-"] {
+			color: $lc-button-default-icon-color-hover;
+		}
+	}
+
+	// Align Left
+	&.alignleft {
+		float: left;
+		margin-right: 20px;
+	}
+
+	// Align Right
+	&.alignright {
+		float: right;
+		margin-left: 20px;
+	}
+
+	// Align Center
+	&.aligncenter {
+		width: 100px;	// TODO: Add a couple width sizes for centering buttons
+		display: block;
+		margin: 0 auto;
+	}
+
+	// Size Small
+	&.small {
+		padding: $lc-button-small-text-padding;
+		font-size: $lc-button-small-text-size;
+
+		&[class*="icon-"] {
+			font-size: $lc-button-small-icon-size;
+		}
+	}
+
+	// Size Middle
+	&.middle {
+		padding: $lc-button-middle-text-padding;
+		font-size: $lc-button-middle-text-size;
+
+		&[class*="icon-"] {
+			font-size: $lc-button-middle-icon-size;
+		}
+	}
+
+	// Size Large
+	&.large {
+		padding: $lc-button-large-text-padding;
+		font-size: $lc-button-large-text-size;
+
+		&[class*="icon-"] {
+			font-size: $lc-button-large-icon-size;
+		}
+	}
+
+	//	Orange color
+	&.orange {
+		color: $lc-button-orange-text-color;
+		background-color: $lc-button-orange-bg-color;
+		border-color: $lc-button-orange-border-color;
+
+		&[class*="icon-"] {
+			color: $lc-button-orange-icon-color;
+		}
+
+		&:hover {
+			color: $lc-button-orange-text-color-hover;
+			background-color: $lc-button-orange-bg-color-hover;
+			border-color: $lc-button-orange-border-color-hover;
+
+			&[class*="icon-"] {
+				color: $lc-button-orange-icon-color-hover;
+			}
+		}
+	}
+
 }
