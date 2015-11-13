@@ -58,7 +58,7 @@ switch($type){
         break;
     case '2':
         ?>
-        <div class="ca-shortcode">
+        <div class="ca-shortcode-alt">
             <i class="ca-icon <?php echo esc_attr($icons[$key]) ?>"></i>
             <div class="ca-content">
                 <h4 class="ca-title">

@@ -2,12 +2,26 @@
 /* Variables
 /* -------------------------------------------------- */
 
+// Services: Icons at Left
 $services-icon-color							: #ff600a;
 $services-icon-size								: 36px;
 
+// Services: Icons at Left
+$services-alt-icon-color						: #ff600a;
+$services-alt-icon-size							: 42px;
+$services-alt-icon-border-color					: #ff600a;
+
+// Services: hover Boxes with Icons
+$services-alt-1-icon-size						: 60px;
+$services-alt-1-bg-color						: #ff600a;
+$services-alt-1-bg-cover-color					: #262626;
+$services-alt-1-border-color					: #ffffff;
+$services-alt-1-title-color						: #ffffff;
+$services-alt-1-font-color						: #ffffff;
+$services-alt-1-cover-font-color				: #ffffff;
 
 /* -------------------------------------------------- */
-/* Services Icons at Left
+/* Services: Icons at Left
 /* -------------------------------------------------- */
 
 .ca-shortcode {
@@ -53,7 +67,56 @@ $services-icon-size								: 36px;
 }
 
 /* -------------------------------------------------- */
-/*	Services hover Boxes with Icons
+/* Services: Icons at Top
+/* -------------------------------------------------- */
+
+.ca-shortcode-alt {
+	margin-bottom: 10px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	i {
+		&.ca-icon {
+			margin: 0 auto 20px;
+			display: block;
+			text-align: center;
+
+			&:before {
+				padding: 25px;
+				border: 1px solid $services-alt-icon-border-color;
+				border-radius: 50%;
+				color: $services-alt-icon-color;
+				font-size: $services-alt-icon-size;
+			}
+		}
+	}
+
+	&:hover {
+		i {
+			&.ca-icon {
+				&:before {
+					@include transform-transition(.45s ease-in-out, opacity .45s ease-in-out);
+					@include animation(wobble-vertical ease-in-out 2s both);
+				}
+			}
+		}
+	}
+
+
+	.ca-title {
+		margin-bottom: 0;
+	}
+
+	.ca-content {
+		display: table;
+		text-align: center;
+	}
+}
+
+/* -------------------------------------------------- */
+/*	Services: hover Boxes with Icons
 /* -------------------------------------------------- */
 
 .content-boxes {
@@ -67,9 +130,9 @@ $services-icon-size								: 36px;
 			padding: 60px 15px;
 			width: 100%;
 			min-height: 310px;
-			border: 1px solid #fff;
-			background-color: #f85c37;
-			color: #fff;
+			border: 1px solid $services-alt-1-border-color;
+			background-color: $services-alt-1-bg-color;
+			color: $services-alt-1-font-color;
 			vertical-align: top;
 			text-align: center;
 
@@ -79,14 +142,14 @@ $services-icon-size								: 36px;
 
 				&[class*="icon-"] {
 					&:before {
-						font-size: 60px;
+						font-size: $services-alt-1-icon-size;
 					}
 				}
 			}
 
 			h2 {
 				margin-bottom: 0;
-				color: #fff;
+				color: $services-alt-1-title-color;
 				text-transform: uppercase;
 				font-weight: 300;
 				line-height: 1.2em;
@@ -98,9 +161,7 @@ $services-icon-size								: 36px;
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background-color: #262626;
-				color: #fff;
-				font-size: 14px;
+				background-color: $services-alt-1-bg-cover-color;
 
 				@include transition(top .20s ease);
 			}
@@ -138,7 +199,7 @@ $services-icon-size								: 36px;
 				}
 
 				> * {
-					color: #fff;
+					color: $services-alt-1-cover-font-color;
 				}
 			}
 
