@@ -35,7 +35,7 @@
 						$car_engine_size = tmm_get_car_engine($car_id);
 						$car_mileage = tmm_get_car_mileage($car_id);
 
-						$slider_img_src = TMM_Ext_PostType_Car::get_car_cover_image($car_id, 'homeslide', (int) TMM::get_option('show_slider_as', TMM_APP_CARDEALER_PREFIX));
+						$slider_img_src = tmm_get_car_cover_image($car_id, 'homeslide', (int) $show_sidebar);
 
 						if (!isset($placeholder)) {
 							$placeholder = 0;
