@@ -12,6 +12,8 @@ $services-alt-font-color						: #7e858b;
 $services-alt-icon-color						: #232527;
 $services-alt-icon-color-hover					: #ffffff;
 $services-alt-icon-size							: 42px;
+$services-alt-icon-border-width					: 2px;
+$services-alt-icon-border-style					: solid;
 $services-alt-icon-border-color					: #ff600a;
 $services-alt-icon-border-color-hover			: #ff600a;
 $services-alt-icon-bg-color						: transparent;
@@ -59,6 +61,27 @@ $lc-button-orange-bg-color						: #ff600a;
 $lc-button-orange-bg-color-hover				: #7f858b;
 $lc-button-orange-border-color					: transparent;
 $lc-button-orange-border-color-hover			: transparent;
+
+// Dividers
+$lc-divider-type-1-width						: 100%;
+$lc-divider-type-1-height						: 1px;
+$lc-divider-type-1-style						: solid;
+
+$lc-divider-type-2-width						: 80px;
+$lc-divider-type-2-height						: 1px;
+$lc-divider-type-2-style						: solid;
+
+$lc-divider-type-3-width						: 100%;
+$lc-divider-type-3-height						: 0;
+$lc-divider-type-3-style						: solid;
+
+$lc-divider-small								: 15px;
+$lc-divider-middle								: 25px;
+$lc-divider-large								: 35px;
+
+$lc-divider-color-transparent					: transparent;
+$lc-divider-color-gray							: #b6b6b7;
+$lc-divider-color-dark							: #232527;
 
 /* -------------------------------------------------- */
 /* Services: Icons at Left
@@ -130,7 +153,9 @@ $lc-button-orange-border-color-hover			: transparent;
 			&:before {
 				margin: 0;
 				padding: 25px;
-				border: 1px solid $services-alt-icon-border-color;
+				border-width: $services-alt-icon-border-width;
+				border-style: $services-alt-icon-border-style;
+				border-color: $services-alt-icon-border-color;
 				border-radius: 50%;
 				color: $services-alt-icon-color;
 				font-size: $services-alt-icon-size;
@@ -163,7 +188,9 @@ $lc-button-orange-border-color-hover			: transparent;
 		i {
 			&.ca-icon {
 				&:before {
-					border: 1px solid $services-alt-icon-border-color-hover;
+					border-width: $services-alt-icon-border-width;
+					border-style: $services-alt-icon-border-style;
+					border-color: $services-alt-icon-border-color-hover;
 					color: $services-alt-icon-color-hover;
 					background-color: $services-alt-icon-bg-color-hover;
 					@include transform-transition(.45s ease-in-out, opacity .45s ease-in-out);
@@ -412,4 +439,55 @@ $lc-button-orange-border-color-hover			: transparent;
 		}
 	}
 
+}
+
+/* -------------------------------------------------- */
+/*	Dividers
+/* -------------------------------------------------- */
+
+.lc-divider {
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0;
+
+	&:before {
+		@include clearfix();
+	}
+
+	// Space
+	&.small { margin-top: $lc-divider-small; margin-bottom: $lc-divider-small; }
+	&.middle { margin-top: $lc-divider-middle; margin-bottom: $lc-divider-middle; }
+	&.large { margin-top: $lc-divider-large; margin-bottom: $lc-divider-large; }
+
+	// Types
+	&.type-1 {
+		width: $lc-divider-type-1-width;
+		border-top-width: $lc-divider-type-1-height;
+		border-top-style: $lc-divider-type-1-style;
+	}
+
+	&.type-2 {
+		width: $lc-divider-type-2-width;
+		border-top-width: $lc-divider-type-2-height;
+		border-top-style: $lc-divider-type-2-style;
+	}
+
+	&.type-3 {
+		width: $lc-divider-type-3-width;
+		border-top-width: $lc-divider-type-3-height;
+		border-top-style: $lc-divider-type-3-style;
+	}
+
+	// Colors
+	&.transparent {
+		border-top-color: $lc-divider-color-transparent;
+	}
+
+	&.gray {
+		border-top-color: $lc-divider-color-gray;
+	}
+
+	&.dark {
+		border-top-color: $lc-divider-color-dark;
+	}
 }
