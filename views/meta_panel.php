@@ -196,22 +196,23 @@ global $tmm_row_options;
             </div>
 
             <div class="content_full_width" style="display: none;">
-            <?php
-            TMM_Content_Composer::html_option(array(
-                'type' => 'select',
-                'title' => __('Content Full Width', TMM_CC_TEXTDOMAIN),
-                'shortcode_field' => 'row_content_full_width',
-                'id' => 'row_content_full_width',
-                'options' => array(
-                    0 => __('No', TMM_CC_TEXTDOMAIN),
-                    1 => __('Yes', TMM_CC_TEXTDOMAIN)
-                ),
-                'default_value' => $tmm_row_options['content_full_width'],
-                'description' => ''
-            ));
-            ?>
+				<?php
+				TMM_Content_Composer::html_option(array(
+					'type' => 'select',
+					'title' => __('Content Full Width', TMM_CC_TEXTDOMAIN),
+					'shortcode_field' => 'row_content_full_width',
+					'id' => 'row_content_full_width',
+					'options' => array(
+						0 => __('No', TMM_CC_TEXTDOMAIN),
+						1 => __('Yes', TMM_CC_TEXTDOMAIN)
+					),
+					'default_value' => $tmm_row_options['content_full_width'],
+					'description' => ''
+				));
+				?>
             </div>
 
+			<div class="one-half">
             <?php
             TMM_Content_Composer::html_option(array(
 				'type' => 'select',
@@ -235,7 +236,11 @@ global $tmm_row_options;
 				'description' => 'Default Value 55px',
 				'default_value' => $tmm_row_options['padding_top']
 			));
+			?>
+			</div>
 
+			<div class="one-half">
+			<?php
 			TMM_Content_Composer::html_option(array(
 				'title' => __('Padding bottom', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_padding_bottom',
@@ -258,7 +263,11 @@ global $tmm_row_options;
 				'default_value' => $tmm_row_options['padding_bottom'],
 				'id' => 'row_padding_bottom'
 			));
+			?>
+			</div>
 
+			<div class="one-half">
+			<?php
 			TMM_Content_Composer::html_option(array(
 				'title' => __('Margin top', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_margin_top',
@@ -280,7 +289,11 @@ global $tmm_row_options;
 				'default_value' => $tmm_row_options['margin_top'],
 				'id' => 'row_margin_top'
 			));
+			?>
+			</div>
 
+			<div class="one-half">
+			<?php
 			TMM_Content_Composer::html_option(array(
 				'title' => __('Margin bottom', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_margin_bottom',
@@ -302,7 +315,10 @@ global $tmm_row_options;
 				'default_value' => $tmm_row_options['margin_bottom'],
 				'id' => 'row_margin_bottom'
 			));
+			?>
+			</div>
 
+			<?php
             TMM_Content_Composer::html_option(array(
                 'type' => 'select',
                 'title' => __('Content Align', TMM_CC_TEXTDOMAIN),
