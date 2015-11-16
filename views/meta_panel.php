@@ -391,20 +391,63 @@ global $tmm_row_options;
                     ));
                     ?>
                     <?php
-				TMM_Content_Composer::html_option(array(
-					'type' => 'select',
-					'title' => __('Background Attachment', TMM_CC_TEXTDOMAIN),
-					'shortcode_field' => 'row_bg_attachment',
-					'id' => 'row_bg_attachment',
-					'options' => array(
-						'1' => __('scroll', TMM_CC_TEXTDOMAIN),
-						'0' => __('fixed', TMM_CC_TEXTDOMAIN)
-					),
-					'default_value' => $tmm_row_options['bg_attachment'],
-					'description' => ''
-				));
-				?>
+					TMM_Content_Composer::html_option(array(
+						'type' => 'select',
+						'title' => __('Background Attachment', TMM_CC_TEXTDOMAIN),
+						'shortcode_field' => 'row_bg_attachment',
+						'id' => 'row_bg_attachment',
+						'options' => array(
+							'1' => __('scroll', TMM_CC_TEXTDOMAIN),
+							'0' => __('fixed', TMM_CC_TEXTDOMAIN)
+						),
+						'default_value' => $tmm_row_options['bg_attachment'],
+						'description' => ''
+					));
+					?>
+					<?php
+					TMM_Content_Composer::html_option(array(
+						'type' => 'checkbox',
+						'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
+						'shortcode_field' => 'row_overlay',
+						'id' => 'row_overlay',
+						'is_checked'=> $tmm_row_options['overlay'],
+						'description' => 'Set overlay on background image'
+					));
+					?>
+					<div id="row_bg_overlay_box" style="display: none;">
+
+						<div class="one-half inner-left">
+							<?php
+							TMM_Content_Composer::html_option(array(
+								'title' => __('Overlay Color', TMM_CC_TEXTDOMAIN),
+								'shortcode_field' => 'row_bg_overlay_color',
+								'id' => 'row_bg_overlay_color',
+								'type' => 'color',
+								'description' => '',
+								'default_value' => $tmm_row_options['bg_overlay_color'],
+								'display' => 1
+							));
+							?>
+						</div>
+
+						<div class="one-half inner-right">
+							<?php
+							TMM_Content_Composer::html_option(array(
+								'title' => __('Overlay Opacity', TMM_CC_TEXTDOMAIN),
+								'shortcode_field' => 'row_bg_overlay_opacity',
+								'id' => 'row_bg_overlay_opacity',
+								'type' => 'slider',
+								'min' => '0',
+								'max' => '100',
+								'description' => '',
+								'default_value' => $tmm_row_options['bg_overlay_opacity'],
+							));
+							?>
+						</div>
+
+					</div>
                 </div>
+
                 <div class="bg_custom_type_video" style="display: none;">
                     <?php
                     TMM_Content_Composer::html_option(array(
@@ -466,49 +509,7 @@ global $tmm_row_options;
 				));
 				?>
 
-				<div id="row_bg_overlay_box" style="display: none;">
 
-					<?php
-					TMM_Content_Composer::html_option(array(
-						'type' => 'checkbox',
-						'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
-						'shortcode_field' => 'row_overlay',
-						'id' => 'row_overlay',
-						'is_checked'=> $tmm_row_options['overlay'],
-						'description' => 'Set overlay on background image'
-					));
-					?>
-
-					<div class="one-half inner-left">
-						<?php
-						TMM_Content_Composer::html_option(array(
-							'title' => __('Overlay Color', TMM_CC_TEXTDOMAIN),
-							'shortcode_field' => 'row_bg_overlay_color',
-							'id' => 'row_bg_overlay_color',
-							'type' => 'color',
-							'description' => '',
-							'default_value' => $tmm_row_options['bg_overlay_color'],
-							'display' => 1
-						));
-						?>
-					</div>
-
-					<div class="one-half inner-right">
-						<?php
-						TMM_Content_Composer::html_option(array(
-							'title' => __('Overlay Opacity', TMM_CC_TEXTDOMAIN),
-							'shortcode_field' => 'row_bg_overlay_opacity',
-							'id' => 'row_bg_overlay_opacity',
-							'type' => 'slider',
-							'min' => '0',
-							'max' => '100',
-							'description' => '',
-							'default_value' => $tmm_row_options['bg_overlay_opacity'],
-						));
-						?>
-					</div>
-
-				</div>
 
 			</div>
 
