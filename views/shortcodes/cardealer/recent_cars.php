@@ -56,7 +56,7 @@ $car_watch_list   = TMM_Ext_PostType_Car::get_watch_list();
 
 	<div class="page-subheader">
 
-		<h2 class="page-title"><?php _e( $title, TMM_CC_TEXTDOMAIN ) ?></h2>
+		<h2 class="section-title"><?php _e( $title, TMM_CC_TEXTDOMAIN ) ?></h2>
 
 		<?php if ( isset( $show_layout_switcher ) && $show_layout_switcher == true ) { ?>
 			<div class="layout-switcher">
