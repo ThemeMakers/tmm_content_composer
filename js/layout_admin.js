@@ -476,12 +476,15 @@
                                     
                                     if (bg_custom_type === 'color' || bg_custom_type==='none'){
                                         custom_box_color.slideDown();
+                                        box_overlay.slideUp();
                                     } 
                                     if ((bg_custom_type === 'image')){
                                         custom_box_image.slideDown();
+                                        box_overlay.slideDown();
                                     }
                                     if (bg_custom_type === 'video'){
                                         custom_box_video.slideDown();
+                                        box_overlay.slideUp();
                                     }                                    
                                     break;
                                 case 'default':

@@ -30,18 +30,21 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$margin_top = (isset($tmm_layout_constructor_row[$row]['margin_top'])) ? $tmm_layout_constructor_row[$row]['margin_top'] : '';
 		$margin_bottom = (isset($tmm_layout_constructor_row[$row]['margin_bottom'])) ? $tmm_layout_constructor_row[$row]['margin_bottom'] : '';
 
-		$section_style = '';
-		if ($margin_top != ''){
-			$section_style .= 'margin-top:' . $margin_top . 'px;';
+		//$section_style = '';
+		$section_style_attr = '';
+		if ($margin_top != '0'){
+			$section_style_attr .= 'margin-top:' . $margin_top . 'px;';
 		}
-		if ($margin_bottom != ''){
-			$section_style .= 'margin-bottom:' . $margin_bottom . 'px;';
+		if ($margin_bottom != '0'){
+			$section_style_attr .= 'margin-bottom:' . $margin_bottom . 'px;';
 		}
+		/*
 		if($section_style != ''){
 			$section_style = 'style="'.$section_style.'"';
-		}
+		}*/
 
-		$section_style_attr = '';
+		//$section_style_attr = '';
+
 		/* background */
 		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] !== 'none') {
 
@@ -142,10 +145,10 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 					$row_style_attr .= $row_style['style_custom_color'];
 				}
 
-				if ($padding_top != '') {
+				if ($padding_top != '0') {
 					$row_style_attr .= 'padding-top:'.$padding_top.'px; ';
 				}
-				if ($padding_bottom != '') {
+				if ($padding_bottom != '0') {
 					$row_style_attr .= 'padding-bottom:'.$padding_bottom.'px; ';
 				}
 				if (!empty($align) && ($align != 'left')) {
