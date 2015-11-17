@@ -30,7 +30,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$margin_top = (isset($tmm_layout_constructor_row[$row]['margin_top'])) ? $tmm_layout_constructor_row[$row]['margin_top'] : '';
 		$margin_bottom = (isset($tmm_layout_constructor_row[$row]['margin_bottom'])) ? $tmm_layout_constructor_row[$row]['margin_bottom'] : '';
 
-		//$section_style = '';
 		$section_style_attr = '';
 		if ($margin_top != '0'){
 			$section_style_attr .= 'margin-top:' . $margin_top . 'px;';
@@ -38,12 +37,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		if ($margin_bottom != '0'){
 			$section_style_attr .= 'margin-bottom:' . $margin_bottom . 'px;';
 		}
-		/*
-		if($section_style != ''){
-			$section_style = 'style="'.$section_style.'"';
-		}*/
-
-		//$section_style_attr = '';
 
 		/* background */
 		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] !== 'none') {
@@ -158,7 +151,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 					$row_style_attr = ' style="'.$row_style_attr.'"';
 				}
 
-				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
+				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && ($row_displaying=='full_width' || $row_displaying == 'before_full_width')){
 					?>
 
 					<div class="container">
@@ -183,7 +176,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 					</div>
 
 					<?php
-				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && $row_displaying=='full_width'){
+				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && ($row_displaying=='full_width' || $row_displaying == 'before_full_width')){
 					?>
 
 					</div><!--/ .container -->
