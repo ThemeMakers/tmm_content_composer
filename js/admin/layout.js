@@ -560,7 +560,7 @@
 
 				$.each(pickers, function(key, picker) {
 
-					var bg_hex_color = $(picker).prev('.bg_hex_color');
+					var bg_hex_color = $(picker).next('.bg_hex_color');
 
 					if (!$(bg_hex_color).val()) {
 						$(bg_hex_color).val();

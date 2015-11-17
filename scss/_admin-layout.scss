@@ -147,8 +147,8 @@
 
 	.tmm-lc-column-bar-left {
 		position: absolute;
-		top: 0px;
-		left: 0px;
+		top: 0;
+		left: 0;
 		width: 25px;
 	}
 
@@ -156,7 +156,7 @@
 		color: #282a2c;
 		font-style: italic;
 		line-height: 54px;
-		margin: 0px 35px;
+		margin: 0 35px;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
@@ -168,17 +168,17 @@
 
 	.tmm-lc-column-bar-right {
 		position: absolute;
-		right: 0px;
-		top: 0px;
+		right: 0;
+		top: 0;
 		width: 25px;
 	}
 
 	.tmm-lc-column-size {
 		position: absolute;
-		top: 0px;
+		top: 0;
 		right: 25px;
 		height: 19px;
-		padding: 0px 9px;
+		padding: 0 9px;
 		background-color: #c1c4c6;
 		color: #fff;
 		font-style: italic;

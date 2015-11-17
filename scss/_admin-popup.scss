@@ -217,7 +217,8 @@
 }
 
 .tmm-popup-content .data-upload {
-	width: 70% !important; margin-right: 5px;
+	width: 70% !important;
+	margin-right: 5px;
 }
 
 .tmm-popup-content .data-input,
@@ -243,12 +244,13 @@
 .tmm-popup-content input[type="text"],
 .tmm-popup-content textarea,
 .tmm-popup-content select {
-	height: 35px;
+	height: 33px;
 	line-height: initial;
 	margin: 0;
 	outline-width: 0;
 	padding: 2px 10px;
 	width: 100%;
+	vertical-align: top;
 }
 
 .tmm-popup-content input[type="checkbox"],
@@ -346,20 +348,8 @@
 /*	Other Elements
 /* -------------------------------------------------- */
 
-.tmm-popup-content .bgpicker {
-	float: left;
-	margin-left: 0 !important;
-	margin-right: 10px;
-}
-
-.tmm-popup-content .bg_hex_color{
-	border-color: #d6d7d7;
-	color: #8f9296;
-	font-size: 11px;
-	font-style: italic;
-	padding: 6px 8px;
-	height: auto;
-	width: 75px !important;
+.tmm-popup-content .bg_hex_color {
+	width: 80px !important;
 }
 
 .tmm-popup-content .preset_description {
@@ -444,7 +434,7 @@
 		bottom: 5%;
 		margin-right: 36px;
 		margin-left: 36px;
-		margin-top: 0px;
+		margin-top: 0;
 	}
 
 	.tmm-popup-overlay {
@@ -456,13 +446,13 @@
 	.tmm-popup {
 		top: 46px;
 		bottom: 46px;
-		margin-right: 0px;
-		margin-left: 0px;
-		margin-top: 0px;
+		margin-right: 0;
+		margin-left: 0;
+		margin-top: 0;
 	}
 
 	.tmm-popup-overlay {
-		margin-left: 0px;
+		margin-left: 0;
 	}
 
 	.tmm-popup-content .one-half,
@@ -473,6 +463,6 @@
 	.tmm-popup {
 		top: 46px;
 		bottom: 46px;
-		margin-top: 0px;
+		margin-top: 0;
 	}
 }

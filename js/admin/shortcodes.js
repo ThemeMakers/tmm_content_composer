@@ -590,7 +590,7 @@ function colorizator() {
 
 	jQuery.each(pickers, function(key, picker) {
 
-		var bg_hex_color = jQuery(picker).prev('.bg_hex_color');
+		var bg_hex_color = jQuery(picker).next('.bg_hex_color');
 
 		if (!jQuery(bg_hex_color).val()) {
 			jQuery(bg_hex_color).val();
