@@ -43,6 +43,10 @@ if (isset($location_mode)) {
 if (!isset($maptype)) {
 	$maptype = 'image';
 }
+
+if (!isset($marker_is_draggable)) {
+	$marker_is_draggable = 0;
+}
 ?>
 
 <?php if ($mode == 'map'): ?>
