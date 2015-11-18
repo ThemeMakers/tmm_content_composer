@@ -83,6 +83,39 @@ $lc-divider-color-transparent					: transparent;
 $lc-divider-color-gray							: #b6b6b7;
 $lc-divider-color-dark							: #232527;
 
+// Animated Banner
+$lc-banner-title-1-color						: #dd2503;
+$lc-banner-title-1-font-family					: 'Roboto Condensed';
+$lc-banner-title-1-font-weight					: 600;
+$lc-banner-title-1-font-style					: italic;
+$lc-banner-title-1-font-size					: 45px;
+
+$lc-banner-title-2-color						: #dd2503;
+$lc-banner-title-2-font-family					: 'Roboto Condensed';
+$lc-banner-title-2-font-weight					: 600;
+$lc-banner-title-2-font-style					: italic;
+$lc-banner-title-2-font-size					: 35px;
+
+$lc-banner-title-3-color						: #000000;
+$lc-banner-title-3-font-family					: 'Roboto Condensed';
+$lc-banner-title-3-font-weight					: 600;
+$lc-banner-title-3-font-style					: italic;
+$lc-banner-title-3-font-size					: 21px;
+
+$lc-banner-cta-font-family						: 'Roboto Condensed';
+$lc-banner-cta-font-size						: 11px;
+
+$lc-banner-cta-1-bg-color						: #ffcc00;
+$lc-banner-cta-1-bg-color-hover					: #7f858b;
+$lc-banner-cta-1-text-color						: #000000;
+$lc-banner-cta-1-text-color-hover				: #ffffff;
+
+$lc-banner-cta-2-bg-color						: #ff600a;
+$lc-banner-cta-2-bg-color-hover					: #7f858b;
+$lc-banner-cta-2-text-color						: #ffffff;
+$lc-banner-cta-2-text-color-hover				: #ffffff;
+
+
 /* -------------------------------------------------- */
 /* Services: Icons at Left
 /* -------------------------------------------------- */
@@ -222,7 +255,7 @@ $lc-divider-color-dark							: #232527;
 	}
 	100% {
 		box-shadow: 0 0 0 2px lighten($services-alt-icon-bg-color-hover, 10%), 0 0 10px 10px lighten($services-alt-icon-bg-color-hover, 20%), 0 0 0 10px lighten($services-alt-icon-bg-color-hover, 50%);
-		-webkit-transform: scale(1.5);
+		@include transform(scale(1.5));
 		opacity: 0;
 	}
 }
@@ -489,5 +522,262 @@ $lc-divider-color-dark							: #232527;
 
 	&.dark {
 		border-top-color: $lc-divider-color-dark;
+	}
+}
+
+/* -------------------------------------------------- */
+/*	Animated Banner
+/* -------------------------------------------------- */
+
+.lc-banner {
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+
+	.banner_bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.banner_logo {
+		margin-bottom: 15px;
+	}
+
+	.caption {
+		position: absolute;
+		top: 0; left: 0; bottom: 0;
+		width: 65%;
+		height: 100%;
+		margin-left: -25px;
+
+		@include transition(width 0.35s ease-in-out);
+		@include transform(skew(-10deg));
+
+		&:before {
+			content: '';
+			position: absolute;
+			top:0; right: 0; bottom: 0; left: 0;
+			@include box-shadow(10px 0 0 rgba(0,0,0,.4));
+		}
+	}
+
+	.caption_content {
+		position: absolute;
+		top: 0; left: 0; bottom: 0;
+		width: 65%;
+		height: 100%;
+		padding: 20px 45px 20px 20px;
+
+		@include transition(padding 0.35s ease-in-out, width 0.35s ease-in-out);
+
+		.banner-title-1 {
+			font-family: $lc-banner-title-1-font-family;
+			font-weight: $lc-banner-title-1-font-weight;
+			font-style: $lc-banner-title-1-font-style;
+			font-size: $lc-banner-title-1-font-size;
+			color: $lc-banner-title-1-color;
+			line-height: 1;
+			margin-bottom: 0;
+			letter-spacing: -0.5px;
+			@include transition(transform 0.35s ease-in-out);
+		}
+
+		.banner-title-2 {
+			font-family: $lc-banner-title-2-font-family;
+			font-weight: $lc-banner-title-2-font-weight;
+			font-style: $lc-banner-title-2-font-style;
+			font-size: $lc-banner-title-2-font-size;
+			color: $lc-banner-title-2-color;
+			line-height: 1;
+			margin-bottom: 0;
+			letter-spacing: 1px;
+			@include transition(transform 0.35s ease-in-out);
+		}
+
+		.banner-title-3 {
+			font-family: $lc-banner-title-3-font-family;
+			font-weight: $lc-banner-title-3-font-weight;
+			font-style: $lc-banner-title-3-font-style;
+			font-size: $lc-banner-title-3-font-size;
+			color: $lc-banner-title-3-color;
+			margin-bottom: 20px;
+			letter-spacing: 7px;
+			@include transition(transform 0.35s ease-in-out);
+		}
+	}
+
+	// Animation Type
+	&.static {
+		&:hover {
+			.caption {
+				width: 70%;
+			}
+			.caption_content {
+				width: 70%;
+				padding-left: calc(20px + 5%);
+			}
+		}
+
+
+		.banner_bg {
+			@include animation(zoomInOut 1.5s ease-in-out);
+		}
+
+		.banner-title-1 {
+			@include transform(scale(1.1));
+			@include animation(zoomInOutContent 1.5s ease-in-out 1s);
+		}
+
+		.banner-title-2 {
+			@include transform(scale(1.1));
+			@include animation(zoomInOutContent 1.5s ease-in-out 2.5s);
+		}
+
+		.banner-title-3 {
+			@include transform(scale(1.1));
+			@include animation(zoomInOutContent 1.5s ease-in-out 4s);
+		}
+
+		.more {
+			&:hover {
+				@include animation(skewingButton 0.75s ease-in-out);
+			}
+		}
+	}
+
+	&.animated {
+		.banner_bg {
+			@include animation(zoomInOut 10s ease-in-out infinite);
+		}
+
+		.banner-title-1 {
+			@include transform(scale(1.1));
+			@include animation(zoomInOutContent 2.5s ease-in-out 1s infinite);
+		}
+
+		.banner-title-2 {
+			@include transform(scale(1.1));
+			@include animation(zoomInOutContent 2.5s ease-in-out 2.5s infinite);
+		}
+
+		.banner-title-3 {
+			@include transform(scale(1.1));
+			@include animation(zoomInOutContent 2.5s ease-in-out 4s infinite);
+		}
+
+		&:hover {
+			.more {
+				@include animation(skewingButton 0.75s ease-in-out);
+			}
+		}
+	}
+
+	// Sizes
+	&.size_250x250 {
+		width: 250px;
+		height: 250px;
+	}
+
+	&.size_300x250 {
+		width: 300px;
+		height: 250px;
+	}
+
+	// More Button
+	.more {
+		padding: 7px 10px;
+		display: inline-block;
+		font-family: $lc-banner-cta-font-family;
+		font-size: $lc-banner-cta-font-size;
+		line-height: 1.2;
+		@include transform(skew(-10deg));
+
+		&.yellow {
+			background-color: $lc-banner-cta-1-bg-color;
+			color: $lc-banner-cta-1-text-color;
+
+			&:hover {
+				background-color: $lc-banner-cta-1-bg-color-hover;
+				color: $lc-banner-cta-1-text-color-hover;
+			}
+		}
+
+		&.red {
+			background-color: $lc-banner-cta-2-bg-color;
+			color: $lc-banner-cta-2-text-color;
+
+			&:hover {
+				background-color: $lc-banner-cta-2-bg-color-hover;
+				color: $lc-banner-cta-2-text-color-hover;
+			}
+		}
+	}
+
+}
+
+@include keyframes(zoomInOut) {
+	0% {
+		@include transform(scale(1) rotate(0deg));
+	}
+
+	50% {
+		@include transform(scale(1.5) rotate(15deg));
+	}
+
+	100% {
+		@include transform(scale(1) rotate(0deg));
+	}
+}
+
+@include keyframes(skewingButton) {
+	15% {
+		@include transform(skew(-15deg) scale(1.2));
+	}
+
+	30% {
+		@include transform(skew(-5deg) scale(0.8));
+	}
+
+	50% {
+		@include transform(skew(-13deg) scale(1.1));
+	}
+
+	65% {
+		@include transform(skew(-8deg) scale(0.9));
+	}
+
+	80% {
+		@include transform(skew(-11deg) scale(1.05));
+	}
+
+	100% {
+		@include transform(skew(-10deg) scale(1));
+	}
+}
+
+@include keyframes(zoomInOutContent) {
+	15% {
+		@include transform(scale(1.2));
+	}
+
+	30% {
+		@include transform(scale(0.8));
+	}
+
+	50% {
+		@include transform(scale(1.1));
+	}
+
+	65% {
+		@include transform(scale(0.9));
+	}
+
+	80% {
+		@include transform(scale(1.1));
+	}
+
+	100% {
+		@include transform(scale(1.1));
 	}
 }

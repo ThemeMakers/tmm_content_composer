@@ -42,16 +42,26 @@
 
 		<?php
 		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Title Text 3', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'title_3',
+			'id' => 'title_3',
+			'default_value' => TMM_Content_Composer::set_default_value('title_3', __('Title 3', TMM_CC_TEXTDOMAIN)),
+			'description' => ''
+		));
+		?>
+
+		<?php
+		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Banner animation type', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'animation_type',
 			'id' => 'animation_type',
 			'options' => array(
-				'static_anim' => __('Static Banner', TMM_CC_TEXTDOMAIN),
-				'default_anim' => __('Default Animation', TMM_CC_TEXTDOMAIN),
-				'infinite_anim' => __('Default Infinite', TMM_CC_TEXTDOMAIN),
+				'static' => __('Static Banner', TMM_CC_TEXTDOMAIN),
+				'animated' => __('Animated Banner', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('animation_type', 'static_anim'),
+			'default_value' => TMM_Content_Composer::set_default_value('animation_type', 'static'),
 			'description' => ''
 		));
 		?>
@@ -125,7 +135,7 @@
 				'red' => __('Red', TMM_CC_TEXTDOMAIN),
 				'yellow' => __('Yellow', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('button_color', 'red'),
+			'default_value' => TMM_Content_Composer::set_default_value('button_color', 'yellow'),
 			'description' => ''
 		));
 		?>
