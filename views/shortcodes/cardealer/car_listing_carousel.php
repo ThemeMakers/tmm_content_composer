@@ -28,6 +28,10 @@ $tmp_request_array2 = explode( $order, $tmp_request_array1[1] );
 $request            = $tmp_request_array1[0] . ' ORDER BY ' . "$wpdb->postmeta.meta_value DESC, {$wpdb->posts}.{$orderby} $order" . $tmp_request_array2[1];
 
 $request_result = $wpdb->get_results( $request, OBJECT_K );
+
+$uniqid = uniqid();
+
+wp_enqueue_script('tmm_sudoSlider');
 ?>
 
 <?php if ( !empty($title) ) { ?>
@@ -36,12 +40,16 @@ $request_result = $wpdb->get_results( $request, OBJECT_K );
 
 		<h2 class="section-title"><?php _e( $title, TMM_CC_TEXTDOMAIN ) ?></h2>
 
+		<span id="car_listing_controls_<?php echo $uniqid ?>">
+			<a href="#" data-target="prev" class="prevBtn"> previous </a>
+			<a href="#" data-target="next" class="nextBtn"> next </a>
+		</span>
+
 	</div><!--/ .page-header-->
 
 <?php } ?>
 
-<div id="change-items" class="row tmm-view-mode item-grid">
-
+<div id="car_listing_carousel_<?php echo $uniqid ?>" class="row tmm-view-mode item-grid">
 	<?php
 	if ( !empty($request_result) ) {
 		foreach ( $request_result as $post ) {
@@ -61,10 +69,24 @@ $request_result = $wpdb->get_results( $request, OBJECT_K );
 
 </div>
 
-<?php if ($show_view_all_cars_link) {
-	$searching_page = TMM_Helper::get_permalink_by_lang( TMM::get_option( 'searching_page', TMM_APP_CARDEALER_PREFIX ) );
-	?>
-	<a href="<?php echo $searching_page; ?>"><?php _e( 'Show all cars', TMM_CC_TEXTDOMAIN ); ?> <i class="icon-angle-double-right"></i></a>
-<?php } ?>
+<script type="text/javascript">
+	jQuery(function ($) {
 
+		$("#car_listing_carousel_<?php echo $uniqid ?>").sudoSlider({
+			auto: <?php echo (bool) $autoslide ?>,
+			ease: 'swing',
+			speed: 800,
+			pause: 2000,
+			resumePause: 2000,
+			touch: true,
+			prevNext: false,
+			slideCount: 3,
+			moveCount: 1,
+			startSlide: false,
+			continuous: true,
+			controlsFade: false,
+			customLink: "#car_listing_controls_<?php echo $uniqid ?> a"
+		});
 
+	});
+</script>

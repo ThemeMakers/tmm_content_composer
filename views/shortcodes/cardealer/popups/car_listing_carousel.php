@@ -17,10 +17,10 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show link to all cars', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'show_view_all_cars_link',
-			'id' => 'view_all_cars',
-			'is_checked' => TMM_Content_Composer::set_default_value('show_view_all_cars_link', 1),
+			'title' => __('Enable Auto Slide', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'autoslide',
+			'id' => 'autoslide',
+			'is_checked' => TMM_Content_Composer::set_default_value('autoslide', 1),
 			'description' => ''
 		));
 		?>
@@ -42,10 +42,18 @@
 
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
+			'type' => 'select',
 			'title' => __('Enter number of cars', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'count',
 			'id' => '',
+			'options' => array(
+				3 => 3,
+				6 => 6,
+				9 => 9,
+				12 => 12,
+				15 => 15,
+				18 => 18,
+			),
 			'default_value' => TMM_Content_Composer::set_default_value('count', 9),
 			'description' => '',
 		));
