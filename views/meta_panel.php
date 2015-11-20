@@ -163,6 +163,16 @@ global $tmm_row_options;
         <div class="one-half">
 
            <?php
+
+		   TMM_Content_Composer::html_option(array(
+			   'title' => __('Section Title', TMM_CC_TEXTDOMAIN),
+			   'shortcode_field' => 'row_section_title',
+			   'type' => 'text',
+			   'description' => 'for One Page Menu',
+			   'default_value' => $tmm_row_options['section_title'],
+			   'id' => 'row_section_title'
+		   ));
+
             TMM_Content_Composer::html_option(array(
                 'type' => 'select',
                 'title' => __('Row content displaying', TMM_CC_TEXTDOMAIN),
@@ -524,8 +534,6 @@ global $tmm_row_options;
 					'description' => __('Set The Row Background Image Fullscreen', TMM_CC_TEXTDOMAIN),
 				));
 				?>
-
-
 
 			</div>
 

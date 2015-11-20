@@ -586,6 +586,7 @@
                             temp;
 
                         for (option in tmm_cc_row_options) {
+                            console.log('option='+option);
 
                             temp = cur_popup.find('#row_' + option).val();
                             $('#row_' + option + '_' + row_id).val( temp );

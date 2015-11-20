@@ -62,6 +62,7 @@ function tmm_cc_load_textdomain() {
 add_action( 'plugins_loaded', 'tmm_cc_load_textdomain' );
 
 $tmm_row_options = array(
+	'section_title' => '',
 	'lc_displaying' => 'default',
 	'full_width' => 0,
 	'content_full_width' => 0,
