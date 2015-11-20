@@ -2,15 +2,15 @@
 
 global $wp_query, $wpdb;
 
-$args                   = array();
-$args['posts_per_page'] = (int) $count;
-$args['post_type']      = TMM_Ext_PostType_Car::$slug;
-$args['post_status']    = 'publish';
-$args['order']          = 'DESC';
-$args['orderby']        = 'meta_value';
-$args['meta_key']       = 'car_is_featured';
+$args = array(
+	'posts_per_page' => (int) $count,
+	'post_type' => TMM_Ext_PostType_Car::$slug,
+	'post_status' => 'publish',
+	'orderby' => 'post_date',
+	'order' => 'DESC',
+);
 
-if ( ! defined( 'ICL_LANGUAGE_CODE' ) ) {
+if ( !defined('ICL_LANGUAGE_CODE') ) {
 	$args['meta_query'][] = array(
 		'key'     => '_icl_lang_duplicate_of',
 		'value'   => '',
@@ -18,16 +18,20 @@ if ( ! defined( 'ICL_LANGUAGE_CODE' ) ) {
 	);
 }
 
+if ($filter === 'featured') {
+	$args['meta_query'][] = array(
+		'key' => 'car_is_featured',
+		'value' => 1,
+		'type' => 'numeric',
+		'compare' => '=',
+	);
+} else if ($filter === 'random') {
+	$args['orderby'] = 'rand';
+}
+
 $query = new WP_Query( $args );
 
-$orderby = 'post_date';
-$order   = 'DESC';
-$request = str_replace( "SQL_CALC_FOUND_ROWS", "", $query->request );
-$tmp_request_array1 = explode( 'ORDER BY', $request );
-$tmp_request_array2 = explode( $order, $tmp_request_array1[1] );
-$request            = $tmp_request_array1[0] . ' ORDER BY ' . "$wpdb->postmeta.meta_value DESC, {$wpdb->posts}.{$orderby} $order" . $tmp_request_array2[1];
-
-$request_result = $wpdb->get_results( $request, OBJECT_K );
+$request_result = $query->posts;
 
 $uniqid = uniqid();
 
@@ -73,7 +77,7 @@ wp_enqueue_script('tmm_sudoSlider');
 	jQuery(function ($) {
 
 		$("#car_listing_carousel_<?php echo $uniqid ?>").sudoSlider({
-			auto: <?php echo (bool) $autoslide ?>,
+			auto: <?php echo (int) $autoslide ?>,
 			ease: 'swing',
 			speed: 800,
 			pause: 2000,

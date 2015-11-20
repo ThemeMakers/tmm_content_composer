@@ -16,6 +16,25 @@
 
 		<?php
 		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Enter Number of Cars', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'count',
+			'id' => '',
+			'options' => array(
+				3 => 3,
+				6 => 6,
+				9 => 9,
+				12 => 12,
+				15 => 15,
+				18 => 18,
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('count', 9),
+			'description' => '',
+		));
+		?>
+
+		<?php
+		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
 			'title' => __('Enable Auto Slide', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'autoslide',
@@ -36,33 +55,10 @@
 		));
 		?>
 
-	</div>
-
-	<div class="one-half">
-
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Enter number of cars', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'count',
-			'id' => '',
-			'options' => array(
-				3 => 3,
-				6 => 6,
-				9 => 9,
-				12 => 12,
-				15 => 15,
-				18 => 18,
-			),
-			'default_value' => TMM_Content_Composer::set_default_value('count', 9),
-			'description' => '',
-		));
-		?>
-
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Slide featured cars images on hover', TMM_CC_TEXTDOMAIN),
+			'title' => __('Slide Featured Cars Images on Hover', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'set_featured_autoslide',
 			'id' => 'featured_autoslide',
 			'is_checked' => TMM_Content_Composer::set_default_value('set_featured_autoslide', 1),
@@ -70,10 +66,14 @@
 		));
 		?>
 
+	</div>
+
+	<div class="one-half">
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Thumbnail size', TMM_CC_TEXTDOMAIN),
+			'title' => __('Thumbnail Size', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'thumbnail_size',
 			'id' => 'thumbnail_size',
 			'options' => array(
@@ -85,6 +85,42 @@
 			'description' => ''
 		));
 		?>
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Sort by Dealer', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'sort_by_dealer',
+			'id' => 'sort_by_dealer',
+			'options' => array(
+				0 => __('All dealers', TMM_CC_TEXTDOMAIN),
+				'middle' => __('Middle', TMM_CC_TEXTDOMAIN),
+				'large' => __('Large', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('sort_by_dealer', 0),
+			'description' => ''
+		));
+		?>
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Apply Filters', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'filter',
+			'id' => '',
+			'options' => array(
+				'recent' => __('Recent cars', TMM_CC_TEXTDOMAIN),
+				'featured' => __('Featured cars', TMM_CC_TEXTDOMAIN),
+				'random' => __('Random cars', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('filter', 'recent'),
+			'description' => ''
+		));
+		?>
+
+
+
+
 
 	</div>
 
