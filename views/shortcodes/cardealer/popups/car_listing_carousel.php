@@ -73,15 +73,15 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Thumbnail Size', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'thumbnail_size',
-			'id' => 'thumbnail_size',
+			'title' => __('Items per Set', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'items_per_set',
+			'id' => 'items_per_set',
 			'options' => array(
-				'small' => __('Small', TMM_CC_TEXTDOMAIN),
-				'middle' => __('Middle', TMM_CC_TEXTDOMAIN),
-				'large' => __('Large', TMM_CC_TEXTDOMAIN),
+				'3' => __('3 Items', TMM_CC_TEXTDOMAIN),
+				'4' => __('4 Items', TMM_CC_TEXTDOMAIN),
+				'6' => __('6 Items', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('thumbnail_size', 'large'),
+			'default_value' => TMM_Content_Composer::set_default_value('items_per_set', '3'),
 			'description' => ''
 		));
 		?>

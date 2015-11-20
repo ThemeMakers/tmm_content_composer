@@ -1033,3 +1033,81 @@ $caption-style-2-offset							: 3px 10px;
 
 
 }
+
+/* -------------------------------------------------- */
+/*	Car Listing
+/* -------------------------------------------------- */
+
+.car_listing_carousel_wrapper {
+	width: 100%;
+	overflow: hidden;
+
+	.clc_controls {
+		position: absolute;
+		right: 0;
+		bottom: 4px;
+
+		.prevBtn, .nextBtn {
+			position: relative;
+			border: 1px solid #a8a8a8;
+			overflow: hidden;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			color: #000000;
+			padding: 0;
+			line-height: 20px;
+			font-size: 15px;
+			@include transition(border-color 0.35s ease-in-out);
+
+			&:hover {
+				color: #000000;
+				border-color: #000000;
+			}
+
+			&:before {
+				position: absolute;
+				vertical-align: text-top;
+				line-height: 15px;
+				margin: 1px 0.1em;
+				padding: 0;
+				@include transition(left 0.35s ease-in-out, right 0.35s ease-in-out);
+			}
+		}
+
+		.prevBtn {
+			&:before { left: 0; }
+			&:hover {
+				&:before {
+					left: -2px;
+					@include transition(left 0.35s ease-in-out);
+				}
+			}
+		}
+
+		.nextBtn {
+			&:before { right: 0; }
+			&:hover {
+				&:before {
+					right: -2px;
+					@include transition(right 0.35s ease-in-out);
+				}
+			}
+		}
+	}
+
+	.clc_content {
+		&.item-grid {
+			margin: 0 -20px;
+			.car-entry {
+				> div {
+					margin: 15px 20px;
+				}
+				&[class*="col-"] {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
