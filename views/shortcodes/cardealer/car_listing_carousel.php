@@ -29,13 +29,19 @@ if ($filter === 'featured') {
 	$args['orderby'] = 'rand';
 }
 
+if (!empty($sort_by_dealer)) {
+	$args['author'] = $sort_by_dealer;
+}
+
 $query = new WP_Query( $args );
 
 $request_result = $query->posts;
 
 $uniqid = uniqid();
 
-wp_enqueue_script('tmm_sudoSlider');
+if ( !empty($request_result) ) {
+
+	wp_enqueue_script('tmm_sudoSlider');
 ?>
 
 <?php if ( !empty($title) ) { ?>
@@ -94,3 +100,5 @@ wp_enqueue_script('tmm_sudoSlider');
 
 	});
 </script>
+
+<?php } ?>

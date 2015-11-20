@@ -87,16 +87,63 @@
 		?>
 
 		<?php
+		global $wpdb;
+		$blog_id = get_current_blog_id();
+
+		//get dealer roles
+		$dealer_roles = TMM_Cardealer_User::get_user_roles();
+		$roles = array();
+
+		foreach ($dealer_roles as $k => $data) {
+			$roles[] = $k;
+		}
+
+		//get dealers
+		$dealers = array();
+		$args = array(
+			'fields' => array('ID', 'display_name'),
+			'meta_query' => array(
+				'relation' => 'OR',
+			),
+		);
+
+		foreach ($roles as $role) {
+			$args['meta_query'][] = array(
+				'key' => $wpdb->get_blog_prefix( $blog_id ) . 'capabilities',
+				'value' => $role,
+				'compare' => 'like',
+			);
+		}
+
+		$dealers_query = new WP_User_Query($args);
+		$dealers = $dealers_query->get_results();
+
+		$admin = get_users(
+			array(
+				'role'=>'Administrator',
+				'fields'=>'ID',
+			)
+		);
+
+		$admin_id = is_array($admin) ? $admin[0] : 1;
+
+		$sort_by_dealer_options = array(
+			0 => __('All dealers', TMM_CC_TEXTDOMAIN),
+			$admin_id => __('Administrator', TMM_CC_TEXTDOMAIN),
+		);
+
+		if (!empty($dealers)) {
+			foreach ($dealers as $data) {
+				$sort_by_dealer_options[ $data->ID ] = $data->display_name;
+			}
+		}
+
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Sort by Dealer', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'sort_by_dealer',
 			'id' => 'sort_by_dealer',
-			'options' => array(
-				0 => __('All dealers', TMM_CC_TEXTDOMAIN),
-				'middle' => __('Middle', TMM_CC_TEXTDOMAIN),
-				'large' => __('Large', TMM_CC_TEXTDOMAIN),
-			),
+			'options' => $sort_by_dealer_options,
 			'default_value' => TMM_Content_Composer::set_default_value('sort_by_dealer', 0),
 			'description' => ''
 		));
@@ -117,10 +164,6 @@
 			'description' => ''
 		));
 		?>
-
-
-
-
 
 	</div>
 
