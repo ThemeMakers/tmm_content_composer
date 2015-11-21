@@ -38,6 +38,10 @@ if (isset($search_widget_offset) && $search_widget_offset === 'none') {
 	$widget_class .= ' no-padding';
 }
 
+if (isset($show_in_one_col)) {
+	$widget_class .= ' one-column';
+}
+
 if (isset($_GET['car_condition'])) {
 	$car_condition = $_GET['car_condition'];
 }

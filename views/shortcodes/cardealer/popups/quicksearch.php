@@ -256,6 +256,17 @@
 		));
 		?>
 
+		<?php
+		TMM_Content_Composer::html_option(array(
+				'type' => 'checkbox',
+				'title' => __('Display all fields in one column in pairs', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'show_in_one_col',
+				'id' => 'show_in_one_col',
+				'is_checked' => TMM_Content_Composer::set_default_value('show_in_one_col', 0),
+				'description' => ''
+		));
+		?>
+
 	</div>
 
 </div><!--/ .tmm_shortcode_template->
