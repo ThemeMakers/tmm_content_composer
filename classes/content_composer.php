@@ -80,7 +80,7 @@ class TMM_Content_Composer {
 			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_admin.css');
 			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/shortcodes_admin.js', array('jquery'), false, true);
 
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
+			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');  // Only in admin panel for shortcodes with icons
 
 			?>
 			<script type="text/javascript">
@@ -126,16 +126,16 @@ class TMM_Content_Composer {
 		wp_deregister_style('wp-mediaelement');
 		wp_register_style('tmm_mediaelement', TMM_CC_URL . 'js/shortcodes/mediaelement/mediaelementplayer.css');
 
-		wp_register_style('tmm_tooltipster', TMM_CC_URL . 'css/tooltipster.css');
+//		wp_register_style('tmm_tooltipster', TMM_CC_URL . 'css/tooltipster.css'); TODO: call the file if the theme is not InterPress
 		wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/jquery.tooltipster.min.js', array('jquery'), false, true);
 
-		wp_register_style('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.css');
-		wp_register_style('tmm_owltheme', TMM_CC_URL . 'js/owl-carousel/owl.theme.css');
-		wp_register_style('tmm_owltransitions', TMM_CC_URL . 'js/owl-carousel/owl.transitions.css');
+//		wp_register_style('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.css'); TODO: call the file if the theme is not InterPress
+//		wp_register_style('tmm_owltheme', TMM_CC_URL . 'js/owl-carousel/owl.theme.css'); TODO: call the file if the theme is not InterPress
+//		wp_register_style('tmm_owltransitions', TMM_CC_URL . 'js/owl-carousel/owl.transitions.css'); TODO: call the file if the theme is not InterPress
 		wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.min.js', array('jquery'), false, true);
 
-		wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
-		wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
+//		wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css'); is using in Theme files; TODO: call the file if the theme is not InterPress
+//		wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css'); TODO: call the file if the theme is not InterPress
 		wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/shortcodes_layout.css');
 
 		wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/jquery.modernizr.min.js', array('jquery'), false, true);
