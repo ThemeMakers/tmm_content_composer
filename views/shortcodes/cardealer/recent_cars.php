@@ -2,9 +2,28 @@
 	die( 'No direct access allowed' );
 } ?>
 <?php
+global $wp_query, $wpdb, $post;
 $cars_count = (int) $content;
-global $wp_query;
-global $wpdb;
+
+$post_id = is_object($post) ? $post->ID : 0;
+
+// Listing layout
+$cars_listing_layout_class = "item-grid";
+
+if ( empty($show_layout_switcher) ) {
+
+	if (isset($layout_mode) && $layout_mode === 'list') {
+		$cars_listing_layout_class = 'item-list';
+	}
+
+} else {
+
+	if ( isset( $_COOKIE['car_listing_layout_mode_' . $post_id] ) ) {
+		$cars_listing_layout_class = $_COOKIE['car_listing_layout_mode_' . $post_id];
+	}
+
+}
+
 $args                   = array();
 $args['posts_per_page'] = $cars_count;
 $args['post_type']      = TMM_Ext_PostType_Car::$slug;
@@ -25,28 +44,12 @@ $query = new WP_Query( $args );
 
 $orderby = 'post_date';
 $order   = 'DESC';
-//step 1
 $request = str_replace( "SQL_CALC_FOUND_ROWS", "", $query->request );
-//step 2
-//$tmp_request_array1 = explode('WHERE 1=1', $request);
-//$tmp_request_array1[0] .= " INNER JOIN $wpdb->postmeta featured ON ($wpdb->posts.ID = featured.post_id) ";
-//$request = $tmp_request_array1[0] . " WHERE 1=1 " . $tmp_request_array1[1];
-////step 3
 $tmp_request_array1 = explode( 'ORDER BY', $request );
 $tmp_request_array2 = explode( $order, $tmp_request_array1[1] );
 $request            = $tmp_request_array1[0] . ' ORDER BY ' . "$wpdb->postmeta.meta_value DESC, {$wpdb->posts}.{$orderby} $order" . $tmp_request_array2[1];
 
 $request_result = $wpdb->get_results( $request, OBJECT_K );
-
-$cars_listing_layout_class = "item-grid";
-
-if ( empty($show_layout_switcher) && isset($layout_mode) && $layout_mode === 'list' ) {
-	$cars_listing_layout_class = 'item-list';
-}
-
-if ( isset( $_COOKIE['cars_listing_layout_class'] ) ) {
-	$cars_listing_layout_class = $_COOKIE['cars_listing_layout_class'];
-}
 
 $car_compare_list = TMM_Ext_PostType_Car::get_compare_list();
 $car_watch_list   = TMM_Ext_PostType_Car::get_watch_list();
