@@ -152,6 +152,26 @@ $caption-style-2-font-color						: #ffffff;
 $caption-style-2-bg-color						: rgba(0,0,0,0.5);
 $caption-style-2-offset							: 3px 10px;
 
+// Car Listing Carousel
+$clc-controls-bg-color							: transparent;
+$clc-controls-bg-color-hover					: transparent;
+$clc-controls-icon-color						: #a8a8a8;
+$clc-controls-icon-color-hover					: #a8a8a8;
+$clc-controls-border-color						: #a8a8a8;
+$clc-controls-border-color-hover				: #000000;
+
+// Recent News Carousel
+$rnc-controls-bg-color							: transparent;
+$rnc-controls-bg-color-hover					: transparent;
+$rnc-controls-icon-color						: #a8a8a8;
+$rnc-controls-icon-color-hover					: #a8a8a8;
+$rnc-controls-border-color						: #a8a8a8;
+$rnc-controls-border-color-hover				: #000000;
+
+$rnc-content-date-bg-color						: transparent;
+$rnc-content-date-font-color					: #232527;
+$rnc-content-date-font-size						: 13px;
+
 /* -------------------------------------------------- */
 /* Services: Icons at Left
 /* -------------------------------------------------- */
@@ -1035,7 +1055,7 @@ $caption-style-2-offset							: 3px 10px;
 }
 
 /* -------------------------------------------------- */
-/*	Car Listing
+/*	Car Listing Carousel
 /* -------------------------------------------------- */
 
 .car_listing_carousel_wrapper {
@@ -1049,20 +1069,22 @@ $caption-style-2-offset							: 3px 10px;
 
 		.prevBtn, .nextBtn {
 			position: relative;
-			border: 1px solid #a8a8a8;
+			border: 1px solid $clc-controls-border-color;
 			overflow: hidden;
 			display: inline-block;
 			width: 20px;
 			height: 20px;
-			color: #000000;
+			color: $clc-controls-icon-color;
 			padding: 0;
 			line-height: 20px;
 			font-size: 15px;
+			background-color: $clc-controls-bg-color;
 			@include transition(border-color 0.35s ease-in-out);
 
 			&:hover {
-				color: #000000;
-				border-color: #000000;
+				color: $clc-controls-icon-color-hover;
+				border-color: $clc-controls-border-color-hover;
+				background-color: $clc-controls-bg-color-hover;
 			}
 
 			&:before {
@@ -1111,3 +1133,100 @@ $caption-style-2-offset							: 3px 10px;
 	}
 }
 
+/* -------------------------------------------------- */
+/*	Recent News
+/* -------------------------------------------------- */
+
+.recent_news_wrapper {
+	width: 100%;
+	overflow: hidden;
+
+	.page-subheader {
+		margin-bottom: 5px;
+	}
+
+	.rnc_controls {
+		position: absolute;
+		right: 0;
+		bottom: 4px;
+
+		.prevBtn, .nextBtn {
+			position: relative;
+			border: 1px solid $rnc-controls-border-color;
+			overflow: hidden;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			color: $rnc-controls-icon-color;
+			padding: 0;
+			line-height: 20px;
+			font-size: 15px;
+			background-color: $rnc-controls-bg-color;
+			@include transition(border-color 0.35s ease-in-out);
+
+			&:hover {
+				color: $rnc-controls-icon-color-hover;
+				border-color: $rnc-controls-border-color-hover;
+				background-color: $rnc-controls-bg-color-hover;
+			}
+
+			&:before {
+				position: absolute;
+				vertical-align: text-top;
+				line-height: 15px;
+				margin: 1px 0.1em;
+				padding: 0;
+				@include transition(left 0.35s ease-in-out, right 0.35s ease-in-out);
+			}
+		}
+
+		.prevBtn {
+			&:before { left: 0; }
+			&:hover {
+				&:before {
+					left: -2px;
+					@include transition(left 0.35s ease-in-out);
+				}
+			}
+		}
+
+		.nextBtn {
+			&:before { right: 0; }
+			&:hover {
+				&:before {
+					right: -2px;
+					@include transition(right 0.35s ease-in-out);
+				}
+			}
+		}
+	}
+
+	.rnc_content {
+		> div {
+			margin-top: -1px !important;	// hide first item's border from viewport
+		}
+
+		.entry {
+			&.secondary { padding: 25px 0; }
+
+			.single-image,
+			.fluid-width-video-wrapper,
+			.entry-body,
+			.image-post-slider-listing { margin-bottom: 0; }
+
+			h4 { margin-bottom: 5px; }
+
+			.date {
+				font-size: $rnc-content-date-font-size;
+				font-weight: 600;
+				padding: 0;
+				color: $rnc-content-date-font-color;
+				background-color: $rnc-content-date-bg-color;
+
+				a { color: inherit;	}
+			}
+
+			p { margin-bottom: 0; }
+		}
+	}
+}

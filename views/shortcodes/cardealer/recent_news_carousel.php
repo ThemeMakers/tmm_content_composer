@@ -33,15 +33,15 @@ if ( !empty($wp_query->posts) ) {
 	wp_enqueue_script('tmm_sudoSlider');
 ?>
 
-<div class="car_listing_carousel_wrapper">
+<div class="recent_news_wrapper">
 
 <?php if ( !empty($title) ) { ?>
 
 	<div class="page-subheader">
 
-		<h2 class="section-title"><?php _e( $title, TMM_CC_TEXTDOMAIN ) ?></h2>
+		<h3 class="section-title"><?php _e( $title, TMM_CC_TEXTDOMAIN ) ?></h3>
 
-		<span class="clc_controls" id="clc_controls_<?php echo $uniqid ?>">
+		<span class="rnc_controls" id="rnc_controls_<?php echo $uniqid ?>">
 			<a href="#" data-target="prev" class="prevBtn icon-angle-left" title="<?php _e('Previous', 'cardealer'); ?>"></a>
 			<a href="#" data-target="next" class="nextBtn icon-angle-right" title="<?php _e('Next', 'cardealer'); ?>"></a>
 		</span>
@@ -50,7 +50,8 @@ if ( !empty($wp_query->posts) ) {
 
 <?php } ?>
 
-	<div id="clc_<?php echo $uniqid ?>" class="clc_content tmm-view-mode item-grid">
+	<!--	rnc - Recent News Carousel -->
+	<div id="rnc_<?php echo $uniqid ?>" class="rnc_content">
 		<?php
 		if (have_posts()) {
 			while (have_posts()) {
@@ -87,9 +88,11 @@ if ( !empty($wp_query->posts) ) {
 
 							<div class="entry-body">
 
-								<a href="<?php the_permalink() ?>">
-									<h4 class="title"><?php the_title() ?></h4>
-								</a>
+								<h4 class="title">
+									<a href="<?php the_permalink() ?>">
+										<?php the_title() ?>
+									</a>
+								</h4>
 
 								<?php if ($show_date) { ?>
 									<span class="date"><a href="<?php echo esc_url( get_month_link(get_the_date('Y'), get_the_date('m')) ) ?>"><?php echo get_the_date() ?></a></span>
@@ -143,7 +146,7 @@ if ( !empty($wp_query->posts) ) {
 <script type="text/javascript">
 	jQuery(function ($) {
 
-		$("#clc_<?php echo $uniqid ?>").sudoSlider({
+		$("#rnc_<?php echo $uniqid ?>").sudoSlider({
 			auto: <?php echo (int) $autoslide ?>,
 			ease: 'swing',
 			speed: 800,
@@ -157,7 +160,7 @@ if ( !empty($wp_query->posts) ) {
 			moveCount: 1,
 			startSlide: false,
 			controlsFade: false,
-			customLink: "#clc_controls_<?php echo $uniqid ?> a"
+			customLink: "#rnc_controls_<?php echo $uniqid ?> a"
 		});
 
 	});
