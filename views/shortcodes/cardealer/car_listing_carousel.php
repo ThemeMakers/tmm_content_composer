@@ -58,7 +58,7 @@ if ( !empty($request_result) ) {
 
 	<div class="page-subheader">
 
-		<h2 class="section-title"><?php _e( $title, TMM_CC_TEXTDOMAIN ) ?></h2>
+		<h3 class="section-title"><?php _e( $title, TMM_CC_TEXTDOMAIN ) ?></h3>
 
 		<span class="clc_controls" id="clc_controls_<?php echo $uniqid ?>">
 			<a href="#" data-target="prev" class="prevBtn icon-angle-left" title="<?php _e('Previous', 'cardealer'); ?>"></a>
@@ -68,7 +68,7 @@ if ( !empty($request_result) ) {
 	</div><!--/ .page-header-->
 
 <?php } ?>
-
+	<!--	clc - Car Listing Carousel -->
 	<div id="clc_<?php echo $uniqid ?>" class="clc_content tmm-view-mode item-grid">
 		<?php
 		if ( !empty($request_result) ) {
