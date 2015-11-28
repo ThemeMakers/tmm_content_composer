@@ -1065,6 +1065,13 @@ $rnc-content-date-font-size						: 13px;
 	width: 100%;
 	overflow: hidden;
 
+	.page-subheader {
+
+		h3.section-title {
+			padding-bottom: 0;
+		}
+	}
+
 	.clc_controls {
 		position: absolute;
 		right: 0;
@@ -1146,6 +1153,10 @@ $rnc-content-date-font-size						: 13px;
 
 	.page-subheader {
 		margin-bottom: 5px;
+
+		h3.section-title {
+			padding-bottom: 0;
+		}
 	}
 
 	.rnc_controls {
