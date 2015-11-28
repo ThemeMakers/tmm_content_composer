@@ -168,6 +168,9 @@ $rnc-controls-icon-color-hover					: #a8a8a8;
 $rnc-controls-border-color						: #a8a8a8;
 $rnc-controls-border-color-hover				: #000000;
 
+$rnc-content-title-font-color					: #ff600a;
+$rnc-content-title-font-color-hover				: #7d7d7d;
+
 $rnc-content-date-bg-color						: transparent;
 $rnc-content-date-font-color					: #232527;
 $rnc-content-date-font-size						: 13px;
@@ -1214,7 +1217,17 @@ $rnc-content-date-font-size						: 13px;
 			.entry-body,
 			.image-post-slider-listing { margin-bottom: 0; }
 
-			h4 { margin-bottom: 5px; }
+			h4 {
+				margin-bottom: 5px;
+
+				a {
+					color: $rnc-content-title-font-color;
+
+					&:hover {
+						color: $rnc-content-title-font-color-hover;
+					}
+				}
+			}
 
 			.date {
 				font-size: $rnc-content-date-font-size;
