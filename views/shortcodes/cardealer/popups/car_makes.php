@@ -1,11 +1,11 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
-	<div class="fullwidth">
+	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Hide empty producers', TMM_CC_TEXTDOMAIN),
+			'title' => __('Hide empty makes', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'hide_empty',
 			'id' => 'hide_empty_carproducers',
 			'is_checked' => TMM_Content_Composer::set_default_value('hide_empty', 0),
@@ -13,9 +13,6 @@
 		));
 		?>
 
-    </div><!--/ .fullwidth-->
-
-	<div class="fullwidth">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
@@ -27,13 +24,10 @@
 		));
 		?>
 
-	</div><!--/ .fullwidth-->
-
-	<div class="fullwidth">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display only cars, that have their logo', TMM_CC_TEXTDOMAIN),
+			'title' => __('Display only makes, that have their logo', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_only_with_logo',
 			'id' => 'show_only_with_logo',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_only_with_logo', 1),
@@ -41,7 +35,65 @@
 		));
 		?>
 
-	</div><!--/ .fullwidth-->
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Display make name', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'show_name',
+			'id' => 'show_name',
+			'is_checked' => TMM_Content_Composer::set_default_value('show_name', 1),
+			'description' => ''
+		));
+		?>
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Display count of cars', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'show_count',
+			'id' => 'show_count',
+			'is_checked' => TMM_Content_Composer::set_default_value('show_count', 1),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .one-half-->
+
+	<div class="one-half">
+
+		<?php
+		$args = array(
+			'orderby'           => 'name',
+			'order'             => 'ASC',
+			'hide_empty'        => false,
+			'fields'            => 'id=>name',
+			'parent'            => 0,
+			'hierarchical'      => 1,
+			'pad_counts'        => false,
+		);
+		$makes = get_terms('carproducer', $args);
+
+		$logos = array(
+			0 => __('All', TMM_CC_TEXTDOMAIN),
+		);
+
+		if (!empty($makes) && is_array($makes)) {
+			$logos = $logos + $makes;
+		}
+
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('List of logos', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'logos_list',
+			'id' => 'logos_list',
+			'multiple' => true,
+			'options' => $logos,
+			'default_value' => TMM_Content_Composer::set_default_value('logos_list', 0),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .one-half-->
 
 </div>
 

@@ -374,7 +374,7 @@ class TMM_Content_Composer {
 							$selected = '';
 							if ($data['multiple']) {
 								foreach ($default_value as $value) {
-									if (selected($value, $key)) {
+									if (selected($value, $key, false)) {
 										$selected = selected($value, $key, false);
 									}
 								}
