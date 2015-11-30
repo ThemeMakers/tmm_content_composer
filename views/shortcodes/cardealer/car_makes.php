@@ -45,13 +45,19 @@ $makes = get_terms('carproducer', $args);
 			?>
 
 			<li class="cat-item cat-item-<?php echo $make->term_id; ?>">
-				<?php if($show_logo && $src != ''){ ?><img src="<?php echo $src; ?>" /><?php } ?>
+			<?php if (!isset($show_link) || $show_link) { ?>
 				<a title="<?php echo sprintf(__('View all ads filed under %s', TMM_CC_TEXTDOMAIN), $make->name); ?>" href="<?php echo get_term_link($make->slug, 'carproducer'); ?>">
+			<?php } ?>
+					<?php if($show_logo && $src != ''){ ?>
+						<img src="<?php echo $src; ?>" alt="<?php echo $make->name; ?>" />
+					<?php } ?>
 					<?php
 					echo (!isset($show_name) || $show_name) ? $make->name : '';
 					echo (!isset($show_count) || $show_count) ? ' (' . $make->count . ')&#x200E;' : '';
 					?>
+			<?php if (!isset($show_link) || $show_link) { ?>
 				</a>
+			<?php } ?>
 			</li>
 
 		<?php

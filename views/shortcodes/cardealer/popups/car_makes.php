@@ -57,6 +57,17 @@
 		));
 		?>
 
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Enable link', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'show_link',
+			'id' => 'show_link',
+			'is_checked' => TMM_Content_Composer::set_default_value('show_link', 1),
+			'description' => ''
+		));
+		?>
+
 	</div><!--/ .one-half-->
 
 	<div class="one-half">
