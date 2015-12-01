@@ -48,8 +48,7 @@ $classAbs = "";
             }
             
             if ($action=='lightbox'){
-                tmm_enqueue_script('magnific');
-                tmm_enqueue_style('magnific');
+
                 $html.= '<a title="' . esc_attr($image_alt) . '" class="slide-image image-link active-link plus-icon '. esc_attr($align) .'" href="' . esc_url($image_url) . '">';
             }
 

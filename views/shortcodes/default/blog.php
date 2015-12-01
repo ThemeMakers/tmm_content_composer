@@ -123,10 +123,13 @@ if (isset($post_carousel) && $post_carousel){
     $blog_type = 'post-carousel';
     $count_column = '';
     $data_columns = 'data-columns="' . $columns . '"';
-    tmm_enqueue_script('owlcarousel');
-    tmm_enqueue_style('owlcarousel');
-    tmm_enqueue_style('owltheme');
-    tmm_enqueue_style('owltransitions');
+
+    if (!class_exists('TMM')) {
+        tmm_enqueue_script('owlcarousel');
+        tmm_enqueue_style('owlcarousel');
+        tmm_enqueue_style('owltheme');
+        tmm_enqueue_style('owltransitions');
+    }
 }
 
 $data_infinity = '';
@@ -253,7 +256,9 @@ wp_reset_postdata();
 
  if (!empty($posts_array) && ($blog_type == 'masonry')){     
      $load_with_animation = 1;
-     wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/min/jquery.masonry.min.js');
+     if (!class_exists('TMM')) {
+         wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/min/jquery.masonry.min.js');
+     }
     ?>
 	<script type="text/javascript">
 		jQuery(function() {

@@ -3,11 +3,12 @@ $images = explode('^', $titles);
 $links = explode('^', $content);
 $max = count($images)-1;
 $uniqid = uniqid();
-tmm_enqueue_script('owlcarousel');
-tmm_enqueue_style('owlcarousel');
-tmm_enqueue_style('owltheme');                                                            
-tmm_enqueue_style('owltransitions');
-
+if (!class_exists('TMM')) {
+    tmm_enqueue_script('owlcarousel');
+    tmm_enqueue_style('owlcarousel');
+    tmm_enqueue_style('owltheme');
+    tmm_enqueue_style('owltransitions');
+}
 $slides_count = ceil(count($images)/$items_per_slide);
 ?>
 <?php if (!empty($images)){ ?>
