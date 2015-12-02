@@ -347,6 +347,11 @@
 		8px 8px,
 		0;
 	background-repeat: no-repeat;
+
+	&[multiple] {
+		height: 350px;
+		background-image: none;
+	}
 }
 
 /* -------------------------------------------------- */

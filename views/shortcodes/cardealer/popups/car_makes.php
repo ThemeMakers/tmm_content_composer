@@ -16,7 +16,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display car make logos along with their names', TMM_CC_TEXTDOMAIN),
+			'title' => __('Display car make logos', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_logo',
 			'id' => 'show_logo',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_logo', 1),
@@ -38,7 +38,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display make name', TMM_CC_TEXTDOMAIN),
+			'title' => __('Display make title', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_name',
 			'id' => 'show_name',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_name', 1),
@@ -49,7 +49,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display count of cars', TMM_CC_TEXTDOMAIN),
+			'title' => __('Display number of cars', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_count',
 			'id' => 'show_count',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_count', 1),
@@ -100,7 +100,7 @@
 			'multiple' => true,
 			'options' => $logos,
 			'default_value' => TMM_Content_Composer::set_default_value('logos_list', 0),
-			'description' => ''
+			'description' => __('Select multiple car makes by holding CTRL + selecting certain option.', TMM_CC_TEXTDOMAIN),
 		));
 		?>
 

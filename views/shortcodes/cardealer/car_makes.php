@@ -22,7 +22,7 @@ $args = array(
 $makes = get_terms('carproducer', $args);
 ?>
 
-<ul class="carproducers_list list">
+<ul class="carproducers_list">
 
 	<?php
 	foreach ($makes as $make){
@@ -44,20 +44,33 @@ $makes = get_terms('carproducer', $args);
 		if($make->count > 0 || !$hide_empty){
 			?>
 
-			<li class="cat-item cat-item-<?php echo $make->term_id; ?>">
+			<li class="cat-item-<?php echo $make->term_id; ?><?php if(!isset($show_name)){ ?> with-title<?php } ?>">
+
 			<?php if (!isset($show_link) || $show_link) { ?>
 				<a title="<?php echo sprintf(__('View all ads filed under %s', TMM_CC_TEXTDOMAIN), $make->name); ?>" href="<?php echo get_term_link($make->slug, 'carproducer'); ?>">
 			<?php } ?>
-					<?php if($show_logo && $src != ''){ ?>
-						<img src="<?php echo $src; ?>" alt="<?php echo $make->name; ?>" />
-					<?php } ?>
+
+				<?php if($show_logo && $src != ''){ ?>
+					<img src="<?php echo $src; ?>" alt="<?php echo $make->name; ?>" />
+				<?php } ?>
+
+				<?php if(!isset($show_name)){ ?>
+					<span class="car-title">
+				<?php } ?>
+
 					<?php
 					echo (!isset($show_name) || $show_name) ? $make->name : '';
 					echo (!isset($show_count) || $show_count) ? ' (' . $make->count . ')&#x200E;' : '';
 					?>
+
+				<?php if(!isset($show_name)){ ?>
+					</span>
+				<?php } ?>
+
 			<?php if (!isset($show_link) || $show_link) { ?>
 				</a>
 			<?php } ?>
+
 			</li>
 
 		<?php

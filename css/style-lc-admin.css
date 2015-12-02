@@ -303,6 +303,9 @@
   background-position: calc(100% - 22px) 50%, calc(100% - 14px) 50%, 0;
   background-size: 8px 8px, 8px 8px, 0;
   background-repeat: no-repeat; }
+  .tmm-popup-content select[multiple] {
+    height: 350px;
+    background-image: none; }
 
 /* -------------------------------------------------- */
 /*	Other Elements
