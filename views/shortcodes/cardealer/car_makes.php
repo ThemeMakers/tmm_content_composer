@@ -19,7 +19,11 @@ $args = array(
 	'hierarchical'      => 1,
 	'pad_counts'        => 1,
 );
+
 $makes = get_terms('carproducer', $args);
+
+$show_name === '0';
+
 ?>
 
 <ul class="carproducers_list">
@@ -44,7 +48,7 @@ $makes = get_terms('carproducer', $args);
 		if($make->count > 0 || !$hide_empty){
 			?>
 
-			<li class="cat-item-<?php echo $make->term_id; ?><?php if(!isset($show_name)){ ?> with-title<?php } ?>">
+			<li class="cat-item-<?php echo $make->term_id; ?><?php if($show_name === '1'){ ?> with-title<?php } ?>">
 
 			<?php if (!isset($show_link) || $show_link) { ?>
 				<a title="<?php echo sprintf(__('View all ads filed under %s', TMM_CC_TEXTDOMAIN), $make->name); ?>" href="<?php echo get_term_link($make->slug, 'carproducer'); ?>">
@@ -54,7 +58,7 @@ $makes = get_terms('carproducer', $args);
 					<img src="<?php echo $src; ?>" alt="<?php echo $make->name; ?>" />
 				<?php } ?>
 
-				<?php if(!isset($show_name)){ ?>
+				<?php if($show_name === '1'){ ?>
 					<span class="car-title">
 				<?php } ?>
 
@@ -63,7 +67,7 @@ $makes = get_terms('carproducer', $args);
 					echo (!isset($show_count) || $show_count) ? ' (' . $make->count . ')&#x200E;' : '';
 					?>
 
-				<?php if(!isset($show_name)){ ?>
+				<?php if($show_name === '1'){ ?>
 					</span>
 				<?php } ?>
 
