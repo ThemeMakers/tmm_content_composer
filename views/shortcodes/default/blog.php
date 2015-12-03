@@ -135,6 +135,7 @@ if (isset($post_carousel) && $post_carousel){
 $data_infinity = '';
 $infinity_class = '';
 $data_next_posts = '';
+$data_effect = '';
 
 if (isset($infinity_pagination) && $infinity_pagination ){
 
@@ -152,18 +153,28 @@ if (isset($infinity_pagination) && $infinity_pagination ){
         for ($i = $posts_per_load; $i < $count; $i++) {
             if (isset($all_posts_array[$i])) {
                 $str = $all_posts_array[$i]->ID;
-                $next_posts = $next_posts . $str . ",";
+                $next_posts = (!empty($next_posts)) ? $next_posts . "," . $str : $next_posts.$str;
             }
         }
         $data_next_posts = 'data-nextposts="' . $next_posts . '"';
     }
+
+    if (!empty($post_appearing_effect)){
+        $data_effect = 'data-effect="' . $post_appearing_effect . '"';
+    }
+
 }
 
 $_REQUEST['title_symbols'] = $title_symbols;
 
 ?>
 
-	<div id="post-area" class="<?php echo esc_attr($post_area) ?> <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?> <?php echo esc_attr($infinity_class) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?> <?php if(!empty($data_infinity)) echo $data_infinity; ?> <?php if(!empty($data_next_posts)) echo $data_next_posts; ?>>
+	<div id="post-area" class="<?php echo esc_attr($post_area) ?>
+	    <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?>
+	    <?php echo esc_attr($infinity_class) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?>
+        <?php if(!empty($data_infinity)) echo $data_infinity; ?>
+        <?php if(!empty($data_next_posts)) echo $data_next_posts; ?>
+        <?php if(!empty($data_effect)) echo $data_effect; ?>>
         
         <?php 
         if ($blog_type!='masonry'){           

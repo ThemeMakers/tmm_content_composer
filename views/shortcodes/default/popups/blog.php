@@ -271,11 +271,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Infinity Pagination', TMM_CC_TEXTDOMAIN),
+			'title' => __('Lazy Loading', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'infinity_pagination',
 			'id' => 'infinity_pagination',
 			'is_checked' => TMM_Content_Composer::set_default_value('infinity_pagination', 0),
-			'description' => __('Infinity Pagination', TMM_CC_TEXTDOMAIN)
+			'description' => __('Lazy Loading', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
