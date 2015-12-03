@@ -1267,6 +1267,7 @@ $rnc-content-date-font-size						: 13px;
 	@include flexbox();
 
 	flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
 	-webkit-flex-flow: row wrap;
 	justify-content: space-between;
 	align-items: flex-end;
