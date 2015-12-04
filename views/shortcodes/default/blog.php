@@ -258,23 +258,22 @@ $_REQUEST['title_symbols'] = $title_symbols;
     <?php
 }
 
-if ($show_pagination && class_exists('TMM') && $blog_type != 'masonry') {
+if ($show_pagination && class_exists('TMM') && $blog_type != 'masonry' && !$infinity_pagination) {
 	get_template_part('content', 'pagenavi');
 }
 
 $wp_query = $original_query;
 wp_reset_postdata();
 
- if (!empty($posts_array) && ($blog_type == 'masonry')){     
-     $load_with_animation = 1;
+if (!empty($posts_array) && ($blog_type == 'masonry')){
+    $load_with_animation = 1;
 
-     wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/min/jquery.masonry.min.js');
-
+    wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/min/jquery.masonry.min.js');
     ?>
-	<script type="text/javascript">
-		jQuery(function() {
+    <script type="text/javascript">
+        jQuery(function() {
             jQuery(".masonry").init_masonry(<?php echo esc_js($columns) ?>, <?php echo esc_js($load_with_animation) ?>);
-		});
-	</script>
-
-<?php } 
+        });
+    </script>
+<?php
+}
