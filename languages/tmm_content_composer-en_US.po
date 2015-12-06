@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2015-11-28 17:18+0100\n"
-"PO-Revision-Date: 2015-11-28 17:18+0100\n"
+"POT-Creation-Date: 2015-12-06 15:37+0100\n"
+"PO-Revision-Date: 2015-12-06 15:37+0100\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
@@ -481,7 +481,7 @@ msgstr ""
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:61
+#: views/shortcodes/cardealer/car_makes.php:55
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
@@ -562,6 +562,7 @@ msgstr ""
 #: views/shortcodes/cardealer/popups/car_listing_carousel.php:9
 #: views/shortcodes/cardealer/popups/recent_cars.php:9
 #: views/shortcodes/cardealer/popups/recent_news_carousel.php:9
+#: views/shortcodes/cardealer/popups/search_by_car_body.php:9
 #: views/shortcodes/default/popups/accordion.php:45
 #: views/shortcodes/default/popups/chart.php:32
 #: views/shortcodes/default/popups/services.php:203
@@ -666,15 +667,41 @@ msgid "Hide locations whithout related cars"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/car_makes.php:8
-msgid "Hide empty producers"
+msgid "Hide empty makes"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/car_makes.php:22
-msgid "Display car make logos along with their names"
+#: views/shortcodes/cardealer/popups/car_makes.php:19
+msgid "Display car make logos"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/car_makes.php:36
-msgid "Display only cars, that have their logo"
+#: views/shortcodes/cardealer/popups/car_makes.php:30
+msgid "Display only makes, that have their logo"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_makes.php:41
+msgid "Display make title"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_makes.php:52
+msgid "Display number of cars"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_makes.php:63
+msgid "Enable link"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_makes.php:88
+#: views/shortcodes/cardealer/popups/dealers.php:44
+#: views/shortcodes/cardealer/popups/dealers.php:72
+msgid "All"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_makes.php:97
+msgid "List of logos"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/car_makes.php:103
+msgid "Select multiple car makes by holding CTRL + selecting certain option."
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/dealers.php:9
@@ -695,11 +722,6 @@ msgstr ""
 
 #: views/shortcodes/cardealer/popups/dealers.php:30
 msgid "Random"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/dealers.php:44
-#: views/shortcodes/cardealer/popups/dealers.php:72
-msgid "All"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/dealers.php:45
@@ -951,6 +973,18 @@ msgstr ""
 
 #: views/shortcodes/cardealer/popups/recent_news_carousel.php:97
 msgid "Max Symbols Number in Description"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/search_by_car_body.php:20
+msgid "Display Body Type Name"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/search_by_car_body.php:31
+msgid "Display Count of Cars Related to Body Type"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/search_by_car_body.php:42
+msgid "Enable Link to Car Listing"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/slider.php:9
