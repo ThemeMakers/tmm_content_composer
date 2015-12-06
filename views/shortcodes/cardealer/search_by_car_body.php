@@ -53,7 +53,7 @@ foreach ($car_body_list as $k => $body_name) {
 </div><!--/ .page-header-->
 <?php } ?>
 
-<ul class="car-body-list clearfix">
+<ul class="lc-car-body-list">
 
     <?php foreach ($car_bodies as $k => $body) { ?>
     <li>
