@@ -71,16 +71,10 @@ class TMM_Content_Composer {
 
 		global $pagenow;
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' ) {
-			wp_enqueue_style('tmm_popup', TMM_CC_URL . 'css/popup.css');
+			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc-admin.css');
 			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/admin/popup.js', array('jquery'));
-
-			wp_enqueue_style('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker/colorpicker.css');
 			wp_enqueue_script('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker/colorpicker.js', array('jquery'));
-
-			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_admin.css');
 			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/admin/shortcodes.js', array('jquery'), false, true);
-
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');  // Only in admin panel for shortcodes with icons
 
 			?>
 			<script type="text/javascript">
@@ -103,7 +97,6 @@ class TMM_Content_Composer {
 		<?php
 		}
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' ) {
-			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/layout_admin.css');
 			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/admin/layout.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable', 'jquery-ui-slider'), false, true);
 
 			global $tmm_row_options;
@@ -125,7 +118,7 @@ class TMM_Content_Composer {
 		wp_deregister_style('wp-mediaelement');
 
 
-		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style_lc.css');
+		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
 
 		if (!class_exists('TMM')) {
 
@@ -135,22 +128,15 @@ class TMM_Content_Composer {
 			</script>
 			<?php
 
-			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/min/jquery.modernizr.min.js', array('jquery'), false, true);
+			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/plugins/min/jquery.modernizr.min.js', array('jquery'), false, true);
 
-			wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/shortcodes_layout.css');
+			wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/min/jquery.tooltipster.min.js', array('jquery'), false, true);   // TODO: concatenate to front.js
 
-			wp_register_style('tmm_tooltipster', TMM_CC_URL . 'css/tooltipster.css');
-			wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/min/jquery.tooltipster.min.js', array('jquery'), false, true);
-
-			wp_register_style('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.css');
-			wp_register_style('tmm_owltheme', TMM_CC_URL . 'js/owl-carousel/owl.theme.css');
-			wp_register_style('tmm_owltransitions', TMM_CC_URL . 'js/owl-carousel/owl.transitions.css');
-			wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.min.js', array('jquery'), false, true);
+			wp_register_style('tmm_owltransitions', TMM_CC_URL . 'css/owl-carousel.css');
+			wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/plugins/min/owl.carousel.min.js', array('jquery'), false, true);
 
 			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
 
-			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_front.css');
 			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/theme.min.js', array('jquery', 'mediaelement', 'tmm_owlcarousel'), false, true);
 		}
 
@@ -173,7 +159,7 @@ class TMM_Content_Composer {
 		if ( ! empty( $mce_css ) )
 			$mce_css .= ',';
 
-		$mce_css .= TMM_CC_URL . '/css/tinymce.css';
+		$mce_css .= TMM_CC_URL . '/css/admin-tinymce.css';
 
 		return $mce_css;
 	}
@@ -380,26 +366,24 @@ class TMM_Content_Composer {
 						$default_value = explode(',', $data['default_value']);
 					}
 					?>
-					<label class="sel">
-						<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" id="<?php echo isset($data['id']) ? esc_attr($data['id']) : ''; ?>">
-							<?php foreach ($data['options'] as $key => $text) {
+					<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" id="<?php echo isset($data['id']) ? esc_attr($data['id']) : ''; ?>">
+						<?php foreach ($data['options'] as $key => $text) {
 
-								$selected = '';
-								if ($data['multiple']) {
-									foreach ($default_value as $value) {
-										if (selected($value, $key)) {
-											$selected = selected($value, $key, false);
-										}
+							$selected = '';
+							if ($data['multiple']) {
+								foreach ($default_value as $value) {
+									if (selected($value, $key)) {
+										$selected = selected($value, $key, false);
 									}
-								}else{
-									$selected = selected($data['default_value'], $key, false);
 								}
-								?>
-								<option <?php echo $selected; ?> value="<?php echo esc_attr($key); ?>"><?php echo esc_html($text); ?></option>
+							}else{
+								$selected = selected($data['default_value'], $key, false);
+							}
+							?>
+							<option <?php echo $selected; ?> value="<?php echo esc_attr($key); ?>"><?php echo esc_html($text); ?></option>
 
-							<?php } ?>
-						</select>
-					</label>
+						<?php } ?>
+					</select>
 					<div class="preset_description"><?php echo esc_html($data['description']); ?></div>
 				<?php
 				}
