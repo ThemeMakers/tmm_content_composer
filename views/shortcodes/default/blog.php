@@ -258,7 +258,7 @@ $_REQUEST['title_symbols'] = $title_symbols;
     <?php
 }
 
-if ($show_pagination && class_exists('TMM') && $blog_type != 'masonry' && !$infinity_pagination) {
+if ($show_pagination && class_exists('TMM') && $blog_type != 'masonry' && (!isset($infinity_pagination) || !$infinity_pagination)) {
 	get_template_part('content', 'pagenavi');
 }
 
