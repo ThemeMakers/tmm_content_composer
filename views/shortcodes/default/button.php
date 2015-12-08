@@ -71,4 +71,4 @@ $type = (isset($type)) ? $type : 'default';
 
 ?>
 
-<a href="<?php echo $url ?>" <?php echo ($styles ? $styles : '') ?> class="button <?php echo $size ?> <?php echo $type ?>"><?php echo $text ?></a>
+<a href="<?php echo esc_url($url) ?>" <?php echo ($styles ? $styles : '') ?> class="button <?php echo esc_attr($size) ?> <?php echo esc_attr($type) ?>"><?php echo esc_html($text) ?></a>

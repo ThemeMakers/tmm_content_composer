@@ -18,11 +18,7 @@ class TMM_Shortcode {
 					continue;
 				}
 
-				if($file === 'seamless-donations' && !function_exists('dgx_donate_init')){
-					continue;
-				}
-
-				if($file !== 'default' && $file !== 'woocommerce' && $file !== 'seamless-donations' && !class_exists('TMM')){
+				if($file !== 'default' && $file !== 'woocommerce' && !class_exists('TMM')){
 					continue;
 				}
 
@@ -212,6 +208,18 @@ class TMM_Shortcode {
 		ob_start();
 		include($pagepath);
 		return ob_get_clean();
+	}
+
+	public static function remove_empty_tags($content){
+		$tags = array(
+			'<p>[' => '[',
+			']</p>' => ']',
+			']<br>' => ']',
+			']<br />' => ']'
+		);
+
+		$content = strtr($content, $tags);
+		return $content;
 	}
 
 }

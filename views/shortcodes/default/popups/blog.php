@@ -15,7 +15,7 @@
         ?>
     </div>
 
-	<div class="one-half">
+	<div class="one-half option-default">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
@@ -40,6 +40,38 @@
 		?>
 	</div>
 
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'multiple' => true,
+			'title' => __('Category', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'category',
+			'id' => 'category',
+			'options' => TMM_Content_Composer::get_post_categories(),
+			'default_value' => TMM_Content_Composer::set_default_value('category', ''),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'multiple' => true,
+			'title' => __('Tag', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'tag',
+			'id' => 'tag',
+			'options' => TMM_Content_Composer::get_post_tags(),
+			'default_value' => TMM_Content_Composer::set_default_value('tag', ''),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
 	<div class="one-half option-columns">
 
 		<?php
@@ -61,20 +93,7 @@
 
 	</div><!--/ .one-half-->
 
-	<div class="one-half option-default">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Category', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'category',
-			'id' => 'category',
-			'options' => TMM_Content_Composer::get_post_categories(),
-			'default_value' => TMM_Content_Composer::set_default_value('category', ''),
-			'description' => ''
-		));
-		?>
 
-	</div><!--/ .ona-half-->
 
 	<div class="one-half option-default">
 
@@ -152,6 +171,60 @@
 	</div><!--/ .ona-half-->
 
 	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Exclude Posts', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'exclude_post_types',
+			'id' => 'exclude_posts',
+			'options' => array(
+				'none' => __('None', TMM_CC_TEXTDOMAIN),
+				'post-with-image' => __('Posts With Featured Image', TMM_CC_TEXTDOMAIN),
+				'post-without-image' => __('Posts Without Featured Image', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_types', 'none'),
+			'description' => __('Choose post formats that will not be included in current query.', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Exclude Post Formats', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'exclude_post_formats',
+			'id' => 'exclude_post_formats',
+			'multiple' => true,
+			'options' => array(
+				'none' => __('None', TMM_CC_TEXTDOMAIN),
+				'post-format-gallery' => __('Gallery Post', TMM_CC_TEXTDOMAIN),
+				'post-format-quote' => __('Quote Post', TMM_CC_TEXTDOMAIN),
+				'post-format-video' => __('Video Post', TMM_CC_TEXTDOMAIN),
+				'post-format-audio' => __('Audio Post', TMM_CC_TEXTDOMAIN)
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_formats', 'none'),
+			'description' => __('Choose post formats that will not be included in current query.', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Title Symbols Count', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'title_symbols',
+			'id' => 'posts',
+			'default_value' => TMM_Content_Composer::set_default_value('title_symbols', '25'),
+			'description' => __('Truncate post titles depending on symbols number you want.', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -194,6 +267,20 @@
 
 	</div><!--/ .ona-half-->
 
+	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __('Lazy Loading', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'infinity_pagination',
+			'id' => 'infinity_pagination',
+			'is_checked' => TMM_Content_Composer::set_default_value('infinity_pagination', 0),
+			'description' => __('Lazy Loading', TMM_CC_TEXTDOMAIN)
+		));
+		?>
+
+	</div><!--/ .ona-half-->
+
 	<div class="one-half option-carousel">
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -221,8 +308,6 @@
 		?>
 
 	</div><!--/ .one-half-->
-
-
 
 </div>
 
@@ -273,13 +358,18 @@
 					option_masonry.slideUp();
 					option_carousel.slideUp();
 					break;
-				case 'blog-grid':
 				case 'blog-grid-overlay':
 				case 'blog-grid-layout':
 					option_columns.slideDown(300);
 					option_default.slideDown(300);
 					option_masonry.slideUp();
 					option_carousel.slideDown(300);
+					break;
+				case 'blog-grid':
+					option_columns.slideDown(300);
+					option_default.slideDown(300);
+					option_masonry.slideUp();
+					option_carousel.slideUp(300);
 					break;
 			}
 		}

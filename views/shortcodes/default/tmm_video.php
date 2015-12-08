@@ -26,7 +26,6 @@ $image_size = "1036*576";
 				$source_code = $source_code[0];
 			}
 			?>
-
 			<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" type="text/html" width="<?php echo $width ?>" height="<?php echo (!isset($width) || empty($width)) ? '' : $height ?>" src="http://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent"></iframe>
 			<?php
 
@@ -52,7 +51,7 @@ $image_size = "1036*576";
 			?>
 
 			<video  poster="<?php echo $cover ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
-				<source type="video/mp4" src="<?php echo $source_code ?>" />
+				<source type="video/mp4" src="<?php echo esc_url($source_code) ?>" />
 			</video>
 
 			<?php
@@ -70,7 +69,7 @@ $image_size = "1036*576";
 			?>
 
 			<video poster="<?php echo $cover ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
-				<source type="video/ogg" src="<?php echo $source_code ?>" />
+				<source type="video/ogg" src="<?php echo esc_url($source_code) ?>" />
 			</video>
 
 			<?php
@@ -86,7 +85,7 @@ $image_size = "1036*576";
 			?>
 
 			<video poster="<?php echo $cover ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
-				<source type="video/webm" src="<?php echo $source_code ?>" />
+				<source type="video/webm" src="<?php echo esc_url($source_code) ?>" />
 			</video>
 
 			<?php
@@ -107,5 +106,4 @@ $image_size = "1036*576";
 	}
 
 	?>
-
 </div>

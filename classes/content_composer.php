@@ -7,10 +7,7 @@ class TMM_Content_Composer {
 
 	protected static $instance = null;
 
-	protected $slug = 'tmm_theme_features';
-
 	private function __construct() {
-		load_plugin_textdomain( $this->slug, false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 
 		add_action('add_meta_boxes', array(__CLASS__, 'add_meta_box'));
 
@@ -66,18 +63,18 @@ class TMM_Content_Composer {
 	}
 
 	public static function admin_enqueue_scripts() {
+
+		wp_deregister_style('tmm_theme_popup');
+		wp_deregister_script('tmm_popup');
+		wp_dequeue_style('tmm_theme_popup');
+		wp_dequeue_script('tmm_popup');
+
 		global $pagenow;
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' ) {
-			wp_enqueue_style('tmm_popup', TMM_CC_URL . 'css/popup.css');
-			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/popup.js', array('jquery'));
-
-			wp_enqueue_style('tmm_colorpicker', TMM_CC_URL . 'js/colorpicker/colorpicker.css');
-			wp_enqueue_script('tmm_colorpicker', TMM_CC_URL . 'js/colorpicker/colorpicker.js', array('jquery'));
-
-			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_admin.css');
-			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/shortcodes_admin.js', array('jquery'), false, true);
-
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
+			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc-admin.css');
+			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/admin/popup.js', array('jquery'));
+			wp_enqueue_script('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker/colorpicker.js', array('jquery'));
+			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/admin/shortcodes.js', array('jquery'), false, true);
 
 			?>
 			<script type="text/javascript">
@@ -100,16 +97,17 @@ class TMM_Content_Composer {
 		<?php
 		}
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' ) {
-			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/layout_admin.css');
-			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_admin.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable'), false, true);
+			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/admin/layout.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable', 'jquery-ui-slider'), false, true);
 
+			global $tmm_row_options;
+			wp_localize_script('tmm_layout_constructor', 'tmm_cc_row_options', $tmm_row_options);
 			?>
 			<script type="text/javascript">
 				tmm_lang['column_delete'] = "<?php _e("Sure about column deleting?", TMM_CC_TEXTDOMAIN) ?>";
 				tmm_lang['row_delete'] = "<?php _e("Sure about row deleting?", TMM_CC_TEXTDOMAIN) ?>";
 				tmm_lang['empty_title'] = "<?php _e("Empty title", TMM_CC_TEXTDOMAIN) ?>";
 				tmm_lang['column_popup_title'] = "<?php _e("Column content editor", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['row_popup_title'] = "<?php _e("Row editor", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['row_popup_title'] = "<?php _e("Section editor", TMM_CC_TEXTDOMAIN) ?>";
 			</script>
 			<?php
 		}
@@ -117,24 +115,10 @@ class TMM_Content_Composer {
 	}
 
 	public static function enqueue_scripts() {
-		wp_deregister_style('mediaelement');
 		wp_deregister_style('wp-mediaelement');
-		wp_register_style('tmm_mediaelement', TMM_CC_URL . 'js/shortcodes/mediaelement/mediaelementplayer.css');
 
-		wp_register_style('tmm_tooltipster', TMM_CC_URL . 'css/tooltipster.css');
-		wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/jquery.tooltipster.min.js', array('jquery'), false, true);
 
-		wp_register_style('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.css');
-		wp_register_style('tmm_owltheme', TMM_CC_URL . 'js/owl-carousel/owl.theme.css');
-		wp_register_style('tmm_owltransitions', TMM_CC_URL . 'js/owl-carousel/owl.transitions.css');
-		wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/owl-carousel/owl.carousel.min.js', array('jquery'), false, true);
-
-		wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/jquery.modernizr.min.js', array('jquery'));
-		wp_enqueue_script('tmm_config', TMM_CC_URL . 'js/config.js', array('jquery'), false, true);
-		wp_enqueue_script('tmm_plugins', TMM_CC_URL . 'js/plugins.js', array('jquery'), false, true);
-
-		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/layout_front.css');
-		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_front.js', array('jquery', 'tmm_modernizr'), false, true);
+		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
 
 		if (!class_exists('TMM')) {
 
@@ -144,13 +128,18 @@ class TMM_Content_Composer {
 			</script>
 			<?php
 
-			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
-			wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/shortcodes_layout.css');
+			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/plugins/min/jquery.modernizr.min.js', array('jquery'), false, true);
 
-			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_front.css');
-			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/shortcodes_front.js', array('jquery', 'mediaelement', 'tmm_owlcarousel'), false, true);
+			wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/plugins/min/jquery.tooltipster.min.js', array('jquery'), false, true);   // TODO: concatenate to front.js
+
+			wp_register_style('tmm_owltransitions', TMM_CC_URL . 'css/owl-carousel.css');
+			wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/plugins/min/owl.carousel.min.js', array('jquery'), false, true);
+
+			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
+
 		}
+
+		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, true);
 	}
 
 	public static function mce_buttons($buttons) {
@@ -160,7 +149,7 @@ class TMM_Content_Composer {
 	}
 
 	public static function mce_add_plugin($plugin_array) {
-		$plugin_array['tmm_tiny_shortcodes'] = TMM_CC_URL . '/js/editor.js';
+		$plugin_array['tmm_tiny_shortcodes'] = TMM_CC_URL . '/js/admin/editor.js';
 		return $plugin_array;
 	}
 
@@ -169,7 +158,7 @@ class TMM_Content_Composer {
 		if ( ! empty( $mce_css ) )
 			$mce_css .= ',';
 
-		$mce_css .= TMM_CC_URL . '/css/tinymce.css';
+		$mce_css .= TMM_CC_URL . '/css/admin-tinymce.css';
 
 		return $mce_css;
 	}
@@ -263,6 +252,29 @@ class TMM_Content_Composer {
 		return $post_categories;
 	}
 
+	public static function get_post_tags() {
+		$post_tags = array(
+			0 => __('All Tags', TMM_CC_TEXTDOMAIN)
+		);
+
+		$args = array(
+			'orderby' => 'name',
+			'order' => 'ASC',
+			'hide_empty' => 0,
+			'child_of' => 0,
+			'hierarchical' => true,
+			'number' => NULL
+		);
+
+		$tags = get_tags($args);
+
+		foreach ($tags as $value) {
+			$post_tags[$value->term_id] = $value->name;
+		}
+
+		return $post_tags;
+	}
+
 	public static function get_post_sort_array() {
 		return array(
 			'ID' => 'ID', 'date' => 'date', 'post_date' => 'post_date', 'title' => 'title',
@@ -296,6 +308,24 @@ class TMM_Content_Composer {
 		return $default_value;
 	}
 
+	public static function hex2RGB($hexStr, $returnAsString = false, $seperator = ',') {
+		$hexStr = preg_replace("/[^0-9A-Fa-f]/", '', $hexStr); // Gets a proper hex string
+		$rgbArray = array();
+		if (strlen($hexStr) == 6) { //If a proper hex code, convert using bitwise operation.
+			$colorVal = hexdec($hexStr);
+			$rgbArray['red'] = 0xFF & ($colorVal >> 0x10);
+			$rgbArray['green'] = 0xFF & ($colorVal >> 0x8);
+			$rgbArray['blue'] = 0xFF & $colorVal;
+		} elseif (strlen($hexStr) == 3) { //if shorthand notation
+			$rgbArray['red'] = hexdec(str_repeat(substr($hexStr, 0, 1), 2));
+			$rgbArray['green'] = hexdec(str_repeat(substr($hexStr, 1, 1), 2));
+			$rgbArray['blue'] = hexdec(str_repeat(substr($hexStr, 2, 1), 2));
+		} else {
+			return false; //Invalid hex color code
+		}
+		return $returnAsString ? implode($seperator, $rgbArray) : $rgbArray; // returns the rgb string or the associative array
+	}
+
 	public static function html_option($data) {
 		$css_class = isset($data['css_classes']) ? $data['css_classes'] : '';
 
@@ -322,21 +352,39 @@ class TMM_Content_Composer {
 
 				if (!empty($data['title'])) {
 					?>
-					<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
-					<?php
+					<h4 class="label" for="<?php echo isset($data['id']) ? esc_attr($data['id']) : '' ?>"><?php echo esc_html($data['title']); ?></h4>
+				<?php
+				}
+
+				if (!isset($data['multiple'])) {
+					$data['multiple'] = false;
 				}
 
 				if (!empty($data['options'])) {
+					if ($data['multiple']){
+						$default_value = explode(',', $data['default_value']);
+					}
 					?>
-					<label class="sel">
-						<select <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" id="<?php echo $data['id'] ?>">
-							<?php foreach ($data['options'] as $key => $text) { ?>
-								<option <?php selected($data['default_value'], $key); ?> value="<?php echo $key ?>"><?php echo $text ?></option>
-							<?php } ?>
-						</select>
-					</label>
-					<div class="preset_description"><?php echo $data['description'] ?></div>
-					<?php
+					<select <?php if ($data['multiple']) echo 'multiple'; ?> <?php if ($data['display'] == 0){ ?>style="display: none;"<?php } ?> class="js_shortcode_template_changer data-select <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" id="<?php echo isset($data['id']) ? esc_attr($data['id']) : ''; ?>">
+						<?php foreach ($data['options'] as $key => $text) {
+
+							$selected = '';
+							if ($data['multiple']) {
+								foreach ($default_value as $value) {
+									if (selected($value, $key)) {
+										$selected = selected($value, $key, false);
+									}
+								}
+							}else{
+								$selected = selected($data['default_value'], $key, false);
+							}
+							?>
+							<option <?php echo $selected; ?> value="<?php echo esc_attr($key); ?>"><?php echo esc_html($text); ?></option>
+
+						<?php } ?>
+					</select>
+					<div class="preset_description"><?php echo esc_html($data['description']); ?></div>
+				<?php
 				}
 
 				break;
@@ -422,11 +470,17 @@ class TMM_Content_Composer {
 
 			case 'slider':
 				?>
-
-				<input data-default-value="<?php echo @$data['default_value'] ?>" type="text" id="<?php echo $data['id'] ?>" name="<?php echo $data['name'] ?>" value="<?php echo $data['value'] ?>" data-min-value="<?php echo $data['min'] ?>" data-max-value="<?php echo $data['max'] ?>" class="ui_slider_item" />
-
-				<span class="preset_description"><?php echo $data['description'] ?></span>
-
+				<?php if (!empty($data['title'])): ?>
+					<h4 class="label" for="<?php echo esc_attr($data['id']); ?>"><?php echo esc_html($data['title']); ?></h4>
+				<?php endif; ?>
+				<div class="clearfix ui-slider-item" data-min-value="<?php echo $data['min'] ?>" data-max-value="<?php echo $data['max'] ?>">
+					<input type="text" readonly class="range-amount-value" value="<?php echo @$data['default_value'] ?>" />
+					<input type="hidden" value="<?php echo $data['default_value'] ?>" class="range-amount-value-hidden" id="<?php echo $data['id'] ?>" />
+					<div class="slider-range <?php echo $data['id'] ?>"></div>
+				</div>
+				<?php if (!empty($data['description'])) { ?>
+					<div class="preset_description"><?php echo $data['description'] ?></div>
+				<?php } ?>
 				<?php
 				break;
 		}

@@ -1,0 +1,51 @@
+.ui-slider-item {
+	position: relative;
+
+	&:before {
+		display: block;
+		position: absolute;
+		top: 9px;
+		right: 0;
+		content: '%';
+	}
+
+	.range-amount-value {
+		width: calc(100% - 1em) !important;
+		margin: 0 auto !important;
+		padding: 0 !important;
+		background: transparent;
+		border: transparent;
+		box-shadow: none;
+		text-align: right;
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	.ui-widget-content {
+		background-color: #f6a828;
+		height: 3px;
+		position: relative;
+
+		.ui-widget-header {
+			height: 100%;
+			background-color: #999999;
+			position: absolute;
+			right: 0;
+		}
+
+		.ui-slider-handle {
+			display: block;
+			position: absolute;
+			margin: -5px 0 0 -5px;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #f6a828;
+			border: 1px solid transparent;
+			outline: none;
+		}
+
+	}
+}
