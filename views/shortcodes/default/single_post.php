@@ -2,7 +2,7 @@
 <?php
 $post_id = (int) $content;
 $post = get_post($post_id);
-$post_link = post_permalink($post_id);
+$post_link = get_permalink($post_id);
 $image_size = '1035*580';
 $post_pod_type = get_post_format($post_id);
 $post_type_values = get_post_meta($post_id, 'post_type_values', true);

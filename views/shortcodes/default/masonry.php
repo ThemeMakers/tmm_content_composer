@@ -55,7 +55,7 @@ if ($show_pinterest){
             if (isset($posts_array[$i])){
 
                 $post = $posts_array[$i];
-                $post_link = post_permalink($post->ID);
+                $post_link = get_permalink($post->ID);
 
                 $post_pod_type = get_post_format($post->ID);
 
