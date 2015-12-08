@@ -7,7 +7,8 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					'js/front.min.js': [
-						'js/theme/default.js'
+						'js/theme/default.js',
+						'js/plugins/waypoints.js'
 					],
 					'js/plugins/min/owl.carousel.min.js': [
 						'js/plugins/owl.carousel.js'
