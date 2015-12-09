@@ -20,8 +20,6 @@ require_once TMM_CC_DIR.'classes/shortcode.php';
 /* Register */
 function tmm_cc_register() {
 
-	load_plugin_textdomain( 'tmm_content_composer', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
-
 	TMM_Content_Composer::get_instance();
 
 	if ( !function_exists('tmm_enqueue_script') ) {
@@ -51,3 +49,12 @@ function tmm_cc_register() {
 }
 
 add_action( 'init', 'tmm_cc_register' );
+
+/**
+ * Load plugin textdomain.
+ */
+function tmm_cc_load_textdomain() {
+	load_plugin_textdomain( 'tmm_content_composer', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+}
+
+add_action( 'plugins_loaded', 'tmm_cc_load_textdomain' );
