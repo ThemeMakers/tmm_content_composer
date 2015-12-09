@@ -168,7 +168,8 @@ global $tmm_row_options;
 		'id' => 'row_lc_displaying',
 		'options' => array(
 			'default' => __('Below content matching its layout', TMM_CC_TEXTDOMAIN),
-			'full_width' => __('Below main content with separate layout options', TMM_CC_TEXTDOMAIN)
+			'before_full_width' => __('Before main content with separate layout options', TMM_CC_TEXTDOMAIN),
+			'full_width' => __('After main content with separate layout options', TMM_CC_TEXTDOMAIN)
 		),
 		'default_value' => $tmm_row_options['lc_displaying'],
 		'description' => ''

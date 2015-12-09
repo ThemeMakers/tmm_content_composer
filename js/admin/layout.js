@@ -387,7 +387,7 @@
 
 						}
 
-						if (current_values['lc_displaying'] == 'full_width'){
+						if (current_values['lc_displaying'] == 'full_width' || current_values['lc_displaying'] == 'before_full_width'){
 							box_full_width.show();
 						}
 
@@ -417,7 +417,7 @@
 
 							var val = $(this).val();
 
-							if (val === 'full_width') {
+							if (val === 'full_width' || val === 'before_full_width') {
 								box_full_width.slideDown();
 							} else {
 								box_full_width.slideUp();

@@ -52,7 +52,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$row_style_attr = '';
 		$display_overlay = false;
 
-		if ($row_displaying === 'full_width') {
+		if ($row_displaying === 'full_width' || $row_displaying === 'before_full_width') {
 			$section_class .= '';
 
 			if ($tmm_layout_constructor_row[$row]['container_width'] == 1) {
@@ -146,7 +146,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 			}
 
-			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && $row_displaying === 'full_width' && !empty($tmm_layout_constructor_row[$row]['bg_overlay'])) {
+			if ($tmm_layout_constructor_row[$row]['bg_type'] == 'image' && ($row_displaying === 'full_width' || $row_displaying === 'before_full_width') && !empty($tmm_layout_constructor_row[$row]['bg_overlay'])) {
 				$display_overlay = true;
 				$overlay_style_attr = '';
 
@@ -198,7 +198,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 		?>
 
-		<?php if ($row_displaying === 'full_width') { ?>
+		<?php if ($row_displaying === 'full_width' || $row_displaying === 'before_full_width') { ?>
 		<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
 
 			<?php
@@ -227,7 +227,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 				</div>
 
-		<?php if ($row_displaying === 'full_width') { ?>
+		<?php if ($row_displaying === 'full_width' || $row_displaying === 'before_full_width') { ?>
 			</div><!--/ .container-->
 
 		</section>
