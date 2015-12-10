@@ -136,6 +136,7 @@ $data_infinity = '';
 $infinity_class = '';
 $data_next_posts = '';
 $data_effect = '';
+$data_layout = '';
 
 if (isset($infinity_pagination) && $infinity_pagination ){
 
@@ -163,6 +164,8 @@ if (isset($infinity_pagination) && $infinity_pagination ){
         $data_effect = 'data-effect="' . $post_appearing_effect . '"';
     }
 
+    $data_layout = 'data-layout="' . $blog_type . '"';
+
 }
 
 $_REQUEST['title_symbols'] = $title_symbols;
@@ -174,7 +177,8 @@ $_REQUEST['title_symbols'] = $title_symbols;
 	    <?php echo esc_attr($infinity_class) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?>
         <?php if(!empty($data_infinity)) echo $data_infinity; ?>
         <?php if(!empty($data_next_posts)) echo $data_next_posts; ?>
-        <?php if(!empty($data_effect)) echo $data_effect; ?>>
+        <?php if(!empty($data_effect)) echo $data_effect; ?>
+        <?php if(!empty($data_layout)) echo $data_layout; ?>>
         
         <?php 
         if ($blog_type!='masonry'){           
@@ -252,7 +256,10 @@ $_REQUEST['title_symbols'] = $title_symbols;
         </div>
         
 		<div class='post-load-more'>
-			<a class='load-more button secondary middle' data-loadbyscroll="<?php echo esc_attr($load_by_scrolling) ?>" data-page-load="2" data-posts-per-load="<?php echo esc_attr($posts_per_load) ?>" data-posts="<?php echo esc_attr($next_posts) ?>" href='#load-more'><?php _e('Load More', TMM_CC_TEXTDOMAIN) ?></a>
+			<a class='load-more button secondary middle'
+               data-loadbyscroll="<?php echo esc_attr($load_by_scrolling) ?>" data-page-load="2"
+               data-posts-per-load="<?php echo esc_attr($posts_per_load) ?>"
+               data-posts="<?php echo esc_attr($next_posts) ?>" href='#load-more'><?php _e('Load More', TMM_CC_TEXTDOMAIN) ?></a>
 		</div><!--/ .post-load-more-->
 
     <?php
