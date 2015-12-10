@@ -28,11 +28,20 @@ $js_controls.='}';
 
 <?php
 if ($location_mode == 'address') {
+	// if location does not defined by user
+	if('' === $address & '' === $latitude & '' === $longitude) {
+		$address = 'New York';
+	}
+	
 	$address = str_replace(' ', '+', $address);
 	$geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
 	$output = json_decode($geocode);
-	$latitude = $output->results[0]->geometry->location->lat;
-	$longitude = $output->results[0]->geometry->location->lng;
+
+	// if latitude & longitude does not defined by user
+	if ('' === $latitude & '' === $longitude) {
+		$latitude = $output->results[0]->geometry->location->lat;
+		$longitude = $output->results[0]->geometry->location->lng;
+	}
 }
 ?>
 
