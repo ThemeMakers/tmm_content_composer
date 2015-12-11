@@ -53,7 +53,7 @@ class TMM_Content_Composer {
 		if ( in_array( $post_type, $post_types )) {
 			add_meta_box(
 				'tmm_layout_constructor',
-				__("ThemeMakers Layout Constructor", TMM_CC_TEXTDOMAIN),
+				__("ThemeMakers Layout Constructor", 'tmm_content_composer'),
 				array('TMM_Layout_Constructor', 'draw_page_meta_box'),
 				$post_type,
 				'normal',
@@ -86,13 +86,13 @@ class TMM_Content_Composer {
 					var tmm_lang = {};
 				}
 
-				tmm_lang['loading'] = "<?php _e("Loading ...", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['close'] = "<?php _e("Close", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['apply'] = "<?php _e("Apply", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_nooption'] = "<?php _e("There is no options for shortcode!", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_updated'] = "<?php _e("Shortcode updated!", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_insert'] = "<?php _e("Insert Shortcode", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_edit'] = "<?php _e("Edit shortcode", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['loading'] = "<?php _e("Loading ...", 'tmm_content_composer') ?>";
+				tmm_lang['close'] = "<?php _e("Close", 'tmm_content_composer') ?>";
+				tmm_lang['apply'] = "<?php _e("Apply", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_nooption'] = "<?php _e("There is no options for shortcode!", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_updated'] = "<?php _e("Shortcode updated!", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_insert'] = "<?php _e("Insert Shortcode", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_edit'] = "<?php _e("Edit shortcode", 'tmm_content_composer') ?>";
 			</script>
 		<?php
 		}
@@ -103,11 +103,11 @@ class TMM_Content_Composer {
 			wp_localize_script('tmm_layout_constructor', 'tmm_cc_row_options', $tmm_row_options);
 			?>
 			<script type="text/javascript">
-				tmm_lang['column_delete'] = "<?php _e("Sure about column deleting?", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['row_delete'] = "<?php _e("Sure about row deleting?", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['empty_title'] = "<?php _e("Empty title", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['column_popup_title'] = "<?php _e("Column content editor", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['row_popup_title'] = "<?php _e("Section editor", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['column_delete'] = "<?php _e("Sure about column deleting?", 'tmm_content_composer') ?>";
+				tmm_lang['row_delete'] = "<?php _e("Sure about row deleting?", 'tmm_content_composer') ?>";
+				tmm_lang['empty_title'] = "<?php _e("Empty title", 'tmm_content_composer') ?>";
+				tmm_lang['column_popup_title'] = "<?php _e("Column content editor", 'tmm_content_composer') ?>";
+				tmm_lang['row_popup_title'] = "<?php _e("Section editor", 'tmm_content_composer') ?>";
 			</script>
 			<?php
 		}
@@ -197,8 +197,8 @@ class TMM_Content_Composer {
 			$buttons = TMM_OptionsHelper::get_theme_buttons();
 		}else{
 			$buttons = array(
-				'default' => __('Default', TMM_CC_TEXTDOMAIN),
-				'default-white' => __('Default-white', TMM_CC_TEXTDOMAIN)
+				'default' => __('Default', 'tmm_content_composer'),
+				'default-white' => __('Default-white', 'tmm_content_composer')
 			);
 		}
 		return $buttons;
@@ -209,9 +209,9 @@ class TMM_Content_Composer {
 			$button_sizes = TMM_OptionsHelper::get_theme_buttons_sizes();
 		}else{
 			$button_sizes = array(
-				'small' => __('Small', TMM_CC_TEXTDOMAIN),
-				'middle' => __('Middle', TMM_CC_TEXTDOMAIN),
-				'large' => __('Large', TMM_CC_TEXTDOMAIN),
+				'small' => __('Small', 'tmm_content_composer'),
+				'middle' => __('Middle', 'tmm_content_composer'),
+				'large' => __('Large', 'tmm_content_composer'),
 			);
 		}
 		return $button_sizes;
@@ -219,7 +219,7 @@ class TMM_Content_Composer {
 
 	public static function get_post_categories() {
 		$post_categories = array(
-			0 => __('All Categories', TMM_CC_TEXTDOMAIN)
+			0 => __('All Categories', 'tmm_content_composer')
 		);
 
 		$args = 	array(
@@ -254,7 +254,7 @@ class TMM_Content_Composer {
 
 	public static function get_post_tags() {
 		$post_tags = array(
-			0 => __('All Tags', TMM_CC_TEXTDOMAIN)
+			0 => __('All Tags', 'tmm_content_composer')
 		);
 
 		$args = array(
@@ -287,12 +287,12 @@ class TMM_Content_Composer {
     
      public static function get_blog_type() {
 		return array(
-			'blog-classic' => __('Blog Classic', TMM_CC_TEXTDOMAIN),
-			'blog-medium' => __('Blog Medium', TMM_CC_TEXTDOMAIN),
-			'blog-masonry' => __('Blog Masonry', TMM_CC_TEXTDOMAIN),
-			'blog-grid' => __('Blog Grid', TMM_CC_TEXTDOMAIN),
-			'blog-grid-overlay' => __('Grid Overlay', TMM_CC_TEXTDOMAIN),
-			'blog-grid-layout' => __('Grid Multi Layout', TMM_CC_TEXTDOMAIN)
+			'blog-classic' => __('Blog Classic', 'tmm_content_composer'),
+			'blog-medium' => __('Blog Medium', 'tmm_content_composer'),
+			'blog-masonry' => __('Blog Masonry', 'tmm_content_composer'),
+			'blog-grid' => __('Blog Grid', 'tmm_content_composer'),
+			'blog-grid-overlay' => __('Grid Overlay', 'tmm_content_composer'),
+			'blog-grid-layout' => __('Grid Multi Layout', 'tmm_content_composer')
 		);
 	}
 
@@ -422,7 +422,7 @@ class TMM_Content_Composer {
 
 				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
 				<a title="" class="button tmm_button_upload" href="#">
-					<?php _e('Browse', TMM_CC_TEXTDOMAIN); ?>
+					<?php _e('Browse', 'tmm_content_composer'); ?>
 				</a>
 				<span class="preset_description"><?php echo $data['description'] ?></span>
 				<?php
@@ -435,7 +435,7 @@ class TMM_Content_Composer {
 			<?php endif; ?>
 
 				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;"><?php _e('Browse', TMM_CC_TEXTDOMAIN); ?></a>
+				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;"><?php _e('Browse', 'tmm_content_composer'); ?></a>
 				<span class="preset_description"><?php echo $data['description'] ?></span>
 				<?php
 				break;

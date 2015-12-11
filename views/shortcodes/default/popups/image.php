@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'upload',
-			'title' => __('Image URL', TMM_CC_TEXTDOMAIN),
+			'title' => __('Image URL', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -20,14 +20,14 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Align', TMM_CC_TEXTDOMAIN),
+			'title' => __('Align', 'tmm_content_composer'),
 			'shortcode_field' => 'align',
 			'id' => 'align',
 			'options' => array(
-				'' => __('None', TMM_CC_TEXTDOMAIN),
-				'alignleft' => __('Left', TMM_CC_TEXTDOMAIN),
-				'alignright' => __('Right', TMM_CC_TEXTDOMAIN),
-				'aligncenter' => __('Center', TMM_CC_TEXTDOMAIN),
+				'' => __('None', 'tmm_content_composer'),
+				'alignleft' => __('Left', 'tmm_content_composer'),
+				'alignright' => __('Right', 'tmm_content_composer'),
+				'aligncenter' => __('Center', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('align', ''),
 			'description' => ''
@@ -43,11 +43,11 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Size', TMM_CC_TEXTDOMAIN),
+			'title' => __('Size', 'tmm_content_composer'),
 			'shortcode_field' => 'image_size_alias',
 			'id' => 'image_size_alias',
 			'default_value' => TMM_Content_Composer::set_default_value('image_size_alias', ''),
-			'description' => __('width*height. Fore example: 500*300. Empty field means full size', TMM_CC_TEXTDOMAIN),
+			'description' => __('width*height. Fore example: 500*300. Empty field means full size', 'tmm_content_composer'),
 		));
 		?>
 
@@ -59,7 +59,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Image Alt', TMM_CC_TEXTDOMAIN),
+			'title' => __('Image Alt', 'tmm_content_composer'),
 			'shortcode_field' => 'image_alt',
 			'id' => 'image_alt',
 			'default_value' => TMM_Content_Composer::set_default_value('image_alt', ''),
@@ -73,7 +73,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Top Indent (px)', TMM_CC_TEXTDOMAIN),
+			'title' => __('Top Indent (px)', 'tmm_content_composer'),
 			'shortcode_field' => 'margin_top',
 			'id' => 'margin_top',
 			'default_value' => TMM_Content_Composer::set_default_value('margin_top', ''),
@@ -87,7 +87,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Right Indent (px)', TMM_CC_TEXTDOMAIN),
+			'title' => __('Right Indent (px)', 'tmm_content_composer'),
 			'shortcode_field' => 'margin_right',
 			'id' => 'margin_right',
 			'default_value' => TMM_Content_Composer::set_default_value('margin_right', ''),
@@ -101,7 +101,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Bottom Indent (px)', TMM_CC_TEXTDOMAIN),
+			'title' => __('Bottom Indent (px)', 'tmm_content_composer'),
 			'shortcode_field' => 'margin_bottom',
 			'id' => 'margin_bottom',
 			'default_value' => TMM_Content_Composer::set_default_value('margin_bottom', ''),
@@ -115,7 +115,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Left Indent (px)', TMM_CC_TEXTDOMAIN),
+			'title' => __('Left Indent (px)', 'tmm_content_composer'),
 			'shortcode_field' => 'margin_left',
 			'id' => 'margin_left',
 			'default_value' => TMM_Content_Composer::set_default_value('margin_left', ''),
@@ -132,13 +132,13 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Action', TMM_CC_TEXTDOMAIN),
+			'title' => __('Action', 'tmm_content_composer'),
 			'shortcode_field' => 'action',
 			'id' => 'img_shortcode_action',
 			'options' => array(
-				'none' => __('No link on image', TMM_CC_TEXTDOMAIN),
-				'link' => __('Open link', TMM_CC_TEXTDOMAIN),
-				'lightbox' => __('Open Image in lightbox', TMM_CC_TEXTDOMAIN),
+				'none' => __('No link on image', 'tmm_content_composer'),
+				'link' => __('Open link', 'tmm_content_composer'),
+				'lightbox' => __('Open Image in lightbox', 'tmm_content_composer'),
 			),
 			'default_value' => $action,
 			'description' => ''
@@ -150,7 +150,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'text',
-				'title' => __('Image Action Link', TMM_CC_TEXTDOMAIN),
+				'title' => __('Image Action Link', 'tmm_content_composer'),
 				'shortcode_field' => 'image_action_link',
 				'id' => 'image_action_link',
 				'default_value' => TMM_Content_Composer::set_default_value('image_action_link', '#'),
@@ -163,12 +163,12 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Link Target', TMM_CC_TEXTDOMAIN),
+				'title' => __('Link Target', 'tmm_content_composer'),
 				'shortcode_field' => 'target',
 				'id' => 'target',
 				'options' => array(
-					'_self' => __('Self', TMM_CC_TEXTDOMAIN),
-					'_blank' => __('Blank', TMM_CC_TEXTDOMAIN),
+					'_self' => __('Self', 'tmm_content_composer'),
+					'_blank' => __('Blank', 'tmm_content_composer'),
 				),
 				'default_value' => TMM_Content_Composer::set_default_value('target', '_self'),
 				'description' => ''
@@ -180,7 +180,7 @@
             <?php
             TMM_Content_Composer::html_option(array(
 				'type' => 'text',
-				'title' => __('Link Title', TMM_CC_TEXTDOMAIN),
+				'title' => __('Link Title', 'tmm_content_composer'),
 				'shortcode_field' => 'link_title',
 				'id' => 'link_title',
 				'default_value' => TMM_Content_Composer::set_default_value('link_title', ''),
@@ -194,7 +194,7 @@
             <?php
             TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Parallax Image (On / Off)', TMM_CC_TEXTDOMAIN),
+				'title' => __('Parallax Image (On / Off)', 'tmm_content_composer'),
 				'shortcode_field' => 'parallax',
 				'id' => 'parallax',
 				'is_checked' => TMM_Content_Composer::set_default_value('parallax', 0),

@@ -3,9 +3,9 @@
 
 	<div class="fullwidth">
 
-		<h4 class="label"><?php _e('Menu Items', TMM_CC_TEXTDOMAIN); ?></h4>
+		<h4 class="label"><?php _e('Menu Items', 'tmm_content_composer'); ?></h4>
 
-		<a class="button button-secondary js_add_accordion_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a>
+		<a class="button button-secondary js_add_accordion_item" href="#"><?php _e('Add item', 'tmm_content_composer'); ?></a>
 
 		<ul id="list_items" class="list-items">
 
@@ -99,7 +99,7 @@
 								));                         
 								?>
 							</td>
-							<td><a class="button button-secondary js_delete_accordion_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a></td>
+							<td><a class="button button-secondary js_delete_accordion_item js_shortcode_template_changer" href="#"><?php _e('Remove', 'tmm_content_composer'); ?></a></td>
 						</tr>
 						<tr>
                             <td colspan="2">
@@ -107,7 +107,7 @@
                                     <?php 
                                     TMM_Content_Composer::html_option(array(
                                         'type' => 'text',
-                                        'title' => __('Link Text', TMM_CC_TEXTDOMAIN),
+                                        'title' => __('Link Text', 'tmm_content_composer'),
                                         'shortcode_field' => 'link_text',
                                         'id' => '',
                                         'css_classes' => 'link_text',                                        
@@ -121,7 +121,7 @@
                                     <?php 
                                     TMM_Content_Composer::html_option(array(
                                         'type' => 'text',
-                                        'title' => __('Link URL', TMM_CC_TEXTDOMAIN),
+                                        'title' => __('Link URL', 'tmm_content_composer'),
                                         'shortcode_field' => 'link_url',
                                         'id' => '',
                                         'css_classes' => 'link_url',                                         
@@ -134,7 +134,7 @@
                                     <?php 
                                     TMM_Content_Composer::html_option(array(
                                         'type' => 'select',
-                                        'title' => __(' Icon Type', TMM_CC_TEXTDOMAIN),
+                                        'title' => __(' Icon Type', 'tmm_content_composer'),
                                         'shortcode_field' => 'icon_type',
                                         'id' => '',
                                         'css_classes' => 'icon_type',    
@@ -155,7 +155,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_accordion_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_accordion_item" href="#"><?php _e('Add item', 'tmm_content_composer'); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

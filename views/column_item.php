@@ -10,11 +10,11 @@
 		</div>
 
 		<div class="tmm-lc-column-size"><?php echo $value ?></div>
-		<div class="tmm-lc-column-title"><?php echo empty($title) ? __('Empty title', TMM_CC_TEXTDOMAIN) : $title; ?></div>
+		<div class="tmm-lc-column-title"><?php echo empty($title) ? __('Empty title', 'tmm_content_composer') : $title; ?></div>
 
 		<div class="tmm-lc-column-bar-right">
-			<a title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>" class="tmm-lc-edit-column" data-item-id="<?php echo $uniqid ?>"></a>
-			<a title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>" class="tmm-lc-delete-column" data-item-id="<?php echo $uniqid ?>"></a>
+			<a title="<?php _e("Edit", 'tmm_content_composer') ?>" class="tmm-lc-edit-column" data-item-id="<?php echo $uniqid ?>"></a>
+			<a title="<?php _e("Delete", 'tmm_content_composer') ?>" class="tmm-lc-delete-column" data-item-id="<?php echo $uniqid ?>"></a>
 		</div>
 
 		<input type="hidden" class="js_title" value="<?php echo $title ?>" name="tmm_layout_constructor[<?php echo $row ?>][<?php echo $uniqid ?>][title]" />

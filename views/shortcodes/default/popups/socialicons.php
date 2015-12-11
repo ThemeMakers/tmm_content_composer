@@ -39,7 +39,7 @@
 		}
 		?>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add item', 'tmm_content_composer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 			<?php foreach ($social_types as $key => $type) : ?>
@@ -70,12 +70,12 @@
 									'css_classes' => 'list_item_style save_as_one',
 									'default_value' => (isset($links[$key])) ? $links[$key] : '',
 									'description' => '',
-									'placeholder' => __('http://', TMM_CC_TEXTDOMAIN)
+									'placeholder' => __('http://', 'tmm_content_composer')
 								));
 								?>
 							</td>
 							<td>
-								<a class="button button-secondary js_delete_list_item" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
+								<a class="button button-secondary js_delete_list_item" href="#"><?php _e('Remove', 'tmm_content_composer'); ?></a>
 							</td>
 							<td></td>
 						</tr>
@@ -85,7 +85,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add item', 'tmm_content_composer'); ?></a><br />
 
 	</div>
 

@@ -50,7 +50,7 @@
 
 				<section class="section section-content padding-off">
 
-					<h5 class="simple-title"><?php _e('About The Author', TMM_CC_TEXTDOMAIN) ?></h5>
+					<h5 class="simple-title"><?php _e('About The Author', 'tmm_content_composer') ?></h5>
 
 					<div class="author-entry clearfix">
 

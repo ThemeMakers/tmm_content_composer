@@ -22,7 +22,7 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Transition Effect', TMM_CC_TEXTDOMAIN),
+			'title' => __('Transition Effect', 'tmm_content_composer'),
 			'shortcode_field' => 'effect',
 			'id' => 'transition_effect',
 			'options' => $transition_effects,
@@ -35,7 +35,7 @@
 
 		<div id="wp-content-media-buttons" class="wp-media-buttons">
 			<a href="#" id="tmm_insert_media" class="button add_media" title="Add Media">
-				<?php _e('Upload Images', TMM_CC_TEXTDOMAIN); ?>
+				<?php _e('Upload Images', 'tmm_content_composer'); ?>
 			</a>
 		</div>
 
@@ -66,7 +66,7 @@
 					<li class="tmm-gallery-item">
 						<img class="tmm-gallery-item-thumb" src="<?php echo TMM_Helper::resize_image($item, "280*200") ?>" alt="" />
 						<input type="hidden" value="<?php echo $item ?>" class="tmm-gallery-item-val" name="tmm_gallery_item[]">
-						<a href="#" class="tmm-delete-gallery-item" title="<?php _e("Delete Item", TMM_CC_TEXTDOMAIN) ?>"></a>
+						<a href="#" class="tmm-delete-gallery-item" title="<?php _e("Delete Item", 'tmm_content_composer') ?>"></a>
 					</li>
 
 				<?php
@@ -81,7 +81,7 @@
 			<li class="tmm-gallery-item ui-sortable-handle">
 				<div class="tmm-gallery-item-thumb" style="width: 280px; height: 200px; background-size: cover;"></div>
 				<input type="hidden" value="" class="tmm-gallery-item-val">
-				<a href="#" class="tmm-delete-gallery-item" title="<?php _e("Delete Item", TMM_CC_TEXTDOMAIN) ?>"></a>
+				<a href="#" class="tmm-delete-gallery-item" title="<?php _e("Delete Item", 'tmm_content_composer') ?>"></a>
 			</li>
 		</ul>
 		

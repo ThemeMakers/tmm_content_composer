@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Buttons Text', TMM_CC_TEXTDOMAIN),
+			'title' => __('Buttons Text', 'tmm_content_composer'),
 			'shortcode_field' => 'text',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('text', ''),
@@ -18,7 +18,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('URL', TMM_CC_TEXTDOMAIN),
+			'title' => __('URL', 'tmm_content_composer'),
 			'shortcode_field' => 'url',
 			'id' => 'url',
 			'default_value' => TMM_Content_Composer::set_default_value('url', ''),
@@ -31,7 +31,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Top Indent', TMM_CC_TEXTDOMAIN),
+			'title' => __('Top Indent', 'tmm_content_composer'),
 			'shortcode_field' => 'top_indent',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('top_indent', ''),
@@ -45,7 +45,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Size', TMM_CC_TEXTDOMAIN),
+			'title' => __('Size', 'tmm_content_composer'),
 			'shortcode_field' => 'size',
 			'id' => 'size',
 			'options' => TMM_Content_Composer::get_theme_buttons_sizes(),
@@ -60,7 +60,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Button type', TMM_CC_TEXTDOMAIN),
+			'title' => __('Button type', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'id' => 'button_type',
 			'options' => array(
@@ -85,7 +85,7 @@
                     <?php
                     TMM_Content_Composer::html_option(array(
                             'type' => 'color',
-                            'title' => __('Text Color', TMM_CC_TEXTDOMAIN),
+                            'title' => __('Text Color', 'tmm_content_composer'),
                             'shortcode_field' => 'text_color',
                             'id' => '',			
                             'default_value' => TMM_Content_Composer::set_default_value('text_color', ''),
@@ -101,7 +101,7 @@
                     <?php
                     TMM_Content_Composer::html_option(array(
                             'type' => 'color',
-                            'title' => __('Mouseover Text Color', TMM_CC_TEXTDOMAIN),
+                            'title' => __('Mouseover Text Color', 'tmm_content_composer'),
                             'shortcode_field' => 'mouseover_text_color',
                             'id' => '',			
                             'default_value' => TMM_Content_Composer::set_default_value('mouseover_text_color', ''),
@@ -117,7 +117,7 @@
                     <?php
                     TMM_Content_Composer::html_option(array(
                             'type' => 'color',
-                            'title' => __('Background Color', TMM_CC_TEXTDOMAIN),
+                            'title' => __('Background Color', 'tmm_content_composer'),
                             'shortcode_field' => 'bg_color',
                             'id' => '',			
                             'default_value' => TMM_Content_Composer::set_default_value('bg_color', ''),
@@ -128,7 +128,7 @@
                     <?php
                     TMM_Content_Composer::html_option(array(
                         'type' => 'checkbox',
-                        'title' => __('Transparent Background Color', TMM_CC_TEXTDOMAIN),
+                        'title' => __('Transparent Background Color', 'tmm_content_composer'),
                         'shortcode_field' => 'bg_transparent',
                         'id' => 'bg_transparent',
                         'is_checked' => TMM_Content_Composer::set_default_value('bg_transparent', false),
@@ -145,7 +145,7 @@
                     <?php
                     TMM_Content_Composer::html_option(array(
                             'type' => 'color',
-                            'title' => __('Mouseover Background Color', TMM_CC_TEXTDOMAIN),
+                            'title' => __('Mouseover Background Color', 'tmm_content_composer'),
                             'shortcode_field' => 'mouseover_bg_color',
                             'id' => '',			
                             'default_value' => TMM_Content_Composer::set_default_value('mouseover_bg_color', ''),
@@ -156,7 +156,7 @@
                     <?php                    
                     TMM_Content_Composer::html_option(array(
                         'type' => 'checkbox',
-                        'title' => __('Transparent Mouseover Background Color', TMM_CC_TEXTDOMAIN),
+                        'title' => __('Transparent Mouseover Background Color', 'tmm_content_composer'),
                         'shortcode_field' => 'mouseover_bg_transparent',
                         'id' => 'mouseover_bg_transparent',
                         'is_checked' => TMM_Content_Composer::set_default_value('mouseover_bg_transparent', false),
@@ -173,7 +173,7 @@
                     <?php
                     TMM_Content_Composer::html_option(array(
                             'type' => 'color',
-                            'title' => __('Border Color', TMM_CC_TEXTDOMAIN),
+                            'title' => __('Border Color', 'tmm_content_composer'),
                             'shortcode_field' => 'border_color',
                             'id' => '',			
                             'default_value' => TMM_Content_Composer::set_default_value('border_color', ''),
@@ -184,7 +184,7 @@
                     <?php
                     TMM_Content_Composer::html_option(array(
                         'type' => 'checkbox',
-                        'title' => __('Transparent Border Color', TMM_CC_TEXTDOMAIN),
+                        'title' => __('Transparent Border Color', 'tmm_content_composer'),
                         'shortcode_field' => 'border_color_transparent',
                         'id' => 'border_color_transparent',
                         'is_checked' => TMM_Content_Composer::set_default_value('border_color_transparent', false),
@@ -201,7 +201,7 @@
                     <?php
                     TMM_Content_Composer::html_option(array(
                             'type' => 'color',
-                            'title' => __('Mouseover Border Color', TMM_CC_TEXTDOMAIN),
+                            'title' => __('Mouseover Border Color', 'tmm_content_composer'),
                             'shortcode_field' => 'mouseover_border_color',
                             'id' => '',			
                             'default_value' => TMM_Content_Composer::set_default_value('mouseover_border_color', ''),
@@ -214,7 +214,7 @@
                     <?php 
                     TMM_Content_Composer::html_option(array(
                         'type' => 'checkbox',
-                        'title' => __('Transparent Mouseover Border Color', TMM_CC_TEXTDOMAIN),
+                        'title' => __('Transparent Mouseover Border Color', 'tmm_content_composer'),
                         'shortcode_field' => 'mouseover_border_color_transparent',
                         'id' => 'mouseover_border_color_transparent',
                         'is_checked' => TMM_Content_Composer::set_default_value('mouseover_border_color_transparent', false),

@@ -259,7 +259,7 @@ $_REQUEST['title_symbols'] = $title_symbols;
 			<a class='load-more button secondary middle'
                data-loadbyscroll="<?php echo esc_attr($load_by_scrolling) ?>" data-page-load="2"
                data-posts-per-load="<?php echo esc_attr($posts_per_load) ?>"
-               data-posts="<?php echo esc_attr($next_posts) ?>" href='#load-more'><?php _e('Load More', TMM_CC_TEXTDOMAIN) ?></a>
+               data-posts="<?php echo esc_attr($next_posts) ?>" href='#load-more'><?php _e('Load More', 'tmm_content_composer') ?></a>
 		</div><!--/ .post-load-more-->
 
     <?php

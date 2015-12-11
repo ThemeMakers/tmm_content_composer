@@ -3,20 +3,20 @@
 	<div class="one-half">
 	<?php
 	$archives_array = array(
-		'latest_posts' =>__('Latest Posts', TMM_CC_TEXTDOMAIN),
-		'archives_month' =>__('Archives by Month', TMM_CC_TEXTDOMAIN),
-		'archives_year' =>__('Archives by Year', TMM_CC_TEXTDOMAIN),
-		'archives_day' =>__('Archives by Day', TMM_CC_TEXTDOMAIN),
-		'archives_subject' =>__('Archives by Category', TMM_CC_TEXTDOMAIN),
+		'latest_posts' =>__('Latest Posts', 'tmm_content_composer'),
+		'archives_month' =>__('Archives by Month', 'tmm_content_composer'),
+		'archives_year' =>__('Archives by Year', 'tmm_content_composer'),
+		'archives_day' =>__('Archives by Day', 'tmm_content_composer'),
+		'archives_subject' =>__('Archives by Category', 'tmm_content_composer'),
 	);
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Archives', TMM_CC_TEXTDOMAIN),
+			'title' => __('Archives', 'tmm_content_composer'),
 			'shortcode_field' => 'archives_type',
 			'id' => 'archives_type',
 			'options' => $archives_array,
 			'default_value' => TMM_Content_Composer::set_default_value('archives_type', 'latest_posts'),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('', 'tmm_content_composer')
 		));
 	?>
 	</div>
@@ -25,11 +25,11 @@
 	<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Count of Items', TMM_CC_TEXTDOMAIN),
+			'title' => __('Count of Items', 'tmm_content_composer'),
 			'shortcode_field' => 'count',
 			'id' => 'count',
 			'default_value' => TMM_Content_Composer::set_default_value('count', '10'),
-			'description' => __('Leave field empty for displaying all items', TMM_CC_TEXTDOMAIN)
+			'description' => __('Leave field empty for displaying all items', 'tmm_content_composer')
 		));
 	?>
 	</div>

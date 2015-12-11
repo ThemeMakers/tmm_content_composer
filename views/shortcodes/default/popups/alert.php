@@ -7,7 +7,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'textarea',
-			'title' => __('Enter Text', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enter Text', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -19,15 +19,15 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Select Type', TMM_CC_TEXTDOMAIN),
+			'title' => __('Select Type', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'options' => array(
-				'error' => __('Error', TMM_CC_TEXTDOMAIN),
-				'success' => __('Success', TMM_CC_TEXTDOMAIN),
-				'info' => __('Info', TMM_CC_TEXTDOMAIN),
-				'notice' => __('Notice', TMM_CC_TEXTDOMAIN),
-				'transparent' => __('Transparent', TMM_CC_TEXTDOMAIN),
+				'error' => __('Error', 'tmm_content_composer'),
+				'success' => __('Success', 'tmm_content_composer'),
+				'info' => __('Info', 'tmm_content_composer'),
+				'notice' => __('Notice', 'tmm_content_composer'),
+				'transparent' => __('Transparent', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type', 'notice'),
 			'description' => ''

@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Data Speed', TMM_CC_TEXTDOMAIN),
+			'title' => __('Data Speed', 'tmm_content_composer'),
 			'shortcode_field' => 'speed',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('speed', 3000),
@@ -29,8 +29,8 @@
 		}
 		?>
 
-		<h4 class="label"><?php _e('Progress bars', TMM_CC_TEXTDOMAIN); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add bar item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<h4 class="label"><?php _e('Progress bars', 'tmm_content_composer'); ?></h4>
+		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add bar item', 'tmm_content_composer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 			<?php foreach ($titles as $key => $title) : ?>
@@ -47,7 +47,7 @@
 									'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
 									'default_value' => $title,
 									'description' => '',
-									'placeholder' => __('Title', TMM_CC_TEXTDOMAIN)
+									'placeholder' => __('Title', 'tmm_content_composer')
 								));
 								?>
 							</td>
@@ -61,7 +61,7 @@
 									'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
 									'default_value' => $from[$key],
 									'description' => '',
-									'placeholder' => __('from', TMM_CC_TEXTDOMAIN),
+									'placeholder' => __('from', 'tmm_content_composer'),
 									'display' => 1
 								));
 								?>
@@ -76,14 +76,14 @@
 									'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
 									'default_value' => $to[$key],
 									'description' => '',
-									'placeholder' => __('to', TMM_CC_TEXTDOMAIN)
+									'placeholder' => __('to', 'tmm_content_composer')
 								));
 								?>
 							</td>
 							
 
 							<td>
-								<a class="button button-secondary js_delete_list_item" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
+								<a class="button button-secondary js_delete_list_item" href="#"><?php _e('Remove', 'tmm_content_composer'); ?></a>
 							</td>
 							<td></td>
 						</tr>
@@ -93,7 +93,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add bar item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add bar item', 'tmm_content_composer'); ?></a><br />
 
 	</div>
 	
@@ -102,17 +102,17 @@
 		<?php
 		$css_animation_array = array(
 			'' => 'None',
-			'opacity' => __('Opacity', TMM_CC_TEXTDOMAIN),
-			'scale' => __('Scale', TMM_CC_TEXTDOMAIN),
-			'slideRight' => __('SlideRight', TMM_CC_TEXTDOMAIN),
-			'slideLeft' => __('SlideLeft', TMM_CC_TEXTDOMAIN),
-			'slideDown' => __('SlideDown', TMM_CC_TEXTDOMAIN),
-			'slideUp' => __('SlideUp', TMM_CC_TEXTDOMAIN),
+			'opacity' => __('Opacity', 'tmm_content_composer'),
+			'scale' => __('Scale', 'tmm_content_composer'),
+			'slideRight' => __('SlideRight', 'tmm_content_composer'),
+			'slideLeft' => __('SlideLeft', 'tmm_content_composer'),
+			'slideDown' => __('SlideDown', 'tmm_content_composer'),
+			'slideUp' => __('SlideUp', 'tmm_content_composer'),
 		);
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Animation', TMM_CC_TEXTDOMAIN),
+			'title' => __('Animation', 'tmm_content_composer'),
 			'shortcode_field' => 'animation',
 			'id' => '',
 			'options' => $css_animation_array,

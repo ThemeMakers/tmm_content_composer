@@ -393,7 +393,7 @@ class TMM_Layout_Constructor {
 
 						<?php
 						}else{
-							_e('Unsupported video format', TMM_CC_TEXTDOMAIN);
+							_e('Unsupported video format', 'tmm_content_composer');
 						}
 						break;
 				}

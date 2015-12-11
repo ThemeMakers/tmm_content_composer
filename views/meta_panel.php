@@ -4,8 +4,8 @@ global $tmm_row_options;
 ?>
 
 <input type="hidden" name="tmm_meta_saving" value="1" />
-<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php _e("Add New Row", TMM_CC_TEXTDOMAIN) ?></a>
-<a href="#" class="tmm-lc-paste-row button button-large"><?php _e("Insert Clipboard Row here", TMM_CC_TEXTDOMAIN) ?></a><br />
+<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php _e("Add New Row", 'tmm_content_composer') ?></a>
+<a href="#" class="tmm-lc-paste-row button button-large"><?php _e("Insert Clipboard Row here", 'tmm_content_composer') ?></a><br />
 
 <ul id="tmm_lc_rows" class="tmm-lc-rows">
 
@@ -18,10 +18,10 @@ global $tmm_row_options;
 			<li id="tmm_lc_row_<?php echo $row ?>" class="tmm-lc-row">
 
 				<div class="tmm-lc-row-buttons-wrapper">
-					<a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php _e("Add Row to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php _e("Add Column", 'tmm_content_composer') ?>"></a>
+					<a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php _e("Add Row to Clipboard", 'tmm_content_composer') ?>"></a>
+					<a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php _e("Edit", 'tmm_content_composer') ?>"></a>
+					<a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php _e("Delete", 'tmm_content_composer') ?>"></a>
 				</div>
 
 				<div class="tmm-lc-columns" id="tmm_lc_columns_<?php echo $row ?>">
@@ -105,10 +105,10 @@ global $tmm_row_options;
 		<li id="tmm_lc_row___ROW_ID__" class="tmm-lc-row">
 
             <div class="tmm-lc-row-buttons-wrapper">
-                <a class="tmm-lc-add-column" title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>" data-row-id="__ROW_ID__"></a>
-                <a class="tmm-lc-copy-row" data-row-id="__ROW_ID__" title="<?php _e("Add to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-                <a class="tmm-lc-edit-row" data-row-id="__ROW_ID__" title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
-                <a class="tmm-lc-delete-row" data-row-id="__ROW_ID__" title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
+                <a class="tmm-lc-add-column" title="<?php _e("Add Column", 'tmm_content_composer') ?>" data-row-id="__ROW_ID__"></a>
+                <a class="tmm-lc-copy-row" data-row-id="__ROW_ID__" title="<?php _e("Add to Clipboard", 'tmm_content_composer') ?>"></a>
+                <a class="tmm-lc-edit-row" data-row-id="__ROW_ID__" title="<?php _e("Edit", 'tmm_content_composer') ?>"></a>
+                <a class="tmm-lc-delete-row" data-row-id="__ROW_ID__" title="<?php _e("Delete", 'tmm_content_composer') ?>"></a>
             </div>
 
 			<div class="tmm-lc-columns" id="tmm_lc_columns___ROW_ID__"></div>
@@ -131,21 +131,21 @@ global $tmm_row_options;
 	<div id="tmm_lc_column_effects">
 		<?php
 		$effects = array(
-			'' => __("No effects", TMM_CC_TEXTDOMAIN),
-			'elementFade' => __('Element Fade', TMM_CC_TEXTDOMAIN),
-			'opacity2x' => __('Opacity', TMM_CC_TEXTDOMAIN),
-			'slideRight' => __('Slide Right', TMM_CC_TEXTDOMAIN),
-			'slideLeft' => __('Slide Left', TMM_CC_TEXTDOMAIN),
-			'slideDown' => __('Slide Down', TMM_CC_TEXTDOMAIN),
-			'slideUp' => __('Slide Up', TMM_CC_TEXTDOMAIN),
-			'slideUp2x' => __('Slide Up 2x', TMM_CC_TEXTDOMAIN),
-			'extraRadius' => __('Extra Radius', TMM_CC_TEXTDOMAIN)
+			'' => __("No effects", 'tmm_content_composer'),
+			'elementFade' => __('Element Fade', 'tmm_content_composer'),
+			'opacity2x' => __('Opacity', 'tmm_content_composer'),
+			'slideRight' => __('Slide Right', 'tmm_content_composer'),
+			'slideLeft' => __('Slide Left', 'tmm_content_composer'),
+			'slideDown' => __('Slide Down', 'tmm_content_composer'),
+			'slideUp' => __('Slide Up', 'tmm_content_composer'),
+			'slideUp2x' => __('Slide Up 2x', 'tmm_content_composer'),
+			'extraRadius' => __('Extra Radius', 'tmm_content_composer')
 		);
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => '',
-			'label' => __("Layout constructor", TMM_CC_TEXTDOMAIN),
+			'label' => __("Layout constructor", 'tmm_content_composer'),
 			'shortcode_field' => 'tmm-lc-column-effects-selector',
 			'id' => '',
 			'options' => $effects,
@@ -165,7 +165,7 @@ global $tmm_row_options;
            <?php
 
 		   TMM_Content_Composer::html_option(array(
-			   'title' => __('Section Title', TMM_CC_TEXTDOMAIN),
+			   'title' => __('Section Title', 'tmm_content_composer'),
 			   'shortcode_field' => 'row_section_title',
 			   'type' => 'text',
 			   'description' => 'for One Page Menu',
@@ -175,13 +175,13 @@ global $tmm_row_options;
 
             TMM_Content_Composer::html_option(array(
                 'type' => 'select',
-                'title' => __('Row content displaying', TMM_CC_TEXTDOMAIN),
+                'title' => __('Row content displaying', 'tmm_content_composer'),
                 'shortcode_field' => 'row_lc_displaying',
                 'id' => 'row_lc_displaying',
                 'options' => array(
-                    'default' => __('Below content matching its layout', TMM_CC_TEXTDOMAIN),
-                    'before_full_width' => __('Before main content with separate layout options', TMM_CC_TEXTDOMAIN),
-		   			'full_width' => __('After main content with separate layout options', TMM_CC_TEXTDOMAIN)
+                    'default' => __('Below content matching its layout', 'tmm_content_composer'),
+                    'before_full_width' => __('Before main content with separate layout options', 'tmm_content_composer'),
+		   			'full_width' => __('After main content with separate layout options', 'tmm_content_composer')
                 ),
                 'default_value' => $tmm_row_options['lc_displaying'],
                 'description' => ''
@@ -192,12 +192,12 @@ global $tmm_row_options;
             <?php
             TMM_Content_Composer::html_option(array(
                 'type' => 'select',
-                'title' => __('Row Full Width', TMM_CC_TEXTDOMAIN),
+                'title' => __('Row Full Width', 'tmm_content_composer'),
                 'shortcode_field' => 'row_full_width',
                 'id' => 'row_full_width',
                 'options' => array(
-                    0 => __('No', TMM_CC_TEXTDOMAIN),
-                    1 => __('Yes', TMM_CC_TEXTDOMAIN)
+                    0 => __('No', 'tmm_content_composer'),
+                    1 => __('Yes', 'tmm_content_composer')
                 ),
                 'default_value' => $tmm_row_options['full_width'],
                 'description' => ''
@@ -209,12 +209,12 @@ global $tmm_row_options;
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Content Full Width', TMM_CC_TEXTDOMAIN),
+					'title' => __('Content Full Width', 'tmm_content_composer'),
 					'shortcode_field' => 'row_content_full_width',
 					'id' => 'row_content_full_width',
 					'options' => array(
-						0 => __('No', TMM_CC_TEXTDOMAIN),
-						1 => __('Yes', TMM_CC_TEXTDOMAIN)
+						0 => __('No', 'tmm_content_composer'),
+						1 => __('Yes', 'tmm_content_composer')
 					),
 					'default_value' => $tmm_row_options['content_full_width'],
 					'description' => ''
@@ -226,22 +226,22 @@ global $tmm_row_options;
             <?php
             TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Padding top', TMM_CC_TEXTDOMAIN),
+				'title' => __('Padding top', 'tmm_content_composer'),
 				'shortcode_field' => 'row_padding_top',
 				'id' => 'row_padding_top',
 				'options' => array(
-					'0' => __('No Top Padding', TMM_CC_TEXTDOMAIN),
-					'10' => __('10 PX', TMM_CC_TEXTDOMAIN),
-					'20' => __('20 PX', TMM_CC_TEXTDOMAIN),
-					'30' => __('30 PX', TMM_CC_TEXTDOMAIN),
-					'40' => __('40 PX', TMM_CC_TEXTDOMAIN),
-					'50' => __('50 PX', TMM_CC_TEXTDOMAIN),
-					'55' => __('55 PX', TMM_CC_TEXTDOMAIN),
-					'60' => __('60 PX', TMM_CC_TEXTDOMAIN),
-					'70' => __('70 PX', TMM_CC_TEXTDOMAIN),
-					'80' => __('80 PX', TMM_CC_TEXTDOMAIN),
-					'90' => __('90 PX', TMM_CC_TEXTDOMAIN),
-					'100' => __('100 PX', TMM_CC_TEXTDOMAIN)
+					'0' => __('No Top Padding', 'tmm_content_composer'),
+					'10' => __('10 PX', 'tmm_content_composer'),
+					'20' => __('20 PX', 'tmm_content_composer'),
+					'30' => __('30 PX', 'tmm_content_composer'),
+					'40' => __('40 PX', 'tmm_content_composer'),
+					'50' => __('50 PX', 'tmm_content_composer'),
+					'55' => __('55 PX', 'tmm_content_composer'),
+					'60' => __('60 PX', 'tmm_content_composer'),
+					'70' => __('70 PX', 'tmm_content_composer'),
+					'80' => __('80 PX', 'tmm_content_composer'),
+					'90' => __('90 PX', 'tmm_content_composer'),
+					'100' => __('100 PX', 'tmm_content_composer')
 				),
 				'description' => 'Default Value 55px',
 				'default_value' => $tmm_row_options['padding_top']
@@ -252,21 +252,21 @@ global $tmm_row_options;
 			<div class="one-half">
 			<?php
 			TMM_Content_Composer::html_option(array(
-				'title' => __('Padding bottom', TMM_CC_TEXTDOMAIN),
+				'title' => __('Padding bottom', 'tmm_content_composer'),
 				'shortcode_field' => 'row_padding_bottom',
 				'options' => array(
-					'0' => __('No Top Padding', TMM_CC_TEXTDOMAIN),
-					'10' => __('10 PX', TMM_CC_TEXTDOMAIN),
-					'20' => __('20 PX', TMM_CC_TEXTDOMAIN),
-					'30' => __('30 PX', TMM_CC_TEXTDOMAIN),
-					'40' => __('40 PX', TMM_CC_TEXTDOMAIN),
-					'50' => __('50 PX', TMM_CC_TEXTDOMAIN),
-					'55' => __('55 PX', TMM_CC_TEXTDOMAIN),
-					'60' => __('60 PX', TMM_CC_TEXTDOMAIN),
-					'70' => __('70 PX', TMM_CC_TEXTDOMAIN),
-					'80' => __('80 PX', TMM_CC_TEXTDOMAIN),
-					'90' => __('90 PX', TMM_CC_TEXTDOMAIN),
-					'100' => __('100 PX', TMM_CC_TEXTDOMAIN)
+					'0' => __('No Top Padding', 'tmm_content_composer'),
+					'10' => __('10 PX', 'tmm_content_composer'),
+					'20' => __('20 PX', 'tmm_content_composer'),
+					'30' => __('30 PX', 'tmm_content_composer'),
+					'40' => __('40 PX', 'tmm_content_composer'),
+					'50' => __('50 PX', 'tmm_content_composer'),
+					'55' => __('55 PX', 'tmm_content_composer'),
+					'60' => __('60 PX', 'tmm_content_composer'),
+					'70' => __('70 PX', 'tmm_content_composer'),
+					'80' => __('80 PX', 'tmm_content_composer'),
+					'90' => __('90 PX', 'tmm_content_composer'),
+					'100' => __('100 PX', 'tmm_content_composer')
 				),
 				'type' => 'select',
 				'description' => 'Default Value 55px',
@@ -279,20 +279,20 @@ global $tmm_row_options;
 			<div class="one-half">
 			<?php
 			TMM_Content_Composer::html_option(array(
-				'title' => __('Margin top', TMM_CC_TEXTDOMAIN),
+				'title' => __('Margin top', 'tmm_content_composer'),
 				'shortcode_field' => 'row_margin_top',
 				'options' => array(
-					'0' => __('No Top Margin', TMM_CC_TEXTDOMAIN),
-					'10' => __('10 PX', TMM_CC_TEXTDOMAIN),
-					'20' => __('20 PX', TMM_CC_TEXTDOMAIN),
-					'30' => __('30 PX', TMM_CC_TEXTDOMAIN),
-					'40' => __('40 PX', TMM_CC_TEXTDOMAIN),
-					'50' => __('50 PX', TMM_CC_TEXTDOMAIN),
-					'60' => __('60 PX', TMM_CC_TEXTDOMAIN),
-					'70' => __('70 PX', TMM_CC_TEXTDOMAIN),
-					'80' => __('80 PX', TMM_CC_TEXTDOMAIN),
-					'90' => __('90 PX', TMM_CC_TEXTDOMAIN),
-					'100' => __('100 PX', TMM_CC_TEXTDOMAIN)
+					'0' => __('No Top Margin', 'tmm_content_composer'),
+					'10' => __('10 PX', 'tmm_content_composer'),
+					'20' => __('20 PX', 'tmm_content_composer'),
+					'30' => __('30 PX', 'tmm_content_composer'),
+					'40' => __('40 PX', 'tmm_content_composer'),
+					'50' => __('50 PX', 'tmm_content_composer'),
+					'60' => __('60 PX', 'tmm_content_composer'),
+					'70' => __('70 PX', 'tmm_content_composer'),
+					'80' => __('80 PX', 'tmm_content_composer'),
+					'90' => __('90 PX', 'tmm_content_composer'),
+					'100' => __('100 PX', 'tmm_content_composer')
 				),
 				'type' => 'select',
 				'description' => 'Default Value 30px',
@@ -305,20 +305,20 @@ global $tmm_row_options;
 			<div class="one-half">
 			<?php
 			TMM_Content_Composer::html_option(array(
-				'title' => __('Margin bottom', TMM_CC_TEXTDOMAIN),
+				'title' => __('Margin bottom', 'tmm_content_composer'),
 				'shortcode_field' => 'row_margin_bottom',
 				'options' => array(
-					'0' => __('No Top Margin', TMM_CC_TEXTDOMAIN),
-					'10' => __('10 PX', TMM_CC_TEXTDOMAIN),
-					'20' => __('20 PX', TMM_CC_TEXTDOMAIN),
-					'30' => __('30 PX', TMM_CC_TEXTDOMAIN),
-					'40' => __('40 PX', TMM_CC_TEXTDOMAIN),
-					'50' => __('50 PX', TMM_CC_TEXTDOMAIN),
-					'60' => __('60 PX', TMM_CC_TEXTDOMAIN),
-					'70' => __('70 PX', TMM_CC_TEXTDOMAIN),
-					'80' => __('80 PX', TMM_CC_TEXTDOMAIN),
-					'90' => __('90 PX', TMM_CC_TEXTDOMAIN),
-					'100' => __('100 PX', TMM_CC_TEXTDOMAIN)
+					'0' => __('No Top Margin', 'tmm_content_composer'),
+					'10' => __('10 PX', 'tmm_content_composer'),
+					'20' => __('20 PX', 'tmm_content_composer'),
+					'30' => __('30 PX', 'tmm_content_composer'),
+					'40' => __('40 PX', 'tmm_content_composer'),
+					'50' => __('50 PX', 'tmm_content_composer'),
+					'60' => __('60 PX', 'tmm_content_composer'),
+					'70' => __('70 PX', 'tmm_content_composer'),
+					'80' => __('80 PX', 'tmm_content_composer'),
+					'90' => __('90 PX', 'tmm_content_composer'),
+					'100' => __('100 PX', 'tmm_content_composer')
 				),
 				'type' => 'select',
 				'description' => 'Default Value 30px',
@@ -331,7 +331,7 @@ global $tmm_row_options;
 			<?php
             TMM_Content_Composer::html_option(array(
                 'type' => 'select',
-                'title' => __('Content Align', TMM_CC_TEXTDOMAIN),
+                'title' => __('Content Align', 'tmm_content_composer'),
                 'shortcode_field' => 'row_align',
                 'id' => 'row_align',
                 'options' => array(
@@ -345,7 +345,7 @@ global $tmm_row_options;
 
 			TMM_Content_Composer::html_option(array(
                 'type' => 'checkbox',
-                'title' => __('Use as default content blockt', TMM_CC_TEXTDOMAIN),
+                'title' => __('Use as default content blockt', 'tmm_content_composer'),
                 'shortcode_field' => 'row_section_content',
                 'id' => 'row_section_content',
                 'is_checked'=> $tmm_row_options['section_content'],
@@ -359,13 +359,13 @@ global $tmm_row_options;
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Row Background Type', TMM_CC_TEXTDOMAIN),
+				'title' => __('Row Background Type', 'tmm_content_composer'),
 				'shortcode_field' => 'row_bg_type',
 				'id' => 'row_bg_type',
 				'options' => array(
-					'none' => __('None', TMM_CC_TEXTDOMAIN),
-					'default' => __('Default Theme Color', TMM_CC_TEXTDOMAIN),
-					'custom' => __('Custom', TMM_CC_TEXTDOMAIN),
+					'none' => __('None', 'tmm_content_composer'),
+					'default' => __('Default Theme Color', 'tmm_content_composer'),
+					'custom' => __('Custom', 'tmm_content_composer'),
 				),
 				'default_value' => $tmm_row_options['bg_type'],
 				'description' => ''
@@ -377,13 +377,13 @@ global $tmm_row_options;
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Custom Background Type', TMM_CC_TEXTDOMAIN),
+					'title' => __('Custom Background Type', 'tmm_content_composer'),
 					'shortcode_field' => 'row_bg_custom_type',
 					'id' => 'row_bg_custom_type',
                     'options' => array(
-                        'color' => __('Color', TMM_CC_TEXTDOMAIN),
-                        'image' => __('Image', TMM_CC_TEXTDOMAIN),
-                        'video' => __('Video', TMM_CC_TEXTDOMAIN)                        
+                        'color' => __('Color', 'tmm_content_composer'),
+                        'image' => __('Image', 'tmm_content_composer'),
+                        'video' => __('Video', 'tmm_content_composer')
                     ),
                     'default_value' => $tmm_row_options['bg_custom_type'],
 					'description' => ''
@@ -393,7 +393,7 @@ global $tmm_row_options;
                 <div id="row_background_color_box" style="display: none;">
                     <?php
                     TMM_Content_Composer::html_option(array(
-                        'title' => __('Background Color', TMM_CC_TEXTDOMAIN),
+                        'title' => __('Background Color', 'tmm_content_composer'),
                         'shortcode_field' => 'row_background_color',
                         'type' => 'color',
                         'description' => '',
@@ -409,7 +409,7 @@ global $tmm_row_options;
                     <?php
                     TMM_Content_Composer::html_option(array(
                         'type' => 'upload',
-                        'title' => __('Background Image', TMM_CC_TEXTDOMAIN),
+                        'title' => __('Background Image', 'tmm_content_composer'),
                         'shortcode_field' => 'row_background_image',
                         'id' => 'row_bg_image',
                         'default_value' => $tmm_row_options['bg_image'],
@@ -419,12 +419,12 @@ global $tmm_row_options;
                     <?php
 					TMM_Content_Composer::html_option(array(
 						'type' => 'select',
-						'title' => __('Background Attachment', TMM_CC_TEXTDOMAIN),
+						'title' => __('Background Attachment', 'tmm_content_composer'),
 						'shortcode_field' => 'row_bg_attachment',
 						'id' => 'row_bg_attachment',
 						'options' => array(
-							'1' => __('scroll', TMM_CC_TEXTDOMAIN),
-							'0' => __('fixed', TMM_CC_TEXTDOMAIN)
+							'1' => __('scroll', 'tmm_content_composer'),
+							'0' => __('fixed', 'tmm_content_composer')
 						),
 						'default_value' => $tmm_row_options['bg_attachment'],
 						'description' => ''
@@ -433,7 +433,7 @@ global $tmm_row_options;
 					<?php
 					TMM_Content_Composer::html_option(array(
 						'type' => 'checkbox',
-						'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
+						'title' => __('Overlay', 'tmm_content_composer'),
 						'shortcode_field' => 'row_overlay',
 						'id' => 'row_overlay',
 						'is_checked'=> $tmm_row_options['overlay'],
@@ -445,7 +445,7 @@ global $tmm_row_options;
 						<div class="one-half inner-left">
 							<?php
 							TMM_Content_Composer::html_option(array(
-								'title' => __('Overlay Color', TMM_CC_TEXTDOMAIN),
+								'title' => __('Overlay Color', 'tmm_content_composer'),
 								'shortcode_field' => 'row_bg_overlay_color',
 								'id' => 'row_bg_overlay_color',
 								'type' => 'color',
@@ -459,7 +459,7 @@ global $tmm_row_options;
 						<div class="one-half inner-right">
 							<?php
 							TMM_Content_Composer::html_option(array(
-								'title' => __('Overlay Opacity', TMM_CC_TEXTDOMAIN),
+								'title' => __('Overlay Opacity', 'tmm_content_composer'),
 								'shortcode_field' => 'row_bg_overlay_opacity',
 								'id' => 'row_bg_overlay_opacity',
 								'type' => 'slider',
@@ -478,7 +478,7 @@ global $tmm_row_options;
                     <?php
                     TMM_Content_Composer::html_option(array(
                         'type' => 'upload_video',
-                        'title' => __('Background Video', TMM_CC_TEXTDOMAIN),
+                        'title' => __('Background Video', 'tmm_content_composer'),
                         'shortcode_field' => 'row_bg_video',
                         'id' => 'row_bg_video',
                         'default_value' => $tmm_row_options['bg_video'],
@@ -489,36 +489,36 @@ global $tmm_row_options;
 					<?php
 					TMM_Content_Composer::html_option(array(
 						'type' => 'checkbox',
-						'title' => __('Show / Hide video control panel', TMM_CC_TEXTDOMAIN),
+						'title' => __('Show / Hide video control panel', 'tmm_content_composer'),
 						'shortcode_field' => 'row_background_video_panel',
 						'id' => 'row_bg_video_panel',
 						'default_value' => $tmm_row_options['bg_video_panel'],
 						'is_checked'=>true,
-						'description' => __('Show / Hide video control panel', TMM_CC_TEXTDOMAIN),
+						'description' => __('Show / Hide video control panel', 'tmm_content_composer'),
 					));
 					?>
 
 					<?php
 					TMM_Content_Composer::html_option(array(
 						'type' => 'checkbox',
-						'title' => __('Mute audio on video', TMM_CC_TEXTDOMAIN),
+						'title' => __('Mute audio on video', 'tmm_content_composer'),
 						'shortcode_field' => 'row_background_video_mute',
 						'id' => 'row_bg_video_mute',
 						'default_value' => $tmm_row_options['bg_video_mute'],
 						'is_checked'=>false,
-						'description' => __('Mute audio on video', TMM_CC_TEXTDOMAIN),
+						'description' => __('Mute audio on video', 'tmm_content_composer'),
 					));
 					?>
 
 					<?php
 					TMM_Content_Composer::html_option(array(
 						'type' => 'checkbox',
-						'title' => __('Repeat videos automatically', TMM_CC_TEXTDOMAIN),
+						'title' => __('Repeat videos automatically', 'tmm_content_composer'),
 						'shortcode_field' => 'row_background_video_loop',
 						'id' => 'row_bg_video_loop',
 						'default_value' => $tmm_row_options['bg_video_loop'],
 						'is_checked'=>true,
-						'description' => __('Repeat videos automatically', TMM_CC_TEXTDOMAIN),
+						'description' => __('Repeat videos automatically', 'tmm_content_composer'),
 					));
 					?>
                 </div>
@@ -526,12 +526,12 @@ global $tmm_row_options;
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'checkbox',
-					'title' => __('Row Background Fullscreen', TMM_CC_TEXTDOMAIN),
+					'title' => __('Row Background Fullscreen', 'tmm_content_composer'),
 					'shortcode_field' => 'row_background_fullscreen',
 					'id' => 'row_bg_fullscreen',
 					'default_value' => $tmm_row_options['bg_fullscreen'],
 					'is_checked'=>false,
-					'description' => __('Set The Row Background Image Fullscreen', TMM_CC_TEXTDOMAIN),
+					'description' => __('Set The Row Background Image Fullscreen', 'tmm_content_composer'),
 				));
 				?>
 

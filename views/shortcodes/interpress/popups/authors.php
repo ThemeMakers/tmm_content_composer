@@ -4,7 +4,7 @@
 	<?php
 		$args = array( 'fields' => array('ID', 'user_nicename'), 'who' => 'author');
 		$users = get_users($args);
-		$users_array = array('all' => __('Show all Authors', TMM_CC_TEXTDOMAIN));
+		$users_array = array('all' => __('Show all Authors', 'tmm_content_composer'));
 		foreach ($users as $user) {
 			$user = get_userdata($user->ID);
 			$users_array[$user->ID] = $user->display_name;
@@ -14,12 +14,12 @@
 	<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Author', TMM_CC_TEXTDOMAIN),
+			'title' => __('Author', 'tmm_content_composer'),
 			'shortcode_field' => 'userid',
 			'id' => 'user_id',
 			'options' => $users_array,
 			'default_value' => TMM_Content_Composer::set_default_value('userid', ''),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('', 'tmm_content_composer')
 		));
 	?>
 	</div>
@@ -28,11 +28,11 @@
 	<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Posts Per Page', TMM_CC_TEXTDOMAIN),
+			'title' => __('Posts Per Page', 'tmm_content_composer'),
 			'shortcode_field' => 'posts_per_page',
 			'id' => 'posts_per_page',
 			'default_value' => TMM_Content_Composer::set_default_value('posts_per_page', '4'),
-			'description' => __('Leave field empty for displaying all posts', TMM_CC_TEXTDOMAIN)
+			'description' => __('Leave field empty for displaying all posts', 'tmm_content_composer')
 		));
 	?>
 	</div>
@@ -41,15 +41,15 @@
 	<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Pagination', TMM_CC_TEXTDOMAIN),
+			'title' => __('Pagination', 'tmm_content_composer'),
 			'shortcode_field' => 'pagination',
 			'id' => '',
 			'options' => array(
-				'no' => __('No', TMM_CC_TEXTDOMAIN),
-				'yes' => __('Yes', TMM_CC_TEXTDOMAIN)
+				'no' => __('No', 'tmm_content_composer'),
+				'yes' => __('Yes', 'tmm_content_composer')
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('pagination', 'no'),
-			'description' => __('Enable Pagination', TMM_CC_TEXTDOMAIN)
+			'description' => __('Enable Pagination', 'tmm_content_composer')
 		));
 	?>
 	</div>

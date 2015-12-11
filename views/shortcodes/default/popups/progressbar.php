@@ -16,8 +16,8 @@
 		}
 		?>
 
-		<h4 class="label"><?php _e('Progress bars', TMM_CC_TEXTDOMAIN); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add bar item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<h4 class="label"><?php _e('Progress bars', 'tmm_content_composer'); ?></h4>
+		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add bar item', 'tmm_content_composer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 			<?php foreach ($colors as $key => $color) : ?>
@@ -34,7 +34,7 @@
 									'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
 									'default_value' => $titles[$key],
 									'description' => '',
-									'placeholder' => __('Title', TMM_CC_TEXTDOMAIN)
+									'placeholder' => __('Title', 'tmm_content_composer')
 								));
 								?>
 							</td>
@@ -48,7 +48,7 @@
 									'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
 									'default_value' => $percentages[$key],
 									'description' => '',
-									'placeholder' => __('Percentage %', TMM_CC_TEXTDOMAIN)
+									'placeholder' => __('Percentage %', 'tmm_content_composer')
 								));
 								?>
 							</td>
@@ -68,7 +68,7 @@
 							</td>
 
 							<td>
-								<a class="button button-secondary js_delete_list_item" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
+								<a class="button button-secondary js_delete_list_item" href="#"><?php _e('Remove', 'tmm_content_composer'); ?></a>
 							</td>
 							<td></td>
 						</tr>
@@ -78,7 +78,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add bar item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add bar item', 'tmm_content_composer'); ?></a><br />
 
 	</div>
 

@@ -27,12 +27,12 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Select Product', TMM_CC_TEXTDOMAIN),
+			'title' => __('Select Product', 'tmm_content_composer'),
 			'shortcode_field' => 'product_id',
 			'id' => 'product_id',
 			'options' => $products,
 			'default_value' => TMM_Content_Composer::set_default_value('product_id',''),
-			'description' => __('Select single product by title', TMM_CC_TEXTDOMAIN)
+			'description' => __('Select single product by title', 'tmm_content_composer')
 		));
 		?>
 	</div><!--/ .one-half-->
@@ -41,11 +41,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Product SKU', TMM_CC_TEXTDOMAIN),
+			'title' => __('Product SKU', 'tmm_content_composer'),
 			'shortcode_field' => 'sku',
 			'id' => 'sku',
 			'default_value' => TMM_Content_Composer::set_default_value('sku', ''),
-			'description' => __('Display single product by SKU.', TMM_CC_TEXTDOMAIN)
+			'description' => __('Display single product by SKU.', 'tmm_content_composer')
 		));
 		?>
 	</div><!--/ .one-half-->

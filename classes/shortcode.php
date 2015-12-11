@@ -36,8 +36,8 @@ class TMM_Shortcode {
 			}
 		}
 
-		self::$shortcodes['price_table'] = __('Price table', TMM_CC_TEXTDOMAIN);
-		self::$shortcodes['google_table_row'] = __('Google table row', TMM_CC_TEXTDOMAIN);
+		self::$shortcodes['price_table'] = __('Price table', 'tmm_content_composer');
+		self::$shortcodes['google_table_row'] = __('Google table row', 'tmm_content_composer');
 
 		$shortcodes_keys = array_keys(self::$shortcodes);
 

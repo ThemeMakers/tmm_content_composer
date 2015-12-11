@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'textarea',
-			'title' => __('Enter text', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enter text', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -19,7 +19,7 @@
     <div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'title' => __('Text Color', TMM_CC_TEXTDOMAIN),
+			'title' => __('Text Color', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'type' => 'select',
             'default_value' => '',
@@ -37,7 +37,7 @@
     <div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'title' => __('Author', TMM_CC_TEXTDOMAIN),
+			'title' => __('Author', 'tmm_content_composer'),
 			'shortcode_field' => 'author',
 			'type' => 'text',            
 			'description' => '',                        

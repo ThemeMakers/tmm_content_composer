@@ -5,12 +5,12 @@
         <?php
         TMM_Content_Composer::html_option(array(
             'type' => 'select',
-            'title' => __('Blog Type', TMM_CC_TEXTDOMAIN),
+            'title' => __('Blog Type', 'tmm_content_composer'),
             'shortcode_field' => 'blog_type',
             'id' => 'blog_type',
             'options' => TMM_Content_Composer::get_blog_type(),
             'default_value' => TMM_Content_Composer::set_default_value('blog_type', 'blog-classic'),
-            'description' => __('', TMM_CC_TEXTDOMAIN)
+            'description' => __('', 'tmm_content_composer')
         ));
         ?>
     </div>
@@ -19,23 +19,23 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Effect for Appearing Post', TMM_CC_TEXTDOMAIN),
+			'title' => __('Effect for Appearing Post', 'tmm_content_composer'),
 			'shortcode_field' => 'post_appearing_effect',
 			'default_value' =>  TMM_Content_Composer::set_default_value('post_appearing_effect', 'elementFade'),
             'options' => array(
-				'none' => __('None', TMM_CC_TEXTDOMAIN),
-				'elementFade' => __('Element Fade', TMM_CC_TEXTDOMAIN),
-				'opacity' => __('Opacity', TMM_CC_TEXTDOMAIN),
-				'opacity2x' => __('Opacity 2x Run', TMM_CC_TEXTDOMAIN),
-				'scale' => __('Scale', TMM_CC_TEXTDOMAIN),
-				'slideRight' => __('Slide Right', TMM_CC_TEXTDOMAIN),
-				'slideLeft' => __('Slide Left', TMM_CC_TEXTDOMAIN),
-				'slideDown' => __('Slide Down', TMM_CC_TEXTDOMAIN),
-				'slideUp' => __('Slide Up', TMM_CC_TEXTDOMAIN),
-				'slideUp2x' => __('Slide Up 2x', TMM_CC_TEXTDOMAIN),
-				'extraRadius' => __('Extra Radius', TMM_CC_TEXTDOMAIN)
+				'none' => __('None', 'tmm_content_composer'),
+				'elementFade' => __('Element Fade', 'tmm_content_composer'),
+				'opacity' => __('Opacity', 'tmm_content_composer'),
+				'opacity2x' => __('Opacity 2x Run', 'tmm_content_composer'),
+				'scale' => __('Scale', 'tmm_content_composer'),
+				'slideRight' => __('Slide Right', 'tmm_content_composer'),
+				'slideLeft' => __('Slide Left', 'tmm_content_composer'),
+				'slideDown' => __('Slide Down', 'tmm_content_composer'),
+				'slideUp' => __('Slide Up', 'tmm_content_composer'),
+				'slideUp2x' => __('Slide Up 2x', 'tmm_content_composer'),
+				'extraRadius' => __('Extra Radius', 'tmm_content_composer')
 			),
-			'description' => __('Effect for Appearing Post.', TMM_CC_TEXTDOMAIN)
+			'description' => __('Effect for Appearing Post.', 'tmm_content_composer')
 		));
 		?>
 	</div>
@@ -45,7 +45,7 @@
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'multiple' => true,
-			'title' => __('Category', TMM_CC_TEXTDOMAIN),
+			'title' => __('Category', 'tmm_content_composer'),
 			'shortcode_field' => 'category',
 			'id' => 'category',
 			'options' => TMM_Content_Composer::get_post_categories(),
@@ -61,7 +61,7 @@
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'multiple' => true,
-			'title' => __('Tag', TMM_CC_TEXTDOMAIN),
+			'title' => __('Tag', 'tmm_content_composer'),
 			'shortcode_field' => 'tag',
 			'id' => 'tag',
 			'options' => TMM_Content_Composer::get_post_tags(),
@@ -77,14 +77,14 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Layout', TMM_CC_TEXTDOMAIN),
+			'title' => __('Layout', 'tmm_content_composer'),
 			'shortcode_field' => 'columns',
 			'id' => '',
 			'options' => array(
-				'2' => __('2 Columns', TMM_CC_TEXTDOMAIN),
-				'3' => __('3 Columns', TMM_CC_TEXTDOMAIN),
-				'4' => __('4 Columns', TMM_CC_TEXTDOMAIN),
-				'5' => __('5 Columns', TMM_CC_TEXTDOMAIN),
+				'2' => __('2 Columns', 'tmm_content_composer'),
+				'3' => __('3 Columns', 'tmm_content_composer'),
+				'4' => __('4 Columns', 'tmm_content_composer'),
+				'5' => __('5 Columns', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('columns', '3'),
 			'description' => ''
@@ -100,7 +100,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Order By', TMM_CC_TEXTDOMAIN),
+			'title' => __('Order By', 'tmm_content_composer'),
 			'shortcode_field' => 'orderby',
 			'id' => 'orderby',
 			'options' => TMM_Content_Composer::get_post_sort_array(),
@@ -115,12 +115,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Order', TMM_CC_TEXTDOMAIN),
+			'title' => __('Order', 'tmm_content_composer'),
 			'shortcode_field' => 'order',
 			'id' => 'order',
 			'options' => array(
-				'DESC' => __('DESC', TMM_CC_TEXTDOMAIN),
-				'ASC' => __('ASC', TMM_CC_TEXTDOMAIN),
+				'DESC' => __('DESC', 'tmm_content_composer'),
+				'ASC' => __('ASC', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('order', 'DESC'),
 			'description' => ''
@@ -132,7 +132,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Posts Per Page', TMM_CC_TEXTDOMAIN),
+			'title' => __('Posts Per Page', 'tmm_content_composer'),
 			'shortcode_field' => 'posts_per_page',
 			'id' => 'posts_per_page',
 			'default_value' => TMM_Content_Composer::set_default_value('posts_per_page', 5),
@@ -146,7 +146,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Posts Per Load', TMM_CC_TEXTDOMAIN),
+			'title' => __('Posts Per Load', 'tmm_content_composer'),
 			'shortcode_field' => 'posts_per_load',
 			'id' => 'posts_per_load',
 			'default_value' => TMM_Content_Composer::set_default_value('posts_per_load', 5),
@@ -160,11 +160,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Posts', TMM_CC_TEXTDOMAIN),
+			'title' => __('Posts', 'tmm_content_composer'),
 			'shortcode_field' => 'posts',
 			'id' => 'posts',
 			'default_value' => TMM_Content_Composer::set_default_value('posts', ''),
-			'description' => __('Example: 56,73,119. It has the most hight priority!', TMM_CC_TEXTDOMAIN)
+			'description' => __('Example: 56,73,119. It has the most hight priority!', 'tmm_content_composer')
 		));
 		?>
 
@@ -174,16 +174,16 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Exclude Posts', TMM_CC_TEXTDOMAIN),
+			'title' => __('Exclude Posts', 'tmm_content_composer'),
 			'shortcode_field' => 'exclude_post_types',
 			'id' => 'exclude_posts',
 			'options' => array(
-				'none' => __('None', TMM_CC_TEXTDOMAIN),
-				'post-with-image' => __('Posts With Featured Image', TMM_CC_TEXTDOMAIN),
-				'post-without-image' => __('Posts Without Featured Image', TMM_CC_TEXTDOMAIN),
+				'none' => __('None', 'tmm_content_composer'),
+				'post-with-image' => __('Posts With Featured Image', 'tmm_content_composer'),
+				'post-without-image' => __('Posts Without Featured Image', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_types', 'none'),
-			'description' => __('Choose post formats that will not be included in current query.', TMM_CC_TEXTDOMAIN)
+			'description' => __('Choose post formats that will not be included in current query.', 'tmm_content_composer')
 		));
 		?>
 
@@ -193,19 +193,19 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Exclude Post Formats', TMM_CC_TEXTDOMAIN),
+			'title' => __('Exclude Post Formats', 'tmm_content_composer'),
 			'shortcode_field' => 'exclude_post_formats',
 			'id' => 'exclude_post_formats',
 			'multiple' => true,
 			'options' => array(
-				'none' => __('None', TMM_CC_TEXTDOMAIN),
-				'post-format-gallery' => __('Gallery Post', TMM_CC_TEXTDOMAIN),
-				'post-format-quote' => __('Quote Post', TMM_CC_TEXTDOMAIN),
-				'post-format-video' => __('Video Post', TMM_CC_TEXTDOMAIN),
-				'post-format-audio' => __('Audio Post', TMM_CC_TEXTDOMAIN)
+				'none' => __('None', 'tmm_content_composer'),
+				'post-format-gallery' => __('Gallery Post', 'tmm_content_composer'),
+				'post-format-quote' => __('Quote Post', 'tmm_content_composer'),
+				'post-format-video' => __('Video Post', 'tmm_content_composer'),
+				'post-format-audio' => __('Audio Post', 'tmm_content_composer')
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('exclude_post_formats', 'none'),
-			'description' => __('Choose post formats that will not be included in current query.', TMM_CC_TEXTDOMAIN)
+			'description' => __('Choose post formats that will not be included in current query.', 'tmm_content_composer')
 		));
 		?>
 
@@ -215,11 +215,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Title Symbols Count', TMM_CC_TEXTDOMAIN),
+			'title' => __('Title Symbols Count', 'tmm_content_composer'),
 			'shortcode_field' => 'title_symbols',
 			'id' => 'posts',
 			'default_value' => TMM_Content_Composer::set_default_value('title_symbols', '25'),
-			'description' => __('Truncate post titles depending on symbols number you want.', TMM_CC_TEXTDOMAIN)
+			'description' => __('Truncate post titles depending on symbols number you want.', 'tmm_content_composer')
 		));
 		?>
 	</div><!--/ .ona-half-->
@@ -229,11 +229,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show/Hide Meta Data', TMM_CC_TEXTDOMAIN),
+			'title' => __('Show/Hide Meta Data', 'tmm_content_composer'),
 			'shortcode_field' => 'show_metadata',
 			'id' => 'show_metadata',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_metadata', 1),
-			'description' => __('Show/Hide Meta Info', TMM_CC_TEXTDOMAIN)
+			'description' => __('Show/Hide Meta Info', 'tmm_content_composer')
 		));
 		?>
 
@@ -243,11 +243,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show Latest Review', TMM_CC_TEXTDOMAIN),
+			'title' => __('Show Latest Review', 'tmm_content_composer'),
 			'shortcode_field' => 'show_review',
 			'id' => 'show_review',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_review', 0),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => __('', 'tmm_content_composer')
 		));
 		?>
 
@@ -257,11 +257,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show/Hide Pagination', TMM_CC_TEXTDOMAIN),
+			'title' => __('Show/Hide Pagination', 'tmm_content_composer'),
 			'shortcode_field' => 'show_pagination',
 			'id' => 'show_pagination',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_pagination', 1),
-			'description' => __('Enable Pagination', TMM_CC_TEXTDOMAIN)
+			'description' => __('Enable Pagination', 'tmm_content_composer')
 		));
 		?>
 
@@ -271,11 +271,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Lazy Loading', TMM_CC_TEXTDOMAIN),
+			'title' => __('Lazy Loading', 'tmm_content_composer'),
 			'shortcode_field' => 'infinity_pagination',
 			'id' => 'infinity_pagination',
 			'is_checked' => TMM_Content_Composer::set_default_value('infinity_pagination', 0),
-			'description' => __('Lazy Loading', TMM_CC_TEXTDOMAIN)
+			'description' => __('Lazy Loading', 'tmm_content_composer')
 		));
 		?>
 
@@ -285,11 +285,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Use as Post Carousel', TMM_CC_TEXTDOMAIN),
+			'title' => __('Use as Post Carousel', 'tmm_content_composer'),
 			'shortcode_field' => 'post_carousel',
 			'id' => 'post_carousel',
 			'is_checked' => TMM_Content_Composer::set_default_value('post_carousel', 0),
-			'description' => __('Use as Post Carousel', TMM_CC_TEXTDOMAIN)
+			'description' => __('Use as Post Carousel', 'tmm_content_composer')
 		));
 		?>
 	</div>
@@ -298,7 +298,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Load Posts By Scrolling', TMM_CC_TEXTDOMAIN),
+			'title' => __('Load Posts By Scrolling', 'tmm_content_composer'),
 			'shortcode_field' => 'load_by_scrolling',
 			'id' => 'load_by_scrolling',
 			'is_checked' => TMM_Content_Composer::set_default_value('load_by_scrolling', true),

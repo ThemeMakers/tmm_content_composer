@@ -5,7 +5,7 @@
             <?php
             TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Slider type', TMM_CC_TEXTDOMAIN),
+			'title' => __('Slider type', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'id' => 'shortcode_slogan_slider_type',
 			'options' => array('textslide' => 'TextSlide', 'owlcarousel' => 'OwlCarousel'),
@@ -17,7 +17,7 @@
     
 	<div class="fullwidth">
         <br />
-		<a class="button button-secondary js_add_text_slider_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_text_slider_item" href="#"><?php _e('Add item', 'tmm_content_composer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 
@@ -41,7 +41,7 @@
 			?>
 			<?php  foreach ($h1_edit_data as $key => $h1){ ?>
 				<li class="list_item">
-                                        <a class="button button-secondary js_delete_text_slider_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
+                                        <a class="button button-secondary js_delete_text_slider_item js_shortcode_template_changer" href="#"><?php _e('Remove', 'tmm_content_composer'); ?></a>
 					<table class="list-table">
 						<tr>
 							<td style="width:22%">
@@ -49,7 +49,7 @@
                                 <?php
                                 TMM_Content_Composer::html_option(array(
                                             'type' => 'text',
-                                            'title' => __('Title Text 1', TMM_CC_TEXTDOMAIN),
+                                            'title' => __('Title Text 1', 'tmm_content_composer'),
                                             'shortcode_field' => '',
                                             'id' => '',
                                             'default_value' => (isset($h1_edit_data[$key])) ? $h1_edit_data[$key] : '',                                                                            
@@ -63,7 +63,7 @@
                                     <?php
                                     TMM_Content_Composer::html_option(array(
                                                     'type' => 'select',
-                                                    'title' => __('Type', TMM_CC_TEXTDOMAIN),
+                                                    'title' => __('Type', 'tmm_content_composer'),
                                                     'shortcode_field' => '',
                                                     'options' => array(
                                                             'h1' => 'H1',
@@ -84,7 +84,7 @@
                                     <?php
                                     TMM_Content_Composer::html_option(array(
                                                     'type' => 'select',
-                                                    'title' => __('Fade in effect', TMM_CC_TEXTDOMAIN),
+                                                    'title' => __('Fade in effect', 'tmm_content_composer'),
                                                     'shortcode_field' => '',
                                                     'options' => array(
                                                             'bounce' => 'Bounce',
@@ -117,7 +117,7 @@
                                     <?php
                                     TMM_Content_Composer::html_option(array(
                                                     'type' => 'select',
-                                                    'title' => __('Fade out effect', TMM_CC_TEXTDOMAIN),
+                                                    'title' => __('Fade out effect', 'tmm_content_composer'),
                                                     'shortcode_field' => '',
                                                     'options' => array(                                                                                    
                                                             'swing' => 'Swing',
@@ -149,7 +149,7 @@
                                     <?php
                                     TMM_Content_Composer::html_option(array(
                                                     'type' => 'color',
-                                                    'title' => __('Color', TMM_CC_TEXTDOMAIN),
+                                                    'title' => __('Color', 'tmm_content_composer'),
                                                     'shortcode_field' => '',
                                                     'display' => 1,
                                                     'id' => '',
@@ -165,7 +165,7 @@
                                 <?php
                                 TMM_Content_Composer::html_option(array(
                                             'type' => 'textarea',
-                                            'title' => __('Title Text 2', TMM_CC_TEXTDOMAIN),
+                                            'title' => __('Title Text 2', 'tmm_content_composer'),
                                             'shortcode_field' => 'content',
                                             'id' => '',
                                             'default_value' =>  (isset($h2_edit_data[$key])) ? $h2_edit_data[$key] : '',                                                                            
@@ -178,7 +178,7 @@
                                 <?php
                                 TMM_Content_Composer::html_option(array(
                                                 'type' => 'select',
-                                                'title' => __('Type', TMM_CC_TEXTDOMAIN),
+                                                'title' => __('Type', 'tmm_content_composer'),
                                                 'shortcode_field' => '',
                                                 'options' => array(
                                                         'h1' => 'H1',
@@ -199,7 +199,7 @@
                                 <?php
                                 TMM_Content_Composer::html_option(array(
                                                 'type' => 'select',
-                                                'title' => __('Fade in effect', TMM_CC_TEXTDOMAIN),
+                                                'title' => __('Fade in effect', 'tmm_content_composer'),
                                                 'shortcode_field' => '',
                                                 'options' => array(                                                                                    
                                                         'swing' => 'Swing',
@@ -231,7 +231,7 @@
                                 <?php
                                 TMM_Content_Composer::html_option(array(
                                                 'type' => 'select',
-                                                'title' => __('Fade out effect', TMM_CC_TEXTDOMAIN),
+                                                'title' => __('Fade out effect', 'tmm_content_composer'),
                                                 'shortcode_field' => '',
                                                 'options' => array(
                                                         'bounce' => 'Bounce',
@@ -264,7 +264,7 @@
                                 <?php
                                 TMM_Content_Composer::html_option(array(
                                                 'type' => 'color',
-                                                'title' => __('Color', TMM_CC_TEXTDOMAIN),
+                                                'title' => __('Color', 'tmm_content_composer'),
                                                 'shortcode_field' => '',
                                                 'display' => 1,
                                                 'id' => '',
@@ -280,7 +280,7 @@
                         <?php } ?>
 
 		</ul>
-		<a class="button button-secondary js_add_text_slider_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_text_slider_item" href="#"><?php _e('Add item', 'tmm_content_composer'); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

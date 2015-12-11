@@ -5,12 +5,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Select Type', TMM_CC_TEXTDOMAIN),
+			'title' => __('Select Type', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'options' => array(
-				'separator' => __('Line', TMM_CC_TEXTDOMAIN),
-				'divider' => __('Dashed', TMM_CC_TEXTDOMAIN),
+				'separator' => __('Line', 'tmm_content_composer'),
+				'divider' => __('Dashed', 'tmm_content_composer'),
 				'double-divider' => __('Double Divider', 'tmm_shortcodes'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('content', 'separator'),

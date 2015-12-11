@@ -97,10 +97,10 @@ $image_size = "1036*576";
 			$cover = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, '') : '';
 			if (!empty($cover)) {
 				?>
-				<img src="<?php echo TMM_Content_Composer::resize_image_cover($cover, $image_size); ?>" alt="<?php _e('Unsupported video format', TMM_CC_TEXTDOMAIN) ?>" />
+				<img src="<?php echo TMM_Content_Composer::resize_image_cover($cover, $image_size); ?>" alt="<?php _e('Unsupported video format', 'tmm_content_composer') ?>" />
 			<?php
 			}else{
-				_e('Unsupported video format', TMM_CC_TEXTDOMAIN);
+				_e('Unsupported video format', 'tmm_content_composer');
 			}
 			break;
 	}

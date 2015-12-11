@@ -78,7 +78,7 @@ if (!empty($contact_form['inputs'])) {
                         $select_options = explode(",", $input['options']);
                         ?>
                         <p class="input-block sel">
-                            <label for="url_<?php echo esc_attr($unique_id) ?>"><?php echo esc_html($input['label']) ?><?php echo($input['is_required'] ? ': <span class="required">(' . __('required', TMM_CC_TEXTDOMAIN) . ')</span>' : '') ?></label>
+                            <label for="url_<?php echo esc_attr($unique_id) ?>"><?php echo esc_html($input['label']) ?><?php echo($input['is_required'] ? ': <span class="required">(' . __('required', 'tmm_content_composer') . ')</span>' : '') ?></label>
                             <select id="url_<?php echo esc_attr($unique_id) ?>" name="<?php echo esc_attr($name) ?>">
                                 <?php if (!empty($select_options)): ?>
                                     <?php foreach ($select_options as $value) : ?>
