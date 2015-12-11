@@ -137,11 +137,14 @@ $infinity_class = '';
 $data_next_posts = '';
 $data_effect = '';
 $data_layout = '';
+$data_id = '';
 
 if (isset($infinity_pagination) && $infinity_pagination && $blog_type!='masonry'){
 
+    $id = uniqid();
+
     $data_infinity  = 'data-infinity="true"';
-    $infinity_class = 'infinity';
+    $infinity_class = 'infinity infinity_'.$id;
 
     $args['posts_per_page'] = '-1';
     $all_wp_query = new WP_Query($args);
@@ -166,6 +169,8 @@ if (isset($infinity_pagination) && $infinity_pagination && $blog_type!='masonry'
 
     $data_layout = 'data-layout="' . $blog_type . '"';
 
+    $data_id = 'data-id="'.$id.'"';
+
 }
 
 $_REQUEST['title_symbols'] = $title_symbols;
@@ -178,7 +183,8 @@ $_REQUEST['title_symbols'] = $title_symbols;
         <?php if(!empty($data_infinity)) echo $data_infinity; ?>
         <?php if(!empty($data_next_posts)) echo $data_next_posts; ?>
         <?php if(!empty($data_effect)) echo $data_effect; ?>
-        <?php if(!empty($data_layout)) echo $data_layout; ?>>
+        <?php if(!empty($data_layout)) echo $data_layout; ?>
+        <?php if(!empty($data_id)) echo $data_id; ?>>
         
         <?php 
         if ($blog_type!='masonry'){           
