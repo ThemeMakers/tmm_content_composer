@@ -138,7 +138,7 @@ $data_next_posts = '';
 $data_effect = '';
 $data_layout = '';
 
-if (isset($infinity_pagination) && $infinity_pagination ){
+if (isset($infinity_pagination) && $infinity_pagination && $blog_type!='masonry'){
 
     $data_infinity  = 'data-infinity="true"';
     $infinity_class = 'infinity';

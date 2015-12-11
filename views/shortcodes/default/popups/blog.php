@@ -26,7 +26,7 @@
 				'none' => __('None', TMM_CC_TEXTDOMAIN),
 				'elementFade' => __('Element Fade', TMM_CC_TEXTDOMAIN),
 				'opacity' => __('Opacity', TMM_CC_TEXTDOMAIN),
-				'opacity2xRun' => __('Opacity 2x Run', TMM_CC_TEXTDOMAIN),
+				'opacity2x' => __('Opacity 2x Run', TMM_CC_TEXTDOMAIN),
 				'scale' => __('Scale', TMM_CC_TEXTDOMAIN),
 				'slideRight' => __('Slide Right', TMM_CC_TEXTDOMAIN),
 				'slideLeft' => __('Slide Left', TMM_CC_TEXTDOMAIN),
