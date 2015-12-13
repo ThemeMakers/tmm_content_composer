@@ -118,7 +118,7 @@ class TMM_Content_Composer {
 		wp_deregister_style('wp-mediaelement');
 
 
-		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
+		//wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
 
 		if (!class_exists('TMM')) {
 
