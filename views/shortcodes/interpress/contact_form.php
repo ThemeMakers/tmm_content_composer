@@ -123,7 +123,7 @@ if (!empty($contact_form['inputs'])) {
 
                 <?php } ?>
                 <p>
-                    <button class="button submit <?php echo $contact_form['submit_button'] ?>" type="submit"><?php echo ($contact_form['submit_button_text']) ? $contact_form['submit_button_text'] : '<i class="icon-paper-plane-2"></i>'?></button>
+                    <button class="button submit<?php echo !empty($contact_form['submit_button']) ? ' ' . $contact_form['submit_button'] : '' ?>" type="submit"><?php echo ($contact_form['submit_button_text']) ? $contact_form['submit_button_text'] : '<i class="icon-paper-plane-2"></i>'?></button>
                 </p>
 		<div class="contact_form_responce" style="display: none;"><ul></ul></div>
 	</form>
