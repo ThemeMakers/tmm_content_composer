@@ -1,5 +1,5 @@
 <?php
-wp_enqueue_script("tmm_shortcode_google_api_js", 'https://maps.googleapis.com/maps/api/js?sensor=false');
+wp_enqueue_script("tmm_shortcode_google_api_js", 'https://maps.googleapis.com/maps/api/js');
 
 
 $inique_id = uniqid();
@@ -11,7 +11,7 @@ if (!isset($mode)) {
 
 if (isset($location_mode) && $location_mode == 'address') {
 	$address = str_replace(' ', '+', $address);
-	$geocode = @file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
+	$geocode = @file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $address);
 	if($geocode){
 		$output = json_decode($geocode);
 		if (isset($output->status) && $output->status != 'OVER_QUERY_LIMIT') {
@@ -50,7 +50,7 @@ if (isset($latitude) && $latitude !== '' && isset($longitude) && $longitude !== 
 		$location_mode_string = 'center=' . $latitude . ',' . $longitude;
 		?>
 
-		<img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false">
+		<img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>">
 
 	<?php
 	}
