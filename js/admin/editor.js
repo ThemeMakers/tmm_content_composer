@@ -154,7 +154,7 @@
 	                        cur_popup.find('.tmm_button_upload_video').on('click', function() {
 		                        var input_object = jQuery(this).prev('input, textarea'),
 			                        frame = wp.media({
-				                        title: wp.media.view.l10n.chooseImage,
+				                        title: wp.media.view.l10n.addMedia,
 				                        multiple: false,
 				                        library: { type: 'video' }
 			                        });
