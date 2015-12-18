@@ -1,3 +1,254 @@
+// Image
+$io-1											: 1px;
+$io-3											: 3px;
+$io-5											: 5px;
+$io-10											: 10px;
+
+$oo-5											: 5px;
+$oo-10											: 10px;
+$oo-15											: 15px;
+$oo-20											: 20px;
+$brd-color-light-grey							: #e5e7e8;
+$brd-color-grey									: #7e858b;
+$brd-color-white								: #ffffff;
+$brd-color-grey-transparent						: rgba(126,133,139,0.7);
+$brd-color-white-transparent					: rgba(255,255,255,0.9);
+
+$caption-default-font-family					: 'Open Sans';
+$caption-default-font-size						: 12px;
+$caption-default-font-style						: normal;
+$caption-default-font-color						: #7e858b;
+$caption-default-bg-color						: #ffffff;
+$caption-default-offset							: 3px 10px;
+
+$caption-style-1-font-family					: 'Open Sans';
+$caption-style-1-font-size						: 12px;
+$caption-style-1-font-style						: normal;
+$caption-style-1-font-color						: #000000;
+$caption-style-1-bg-color						: rgba(255,255,255,0.7);
+$caption-style-1-offset							: 3px 10px;
+
+$caption-style-2-font-family					: 'Open Sans';
+$caption-style-2-font-size						: 12px;
+$caption-style-2-font-style						: normal;
+$caption-style-2-font-color						: #ffffff;
+$caption-style-2-bg-color						: rgba(0,0,0,0.5);
+$caption-style-2-offset							: 3px 10px;
+
+/* -------------------------------------------------- */
+/*	Image
+/* -------------------------------------------------- */
+
+.lc-image {
+	overflow: hidden;
+	display: inline-block;
+	position: relative;
+
+	//	Inner offsets
+	&.io-1 {
+		padding: $io-1;
+
+		figcaption {
+			&.static { right: $io-1; bottom: $io-1; left: $io-1; }
+			&.animated { right: $io-1; left: $io-1; }
+		}
+
+		&:hover {
+			figcaption.animated { bottom: $io-1; }
+		}
+	}
+	&.io-3 {
+		padding: $io-3;
+
+		figcaption {
+			&.static { right: $io-3; bottom: $io-3; left: $io-3; }
+			&.animated { right: $io-3; left: $io-3; }
+		}
+
+		&:hover {
+			figcaption.animated { bottom: $io-3; }
+		}
+	}
+	&.io-5 {
+		padding: $io-5;
+
+		figcaption {
+			&.static { right: $io-5; bottom: $io-5; left: $io-5; }
+			&.animated { right: $io-5; left: $io-5; }
+		}
+
+		&:hover {
+			figcaption.animated { bottom: $io-5; }
+		}
+	}
+	&.io-10 {
+		padding: $io-10;
+
+		figcaption {
+			&.static { right: $io-10; bottom: $io-10; left: $io-10; }
+			&.animated { right: $io-10; left: $io-10; }
+		}
+
+		&:hover {
+			figcaption.animated { bottom: $io-10; }
+		}
+	}
+
+	//	Outer offsets
+	&.oo-t-5 { margin-top: $oo-5; }
+	&.oo-t-10 { margin-top: $oo-10; }
+	&.oo-t-15 { margin-top: $oo-15; }
+	&.oo-t-20 { margin-top: $oo-20; }
+
+	&.oo-r-5 { margin-right: $oo-5; }
+	&.oo-r-10 { margin-right: $oo-10; }
+	&.oo-r-15 { margin-right: $oo-15; }
+	&.oo-r-20 { margin-right: $oo-20; }
+
+	&.oo-b-5 { margin-bottom: $oo-5; }
+	&.oo-b-10 { margin-bottom: $oo-10; }
+	&.oo-b-15 { margin-bottom: $oo-15; }
+	&.oo-b-20 { margin-bottom: $oo-20; }
+
+	&.oo-l-5 { margin-left: $oo-5; }
+	&.oo-l-10 { margin-left: $oo-10; }
+	&.oo-l-15 { margin-left: $oo-15; }
+	&.oo-l-20 { margin-left: $oo-20; }
+
+	// Border style
+	&.brd-solid { border-style: solid; }
+	&.brd-dashed { border-style: dashed; }
+	&.brd-dotted { border-style: dotted; }
+
+	// Border width
+	&.brd-w-0 { border-width: 0; }
+	&.brd-w-1 { border-width: 1px; }
+	&.brd-w-2 { border-width: 2px; }
+
+	// Border color
+	&.brd-light-grey { border-color: $brd-color-light-grey; }
+	&.brd-grey { border-color: $brd-color-grey; }
+	&.brd-white { border-color: $brd-color-white; }
+	&.brd-white-transparent { border-color: $brd-color-white-transparent; }
+	&.brd-grey-transparent { border-color: $brd-color-grey-transparent; }
+
+	// Align Left
+	&.alignleft {
+		float: left;
+		margin-right: 20px;
+	}
+
+	// Align Right
+	&.alignright {
+		float: right;
+		margin-left: 20px;
+	}
+
+	// Align Center
+	&.aligncenter {
+		min-width: 100px;
+		max-width: 350px;
+		width: 100%;
+		display: block;
+		margin: 0 auto;
+	}
+
+	// Caption text style
+	figcaption {
+		max-width: 350px; // TODO: for each image size make appropriate max-width
+		font-family: $caption-default-font-family;
+		font-size: $caption-default-font-size;
+		font-style: $caption-default-font-style;
+		color: $caption-default-font-color;
+		background-color: $caption-default-bg-color;
+		padding: $caption-default-offset;
+		position: relative;
+		z-index: 99;
+
+		&.static {
+			position: absolute;
+			right: 0; bottom: 0; left: 0;
+		}
+
+		&.animated {
+			position: absolute;
+			right: 0; bottom: -100%; left: 0;
+			@include transition(bottom 0.35s ease-in-out);
+		}
+
+		&.style-1 {
+			font-family: $caption-style-1-font-family;
+			font-size: $caption-style-1-font-size;
+			font-style: $caption-style-1-font-style;
+			color: $caption-style-1-font-color;
+			background-color: $caption-style-1-bg-color;
+			padding: $caption-style-1-offset;
+		}
+
+		&.style-2 {
+			font-family: $caption-style-2-font-family;
+			font-size: $caption-style-2-font-size;
+			font-style: $caption-style-2-font-style;
+			color: $caption-style-2-font-color;
+			background-color: $caption-style-2-bg-color;
+			padding: $caption-style-2-offset;
+		}
+	}
+
+	img {
+		display: block;
+		@include transition(all .35s ease-in-out);
+	}
+
+	// Hover effects
+	// default (no effect)
+	&:hover {
+		figcaption.animated { bottom: 0; }
+	}
+	// opacity
+	&.opacity {
+		&:hover {
+			img { @include opacity(0.8); }
+		}
+	}
+	// grayscale
+	&.grayscale {
+		&:hover {
+			img { @include filter(grayscale(1)); }
+		}
+	}
+	// sepia
+	&.sepia {
+		&:hover {
+			img { @include filter(sepia(1)); }
+		}
+	}
+	// saturate
+	&.saturate {
+		&:hover {
+			img { @include filter(saturate(8)); }
+		}
+	}
+	// brightness
+	&.brightness {
+		&:hover {
+			img { @include filter(brightness(3)); }
+		}
+	}
+	// contrast
+	&.contrast {
+		&:hover {
+			img { @include filter(contrast(4)); }
+		}
+	}
+	// blur
+	&.blur {
+		&:hover {
+			img { @include filter(blur(2px)); }
+		}
+	}
+}
+
 /* -------------------------------------------------- */
 /*	 Accordion and Toggle
 /* -------------------------------------------------- */
