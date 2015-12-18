@@ -204,6 +204,74 @@ class TMM_Content_Composer {
 		return $buttons;
 	}
 
+	public static function get_theme_image_sizes()
+	{
+		$data = array();
+
+		$data['100*80'] = array();
+		$data['100*80']['name'] = '100*80';
+		$data['100*80']['width'] = 100;
+		$data['100*80']['height'] = 80;
+		$data['100*80']['crop'] = true;
+
+		$data['125*125'] = array();
+		$data['125*125']['name'] = '125*125';
+		$data['125*125']['width'] = 125;
+		$data['125*125']['height'] = 125;
+		$data['125*125']['crop'] = true;
+
+		$data['146*88'] = array();
+		$data['146*88']['name'] = '146*88';
+		$data['146*88']['width'] = 146;
+		$data['146*88']['height'] = 88;
+		$data['146*88']['crop'] = true;
+
+		$data['318*244'] = array();
+		$data['318*244']['name'] = '318*244';
+		$data['318*244']['width'] = 318;
+		$data['318*244']['height'] = 244;
+		$data['318*244']['crop'] = true;
+
+		$data['350*215'] = array();
+		$data['350*215']['name'] = '350*215';
+		$data['350*215']['width'] = 350;
+		$data['350*215']['height'] = 215;
+		$data['350*215']['crop'] = true;
+
+		$data['475*356'] = array();
+		$data['475*356']['name'] = '475*356';
+		$data['475*356']['width'] = 475;
+		$data['475*356']['height'] = 356;
+		$data['475*356']['crop'] = true;
+
+		$data['641*448'] = array();
+		$data['641*448']['name'] = '641*448';
+		$data['641*448']['width'] = 641;
+		$data['641*448']['height'] = 448;
+		$data['641*448']['crop'] = true;
+
+		$data['730*90'] = array();
+		$data['730*90']['name'] = '730*90';
+		$data['730*90']['width'] = 730;
+		$data['730*90']['height'] = 90;
+		$data['730*90']['crop'] = true;
+
+		$data['741*448'] = array();
+		$data['741*448']['name'] = '741*448';
+		$data['741*448']['width'] = 741;
+		$data['741*448']['height'] = 448;
+		$data['741*448']['crop'] = true;
+
+		$data['1130*600'] = array();
+		$data['1130*600']['name'] = '1130*600';
+		$data['1130*600']['width'] = 1130;
+		$data['1130*600']['height'] = 600;
+		$data['1130*600']['crop'] = true;
+
+
+		return $data;
+	}
+
 	public static function get_theme_buttons_sizes() {
 		if (class_exists('TMM_OptionsHelper')) {
 			$button_sizes = TMM_OptionsHelper::get_theme_buttons_sizes();
@@ -215,6 +283,37 @@ class TMM_Content_Composer {
 			);
 		}
 		return $button_sizes;
+	}
+
+	public static function get_theme_image_sizes_aliases($min_width = 0, $max_width = 0){
+
+		$sizes = self::get_theme_image_sizes();
+		$result = array();
+
+		foreach ($sizes as $key => $value) {
+
+			//filter alias with small sizes
+			if ($min_width > 0) {
+				if ($value['width'] < $min_width) {
+					continue;
+				}
+			}
+
+			//filter alias with big sizes
+			if ($max_width > 0) {
+				if ($value['width'] > $max_width) {
+					continue;
+				}
+			}
+
+			$result[$key] = $value['name'];
+		}
+
+		//***
+		$result = array('' => __('Full size', 'tmm_content_composer')) + $result;
+
+		return $result;
+
 	}
 
 	public static function get_post_categories() {

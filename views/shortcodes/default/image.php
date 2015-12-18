@@ -2,67 +2,78 @@
 <?php
 
 $image_url = $content;
-$effect = "";
+$css_class = "";
+$css_caption_class = "";
 $styles = "";
 $html = "";
-$classAnim = "";
-$classAbs = "";
+$figcaption = "";
+$img_caption = "";
 
-	// Align 
-	if (!empty($translate_x)) {
-		$styles .= "left: " . (int) $translate_x . "%;";
-	}
+// Styles
+if (!empty($styles)) {
+    $styles = ' style="' . $styles . '"';
+}
 
-	// Delay
-	if (!empty($delay)) {
-		$styles .= "-webkit-transition-delay: " . $delay . "s;";
-		$styles .= "transition-delay: " . $delay . "s;";
-	}
-	
-	// Duration
-	if (!empty($duration)) {
-		$styles .= "-webkit-transition-duration: " . $duration . "s;";
-		$styles .= "transition-duration: " . $duration . "s;";
-	}
-	
-	// Margins
-	if (!empty($margin_left))   { $styles .= 'margin-left: ' . (int) $margin_left . 'px; '; }
-	if (!empty($margin_right))  { $styles .= 'margin-right: ' . (int) $margin_right . 'px; '; }
-	if (!empty($margin_top))    { $styles .= 'margin-top: ' . (int) $margin_top . 'px; '; }
-	if (!empty($margin_bottom)) { $styles .= 'margin-bottom: ' . (int) $margin_bottom . 'px; '; }
-			
-	// Styles
-	if (!empty($styles)) {
-		$styles = 'style="' . $styles . '"';
-	}       
-        if ($parallax && $action == "none"){
-            $html.='<section class="section padding-off parallax parallax-bg-2 bg-black-color">';
-            $html.='<div class="full-bg-image" style="background-image:url('. esc_url($image_url) .')"></div>';
-            $html.='<div id="fullscreen" class="full-screen"></div>';
-        }
-        
-        if ($action != "none" || ($action == "none" && !$parallax)){
-            // Link Start
-            if ($action == "link") {
-                    $html.= '<a title="' . esc_attr($link_title) . '" class="link-icon slide-image active-link '. esc_attr($align) .'" href="' . esc_url($image_action_link) . '" target="' . esc_attr($target) . '">';
-            }
-            
-            if ($action=='lightbox'){
+// Align
+if (!empty($align))         { $css_class .= ' ' . $align; }
 
-                $html.= '<a title="' . esc_attr($image_alt) . '" class="slide-image image-link active-link plus-icon '. esc_attr($align) .'" href="' . esc_url($image_url) . '">';
-            }
+// Inner offset
+if (!empty($inner_offset))  { $css_class .= ' ' . $inner_offset; }
 
-            $src = TMM_Content_Composer::resize_image($image_url, $image_size_alias);
-            $html.= '<img class="' . esc_attr($classAbs) . esc_attr($classAnim) . esc_attr($effect) . esc_attr($align) . '" alt="' . esc_attr($image_alt) . '" '. $styles .' src="' . esc_url($src) . '" />';
+// Outer offsets
+if (!empty($margin_top))    { $css_class .= ' ' . $margin_top; }
+if (!empty($margin_right))  { $css_class .= ' ' . $margin_right; }
+if (!empty($margin_bottom)) { $css_class .= ' ' . $margin_bottom; }
+if (!empty($margin_left))   { $css_class .= ' ' . $margin_left; }
 
-            // Link End
-            if ($action == "link" || $action == "lightbox") { 
-                $html .= '</a>';
-            }
-        }
-        
-        if ($parallax && $action == "none"){
-            $html.='</section>';
-        }
+// Border style
+if (!empty($brd_style))     { $css_class .= ' ' . $brd_style; }
+
+// Border width
+if (!empty($brd_width))     { $css_class .= ' ' . $brd_width; }
+
+// Border color
+if (!empty($brd_color))     { $css_class .= ' ' . $brd_color; }
+
+// Hover effects
+if (!empty($hover_effect))  { $css_class .= ' ' . $hover_effect; }
+
+// Caption Type
+if (!empty($caption_type))  { $css_caption_class .= $caption_type; }
+
+// Caption Style
+if (!empty($caption_style))  { $css_caption_class .= ' ' . $caption_style; }
+
+// Caption Classes
+if (!empty($css_caption_class)) {
+    $css_caption_class = ' class="' . $css_caption_class . '"';
+}
+
+// Caption
+if (!empty($img_caption)) {
+    $figcaption .= '<figcaption' . $css_caption_class . '>' . $img_caption . '</figcaption>';
+}
+
+$src = TMM_Helper::resize_image($image_url, $image_size_alias);
+
+// Fancybox
+if ($lightbox) {
+    tmm_enqueue_script('magnific');
+    tmm_enqueue_style('magnific');
+    $target_url = TMM_Helper::resize_image($image_url, '');
+    $link_class = 'image-link plus-icon';
+} else {
+    $link_class = 'link-icon';
+}
+
+if ($action == "link") {
+    $html.= '<a title="' . $img_caption . '" class="single-image ' . $link_class . '" href="' . $target_url . '" target="' . $target . '">';
+}
+
+$html.= '<figure class="lc-image' . $css_class . '"><img alt="' . $image_alt . '" src="' . $src . '" />' . $figcaption . '</figure>';
+
+if ($action == "link") {
+    $html .= '</a>';
+}
 
 echo $html;
