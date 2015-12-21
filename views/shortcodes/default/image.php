@@ -1,13 +1,11 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
-
 $image_url = $content;
 $css_class = "";
 $css_caption_class = "";
 $styles = "";
 $html = "";
 $figcaption = "";
-$img_caption = "";
 
 // Styles
 if (!empty($styles)) {

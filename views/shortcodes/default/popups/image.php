@@ -125,17 +125,19 @@
 				?>
 			</div>
 			<div class="one-half">
+
 				<?php
+
 				TMM_Content_Composer::html_option(array(
-					'type' => 'select',
-					'title' => __('Size', 'tmm_content_composer'),
+					'type' => 'text',
+					'title' => __('Size', TMM_CC_TEXTDOMAIN),
 					'shortcode_field' => 'image_size_alias',
 					'id' => 'image_size_alias',
-					'options' => TMM_Content_Composer::get_theme_image_sizes_aliases(),
 					'default_value' => TMM_Content_Composer::set_default_value('image_size_alias', ''),
-					'description' => ''
+					'description' => __('width*height. Fore example: 500*300. Empty field means full size', TMM_CC_TEXTDOMAIN),
 				));
 				?>
+
 			</div>
 		</div>
 
