@@ -119,8 +119,9 @@
                     mode: mode,
                     shortcode_text: text
                 };
-                $.post(ajaxurl, data, function(html) {
 
+
+                $.post(ajaxurl, data, function(html) {
 
                     var popup_params = {
                         content: html,
@@ -133,9 +134,9 @@
 	                        cur_popup.find('.tmm_button_upload').on('click', function() {
 		                        var input_object = jQuery(this).prev('input, textarea'),
 			                        frame = wp.media({
-				                        title: wp.media.view.l10n.addMedia,
+				                        title: wp.media.view.l10n.chooseImage,
 				                        multiple: false,
-				                        library: { type: 'image,audio' }
+				                        library: { type: 'image, audio' }
 			                        });
 
 		                        frame.on( 'select', function() {
@@ -154,9 +155,9 @@
 	                        cur_popup.find('.tmm_button_upload_video').on('click', function() {
 		                        var input_object = jQuery(this).prev('input, textarea'),
 			                        frame = wp.media({
-				                        title: wp.media.view.l10n.chooseImage,
+				                        title: wp.media.view.l10n.addMedia,
 				                        multiple: false,
-				                        library: { type: 'video' }
+				                        library: { type: 'video, audio' }
 			                        });
 
 		                        frame.on( 'select', function() {
@@ -183,8 +184,13 @@
                         save: function() {
                             var shortcode = tmm_ext_shortcodes.get_html_from_buffer();
 
+                            // [column_post] fix
+                            if(shortcode.indexOf('column_post') + 1) {
+                                shortcode = shortcode.replace(/column_post/g ,"featured_post");
+                            }
+
                             if (mode == 'edit') {                                                                       
-                                shortcode = self.toHTML(shortcode);                                                
+                                shortcode = self.toHTML(shortcode);
                                 tinyMCE.activeEditor.selection.setContent(shortcode);
 	                            tmm_info_popup_show(tmm_lang['shortcode_updated'], true);
                             } else {
@@ -229,6 +235,7 @@
             },
 
             cache: function(key, val) {
+                console.log(key, val);
                 if (key && !val)
                     return self.sc_info[key] || null;
                 if (key && val) {
@@ -238,7 +245,6 @@
                 return false;
             },
             toText: function(str) {
-
                 return str.replace(/<img [^>]*\bclass="[^"]*shortcode-placeholder\b[^"]* scid-([^\s"]+)[^>]+>/g, function(a, id) {
                     return self.cache(id);
                 });
@@ -259,19 +265,122 @@
                 return props;
             },
             toHTML: function(str) {
-                return str.replace(tmm_shortcodes_items_keys,
-                        function(str, tag, properties, rawconts, conts) {
-                            var props = self.parseProperties(properties);
-                            if (props.sc_id === undefined) {
-                                props.sc_id = self.getId();
-                                properties += ' sc_id="' + props.sc_id + '"';
-                            }
-                            self.cache(props.sc_id, '[' + tag + ' ' + properties + (conts ? ']' + conts + '[/' + tag + ']' : ']'));
-                            var _properties = properties.replace(/ sc_id="[^"]+"/, '').replace(/="([^"]+)"/g, ': $1;');
-                            var shortcode_icon_url = self.get_shortcode_icon_url(tag);
-                            return '<img src="' + shortcode_icon_url + '" data-mce-placeholder="true" data-tag="' + tag + '" data-scid="' + props.sc_id + '" class="shortcode-placeholder mceItem scid-' + props.sc_id + '" title="' + tag.toUpperCase() + ' ' + _properties + '" />';
 
-                        });
+                // [column_post] fix (replace it by [featured_post])
+                if(str.indexOf('column_post') + 1) {
+                    str = str.replace(/column_post/g ,"featured_post");
+                }
+
+                /**
+                * --------------  Implementation of nested shortcodes -------------
+                */
+                // Regexp for shortcode "Any tags in square brackets"
+                var shortcodePattern = /[\/?[\w\s="/.':;#-\/]+]/gi;
+                var opening = null,
+                    counter = 0,
+                    index = 0,
+                    //toOutput = [],
+                    toOutput = '',
+                    childShortcodes = [];
+
+                var shortcodesArray = str.match(shortcodePattern);
+                if (null !== shortcodesArray && 2 < shortcodesArray.length) {
+                    shortcodesArray.forEach(function (item, i, arr) {
+                        // Regexp for shortcode "Name of opening tag"
+                        var openingTagContent = item.match(/\[([^\/]\S\w+.*?)/i);
+                        if (null != openingTagContent) {
+                            openingTagContent = Array.prototype.slice.call(openingTagContent);
+
+                            if (0 == i || counter == i) {
+                                opening = openingTagContent[1];
+                                //toOutput[index] = '';
+                                //toOutput[index] += item;
+                                toOutput += item;
+                            }else {
+                                childShortcodes[index] = '';
+                                childShortcodes[index] += item;
+                            }
+                        }
+
+                        // Regexp for shortcodes "Name of closing tag"
+                        var closingTagContent = item.match(/\[\/(\w+)]/i);
+                        if (null != closingTagContent) {
+                            closingTagContent = Array.prototype.slice.call(closingTagContent);
+                            if (opening == closingTagContent[1]) {
+                                //toOutput[index] += item;
+                                toOutput += item;
+                                counter = (i + 1);
+                                index += 1;
+                            }else {
+                                childShortcodes[index] += item;
+                            }
+                        }
+                    });
+                    //console.log(toOutput);
+                    //console.log(childShortcodes[3]);
+                }
+                /**
+                * -------------------------------------------------------------------
+                */
+
+                //var cacheKeys = [], cacheBuffer = [];
+                //var cacheOutput;
+                str.replace(tmm_shortcodes_items_keys,
+                    function (str, tag, properties, rawconts, conts) {
+                        var props = self.parseProperties(properties);
+
+                        if (props.sc_id === undefined) {
+                            props.sc_id = self.getId();
+                            properties += ' sc_id="' + props.sc_id + '"';
+                        }
+
+                        //cacheKeys.push(props.sc_id);
+                        //cacheBuffer.push( '[' + tag + ' ' + properties + (conts ? ']' + conts + '[/' + tag + ']' : ']') );
+
+                        //self.cache(props.sc_id, '[' + tag + ' ' + properties + (conts ? ']' + conts + '[/' + tag + ']' : ']'));
+                        var _properties = properties.replace(/ sc_id="[^"]+"/, '').replace(/="([^"]+)"/g, ': $1;');
+                        var shortcode_icon_url = self.get_shortcode_icon_url(tag);
+
+                        return '<img src="' + shortcode_icon_url + '" data-mce-placeholder="true" data-tag="' + tag + '" ' +
+                            'data-scid="' + props.sc_id + '" class="shortcode-placeholder mceItem scid-'
+                            + props.sc_id + '" title="' + tag.toUpperCase() + ' ' + _properties + '" />';
+
+                });
+
+                var parentIndex = 0;
+                var htmlOutput = toOutput.replace(tmm_shortcodes_items_keys,
+                    function(toOutput, tag, properties, rawconts, conts) {
+                        var props = self.parseProperties(properties);
+
+                        if (props.sc_id === undefined) {
+                            props.sc_id = self.getId();
+                            properties += ' sc_id="' + props.sc_id + '"';
+                        }
+
+                        //self.cache(props.sc_id, '[' + tag + ' ' + properties + (conts ? ']' + conts + '[/' + tag + ']' : ']'));
+                        var _properties = properties.replace(/ sc_id="[^"]+"/, '').replace(/="([^"]+)"/g, ': $1;');
+                        var shortcode_icon_url = self.get_shortcode_icon_url(tag);
+                        var children = '';
+                        if ('undefined' != typeof childShortcodes[parentIndex]) {
+                            children = childShortcodes[parentIndex];
+                            parentIndex += 1;
+                        }
+
+
+
+                        return '<img src="' + shortcode_icon_url + '" data-mce-placeholder="true" data-tag="' + tag + '" ' +
+                            'data-scid="' + props.sc_id + '" class="shortcode-placeholder mceItem scid-'
+                            + props.sc_id + '" title="' + tag.toUpperCase() + ' ' + _properties + '"  content="'+ children +'"/>';
+                });
+
+                /*cacheKeys.forEach(function (item, i, arr) {
+                    console.log(arr[i], cacheBuffer[i]);
+                    self.cache(item, cacheBuffer[i]);
+                });*/
+
+                console.log(htmlOutput);
+                return htmlOutput;
+
             },
             get_shortcode_icon_url: function(tag) {
                 var icon_url = "";
