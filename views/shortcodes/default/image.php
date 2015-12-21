@@ -7,7 +7,6 @@ $css_caption_class = "";
 $styles = "";
 $html = "";
 $figcaption = "";
-$img_caption = "";
 
 // Styles
 if (!empty($styles)) {
