@@ -11,7 +11,6 @@ var TMM_APP_SHORTCODES = function() {
 				jQuery('body').append('<div id="tmm_shortcodes_html_buffer" style="display: none;"></div>');
 			}
 			self.html_buffer = jQuery("#tmm_shortcodes_html_buffer");
-
 			jQuery(".js_shortcode_checkbox_self_update").life('click', function() {
 				if (jQuery(this).is(':checked')) {
 					jQuery(this).val(1);
@@ -345,7 +344,11 @@ var TMM_APP_SHORTCODES = function() {
 
 			var type = jQuery('#type').val();
 			if (type === undefined) {
-				type = "";
+				if ( undefined !== typeof jQuery('#tmm_toggle_type').val() ) {
+					type = jQuery('#tmm_toggle_type').val();
+				}else {
+					type = "";
+				}
 			}
 
 			var accordion_item_title = "";

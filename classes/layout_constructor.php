@@ -24,11 +24,10 @@ class TMM_Layout_Constructor {
 			global $post;
 			$content = $content . self::get_front_html($post->ID);
 		}
-
 		return $content;
 	}
 
-	public static function draw_front($post_id, $row_displaying) {
+	public static function draw_front($post_id, $row_displaying = 'default') {
 		$tmm_layout_constructor = get_post_meta($post_id, 'thememakers_layout_constructor', true);
 		if (!empty($tmm_layout_constructor)) {
 			$data = array();
@@ -40,7 +39,7 @@ class TMM_Layout_Constructor {
 				$data['tmm_layout_constructor_row'] = array();
 			}
 
-			echo TMM::draw_free_page(TMM_CC_DIR . '/views/front_output.php', $data);
+			echo ThemeMakersThemeView::draw_free_page(TMM_CC_DIR . '/views/front_output.php', $data);
 		}
 	}
 

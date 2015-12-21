@@ -1,18 +1,27 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
+
 $list_type = 0;
 $styles_array = array();
+
+if (!isset($colors)) {
+    $colors = '';
+}
+
 if (!isset($styles)) {
 	$list_type = 1;
 } else {
 	$styles_array = explode('^', $styles);
 }
+
 $content = explode('^', $content);
+
 if ($list_type == 0) {
 	$list_type = 'ul';
 } else {
 	$list_type = 'ol';
 }
+
 $colors = explode('^', $colors);
 
 ?>

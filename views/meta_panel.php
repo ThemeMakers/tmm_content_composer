@@ -90,7 +90,7 @@ global $tmm_row_options;
 			'row' => '__ROW_ID__',
 			'uniqid' => '__UNIQUE_ID__',
 			'css_class' => 'element1-4',
-			'front_css_class' => 'col-sm-3',
+			'front_css_class' => 'four column',
 			'value' => '1/4',
 			'content' => '',
 			'title' => '',
@@ -165,7 +165,7 @@ global $tmm_row_options;
            <?php
 
 		   TMM_Content_Composer::html_option(array(
-			   'title' => __('Section Title', TMM_CC_TEXTDOMAIN),
+			   'title' => __('Section Title', c),
 			   'shortcode_field' => 'row_section_title',
 			   'type' => 'text',
 			   'description' => 'for One Page Menu',
@@ -351,6 +351,47 @@ global $tmm_row_options;
                 'is_checked'=> $tmm_row_options['section_content'],
                 'description' => ''
             ));
+
+			TMM_Content_Composer::html_option(array(
+					'type' => 'select',
+					'title' => __('Border width', TMM_CC_TEXTDOMAIN),
+					'shortcode_field' => 'row_border_width',
+					'id' => 'row_border_width',
+					'options' => array(
+							0 => 0,
+							1 => 1,
+							2 => 2,
+							3 => 3,
+							4 => 4,
+							5 => 5,
+					),
+					'default_value' => 0,
+					'description' => ''
+			));
+
+			TMM_Content_Composer::html_option(array(
+					'type' => 'select',
+					'title' => __('Border type', TMM_CC_TEXTDOMAIN),
+					'shortcode_field' => 'row_border_type',
+					'id' => 'row_border_type',
+					'options' => array(
+							'solid' => __('Solid', TMM_CC_TEXTDOMAIN),
+							'dashed' => __('Dashed', TMM_CC_TEXTDOMAIN),
+							'dotted' => __('Dotted', TMM_CC_TEXTDOMAIN),
+					),
+					'default_value' => 'solid',
+					'description' => ''
+			));
+
+			TMM_Content_Composer::html_option(array(
+					'title' => __('Border Color', TMM_CC_TEXTDOMAIN),
+					'shortcode_field' => 'row_border_color',
+					'type' => 'color',
+					'description' => '',
+					'default_value' => $tmm_row_options['bg_color'],
+					'id' => 'row_border_color',
+					'display' =>1
+			));
             ?>
         </div>
 
@@ -383,7 +424,7 @@ global $tmm_row_options;
                     'options' => array(
                         'color' => __('Color', TMM_CC_TEXTDOMAIN),
                         'image' => __('Image', TMM_CC_TEXTDOMAIN),
-                        'video' => __('Video', TMM_CC_TEXTDOMAIN)                        
+                        /*'video' => __('Video', TMM_CC_TEXTDOMAIN)*/
                     ),
                     'default_value' => $tmm_row_options['bg_custom_type'],
 					'description' => ''
@@ -403,8 +444,8 @@ global $tmm_row_options;
                     ));
                     ?>
                 </div>
-                
-                
+
+
                 <div class="bg_custom_type_image" style="display: none;">
                     <?php
                     TMM_Content_Composer::html_option(array(
@@ -431,14 +472,14 @@ global $tmm_row_options;
 					));
 					?>
 					<?php
-					TMM_Content_Composer::html_option(array(
+					/*TMM_Content_Composer::html_option(array(
 						'type' => 'checkbox',
 						'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
 						'shortcode_field' => 'row_overlay',
 						'id' => 'row_overlay',
 						'is_checked'=> $tmm_row_options['overlay'],
 						'description' => 'Set overlay on background image'
-					));
+					));*/
 					?>
 					<div id="row_bg_overlay_box" style="display: none;">
 

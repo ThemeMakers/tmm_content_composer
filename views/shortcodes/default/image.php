@@ -8,6 +8,13 @@ $html = "";
 $classAnim = "";
 $classAbs = "";
 
+    // default values
+    if (!isset($parallax)) {
+        $parallax = 0;
+    }
+    if (!isset($image_size_alias)) {
+        $image_size_alias = '';
+    }
 	// Align 
 	if (!empty($translate_x)) {
 		$styles .= "left: " . (int) $translate_x . "%;";

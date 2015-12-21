@@ -1,13 +1,85 @@
 <?php
 if (!defined('ABSPATH')) die('No direct access allowed');
 global $post;
+global $tmm_row_options;
 
 $first_row = current($tmm_layout_constructor_row);
 
-foreach ($tmm_layout_constructor as $row => $row_data) {   
-    
-    if (!empty($row_data) && ($tmm_layout_constructor_row[$row]['lc_displaying']==$row_displaying)) {
-        
+foreach ($tmm_layout_constructor as $row => $row_data) {
+
+    // use the default values, if the options have not been defined
+    if ( !isset($tmm_layout_constructor_row[$row]['section_title']) ) {
+        $tmm_layout_constructor_row[$row]['section_title'] = $tmm_row_options['section_title'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['lc_displaying']) ) {
+        $tmm_layout_constructor_row[$row]['lc_displaying'] = $tmm_row_options['lc_displaying'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['full_width']) ) {
+        $tmm_layout_constructor_row[$row]['full_width'] = $tmm_row_options['full_width'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['content_full_width']) ) {
+        $tmm_layout_constructor_row[$row]['content_full_width'] = $tmm_row_options['content_full_width'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['padding_top']) ) {
+        $tmm_layout_constructor_row[$row]['padding_top'] = $tmm_row_options['padding_top'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['padding_bottom']) ) {
+        $tmm_layout_constructor_row[$row]['padding_bottom'] = $tmm_row_options['padding_bottom'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['margin_top']) ) {
+        $tmm_layout_constructor_row[$row]['margin_top'] = $tmm_row_options['margin_top'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['margin_bottom']) ) {
+        $tmm_layout_constructor_row[$row]['margin_bottom'] = $tmm_row_options['margin_bottom'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['align']) ) {
+        $tmm_layout_constructor_row[$row]['align'] = $tmm_row_options['align'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['section_content']) ) {
+        $tmm_layout_constructor_row[$row]['section_content'] = $tmm_row_options['section_content'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_type']) ) {
+        $tmm_layout_constructor_row[$row]['bg_type'] = $tmm_row_options['bg_type'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_custom_type']) ) {
+        $tmm_layout_constructor_row[$row]['bg_custom_type'] = $tmm_row_options['bg_custom_type'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_color']) ) {
+        $tmm_layout_constructor_row[$row]['bg_color'] = $tmm_row_options['bg_color'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_image']) ) {
+        $tmm_layout_constructor_row[$row]['bg_image'] = $tmm_row_options['bg_image'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_attachment']) ) {
+        $tmm_layout_constructor_row[$row]['bg_attachment'] = $tmm_row_options['bg_attachment'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_video']) ) {
+        $tmm_layout_constructor_row[$row]['bg_video'] = $tmm_row_options['bg_video'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_video_panel']) ) {
+        $tmm_layout_constructor_row[$row]['bg_video_panel'] = $tmm_row_options['bg_video_panel'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_video_mute']) ) {
+        $tmm_layout_constructor_row[$row]['bg_video_mute'] = $tmm_row_options['bg_video_mute'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_video_loop']) ) {
+        $tmm_layout_constructor_row[$row]['bg_video_loop'] = $tmm_row_options['bg_video_loop'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_fullscreen']) ) {
+        $tmm_layout_constructor_row[$row]['bg_fullscreen'] = $tmm_row_options['bg_fullscreen'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['overlay']) ) {
+        $tmm_layout_constructor_row[$row]['overlay'] = $tmm_row_options['overlay'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_overlay_color']) ) {
+        $tmm_layout_constructor_row[$row]['bg_overlay_color'] = $tmm_row_options['bg_overlay_color'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['bg_overlay_opacity']) ) {
+        $tmm_layout_constructor_row[$row]['bg_overlay_opacity'] = $tmm_row_options['bg_overlay_opacity'];
+    }
+
+    if (!empty($row_data) && ($tmm_layout_constructor_row[$row]['lc_displaying'] == $row_displaying)) {
+
 		$row_style = TMM_Layout_Constructor::get_row_bg($tmm_layout_constructor_row, $row);
 		
 		$section_class = 'section';
@@ -135,7 +207,9 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				}
 
 				$row_style_attr = '';
-				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] != 'custom' && isset($row_style['style_custom_color'])) {
+				if (isset($tmm_layout_constructor_row[$row]['bg_type'])
+						&& $tmm_layout_constructor_row[$row]['bg_type'] != 'custom'
+						&& isset($row_style['style_custom_color'])) {
 					$row_style_attr .= $row_style['style_custom_color'];
 				}
 
@@ -152,7 +226,9 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 					$row_style_attr = ' style="'.$row_style_attr.'"';
 				}
 
-				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && ($row_displaying=='full_width' || $row_displaying == 'before_full_width')){
+				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0
+					&& $tmm_layout_constructor_row[$row]['full_width'] != 0
+					&& ($row_displaying=='full_width' || $row_displaying == 'before_full_width')) {
 					?>
 
 					<div class="container">
@@ -161,23 +237,25 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				}
 					?>
 
-					<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
+                <div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
 
-						<?php foreach ($row_data as $uniqid => $column){
+                    <?php foreach ($row_data as $uniqid => $column) {
 
-							$content = TMM_Shortcode::remove_empty_tags($column['content']);
-							$content = do_shortcode(shortcode_unautop($content));
-							?>
-							<div class="<?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
+                        $content = TMM_Shortcode::remove_empty_tags($column['content']);
+                        $content = do_shortcode(shortcode_unautop($content));
+                        ?>
+                        <div class="<?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
 
-						<?php } ?>
+                    <?php } ?>
 
-						<div class="clearfix"></div>
+                    <div class="clearfix"></div>
 
-					</div>
+                </div>
 
 					<?php
-				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && ($row_displaying=='full_width' || $row_displaying == 'before_full_width')){
+				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0
+					&& $tmm_layout_constructor_row[$row]['full_width'] != 0
+					&& ($row_displaying=='full_width' || $row_displaying == 'before_full_width')) {
 					?>
 
 					</div><!--/ .container -->

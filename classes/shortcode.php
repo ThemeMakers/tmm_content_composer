@@ -42,11 +42,16 @@ class TMM_Shortcode {
 		$shortcodes_keys = array_keys(self::$shortcodes);
 
 		function tmm_do_shortcode($attributes = array(), $content = "", $shortcode_key) {
+
 			$attributes["content"] = $content;
 			if (isset($_REQUEST["shortcode_mode_edit"])) {
 				$_REQUEST["shortcode_mode_edit"] = $attributes;
 			} else {
-				return TMM_Shortcode::draw_html($shortcode_key, $attributes);
+                //[column_post] fix
+                if ('column_post' == $shortcode_key || 'column _post' == $shortcode_key) {
+                    $shortcode_key = 'featured_post';
+                }
+                return TMM_Shortcode::draw_html($shortcode_key, $attributes);
 			}
 		}
 
@@ -54,6 +59,7 @@ class TMM_Shortcode {
 			$_REQUEST["shortcode_key"] = $shortcode_key;
 			add_shortcode($shortcode_key, 'tmm_do_shortcode');
 		}
+
 	}
 
 	public static function get_shortcodes_items() {
@@ -155,9 +161,10 @@ class TMM_Shortcode {
 			$_REQUEST['shortcode_mode_edit'] = array();
 			$_REQUEST['shortcode_text'] = str_replace("\'", "'", $_REQUEST['shortcode_text']);
 			$_REQUEST['shortcode_text'] = str_replace('\"', '"', $_REQUEST['shortcode_text']);
-			do_shortcode($_REQUEST['shortcode_text']);
-		}
-		//***
+            do_shortcode($_REQUEST['shortcode_text']);
+        }
+
+        //***
 		echo self::render_html('views/shortcodes/' . self::get_shortcode_key_folder($_REQUEST['shortcode_name']) . '/popups/' . $_REQUEST['shortcode_name'] . ".php", $data);
 		exit;
 	}

@@ -6,6 +6,70 @@ wp_reset_query();
 $count_column = '';
 $post_class = (isset($post_appearing_effect) && !empty($post_appearing_effect)) ? 'post-item '.$post_appearing_effect : 'post-item';
 $post_area = 'post-area';
+$blog_type = '';
+$exclude_post_formats ='none';
+
+// default values
+if ( !isset($blog_type) ) {
+    $blog_type = 'blog-classic';
+}
+if ( !isset($post_appearing_effect) ) {
+    $post_appearing_effect = 'elementFade';
+}
+if ( !isset($category) ) {
+    $category = '';
+}
+if ( !isset($tag) ) {
+    $tag = '';
+}
+if ( !isset($columns) ) {
+    $columns = '3';
+}
+if ( !isset($orderby) ) {
+    $orderby = '';
+}
+if ( !isset($order) ) {
+    $order = 'DESC';
+}
+if ( !isset($posts_per_page) ) {
+    $posts_per_page = 5;
+}
+if ( !isset($posts_per_load) ) {
+    $posts_per_load = 5;
+}
+if ( !isset($posts) ) {
+    $posts = '';
+}
+if ( !isset($exclude_post_types) ) {
+    $exclude_post_types = 'none';
+}
+if ( !isset($exclude_post_formats) ) {
+    $exclude_post_formats = 'none';
+}
+if ( !isset($title_symbols) ) {
+    $title_symbols = '25';
+}
+if ( !isset($show_review) ) {
+    $show_review = 0;
+}
+if ( !isset($show_metadata) ) {
+    $show_metadata = 1;
+}
+if ( !isset($title_symbols) ) {
+    $title_symbols = 25;
+}
+if ( !isset($show_pagination) ) {
+    $show_pagination = 1;
+}
+if ( !isset($infinity_pagination) ) {
+    $infinity_pagination = 0;
+}
+if ( !isset($post_carousel) ) {
+    $post_carousel = 0;
+}
+if ( !isset($load_by_scrolling) ) {
+    $load_by_scrolling = true;
+}
 
 $path = 'content/' . $blog_type . '/content';
 

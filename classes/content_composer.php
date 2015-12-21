@@ -24,11 +24,6 @@ class TMM_Content_Composer {
 		add_action('wp_ajax_app_shortcodes_get_shortcode_template', array('TMM_Shortcode', 'get_shortcode_template'));
 		add_action('wp_ajax_get_lc_editor', array('TMM_Layout_Constructor', 'get_lc_editor'));
 
-		/* if not TMM theme */
-		if (!class_exists('TMM')) {
-			add_filter('the_content', array('TMM_Layout_Constructor', 'the_content'), 999);
-		}
-
 		TMM_Shortcode::register();
 	}
 
@@ -117,8 +112,7 @@ class TMM_Content_Composer {
 	public static function enqueue_scripts() {
 		wp_deregister_style('wp-mediaelement');
 
-
-		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
+			//wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
 
 		if (!class_exists('TMM')) {
 
@@ -134,8 +128,6 @@ class TMM_Content_Composer {
 
 			wp_register_style('tmm_owltransitions', TMM_CC_URL . 'css/owl-carousel.css');
 			wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/plugins/min/owl.carousel.min.js', array('jquery'), false, true);
-
-			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
 
 		}
 
@@ -421,7 +413,7 @@ class TMM_Content_Composer {
 			<?php endif; ?>
 
 				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a title="" class="button tmm_button_upload" href="#">
+				<a title="" class="button tmm_button_upload" href="#" style="margin-left: 9px;">
 					<?php _e('Browse', TMM_CC_TEXTDOMAIN); ?>
 				</a>
 				<span class="preset_description"><?php echo $data['description'] ?></span>
@@ -435,7 +427,9 @@ class TMM_Content_Composer {
 			<?php endif; ?>
 
 				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;"><?php _e('Browse', TMM_CC_TEXTDOMAIN); ?></a>
+				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;">
+					<?php _e('Browse', TMM_CC_TEXTDOMAIN); ?>
+				</a>
 				<span class="preset_description"><?php echo $data['description'] ?></span>
 				<?php
 				break;

@@ -7,6 +7,52 @@ $hover_styles = "";
 $mouseout_styles = "";
 $roll_styles = "";
 
+If ( !isset($text) ) {
+    $text = '';
+}
+If ( !isset($url) ) {
+    $url = '';
+}
+If ( !isset($top_indent) ) {
+    $top_indent = '';
+}
+If ( !isset($size) ) {
+    $size = '';
+}
+If ( !isset($type) ) {
+    $type = '';
+}
+If ( !isset($text_color) ) {
+    $text_color = '';
+}
+If ( !isset($mouseover_text_color) ) {
+    $mouseover_text_color = '';
+}
+If ( !isset($bg_color) ) {
+    $bg_color = '';
+}
+If ( !isset($bg_transparent) ) {
+    $bg_transparent = false;
+}
+If ( !isset($mouseover_bg_color) ) {
+    $mouseover_bg_color = '';
+}
+If ( !isset($mouseover_bg_transparent) ) {
+    $mouseover_bg_transparent = false;
+}
+If ( !isset($border_color) ) {
+    $border_color = '';
+}
+If ( !isset($border_color_transparent) ) {
+    $border_color_transparent = false;
+}
+If ( !isset($mouseover_border_color) ) {
+    $mouseover_border_color = '';
+}
+If ( !isset($mouseover_border_color_transparent) ) {
+    $mouseover_border_color_transparent = false;
+}
+
 //Top Indent
 if (!empty($top_indent)) {
 	$styles .= 'margin-top: ' . (int) $top_indent . 'px;';

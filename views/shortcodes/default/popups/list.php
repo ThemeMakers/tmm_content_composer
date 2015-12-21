@@ -148,12 +148,13 @@
 							</td>
 							<td style="width: 30%">
 								<?php
+								$default_color_value = empty($color_data) ? '' : $color_data[$key];
 								TMM_Content_Composer::html_option(array(
 									'title' => '',
 									'shortcode_field' => 'colors',
 									'type' => 'color',
 									'description' => '',
-									'default_value' => empty($color_data) ? '' : $color_data[$key],
+									'default_value' => $default_color_value	,
 									'id' => '',
 									'css_classes' => 'list_item_color',
 									'display' => 1
