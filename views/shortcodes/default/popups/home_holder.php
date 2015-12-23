@@ -28,6 +28,28 @@
 		?>
 	</div><!--/ .one-half-->
 
+	<div class="fullwidth">
+		<ul id="shortcode_column_list">
+			<li>
+
+				<?php
+				/**
+				 * ---------------- Content ----------------
+				 */
+				TMM_Content_Composer::html_option(array(
+						'type' => 'textarea',
+						'title' => __('Content', TMM_CC_TEXTDOMAIN),
+						'shortcode_field' => 'content',
+						'id' => '',
+						'default_value' => TMM_Content_Composer::set_default_value('content', ''),
+						'description' => ''
+				));
+				?>
+
+			</li>
+		</ul>
+	</div><!--/ .fullwidth -->
+
 </div><!--/ .thememakers_shortcode_template-->
 
 <!-- --------------------------  PROCESSOR  --------------------------- -->

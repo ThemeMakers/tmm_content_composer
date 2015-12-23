@@ -183,6 +183,7 @@
                         },
                         save: function() {
                             var shortcode = tmm_ext_shortcodes.get_html_from_buffer();
+                            shortcode = shortcode.replace(/'/gi, '"' );
 
                             // [column_post] fix
                             if(shortcode.indexOf('column_post') + 1) {
@@ -195,7 +196,7 @@
 	                            tmm_info_popup_show(tmm_lang['shortcode_updated'], true);
                             } else {
                                 if (window.tinyMCE) {
-                                    tinyMCE.execCommand('mceInsertContent', false, $.trim(shortcode));                                                    
+                                    tinyMCE.execCommand('mceInsertContent', false, $.trim(shortcode));
                                     tinyMCE.execCommand('mceSetContent', false, tinyMCE.activeEditor.getContent());
                                 }
                             }
@@ -235,8 +236,7 @@
             },
 
             cache: function(key, val) {
-                console.log(key, val);
-                if (key && !val)
+                if (key && 'undefined' == typeof val)
                     return self.sc_info[key] || null;
                 if (key && val) {
                     self.sc_info[key] = val;
@@ -267,120 +267,117 @@
             toHTML: function(str) {
 
                 // [column_post] fix (replace it by [featured_post])
-                if(str.indexOf('column_post') + 1) {
+                if (str.indexOf('column_post') + 1) {
                     str = str.replace(/column_post/g ,"featured_post");
+                }
+                // For case of shortcode editing (Regexp "Any image")
+                if (/<img (.*?)\/>/.test(str)) {
+                    return str;
                 }
 
                 /**
-                * --------------  Implementation of nested shortcodes -------------
+                * -------------- The implementation of the nested shortcodes -------------
                 */
                 // Regexp for shortcode "Any tags in square brackets"
-                var shortcodePattern = /[\/?[\w\s="/.':;#-\/]+]/gi;
-                var opening = null,
+                var shortcodePattern = /[\/?[\w\s="/.':;#-\/]+]/gi,
+                    opening = null,
                     counter = 0,
                     index = 0,
-                    //toOutput = [],
                     toOutput = '',
-                    childShortcodes = [];
+                    shortcodesArray = str.match(shortcodePattern);
 
-                var shortcodesArray = str.match(shortcodePattern);
+                // If nested shortcodes are present
                 if (null !== shortcodesArray && 2 < shortcodesArray.length) {
+                    var childShortcodes = [];
                     shortcodesArray.forEach(function (item, i, arr) {
                         // Regexp for shortcode "Name of opening tag"
                         var openingTagContent = item.match(/\[([^\/]\S\w+.*?)/i);
                         if (null != openingTagContent) {
                             openingTagContent = Array.prototype.slice.call(openingTagContent);
-
-                            if (0 == i || counter == i) {
+                            if (counter == i) {
                                 opening = openingTagContent[1];
-                                //toOutput[index] = '';
-                                //toOutput[index] += item;
                                 toOutput += item;
-                            }else {
-                                childShortcodes[index] = '';
-                                childShortcodes[index] += item;
                             }
                         }
-
                         // Regexp for shortcodes "Name of closing tag"
                         var closingTagContent = item.match(/\[\/(\w+)]/i);
                         if (null != closingTagContent) {
                             closingTagContent = Array.prototype.slice.call(closingTagContent);
                             if (opening == closingTagContent[1]) {
-                                //toOutput[index] += item;
-                                toOutput += item;
-                                counter = (i + 1);
+                                for (var j = (counter + 1); j <= (i - 1); j++) {
+                                    if ('undefined' == typeof childShortcodes[index] ) {
+                                        childShortcodes[index] = '';
+                                    }
+                                    childShortcodes[index] += arr[j];
+                                }
+                                // Regexp "Any symbols before square bracket"
+                                if ( /(\s*?\w+.*?)\[/.test(item) ) {
+                                    var partials = item.split('[', 2);
+                                    childShortcodes[index] += partials[0];
+                                    toOutput += '[' + partials[1];
+                                }
+                                opening = null;
+                                counter = i + 1;
                                 index += 1;
-                            }else {
-                                childShortcodes[index] += item;
                             }
                         }
                     });
-                    //console.log(toOutput);
-                    //console.log(childShortcodes[3]);
+                }
+                // If nested shortcodes are absent
+                else {
+                    if (null != shortcodesArray) {
+                        toOutput += shortcodesArray[0];
+                        // Regexp "Any symbols before square bracket"
+                        if ( /(\s*?\w+.*?)\[/.test(shortcodesArray[1]) ) {
+                            var partials = shortcodesArray[1].split('[', 2);
+                            if ('undefined' == typeof childShortcodes) {
+                                var childShortcodes = [];
+                                childShortcodes[0] = partials[0];
+                            }
+                            toOutput += '[' + partials[1];
+                        }
+                        else {
+                            if ('undefined' != typeof shortcodesArray[1] ) {
+                                toOutput += shortcodesArray[1];
+                            }
+                        }
+                    }
                 }
                 /**
                 * -------------------------------------------------------------------
                 */
 
-                //var cacheKeys = [], cacheBuffer = [];
-                //var cacheOutput;
-                str.replace(tmm_shortcodes_items_keys,
-                    function (str, tag, properties, rawconts, conts) {
-                        var props = self.parseProperties(properties);
+                var parentIndex = 0,
+                    htmlOutput = toOutput.replace(tmm_shortcodes_items_keys,
+                        function(toOutput, tag, properties, rawconts, conts) {
+                            var props = self.parseProperties(properties);
+                            if (props.sc_id === undefined) {
+                                props.sc_id = self.getId();
+                                properties += ' sc_id="' + props.sc_id + '"';
+                            }
+                            // add child shortcodes or other data to content
+                            var children = ' ';
+                            if ('undefined' == typeof childShortcodes) {
+                                children = ' ';
+                            }
+                            if ('undefined' != typeof childShortcodes && 'undefined' != typeof childShortcodes[parentIndex]) {
+                                children = childShortcodes[parentIndex].replace(/"/gi, "'" );
+                                parentIndex += 1;
+                            }
+                            if (children.indexOf('undefined') + 1) {
+                                children = children.replace('undefined' ,'');
+                            }
+                            // save shortcode to cache and get image for editor
+                            self.cache(props.sc_id, '[' + tag + ' ' + properties + (children ? ']' + children + '[/' + tag + ']' : ']') );
+                            var _properties = properties.replace(/ sc_id="[^"]+"/, '').replace(/="([^"]+)"/g, ': $1;');
+                            var shortcode_icon_url = self.get_shortcode_icon_url(tag);
 
-                        if (props.sc_id === undefined) {
-                            props.sc_id = self.getId();
-                            properties += ' sc_id="' + props.sc_id + '"';
-                        }
+                            return '<img src="' + shortcode_icon_url + '" data-mce-placeholder="true" data-tag="' + tag + '" ' +
+                                'data-scid="' + props.sc_id + '" class="shortcode-placeholder mceItem scid-'
+                                + props.sc_id + '" title="' + tag.toUpperCase() + ' ' + _properties + '"/>';
+                        });
 
-                        //cacheKeys.push(props.sc_id);
-                        //cacheBuffer.push( '[' + tag + ' ' + properties + (conts ? ']' + conts + '[/' + tag + ']' : ']') );
-
-                        //self.cache(props.sc_id, '[' + tag + ' ' + properties + (conts ? ']' + conts + '[/' + tag + ']' : ']'));
-                        var _properties = properties.replace(/ sc_id="[^"]+"/, '').replace(/="([^"]+)"/g, ': $1;');
-                        var shortcode_icon_url = self.get_shortcode_icon_url(tag);
-
-                        return '<img src="' + shortcode_icon_url + '" data-mce-placeholder="true" data-tag="' + tag + '" ' +
-                            'data-scid="' + props.sc_id + '" class="shortcode-placeholder mceItem scid-'
-                            + props.sc_id + '" title="' + tag.toUpperCase() + ' ' + _properties + '" />';
-
-                });
-
-                var parentIndex = 0;
-                var htmlOutput = toOutput.replace(tmm_shortcodes_items_keys,
-                    function(toOutput, tag, properties, rawconts, conts) {
-                        var props = self.parseProperties(properties);
-
-                        if (props.sc_id === undefined) {
-                            props.sc_id = self.getId();
-                            properties += ' sc_id="' + props.sc_id + '"';
-                        }
-
-                        //self.cache(props.sc_id, '[' + tag + ' ' + properties + (conts ? ']' + conts + '[/' + tag + ']' : ']'));
-                        var _properties = properties.replace(/ sc_id="[^"]+"/, '').replace(/="([^"]+)"/g, ': $1;');
-                        var shortcode_icon_url = self.get_shortcode_icon_url(tag);
-                        var children = '';
-                        if ('undefined' != typeof childShortcodes[parentIndex]) {
-                            children = childShortcodes[parentIndex];
-                            parentIndex += 1;
-                        }
-
-
-
-                        return '<img src="' + shortcode_icon_url + '" data-mce-placeholder="true" data-tag="' + tag + '" ' +
-                            'data-scid="' + props.sc_id + '" class="shortcode-placeholder mceItem scid-'
-                            + props.sc_id + '" title="' + tag.toUpperCase() + ' ' + _properties + '"  content="'+ children +'"/>';
-                });
-
-                /*cacheKeys.forEach(function (item, i, arr) {
-                    console.log(arr[i], cacheBuffer[i]);
-                    self.cache(item, cacheBuffer[i]);
-                });*/
-
-                console.log(htmlOutput);
                 return htmlOutput;
-
             },
             get_shortcode_icon_url: function(tag) {
                 var icon_url = "";
