@@ -39,7 +39,7 @@ class TMM_Content_Composer {
 
 
 	public static function add_meta_box($post_type) {
-		$post_types = array('post', 'page');
+		$post_types = array('post', 'page', 'event');
 
 		if (class_exists('TMM_Portfolio')) {
 			$post_types[] = TMM_Portfolio::$slug;
@@ -110,27 +110,6 @@ class TMM_Content_Composer {
 	}
 
 	public static function enqueue_scripts() {
-		wp_deregister_style('wp-mediaelement');
-
-			//wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
-
-		if (!class_exists('TMM')) {
-
-			?>
-			<script type="text/javascript">
-				var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
-			</script>
-			<?php
-
-			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/plugins/min/jquery.modernizr.min.js', array('jquery'), false, true);
-
-			wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/plugins/min/jquery.tooltipster.min.js', array('jquery'), false, true);   // TODO: concatenate to front.js
-
-			wp_register_style('tmm_owltransitions', TMM_CC_URL . 'css/owl-carousel.css');
-			wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/plugins/min/owl.carousel.min.js', array('jquery'), false, true);
-
-		}
-
 		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, true);
 	}
 

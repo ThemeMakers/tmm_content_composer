@@ -165,7 +165,7 @@ global $tmm_row_options;
            <?php
 
 		   TMM_Content_Composer::html_option(array(
-			   'title' => __('Section Title', c),
+			   'title' => __('Section Title', TMM_CC_TEXTDOMAIN),
 			   'shortcode_field' => 'row_section_title',
 			   'type' => 'text',
 			   'description' => 'for One Page Menu',

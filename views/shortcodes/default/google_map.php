@@ -1,6 +1,6 @@
 <?php
 wp_enqueue_script("tmm_shortcode_google_api_js", 'http://maps.google.com/maps/api/js?sensor=false');
-
+wp_enqueue_script('thememakers_theme_markerwithlabel_js', TMM_THEME_URI . '/js/markerwithlabel.js');
 
 $inique_id = uniqid();
 $js_controls = '{}';
