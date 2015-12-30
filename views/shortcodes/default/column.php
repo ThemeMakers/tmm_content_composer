@@ -9,8 +9,8 @@ if ( !isset($type) ) {
 if ( !isset($content) ) {
     $content = '';
 }
-
 $content = do_shortcode($content);
+
 
 switch ($type) {
     case 'one-third':

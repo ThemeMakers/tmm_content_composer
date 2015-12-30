@@ -23,11 +23,15 @@
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'options' => array(
-				'error' => __('Error', TMM_CC_TEXTDOMAIN),
-				'success' => __('Success', TMM_CC_TEXTDOMAIN),
-				'info' => __('Info', TMM_CC_TEXTDOMAIN),
-				'notice' => __('Notice', TMM_CC_TEXTDOMAIN),
-				'transparent' => __('Transparent', TMM_CC_TEXTDOMAIN),
+				'error' => __('Error Type-1', TMM_CC_TEXTDOMAIN),
+				'success' => __('Success Type-1', TMM_CC_TEXTDOMAIN),
+				'info' => __('Info Type-1', TMM_CC_TEXTDOMAIN),
+				'notice' => __('Notice Type-1', TMM_CC_TEXTDOMAIN),
+				'error type-2' => __('Error Type-2', TMM_CC_TEXTDOMAIN),
+				'success type-2' => __('Success Type-2', TMM_CC_TEXTDOMAIN),
+				'info type-2' => __('Info Type-2', TMM_CC_TEXTDOMAIN),
+				'notice type-2' => __('Notice Type-2', TMM_CC_TEXTDOMAIN),
+				//'transparent' => __('Transparent', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type', 'notice'),
 			'description' => ''
@@ -45,7 +49,7 @@
 	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
 	jQuery(function() {
 		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup, change', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
 		

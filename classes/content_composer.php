@@ -9,6 +9,8 @@ class TMM_Content_Composer {
 
 	private function __construct() {
 
+		//wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
+
 		add_action('add_meta_boxes', array(__CLASS__, 'add_meta_box'));
 
 		add_filter('mce_buttons', array(__CLASS__, 'mce_buttons'));

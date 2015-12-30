@@ -264,119 +264,133 @@
                 }
                 return props;
             },
-            toHTML: function(str) {
+            /**
+             *
+             * @param str
+             * @returns {Array} Contains arrays (parent shrotcodes, child shrotcodes, and nested  structure).
+             */
+            parseNestedShortcodes: function(str) {
+                if ('' == str) {
+                    return false;
+                }
+                // Regexp for shortcode "Html tag with content or shortcode in square brackets"
+                var shortcodePattern = /((<.*?>)?[\/?[\w\s\t="/.':;#-\/]+.*?](<\/?.*?>)?)|(<.*?>(\.)|(.*?)<\/?.*?>)/gi,
+                    shortcodesArray = str.match(shortcodePattern),
+                    openTag = '',
+                    closeTag = '',
+                    level = 1,
+                    index = 0,
+                    parents = [],
+                    children = [],
+                    nested = [];
 
+                if (null == shortcodesArray) {
+                    return str;
+                }
+
+                shortcodesArray.forEach(function (item, i, arr) {
+                    // Regexp for shortcode "Name of opening shortcode tag"
+                    if ( item.match(/\[([^\/]\S\w+.*?)/i) ) {
+                        var arr = Array.prototype.slice.call(item.match(/\[([^\/]\S\w+.*?)/i))
+                        if (1 == level) {
+                            openTag = arr[1];
+                            nested[index] = item;
+                            parents[index] = item;
+                            level++;
+                        } else {
+                            if ('undefined' == typeof children[index]) {
+                                children[index] = '';
+                            }
+                            nested[index] += item;
+                            children[index] += item;
+                        }
+                    }
+                    // Regexp for shortcode "Name of closing shortcode tag"
+                    else if ( item.match(/\[\/(\w+)]/i) ) {
+                        var arr = Array.prototype.slice.call(item.match(/\[\/(\w+)]/i));
+                        closeTag = arr[1];
+                        if (openTag == closeTag) {
+                            nested[index] += item;
+                            parents[index] += item;
+                            index++;
+                            level--;
+                        } else {
+                            if ('undefined' == typeof children[index]) {
+                                children[index] = '';
+                            }
+                            nested[index] += item;
+                            children[index] += item;
+                        }
+                    }
+                    else {
+                        if (1 == level) {
+                            if ('undefined' == typeof parents[index]) {
+                                parents[index] = '';
+                            }
+                            nested[index] = item;
+                            parents[index] += item;
+                            index++;
+                        }else {
+                            if ('undefined' == typeof children[index]) {
+                                children[index] = '';
+                            }
+                            nested[index] += item;
+                            children[index] += item;
+                        }
+                    }
+                });
+                var result = [parents, children, nested];
+                return result;
+            },
+            toHTML: function(str) {
                 // [column_post] fix (replace it by [featured_post])
                 if (str.indexOf('column_post') + 1) {
                     str = str.replace(/column_post/g ,"featured_post");
                 }
-                // For case of shortcode editing (Regexp "Any image")
-                if (/<img (.*?)\/>/.test(str)) {
-                    return str;
-                }
+                var shortcodesArray = self.parseNestedShortcodes(str),
+                    htmlOutput = '';
 
-                /**
-                * -------------- The implementation of the nested shortcodes -------------
-                */
-                // Regexp for shortcode "Any tags in square brackets"
-                var shortcodePattern = /[\/?[\w\s="/.':;#-\/]+]/gi,
-                    opening = null,
-                    counter = 0,
-                    index = 0,
-                    toOutput = '',
-                    shortcodesArray = str.match(shortcodePattern);
-
-                // If nested shortcodes are present
-                if (null !== shortcodesArray && 2 < shortcodesArray.length) {
-                    var childShortcodes = [];
-                    shortcodesArray.forEach(function (item, i, arr) {
-                        // Regexp for shortcode "Name of opening tag"
-                        var openingTagContent = item.match(/\[([^\/]\S\w+.*?)/i);
-                        if (null != openingTagContent) {
-                            openingTagContent = Array.prototype.slice.call(openingTagContent);
-                            if (counter == i) {
-                                opening = openingTagContent[1];
-                                toOutput += item;
-                            }
-                        }
-                        // Regexp for shortcodes "Name of closing tag"
-                        var closingTagContent = item.match(/\[\/(\w+)]/i);
-                        if (null != closingTagContent) {
-                            closingTagContent = Array.prototype.slice.call(closingTagContent);
-                            if (opening == closingTagContent[1]) {
-                                for (var j = (counter + 1); j <= (i - 1); j++) {
-                                    if ('undefined' == typeof childShortcodes[index] ) {
-                                        childShortcodes[index] = '';
-                                    }
-                                    childShortcodes[index] += arr[j];
-                                }
-                                // Regexp "Any symbols before square bracket"
-                                if ( /(\s*?\w+.*?)\[/.test(item) ) {
-                                    var partials = item.split('[', 2);
-                                    childShortcodes[index] += partials[0];
-                                    toOutput += '[' + partials[1];
-                                }
-                                opening = null;
-                                counter = i + 1;
-                                index += 1;
-                            }
-                        }
-                    });
+                if (!shortcodesArray) {
+                    return htmlOutput;
+                } else if ('string' == typeof shortcodesArray) {
+                    return shortcodesArray;
                 }
-                // If nested shortcodes are absent
-                else {
-                    if (null != shortcodesArray) {
-                        toOutput += shortcodesArray[0];
-                        // Regexp "Any symbols before square bracket"
-                        if ( /(\s*?\w+.*?)\[/.test(shortcodesArray[1]) ) {
-                            var partials = shortcodesArray[1].split('[', 2);
-                            if ('undefined' == typeof childShortcodes) {
-                                var childShortcodes = [];
-                                childShortcodes[0] = partials[0];
-                            }
-                            toOutput += '[' + partials[1];
-                        }
-                        else {
-                            if ('undefined' != typeof shortcodesArray[1] ) {
-                                toOutput += shortcodesArray[1];
-                            }
-                        }
-                    }
-                }
-                /**
-                * -------------------------------------------------------------------
-                */
+                var parents = shortcodesArray[0],
+                    nested = shortcodesArray[2],
+                    // Regexp for shortcode "Wordpress shortcode for audio/video content"
+                    avPattern = /<p [^>]*?data-wpview-marker="([^"]+)"[^>]*>[\s\S]*?<\/p>/gi;
 
-                var parentIndex = 0,
-                    htmlOutput = toOutput.replace(tmm_shortcodes_items_keys,
-                        function(toOutput, tag, properties, rawconts, conts) {
+                parents.forEach(function (item, i, arr) {
+                    htmlOutput += item.replace(tmm_shortcodes_items_keys,
+                        function(c, tag, properties, rawconts, conts) {
                             var props = self.parseProperties(properties);
                             if (props.sc_id === undefined) {
                                 props.sc_id = self.getId();
                                 properties += ' sc_id="' + props.sc_id + '"';
                             }
-                            // add child shortcodes or other data to content
-                            var children = ' ';
-                            if ('undefined' == typeof childShortcodes) {
-                                children = ' ';
-                            }
-                            if ('undefined' != typeof childShortcodes && 'undefined' != typeof childShortcodes[parentIndex]) {
-                                children = childShortcodes[parentIndex].replace(/"/gi, "'" );
-                                parentIndex += 1;
-                            }
-                            if (children.indexOf('undefined') + 1) {
-                                children = children.replace('undefined' ,'');
-                            }
+
                             // save shortcode to cache and get image for editor
-                            self.cache(props.sc_id, '[' + tag + ' ' + properties + (children ? ']' + children + '[/' + tag + ']' : ']') );
+                            /*if ('undefined' == typeof children[i] || 0 == children[i].length) {
+                                self.cache(props.sc_id, item );
+                            }else {
+                                //console.log(nested[i].match( /<p [^>]*?data-wpview-marker="([^"]+)"[^>]*>[\s\S]*?<\/p>/g));
+                                self.cache(props.sc_id, nested[i] );
+                            }*/
+
                             var _properties = properties.replace(/ sc_id="[^"]+"/, '').replace(/="([^"]+)"/g, ': $1;');
                             var shortcode_icon_url = self.get_shortcode_icon_url(tag);
 
-                            return '<img src="' + shortcode_icon_url + '" data-mce-placeholder="true" data-tag="' + tag + '" ' +
+                            var shortcodeImg = '<img src="' + shortcode_icon_url + '" data-mce-placeholder="true" data-tag="' + tag + '" ' +
                                 'data-scid="' + props.sc_id + '" class="shortcode-placeholder mceItem scid-'
                                 + props.sc_id + '" title="' + tag.toUpperCase() + ' ' + _properties + '"/>';
-                        });
 
+                            var toCahe = nested[i].replace( avPattern, function(str) {
+                                return window.decodeURIComponent( "<p>" + jQuery(str).attr('data-wpview-marker') + "</p>" );
+                            });
+                            self.cache(props.sc_id, toCahe );
+                            return shortcodeImg;
+                        });
+                });
                 return htmlOutput;
             },
             get_shortcode_icon_url: function(tag) {

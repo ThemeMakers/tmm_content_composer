@@ -7,7 +7,7 @@ switch ($type) {
         ?>
         <div class="bordered">
             <figure class="add-border">
-                <iframe  allowtransparency="true" width="<?php echo $width ?>" height="<?php echo $height ?>" src="http://www.youtube.com/embed/<?php echo $content ?>?wmode=transparent" frameborder="0" allowfullscreen></iframe>		
+                <iframe  allowtransparency="true" width="<?php echo $width ?>" height="<?php echo $height ?>" src="http://www.youtube.com/embed/<?php echo $content ?>?wmode=transparent" frameborder="0" allowfullscreen></iframe>
             </figure>
         </div>
 
@@ -18,7 +18,7 @@ switch ($type) {
         ?>
         <div class="bordered">
             <figure class="add-border">
-                <iframe  width="<?php echo $width ?>" height="<?php echo $height ?>" src="http://player.vimeo.com/video/<?php echo $content ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=f6e200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>			
+                <iframe  width="<?php echo $width ?>" height="<?php echo $height ?>" src="http://player.vimeo.com/video/<?php echo $content ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=f6e200" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
             </figure>
         </div>
         <?php

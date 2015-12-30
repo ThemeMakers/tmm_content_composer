@@ -55,6 +55,7 @@ class TMM_Shortcode {
 			}
 		}
 
+        $shortcodes_keys[] = 'column_post';
 		foreach ($shortcodes_keys as $shortcode_key) {
 			$_REQUEST["shortcode_key"] = $shortcode_key;
 			add_shortcode($shortcode_key, 'tmm_do_shortcode');

@@ -2,7 +2,6 @@
 if (!defined('ABSPATH')) exit;
 
 wp_reset_query();
-
 $count_column = '';
 $post_class = (isset($post_appearing_effect) && !empty($post_appearing_effect)) ? 'post-item '.$post_appearing_effect : 'post-item';
 $post_area = 'post-area';
@@ -10,7 +9,7 @@ $blog_type = '';
 $exclude_post_formats ='none';
 
 // default values
-if ( !isset($blog_type) ) {
+/*if ( !isset($blog_type) ) {
     $blog_type = 'blog-classic';
 }
 if ( !isset($post_appearing_effect) ) {
@@ -69,7 +68,7 @@ if ( !isset($post_carousel) ) {
 }
 if ( !isset($load_by_scrolling) ) {
     $load_by_scrolling = true;
-}
+}*/
 
 $path = 'content/' . $blog_type . '/content';
 
@@ -162,7 +161,7 @@ $original_query = $wp_query;
 $wp_query = new WP_Query($args);
 
 $posts_array = $wp_query->posts;
-
+//var_dump($posts_array);
 switch($blog_type) {
 	case 'blog-classic':
 		$count_column = 'post-col-1';
@@ -170,12 +169,12 @@ switch($blog_type) {
 	case 'blog-medium':
 		$post_area = 'post-list';
 		$post_class .= ' post-entry';
-	break;		
+	break;
 	case 'blog-masonry':
         $blog_type = 'masonry';
         $post_class = 'animate post-item';
         $count_column = 'post-col-' .$columns;
-        break;	
+        break;
 	case 'blog-grid':
 	case 'blog-grid-overlay':
 	case 'blog-grid-layout':
@@ -187,13 +186,6 @@ if (isset($post_carousel) && $post_carousel){
     $blog_type = 'post-carousel';
     $count_column = '';
     $data_columns = 'data-columns="' . $columns . '"';
-
-    if (!class_exists('TMM')) {
-        tmm_enqueue_script('owlcarousel');
-        tmm_enqueue_style('owlcarousel');
-        tmm_enqueue_style('owltheme');
-        tmm_enqueue_style('owltransitions');
-    }
 }
 
 $data_infinity = '';
@@ -230,7 +222,6 @@ if (isset($infinity_pagination) && $infinity_pagination ){
 }
 
 $_REQUEST['title_symbols'] = $title_symbols;
-
 ?>
 
 	<div id="post-area" class="<?php echo esc_attr($post_area) ?>
@@ -239,15 +230,15 @@ $_REQUEST['title_symbols'] = $title_symbols;
         <?php if(!empty($data_infinity)) echo $data_infinity; ?>
         <?php if(!empty($data_next_posts)) echo $data_next_posts; ?>
         <?php if(!empty($data_effect)) echo $data_effect; ?>>
-        
-        <?php 
-        if ($blog_type!='masonry'){           
+
+        <?php
+        if ($blog_type!='masonry'){
 
             if ( have_posts() ){
 
                 $_REQUEST['shortcode_show_metadata'] = $show_metadata;
 
-                while ( have_posts() ) { 
+                while ( have_posts() ) {
 
                 the_post(); ?>
 
@@ -255,35 +246,35 @@ $_REQUEST['title_symbols'] = $title_symbols;
                     <?php get_template_part( $path, 'content' ); ?>
                 </article>
 
-                    
+
             <?php }
             }
 
-        
+
         } else{
             if (!empty($posts_array)){
 
                 wp_enqueue_style('tmm_mediaelement');
                 wp_enqueue_script('mediaelement');
 
-                for ($i = 0; $i < $posts_per_load; $i++) { 
+                for ($i = 0; $i < $posts_per_load; $i++) {
                     $post = $posts_array[$i];
-                    $data = array();			
+                    $data = array();
                     $data['post_key'] = $i;
                     $data['title_symbols'] = $title_symbols;
-                    echo TMM::draw_html('post/masonry_piece', $data);
+                    echo TMM_Shortcode::draw_html('post/masonry_piece', $data);
                 }
-            } 
-        } ?>       
-            
+            }
+        } ?>
+
 	</div><!--/ .post-area-->
 
 	<?php if ($blog_type == 'masonry'){
 
-    tmm_enqueue_script('owlcarousel');
+    /*tmm_enqueue_script('owlcarousel');
     tmm_enqueue_style('owlcarousel');
     tmm_enqueue_style('owltheme');
-    tmm_enqueue_style('owltransitions');
+    tmm_enqueue_style('owltransitions');*/
 
         $next_posts = "";
 
@@ -314,7 +305,7 @@ $_REQUEST['title_symbols'] = $title_symbols;
             <div id="fadingBarsG_8" class="fadingBarsG">
             </div>
         </div>
-        
+
 		<div class='post-load-more'>
 			<a class='load-more button secondary middle' data-loadbyscroll="<?php echo esc_attr($load_by_scrolling) ?>" data-page-load="2" data-posts-per-load="<?php echo esc_attr($posts_per_load) ?>" data-posts="<?php echo esc_attr($next_posts) ?>" href='#load-more'><?php _e('Load More', TMM_CC_TEXTDOMAIN) ?></a>
 		</div><!--/ .post-load-more-->

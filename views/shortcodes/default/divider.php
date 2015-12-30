@@ -4,26 +4,22 @@ $style = $content;
 switch ($style) {
 	case 'separator':
 		?>
-		<div class="clear"></div>
-		<div class="separator"></div>
+		<div class="border-divider" ></div>
 		<?php
 		break;
 	case 'divider':
 		?>
-		<div class="clear"></div>
-		<div class="divider"></div>
+		<div class="border-divider" style="border-top: 2px dotted #d7d5cf; background-color: transparent;"></div>
 		<?php
 		break;
 	case 'double-divider';
 		?>
-		<div class="clear"></div>
-		<div class="double-divider"></div>
+		<div class="border-divider" style="border-top: 3px double #d7d5cf; background-color: transparent;"></div>
 		<?php
 		break;
 	default:
 		?>
-		<div class="clear"></div>
-		<div class="divider"></div>
+		<div class="border-divider"></div>
 		<?php
 		break;
 }
