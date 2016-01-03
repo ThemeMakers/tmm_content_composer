@@ -159,6 +159,8 @@
 
     /* end Effect */
 
+
+
 }(jQuery));
 
 
@@ -341,3 +343,50 @@ function merge_objects_options(obj1, obj2) {
     return obj3;
 }
 
+/*----------------------------------------------------*/
+/*	Shortcodes          							  */
+/*----------------------------------------------------*/
+
+(function ($, window, document) {
+
+    "use strict";
+
+    /* ---------------------------------------------------------------------- */
+    /*	Ready																  */
+    /* ---------------------------------------------------------------------- */
+
+    $(function () {
+
+        (function () {
+
+            /*----------------------------------------------------*/
+            /*	Accordion and Toggle							  */
+            /*----------------------------------------------------*/
+
+            if ($('.lc-acc-box').length) {
+
+                var $box = $('.lc-acc-box');
+
+                $box.each(function () {
+                    var $trigger = $('.acc-trigger', $(this)),
+                        eventtype = Modernizr.touch ? 'touchstart' : 'click';
+                    $trigger.on(eventtype, function() {
+                        var $this = $(this);
+                        if ($this.data('mode') === 'toggle') {
+                            $this.toggleClass('active').next().stop(true, true).slideToggle(300);
+                        } else {
+                            if ($this.next().is(':hidden')) {
+                                $trigger.removeClass('active').next().slideUp(300);
+                                $this.toggleClass('active').next().slideDown(300);
+                            } else if ($this.hasClass('active')) {
+                                $this.removeClass('active').next().slideUp(300);
+                            }
+                        }
+                        return false;
+                    });
+                });
+            }
+
+        }());
+    });
+}(jQuery, window, document));

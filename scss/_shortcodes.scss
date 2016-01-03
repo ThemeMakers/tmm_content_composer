@@ -1,3 +1,41 @@
+// Accordion and Toggle
+$acc-trigger-brd-color							: #dedede;
+$acc-trigger-text-color							: #333333;
+$acc-trigger-text-color-active					: #333333;
+$acc-trigger-font-weight						: 700;
+$acc-trigger-font-size							: 15px;
+$acc-trigger-font-family						: 'Roboto Slab', serif;
+
+$acc-trigger-character-size						: 18px;
+$acc-trigger-character							: '\e9a8';
+$acc-trigger-character-active					: '\e9ab';
+
+$acc-trigger-character-color					: #333333;
+$acc-trigger-character-color-active				: #ffffff;
+$acc-trigger-character-bg-color					: #fafafa;
+$acc-trigger-character-bg-color-active			: #333333;
+$acc-trigger-character-brd-color				: #ebebeb;
+$acc-trigger-character-brd-color-active			: #333333;
+
+// Blockquote
+$q-font-weight									: 400;
+$q-font-style									: italic;
+$q-font-size									: 18px;
+$q-font-family									: 'Bree Serif', serif;
+
+$q-quote-sign-color								: #acacac;
+$q-quote-sign-size								: 100px;
+$q-quote-sign-font-family						: 'Courgette', cursive;
+$q-quote-sign-character							: "“";
+
+$q-quote-type-1-bg-color						: #ededed;
+$q-quote-type-1-text-color						: #bebebe;
+$q-quote-type-1-author-text-color				: #4d90fe;
+
+$q-quote-type-2-bg-color						: #f85c37;
+$q-quote-type-2-text-color						: #ffffff;
+$q-quote-type-2-author-text-color				: #ffffff;
+
 // Image
 $io-1											: 1px;
 $io-3											: 3px;
@@ -35,25 +73,167 @@ $caption-style-2-font-color						: #ffffff;
 $caption-style-2-bg-color						: rgba(0,0,0,0.5);
 $caption-style-2-offset							: 3px 10px;
 
-// Blockquote
-$q-font-weight									: 400;
-$q-font-style									: italic;
-$q-font-size									: 18px;
-$q-font-family									: 'Bree Serif', serif;
+/* -------------------------------------------------- */
+/*	 Accordion and Toggle
+/* -------------------------------------------------- */
 
-$q-quote-sign-color								: #acacac;
-$q-quote-sign-size								: 100px;
-$q-quote-sign-font-family						: 'Courgette', cursive;
-$q-quote-sign-character							: "“";
+.lc-acc-box {
+	margin-bottom: 1.5em;
 
-$q-quote-type-1-bg-color						: #ededed;
-$q-quote-type-1-text-color						: #bebebe;
-$q-quote-type-1-author-text-color				: #4d90fe;
+	.acc-trigger {
+		position: relative;
+		display: block;
+		padding: 25px 0 25px 45px;
+		border-top: {
+			width: 1px;
+			style: solid;
+			color: $acc-trigger-brd-color;
+		};
+		cursor: pointer;
 
-$q-quote-type-2-bg-color						: #f85c37;
-$q-quote-type-2-text-color						: #ffffff;
-$q-quote-type-2-author-text-color				: #ffffff;
+		@include transition(all .25s ease);
 
+		&:first-child { border-top-width: 0; }
+
+		&:before {
+			z-index: 5;
+			display: block;
+			width: 30px;
+			height: 30px;
+			color: $acc-trigger-character-color;
+			font-size: $acc-trigger-character-size;
+			font-family: 'fontello';
+			line-height: 30px;
+			text-align: center;
+			content: $acc-trigger-character;
+			@include align-element(0, 50%);
+		}
+
+		&:after {
+			display: block;
+			width: 30px;
+			height: 30px;
+			border: {
+				width: 2px;
+				style: solid;
+				color: $acc-trigger-character-brd-color;
+			};
+			background-color: $acc-trigger-character-bg-color;
+			text-align: center;
+			content: "";
+
+			@include align-element(0, 50%);
+			@include transition(all .35s ease);
+		}
+
+		&:hover {
+			a {
+				color: $acc-trigger-text-color-active;
+			}
+		}
+
+		&.active {
+			padding-top: 15px;
+			padding-bottom: 15px;
+			color: $acc-trigger-text-color-active;
+
+			&:before {
+				color: $acc-trigger-character-color-active;
+				content: $acc-trigger-character-active;
+			}
+
+			&:after {
+				border-color: $acc-trigger-character-brd-color-active;
+				background-color: $acc-trigger-character-bg-color-active;
+			}
+		}
+
+		a {
+			color: $acc-trigger-text-color;
+			font: {
+				weight: $acc-trigger-font-weight;
+				size: $acc-trigger-font-size;
+				family: $acc-trigger-font-family;
+			};
+		}
+	}
+
+	.acc-container {
+		padding-left: 45px;
+		display: none;
+	}
+}
+
+/* -------------------------------------------------- */
+/*  Blockquote
+/* -------------------------------------------------- */
+
+blockquote {
+	&.lc-quote {
+		position: relative;
+		font: {
+			weight: $q-font-weight;
+			style: $q-font-style;
+			size: $q-font-size;
+			family: $q-font-family;
+		};
+		line-height: 1.5em;
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
+		padding: 25px 20px 20px 80px;
+
+		&:before {
+			position: absolute;
+			left: 10px;
+			top: 30px;
+			color: $q-quote-sign-color;
+			font-size: $q-quote-sign-size;
+			font-family: $q-quote-sign-font-family;
+			content: $q-quote-sign-character;
+			line-height: 1em;
+			font-style: normal;
+
+			@include transition(color .25s ease);
+		}
+
+		&.type-1 {
+			background-color: $q-quote-type-1-bg-color;
+			color: $q-quote-type-1-text-color;
+
+			.author {
+				color: $q-quote-type-1-author-text-color;
+			}
+		}
+
+		&.type-2 {
+			background-color: $q-quote-type-2-bg-color;
+			color: $q-quote-type-2-text-color;
+
+			&:before {
+				color: #fff;
+				color: rgba(255,255,255,.7);
+			}
+
+			.author {
+				color: $q-quote-type-2-author-text-color;
+			}
+		}
+
+		p {
+			margin-bottom: .7em;
+			line-height: 2em;
+		}
+
+		.author {
+			display: block;
+			font-weight: 700;
+			font-size: 13px;
+			font-family: 'Roboto Slab', serif;
+			text-transform: uppercase;
+			text-align: right;
+		}
+	}
+}
 
 /* -------------------------------------------------- */
 /*	Image
@@ -270,66 +450,6 @@ $q-quote-type-2-author-text-color				: #ffffff;
 }
 
 /* -------------------------------------------------- */
-/*	 Accordion and Toggle
-/* -------------------------------------------------- */
-
-.acc-box { margin-bottom: 20px; }
-
-.acc-trigger {
-	position: relative;
-	display: block;
-	margin-bottom: 4px;
-	padding: 7px 55px 7px 20px;
-	background-color: #ededed;
-	cursor: pointer;
-
-	-webkit-transition: all .25s ease;
-	transition: all .25s ease;
-}
-
-.acc-trigger:hover { background-color: #262626; }
-
-.acc-trigger.active { background-color: #f85c37; }
-
-.acc-trigger:after {
-	position: absolute;
-	top: 0;
-	right: 0;
-	display: block;
-	width: 48px;
-	height: 100%;
-	color: #262626;
-	text-align: center;
-	font-size: 18px;
-	font-family: 'fontello';
-	line-height: 40px;
-	content: '\e9a1';
-}
-
-.acc-trigger:hover:after,
-.acc-trigger.active:after { color: #fff; }
-
-.acc-trigger.active:after { content: '\e9a4'; }
-
-.acc-trigger a {
-	color: #262626;
-	font-weight: 500;
-	font-size: 12px;
-	font-family: 'Raleway', sans-serif;
-	text-transform: uppercase;
-}
-
-.acc-trigger:hover a,
-.acc-trigger.active a { color: #fff; }
-
-.acc-trigger.active + .acc-container p { margin: 0 0 10px 0; }
-
-.acc-container {
-	padding: 15px 0;
-	display: none;
-}
-
-/* -------------------------------------------------- */
 /*	 Tabs
 /* -------------------------------------------------- */
 
@@ -387,7 +507,7 @@ $q-quote-type-2-author-text-color				: #ffffff;
 .tab-content:first-child { display: block; }
 
 /* -------------------------------------------------- */
-/*	$84. List
+/*	List
 /* -------------------------------------------------- */
 
 ul.list { margin-bottom: 20px; }
@@ -601,7 +721,7 @@ ul.list li.type-5:before { content: '\e8b2'; }
 }
 
 /* -------------------------------------------------- */
-/*	$85. Map
+/*	Map
 /* -------------------------------------------------- */
 
 .google_map {
@@ -1172,77 +1292,6 @@ ul.style-fall li a:hover:before {
 	.button.white:hover {
 		color: #fff;
 		background-color: transparent;
-	}
-}
-
-/* -------------------------------------------------- */
-/*  Blockqoute
-/* -------------------------------------------------- */
-
-blockquote {
-	&.lc-quote {
-		position: relative;
-		font: {
-			weight: $q-font-weight;
-			style: $q-font-style;
-			size: $q-font-size;
-			family: $q-font-family;
-		};
-		line-height: 1.5em;
-		margin-top: 1.5em;
-		margin-bottom: 1.5em;
-		padding: 25px 20px 20px 80px;
-
-		&:before {
-			position: absolute;
-			left: 10px;
-			top: 30px;
-			color: $q-quote-sign-color;
-			font-size: $q-quote-sign-size;
-			font-family: $q-quote-sign-font-family;
-			content: $q-quote-sign-character;
-			line-height: 1em;
-			font-style: normal;
-
-			@include transition(color .25s ease);
-		}
-
-		&.type-1 {
-			background-color: $q-quote-type-1-bg-color;
-			color: $q-quote-type-1-text-color;
-
-			.author {
-				color: $q-quote-type-1-author-text-color;
-			}
-		}
-
-		&.type-2 {
-			background-color: $q-quote-type-2-bg-color;
-			color: $q-quote-type-2-text-color;
-
-			&:before {
-				color: #fff;
-				color: rgba(255,255,255,.7);
-			}
-
-			.author {
-				color: $q-quote-type-2-author-text-color;
-			}
-		}
-
-		p {
-			margin-bottom: .7em;
-			line-height: 2em;
-		}
-
-		.author {
-			display: block;
-			font-weight: 700;
-			font-size: 13px;
-			font-family: 'Roboto Slab', serif;
-			text-transform: uppercase;
-			text-align: right;
-		}
 	}
 }
 
