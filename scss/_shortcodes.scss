@@ -35,6 +35,26 @@ $caption-style-2-font-color						: #ffffff;
 $caption-style-2-bg-color						: rgba(0,0,0,0.5);
 $caption-style-2-offset							: 3px 10px;
 
+// Blockquote
+$q-font-weight									: 400;
+$q-font-style									: italic;
+$q-font-size									: 18px;
+$q-font-family									: 'Bree Serif', serif;
+
+$q-quote-sign-color								: #acacac;
+$q-quote-sign-size								: 100px;
+$q-quote-sign-font-family						: 'Courgette', cursive;
+$q-quote-sign-character							: "“";
+
+$q-quote-type-1-bg-color						: #ededed;
+$q-quote-type-1-text-color						: #bebebe;
+$q-quote-type-1-author-text-color				: #4d90fe;
+
+$q-quote-type-2-bg-color						: #f85c37;
+$q-quote-type-2-text-color						: #ffffff;
+$q-quote-type-2-author-text-color				: #ffffff;
+
+
 /* -------------------------------------------------- */
 /*	Image
 /* -------------------------------------------------- */
@@ -739,7 +759,7 @@ i[class*=" circle-icon"]:before {
 }
 
 /* -------------------------------------------------- */
-/* $36. Services Style Icons
+/* Services Style Icons
 /* -------------------------------------------------- */
 
 .ca-shortcode { margin-bottom: 10px; }
@@ -959,7 +979,7 @@ ul.style-fall li a:hover:before {
 }
 
 /* -------------------------------------------------- */
-/* $38. Team
+/* Team
 /* -------------------------------------------------- */
 
 .team-entry-image { margin-bottom: 25px; }
@@ -1160,53 +1180,70 @@ ul.style-fall li a:hover:before {
 /* -------------------------------------------------- */
 
 blockquote {
-	font-size: 18px;
-	font-style: italic;
-	position: relative;
-	margin-bottom: 20px;
-	padding: 25px 20px 20px 80px;
-}
+	&.lc-quote {
+		position: relative;
+		font: {
+			weight: $q-font-weight;
+			style: $q-font-style;
+			size: $q-font-size;
+			family: $q-font-family;
+		};
+		line-height: 1.5em;
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
+		padding: 25px 20px 20px 80px;
 
-blockquote:before {
-	position: absolute;
-	left: 10px;
-	color: #acacac;
-	font-size: 100px;
-	font-family: 'Courgette', cursive;
-	content: "“";
-	line-height: 1em;
-	font-style: normal;
+		&:before {
+			position: absolute;
+			left: 10px;
+			top: 30px;
+			color: $q-quote-sign-color;
+			font-size: $q-quote-sign-size;
+			font-family: $q-quote-sign-font-family;
+			content: $q-quote-sign-character;
+			line-height: 1em;
+			font-style: normal;
 
-	-webkit-transition: color .25s ease;
-	transition: color .25s ease;
-}
+			@include transition(color .25s ease);
+		}
 
-blockquote:before {
-	left: 10px;
-	top: 30px;
-}
+		&.type-1 {
+			background-color: $q-quote-type-1-bg-color;
+			color: $q-quote-type-1-text-color;
 
-blockquote.type-1 { background-color: #ededed; }
+			.author {
+				color: $q-quote-type-1-author-text-color;
+			}
+		}
 
-blockquote.type-2 {
-	background-color: #f85c37;
-	color: #fff;
-}
+		&.type-2 {
+			background-color: $q-quote-type-2-bg-color;
+			color: $q-quote-type-2-text-color;
 
-blockquote.type-2:before {
-	color: #fff;
-	color: rgba(255,255,255,.7);
-}
+			&:before {
+				color: #fff;
+				color: rgba(255,255,255,.7);
+			}
 
+			.author {
+				color: $q-quote-type-2-author-text-color;
+			}
+		}
 
-blockquote.quote-text {
-	position: relative;
-	padding-left: 80px;
-}
+		p {
+			margin-bottom: .7em;
+			line-height: 2em;
+		}
 
-blockquote p {
-	margin-bottom: .7em;
-	line-height: 2em;
+		.author {
+			display: block;
+			font-weight: 700;
+			font-size: 13px;
+			font-family: 'Roboto Slab', serif;
+			text-transform: uppercase;
+			text-align: right;
+		}
+	}
 }
 
 /* -------------------------------------------------- */

@@ -25,8 +25,8 @@
             'default_value' => '',
 			'description' => '',
             'options' => array(
-                                'type-1' => 'type-1',
-                                'type-bg-color' => 'type-bg-color',
+                'type-1' => 'Type 1 (Gray background)',
+                'type-2' => 'Type 2 (Red background)',
                                 ),
 			'default_value' => TMM_Content_Composer::set_default_value('type', 'type-1'),
 			'id' => '',
