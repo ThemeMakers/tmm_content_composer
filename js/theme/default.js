@@ -387,6 +387,35 @@ function merge_objects_options(obj1, obj2) {
                 });
             }
 
+            /* ---------------------------------------------------- */
+            /*	Tabs												*/
+            /* ---------------------------------------------------- */
+
+            if ($('.lc-tabs-holder').length) {
+
+                var $tabsHolder = $('.lc-tabs-holder');
+
+                $tabsHolder.each(function(i, val) {
+
+                    var $tabsNav = $('.tabs-nav', val),
+                        eventtype = Modernizr.touch ? 'touchstart' : 'click';
+
+                    $tabsNav.each(function() {
+                        $(this).next().children('.tab-content').first().stop(true, true).show();
+                        $(this).children('li').first().addClass('active').stop(true, true).show();
+                    });
+
+                    $tabsNav.on(eventtype, 'h3', function(e) {
+
+                        var $this = $(this).parent('li'),
+                            $index = $this.index();
+                        $this.siblings().removeClass('active').end().addClass('active');
+                        $this.parent().next().children('.tab-content').stop(true, true).hide().eq($index).stop(true, true).fadeIn(250);
+                        e.preventDefault();
+                    });
+                });
+            }
+
         }());
     });
 }(jQuery, window, document));

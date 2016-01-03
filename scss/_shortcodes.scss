@@ -73,6 +73,22 @@ $caption-style-2-font-color						: #ffffff;
 $caption-style-2-bg-color						: rgba(0,0,0,0.5);
 $caption-style-2-offset							: 3px 10px;
 
+// Tabs
+$tabs-holder-brd-color							: #dedede;
+$tabs-nav-brd-width								: 2px;
+$tabs-nav-brd-style								: solid;
+$tabs-nav-brd-color								: #ebebeb;
+$tabs-nav-brd-color-active						: #333333;
+
+$tabs-nav-item-bg-color							: #fafafa;
+$tabs-nav-item-text-color						: #262626;
+$tabs-nav-item-bg-color-active					: #333333;
+$tabs-nav-item-text-color-active				: #ffffff;
+$tabs-nav-item-font-weight						: 700;
+$tabs-nav-item-font-size						: 14px;
+$tabs-nav-item-font-family						: 'Roboto Slab', serif;
+
+
 /* -------------------------------------------------- */
 /*	 Accordion and Toggle
 /* -------------------------------------------------- */
@@ -453,58 +469,73 @@ blockquote {
 /*	 Tabs
 /* -------------------------------------------------- */
 
-.tabs-nav {
-	margin-bottom: 10px;
-	font-size: 0;
+.lc-tabs-holder {
+	margin-bottom: 1.5em;
+	border-bottom: {
+		width: 1px;
+		style: solid;
+		color: $tabs-holder-brd-color;
+	};
+
+	.tabs-nav {
+		border-bottom: {
+			width: $tabs-nav-brd-width;
+			style: $tabs-nav-brd-style;
+			color: $tabs-nav-brd-color;
+		};
+		font-size: 0;
+
+		h3 {
+			position: relative;
+			display: block;
+			margin-right: -2px;
+			margin-bottom: 0;
+			padding: 12px 18px;
+			border: {
+				width: $tabs-nav-brd-width;
+				style: $tabs-nav-brd-style;
+				color: $tabs-nav-brd-color;
+			};
+			background-color: $tabs-nav-item-bg-color;
+			color: $tabs-nav-item-text-color;
+			text-align: center;
+			font-weight: $tabs-nav-item-font-weight;
+			font-size: $tabs-nav-item-font-size;
+			font-family: $tabs-nav-item-font-family;
+			line-height: 1em;
+			cursor: pointer;
+
+			@include transition(background-color .35s ease, color .35s ease, border-color .35s ease, padding .25s ease, margin .25s ease);
+		}
+
+		li {
+			position: relative;
+			top: 2px;
+			display: inline-block;
+
+			&.active {
+				h3 {
+					z-index: 3;
+					border-color: $tabs-nav-brd-color-active;
+					background-color: $tabs-nav-item-bg-color-active;
+					color: $tabs-nav-item-text-color-active;
+					margin-top: -16px;
+					padding-top: 16px;
+					cursor: default;
+				}
+			}
+		}
+	}
+
+	.tabs-container { overflow: hidden; }
+
+	.tab-content {
+		display: none;
+		padding: 20px 0 0;
+
+		&:first-child {	display: block; }
+	}
 }
-
-.tabs-nav li {
-	position: relative;
-	display: inline-block;
-}
-
-.widget .tabs-nav li { width: 50%; }
-
-.tabs-nav li a {
-	position: relative;
-	display: block;
-	margin-right: 1px;
-	margin-bottom: 1px;
-	padding: 14px 35px;
-	background-color: #ededed;
-	color: #262626;
-	text-align: center;
-	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 12px;
-	font-family: 'Raleway', sans-serif;
-	line-height: 1em;
-	cursor: pointer;
-
-	-webkit-transition: all .25s ease;
-	transition: all .25s ease;
-}
-
-.widget .tabs-nav li a { padding: 14px 10px; }
-
-.tabs-nav li a:hover {
-	background-color: #262626;
-	color: #fff;
-}
-
-.tabs-nav li.active a {
-	background-color: #f85c37;
-	color: #fff;
-}
-
-.tabs-container { overflow: hidden; }
-
-.tab-content {
-	display: none;
-	padding: 10px 0;
-}
-
-.tab-content:first-child { display: block; }
 
 /* -------------------------------------------------- */
 /*	List
@@ -612,6 +643,30 @@ ul.list li.type-5:before { content: '\e8b2'; }
 #content .success .alert-close { color: #8aaa67; }
 #content .info .alert-close    { color: #66aac4; }
 #content .notice .alert-close  { color: #dec47b; }
+
+//.error,
+//.success,
+//.info,
+//.notice,
+//.transparent {
+//	position: relative;
+//	display: block;
+//	margin-bottom: 10px;
+//	padding: 18px;
+//	border-width: 2px;
+//	border-style: solid;
+//	font-weight: 700;
+//	font-size: 16px;
+//	font-family: 'Roboto Slab', serif;
+//	text-transform: uppercase;
+//	text-align: center;
+//}
+//
+//.error   	 { background-color: #ffccc6; color: #ff6d5e; border-color: #ff998f; }
+//.success 	 { background-color: #cbead5; color: #6cc487; border-color: #98d6ab; }
+//.info    	 { background-color: #c1d8fe; color: #4d90fe; border-color: #82b1fe; }
+//.notice  	 { background-color: #feebc1; color: #fec64d; border-color: #fed782; }
+//.transparent { background-color: transparent; color: #333; border-color: #dcdcdc; }
 
 /* -------------------------------------------------- */
 /*	 Clients
