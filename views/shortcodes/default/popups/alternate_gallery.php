@@ -17,7 +17,7 @@
 
 		TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Galleries', TMM_THEME_FOLDER_NAME),
+				'title' => __('Galleries', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'content',
 				'id' => '',
 				'options' => $galleries_options_array,

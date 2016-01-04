@@ -44,7 +44,7 @@
             'shortcode_field' => 'delay',
             'id' => '',
             'default_value' => TMM_Content_Composer::set_default_value('delay', 0),
-            'description' => __('in hours', TMM_THEME_FOLDER_NAME),
+            'description' => __('in hours', TMM_CC_TEXTDOMAIN),
         ));
         ?>
 	</div><!--/ .one-half-->

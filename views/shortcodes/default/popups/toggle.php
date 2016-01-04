@@ -10,7 +10,7 @@
 
 		<div class="fullwidth">
 			<a class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only js_add_accordion_item"
-			   href="#"><?php _e('Add Toggle', TMM_THEME_FOLDER_NAME); ?></a>
+			   href="#"><?php _e('Add Toggle', TMM_CC_TEXTDOMAIN); ?></a>
 		</div>
 
 		<ul id="shortcode_tabs_list list_items" class="list-items">
@@ -29,7 +29,7 @@
 						/**
 						* ---------------- Toggle Title ----------------
 						*/
-						_e('Toggle Title', TMM_THEME_FOLDER_NAME);
+						_e('Toggle Title', TMM_CC_TEXTDOMAIN);
 						?>
 					</h4>
 					<input type="text" value="<?php echo $titles_edit_data[$key] ?>"
@@ -37,13 +37,13 @@
 						   data-shortcode-field="title" style="width: 67%;" />
 
 					<a class="button button-small js_delete_accordion_item js_shortcode_template_changer"
-					   href="#"><?php _e('Remove', TMM_THEME_FOLDER_NAME); ?></a>
+					   href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
 
 					<h4><?php
 						/**
 						* ---------------- Content ----------------
 						*/
-						_e('Content', TMM_THEME_FOLDER_NAME);
+						_e('Content', TMM_CC_TEXTDOMAIN);
 						?>
 					</h4>
 					<textarea class="js_shortcode_template_changer data-area accordion_item_content"

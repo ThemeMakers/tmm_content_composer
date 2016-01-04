@@ -74,7 +74,7 @@ $query = $w_query->query(array(
 				<?php $email = get_post_meta($post->ID, 'staff_email', true); ?>
 				<?php if (!empty($email)): ?>
 					<br />
-					<a href="mailto:<?php echo $email ?>" class="button default small"><?php _e('E-mail', TMM_THEME_FOLDER_NAME); ?> <?php echo get_the_title($post->ID); ?></a>
+					<a href="mailto:<?php echo $email ?>" class="button default small"><?php _e('E-mail', TMM_CC_TEXTDOMAIN); ?> <?php echo get_the_title($post->ID); ?></a>
 				<?php endif; ?>
 
 			</div><!--/ .twelve .columns-->

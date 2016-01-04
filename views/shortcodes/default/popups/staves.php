@@ -16,8 +16,8 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Position', TMM_THEME_FOLDER_NAME),
-			'options' => array(0 => __('All', TMM_THEME_FOLDER_NAME)) + $positions_array,
+			'title' => __('Position', TMM_CC_TEXTDOMAIN),
+			'options' => array(0 => __('All', TMM_CC_TEXTDOMAIN)) + $positions_array,
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content',''),
@@ -33,7 +33,7 @@
         */
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Per page', TMM_THEME_FOLDER_NAME),
+			'title' => __('Per page', TMM_CC_TEXTDOMAIN),
 			'options' => array(
 				10 => 10,
 				20 => 20,
@@ -57,10 +57,10 @@
         */
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Order by', TMM_THEME_FOLDER_NAME),
+			'title' => __('Order by', TMM_CC_TEXTDOMAIN),
 			'options' => array(
-				'title' => __('Name', TMM_THEME_FOLDER_NAME),
-				'date' => __('Date', TMM_THEME_FOLDER_NAME),
+				'title' => __('Name', TMM_CC_TEXTDOMAIN),
+				'date' => __('Date', TMM_CC_TEXTDOMAIN),
 			),
 			'shortcode_field' => 'order',
 			'id' => '',
@@ -78,7 +78,7 @@
         */
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Sort order', TMM_THEME_FOLDER_NAME),
+			'title' => __('Sort order', TMM_CC_TEXTDOMAIN),
 			'options' => array(
 				'ASC' => 'ASC',
 				'DESC' => 'DESC',

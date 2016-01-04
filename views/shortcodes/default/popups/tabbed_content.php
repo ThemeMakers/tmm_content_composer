@@ -3,19 +3,19 @@
 
     <div class="fullwidth">
 
-        <h4 class="label"><?php _e('Select Type', TMM_THEME_FOLDER_NAME); ?></h4>
+        <h4 class="label"><?php _e('Select Type', TMM_CC_TEXTDOMAIN); ?></h4>
 		<div class="sel">
 			<select id="tmm_toggle_type" class="js_shortcode_template_changer data-select" data-shortcode-field="type">
 				<option <?php if (TMM_Content_Composer::set_default_value('type', '') == 'tabs-style-1') echo 'selected' ?>
-						value="tabs-style-1"><?php _e('Style', TMM_THEME_FOLDER_NAME); ?> 1</option>
+						value="tabs-style-1"><?php _e('Style', TMM_CC_TEXTDOMAIN); ?> 1</option>
 				<option <?php if (TMM_Content_Composer::set_default_value('type', '') == 'tabs-style-2') echo 'selected' ?>
-						value="tabs-style-2"><?php _e('Style', TMM_THEME_FOLDER_NAME); ?> 2</option>
+						value="tabs-style-2"><?php _e('Style', TMM_CC_TEXTDOMAIN); ?> 2</option>
 				<option <?php if (TMM_Content_Composer::set_default_value('type', '') == 'tabs-style-3') echo 'selected' ?>
-						value="tabs-style-3"><?php _e('Style', TMM_THEME_FOLDER_NAME); ?> 3</option>
+						value="tabs-style-3"><?php _e('Style', TMM_CC_TEXTDOMAIN); ?> 3</option>
 			</select>
 		</div>
 
-        <a class="ui-button js_add_accordion_item ui-widget ui-state-default ui-corner-all ui-button-text-only" href="#"><?php _e('Add Tab', TMM_THEME_FOLDER_NAME); ?></a>
+        <a class="ui-button js_add_accordion_item ui-widget ui-state-default ui-corner-all ui-button-text-only" href="#"><?php _e('Add Tab', TMM_CC_TEXTDOMAIN); ?></a>
 
     </div><!--/ .fullwidth-->
 
@@ -38,10 +38,10 @@
 	?>
         <?php foreach ($content_edit_data as $key => $content_edit_text) { ?>
         <li class="list_item">
-            <h4 class="label"><?php _e('Tab Title', TMM_THEME_FOLDER_NAME); ?></h4>
+            <h4 class="label"><?php _e('Tab Title', TMM_CC_TEXTDOMAIN); ?></h4>
             <input type="text" value="<?php echo $titles_edit_data[$key] ?>" class="js_shortcode_template_changer data-input accordion_item_title" data-shortcode-field="title" style="width: 67%;" />
-            <a class="button button-small js_delete_accordion_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_THEME_FOLDER_NAME); ?></a>
-            <h4 class="label"><?php _e('Content', TMM_THEME_FOLDER_NAME); ?></h4>
+            <a class="button button-small js_delete_accordion_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
+            <h4 class="label"><?php _e('Content', TMM_CC_TEXTDOMAIN); ?></h4>
             <textarea class="js_shortcode_template_changer data-area accordion_item_content" data-shortcode-field="content"><?php echo $content_edit_text ?></textarea>
         </li>
         <?php } ?>

@@ -42,7 +42,7 @@ switch ($type) {
             <object width="<?php echo $width ?>" height="<?php echo $height ?>" type="application/x-shockwave-flash" data="<?php echo TMM_THEME_URI ?>/js/mediaelement/flashmediaelement.swf">
                 <param name="movie" value="<?php echo TMM_THEME_URI ?>/js/mediaelement/flashmediaelement.swf" />
                 <param name="flashvars" value="controls=true&file=<?php echo $html5_video_url ?>" />
-                <img src="<?php echo $html5_poster ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php _e('No video playback capabilities', TMM_THEME_FOLDER_NAME); ?>" />
+                <img src="<?php echo $html5_poster ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php _e('No video playback capabilities', TMM_CC_TEXTDOMAIN); ?>" />
             </object>
 
         </video>

@@ -77,7 +77,7 @@ if ($show_featured_image) {
 	<?php if ($show_readmore_button) : ?>   
 
 		<p <?php echo $text_styles ?>>
-			<?php echo do_shortcode('[button url="' . $post_link . '" color="' . $button_color . '" size="' . $button_size . '"]' . __('Read more', TMM_THEME_FOLDER_NAME) . '[/button]') ?>	
+			<?php echo do_shortcode('[button url="' . $post_link . '" color="' . $button_color . '" size="' . $button_size . '"]' . __('Read more', TMM_CC_TEXTDOMAIN) . '[/button]') ?>
 		</p>
 
 	<?php endif; ?>	

@@ -268,16 +268,16 @@ global $post;
                     <?php endif; ?>
 
                     <?php if (!$_REQUEST['disable_author']) : ?>
-                        <span class="author"><?php _e('Posted by', TMM_THEME_FOLDER_NAME); ?> <?php the_author() ?></span>,
+                        <span class="author"><?php _e('Posted by', TMM_CC_TEXTDOMAIN); ?> <?php the_author() ?></span>,
                     <?php endif; ?>
 
                     <?php if (!$_REQUEST['disable_blog_comments']) : ?>
-                        <span class="comments"><?php _e('With', TMM_THEME_FOLDER_NAME); ?> <a href="<?php the_permalink(); ?>#comments"><?php comments_number('0', '1', '%'); ?> <?php _e('Comments', TMM_THEME_FOLDER_NAME); ?></a></span>,
+                        <span class="comments"><?php _e('With', TMM_CC_TEXTDOMAIN); ?> <a href="<?php the_permalink(); ?>#comments"><?php comments_number('0', '1', '%'); ?> <?php _e('Comments', TMM_CC_TEXTDOMAIN); ?></a></span>,
                     <?php endif; ?>
 
                     <?php if (!$_REQUEST['disable_categories']) : ?>
                         <span class="category">
-								<?php _e('Category:', TMM_THEME_FOLDER_NAME) ?>
+								<?php _e('Category:', TMM_CC_TEXTDOMAIN) ?>
                             <?php foreach ((get_the_category()) as $category) : ?>
                                 <a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->name ?>"><?php echo $category->name . ', ' ?></a>
                             <?php endforeach; ?>
@@ -313,7 +313,7 @@ global $post;
 
                 <div class="clearfix"></div>
                 <br />
-                <a href="<?php the_permalink(); ?>" class="button default small"><?php _e('Read more', TMM_THEME_FOLDER_NAME); ?></a>
+                <a href="<?php the_permalink(); ?>" class="button default small"><?php _e('Read more', TMM_CC_TEXTDOMAIN); ?></a>
             </div><!--/ .entry-body -->
 
             </div><!--/ .entry-body -->

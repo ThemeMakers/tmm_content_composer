@@ -3,11 +3,11 @@
 	
 	<!--<div class="one-half">
 		
-		<h4 class="label"><?php /*_e('Y-offset', TMM_THEME_FOLDER_NAME); */?></h4>
+		<h4 class="label"><?php /*_e('Y-offset', TMM_CC_TEXTDOMAIN); */?></h4>
                 <input type="text" value="<?php /*echo  TMM_Content_Composer::set_default_value('offset', '0'); */?>" class="js_shortcode_template_changer data-input" data-shortcode-field="offset" />
 		
 		<span class="preset_description">
-			<?php /*_e('Need for home page', TMM_THEME_FOLDER_NAME); */?>
+			<?php /*_e('Need for home page', TMM_CC_TEXTDOMAIN); */?>
 		</span>	
 	</div>--><!--/ .one-half-->
 
@@ -23,7 +23,7 @@
 				'shortcode_field' => 'offset',
 				'id' => '',
 				'default_value' => TMM_Content_Composer::set_default_value('offset', '0'),
-				'description' => _e('Need for home page', TMM_THEME_FOLDER_NAME),
+				'description' => _e('Need for home page', TMM_CC_TEXTDOMAIN),
 		));
 		?>
 	</div><!--/ .one-half-->
