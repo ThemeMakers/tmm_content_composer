@@ -163,6 +163,37 @@
 
 }(jQuery));
 
+/*
+ * Notifications
+ * MIT licensed
+ *
+ */
+(function ($) {
+
+    $.fn.notifications = function (options) {
+
+        var defaults = { speed: 200 },
+            o = $.extend({}, defaults, options);
+
+        return this.each(function () {
+
+            var closeBtn = $('<a class="alert-close" href="#"></a>'),
+                closeButton = $(this).append(closeBtn).find('> .alert-close');
+
+            function fadeItSlideIt(object) {
+                object.fadeTo(o.speed, 0, function () {
+                    object.slideUp(o.speed);
+                });
+            }
+            closeButton.click(function () {
+                fadeItSlideIt($(this).parent());
+                return false;
+            });
+        });
+    };
+
+})(jQuery);
+
 
 /* Ajax Navigation */
 
@@ -414,6 +445,18 @@ function merge_objects_options(obj1, obj2) {
                         e.preventDefault();
                     });
                 });
+            }
+
+            /*----------------------------------------------------*/
+            /*	Alert Boxes										  */
+            /*----------------------------------------------------*/
+
+            if ($('.lc-alert').length) {
+
+                var $notifications = $('.error, .success, .info, .notice, .transparent');
+
+                $notifications.notifications({speed: 300});
+
             }
 
         }());

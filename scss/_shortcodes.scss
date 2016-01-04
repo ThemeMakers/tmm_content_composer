@@ -88,6 +88,31 @@ $tabs-nav-item-font-weight						: 700;
 $tabs-nav-item-font-size						: 14px;
 $tabs-nav-item-font-family						: 'Roboto Slab', serif;
 
+// Notifications
+$alert-font-size								: 16px;
+$alert-font-weight								: 700px;
+$alert-font-family								: 'Roboto Slab', serif;
+
+$alert-brd-width								: 2px;
+$alert-brd-style								: solid;
+$alert-brd-color-error							: #ff998f;
+$alert-brd-color-success						: #98d6ab;
+$alert-brd-color-info							: #82b1fe;
+$alert-brd-color-notice							: #fed782;
+$alert-brd-color-transparent					: #dcdcdc;
+
+$alert-bg-color-error							: #ffccc6;
+$alert-bg-color-success							: #cbead5;
+$alert-bg-color-info							: #c1d8fe;
+$alert-bg-color-notice							: #feebc1;
+$alert-bg-color-transparent						: #ffffff;
+
+$alert-text-color-error							: #ff6d5e;
+$alert-text-color-success						: #6cc487;
+$alert-text-color-info							: #4d90fe;
+$alert-text-color-notice						: #fec64d;
+$alert-text-color-transparent					: #333333;
+
 
 /* -------------------------------------------------- */
 /*	 Accordion and Toggle
@@ -577,96 +602,67 @@ ul.list li.type-5:before { content: '\e8b2'; }
 /*	 Notifications
 /* -------------------------------------------------- */
 
-.error, .success, .info, .notice {
+.lc-alert {
 	position: relative;
-	margin-bottom: 10px;
-	padding: 12px 15px 12px 50px;
 	display: block;
+	margin-bottom: 1.5em;
+	padding: 18px;
+	border-width: $alert-brd-width;
+	border-style: $alert-brd-style;
+	font-weight: $alert-font-weight;
+	font-size: $alert-font-size;
+	font-family: $alert-font-family;
 	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 12px;
-	font-family: 'Raleway', sans-serif;
+	text-align: center;
+
+	&.error {
+		background-color: $alert-bg-color-error;
+		color: $alert-text-color-error;
+		border-color: $alert-brd-color-error;
+	}
+
+	&.success {
+		background-color: $alert-bg-color-success;
+		color: $alert-text-color-success;
+		border-color: $alert-brd-color-success;
+	}
+
+	&.info {
+		background-color: $alert-bg-color-info;
+		color: $alert-text-color-info;
+		border-color: $alert-brd-color-info;
+	}
+
+	&.notice {
+		background-color: $alert-bg-color-notice;
+		color: $alert-text-color-notice;
+		border-color: $alert-brd-color-notice;
+	}
+
+	&.transparent {
+		background-color: $alert-bg-color-transparent;
+		color: $alert-text-color-transparent;
+		border-color: $alert-brd-color-transparent;
+	}
+
+	.alert-close {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		line-height: 1;
+		color: rgba(50, 100, 100, 0.2);
+
+		&:hover {
+			color: rgba(50, 100, 100, 0.4);
+		}
+
+		&:before {
+			font-size: 18px;
+			font-family: 'fontello';
+			content: "\e83e";
+		}
+	}
 }
-
-.error   { background-color: #fac9cf; color: #ce717c; }
-.success { background-color: #e0f2cd; color: #8aaa67; }
-.info    { background-color: #c6e7f4; color: #66aac4; }
-.notice  { background-color: #feefc5; color: #c8a749; }
-
-.error:before,
-.success:before,
-.info:before,
-.notice:before {
-	position: absolute;
-	top: 50%;
-	left: 20px;
-	margin-top: -13px;
-	font-size: 18px;
-	font-family: 'fontello';
-}
-
-.error:before {
-	color: #ce717c;
-	content: '\ee83';
-}
-
-.success:before {
-	color: #8aaa67;
-	content: '\ee80';
-}
-
-.info:before {
-	color: #66aac4;
-	content: '\ece2';
-}
-
-.notice:before {
-	color: #c8a749;
-	content: '\ecf1';
-}
-
-.alert-close {
-	position: absolute;
-	top: 50%;
-	right: 20px;
-	margin-top: -9px;
-	line-height: 1;
-}
-
-.alert-close:before {
-	font-size: 18px;
-	font-family: 'fontello';
-	content: "\e83e";
-}
-
-#content .error .alert-close   { color: #ce717c; }
-#content .success .alert-close { color: #8aaa67; }
-#content .info .alert-close    { color: #66aac4; }
-#content .notice .alert-close  { color: #dec47b; }
-
-//.error,
-//.success,
-//.info,
-//.notice,
-//.transparent {
-//	position: relative;
-//	display: block;
-//	margin-bottom: 10px;
-//	padding: 18px;
-//	border-width: 2px;
-//	border-style: solid;
-//	font-weight: 700;
-//	font-size: 16px;
-//	font-family: 'Roboto Slab', serif;
-//	text-transform: uppercase;
-//	text-align: center;
-//}
-//
-//.error   	 { background-color: #ffccc6; color: #ff6d5e; border-color: #ff998f; }
-//.success 	 { background-color: #cbead5; color: #6cc487; border-color: #98d6ab; }
-//.info    	 { background-color: #c1d8fe; color: #4d90fe; border-color: #82b1fe; }
-//.notice  	 { background-color: #feebc1; color: #fec64d; border-color: #fed782; }
-//.transparent { background-color: transparent; color: #333; border-color: #dcdcdc; }
 
 /* -------------------------------------------------- */
 /*	 Clients
