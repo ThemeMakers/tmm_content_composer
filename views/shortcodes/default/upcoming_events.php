@@ -1,38 +1,5 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<?php
 
-if (!isset($count)) {
-	$count = '3';
-}
-
-$atts['count'] = $count;
-$atts['title'] = $content;
-
-if (!isset($sorting)) {
-	$sorting = 'DESC';
-}
-
-$atts['sorting'] = $sorting;
-
-if (!isset($deep)) {
-	$deep = 0;
-}
-
-$atts['deep'] = $deep;
-$atts['delay'] = 0;
-
-if(isset($delay)){
-	$atts['delay']=$delay;//hours
-}
-
-if (isset($category)) {
-	$atts['category'] = $category;
-}else {
-	$category = '0';
-	$atts['category'] = $category;
-}
-
-?>
 <div class="widget widget_upcoming_events">
 
 	<?php if (!empty($title)): ?>

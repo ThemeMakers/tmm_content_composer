@@ -9,11 +9,11 @@
 			'shortcode_field' => 'content',
 			'id' => '',
 			'options' => array(
-				'separator' => __('Line', TMM_CC_TEXTDOMAIN),
-				'divider' => __('Dashed', TMM_CC_TEXTDOMAIN),
-				'double-divider' => __('Double Divider', 'tmm_shortcodes'),
+				'solid' => __('Solid', TMM_CC_TEXTDOMAIN),
+				'white-space' => __('White Space', TMM_CC_TEXTDOMAIN),
+				'linked' => __('Dotted With Top Link', TMM_CC_TEXTDOMAIN),
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('content', 'separator'),
+			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
 			'description' => ''
 		));
 		?>
@@ -29,7 +29,7 @@
 
 	jQuery(function() {
 		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup, change', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
 	});

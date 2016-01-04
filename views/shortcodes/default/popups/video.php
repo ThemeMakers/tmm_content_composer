@@ -37,34 +37,6 @@
             ?>
         </div><!--/ #youtube_or_vimeo_id_block-->
 
-        <div id="html5_video_block" style="display: display;">
-            <?php
-            /**
-            * ---------------- MP4 html5 file url ----------------
-            */
-            TMM_Content_Composer::html_option(array(
-                'type' => 'upload_video',
-                'title' => __('MP4 html5 file url', TMM_CC_TEXTDOMAIN),
-                'shortcode_field' => 'html5_video_url',
-                'id' => '',
-                'default_value' => TMM_Content_Composer::set_default_value('html5_video_url', ''),
-                'description' => ''
-            ));
-
-            /**
-            * ---------------- HTML5 poster ----------------
-            */
-            TMM_Content_Composer::html_option(array(
-                'type' => 'upload',
-                'title' => __('HTML5 poster', TMM_CC_TEXTDOMAIN),
-                'shortcode_field' => 'html5_poster',
-                'id' => '',
-                'default_value' => TMM_Content_Composer::set_default_value('html5_poster', ''),
-                'description' => ''
-            ));
-            ?>
-        </div><!--/ #html5_video_block-->
-
     </div><!--/ .one-half-->
 
     <div class="one-half">

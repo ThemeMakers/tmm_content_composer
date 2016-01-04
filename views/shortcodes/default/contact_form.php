@@ -63,7 +63,7 @@ if (!empty($contact_form['inputs'])) {
 
 		<?php endif; ?>
 
-		<input type="submit" class="button <?php echo $contact_form['submit_button'] ?> small" value="<?php _e('Submit', TMM_THEME_FOLDER_NAME); ?>" />
+		<input type="submit" class="button <?php echo $contact_form['submit_button'] ?> small" value="<?php _e('Submit', TMM_CC_TEXTDOMAIN); ?>" />
 
 	</form>
 	<div class="contact_form_responce" style="display: none;"><ul></ul></div>

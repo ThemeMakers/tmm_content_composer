@@ -35,6 +35,38 @@
 
 	<div class="one-half">
 		<?php
+		/**
+		 * ---------------- Color ----------------
+		 */
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Color', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'color',
+			'id' => 'button_type',
+			'options' => array(
+				'default' => 'Default',
+				'blue' => 'Blue',
+				'cyan' => 'Cyan',
+				'dark' => 'Dark',
+				'green' => 'Green',
+				'grey' => 'Grey',
+				'lightgreen' => 'Lightgreen',
+				'lightgreen' => 'Lightgreen',
+				'orange' => 'Orande',
+				'red' => 'Red',
+				'sky' => 'Sky',
+				'vinous' => 'Vinous',
+				'yellow' => 'Yellow',
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('color', 'default'),
+			'description' => ''
+		));
+		?>
+
+	</div><!--/ .one-half-->
+
+	<div class="one-half">
+		<?php
         /**
          * ---------------- Size ----------------
          */
@@ -50,39 +82,6 @@
 		?>	
 
 	</div><!--/ .one-half-->
-
-    <div class="one-half">
-		<?php
-        /**
-         * ---------------- Button type ----------------
-         */
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Button type', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'color',
-			'id' => 'button_type',
-			'options' => array(
-	            'default' => 'Default',
-                'blue' => 'Blue',
-                'cyan' => 'Cyan',
-                'dark' => 'Dark',
-                'green' => 'Green',
-                'grey' => 'Grey',
-                'lightgreen' => 'Lightgreen',
-                'lightgreen' => 'Lightgreen',
-                'orange' => 'Orande',
-                'red' => 'Red',
-                'sky' => 'Sky',
-                'vinous' => 'Vinous',
-                'yellow' => 'Yellow',
-            ),
-			'default_value' => TMM_Content_Composer::set_default_value('color', 'default'),
-			'description' => ''
-		));
-		?>
-
-	</div><!--/ .one-half-->
-
 
 </div><!--/ .tmm_shortcode_template->
 

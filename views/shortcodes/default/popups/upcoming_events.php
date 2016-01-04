@@ -25,9 +25,9 @@
         TMM_Content_Composer::html_option(array(
             'type' => 'text',
             'title' => __('Count of events', TMM_CC_TEXTDOMAIN),
-            'shortcode_field' => 'content',
+            'shortcode_field' => 'count',
             'id' => '',
-            'default_value' => TMM_Content_Composer::set_default_value('count', '3'),
+            'default_value' => TMM_Content_Composer::set_default_value('count', 3),
             'description' => ''
         ));
         ?>
@@ -43,7 +43,7 @@
             'title' => __('Delay', TMM_CC_TEXTDOMAIN),
             'shortcode_field' => 'delay',
             'id' => '',
-            'default_value' => TMM_Content_Composer::set_default_value('delay', '0'),
+            'default_value' => TMM_Content_Composer::set_default_value('delay', 0),
             'description' => __('in hours', TMM_THEME_FOLDER_NAME),
         ));
         ?>
@@ -65,7 +65,7 @@
         'shortcode_field' => 'deep',
         'id' => '',
         'options' => $month_array,
-        'default_value' => TMM_Content_Composer::set_default_value('deep', ''),
+        'default_value' => TMM_Content_Composer::set_default_value('deep', 0),
         'description' => ''
         ));
         ?>
@@ -85,7 +85,7 @@
             'DESC' => __('DESC', TMM_CC_TEXTDOMAIN),
             'ASC' => __('ASC', TMM_CC_TEXTDOMAIN),
         ),
-        'default_value' => TMM_Content_Composer::set_default_value('sorting', ''),
+        'default_value' => TMM_Content_Composer::set_default_value('sorting', 'DESC'),
         'description' => ''
         ));
         ?>
@@ -111,7 +111,7 @@
         'shortcode_field' => 'category',
         'id' => '',
         'options' => $terms_options_array,
-        'default_value' => TMM_Content_Composer::set_default_value('category', '0'),
+        'default_value' => TMM_Content_Composer::set_default_value('category', 0),
         'description' => ''
         ));
         ?>

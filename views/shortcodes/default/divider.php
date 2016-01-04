@@ -2,24 +2,21 @@
 <?php
 $style = $content;
 switch ($style) {
-	case 'separator':
-		?>
-		<div class="border-divider" ></div>
-		<?php
-		break;
-	case 'divider':
-		?>
-		<div class="border-divider" style="border-top: 2px dotted #d7d5cf; background-color: transparent;"></div>
-		<?php
-		break;
-	case 'double-divider';
-		?>
-		<div class="border-divider" style="border-top: 3px double #d7d5cf; background-color: transparent;"></div>
-		<?php
-		break;
-	default:
+	case 'solid':
 		?>
 		<div class="border-divider"></div>
 		<?php
+		break;
+	case 'linked':
+		?>
+		<div class="divider-top"><a href="#"><?php _e('Back to Top', TMM_CC_TEXTDOMAIN) ?></a></div>
+		<?php
+		break;
+	case 'white-space':
+		?>
+		<div class="white-space clear">&nbsp;</div>
+		<?php
+		break;
+	default:
 		break;
 }

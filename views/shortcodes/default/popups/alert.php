@@ -23,21 +23,30 @@
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'options' => array(
-				'error' => __('Error Type-1', TMM_CC_TEXTDOMAIN),
-				'success' => __('Success Type-1', TMM_CC_TEXTDOMAIN),
-				'info' => __('Info Type-1', TMM_CC_TEXTDOMAIN),
-				'notice' => __('Notice Type-1', TMM_CC_TEXTDOMAIN),
-				'error type-2' => __('Error Type-2', TMM_CC_TEXTDOMAIN),
-				'success type-2' => __('Success Type-2', TMM_CC_TEXTDOMAIN),
-				'info type-2' => __('Info Type-2', TMM_CC_TEXTDOMAIN),
-				'notice type-2' => __('Notice Type-2', TMM_CC_TEXTDOMAIN),
-				//'transparent' => __('Transparent', TMM_CC_TEXTDOMAIN),
+				'error' => __('Error', TMM_CC_TEXTDOMAIN),
+				'success' => __('Success', TMM_CC_TEXTDOMAIN),
+				'info' => __('Info', TMM_CC_TEXTDOMAIN),
+				'notice' => __('Notice', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type', 'notice'),
 			'description' => ''
 		));
 		?>
 
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Select Type', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'style',
+			'id' => 'type',
+			'options' => array(
+				'type-1' => __('Style-1', TMM_CC_TEXTDOMAIN),
+				'type-2' => __('Style-2', TMM_CC_TEXTDOMAIN),
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('style', 'type-1'),
+			'description' => ''
+		));
+		?>
 
     </div><!--/ .fullwidth-->
 

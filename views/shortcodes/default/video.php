@@ -50,13 +50,13 @@ switch ($type) {
         <script type="text/javascript">
             jQuery(function() {
                 jQuery('#video_<?php echo $unique_id ?>').mediaelementplayer(
-                        {
-                            // if the <video width> is not specified, this is the default
-                            defaultVideoWidth: <?php echo $width ?>,
-                            // if the <video height> is not specified, this is the default
-                            defaultVideoHeight: <?php echo $height ?>
+                    {
+                        // if the <video width> is not specified, this is the default
+                        defaultVideoWidth: <?php echo $width ?>,
+                        // if the <video height> is not specified, this is the default
+                        defaultVideoHeight: <?php echo $height ?>
 
-                        }
+                    }
                 );
 
             });

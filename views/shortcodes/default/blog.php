@@ -1,334 +1,403 @@
+<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
-if (!defined('ABSPATH')) exit;
-
+//blog layout
 wp_reset_query();
-$count_column = '';
-$post_class = (isset($post_appearing_effect) && !empty($post_appearing_effect)) ? 'post-item '.$post_appearing_effect : 'post-item';
-$post_area = 'post-area';
-$blog_type = '';
-$exclude_post_formats ='none';
-
-// default values
-/*if ( !isset($blog_type) ) {
-    $blog_type = 'blog-classic';
-}
-if ( !isset($post_appearing_effect) ) {
-    $post_appearing_effect = 'elementFade';
-}
-if ( !isset($category) ) {
-    $category = '';
-}
-if ( !isset($tag) ) {
-    $tag = '';
-}
-if ( !isset($columns) ) {
-    $columns = '3';
-}
-if ( !isset($orderby) ) {
-    $orderby = '';
-}
-if ( !isset($order) ) {
-    $order = 'DESC';
-}
-if ( !isset($posts_per_page) ) {
-    $posts_per_page = 5;
-}
-if ( !isset($posts_per_load) ) {
-    $posts_per_load = 5;
-}
-if ( !isset($posts) ) {
-    $posts = '';
-}
-if ( !isset($exclude_post_types) ) {
-    $exclude_post_types = 'none';
-}
-if ( !isset($exclude_post_formats) ) {
-    $exclude_post_formats = 'none';
-}
-if ( !isset($title_symbols) ) {
-    $title_symbols = '25';
-}
-if ( !isset($show_review) ) {
-    $show_review = 0;
-}
-if ( !isset($show_metadata) ) {
-    $show_metadata = 1;
-}
-if ( !isset($title_symbols) ) {
-    $title_symbols = 25;
-}
-if ( !isset($show_pagination) ) {
-    $show_pagination = 1;
-}
-if ( !isset($infinity_pagination) ) {
-    $infinity_pagination = 0;
-}
-if ( !isset($post_carousel) ) {
-    $post_carousel = 0;
-}
-if ( !isset($load_by_scrolling) ) {
-    $load_by_scrolling = true;
-}*/
-
-$path = 'content/' . $blog_type . '/content';
 
 $args = array(
-	'orderby' => $orderby,
-	'order' => $order,
-    'ignore_sticky_posts' => true,
-	'post_status' => array('publish')
+    'orderby' => $orderby,
+    'order' => $order,
+    'post_status' => array('publish')
 );
 
 $offset = 0;
 if (isset($_GET['offset'])) {
-	$offset = (int) $_GET['offset'];
-	$args['offset'] = $offset;
+    $offset = (int) $_GET['offset'];
+    $args['offset'] = $offset;
 }
 
-if (!empty($posts_per_page)&&($blog_type!='blog-masonry')) {
-	$args['posts_per_page'] = $posts_per_page;
+if (!empty($posts_per_page)) {
+    $args['posts_per_page'] = $posts_per_page;
 }
 
-if (!empty($category) && ($category!='null') && ($blog_type!='blog-masonry')) {
-    $args['category__in'] = $category;
+if ((int) $category > 0) {
+    $args['cat'] = $category;
 }
 
-if (!empty($tag) && ($tag!='null') &&($blog_type!='blog-masonry')) {
-    $args['tag__in'] = explode(',', $tag) ;
+if (!empty($posts)) {
+    $posts = explode(',', $posts);
+    $args['post__in'] = $posts;
 }
 
-if ((int) $category > 0 &&($blog_type!='blog-masonry')) {
-	$args['cat'] = (int) $category;
-}
-
-if (!empty($posts)&&($blog_type!='blog-masonry')) {
-	$posts = explode(',', $posts);
-	$args['post__in'] = $posts;
-}
-
-if(($exclude_post_types!='none') && ($blog_type!='blog-masonry')){
-
-    switch ($exclude_post_types){
-
-        case 'post-with-image':
-            $args['meta_query'] = array(
-                array(
-                    'key' => '_thumbnail_id',
-                    'compare' => 'NOT EXISTS'
-                ));
-            break;
-
-        case 'post-without-image':
-            $args['meta_query'] = array(
-                array(
-                    'key' => '_thumbnail_id',
-                    'compare' => 'EXISTS'
-                ));
-            break;
-
-    }
-
-}
-
-if (($blog_type!='blog-masonry')&&($exclude_post_formats!='none')) {
-    $exclude_post_formats = explode(',', $exclude_post_formats);
-    $args['tax_query'] = array(
-        array(
-            'taxonomy' => 'post_format',
-            'field' => 'slug',
-            'terms' => $exclude_post_formats,
-            'operator' => 'NOT IN',
-        )
-    );
-}
-
-if ($show_review){
-    $args['meta_key'] = 'tmm_review_total';
-    $args['meta_query'] = array(
-        array(
-            'key' => 'tmm_review_total',
-            'value' => array( 0.1, 100000),
-            'type' => 'numeric',
-            'compare' => 'BETWEEN'
-        ));
-}
-
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+$paged = (get_query_var('page')) ? get_query_var('page') : 1;
 $args['paged'] = $paged;
+
 
 global $wp_query;
 $original_query = $wp_query;
+$wp_query = null;
 $wp_query = new WP_Query($args);
-
-$posts_array = $wp_query->posts;
-//var_dump($posts_array);
-switch($blog_type) {
-	case 'blog-classic':
-		$count_column = 'post-col-1';
-	break;
-	case 'blog-medium':
-		$post_area = 'post-list';
-		$post_class .= ' post-entry';
-	break;
-	case 'blog-masonry':
-        $blog_type = 'masonry';
-        $post_class = 'animate post-item';
-        $count_column = 'post-col-' .$columns;
-        break;
-	case 'blog-grid':
-	case 'blog-grid-overlay':
-	case 'blog-grid-layout':
-		$count_column = 'post-col-' .$columns;
-	break;
-}
-$data_columns = '';
-if (isset($post_carousel) && $post_carousel){
-    $blog_type = 'post-carousel';
-    $count_column = '';
-    $data_columns = 'data-columns="' . $columns . '"';
-}
-
-$data_infinity = '';
-$infinity_class = '';
-$data_next_posts = '';
-$data_effect = '';
-
-if (isset($infinity_pagination) && $infinity_pagination ){
-
-    $data_infinity  = 'data-infinity="true"';
-    $infinity_class = 'infinity';
-
-    $args['posts_per_page'] = '-1';
-    $all_wp_query = new WP_Query($args);
-
-    $all_posts_array = $all_wp_query->posts;
-
-    if (!empty($all_posts_array)){
-        $count = count($all_posts_array);
-        $next_posts = '';
-        for ($i = $posts_per_load; $i < $count; $i++) {
-            if (isset($all_posts_array[$i])) {
-                $str = $all_posts_array[$i]->ID;
-                $next_posts = (!empty($next_posts)) ? $next_posts . "," . $str : $next_posts.$str;
-            }
-        }
-        $data_next_posts = 'data-nextposts="' . $next_posts . '"';
-    }
-
-    if (!empty($post_appearing_effect)){
-        $data_effect = 'data-effect="' . $post_appearing_effect . '"';
-    }
-
-}
-
-$_REQUEST['title_symbols'] = $title_symbols;
+global $post;
 ?>
 
-	<div id="post-area" class="<?php echo esc_attr($post_area) ?>
-	    <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?>
-	    <?php echo esc_attr($infinity_class) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?>
-        <?php if(!empty($data_infinity)) echo $data_infinity; ?>
-        <?php if(!empty($data_next_posts)) echo $data_next_posts; ?>
-        <?php if(!empty($data_effect)) echo $data_effect; ?>>
+<?php if (!empty($title)): ?>
+    <h3 class="widget-title"><?php echo $title; ?></h3>
+<?php endif; ?>
+
+<?php if ($blog_view == "default"): ?>
+
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+        <article id="post-<?php the_ID(); ?>" <?php post_class("entry"); ?>>
+
+            <?php
+            $post_pod_type = get_post_meta($post->ID, 'post_pod_type', true);
+            $post_type_values = get_post_meta($post->ID, 'post_type_values', true);
+            ?>
+
+
+            <?php
+            switch ($post_pod_type) {
+                case 'audio':
+                    echo do_shortcode('[audio]' . $post_type_values[$post_pod_type] . '[/audio]');
+                    break;
+                case 'video':
+                    $video_width = 570;
+                    $video_height = 326;
+
+                    $source_url = $post_type_values[$post_pod_type];
+                    if (!empty($source_url)) {
+
+                        $video_type = 'youtube.com';
+                        $allows_array = array('youtube.com', 'player.vimeo.com', '.mp4');
+
+                        foreach ($allows_array as $key => $needle) {
+                            $count = strpos($source_url, $needle);
+                            if ($count !== FALSE) {
+                                $video_type = $allows_array[$key];
+                            }
+                        }
+
+
+                        switch ($video_type) {
+                            case $allows_array[0]:
+                                $source_url = explode("?v=", $source_url);
+                                $source_url = explode("&", $source_url[1]);
+                                if (is_array($source_url)) {
+                                    $source_url = $source_url[0];
+                                }
+                                echo do_shortcode('[video type="youtube" html5_poster="" html5_video_url="" src_webm="" src_ogg="" width="' . $video_width . '" height="' . $video_height . '"]' . $source_url . '[/video]');
+                                break;
+                            case $allows_array[1]:
+                                $source_url = explode("/", $source_url);
+                                if (is_array($source_url)) {
+                                    $source_url = $source_url[count($source_url) - 1];
+                                }
+                                echo do_shortcode('[video type="vimeo" html5_poster="" html5_video_url="" src_webm="" src_ogg="" width="' . $video_width . '" height="' . $video_height . '"]' . $source_url . '[/video]');
+                                break;
+                            case $allows_array[2]:
+                                $html5_poster = TMM_THEME_URI . "/images/video_poster.jpg";
+                                if (has_post_thumbnail($post->ID)) {
+                                    $html5_poster = ThemeMakersHelper::get_post_featured_image($post->ID, $video_width, true, $video_height);
+                                }
+                                echo do_shortcode('[video type="html5" html5_poster="' . $html5_poster . '" html5_video_url="' . $source_url . '" src_webm="" src_ogg="" width="' . $video_width . '" height="' . $video_height . '"][/video]');
+                                break;
+
+                            default:
+                                break;
+                        }
+                    }
+                    ?>
+
+                    <?php
+                    break;
+
+                case 'quote':
+                    echo do_shortcode('[quotes]' . $post_type_values[$post_pod_type] . '[/quotes]');
+                    break;
+
+                case 'gallery':
+                    $gall = $post_type_values[$post_pod_type];
+                    ?>
+
+
+                    <?php if (!empty($gall)) : ?>
+
+                    <?php
+                    $gallery_layout_selected = get_option(TMM_THEME_PREFIX . "gallery_slider_width");
+
+                    if (!$gallery_layout_selected) {
+                        $gallery_layout_selected = 400;
+                    }
+
+                    switch ($gallery_layout_selected) {
+                        case 340:
+                            $gallery_layout_class = "six columns";
+                            $gallery_layout_height = 244;
+                            break;
+                        case 400:
+                            $gallery_layout_class = "seven columns";
+                            $gallery_layout_height = 283;
+                            break;
+                        case 460:
+                            $gallery_layout_class = "eight columns";
+                            $gallery_layout_height = 322;
+                            break;
+                        case 520:
+                            $gallery_layout_class = "nine columns";
+                            $gallery_layout_height = 360;
+                            break;
+                        default:
+                            $gallery_layout_class = "seven columns";
+                            $gallery_layout_height = 283;
+                            break;
+                    }
+                    ?>
+
+                    <div style="width: 100%" class="image-gallery-slider alpha">
+
+                        <div class="sudo-slider">
+
+                            <ul>
+
+                                <?php
+                                $video_width = 570;
+                                $video_height = 326;
+
+                                foreach ($gall as $source_url) {
+
+                                if (!empty($source_url)) {
+
+                                $video_type = 'youtube.com';
+                                $allows_array = array('youtube.com', 'player.vimeo.com', '.mp4', '.jpg', '.png', '.gif', '.bmp');
+
+                                foreach ($allows_array as $key => $needle) {
+                                    $count = strpos($source_url, $needle);
+                                    if ($count !== FALSE) {
+                                        $video_type = $allows_array[$key];
+                                    }
+                                }
+
+                                switch ($video_type) {
+                                case $allows_array[0]:
+                                    $source_url = explode("?v=", $source_url);
+                                    $source_url = explode("&", $source_url[1]);
+                                    if (is_array($source_url)) {
+                                        $source_url = $source_url[0];
+                                    }
+                                    echo "<li>" . do_shortcode('[video type="youtube" html5_poster="" html5_video_url="" src_webm="" src_ogg="" width="' . $video_width . '" height="' . $video_height . '"]' . $source_url . '[/video]') . "</li>";
+                                    break;
+                                case $allows_array[1]:
+                                    $source_url = explode("/", $source_url);
+                                    if (is_array($source_url)) {
+                                        $source_url = $source_url[count($source_url) - 1];
+                                    }
+                                    echo "<li>" . do_shortcode('[video type="vimeo" html5_poster="" html5_video_url="" src_webm="" src_ogg="" width="' . $video_width . '" height="' . $video_height . '"]' . $source_url . '[/video]') . "</li>";
+                                    break;
+                                case $allows_array[2]:
+                                    $html5_poster = TMM_THEME_URI . "/images/video_poster.jpg";
+                                    if (has_post_thumbnail($post->ID)) {
+                                        $html5_poster = ThemeMakersHelper::get_post_featured_image($post->ID, $video_width, true, $video_height);
+                                    }
+                                    echo "<li>" . do_shortcode('[video type="html5" html5_poster="' . $html5_poster . '" html5_video_url="' . $source_url . '" src_webm="" src_ogg="" width="' . $video_width . '" height="' . $video_height . '"][/video]') . "</li>";
+                                    break;
+
+                                default:
+                                $cut_blog_images_without_height = get_option(TMM_THEME_PREFIX . "cut_blog_images_without_height");
+                                ?>
+                                <li>
+                                    <div class="bordered">
+                                        <figure class="add-border">
+                                            <img src="<?php echo ThemeMakersHelper::resize_image($source_url, 570, true, 360) ?>" alt="<?php the_title(); ?>" title="<?php the_title(); ?>" />
+                                        </figure>
+                                    </div><!--/ .bordered-->
+                                    <?php
+                                    break;
+                                    }
+                                    }
+                                    }
+                                    ?>
+
+                            </ul>
+
+                        </div><!--/ .sudo-slider-->
+
+                    </div><!--/ .image-gallery-slider-->
+
+                <?php endif; ?>
+
+                    <?php
+                    break;
+
+                default:
+                    $cut_blog_images_without_height = get_option(TMM_THEME_PREFIX . "cut_blog_images_without_height");
+                    ?>
+                    <?php if (has_post_thumbnail()): ?>
+
+                    <div class="bordered">
+                        <figure class="add-border">
+                            <?php
+                            $img_width = ($_REQUEST['sidebar_position'] == 'no_sidebar' ? 950 : 570);
+                            ?>
+                            <a class="single-image" href="<?php the_permalink(); ?>"><img src="<?php echo ThemeMakersHelper::get_post_featured_image($post->ID, $img_width, true, 380); ?>" alt="<?php the_title(); ?>" /></a>
+                        </figure>
+                    </div><!--/ .bordered-->
+
+                <?php endif; ?>
+                    <?php
+                    break;
+            }
+            ?>
+
+            <div class="clear"></div>
+
+            <div class="entry-meta">
+                <span class="date"><?php echo get_the_date('d') ?></span>
+                <span class="month"><?php echo get_the_date('M Y') ?></span>
+            </div><!--/ .entry-meta-->
+
+            <div class="entry-body">
+
+                <div class="entry-title">
+
+                    <?php $post_pod_type ?>
+
+                    <?php if ($post_pod_type == 'link'): ?>
+                        <h2 class="title"><a href="<?php echo $post_type_values[$post_pod_type] ?>" target="_blank"><?php the_title(); ?></a></h2>
+                    <?php else: ?>
+                        <h2 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                    <?php endif; ?>
+
+                    <?php if (!$_REQUEST['disable_author']) : ?>
+                        <span class="author"><?php _e('Posted by', TMM_THEME_FOLDER_NAME); ?> <?php the_author() ?></span>,
+                    <?php endif; ?>
+
+                    <?php if (!$_REQUEST['disable_blog_comments']) : ?>
+                        <span class="comments"><?php _e('With', TMM_THEME_FOLDER_NAME); ?> <a href="<?php the_permalink(); ?>#comments"><?php comments_number('0', '1', '%'); ?> <?php _e('Comments', TMM_THEME_FOLDER_NAME); ?></a></span>,
+                    <?php endif; ?>
+
+                    <?php if (!$_REQUEST['disable_categories']) : ?>
+                        <span class="category">
+								<?php _e('Category:', TMM_THEME_FOLDER_NAME) ?>
+                            <?php foreach ((get_the_category()) as $category) : ?>
+                                <a href="<?php echo get_category_link($category->term_id); ?>" title="<?php echo $category->name ?>"><?php echo $category->name . ', ' ?></a>
+                            <?php endforeach; ?>
+							</span>
+                    <?php endif; ?>
+
+                    <?php if (!$_REQUEST['disable_tags']) : ?>
+                        <span class="tags">
+								<?php the_tags() ?>
+							</span>
+                    <?php endif; ?>
+
+                </div><!--/ .entry-title-->
+
+                <?php if ($show_full_content) : ?>
+                    <?php the_content(); ?>
+                <?php else: ?>
+
+                    <?php
+                    if ($_REQUEST['excerpt_symbols_count']) {
+                        if (empty($post->post_excerpt)) {
+                            echo do_shortcode(substr($post->post_content, 0, $_REQUEST['excerpt_symbols_count']) . " ...");
+                        } else {
+                            echo do_shortcode(substr($post->post_excerpt, 0, $_REQUEST['excerpt_symbols_count']) . " ...");
+                        }
+                    } else {
+                        echo do_shortcode($post->post_excerpt);
+                    }
+                    ?>
+
+
+                <?php endif; ?>
+
+                <div class="clearfix"></div>
+                <br />
+                <a href="<?php the_permalink(); ?>" class="button default small"><?php _e('Read more', TMM_THEME_FOLDER_NAME); ?></a>
+            </div><!--/ .entry-body -->
+
+            </div><!--/ .entry-body -->
+
+        </article><!--/ .entry-->
+        <?php
+    endwhile;
+    else:
+        get_template_part('content', 'nothingfound');
+    endif;
+    ?>
+
+
+
+<?php else: ?>
+
+    <div class="alternate">
+
+    <ul>
+
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+        <li id="post-<?php the_ID(); ?>">
+
+            <h6 class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h6>
+
+            <?php if ($show_image): ?>
+                <?php if (has_post_thumbnail()): ?>
+
+                    <div class="bordered alignleft">
+                        <figure class="add-border">
+                            <a class="single-image" href="<?php the_permalink(); ?>">
+                                <img src="<?php echo ThemeMakersHelper::get_post_featured_image($post->ID, 74, true, 64); ?>" alt="<?php the_title(); ?>" />
+                            </a>
+                        </figure>
+                    </div><!--/ .bordered-->
+
+                <?php endif; ?>
+            <?php endif; ?>
+
+            <?php
+            if (!isset($show_full_content)) {
+                $show_full_content = 0;
+            }
+            ?>
+            <?php if ($show_full_content) : ?>
+                <?php the_content(); ?>
+            <?php else: ?>
+
+                <?php
+                if ($_REQUEST['excerpt_symbols_count']) {
+                    if (empty($post->post_excerpt)) {
+                        echo do_shortcode(substr(strip_tags($post->post_content), 0, $_REQUEST['excerpt_symbols_count'])) . " ...";
+                    } else {
+                        echo do_shortcode(substr($post->post_excerpt, 0, $_REQUEST['excerpt_symbols_count'])) . " ...";
+                    }
+                } else {
+                    echo do_shortcode($post->post_excerpt);
+                }
+                ?>
+
+            <?php endif; ?>
+
+        </li>
 
         <?php
-        if ($blog_type!='masonry'){
+    endwhile;
 
-            if ( have_posts() ){
+    else:
+        get_template_part('content', 'nothingfound');
+    endif;
+    ?>
 
-                $_REQUEST['shortcode_show_metadata'] = $show_metadata;
+<?php endif; ?>
 
-                while ( have_posts() ) {
+    </ul>
 
-                the_post(); ?>
+    </div><!--/ .alternate-->
 
-                <article id="post-<?php the_ID(); ?>" <?php post_class($post_class); ?>>
-                    <?php get_template_part( $path, 'content' ); ?>
-                </article>
-
-
-            <?php }
-            }
-
-
-        } else{
-            if (!empty($posts_array)){
-
-                wp_enqueue_style('tmm_mediaelement');
-                wp_enqueue_script('mediaelement');
-
-                for ($i = 0; $i < $posts_per_load; $i++) {
-                    $post = $posts_array[$i];
-                    $data = array();
-                    $data['post_key'] = $i;
-                    $data['title_symbols'] = $title_symbols;
-                    echo TMM_Shortcode::draw_html('post/masonry_piece', $data);
-                }
-            }
-        } ?>
-
-	</div><!--/ .post-area-->
-
-	<?php if ($blog_type == 'masonry'){
-
-    /*tmm_enqueue_script('owlcarousel');
-    tmm_enqueue_style('owlcarousel');
-    tmm_enqueue_style('owltheme');
-    tmm_enqueue_style('owltransitions');*/
-
-        $next_posts = "";
-
-        for ($i = $posts_per_load; $i < ($posts_per_load * 2); $i++) {
-            if (isset($posts_array[$i])) {
-                $str = (string) $i;
-                $next_posts = $next_posts . $str . ",";
-            }
-        }
-
-        ?>
-
-        <div class="masonry-loader spinner">
-            <div id="fadingBarsG_1" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_2" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_3" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_4" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_5" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_6" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_7" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_8" class="fadingBarsG">
-            </div>
-        </div>
-
-		<div class='post-load-more'>
-			<a class='load-more button secondary middle' data-loadbyscroll="<?php echo esc_attr($load_by_scrolling) ?>" data-page-load="2" data-posts-per-load="<?php echo esc_attr($posts_per_load) ?>" data-posts="<?php echo esc_attr($next_posts) ?>" href='#load-more'><?php _e('Load More', TMM_CC_TEXTDOMAIN) ?></a>
-		</div><!--/ .post-load-more-->
-
-    <?php
+<?php
+if ($show_pagination) {
+    get_template_part('content', 'pagenavi');
 }
-
-if ($show_pagination && class_exists('TMM') && $blog_type != 'masonry' && (!isset($infinity_pagination) || !$infinity_pagination)) {
-	get_template_part('content', 'pagenavi');
-}
-
+//*****
+$wp_query = null;
 $wp_query = $original_query;
 wp_reset_postdata();
-
-if (!empty($posts_array) && ($blog_type == 'masonry')){
-    $load_with_animation = 1;
-
-    wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/plugins/min/jquery.masonry.min.js');
-    ?>
-    <script type="text/javascript">
-        jQuery(function() {
-            jQuery(".masonry").init_masonry(<?php echo esc_js($columns) ?>, <?php echo esc_js($load_with_animation) ?>);
-        });
-    </script>
-<?php
-}

@@ -4,12 +4,6 @@
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
 <div class="tabs-holder">
-<ul class="tabs-nav clearfix">
-
-	<li><a href="#"><?php _e( 'Default Options', TMM_CC_TEXTDOMAIN ); ?></a></li>
-	<li><a href="#"><?php _e( 'Advanced Title Options', TMM_CC_TEXTDOMAIN ); ?></a></li>
-
-</ul>
 
 <div class="tabs-container clearfix">
 
@@ -61,68 +55,11 @@
 		//***
 		TMM_Content_Composer::html_option( array(
 			'type'            => 'select',
-			'title'           => __( 'Font Size', TMM_CC_TEXTDOMAIN ),
+			'title'           => __( 'Font Size (px)', TMM_CC_TEXTDOMAIN ),
 			'shortcode_field' => 'font_size',
 			'id'              => 'font_size',
 			'options'         => $font_size,
 			'default_value'   => TMM_Content_Composer::set_default_value( 'font_size', 'default' ),
-			'description'     => ''
-		) );
-		?>
-
-	</div>
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'text',
-			'title'           => __( 'Letter spacing (px)', TMM_CC_TEXTDOMAIN ),
-			'shortcode_field' => 'letter_spacing',
-			'id'              => 'letter_spacing',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'letter_spacing', '' ),
-			'description'     => ''
-		) );
-		?>
-	</div>
-	<!--/ .ona-half-->
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'select',
-			'title'           => __( 'Font weight', TMM_CC_TEXTDOMAIN ),
-			'shortcode_field' => 'font_weight',
-			'id'              => 'font_weight',
-			'options'         => array(
-				'normal' => __( 'Normal', TMM_CC_TEXTDOMAIN ),
-				'100'    => 100,
-				'200'    => 200,
-				'300'    => 300,
-				'400'    => 400,
-				'500'    => 500,
-				'600'    => 600,
-				'700'    => 700
-			),
-			'default_value'   => TMM_Content_Composer::set_default_value( 'font_weight', '300' ),
-			'description'     => ''
-		) );
-		?>
-	</div>
-	<!--/ .ona-half-->
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'select',
-			'title'           => __( 'Title Align', TMM_CC_TEXTDOMAIN ),
-			'shortcode_field' => 'align',
-			'id'              => 'align',
-			'options'         => array(
-				'left'   => 'Left',
-				'right'  => 'Right',
-				'center' => 'Center',
-			),
-			'default_value'   => TMM_Content_Composer::set_default_value( 'align', 'left' ),
 			'description'     => ''
 		) );
 		?>
@@ -145,97 +82,56 @@
 	</div>
 	<!--/ .one-half-->
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'title'           => __( 'Title type', TMM_CC_TEXTDOMAIN ),
-			'shortcode_field' => 'title_type',
-			'type'            => 'select',
-			'description'     => '',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'title_type', '' ),
-			'id'              => 'title_type',
-			'options'         => array(
-				'default' => 'Default',
-				'section' => 'Section Title'
-			),
-			'display'         => 1
-		) );
-		?>
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option( array(
+            'type'            => 'text',
+            'title'           => __( 'Line Height (px)', TMM_CC_TEXTDOMAIN ),
+            'shortcode_field' => 'line_height',
+            'id'              => 'line_height',
+            'default_value'   => TMM_Content_Composer::set_default_value( 'line_height', '' ),
+            'description'     => ''
+        ) );
+        ?>
 
-		<div class="hdesc" style="<?php echo ( TMM_Content_Composer::set_default_value( 'title_type', '') == 'section') ? 'display:block' : 'display:none'; ?>">
-			<?php
-			TMM_Content_Composer::html_option( array(
-				'title'           => __( 'Title Description', TMM_CC_TEXTDOMAIN ),
-				'shortcode_field' => 'title_description',
-				'type'            => 'text',
-				'description'     => '',
-				'default_value'   => TMM_Content_Composer::set_default_value( 'title_description', '' ),
-				'id'              => 'title_description',
-				'display'         => 1
-			) );
-			?>
-		</div>
-	</div>
+    </div>
+    <!--/ .one-half-->
 
     <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'text',
-			'title'           => __( 'Margin Bottom (px)', TMM_CC_TEXTDOMAIN ),
-			'shortcode_field' => 'bottom_indent',
-			'id'              => 'bottom_indent',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'bottom_indent', '' ),
-			'description'     => ''
-		) );
-		?>
+        <?php
+        TMM_Content_Composer::html_option( array(
+            'type'            => 'text',
+            'title'           => __( 'Bottom Indent (px)', TMM_CC_TEXTDOMAIN ),
+            'shortcode_field' => 'line_height',
+            'id'              => 'line_height',
+            'default_value'   => TMM_Content_Composer::set_default_value( 'bottom_indent', '' ),
+            'description'     => ''
+        ) );
+        ?>
 
-	</div>
-	<!--/ .one-half-->
+    </div>
+    <!--/ .one-half-->
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'text',
-			'title'           => __( 'Line Height (em)', TMM_CC_TEXTDOMAIN ),
-			'shortcode_field' => 'line_height',
-			'id'              => 'line_height',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'line_height', '1.35' ),
-			'description'     => ''
-		) );
-		?>
-
-	</div>
-	<!--/ .one-half-->
-    
     <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'title'           => __( 'Color', TMM_CC_TEXTDOMAIN ),
-			'shortcode_field' => 'color',
-			'type'            => 'color',
-			'description'     => '',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'color', '' ),
-			'id'              => '',
-			'display'         => 1
-		) );
-		?>
+        <?php
+        TMM_Content_Composer::html_option( array(
+            'type'            => 'select',
+            'title'           => __( 'Align', TMM_CC_TEXTDOMAIN ),
+            'shortcode_field' => 'align',
+            'id'              => 'align',
+            'options'         => array(
+                'none'   => 'None',
+                'left'   => 'Left',
+                'right'  => 'Right',
+                'center' => 'Center',
+            ),
+            'default_value'   => TMM_Content_Composer::set_default_value( 'align', 'none' ),
+            'description'     => ''
+        ) );
+        ?>
 
-	</div>
-
-	<div class="one-half">
-
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'checkbox',
-			'title'           => __( 'Text Transform Uppercase', TMM_CC_TEXTDOMAIN ),
-			'shortcode_field' => 'text_transform',
-			'id'              => 'text_transform',
-			'is_checked'      => TMM_Content_Composer::set_default_value( 'text_transform', 0 ),
-			'description'     => ''
-		) );
-		?>
-
-	</div>
+    </div>
+    <!--/ .one-half-->
 
 </div>
 <!--/ .tab-content-->

@@ -11,9 +11,101 @@
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
 			'description' => ''
 		));
-		?>
+        ?>
+    </div><!--/ .one-half-->
 
+    <div class="one-half">
+		<?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'radio',
+            'title' => __('Link Target', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'target',
+            'id' => 'target',
+            'name' => 'target',
+            'values' => array(
+                1 => array(
+                    'title' => __('Self', TMM_CC_TEXTDOMAIN),
+                    'id' => 'target_self',
+                    'value' => '_self',
+                    'checked' => ($value_type == '_self' ? 1 : 0)
+                ),
+                0 => array(
+                    'title' => __('Blank', TMM_CC_TEXTDOMAIN),
+                    'id' => 'target_blank',
+                    'value' => '_blank',
+                    'checked' => ($value_type == '_blank' ? 1 : 0)
+                )
+            ),
+            'value' => $value_type,
+            'description' => '',
+            'hidden_id' => 'target'
+        ));
+		?>
 	</div><!--/ .one-half-->
+
+    <div class="one-half">
+        <?php
+        $action = TMM_Content_Composer::set_default_value('action', 'none');
+        TMM_Content_Composer::html_option(array(
+            'type' => 'select',
+            'title' => __('Action', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'action',
+            'id' => 'img_shortcode_action',
+            'options' => array(
+                'none' => __('No link on image', TMM_CC_TEXTDOMAIN),
+                'link' => __('Open link', TMM_CC_TEXTDOMAIN),
+                'fancybox' => __('Open Image in lightbox', TMM_CC_TEXTDOMAIN),
+            ),
+            'default_value' => $action,
+            'description' => ''
+        ));
+        ?>
+    </div><!--/ .one-half-->
+
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'radio',
+            'title' => __('Show Border', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'show_border',
+            'id' => 'show_border',
+            'name' => 'show_border',
+            'values' => array(
+                1 => array(
+                    'title' => __('Yes', TMM_CC_TEXTDOMAIN),
+                    'id' => 'show_border_1',
+                    'value' => 1,
+                    'checked' => ($value_type == 1 ? 1 : 0)
+                ),
+                0 => array(
+                    'title' => __('No', TMM_CC_TEXTDOMAIN),
+                    'id' => 'show_border_0',
+                    'value' => 0,
+                    'checked' => ($value_type == 0 ? 1 : 0)
+                )
+            ),
+            'value' => $value_type,
+            'description' => '',
+            'hidden_id' => 'show_border'
+        ));
+        ?>
+    </div><!--/ .one-half-->
+
+    <div class="one-half">
+
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('Width', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'width',
+            'id' => '',
+            'default_value' => TMM_Content_Composer::set_default_value('width', '200'),
+            'description' => '',
+        ));
+        ?>
+
+
+    </div><!--/ .one-half-->
 
 	<div class="one-half">
 
@@ -37,51 +129,65 @@
 
 	</div><!--/ .one-half-->
 
+    <div class="one-half">
+
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('Height', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'height',
+            'id' => '',
+            'default_value' => TMM_Content_Composer::set_default_value('height', '200'),
+            'description' => '',
+        ));
+        ?>
+
+
+    </div><!--/ .one-half-->
+
+    <div class="one-half"></div><!--/ .one-half-->
+
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('Image Alt', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'image_alt',
+            'id' => 'image_alt',
+            'default_value' => TMM_Content_Composer::set_default_value('image_alt', ''),
+            'description' => ''
+        ));
+        ?>
+
+    </div><!--/ .one-half-->
+
 	<div class="one-half">
-
 		<?php
-
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Size', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'image_size_alias',
-			'id' => 'image_size_alias',
-			'default_value' => TMM_Content_Composer::set_default_value('image_size_alias', ''),
-			'description' => __('width*height. Fore example: 500*300. Empty field means full size', TMM_CC_TEXTDOMAIN),
-		));
-		?>
-
-
-	</div><!--/ .one-half-->
-
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Image Alt', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'image_alt',
-			'id' => 'image_alt',
-			'default_value' => TMM_Content_Composer::set_default_value('image_alt', ''),
+			'title' => __('Link Title', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'link_title',
+			'id' => 'link_title',
+			'default_value' => TMM_Content_Composer::set_default_value('link_title', ''),
 			'description' => ''
 		));
 		?>
 
-	</div><!--/ .one-half-->	
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Top Indent (px)', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'margin_top',
-			'id' => 'margin_top',
-			'default_value' => TMM_Content_Composer::set_default_value('margin_top', ''),
-			'description' => ''
-		));
-		?>
-
 	</div><!--/ .one-half-->
+
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('Top Indent (px)', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'margin_top',
+            'id' => 'margin_top',
+            'default_value' => TMM_Content_Composer::set_default_value('margin_top', ''),
+            'description' => ''
+        ));
+        ?>
+
+    </div><!--/ .one-half-->
 
 	<div class="one-half">
 		<?php
@@ -122,86 +228,6 @@
 			'description' => ''
 		));
 		?>
-
-	</div><!--/ .one-half-->
-    
-    <div class="one-half">
-
-		<?php
-		$action = TMM_Content_Composer::set_default_value('action', 'none');
-
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Action', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'action',
-			'id' => 'img_shortcode_action',
-			'options' => array(
-				'none' => __('No link on image', TMM_CC_TEXTDOMAIN),
-				'link' => __('Open link', TMM_CC_TEXTDOMAIN),
-				'lightbox' => __('Open Image in lightbox', TMM_CC_TEXTDOMAIN),
-			),
-			'default_value' => $action,
-			'description' => ''
-		));
-		?>
-
-
-		<div id="image_action_link" style="display: <?php echo($action == 'link' ? 'block' : 'none') ?>;">
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'type' => 'text',
-				'title' => __('Image Action Link', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'image_action_link',
-				'id' => 'image_action_link',
-				'default_value' => TMM_Content_Composer::set_default_value('image_action_link', '#'),
-				'description' => ''
-			));
-			?>
-
-			<br />
-
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'type' => 'select',
-				'title' => __('Link Target', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'target',
-				'id' => 'target',
-				'options' => array(
-					'_self' => __('Self', TMM_CC_TEXTDOMAIN),
-					'_blank' => __('Blank', TMM_CC_TEXTDOMAIN),
-				),
-				'default_value' => TMM_Content_Composer::set_default_value('target', '_self'),
-				'description' => ''
-			));
-			?>
-            
-            <br />
-            
-            <?php
-            TMM_Content_Composer::html_option(array(
-				'type' => 'text',
-				'title' => __('Link Title', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'link_title',
-				'id' => 'link_title',
-				'default_value' => TMM_Content_Composer::set_default_value('link_title', ''),
-				'description' => ''
-			));
-            ?>
-
-		</div>
-        
-        <div id="image_without_link" style="display: <?php echo($action == 'none' ? 'block' : 'none') ?>;">
-            <?php
-            TMM_Content_Composer::html_option(array(
-				'type' => 'checkbox',
-				'title' => __('Parallax Image (On / Off)', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'parallax',
-				'id' => 'parallax',
-				'is_checked' => TMM_Content_Composer::set_default_value('parallax', 0),
-				'description' => ''
-			));
-            ?>
-        </div>
 
 	</div><!--/ .one-half-->
        
