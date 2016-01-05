@@ -2,15 +2,9 @@
 <?php
 
 $title_array = array();
-
-if (isset($titles)) {
-    $title_array = explode("^", $titles);
-}elseif (isset($title)) {
-    $title_array = explode("^", $title);
-}
-
+$title_array = explode("+TITLE+", $title);
 $content_array = array();
-$content_array = explode("^", $content);
+$content_array = explode("+CONTENT+", $content);
 ?>
 <?php if(count($title_array)>1){ ?>
     <?php foreach ($title_array as $key => $value){ ?>

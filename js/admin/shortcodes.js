@@ -354,7 +354,7 @@ var TMM_APP_SHORTCODES = function() {
 			var accordion_item_title = "";
 			jQuery.each(jQuery(".accordion_item_title"), function(key, value) {
 				if (key > 0) {
-					accordion_item_title = accordion_item_title + '^';
+					accordion_item_title = accordion_item_title + '+TITLE+';
 				}
 				value.value = value.value.replace(/\"/gi, "\'");
 				accordion_item_title = accordion_item_title + value.value;
@@ -363,12 +363,12 @@ var TMM_APP_SHORTCODES = function() {
 			var accordion_item_content = "";
 			jQuery.each(jQuery(".accordion_item_content"), function(key, value) {
 				if (key > 0) {
-					accordion_item_content = accordion_item_content + '^';
+					accordion_item_content = accordion_item_content + '+CONTENT+';
 				}
 				accordion_item_content = accordion_item_content + value.value;
 			});
 
-			var shortcode_text = begin_string + ' titles="' + accordion_item_title + '"' + ' type="' + type + '" ' + ' type_style="' + type_style + '"' + ']' + accordion_item_content + end_string;
+			var shortcode_text = begin_string + ' title="' + accordion_item_title + '"' + ' type="' + type + '" ' + ' type_style="' + type_style + '"' + ']' + accordion_item_content + end_string;
 
 			self.insert_html_in_buffer(shortcode_text);
 		},

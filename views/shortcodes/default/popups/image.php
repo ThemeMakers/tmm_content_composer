@@ -54,7 +54,7 @@
             'options' => array(
                 'none' => __('No link on image', TMM_CC_TEXTDOMAIN),
                 'link' => __('Open link', TMM_CC_TEXTDOMAIN),
-                'fancybox' => __('Open Image in lightbox', TMM_CC_TEXTDOMAIN),
+                'fancybox' => __('Open Image in fancybox', TMM_CC_TEXTDOMAIN),
             ),
             'default_value' => $action,
             'description' => ''
@@ -89,7 +89,51 @@
             'hidden_id' => 'show_border'
         ));
         ?>
+
+
     </div><!--/ .one-half-->
+
+    <div id="image_action_link" class="one-half" style="display: none;">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('Image Action Link', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'image_action_link',
+            'id' => '',
+            'default_value' => TMM_Content_Composer::set_default_value('image_action_link', 'http://'),
+            'description' => '',
+        ));
+        ?>
+    </div>
+
+    <div id="image_fancybox_group" class="one-half" style="display: none;">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('Fancybox Group', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'fancybox_group',
+            'id' => '',
+            'default_value' => TMM_Content_Composer::set_default_value('fancybox_group', ''),
+            'description' => '',
+        ));
+        ?>
+    </div>
+
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('Link Title', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'link_title',
+            'id' => 'link_title',
+            'default_value' => TMM_Content_Composer::set_default_value('link_title', ''),
+            'description' => ''
+        ));
+        ?>
+
+    </div><!--/ .one-half-->
+
+    <div class="one-half" id="image_without_link"></div><!--/ .one-half-->
 
     <div class="one-half">
 
@@ -104,27 +148,20 @@
         ));
         ?>
 
-
     </div><!--/ .one-half-->
 
 	<div class="one-half">
 
 		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Align', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'align',
-			'id' => 'align',
-			'options' => array(
-				'' => __('None', TMM_CC_TEXTDOMAIN),
-				'alignleft' => __('Left', TMM_CC_TEXTDOMAIN),
-				'alignright' => __('Right', TMM_CC_TEXTDOMAIN),
-				'aligncenter' => __('Center', TMM_CC_TEXTDOMAIN),
-			),
-			'default_value' => TMM_Content_Composer::set_default_value('align', ''),
-			'description' => ''
-		));
-		?>
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('Image Alt', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'image_alt',
+            'id' => 'image_alt',
+            'default_value' => TMM_Content_Composer::set_default_value('image_alt', ''),
+            'description' => ''
+        ));
+        ?>
 
 
 	</div><!--/ .one-half-->
@@ -142,38 +179,27 @@
         ));
         ?>
 
-
     </div><!--/ .one-half-->
-
-    <div class="one-half"></div><!--/ .one-half-->
 
     <div class="one-half">
         <?php
         TMM_Content_Composer::html_option(array(
-            'type' => 'text',
-            'title' => __('Image Alt', TMM_CC_TEXTDOMAIN),
-            'shortcode_field' => 'image_alt',
-            'id' => 'image_alt',
-            'default_value' => TMM_Content_Composer::set_default_value('image_alt', ''),
+            'type' => 'select',
+            'title' => __('Align', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'align',
+            'id' => 'align',
+            'options' => array(
+                '' => __('None', TMM_CC_TEXTDOMAIN),
+                'alignleft' => __('Left', TMM_CC_TEXTDOMAIN),
+                'alignright' => __('Right', TMM_CC_TEXTDOMAIN),
+                'aligncenter' => __('Center', TMM_CC_TEXTDOMAIN),
+            ),
+            'default_value' => TMM_Content_Composer::set_default_value('align', ''),
             'description' => ''
         ));
         ?>
 
     </div><!--/ .one-half-->
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Link Title', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'link_title',
-			'id' => 'link_title',
-			'default_value' => TMM_Content_Composer::set_default_value('link_title', ''),
-			'description' => ''
-		));
-		?>
-
-	</div><!--/ .one-half-->
 
     <div class="one-half">
         <?php
@@ -246,22 +272,25 @@
 		});
 
 		jQuery('#img_shortcode_action').on('change', function() {
+			jQuery("#image_fancybox_group").hide(300);
 			jQuery("#image_action_link").hide(300);
             jQuery("#image_without_link").show(300);
 			if (jQuery(this).val() == 'link') {
-				jQuery("#image_action_link").show(300);
+                jQuery("#image_fancybox_group").hide(300);
 				jQuery("#image_without_link").hide(300);
+                jQuery("#image_action_link").show(300);
                 jQuery("#parallax").val('');
                 jQuery("#overlay").val('');
 			}
-			if (jQuery(this).val() == 'lightbox') {
+			if (jQuery(this).val() == 'fancybox') {
 				jQuery("#image_action_link").hide(300);
-				jQuery("#image_without_link").hide(300);
+                jQuery("#image_without_link").hide(300);
+                jQuery("#image_fancybox_group").show(300);
                 jQuery("#parallax").val('');
                 jQuery("#overlay").val('');
 			}
 		});
-		
+
 		var $align = jQuery('select#align'),
 			$inputs = jQuery('input[type=text]#margin_left, input[type=text]#margin_right');
 
@@ -279,8 +308,8 @@
 
 		checkAlign($align);
 
-		$align.on('change', function() { checkAlign(jQuery(this)); });	
-		
-	});	
+		$align.on('change', function() { checkAlign(jQuery(this)); });
+
+	});
 
 </script>

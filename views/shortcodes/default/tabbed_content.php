@@ -2,15 +2,9 @@
 <?php
 
 $title_array = array();
-
-if (isset($titles)) {
-    $title_array = explode("^", $titles);
-}elseif (isset($title)) {
-    $title_array = explode("+TITLE+", $title);
-}
-
+$title_array = explode("+TITLE+", $title);
 $content_array = array();
-$content_array = explode("^", $content);
+$content_array = explode("+CONTENT+", $content);
 $unique_id = uniqid();
 $tmp_id = $unique_id;
 ?>

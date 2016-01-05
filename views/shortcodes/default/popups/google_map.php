@@ -97,21 +97,6 @@
 		?>
 	</div><!--/ .one-half-->
 
-
-	<div class="one-half location_mode_address location_mode_container">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Address', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'address',
-			'id' => 'address',
-			'default_value' => TMM_Content_Composer::set_default_value('address', 'New York'),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half-->
-
-
 	<div class="one-half">
 		<?php
 		$zoom_array = array();
@@ -133,29 +118,16 @@
 		?>
 
 	</div><!--/ .one-half-->
-    
-    <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Enable Slide Up Effect', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'slide_up',
-			'id' => 'slide_up',
-			'is_checked' => TMM_Content_Composer::set_default_value('slide_up', 1),
-			'description' => __('Show with Slide Up Effect', TMM_CC_TEXTDOMAIN)
-		));
-		?>		
-	</div><!--/ .one-half-->
 
-	<div class="one-half">
+	<div class="one-half location_mode_address location_mode_container">
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Enable Scrollwheel', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'enable_scrollwheel',
-			'id' => 'enable_scrollwheel',
-			'is_checked' => TMM_Content_Composer::set_default_value('enable_scrollwheel', 0),
-			'description' => __('Set to false to disable zooming with your mouses scrollwheel.', TMM_CC_TEXTDOMAIN)
+			'type' => 'text',
+			'title' => __('Address', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'address',
+			'id' => 'address',
+			'default_value' => TMM_Content_Composer::set_default_value('address', 'New York'),
+			'description' => ''
 		));
 		?>
 	</div><!--/ .one-half-->
@@ -179,17 +151,15 @@
 		?>	
 	</div><!--/ .one-half-->
 
-
-
 	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Enable Marker', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'enable_marker',
-			'id' => 'enable_marker',
-			'is_checked' => TMM_Content_Composer::set_default_value('enable_marker', 0),
-			'description' => __('Set to false to disable display a marker in the viewport.', TMM_CC_TEXTDOMAIN)
+			'title' => __('Enable Scrollwheel', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'enable_scrollwheel',
+			'id' => 'enable_scrollwheel',
+			'is_checked' => TMM_Content_Composer::set_default_value('enable_scrollwheel', 0),
+			'description' => __('Set to false to disable zooming with your mouses scrollwheel.', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 	</div><!--/ .one-half-->
@@ -208,18 +178,18 @@
 
 	</div><!--/ .one-half-->
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Marker is draggable', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'marker_is_draggable',
-			'id' => 'marker_is_draggable',
-			'is_checked' => TMM_Content_Composer::set_default_value('marker_is_draggable', 0),
-			'description' => __('Set marker draggable', TMM_CC_TEXTDOMAIN)
-		));
-		?>		
-	</div><!--/ .one-half-->
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'checkbox',
+            'title' => __('Enable Marker', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'enable_marker',
+            'id' => 'enable_marker',
+            'is_checked' => TMM_Content_Composer::set_default_value('enable_marker', 0),
+            'description' => __('Set to false to disable display a marker in the viewport.', TMM_CC_TEXTDOMAIN)
+        ));
+        ?>
+    </div><!--/ .one-half-->
 
 	<div class="one-half">
 		<?php
@@ -232,7 +202,20 @@
 			'description' => ''
 		));
 		?>
-	</div><!--/ .one-half--> 
+	</div><!--/ .one-half-->
+
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'checkbox',
+            'title' => __('Marker is draggable', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'marker_is_draggable',
+            'id' => 'marker_is_draggable',
+            'is_checked' => TMM_Content_Composer::set_default_value('marker_is_draggable', 0),
+            'description' => __('Set marker draggable', TMM_CC_TEXTDOMAIN)
+        ));
+        ?>
+    </div><!--/ .one-half-->
 
 </div>
 

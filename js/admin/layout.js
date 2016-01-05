@@ -166,7 +166,8 @@
                             QTags._buttonsInit();
                             /* add custom elements */
                             var lc_title = '<input type="text" placeholder="' + tmm_lang['empty_title'] + '" value="' + title + '" class="tmm-lc-column-title-input" /><br />',
-                                lc_column_options = '&nbsp;<span id="tmm_lc_column_options"></span>';
+                                //lc_column_options = '&nbsp;<span id="tmm_lc_column_options"></span>';
+                                lc_column_options = '';
                             $('#wp-'+self.active_editor_id+'-editor-tools').prepend(lc_title).find('#wp-'+self.active_editor_id+'-media-buttons').append(lc_column_options);
                             /* column options settings */
                             $('#tmm_lc_column_options').append($('#tmm_lc_column_effects').html());
