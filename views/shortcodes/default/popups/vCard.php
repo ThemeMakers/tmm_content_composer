@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Enter Address', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enter Address', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -17,7 +17,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Enter Phone', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enter Phone', 'tmm_content_composer'),
 			'shortcode_field' => 'phone',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('phone', ''),
@@ -28,7 +28,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Enter Fax', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enter Fax', 'tmm_content_composer'),
 			'shortcode_field' => 'fax',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('fax', ''),
@@ -39,7 +39,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Enter Email', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enter Email', 'tmm_content_composer'),
 			'shortcode_field' => 'email',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('email', ''),
