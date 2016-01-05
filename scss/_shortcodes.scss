@@ -563,6 +563,36 @@ blockquote {
 }
 
 /* -------------------------------------------------- */
+/*	Authors
+/* -------------------------------------------------- */
+
+.lc-authors-list {
+
+	li {
+		margin-bottom: 1.5em;
+
+		&:after {
+			@include clearfix;
+		}
+
+		.author-avatar {
+			float: left;
+			margin-right: 20px;
+		}
+
+		.author-description {
+			display: table;
+		}
+
+		.social-icons {
+			@include social-icons(
+				$margin-bottom: 0
+			);
+		}
+	}
+}
+
+/* -------------------------------------------------- */
 /*	List
 /* -------------------------------------------------- */
 
@@ -961,132 +991,9 @@ i.ca-icon:before {
 /*	 Social Icons
 /* -------------------------------------------------- */
 
-ul.social-icons {
-	margin-bottom: 40px;
-	font-size: 0;
+.lc-social-icons {
+	@include social-icons();
 }
-
-#footer ul.social-icons { margin-bottom: 0; }
-
-ul.social-icons li {
-	position: relative;
-	display: inline-block;
-	vertical-align: top;
-}
-
-ul.social-icons li a {
-	position: relative;
-	display: block;
-	margin: 3px;
-	width: 45px;
-	height: 45px;
-	font: 0/0 a;
-	cursor: pointer;
-	text-align: center;
-
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
-	-webkit-transition: all .25s ease;
-	transition: all .25s ease;
-}
-
-ul.social-icons li:first-child a { margin-left: 0; }
-ul.social-icons li a:hover		   { border-color: transparent; }
-
-ul.social-icons .twitter a:after    { content: '\e980'; }
-ul.social-icons .twitter a:before   { content: '\e980'; }
-
-ul.social-icons .facebook a:after   { content: '\e967'; }
-ul.social-icons .facebook a:before  { content: '\e967'; }
-
-ul.social-icons .linkedin a:after   { content: '\e975'; }
-ul.social-icons .linkedin a:before  { content: '\e975'; }
-
-ul.social-icons .pinterest a:after  { content: '\e977'; }
-ul.social-icons .pinterest a:before { content: '\e977'; }
-
-ul.social-icons .rss a:after		{ content: '\e88f'; }
-ul.social-icons .rss a:before		{ content: '\e88f'; }
-
-ul.social-icons .gplus a:after		{ content: '\e970'; }
-ul.social-icons .gplus a:before		{ content: '\e970'; }
-
-ul.social-icons .instagram a:after	{ content: '\e972'; }
-ul.social-icons .instagram a:before	{ content: '\e972'; }
-
-ul.social-icons .dribbble a:after	{ content: '\e965'; }
-ul.social-icons .dribbble a:before	{ content: '\e965'; }
-
-ul.social-icons .flickr a:after		{ content: '\ea78'; }
-ul.social-icons .flickr a:before	{ content: '\ea78'; }
-
-ul.social-icons .dropbox a:after	{ content: '\e966'; }
-ul.social-icons .dropbox a:before	{ content: '\e966'; }
-
-ul.social-icons .youtube a:after	{ content: '\e986'; }
-ul.social-icons .youtube a:before	{ content: '\e986'; }
-
-ul.social-icons .blogger a:after	{ content: '\ee4d'; }
-ul.social-icons .blogger a:before	{ content: '\ee4d'; }
-
-ul.social-icons .evernote a:after	{ content: '\ea96'; }
-ul.social-icons .evernote a:before	{ content: '\ea96'; }
-
-ul.social-icons .behance a:after	{ content: '\eaa0'; }
-ul.social-icons .behance a:before	{ content: '\eaa0'; }
-
-ul.social-icons .skype a:after		{ content: '\e97a'; }
-ul.social-icons .skype a:before		{ content: '\e97a'; }
-
-ul.social-icons .vimeo a:after		{ content: '\ea7a'; }
-ul.social-icons .vimeo a:before		{ content: '\ea7a'; }
-
-ul.social-icons .digg a:after		{ content: '\edf8'; }
-ul.social-icons .digg a:before		{ content: '\edf8'; }
-
-ul.social-icons .appstore a:after	{ content: '\edfd'; }
-ul.social-icons .appstore a:before	{ content: '\edfd'; }
-
-ul.social-icons .stumbleupon a:after	{ content: '\ef68'; }
-ul.social-icons .stumbleupon a:before	{ content: '\ef68'; }
-
-ul.social-icons .deviantart a:after		{ content: '\ee4f'; }
-ul.social-icons .deviantart a:before	{ content: '\ee4f'; }
-
-ul.social-icons .github a:after			{ content: '\e96b'; }
-ul.social-icons .github a:before		{ content: '\e96b'; }
-
-ul.social-icons .mail a:after			{ content: '\ebdc'; }
-ul.social-icons .mail a:before			{ content: '\ebdc'; }
-
-ul.social-icons .twitter a:after	 { background-color: #47c0d8; }
-ul.social-icons .facebook a:after	 { background-color: #49699f; }
-ul.social-icons .linkedin a:after	 { background-color: #2c7cb7; }
-ul.social-icons .pinterest a:after	 { background-color: #c21c21; }
-ul.social-icons .rss a:after		 { background-color: #fe9900; }
-ul.social-icons .gplus a:after		 { background-color: #c33d19; }
-ul.social-icons .flickr a:after		 { background-color: #e82c88; }
-ul.social-icons .instagram a:after	 { background-color: #517fa3; }
-ul.social-icons .dropbox a:after	 { background-color: #5da3e8; }
-ul.social-icons .youtube a:after	 { background-color: #b72d24; }
-ul.social-icons .blogger a:after	 { background-color: #f38f33; }
-ul.social-icons .evernote a:after	 { background-color: #73b122; }
-ul.social-icons .dribbble a:after	 { background-color: #e65992; }
-ul.social-icons .behance a:after	 { background-color: #18a3fe; }
-ul.social-icons .lastfm a:after		 { background-color: #be0607; }
-ul.social-icons .skype a:after		 { background-color: #24b0e4; }
-ul.social-icons .vimeo a:after		 { background-color: #568799; }
-ul.social-icons .forrst a:after		 { background-color: #628267; }
-ul.social-icons .digg a:after		 { background-color: #2882c6; }
-ul.social-icons .appstore a:after	 { background-color: #606060; }
-ul.social-icons .wordpress a:after   { background-color: #33759d; }
-ul.social-icons .stumbleupon a:after { background-color: #eb4924; }
-ul.social-icons .deviantart a:after  { background-color: #5f7162; }
-ul.social-icons .github a:after		 { background-color: #7292a2; }
-ul.social-icons .mail a:after		 { background-color: #65a413; }
-ul.social-icons .love a:after		 { background-color: #f85c37; }
-
-ul.social-icons a:hover:after { color: #fff !important; }
 
 /* Style Fall Vertical */
 
