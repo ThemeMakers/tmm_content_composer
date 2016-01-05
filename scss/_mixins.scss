@@ -272,3 +272,131 @@ $delay: '.1s';
 	filter: alpha(opacity= $value * 100 );
 	zoom: 1;
 }
+
+//
+// @variables
+//
+$social-icon-width: 40px;
+$social-icon-height: 40px;
+$social-icon-font-size: 20px;
+$social-icons-space-right: 5px;
+$social-icons-space-bottom: 5px;
+$social-icon-color: #bebebe;
+$social-icon-color-hover: #ffffff;
+$social-icon-background-color: #fafafa;
+$social-icon-border-width: 2px;
+$social-icon-border-style: solid;
+$social-icon-border-color: #ebebeb;
+$social-icons-array:
+				("twitter"		"\e986" "#47c0d8")
+				("facebook"		"\ea85" "#49699f")
+				("linkedin"		"\ea8e" "#2c7cb7")
+				("pinterest"	"\ede9" "#c21c21")
+				("rss"			"\e88d" "#fe9900")
+				("gplus"		"\e974" "#c33d19")
+				("instagram"	"\ea9b" "#e82c88")
+				("dribbble"		"\e969" "#e65992")
+				("flickr"		"\ea7f" "#5da3e8")
+				("dropbox"		"\e96a" "#5da3e8")
+				("youtube"		"\e98d" "#b72d24")
+				("blogger"		"\ee56" "#f38f33")
+				("evernote"		"\ea9d" "#73b122")
+				("behance"		"\eaa7" "#18a3fe")
+				("skype"		"\e97f" "#24b0e4")
+				("vimeo"		"\ea81" "#568799")
+				("digg"			"\edf3" "#2882c6")
+				("appstore"		"\edf8" "#606060")
+				("wordpress"	"\ee29" "#33759d")
+				("stumbleupon"	"\ef76" "#eb4924")
+				("deviantart"	"\ee58" "#5f7162")
+				("github"		"\e96f" "#7292a2")
+				("mail"			"\e826" "#65a413");
+
+//
+// @MIXIN
+//
+// Social icons
+//
+// $width - Sets width of the icon
+// $height - Sets height of the icon
+// $margin-right - If "true" then set margin-right
+// $margin-bottom - If "true" then set margin-bottom
+// $icons - Sets an array of the icons
+// $font-size - Sets font size for the icons
+// $color - Sets font color for icon
+// $background - Sets background-color for the icon
+
+@mixin social-icons (
+	$width: $social-icon-width,
+	$height: $social-icon-height,
+	$margin-right: $social-icons-space-right,
+	$margin-bottom: $social-icons-space-bottom,
+	$icons: $social-icons-array,
+	$font-size: $social-icon-font-size,
+	$color: $social-icon-color,
+	$background: $social-icon-background-color,
+	$border-width: $social-icon-border-width,
+	$border-style: $social-icon-border-style,
+	$border-color: $social-icon-border-color ) {
+
+	position: relative;
+	display: inline-block;
+	font-size: 0;
+	padding: 0;
+	margin: 0;
+	vertical-align: middle;
+
+	li {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+		border: none;
+		margin: 0 $margin-right $margin-bottom 0;
+		padding: 0;
+
+		a {
+			display: block;
+			width: $width;
+			height: $height;
+			cursor: pointer;
+			text-align: center;
+
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				line-height: calc(#{$height} - #{$border-width}*2);
+				background-color: $background;
+				color: $color;
+				content: "";
+				font: {
+					family: 'fontello';
+					size: $font-size;
+				};
+				border-width: $border-width;
+				border-style: $border-style;
+				border-color: $border-color;
+
+				@include transition;
+			}
+
+			&:hover {
+				&:before {
+					border-color: transparent;
+				}
+			}
+		}
+
+		@each $content in $social-icons-array {
+			&.#{(nth($content,1))} a:before {
+				content: (nth($content,2));
+			}
+			&.#{nth($content,1)} a:hover:before {
+				background-color: (#{nth($content,3)});
+				color: $social-icon-color-hover;
+			}
+		}
+	}
+}
