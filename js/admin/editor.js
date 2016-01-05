@@ -274,7 +274,7 @@
                     return false;
                 }
                 // Regexp for shortcode "Html tag with content or shortcode in square brackets"
-                var shortcodePattern = /((<.*?>)?[\/?[\w\s\t="/.':;#-\/]+.*?](<\/?.*?>)?)|(<.*?>(\.)|(.*?)<\/?.*?>)/gi,
+                var shortcodePattern = /((<.*?>)?[\/?[\w\s\t="/.':;#-\/]+.*?](<\/?.*?>)?|(.*?)?)|(<.*?>(\.)|(.*?)<\/?.*?>)/gi,
                     shortcodesArray = str.match(shortcodePattern),
                     openTag = '',
                     closeTag = '',
@@ -369,14 +369,7 @@
                                 properties += ' sc_id="' + props.sc_id + '"';
                             }
 
-                            // save shortcode to cache and get image for editor
-                            /*if ('undefined' == typeof children[i] || 0 == children[i].length) {
-                                self.cache(props.sc_id, item );
-                            }else {
-                                //console.log(nested[i].match( /<p [^>]*?data-wpview-marker="([^"]+)"[^>]*>[\s\S]*?<\/p>/g));
-                                self.cache(props.sc_id, nested[i] );
-                            }*/
-
+                            //get image for editor
                             var _properties = properties.replace(/ sc_id="[^"]+"/, '').replace(/="([^"]+)"/g, ': $1;');
                             var shortcode_icon_url = self.get_shortcode_icon_url(tag);
 
@@ -385,9 +378,20 @@
                                 + props.sc_id + '" title="' + tag.toUpperCase() + ' ' + _properties + '"/>';
 
                             var toCahe = nested[i].replace( avPattern, function(str) {
-                                return window.decodeURIComponent( "<p>" + jQuery(str).attr('data-wpview-marker') + "</p>" );
+                                return window.decodeURIComponent(jQuery(str).attr('data-wpview-marker'));
                             });
-                            self.cache(props.sc_id, toCahe );
+
+                            // save shortcode to cache
+                            if('[' == toCahe.substr(0, 1)) {
+                                self.cache(props.sc_id, toCahe );
+                            } else if ('<p>[' == toCahe.substr(0, 4)) {
+                                self.cache(props.sc_id, toCahe );
+                            } else {
+                                var split = toCahe.split('[', 2);
+                                toCahe = toCahe.substr(split[0].length);
+                                self.cache(props.sc_id, toCahe );
+                            }
+
                             return shortcodeImg;
                         });
                 });

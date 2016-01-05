@@ -112,7 +112,7 @@ class TMM_Content_Composer {
 	}
 
 	public static function enqueue_scripts() {
-		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, true);
+		//wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, true);
 	}
 
 	public static function mce_buttons($buttons) {
