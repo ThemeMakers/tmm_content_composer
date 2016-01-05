@@ -19,32 +19,6 @@
 		?>       
       
     </div>
-    <div class="one-half">
-       <?php
-       
-       $animation_types = array(
-           'fade' => 'Fade',
-           'fades' => 'Fades',
-           'slide' => 'Slide',
-           'goDown' => 'go Down',
-           'scaleToFade' => 'Scale To Fade',
-           'backSlide' => 'Back Slide',
-           'fadeUp' => 'Fade Up',
-           'verticalSlide' => 'Vertical Slide'
-       );
-       
-       TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Slides Animation Effect', 'tmm_content_composer'),
-			'shortcode_field' => 'animation_type',
-			'id' => 'animation_type',
-            'options' => $animation_types,
-			'default_value' => TMM_Content_Composer::set_default_value('animation_type', 'scaleToFade'),
-			'description' => ''
-		));
-		?>       
-      
-    </div>
 
 	<div class="fullwidth">
 

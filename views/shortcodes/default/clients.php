@@ -9,30 +9,20 @@ if (!class_exists('TMM')) {
     tmm_enqueue_style('owltheme');
     tmm_enqueue_style('owltransitions');
 }
-$slides_count = ceil(count($images)/$items_per_slide);
+$slides_count = count($images);
 ?>
 <?php if (!empty($images)){ ?>
 	<div class="clients-items-<?php echo esc_attr($uniqid) ?> clients-items clearfix">
         
-        <?php 
-        $k=1;
+        <?php
         for ($s=0; $s<$slides_count; $s++){ ?>
             <div class="item">
-                <ul>
-                    <?php for ($i=$items_per_slide*($k-1); $i<($items_per_slide*$k); $i++){                        
-                        if(isset($images[$i])){
-                            ?>
-                                <li>
-	                                <a href="<?php echo(!empty($links[$i]) ? $links[$i] : '#') ?>"><img alt="" src="<?php echo esc_url(TMM_Content_Composer::resize_image($images[$i], '')) ?>"></a>
-                                </li>
-                            <?php
-                            }
-                        } ?>
-                </ul>
+
+                <a href="<?php echo(!empty($links[$s]) ? $links[$s] : '#') ?>"><img alt="" src="<?php echo esc_url(TMM_Content_Composer::resize_image($images[$s], '')) ?>"></a>
+
             </div>
-        <?php        
-        
-        $k++;
+        <?php
+
         } ?>
             
 	</div>
@@ -40,14 +30,15 @@ $slides_count = ceil(count($images)/$items_per_slide);
         jQuery(function() {		
             if (jQuery('.clients-items-<?php echo esc_js($uniqid) ?> .item').length>1){
                 jQuery('.clients-items-<?php echo esc_js($uniqid) ?>').owlCarousel({
-                    autoPlay : 5000,
-                    stopOnHover : true,					
-                    navigation: false,
-                    slideSpeed: 300,
-                    paginationSpeed: 400,
-                    singleItem: true,
-                    theme : "owl-theme",
-                    transitionStyle : "<?php echo (isset($animation_type)&&(!empty($animation_type))) ? esc_js($animation_type) : 'scaleToFade' ?>"
+
+                    items: <?php echo esc_js($items_per_slide) ?>,
+                    loop: true,
+                    nav: false,
+                    dots: false,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    responsiveClass: true,
+                    themeClass : "owl-theme-cycle"
 
                 });
             }
