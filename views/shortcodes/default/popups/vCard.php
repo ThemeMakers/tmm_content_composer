@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Enter Address', 'tmm_content_composer'),
+			'title' => __('Enter Address', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -17,10 +17,21 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Enter Phone', 'tmm_content_composer'),
+			'title' => __('Enter Phone', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'phone',
-			'id' => 'phone',
+			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('phone', ''),
+			'description' => ''
+		));
+		?>
+		
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Enter Fax', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'fax',
+			'id' => '',
+			'default_value' => TMM_Content_Composer::set_default_value('fax', ''),
 			'description' => ''
 		));
 		?>
@@ -28,9 +39,9 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Enter Email', 'tmm_content_composer'),
+			'title' => __('Enter Email', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'email',
-			'id' => 'email',
+			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('email', ''),
 			'description' => ''
 		));
@@ -42,15 +53,15 @@
 </div><!--/ .tmm_shortcode_template->
 
 <!-- --------------------------  PROCESSOR  --------------------------- -->
-
 <script type="text/javascript">
-	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
-
-	jQuery(function() {
-		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
+		var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
+		
+		jQuery(function() {			
 			tmm_ext_shortcodes.changer(shortcode_name);
-		});
+			jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
+				tmm_ext_shortcodes.changer(shortcode_name);
+			});
 
-	});
-</script>
+		});
+    </script>
+	
