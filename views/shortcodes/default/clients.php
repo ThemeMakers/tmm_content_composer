@@ -12,15 +12,11 @@ if (!class_exists('TMM')) {
 $slides_count = count($images);
 ?>
 <?php if (!empty($images)){ ?>
-	<div class="clients-items-<?php echo esc_attr($uniqid) ?> clients-items clearfix">
+	<div class="lc-clients clients-items-<?php echo esc_attr($uniqid) ?>">
         
         <?php
         for ($s=0; $s<$slides_count; $s++){ ?>
-            <div class="item">
-
-                <a href="<?php echo(!empty($links[$s]) ? $links[$s] : '#') ?>"><img alt="" src="<?php echo esc_url(TMM_Content_Composer::resize_image($images[$s], '')) ?>"></a>
-
-            </div>
+            <a href="<?php echo(!empty($links[$s]) ? $links[$s] : '#') ?>"><img alt="" src="<?php echo esc_url(TMM_Content_Composer::resize_image($images[$s], '')) ?>"></a>
         <?php
 
         } ?>
@@ -28,17 +24,18 @@ $slides_count = count($images);
 	</div>
     <script>
         jQuery(function() {		
-            if (jQuery('.clients-items-<?php echo esc_js($uniqid) ?> .item').length>1){
+            if (jQuery('.clients-items-<?php echo esc_js($uniqid) ?> a').length>1){
                 jQuery('.clients-items-<?php echo esc_js($uniqid) ?>').owlCarousel({
 
-                    items: <?php echo esc_js($items_per_slide) ?>,
-                    loop: true,
-                    nav: false,
-                    dots: false,
-                    autoplay: true,
-                    autoplayTimeout: 5000,
-                    responsiveClass: true,
-                    themeClass : "owl-theme-cycle"
+                    items:              <?php echo esc_js($items_per_slide) ?>,
+                    loop:               true,
+                    nav:                false,
+                    dots:               false,
+                    autoplay:           true,
+                    autoplayTimeout:    5000,
+                    responsiveClass:    true,
+                    itemElement:        'li',
+                    stageElement:       'ul'
 
                 });
             }

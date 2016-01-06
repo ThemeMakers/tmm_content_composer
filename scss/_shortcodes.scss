@@ -698,29 +698,26 @@ ul.list li.type-5:before { content: '\e8b2'; }
 /*	 Clients
 /* -------------------------------------------------- */
 
-.clients-items {
+.lc-clients {
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 15px;
 	font-size: 0;
 	text-align: center;
+
+	li {
+		display: inline-block;
+		float: none !important; // overriding default styles
+		padding: 0 10px;
+		list-style: none;
+		vertical-align: middle;
+
+		-webkit-transition: opacity .25s ease-in-out;
+		transition: opacity .25s ease-in-out;
+
+		&:hover { opacity: .5; }
+	}
 }
-
-.clients-items .item			 { display: none; }
-.clients-items .item:first-child { display: block; }
-
-.clients-items li {
-	display: inline-block;
-	padding: 0 1%;
-	width: 15%;
-	list-style: none;
-	vertical-align: middle;
-
-	-webkit-transition: opacity .25s ease-in-out;
-	transition: opacity .25s ease-in-out;
-}
-
-.clients-items li:hover { opacity: .5; }
 
 /* -------------------------------------------------- */
 /*  Counter Box
