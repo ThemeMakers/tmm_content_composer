@@ -14,7 +14,7 @@ if (!isset($dont_fill_inputs)) {
 if (!empty($contact_form['inputs'])) {
 	?>
 
-	<form method="post" class="contact-form" enctype="multipart/form-data">
+	<form method="post" class="lc-contact-form" enctype="multipart/form-data">
 
 		<input type="hidden" name="contact_form_name" value="<?php echo esc_attr($form_name) ?>" />
 
@@ -116,20 +116,18 @@ if (!empty($contact_form['inputs'])) {
                 ?>
                 <?php if ($contact_form['has_capture']){ ?>
 
-                    <p class="input-block">
+                    <p class="captcha">
                         <?php $hash = md5(time()); ?>
-                        <img class="contact_form_capcha" src="<?php echo get_stylesheet_directory_uri(); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="27" width="72" /><input type="text" value="" name="verify" class="verify" /><input type="hidden" name="verify_code" value="<?php echo $hash ?>" />
+                        <img class="contact_form_capcha" src="<?php echo get_stylesheet_directory_uri(); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="40" width="107" /><input type="text" value="" name="verify" class="verify" /><input type="hidden" name="verify_code" value="<?php echo $hash ?>" />
                     </p><!--/ .row-->
 
                 <?php } ?>
                 <p>
-                    <button class="button submit<?php echo !empty($contact_form['submit_button']) ? ' ' . $contact_form['submit_button'] : '' ?>" type="submit"><?php echo ($contact_form['submit_button_text']) ? $contact_form['submit_button_text'] : '<i class="icon-paper-plane-2"></i>'?></button>
+                    <button class="button middle default<?php echo !empty($contact_form['submit_button']) ? ' ' . $contact_form['submit_button'] : '' ?>" type="submit"><?php echo ($contact_form['submit_button_text']) ? $contact_form['submit_button_text'] : __('Submit', 'tmm_content_composer')?></button>
                 </p>
-		<div class="contact_form_responce" style="display: none;"><ul></ul></div>
+		<div class="contact_form_responce"><ul></ul></div>
 	</form>
 
 	<?php
 }
 ?>
-<div class="clear"></div>
-
