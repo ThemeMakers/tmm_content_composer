@@ -23,18 +23,21 @@ $q-font-style									: italic;
 $q-font-size									: 18px;
 $q-font-family									: 'Bree Serif', serif;
 
-$q-quote-sign-color								: #acacac;
-$q-quote-sign-size								: 100px;
-$q-quote-sign-font-family						: 'Courgette', cursive;
+$q-quote-sign-color-default						: #bebebe;
+$q-quote-sign-color								: #ffffff;
+$q-quote-sign-size								: 72px;
+$q-quote-sign-size-default						: 100px;
+$q-quote-sign-font-family						: 'Bree Serif', serif;
+$q-quote-sign-font-family-default				: "Courgette", cursive;
 $q-quote-sign-character							: "“";
 
 $q-quote-type-1-bg-color						: #ededed;
 $q-quote-type-1-text-color						: #bebebe;
 $q-quote-type-1-author-text-color				: #4d90fe;
 
-$q-quote-type-2-bg-color						: #f85c37;
+$q-quote-type-2-bg-color						: #4d90fe;
 $q-quote-type-2-text-color						: #ffffff;
-$q-quote-type-2-author-text-color				: #ffffff;
+$q-quote-type-2-author-text-color				: #333333;
 
 // Image
 $io-1											: 1px;
@@ -246,9 +249,9 @@ blockquote {
 			position: absolute;
 			left: 10px;
 			top: 30px;
-			color: $q-quote-sign-color;
-			font-size: $q-quote-sign-size;
-			font-family: $q-quote-sign-font-family;
+			color: $q-quote-sign-color-default;
+			font-size: $q-quote-sign-size-default;
+			font-family: $q-quote-sign-font-family-default;
 			content: $q-quote-sign-character;
 			line-height: 1em;
 			font-style: normal;
@@ -257,8 +260,17 @@ blockquote {
 		}
 
 		&.type-1 {
+			padding: 65px 40px 35px;
 			background-color: $q-quote-type-1-bg-color;
 			color: $q-quote-type-1-text-color;
+			font-size: $q-font-size + 2px;
+
+			&:before {
+				left: 40px;
+				top: 25px;
+				font-family: $q-quote-sign-font-family;
+				font-size: $q-quote-sign-size;
+			}
 
 			.author {
 				color: $q-quote-type-1-author-text-color;
@@ -266,12 +278,17 @@ blockquote {
 		}
 
 		&.type-2 {
+			padding: 65px 40px 35px;
 			background-color: $q-quote-type-2-bg-color;
 			color: $q-quote-type-2-text-color;
+			font-size: $q-font-size + 2px;
 
 			&:before {
-				color: #fff;
-				color: rgba(255,255,255,.7);
+				left: 40px;
+				top: 25px;
+				color: $q-quote-sign-color;
+				font-family: $q-quote-sign-font-family;
+				font-size: $q-quote-sign-size;
 			}
 
 			.author {
@@ -286,9 +303,12 @@ blockquote {
 
 		.author {
 			display: block;
-			font-weight: 700;
-			font-size: 13px;
-			font-family: 'Roboto Slab', serif;
+			font: {
+				weight: 700;
+				style: normal;
+				size: 13px;
+				family: 'Roboto Slab', serif;
+			};
 			text-transform: uppercase;
 			text-align: right;
 		}
@@ -742,53 +762,53 @@ ul.list li.type-5:before { content: '\e8b2'; }
 /*  Counter Box
 /* -------------------------------------------------- */
 
-.counter-box {
-	text-align: center;
-	font-size: 0;
-}
+.lc-counter-box {
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 1.5em;
 
-.counter-box .counter {
-	display: inline-block;
-	width: 25%;
-	vertical-align: top;
-	text-align: center;
-}
+	.counter {
+		padding: 0 20px;
+		display: inline-block;
+		vertical-align: top;
+		text-align: center;
 
-.counter .count {
-	position: relative;
-	display: block;
-	margin-bottom: 15px;
-	padding-bottom: 20px;
-	color: #262626;
-	font-weight: 500;
-	font-size: 60px;
-	font-family: 'Raleway', sans-serif;
-	line-height: 1em;
-}
+		.count {
+			position: relative;
+			display: block;
+			margin-bottom: 15px;
+			padding-bottom: 20px;
+			color: #262626;
+			font-weight: 500;
+			font-size: 60px;
+			font-family: 'Raleway', sans-serif;
+			line-height: 1em;
 
-.counter .count:after {
-	position: absolute;
-	left: 50%;
-	bottom: 0;
-	display: block;
-	margin-left: -25px;
-	background-color: #e8e8e8;
-	width: 50px;
-	height: 1px;
-	text-align: center;
-	content: "";
-}
+			&:after {
+				position: absolute;
+				left: 50%;
+				bottom: 0;
+				display: block;
+				margin-left: -25px;
+				background-color: #e8e8e8;
+				width: 50px;
+				height: 1px;
+				text-align: center;
+				content: "";
+			}
+		}
 
-.counter .details {
-	margin-bottom: 0;
-	color: #aaa;
-	text-transform: uppercase;
-	font-weight: 400;
-	font-size: 12px;
-	font-family: 'Raleway', sans-serif;
+		.details {
+			margin-bottom: 0;
+			color: #aaa;
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: 12px;
+			font-family: 'Raleway', sans-serif;
+		}
+	}
 }
-
-.parallax .counter .details { color: #fff; }
 
 /* -------------------------------------------------- */
 /*  Simple Title
