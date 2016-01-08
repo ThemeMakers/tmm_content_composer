@@ -345,7 +345,7 @@ global $tmm_row_options;
 
 			TMM_Content_Composer::html_option(array(
                 'type' => 'checkbox',
-                'title' => __('Use as default content blockt', 'tmm_content_composer'),
+                'title' => __('Use as default content block', 'tmm_content_composer'),
                 'shortcode_field' => 'row_section_content',
                 'id' => 'row_section_content',
                 'is_checked'=> $tmm_row_options['section_content'],
