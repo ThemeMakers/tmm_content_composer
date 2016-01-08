@@ -4,8 +4,6 @@
 $form_name = $content;
 $contact_form = TMM_Contact_Form::get_form($form_name);
 
-$unique_id = uniqid();
-
 if (!isset($dont_fill_inputs)) {
 	$dont_fill_inputs = true;
 }
@@ -20,6 +18,8 @@ if (!empty($contact_form['inputs'])) {
 
             <?php
             foreach ($contact_form['inputs'] as $key => $input){
+
+                $unique_id = uniqid();
 
                 $name = $input['type'] . $key;
 
@@ -78,8 +78,8 @@ if (!empty($contact_form['inputs'])) {
                         $select_options = explode(",", $input['options']);
                         ?>
                         <p class="input-block sel">
-                            <label for="url_<?php echo esc_attr($unique_id) ?>"><?php echo esc_html($input['label']) ?><?php echo($input['is_required'] ? ': <span class="required">(' . __('required', 'tmm_content_composer') . ')</span>' : '') ?></label>
-                            <select id="url_<?php echo esc_attr($unique_id) ?>" name="<?php echo esc_attr($name) ?>">
+                            <label for="sel_<?php echo esc_attr($unique_id) ?>"><?php echo esc_html($input['label']) ?><?php echo($input['is_required'] ? ': <span class="required">(' . __('required', 'tmm_content_composer') . ')</span>' : '') ?></label>
+                            <select id="sel_<?php echo esc_attr($unique_id) ?>" name="<?php echo esc_attr($name) ?>">
                                 <?php if (!empty($select_options)): ?>
                                     <?php foreach ($select_options as $value) : ?>
                                         <option value="<?php echo esc_attr($value); ?>"><?php echo esc_html($value); ?></option>
