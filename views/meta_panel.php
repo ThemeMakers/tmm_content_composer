@@ -255,7 +255,7 @@ global $tmm_row_options;
 				'title' => __('Padding bottom', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_padding_bottom',
 				'options' => array(
-					'0' => __('No Top Padding', TMM_CC_TEXTDOMAIN),
+					'0' => __('No Bottom Padding', TMM_CC_TEXTDOMAIN),
 					'10' => __('10 PX', TMM_CC_TEXTDOMAIN),
 					'20' => __('20 PX', TMM_CC_TEXTDOMAIN),
 					'30' => __('30 PX', TMM_CC_TEXTDOMAIN),
@@ -308,7 +308,7 @@ global $tmm_row_options;
 				'title' => __('Margin bottom', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_margin_bottom',
 				'options' => array(
-					'0' => __('No Top Margin', TMM_CC_TEXTDOMAIN),
+					'0' => __('No Bottom Margin', TMM_CC_TEXTDOMAIN),
 					'10' => __('10 PX', TMM_CC_TEXTDOMAIN),
 					'20' => __('20 PX', TMM_CC_TEXTDOMAIN),
 					'30' => __('30 PX', TMM_CC_TEXTDOMAIN),
@@ -345,7 +345,7 @@ global $tmm_row_options;
 
 			TMM_Content_Composer::html_option(array(
                 'type' => 'checkbox',
-                'title' => __('Use as default content blockt', TMM_CC_TEXTDOMAIN),
+                'title' => __('Use as default content block', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'row_section_content',
                 'id' => 'row_section_content',
                 'is_checked'=> $tmm_row_options['section_content'],
