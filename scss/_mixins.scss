@@ -109,6 +109,17 @@ $global-border-color: #262626;
 	border-radius: $radius;
 }
 
+// @MIXIN
+//
+// Appearance
+//
+
+@mixin appearance ($value) {
+	-webkit-appearance: $value;
+	-moz-appearance: $value;
+	appearance: $value;
+}
+
 //
 // @MIXIN
 //

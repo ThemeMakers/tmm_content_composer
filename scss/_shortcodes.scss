@@ -113,6 +113,25 @@ $alert-text-color-info							: #4d90fe;
 $alert-text-color-notice						: #fec64d;
 $alert-text-color-transparent					: #333333;
 
+// Contact Form
+$lc-field-border-width							: 2px;
+$lc-field-border-style							: solid;
+$lc-field-border-color							: #d6d6d6;
+$lc-field-inner-offset							: 11px 20px;
+$lc-field-bg-color								: #fafafa;
+$lc-field-font-color							: #a0a0a0;
+$lc-field-font-size								: 12px;
+$lc-field-font-family							: 'Roboto', sans-serif;
+
+$lc-field-border-color-focus					: #4d90fe;
+$lc-field-bg-color-focus						: #ffffff;
+$lc-field-font-color-focus						: #262626;
+
+$lc-field-font-color-placeholder				: #aeaeae;
+
+$lc-field-border-color-valid					: #4d90fe;
+$lc-field-border-color-invalid					: #fe5214;
+
 
 /* -------------------------------------------------- */
 /*	 Accordion and Toggle
@@ -1610,29 +1629,6 @@ ul.style-fall li a:hover:before {
 /* ---------------------------------------- */
 
 .lc-contact-form {
-
-	input[type="button"],
-	input[type="reset"],
-	input[type="submit"] {
-		cursor: pointer;
-		-webkit-appearance: button;
-	}
-
-	button::-moz-focus-inner,
-	input::-moz-focus-inner {
-		padding: 0;
-		border: 0;
-	}
-
-	input,
-	select,
-	textarea {
-		margin: 0;
-		border: none;
-		vertical-align: baseline;
-		font-size: 100%;
-	}
-
 	label {
 		display: inline-block;
 		cursor: pointer;
@@ -1640,38 +1636,36 @@ ul.style-fall li a:hover:before {
 
 	input,
 	textarea,
-	select,
-	button {
-		-webkit-transition: all .25s ease;
-		transition: all .25s ease;
-	}
-
-	input,
-	textarea,
 	select {
 		display: inline-block;
-		padding: 11px 20px;
+		margin: 0;
+		padding: $lc-field-inner-offset;
 		width: 100%;
 		outline: none;
-		border-width: 2px;
-		border-style: solid;
-		border-color: #d6d6d6;
-		background-color: #fafafa;
-		color: #c8c8c8;
-		font-size: 12px;
-		font-family: 'Roboto', sans-serif;
+		border: {
+			width: $lc-field-border-width;
+			style: $lc-field-border-style;
+			color: $lc-field-border-color;
+		};
+		background-color: $lc-field-bg-color;
+		color: $lc-field-font-color;
+		font-size: $lc-field-font-size;
+		font-family: $lc-field-font-family;
 
-		-webkit-border-radius: 0;
-		border-radius: 0;
-		-webkit-box-shadow: none;
-		box-shadow: none;
-		-webkit-appearance: none;
-		appearance: none;
+		@include border-radius(0);
+		@include box-shadow(none);
+		@include appearance(none);
+		@include transition(all .25s ease);
+
+		&::-moz-focus-inner {
+			padding: 0;
+			border: 0;
+		}
 
 		&:focus {
-			border-color: #4d90fe;
-			color: #262626;
-			background-color: #ffffff;
+			border-color: $lc-field-border-color-focus;
+			background-color: $lc-field-bg-color-focus;
+			color: $lc-field-font-color-focus;
 		}
 	}
 
@@ -1734,33 +1728,31 @@ ul.style-fall li a:hover:before {
 		max-width: 100%;
 	}
 
-	.wrong-data { border-color: #fe5214; }
+	.wrong-data { border-color: $lc-field-border-color-invalid; }
 
 	/* Chrome, Safari */
 	input::-webkit-input-placeholder,
-	textarea::-webkit-input-placeholder { color: #aeaeae; }
+	textarea::-webkit-input-placeholder { color: $lc-field-font-color-placeholder; }
 
 	/* Firefox 4 to 18 */
 	input:-moz-placeholder,
-	textarea:-moz-placeholder { color: #aeaeae; opacity: 1; }
+	textarea:-moz-placeholder { color: $lc-field-font-color-placeholder; opacity: 1; }
 
 	/* Firefox 19+ */
 	input::-moz-placeholder,
-	textarea::-moz-placeholder { color: #aeaeae; opacity: 1; }
+	textarea::-moz-placeholder { color: $lc-field-font-color-placeholder; opacity: 1; }
 
 	/* Internet Explorer 10+ */
 	input:-ms-input-placeholder,
-	textarea:-ms-input-placeholder {
-		color: #aeaeae;
-	}
+	textarea:-ms-input-placeholder { color: $lc-field-font-color-placeholder; }
 
 	/* HTML5 Validation Styles */
 
 	input:required:valid,
-	textarea:required:valid { border-color: #4d90fe; }
+	textarea:required:valid { border-color: $lc-field-border-color-valid; }
 
 	input:focus:invalid,
-	textarea:focus:invalid  { border-color: #4d90fe; }
+	textarea:focus:invalid  { border-color: $lc-field-border-color-invalid; }
 
 	.contact_form_responce {
 		display: none;
