@@ -215,7 +215,7 @@ jQuery(function() {
 
 jQuery(document).ready(function() {
 
-    jQuery('.contact-form').submit(function() {
+    jQuery('.lc-contact-form').submit(function() {
         contact_form_submit(this, []);
         return false;
     });

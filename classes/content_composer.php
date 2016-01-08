@@ -120,13 +120,17 @@ class TMM_Content_Composer {
 
 		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
 
-		if (!class_exists('TMM')) {
+		?>
+		<script type="text/javascript">
+			var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
+			var lang_enter_correctly = "<?php echo esc_js(__('Please enter correct', 'tmm_content_composer')); ?>";
+			var lang_sended_succsessfully = "<?php echo esc_js(__('Your message has been sent successfully!', 'tmm_content_composer')); ?>";
+			var lang_server_failed = "<?php echo esc_js(__('Server failed. Send later', 'tmm_content_composer')); ?>";
+			var capcha_image_url = "<?php echo esc_js(TMM_THEME_URI) ?>/helper/capcha/image.php/";
+		</script>
+		<?php
 
-			?>
-			<script type="text/javascript">
-				var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
-			</script>
-			<?php
+		if (!class_exists('TMM')) {
 
 			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/plugins/min/jquery.modernizr.min.js', array('jquery'), false, true);
 
