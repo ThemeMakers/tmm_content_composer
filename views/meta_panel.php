@@ -255,7 +255,7 @@ global $tmm_row_options;
 				'title' => __('Padding bottom', 'tmm_content_composer'),
 				'shortcode_field' => 'row_padding_bottom',
 				'options' => array(
-					'0' => __('No Top Padding', 'tmm_content_composer'),
+					'0' => __('No Bottom Padding', 'tmm_content_composer'),
 					'10' => __('10 PX', 'tmm_content_composer'),
 					'20' => __('20 PX', 'tmm_content_composer'),
 					'30' => __('30 PX', 'tmm_content_composer'),
@@ -308,7 +308,7 @@ global $tmm_row_options;
 				'title' => __('Margin bottom', 'tmm_content_composer'),
 				'shortcode_field' => 'row_margin_bottom',
 				'options' => array(
-					'0' => __('No Top Margin', 'tmm_content_composer'),
+					'0' => __('No Bottom Margin', 'tmm_content_composer'),
 					'10' => __('10 PX', 'tmm_content_composer'),
 					'20' => __('20 PX', 'tmm_content_composer'),
 					'30' => __('30 PX', 'tmm_content_composer'),
