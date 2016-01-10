@@ -135,6 +135,17 @@ $lc-field-font-color-placeholder				: #aeaeae;
 $lc-field-border-color-valid					: #4d90fe;
 $lc-field-border-color-invalid					: #fe5214;
 
+// Counter Box
+$counter-num-font-weight						: 500;
+$counter-num-font-size							: 60px;
+$counter-num-font-family						: 'Roboto Slab', serif;
+$counter-num-font-color							: #262626;
+$counter-num-brd-color							: #e8e8e8;
+$counter-desc-font-weight						: 400;
+$counter-desc-font-size							: 12px;
+$counter-desc-font-family						: 'Roboto Slab', serif;
+$counter-desc-font-color						: #aaaaaa;
+
 
 /* -------------------------------------------------- */
 /*	 Accordion and Toggle
@@ -777,35 +788,38 @@ ul.list li.type-5:before { content: '\e8b2'; }
 		.count {
 			position: relative;
 			display: block;
-			margin-bottom: 15px;
+			margin-bottom: 25px;
 			padding-bottom: 20px;
-			color: #262626;
-			font-weight: 500;
-			font-size: 60px;
-			font-family: 'Raleway', sans-serif;
+			color: $counter-num-font-color;
+			font: {
+				weight: $counter-num-font-weight;
+				size: $counter-num-font-size;
+				family: $counter-num-font-family;
+			};
 			line-height: 1em;
 
 			&:after {
-				position: absolute;
-				left: 50%;
-				bottom: 0;
+				width: 50%;
 				display: block;
-				margin-left: -25px;
-				background-color: #e8e8e8;
-				width: 50px;
-				height: 1px;
-				text-align: center;
 				content: "";
+				border-top: {
+					width: 1px;
+					style: solid;
+					color: $counter-num-brd-color;
+				};
+				@include align-element(50%, 100%);
 			}
 		}
 
 		.details {
 			margin-bottom: 0;
-			color: #aaa;
+			color: $counter-desc-font-color;
 			text-transform: uppercase;
-			font-weight: 400;
-			font-size: 12px;
-			font-family: 'Raleway', sans-serif;
+			font: {
+				weight: $counter-desc-font-weight;
+				size: $counter-desc-font-size;
+				family: $counter-desc-font-family;
+			};
 		}
 	}
 }
