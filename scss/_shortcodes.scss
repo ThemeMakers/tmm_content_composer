@@ -277,6 +277,22 @@ $btn-large-font-size							: 16px;
 $btn-large-font-weight							: 700;
 $btn-large-inner-offset							: 19px 28px;
 
+// Dropcaps
+$dropcap-width									: 60px;
+$dropcap-brd-width								: 2px;
+$dropcap-brd-style								: solid;
+$dropcap-font-weight							: 700;
+$dropcap-font-size								: 40px;
+$dropcap-font-family							: 'Roboto Slab', serif;
+
+$dropcap-def-bg-color							: #4d90fe;
+$dropcap-def-font-color							: #ffffff;
+$dropcap-def-brd-color							: transparent;
+
+$dropcap-sec-bg-color							: transparent;
+$dropcap-sec-font-color							: #4d90fe;
+$dropcap-sec-brd-color							: #dcdcdc;
+
 
 /* -------------------------------------------------- */
 /*	 Accordion and Toggle
@@ -973,13 +989,35 @@ ul.list li.type-5:before { content: '\e8b2'; }
 /*  Dropcap
 /* -------------------------------------------------- */
 
-.dropcap {
+.lc-dropcap {
 	display: block;
 	float: left;
 	margin: 10px 15px 0 0;
-	color: #262626;
-	font-weight: 700;
-	font-size: 48px;
+	width: $dropcap-width;
+	height: $dropcap-width;
+	border: {
+		width: $dropcap-brd-width;
+		style: $dropcap-brd-style;
+		color: $dropcap-def-brd-color;
+	};
+	font: {
+		weight: $dropcap-font-weight;
+		size: $dropcap-font-size;
+		family: $dropcap-font-family;
+	};
+	text-align: center;
+	line-height: $dropcap-width - 2*$dropcap-brd-width;
+
+	&.default {
+		background-color: $dropcap-def-bg-color;
+		color: $dropcap-def-font-color;
+	}
+
+	&.secondary {
+		border-color: $dropcap-sec-brd-color;
+		background-color: $dropcap-sec-bg-color;
+		color: $dropcap-sec-font-color;
+	}
 }
 
 /* -------------------------------------------------- */
