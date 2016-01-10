@@ -31,7 +31,7 @@ if (isset($latitude) && $latitude !== '' && isset($longitude) && $longitude !== 
 
 	if ($mode == 'map') {
 		?>
-		<div class="google_map" id="google_map_<?php echo $inique_id ?>" style="height: <?php echo $height ?>px;"></div>
+		<div class="lc-google_map" id="google_map_<?php echo $inique_id ?>" style="height: <?php echo $height ?>px;"></div>
 
 		<script type="text/javascript">
 			jQuery(function() {

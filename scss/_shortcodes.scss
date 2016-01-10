@@ -685,6 +685,12 @@ blockquote {
 			img { @include filter(blur(2px)); }
 		}
 	}
+
+	.single-image {
+		position: relative;
+		overflow: hidden;
+		display: block;
+	}
 }
 
 /* -------------------------------------------------- */
@@ -980,10 +986,14 @@ ul.list li.type-5:before { content: '\e8b2'; }
 	color: #8c8c8c;
 	font-weight: 300;
 	font-family: 'Raleway', sans-serif;
-}
 
-.simple-title a       { color: #f85c37; }
-.simple-title a:hover { color: #262626; }
+	a {
+		color: #f85c37;
+
+		&:hover { color: #262626; }
+	}
+
+}
 
 /* -------------------------------------------------- */
 /*  Dropcap
@@ -1024,82 +1034,13 @@ ul.list li.type-5:before { content: '\e8b2'; }
 /*	Map
 /* -------------------------------------------------- */
 
-.google_map {
+.lc-google_map {
 	position: relative;
 	width: 100%;
 	height: 400px;
+
+	img { max-width: none; }
 }
-
-.google_map img { max-width: none; }
-
-.google_map_expand {
-	position: relative;
-	overflow: hidden;
-}
-
-.google_map_toggle {
-	position: relative;
-	width: 100%;
-	cursor: pointer;
-}
-
-.google_map_toggle:after {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(255,255,255,.5);
-	visibility: visible;
-	content: "";
-
-	-webkit-transition: all .35s ease;
-	transition: all .35s ease;
-}
-
-.google_map_toggle.expand:after {
-	visibility: hidden;
-	opacity: 0;
-}
-
-.google_map_toggle:hover:after {
-	background-color: rgba(255,255,255,.2);
-}
-
-.google_map_close {
-	position: absolute;
-	left: 50%;
-	bottom: -40px;
-	display: block;
-	margin-left: -25px;
-	width: 50px;
-	height: 40px;
-	background-color: #fff;
-	text-align: center;
-	cursor: pointer;
-
-	-webkit-transition: bottom .35s ease;
-	transition: bottom .35s ease;
-	-webkit-border-radius: 3px 3px 0 0;
-	border-radius: 3px 3px 0 0;
-}
-
-.google_map_close.active {
-	bottom: 0;
-
-	-webkit-transition: bottom .35s ease .35s;
-	transition: bottom .35s ease .35s;
-}
-
-.google_map_close:before {
-	color: #f85c37;
-	content: "\e83e";
-	text-align: center;
-	font-size: 21px;
-	font-family: 'fontello';
-	line-height: 42px;
-}
-
-.google_map .gm-style-cc { opacity: 0; }
 
 /* -------------------------------------------------- */
 /*	Highlight
@@ -1934,159 +1875,6 @@ ul.style-fall li a:hover:before {
 		border-top-color: $lc-divider-color-dark;
 	}
 }
-
-/* -------------------------------------------------- */
-/*	 Image
-/* -------------------------------------------------- */
-
-.slide-image {
-	position: relative;
-	display: block;
-	overflow: hidden;
-
-	-webkit-backface-visibility: hidden;
-}
-
-.slide-image img {
-	display: block;
-	-webkit-transition: -webkit-transform .7s ease;
-	transition: transform .7s ease;
-}
-
-.slide-image:hover img {
-	-webkit-transform: scale(1.2);
-	transform: scale(1.2);
-}
-
-.slide-image .curtain {
-	position: absolute;
-	top: -1%;
-	left: -1%;
-	visibility: hidden;
-	width: 102%;
-	height: 102%;
-	background-color: #fff;
-	background-color: rgba(255,255,255, .8);
-	opacity: 0;
-	filter: alpha(opacity = 0);
-
-	-webkit-transition: all 0.7s ease;
-	transition: all 0.7s ease;
-	-webkit-perspective: 400px;
-	perspective: 400px;
-}
-
-.slide-image:hover .curtain {
-	visibility: visible;
-	opacity: 1;
-	filter: alpha(opacity = 80);
-}
-
-.ch-curtain {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	z-index: 5;
-	margin: -20px 0 0 -20px;
-	width: 40px;
-	height: 40px;
-
-	-webkit-transition: all .7s ease;
-	transition: all .7s ease;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-}
-
-.slide-image:hover .ch-curtain {
-	-webkit-transform: rotate3d(0,1,0,-180deg);
-	transform: rotate3d(0,1,0,-180deg);
-}
-
-.ch-curtain > div {
-	display: block;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-color: #f85c37;
-	color: #fff;
-	text-align: center;
-
-	-webkit-transition: all .5s ease;
-	transition: all .5s ease;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
-.ch-curtain > div:after {
-	font-family: 'fontello';
-	line-height: 40px;
-}
-
-.slide-image.link-icon .ch-curtain > div:after {
-	content: '\e9ad';
-	font-size: 20px;
-}
-
-.slide-image.plus-icon .ch-curtain > div:after {
-	content: '\ec72';
-	font-size: 21px;
-}
-.slide-image.active-link{
-	display: block;
-}
-.ch-curtain .ch-back {
-	-webkit-transform: rotate3d(0,1,0,180deg);
-	transform: rotate3d(0,1,0,180deg);
-}
-
-.single-image {
-	display: block;
-	-webkit-backface-visibility: hidden;
-}
-
-.item-overlay .single-image {
-	position: absolute;
-	z-index: 5;
-	bottom: 30px;
-	display: block;
-	width: 40px;
-	height: 40px;
-	border: 1px solid #fff;
-	text-align: center;
-	background-color: transparent;
-
-	-webkit-transition: all .3s ease;
-	transition: all .3s ease;
-}
-
-.single-image.plus-icon { right: 75px; }
-.single-image.link-icon { right: 30px; }
-
-.item-overlay .single-image:hover { background-color: #fff; }
-
-.item-overlay .single-image:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: block;
-	width: 100%;
-	height: 100%;
-	color: #fff;
-	text-align: center;
-	font-size: 21px;
-	font-family: 'fontello';
-	line-height: 40px;
-
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
-	-webkit-transition: all .3s ease;
-	transition: all .3s ease;
-}
-
-.single-image.plus-icon:after  { content: '\ec72'; }
-.single-image.link-icon:after  { content: '\e9ad'; font-size: 20px; }
-
-.item-overlay .single-image:hover:after { color: #f5633f; }
 
 /* -------------------------------------------------- */
 /*	 Masonry

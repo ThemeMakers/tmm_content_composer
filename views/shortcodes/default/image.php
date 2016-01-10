@@ -59,19 +59,23 @@ if ($lightbox) {
     tmm_enqueue_script('magnific');
     tmm_enqueue_style('magnific');
     $target_url = TMM_Helper::resize_image($image_url, '');
-    $link_class = 'image-link plus-icon';
+    $link_class = 'image-link plus-link';
 } else {
-    $link_class = 'link-icon';
+    $link_class = 'plus-link';
 }
+
+$html.= '<figure class="lc-image' . $css_class . '">';
 
 if ($action == "link") {
     $html.= '<a title="' . $img_caption . '" class="single-image ' . $link_class . '" href="' . $target_url . '" target="' . $target . '">';
 }
 
-$html.= '<figure class="lc-image' . $css_class . '"><img alt="' . $image_alt . '" src="' . $src . '" />' . $figcaption . '</figure>';
+$html.= '<img alt="' . $image_alt . '" src="' . $src . '" />';
 
 if ($action == "link") {
-    $html .= '</a>';
+    $html .= '<span class="curtain"></span></a>';
 }
+
+$html.= $figcaption . '</figure>';
 
 echo $html;
