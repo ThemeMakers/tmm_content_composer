@@ -44,6 +44,7 @@
 			'Fontelico' => __('Fontelico', 'tmm_content_composer'),
 			'Font_Awesome' => __('Font Awesome', 'tmm_content_composer'),
 			'Entypo' => __('Entypo', 'tmm_content_composer'),
+			'Typicons' => __('Typicons', 'tmm_content_composer'),
 			'New_Icons' => __('New Icons', 'tmm_content_composer'),
 			'Web_Application_Icons' => __('Web Application Icons', 'tmm_content_composer'),
 			'Text_Editor_Icons' => __('Text Editor Icons', 'tmm_content_composer'),
@@ -787,6 +788,115 @@
 
 		$entypo = $icons_array['entypo'] = array_combine($entypo, $entypo);
 
+		$typicons = $icons_array['typicons'] = array(
+			'icon-music-outline',
+			'icon-music-2',
+			'icon-search-outline',
+			'icon-search-2',
+			'icon-mail-2',
+			'icon-heart-2',
+			'icon-heart-filled',
+			'icon-star-2',
+			'icon-star-filled',
+			'icon-user-outline',
+			'icon-user-2',
+			'icon-users-outline',
+			'icon-users-2',
+			'icon-user-add-outline',
+			'icon-user-add-1',
+			'icon-user-delete-outline',
+			'icon-user-delete',
+			'icon-video-2',
+			'icon-videocam-outline',
+			'icon-videocam-1',
+			'icon-picture-outline',
+			'icon-picture-2',
+			'icon-camera-outline',
+			'icon-camera-2',
+			'icon-th-outline',
+			'icon-th-1',
+			'icon-th-large-outline',
+			'icon-th-large-1',
+			'icon-th-list-outline',
+			'icon-th-list-1',
+			'icon-ok-outline',
+			'icon-ok-1',
+			'icon-cancel-outline',
+			'icon-cancel-2',
+			'icon-cancel-alt',
+			'icon-cancel-alt-filled',
+			'icon-cancel-circled-outline',
+			'icon-cancel-circled-2',
+			'icon-plus-outline',
+			'icon-plus-2',
+			'icon-minus-outline',
+			'icon-minus-2',
+			'icon-divide-outline',
+			'icon-divide',
+			'icon-eq-outline',
+			'icon-eq',
+			'icon-info-outline',
+			'icon-info-2',
+			'icon-home-outline',
+			'icon-home-2',
+			'icon-link-outline',
+			'icon-link-2',
+			'icon-attach-outline',
+			'icon-attach-2',
+			'icon-lock-2',
+			'icon-lock-filled',
+			'icon-lock-open-2',
+			'icon-lock-open-filled',
+			'icon-pin-outline',
+			'icon-pin-1',
+			'icon-eye-outline',
+			'icon-eye-2',
+			'icon-tag-2',
+			'icon-tags-1',
+			'icon-bookmark-2',
+			'icon-flag-2',
+			'icon-flag-filled',
+			'icon-thumbs-up-2',
+			'icon-thumbs-down-2',
+			'icon-download-outline',
+			'icon-download-2',
+			'icon-upload-outline',
+			'icon-upload-2',
+			'icon-upload-cloud-outline',
+			'icon-upload-cloud-2',
+			'icon-reply-outline',
+			'icon-reply-2',
+			'icon-forward-outline',
+			'icon-forward-2',
+			'icon-code-outline',
+			'icon-code-2',
+			'icon-export-outline',
+			'icon-export-2',
+			'icon-pencil-2',
+			'icon-pen',
+			'icon-feather-1',
+			'icon-edit-1',
+			'icon-print-2',
+			'icon-comment-2',
+			'icon-chat-2',
+			'icon-chat-alt',
+			'icon-bell-2',
+			'icon-attention-2',
+			'icon-attention-filled',
+			'icon-warning-empty',
+			'icon-warning',
+			'icon-contacts',
+			'icon-vcard-1',
+			'icon-address-1',
+			'icon-location-outline',
+			'icon-location-2',
+			'icon-map-1',
+			'icon-direction-outline'
+
+		);
+
+		$typicons = $icons_array['typicons'] = array_combine($typicons, $typicons);
+
 		$new_icons = $icons_array['new_icons'] = array(
 			'icon-meh',
 			'icon-gamepad',
@@ -1088,6 +1198,20 @@
 
 				<ul class="icons-type-list icons-type-awesome">
 					<?php foreach ($entypo as $name): ?>
+						<li <?php if ($icon_css_class == $name): ?>class="chooced_icon_type"<?php endif; ?>><i title="<?php echo $name ?>" class="<?php echo $name ?>"></i></li>
+					<?php endforeach; ?>
+				</ul><!--/ .icons-type-list-->
+
+				<div class="clear"></div>
+
+			</div><!--/ .icons_types_container-->
+
+			<div id="Typicons" class="icon_types_container" style="display: <?php echo($view_icon_group == 'Typicons' ? 'block' : 'none') ?>">
+
+				<h4><?php _e('Typicons', 'tmm_content_composer') ?></h4>
+
+				<ul class="icons-type-list icons-type-awesome">
+					<?php foreach ($typicons as $name): ?>
 						<li <?php if ($icon_css_class == $name): ?>class="chooced_icon_type"<?php endif; ?>><i title="<?php echo $name ?>" class="<?php echo $name ?>"></i></li>
 					<?php endforeach; ?>
 				</ul><!--/ .icons-type-list-->
