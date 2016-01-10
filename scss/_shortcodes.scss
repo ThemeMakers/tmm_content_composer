@@ -39,6 +39,40 @@ $q-quote-type-2-bg-color						: #4d90fe;
 $q-quote-type-2-text-color						: #ffffff;
 $q-quote-type-2-author-text-color				: #333333;
 
+// Buttons
+$lc-button-default-text-color					: #ffffff;
+$lc-button-default-text-color-hover				: #ffffff;
+$lc-button-default-icon-color					: #ffffff;
+$lc-button-default-icon-color-hover				: #ffffff;
+$lc-button-default-bg-color						: #7f858b;
+$lc-button-default-bg-color-hover				: #ff600a;
+$lc-button-default-border-radius				: 0;
+$lc-button-default-border-width					: 0;
+$lc-button-default-border-style					: solid;
+$lc-button-default-border-color					: transparent;
+$lc-button-default-border-color-hover			: transparent;
+
+$lc-button-small-text-size						: 12px;
+$lc-button-small-icon-size						: 12px;
+$lc-button-small-text-padding					: 5px 15px;
+
+$lc-button-middle-text-size						: 14px;
+$lc-button-middle-icon-size						: 14px;
+$lc-button-middle-text-padding					: 8px 20px;
+
+$lc-button-large-text-size						: 16px;
+$lc-button-large-icon-size						: 16px;
+$lc-button-large-text-padding					: 15px 25px;
+
+$lc-button-orange-text-color					: #ffffff;
+$lc-button-orange-text-color-hover				: #ffffff;
+$lc-button-orange-icon-color					: #ffffff;
+$lc-button-orange-icon-color-hover				: #ffffff;
+$lc-button-orange-bg-color						: #ff600a;
+$lc-button-orange-bg-color-hover				: #7f858b;
+$lc-button-orange-border-color					: transparent;
+$lc-button-orange-border-color-hover			: transparent;
+
 // Dividers
 $lc-divider-type-1-width						: 100%;
 $lc-divider-type-1-height						: 1px;
@@ -198,6 +232,50 @@ $counter-desc-font-weight						: 400;
 $counter-desc-font-size							: 12px;
 $counter-desc-font-family						: 'Roboto Slab', serif;
 $counter-desc-font-color						: #aaaaaa;
+
+// Buttons
+// Default Style
+$btn-default-font-family						: 'Roboto Slab', serif;
+$btn-default-text-transform						: uppercase;
+
+$btn-default-font-color							: #4d90fe;
+$btn-default-font-color-hover					: #ffffff;
+
+$btn-default-bg-color							: transparent;
+$btn-default-bg-color-hover						: #4d90fe;
+
+$btn-default-border-width						: 2px;
+$btn-default-border-style						: solid;
+$btn-default-border-color						: #dcdcdc;
+$btn-default-border-color-hover					: transparent;
+
+// Secondary Style
+$btn-secondary-font-family						: 'Roboto Slab', serif;
+$btn-secondary-text-transform					: uppercase;
+
+$btn-secondary-font-color						: #ffffff;
+$btn-secondary-font-color-hover					: #4d90fe;
+
+$btn-secondary-bg-color							: #4d90fe;
+$btn-secondary-bg-color-hover					: transparent;
+
+$btn-secondary-border-width						: 2px;
+$btn-secondary-border-style						: solid;
+$btn-secondary-border-color						: transparent;
+$btn-secondary-border-color-hover				: #dcdcdc;
+
+// Font sizes
+$btn-small-font-size							: 14px;
+$btn-small-font-weight							: 700;
+$btn-small-inner-offset							: 10px 18px;
+
+$btn-middle-font-size							: 15px;
+$btn-middle-font-weight							: 700;
+$btn-middle-inner-offset						: 16px 23px;
+
+$btn-large-font-size							: 16px;
+$btn-large-font-weight							: 700;
+$btn-large-inner-offset							: 19px 28px;
 
 
 /* -------------------------------------------------- */
@@ -1190,169 +1268,72 @@ ul.style-fall li a:hover:before {
 .lc-button {
 	display: inline-block;
 	margin-bottom: 15px;
-	padding: 10px 15px;
 	outline: none;
-	border-width: 1px;
-	border-style: solid;
-	border-color: transparent;
-	background-color: #f85c37;
-	color: #fff;
 	vertical-align: baseline;
 	text-align: center;
 	text-decoration: none;
-	text-transform: uppercase;
-	font-weight: 500;
-	font-size: 11px;
-	font-family: 'Raleway', sans-serif;
 	line-height: 1em;
 	cursor: pointer;
 
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	-webkit-transition: all .25s ease;
-	transition: all .25s ease;
+	@include transition(all .25s ease);
 
-	&:hover {
-		border-color: #cfcfcf;
-		background-color: transparent;
-		color: #f85c37;
+	// Default Style
+	&.default {
+		color: $btn-default-font-color;
+		text-transform: $btn-default-text-transform;
+		font-family: $btn-default-font-family;
+		background-color: $btn-default-bg-color;
+		border: {
+			width: $btn-default-border-width;
+			style: $btn-default-border-style;
+			color: $btn-default-border-color;
+		};
+
+		&:hover {
+			color: $btn-default-font-color-hover;
+			background-color: $btn-default-bg-color-hover;
+			border-color: $btn-default-border-color-hover;
+		}
 	}
 
+	// Secondary Style
+	&.secondary {
+		color: $btn-secondary-font-color;
+		text-transform: $btn-secondary-text-transform;
+		font-family: $btn-secondary-font-family;
+		background-color: $btn-secondary-bg-color;
+		border: {
+			width: $btn-secondary-border-width;
+			style: $btn-secondary-border-style;
+			color: $btn-secondary-border-color;
+		};
 
-	.tag_more { margin-top: 1.5em!important; }
-
-	.button-overflow { overflow: hidden; }
-
-	.button-roll {
-		display: inline-block;
-		vertical-align: text-bottom;
-
-		-webkit-perspective: 275px;
-		perspective: 275px;
-		-webkit-perspective-origin: 50% 50%;
-		perspective-origin: 50% 50%;
-		-webkit-border-radius: 3px;
-		border-radius: 3px;
+		&:hover {
+			color: $btn-secondary-font-color-hover;
+			background-color: $btn-secondary-bg-color-hover;
+			border-color: $btn-secondary-border-color-hover;
+		}
 	}
 
-	.button-roll span {
-		position: relative;
-		display: inline-block;
-		padding: 8px 20px;
-		background-color: #fff;
-		color: #f85c37;
-		text-transform: uppercase;
-		text-align: center;
-		font-weight: 500;
-		font-size: 14px;
-		font-family: 'Raleway', sans-serif;
-		line-height: 1.9;
-
-		-webkit-border-radius: 3px;
-		border-radius: 3px;
-		-webkit-transform-origin: 50% 0 0;
-		transform-origin: 50% 0 0;
-		-webkit-transform-style: preserve-3d;
-		transform-style: preserve-3d;
-		-webkit-transition: -webkit-transform .3s ease;
-		transition: transform .3s ease;
+	// Size Small
+	&.small {
+		padding: $btn-small-inner-offset;
+		font-size: $btn-small-font-size;
+		font-weight: $btn-small-font-weight;
 	}
 
-	.button-roll.orange-roll span {
-		background-color: #f85c37;
-		color: #fff;
+	// Size Middle
+	&.middle {
+		padding: $btn-middle-inner-offset;
+		font-size: $btn-middle-font-size;
+		font-weight: $btn-middle-font-weight;
 	}
 
-	.button-roll:hover span {
-		-webkit-transform: translate3d(0, 0, -40px) rotateX(90deg);
-		transform: translate3d(0, 0, -40px) rotateX(90deg);
-	}
-
-	.button-roll span:after {
-		position: absolute;
-		top: 100%;
-		left: 0;
-		padding: 8px 20px;
-		width: 100%;
-		height: 100%;
-		background-color: #262626;
-		color: #fff;
-		content: attr(data-hover);
-		text-align: center;
-
-		-webkit-border-radius: 3px;
-		border-radius: 3px;
-		-webkit-transition: background-color .3s ease;
-		transition: background-color .3s ease;
-		-webkit-transform: rotateX(-90deg);
-		transform: rotateX(-90deg);
-		-webkit-transform-origin: 50% 0 0;
-		transform-origin: 50% 0 0;
-	}
-
-	.button.middle {
-		padding: 14px 20px;
-
-		-webkit-border-radius: 5px;
-		border-radius: 5px;
-	}
-
-	#content .button.middle{
-		font-size: 14px;
-	}
-
-	.button.large {
-		padding: 15px 30px;
-
-		-webkit-border-radius: 6px;
-		border-radius: 6px;
-	}
-	#content .button.large {
-		font-size: 19px;
-	}
-	.button.default-white {
-		border-color: #cfcfcf;
-		color: #f85c37;
-		background-color: transparent;
-	}
-
-	.button.default-white:hover {
-		border-color: transparent;
-		background-color: #f85c37;
-		color: #fff;
-	}
-
-	.button.submit {
-		margin-bottom: 0;
-		padding: 9px 20px;
-		width: 100%;
-
-		-webkit-border-radius: 6px;
-		border-radius: 6px;
-	}
-
-	#content .button.default {
-		border-color: transparent;
-		color: #fff;
-	}
-
-	#content .button.default:hover {
-		border-color: #cfcfcf;
-		background-color: transparent;
-		color: #f85c37;
-	}
-
-	.dark-footer .button.default:hover { border-color: #737373; }
-
-	.button.white {
-		border-color: #fff;
-		background-color: #fff;
-		color: #f85c37;
-	}
-
-	.button.white:hover {
-		color: #fff;
-		background-color: transparent;
+	// Size Large
+	&.large  {
+		padding: $btn-large-inner-offset;
+		font-size: $btn-large-font-size;
+		font-weight: $btn-large-font-weight;
 	}
 }
 
