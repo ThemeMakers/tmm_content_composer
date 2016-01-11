@@ -77,11 +77,20 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
     if ( !isset($tmm_layout_constructor_row[$row]['bg_overlay_opacity']) ) {
         $tmm_layout_constructor_row[$row]['bg_overlay_opacity'] = $tmm_row_options['bg_overlay_opacity'];
     }
+    if ( !isset($tmm_layout_constructor_row[$row]['border_width']) ) {
+        $tmm_layout_constructor_row[$row]['border_width'] = $tmm_row_options['border_width'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['border_type']) ) {
+        $tmm_layout_constructor_row[$row]['border_type'] = $tmm_row_options['border_type'];
+    }
+    if ( !isset($tmm_layout_constructor_row[$row]['border_color']) ) {
+        $tmm_layout_constructor_row[$row]['border_color'] = $tmm_row_options['border_color'];
+    }
 
     if (!empty($row_data) && ($tmm_layout_constructor_row[$row]['lc_displaying'] == $row_displaying)) {
 
 		$row_style = TMM_Layout_Constructor::get_row_bg($tmm_layout_constructor_row, $row);
-		
+
 		$section_class = 'section';
 		$display_overlay = false;
 
@@ -124,25 +133,27 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 			}
 
-			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'image'  && !empty($tmm_layout_constructor_row[$row]['overlay'])) {
-				$display_overlay = true;
-				$overlay_style_attr = '';
+			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'image') {
+                if (!empty($tmm_layout_constructor_row[$row]['bg_overlay_color'])) {
+                    $display_overlay = true;
+                    $overlay_style_attr = '';
 
-				if (!empty($tmm_layout_constructor_row[$row]['bg_overlay_color'])) {
-					$overlay_style_attr .= TMM_Content_Composer::hex2RGB($tmm_layout_constructor_row[$row]['bg_overlay_color'], true);
-				} else {
-					$overlay_style_attr .= '0,0,0';
-				}
-
-				if (isset($tmm_layout_constructor_row[$row]['bg_overlay_opacity'])) {
-					$overlay_style_attr .= ',' . intval($tmm_layout_constructor_row[$row]['bg_overlay_opacity']) / 100;
-				} else {
-					$overlay_style_attr .= ',1';
-				}
-
-				if (!empty($overlay_style_attr)) {
-					$overlay_style_attr = ' style="background-color:rgba(' . $overlay_style_attr . ')"';
-				}
+                    if (!empty($tmm_layout_constructor_row[$row]['bg_overlay_color'])) {
+                        $overlay_style_attr .= TMM_Content_Composer::hex2RGB($tmm_layout_constructor_row[$row]['bg_overlay_color'], true);
+                    } else {
+                        $overlay_style_attr .= '0,0,0';
+                    }
+                }
+                if (!empty($tmm_layout_constructor_row[$row]['bg_overlay_opacity'])) {
+                    if (isset($tmm_layout_constructor_row[$row]['bg_overlay_opacity'])) {
+                        $overlay_style_attr .= ',' . intval($tmm_layout_constructor_row[$row]['bg_overlay_opacity']) / 100;
+                    } else {
+                        $overlay_style_attr .= ',1';
+                    }
+                    if (!empty($overlay_style_attr)) {
+                        $overlay_style_attr = ' background-color:rgba(' . $overlay_style_attr . ');';
+                    }
+                }
 			}
 
 			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'video' && !empty($tmm_layout_constructor_row[$row]['bg_video'])) {
@@ -191,7 +202,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 		<?php
 		if ($display_overlay) { ?>
-			<div class="overlay"<?php echo $overlay_style_attr; ?>></div>
+			<!--<div class="overlay"<?php /*echo $overlay_style_attr; */?>></div>-->
 		<?php } ?>
                 
             <?php
@@ -199,7 +210,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
 				$padding_top = (isset($tmm_layout_constructor_row[$row]['padding_top'])) ? $tmm_layout_constructor_row[$row]['padding_top'] : '';
 				$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : '';
-				$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
+				$align  = (isset($tmm_layout_constructor_row[$row]['align'])) ? $tmm_layout_constructor_row[$row]['align'] : '';
 
 				$row_class = 'row';
 				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
@@ -213,6 +224,16 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 					$row_style_attr .= $row_style['style_custom_color'];
 				}
 
+                /* border */
+                if (!empty($tmm_layout_constructor_row[$row]['border_width']) && '0' !== $tmm_layout_constructor_row[$row]['border_width']) {
+                    $border_width = $tmm_layout_constructor_row[$row]['border_width'];
+                    $border_type = $tmm_layout_constructor_row[$row]['border_type'];
+                    $border_color = $tmm_layout_constructor_row[$row]['border_color'];
+                    $row_style_attr .= 'border-width:' . $border_width . 'px;';
+                    $row_style_attr .= 'border-style:' . $border_type . ';';
+                    $row_style_attr .= 'border-color:' . $border_color . ';';
+                }
+
 				if ($padding_top != '0') {
 					$row_style_attr .= 'padding-top:'.$padding_top.'px; ';
 				}
@@ -223,7 +244,11 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 					$row_style_attr .= 'text-align:'.$align.'; ';
 				}
 				if (!empty($row_style_attr)) {
-					$row_style_attr = ' style="'.$row_style_attr.'"';
+                    if ($display_overlay) {
+                        $row_style_attr = ' style="' . $row_style_attr . $overlay_style_attr . '"';
+                    } else {
+                        $row_style_attr = ' style="' . $row_style_attr . '"';
+                    }
 				}
 
 				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0

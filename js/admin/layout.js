@@ -369,8 +369,10 @@
                                 box_overlay.show();
                             }
 
-                            if (option === 'bg_overlay_opacity'){
+                            if (option === 'bg_overlay_opacity' || 'bg_overlay_color' === option ){
                                 cur_popup.find('.slider-text.row_bg_overlay_opacity').val(current_values[option]);
+                                custom_box_color.hide();
+                                box_overlay.show();
                             }
 
                         }
@@ -393,9 +395,11 @@
                         if (bg_type === 'custom') {
 
                             if (bg_custom_type === 'color'){
+                                custom_box_image.hide();
                                 custom_box_color.show();
-                            }                            
+                            }
                             if ((bg_custom_type === 'image')){
+                                custom_box_color.hide();
                                 custom_box_image.show();
                             }
                             if (bg_custom_type === 'video'){
@@ -469,14 +473,14 @@
                         });
                         
                         cur_popup.find('#row_bg_type').on('change', function() {
-                            var val = $(this).val();                    
-                            
+                            var val = $(this).val();
                             switch (val) {
                                 case 'custom':
                                     custom_box.slideDown();
                                     
                                     if (bg_custom_type === 'color' || bg_custom_type==='none'){
                                         custom_box_color.slideDown();
+                                        custom_box_image.slideUp();
                                         box_overlay.slideUp();
                                     } 
                                     if ((bg_custom_type === 'image')){
@@ -486,7 +490,10 @@
                                     if (bg_custom_type === 'video'){
                                         custom_box_video.slideDown();
                                         box_overlay.slideUp();
-                                    }                                    
+                                    }
+                                    if ('color' == document.getElementById('row_bg_custom_type').value) {
+                                        custom_box_image.hide();
+                                    }
                                     break;
                                 case 'default':
                                 case 'none':

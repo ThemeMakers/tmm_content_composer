@@ -84,7 +84,10 @@ $tmm_row_options = array(
 	'bg_fullscreen' => 0,
 	'overlay' => 0,
 	'bg_overlay_color' => '#ffffff',
-	'bg_overlay_opacity' => 100
+	'bg_overlay_opacity' => 100,
+	'border_width' => 0,
+	'border_type' => 'solid',
+	'border_color' => '#ffffff'
 );
 
 $GLOBALS['tmm_row_options'] = $tmm_row_options;
