@@ -173,7 +173,7 @@ global $tmm_row_options;
 			   'id' => 'row_section_title'
 		   ));
 
-            TMM_Content_Composer::html_option(array(
+            /*TMM_Content_Composer::html_option(array(
                 'type' => 'select',
                 'title' => __('Row content displaying', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'row_lc_displaying',
@@ -185,7 +185,7 @@ global $tmm_row_options;
                 ),
                 'default_value' => $tmm_row_options['lc_displaying'],
                 'description' => ''
-            ));
+            ));*/
             ?>
 
             <div class="row_full_width" style="display: none;">
@@ -343,14 +343,14 @@ global $tmm_row_options;
                 'description' => ''
             ));
 
-			TMM_Content_Composer::html_option(array(
+			/*TMM_Content_Composer::html_option(array(
                 'type' => 'checkbox',
                 'title' => __('Use as default content block', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'row_section_content',
                 'id' => 'row_section_content',
                 'is_checked'=> $tmm_row_options['section_content'],
                 'description' => ''
-            ));
+            ));*/
 
 			TMM_Content_Composer::html_option(array(
 					'type' => 'select',
@@ -405,7 +405,7 @@ global $tmm_row_options;
 				'id' => 'row_bg_type',
 				'options' => array(
 					'none' => __('None', TMM_CC_TEXTDOMAIN),
-					'default' => __('Default Theme Color', TMM_CC_TEXTDOMAIN),
+					/*'default' => __('Default Theme Color', TMM_CC_TEXTDOMAIN),*/
 					'custom' => __('Custom', TMM_CC_TEXTDOMAIN),
 				),
 				'default_value' => $tmm_row_options['bg_type'],

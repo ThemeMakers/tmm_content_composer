@@ -477,23 +477,33 @@
                             switch (val) {
                                 case 'custom':
                                     custom_box.slideDown();
-                                    
-                                    if (bg_custom_type === 'color' || bg_custom_type==='none'){
+
+                                    /*if (bg_custom_type === 'color' || bg_custom_type==='none'){
                                         custom_box_color.slideDown();
                                         custom_box_image.slideUp();
                                         box_overlay.slideUp();
-                                    } 
-                                    if ((bg_custom_type === 'image')){
+                                    }*/
+                                    if ('color' == document.getElementById('row_bg_custom_type').value) {
+                                        custom_box_image.slideUp();
+                                        box_overlay.slideUp();
+                                        custom_box_color.slideDown();
+                                    }
+                                    /*if ((bg_custom_type === 'image')){
+                                        custom_box_color.slideUp();
+                                        custom_box_image.slideDown();
+                                        box_overlay.slideDown();
+                                    }*/
+                                    if ('image' == document.getElementById('row_bg_custom_type').value) {
+                                        custom_box_color.slideUp();
                                         custom_box_image.slideDown();
                                         box_overlay.slideDown();
                                     }
-                                    if (bg_custom_type === 'video'){
+                                    /*if (bg_custom_type === 'video'){
                                         custom_box_video.slideDown();
                                         box_overlay.slideUp();
-                                    }
-                                    if ('color' == document.getElementById('row_bg_custom_type').value) {
-                                        custom_box_image.hide();
-                                    }
+                                    }*/
+
+
                                     break;
                                 case 'default':
                                 case 'none':
@@ -508,19 +518,20 @@
                             var val = $(this).val();
                             switch(val){
                                 case 'color':
-                                    custom_box_color.slideDown();
                                     custom_box_image.slideUp();
                                     custom_box_video.slideUp();
+                                    custom_box_color.slideDown();
                                     break;
                                 case 'image':
-                                    custom_box_image.slideDown();
                                     custom_box_color.slideUp();
                                     custom_box_video.slideUp();
+                                    custom_box_image.slideDown();
+                                    box_overlay.show();
                                     break;
                                 case 'video':
-                                    custom_box_video.slideDown();
                                     custom_box_color.slideUp();
                                     custom_box_image.slideUp();
+                                    custom_box_video.slideDown();
                                     break;
                                 default:
                                     break;
