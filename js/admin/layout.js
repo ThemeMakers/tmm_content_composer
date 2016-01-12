@@ -496,7 +496,9 @@
                                     if ('image' == document.getElementById('row_bg_custom_type').value) {
                                         custom_box_color.slideUp();
                                         custom_box_image.slideDown();
-                                        box_overlay.slideDown();
+                                        if (true === document.getElementById('row_overlay').checked) {
+                                            box_overlay.slideDown();
+                                        }
                                     }
                                     /*if (bg_custom_type === 'video'){
                                         custom_box_video.slideDown();
@@ -526,7 +528,9 @@
                                     custom_box_color.slideUp();
                                     custom_box_video.slideUp();
                                     custom_box_image.slideDown();
-                                    box_overlay.show();
+                                    if (true === document.getElementById('row_overlay').checked) {
+                                        box_overlay.slideDown();
+                                    }
                                     break;
                                 case 'video':
                                     custom_box_color.slideUp();

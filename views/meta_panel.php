@@ -472,14 +472,14 @@ global $tmm_row_options;
 					));*/
 					?>
 					<?php
-					/*TMM_Content_Composer::html_option(array(
+					TMM_Content_Composer::html_option(array(
 						'type' => 'checkbox',
 						'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
 						'shortcode_field' => 'row_overlay',
 						'id' => 'row_overlay',
 						'is_checked'=> $tmm_row_options['overlay'],
 						'description' => 'Set overlay on background image'
-					));*/
+					));
 					?>
 					<div id="row_bg_overlay_box" style="display: none;">
 

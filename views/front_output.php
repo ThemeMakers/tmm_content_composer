@@ -133,7 +133,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 			}
 
-			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'image') {
+			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'image' ) {
                 if (!empty($tmm_layout_constructor_row[$row]['bg_overlay_color'])) {
                     $display_overlay = true;
                     $overlay_style_attr = '';
@@ -244,7 +244,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 					$row_style_attr .= 'text-align:'.$align.'; ';
 				}
 				if (!empty($row_style_attr)) {
-                    if ($display_overlay) {
+                    if ($display_overlay && '1' == $tmm_layout_constructor_row[$row]['overlay']) {
                         $row_style_attr = ' style="' . $row_style_attr . $overlay_style_attr . '"';
                     } else {
                         $row_style_attr = ' style="' . $row_style_attr . '"';
