@@ -63,7 +63,7 @@ add_action( 'plugins_loaded', 'tmm_cc_load_textdomain' );
 
 $tmm_row_options = array(
 	'section_title' => '',
-	'lc_displaying' => 'default',
+	/*'lc_displaying' => 'default',*/
 	'full_width' => 0,
 	'content_full_width' => 0,
 	'padding_top' => 0,
@@ -71,7 +71,7 @@ $tmm_row_options = array(
 	'margin_top' => 0,
 	'margin_bottom' => 0,
 	'align' => 'center',
-	'section_content' => 1,
+	/*'section_content' => 1,*/
 	'bg_type' => 'none',
 	'bg_custom_type' => 'color',
 	'bg_color' => '#ffffff',
