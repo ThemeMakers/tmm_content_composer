@@ -320,10 +320,6 @@
 	background: #efefef;
 }
 
-.mejs-controls .mejs-time-rail .mejs-time-current {
-	background: #14b3e4;
-}
-
 .mejs-controls .mejs-time-rail .mejs-time-handle {
 	display: none;
 	position: absolute;
@@ -474,7 +470,6 @@
 	margin: 0;
 	padding: 0;
 	font-size: 1px;
-	background-color: #14b3e4;
 }
 
 .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-handle {
