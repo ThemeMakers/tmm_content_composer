@@ -87,7 +87,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
         $tmm_layout_constructor_row[$row]['border_color'] = $tmm_row_options['border_color'];
     }
 
-    if (!empty($row_data) && ($tmm_layout_constructor_row[$row]['lc_displaying'] == $row_displaying)) {
+    if (!empty($row_data)/* && ($tmm_layout_constructor_row[$row]['lc_displaying'] == $row_displaying)*/) {
 
 		$row_style = TMM_Layout_Constructor::get_row_bg($tmm_layout_constructor_row, $row);
 
@@ -95,7 +95,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		$display_overlay = false;
 
 		/* Offset Options */
-		if ($tmm_layout_constructor_row[$row]['padding_top'] === '0' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '0') {
+		/*if ($tmm_layout_constructor_row[$row]['padding_top'] === '0' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '0') {
 			$section_class .= ' padding-off';
 		}
 
@@ -107,7 +107,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		}
 		if ($tmm_layout_constructor_row[$row]['full_width'] == 1 && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
 			$section_class .= ' theme-default-bg';
-		}
+		}*/
 
 		$margin_top = (isset($tmm_layout_constructor_row[$row]['margin_top'])) ? $tmm_layout_constructor_row[$row]['margin_top'] : '';
 		$margin_bottom = (isset($tmm_layout_constructor_row[$row]['margin_bottom'])) ? $tmm_layout_constructor_row[$row]['margin_bottom'] : '';

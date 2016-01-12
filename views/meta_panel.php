@@ -458,7 +458,7 @@ global $tmm_row_options;
                     ));
                     ?>
                     <?php
-					TMM_Content_Composer::html_option(array(
+					/*TMM_Content_Composer::html_option(array(
 						'type' => 'select',
 						'title' => __('Background Attachment', TMM_CC_TEXTDOMAIN),
 						'shortcode_field' => 'row_bg_attachment',
@@ -469,7 +469,7 @@ global $tmm_row_options;
 						),
 						'default_value' => $tmm_row_options['bg_attachment'],
 						'description' => ''
-					));
+					));*/
 					?>
 					<?php
 					/*TMM_Content_Composer::html_option(array(
@@ -565,7 +565,7 @@ global $tmm_row_options;
                 </div>
 
 				<?php
-				TMM_Content_Composer::html_option(array(
+				/*TMM_Content_Composer::html_option(array(
 					'type' => 'checkbox',
 					'title' => __('Row Background Fullscreen', TMM_CC_TEXTDOMAIN),
 					'shortcode_field' => 'row_background_fullscreen',
@@ -573,7 +573,7 @@ global $tmm_row_options;
 					'default_value' => $tmm_row_options['bg_fullscreen'],
 					'is_checked'=>false,
 					'description' => __('Set The Row Background Image Fullscreen', TMM_CC_TEXTDOMAIN),
-				));
+				));*/
 				?>
 
 			</div>
