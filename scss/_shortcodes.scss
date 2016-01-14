@@ -1057,8 +1057,16 @@ $car-body-title-color-hover						: #ff600a;
 			img { @include filter(blur(2px)); }
 		}
 	}
+}
 
+@media only screen and (max-width: 767px) {
+	.lc-image {
+		width: 100%;
 
+		img {
+			width: 100%;
+		}
+	}
 }
 
 /* -------------------------------------------------- */
