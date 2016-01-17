@@ -16,7 +16,7 @@ if ($list_type == 0) {
 $colors = explode('^', $colors);
 
 ?>
-<<?php echo $list_type ?> class="list">
+<<?php echo $list_type ?> class="lc-list">
 <?php if (!empty($content)): ?>
 	<?php foreach ($content as $key => $text) : ?>
 		<li class="<?php echo esc_attr($styles_array[$key]) ?>" <?php if (!empty($colors[$key])) : ?> style="color: <?php echo $colors[$key] ?>" <?php endif; ?>><?php echo esc_html($text) ?></li>

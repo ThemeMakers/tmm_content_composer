@@ -799,37 +799,39 @@ blockquote {
 /*	List
 /* -------------------------------------------------- */
 
-ul.list { margin-bottom: 20px; }
 
-ul.list li {
-	position: relative;
-	padding-left: 30px;
+ul {
+	&.lc-list {
+		margin-bottom: 1.5em;
+
+		li {
+			list-style: none;
+			position: relative;
+			margin-bottom: 4px;
+			padding-left: 30px;
+
+			&:before {
+				position: absolute;
+				left: 0;
+				top: 5px;
+				font-size: 16px;
+				font-family: 'fontello';
+			}
+		}
+	}
 }
 
-ul.list li,
-ol.list li {
-	margin-bottom: 4px;
+ol {
+	&.lc-list {
+		list-style-type: decimal-leading-zero;
+		margin-bottom: 1.5em;
+		padding-left: 30px;
+
+		li {
+			margin-bottom: 4px;
+		}
+	}
 }
-
-ul.list li { list-style: none; }
-
-ul.list li:before {
-	position: absolute;
-	left: 0;
-	top: 5px;
-	font-size: 16px;
-	font-family: 'fontello';
-}
-
-ul.list li.type-1:before { content: '\ed4d'; font-size: 13px; }
-ul.list li.type-2:before { content: '\eb43'; }
-ul.list li.type-3:before { content: '\e8c0'; }
-ul.list li.type-4:before { content: '\ec84'; }
-ul.list li.type-5:before { content: '\e8b2'; }
-
-.no-list { margin-bottom: 40px; }
-
-.no-list li { list-style: none; }
 
 /* -------------------------------------------------- */
 /*	 Notifications

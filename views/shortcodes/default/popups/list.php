@@ -131,7 +131,7 @@
 							<td>
 								<i class="<?php echo(!empty($styles_edit_data) ? $type_array[$styles_edit_data[$key]] : ''); ?>"></i>
 							</td>
-							<td style="width: 15%">
+							<td style="width: 20%">
 								<?php
 								TMM_Content_Composer::html_option(array(
 									'type' => 'select',
@@ -146,7 +146,7 @@
 								));
 								?>
 							</td>
-							<td style="width: 30%">
+							<td style="width: 20%">
 								<?php
 								TMM_Content_Composer::html_option(array(
 									'title' => '',
@@ -160,7 +160,7 @@
 								));	
 								?>
 							</td>
-							<td style="width: 50%; vertical-align: top;">
+							<td style="width: 55%; vertical-align: top;">
 								<input type="text" value="<?php echo $content_edit_text ?>" class="list_item_content js_shortcode_template_changer data-area" />
 							</td>
 							<td>
