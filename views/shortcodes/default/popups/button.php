@@ -6,226 +6,91 @@
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
 			'title' => __('Buttons Text', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'text',
+			'shortcode_field' => 'content',
 			'id' => '',
-			'default_value' => TMM_Content_Composer::set_default_value('text', ''),
+			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
 			'description' => ''
 		));
 		?>
-	</div><!--/ .one-half-->
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('URL', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'url',
-			'id' => 'url',
-			'default_value' => TMM_Content_Composer::set_default_value('url', ''),
-			'description' => 'http://forums.webtemplatemasters.com/'
-		));
-		?>
-	</div><!--/ .one-half-->
-        
-        <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Top Indent', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'top_indent',
-			'id' => '',
-			'default_value' => TMM_Content_Composer::set_default_value('top_indent', ''),
-			'description' => ''
-		));
-		?>	
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'select',
+            'title' => __('Size', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'size',
+            'id' => 'size',
+            'options' => TMM_Content_Composer::get_theme_buttons_sizes(),
+            'default_value' => TMM_Content_Composer::set_default_value('size', ''),
+            'description' => ''
+        ));
+        ?>
 
-	</div><!--/ .one-half-->	
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'select',
+            'title' => __('Color', 'tmm_shortcodes'),
+            'shortcode_field' => 'color',
+            'id' => 'color',
+            'options' => array(
+                'default' => __('Default', TMM_CC_TEXTDOMAIN),
+                'turquoise' => __('Turquoise', TMM_CC_TEXTDOMAIN)
+            ),
+            'default_value' => TMM_Content_Composer::set_default_value('color', ''),
+            'description' => ''
+        ));
+        ?>
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Size', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'size',
-			'id' => 'size',
-			'options' => TMM_Content_Composer::get_theme_buttons_sizes(),
-			'default_value' => TMM_Content_Composer::set_default_value('size', ''),
-			'description' => ''
-		));
-		?>	
-
-	</div><!--/ .one-half-->
+    </div><!--/ .one-half-->
 
     <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Button type', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'type',
-			'id' => 'button_type',
-			'options' => array(
-	            'default' => 'Default',
-	            'secondary' => 'Secondary',
+
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('URL', 'tmm_shortcodes'),
+            'shortcode_field' => 'url',
+            'id' => 'url',
+            'default_value' => TMM_Content_Composer::set_default_value('url', ''),
+            'description' => ''
+        ));
+        ?>
+
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'select',
+            'title' => __('Align', 'tmm_shortcodes'),
+            'shortcode_field' => 'align',
+            'id' => '',
+            'options' => array(
+                'align-left' => 'Left',
+                'align-center' => 'Center',
+                'align-right' => 'Right'
             ),
-			'default_value' => TMM_Content_Composer::set_default_value('type', ''),
-			'description' => ''
-		));
-		?>
+            'default_value' => TMM_Content_Composer::set_default_value('align', ''),
+            'description' => ''
+        ));
 
-	</div><!--/ .one-half-->
+        TMM_Content_Composer::html_option(array(
+            'type' => 'select',
+            'title' => __('Animation', 'tmm_shortcodes'),
+            'shortcode_field' => 'animation',
+            'id' => '',
+            'options' => array(
+                '' => 'None',
+                'opacity' => 'Opacity',
+                'scale' => 'Scale',
+                'slideRight' => 'SlideRight',
+                'slideLeft' => 'SlideLeft',
+                'slideDown' => 'SlideDown',
+                'slideUp' => 'SlideUp'
+            ),
+            'default_value' => TMM_Content_Composer::set_default_value('animation', ''),
+            'description' => 'Waypoints is a jQuery plugin that makes it easy to execute a function whenever you scroll to an element.'
+        ));
 
-        <div class="one-half">
+        ?>
 
-        </div><!--/ .one-half-->
-
-        <div class="colors">
-        
-            <div class="one-half">
-
-                    <?php
-                    TMM_Content_Composer::html_option(array(
-                            'type' => 'color',
-                            'title' => __('Text Color', TMM_CC_TEXTDOMAIN),
-                            'shortcode_field' => 'text_color',
-                            'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('text_color', ''),
-                            'description' => '',
-                            'display' => 1
-                    ));
-                    ?>
-
-            </div><!--/ .one-half-->
-
-            <div class="one-half">
-
-                    <?php
-                    TMM_Content_Composer::html_option(array(
-                            'type' => 'color',
-                            'title' => __('Mouseover Text Color', TMM_CC_TEXTDOMAIN),
-                            'shortcode_field' => 'mouseover_text_color',
-                            'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('mouseover_text_color', ''),
-                            'description' => '',
-                            'display' => 1
-                    ));
-                    ?>
-
-            </div><!--/ .one-half-->
-
-            <div class="one-half">
-                <div  class="align-left">
-                    <?php
-                    TMM_Content_Composer::html_option(array(
-                            'type' => 'color',
-                            'title' => __('Background Color', TMM_CC_TEXTDOMAIN),
-                            'shortcode_field' => 'bg_color',
-                            'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('bg_color', ''),
-                            'description' => '',
-                            'display' => 1
-                    )); ?>
-                </div>
-                    <?php
-                    TMM_Content_Composer::html_option(array(
-                        'type' => 'checkbox',
-                        'title' => __('Transparent Background Color', TMM_CC_TEXTDOMAIN),
-                        'shortcode_field' => 'bg_transparent',
-                        'id' => 'bg_transparent',
-                        'is_checked' => TMM_Content_Composer::set_default_value('bg_transparent', false),
-                        'default_value' => TMM_Content_Composer::set_default_value('bg_transparent', false),
-                        'description' => ''
-                    ));
-                    
-                    ?>
-
-            </div><!--/ .one-half-->
-
-            <div class="one-half">
-                <div  class="align-left">
-                    <?php
-                    TMM_Content_Composer::html_option(array(
-                            'type' => 'color',
-                            'title' => __('Mouseover Background Color', TMM_CC_TEXTDOMAIN),
-                            'shortcode_field' => 'mouseover_bg_color',
-                            'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('mouseover_bg_color', ''),
-                            'description' => '',
-                            'display' => 1
-                    )); ?>
-                </div>    
-                    <?php                    
-                    TMM_Content_Composer::html_option(array(
-                        'type' => 'checkbox',
-                        'title' => __('Transparent Mouseover Background Color', TMM_CC_TEXTDOMAIN),
-                        'shortcode_field' => 'mouseover_bg_transparent',
-                        'id' => 'mouseover_bg_transparent',
-                        'is_checked' => TMM_Content_Composer::set_default_value('mouseover_bg_transparent', false),
-                        'default_value' => TMM_Content_Composer::set_default_value('mouseover_bg_transparent', false),
-                        'description' => ''
-                    ));
-                    
-                    ?>
-
-            </div><!--/ .one-half-->
-
-            <div class="one-half">
-                <div  class="align-left">
-                    <?php
-                    TMM_Content_Composer::html_option(array(
-                            'type' => 'color',
-                            'title' => __('Border Color', TMM_CC_TEXTDOMAIN),
-                            'shortcode_field' => 'border_color',
-                            'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('border_color', ''),
-                            'description' => '',
-                            'display' => 1
-                    )); ?>
-                </div>
-                    <?php
-                    TMM_Content_Composer::html_option(array(
-                        'type' => 'checkbox',
-                        'title' => __('Transparent Border Color', TMM_CC_TEXTDOMAIN),
-                        'shortcode_field' => 'border_color_transparent',
-                        'id' => 'border_color_transparent',
-                        'is_checked' => TMM_Content_Composer::set_default_value('border_color_transparent', false),
-                        'default_value' => TMM_Content_Composer::set_default_value('border_color_transparent', false),
-                        'description' => ''
-                    ));
-                    
-                    ?>
-
-            </div><!--/ .one-half-->      
-
-            <div class="one-half">
-                <div  class="align-left">
-                    <?php
-                    TMM_Content_Composer::html_option(array(
-                            'type' => 'color',
-                            'title' => __('Mouseover Border Color', TMM_CC_TEXTDOMAIN),
-                            'shortcode_field' => 'mouseover_border_color',
-                            'id' => '',			
-                            'default_value' => TMM_Content_Composer::set_default_value('mouseover_border_color', ''),
-                            'description' => '',
-                            'display' => 1
-                    ));
-                    ?>
-                </div>
-                
-                    <?php 
-                    TMM_Content_Composer::html_option(array(
-                        'type' => 'checkbox',
-                        'title' => __('Transparent Mouseover Border Color', TMM_CC_TEXTDOMAIN),
-                        'shortcode_field' => 'mouseover_border_color_transparent',
-                        'id' => 'mouseover_border_color_transparent',
-                        'is_checked' => TMM_Content_Composer::set_default_value('mouseover_border_color_transparent', false),
-                        'default_value' => TMM_Content_Composer::set_default_value('mouseover_border_color_transparent', false),
-                        'description' => ''
-                    ));
-                    ?>
-                
-            </div><!--/ .one-half-->
-        
-        </div>
+    </div><!--/ .one-half-->
 
 </div><!--/ .tmm_shortcode_template->
 

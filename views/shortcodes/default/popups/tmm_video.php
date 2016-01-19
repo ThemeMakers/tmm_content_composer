@@ -1,15 +1,33 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">	
+<div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
-	<div class="fullwidth">
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'select',
+            'title' => __('Type', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'type',
+            'id' => 'type',
+            'options' => array(
+                'youtube' => 'Youtube',
+                'vimeo' => 'Vimeo',
+            ),
+            'default_value' => TMM_Content_Composer::set_default_value('type', 'youtube'),
+            'description' => ''
+        ));
+        ?>
+
+    </div>
+
+	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'type' => 'upload_video',
+			'type' => 'text',
 			'title' => __('Youtube or Vimeo link', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
-			'description' => __('Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg  http://vimeo.com/22439234 or upload self hosted video', TMM_CC_TEXTDOMAIN)
+			'description' => __('Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg or http://vimeo.com/22439234', TMM_CC_TEXTDOMAIN)
 		));
 		?>
        

@@ -10,31 +10,21 @@ if (!class_exists('TMM')) {
     tmm_enqueue_style('owltransitions');
 }
 $slides_count = ceil(count($images)/$items_per_slide);
+
 ?>
 <?php if (!empty($images)){ ?>
 	<div class="clients-items-<?php echo esc_attr($uniqid) ?> clients-items clearfix">
-        
-        <?php 
-        $k=1;
-        for ($s=0; $s<$slides_count; $s++){ ?>
-            <div class="item">
-                <ul>
-                    <?php for ($i=$items_per_slide*($k-1); $i<($items_per_slide*$k); $i++){                        
-                        if(isset($images[$i])){
-                            ?>
-                                <li>
-	                                <a href="<?php echo(!empty($links[$i]) ? $links[$i] : '#') ?>"><img alt="" src="<?php echo esc_url(TMM_Content_Composer::resize_image($images[$i], '')) ?>"></a>
-                                </li>
-                            <?php
-                            }
-                        } ?>
-                </ul>
-            </div>
-        <?php        
-        
-        $k++;
-        } ?>
-            
+
+        <div class="item">
+            <ul class="clients-items clearfix">
+                <?php foreach ($images as $key => $img_src): ?>
+                    <li class="<?php if ($animation) echo $animation ?>">
+                        <a href="<?php echo(!empty($links[$key]) ? $links[$key] : '#') ?>"><img alt="" src="<?php echo TMM_Helper::resize_image($img_src, '') ?>"></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </div>
+
 	</div>
     <script>
         jQuery(function() {		

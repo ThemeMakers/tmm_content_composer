@@ -1,52 +1,7 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
     
-    <div class="one-half">
-       <?php
-       $items_per_slide = array();
-		for ($i = 1; $i < 10; $i++) {
-			$items_per_slide[$i] = $i;
-		}
-       TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Items Per Slide', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'items_per_slide',
-			'id' => 'items_per_slide',
-            'options' => $items_per_slide,
-			'default_value' => TMM_Content_Composer::set_default_value('items_per_slide', '6'),
-			'description' => ''
-		));
-		?>       
-      
-    </div>
-    <div class="one-half">
-       <?php
-       
-       $animation_types = array(
-           'fade' => 'Fade',
-           'fades' => 'Fades',
-           'slide' => 'Slide',
-           'goDown' => 'go Down',
-           'scaleToFade' => 'Scale To Fade',
-           'backSlide' => 'Back Slide',
-           'fadeUp' => 'Fade Up',
-           'verticalSlide' => 'Vertical Slide'
-       );
-       
-       TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Slides Animation Effect', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'animation_type',
-			'id' => 'animation_type',
-            'options' => $animation_types,
-			'default_value' => TMM_Content_Composer::set_default_value('animation_type', 'scaleToFade'),
-			'description' => ''
-		));
-		?>       
-      
-    </div>
-
-	<div class="fullwidth">
+    <div class="fullwidth">
 
 		<h4 class="label"><?php _e('Items', TMM_CC_TEXTDOMAIN); ?></h4>
 
@@ -97,6 +52,31 @@
 		<a class="button button-secondary js_add_accordion_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 	</div><!--/ .fullwidth-->
+
+	<div class="one-half">
+		<?php
+		$animation_types = array(
+            '' => 'None',
+            'opacity' => 'Opacity',
+            'scale' => 'Scale',
+            'slideRight' => 'SlideRight',
+            'slideLeft' => 'SlideLeft',
+            'slideDown' => 'SlideDown',
+            'slideUp' => 'SlideUp',
+        );
+
+        TMM_Content_Composer::html_option(array(
+             'type' => 'select',
+             'title' => __('Animation', TMM_CC_TEXTDOMAIN),
+             'shortcode_field' => 'animation',
+             'id' => 'animation_type',
+             'options' => $animation_types,
+             'default_value' => TMM_Content_Composer::set_default_value('animation', ''),
+             'description' => ''
+         ));
+		?>
+
+	</div>
 
 </div>
 
