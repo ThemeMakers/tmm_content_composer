@@ -34,7 +34,6 @@
 		));
 		?>
 
-
     </div><!--/ .fullwidth-->
 
 </div><!--/ .tmm_shortcode_template->
