@@ -1,5 +1,5 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<section class="simple-pricing-table col-<?php echo $count ?> clearfix">    
+<section class="lc-pricing-table col-<?php echo $count ?>">
 	<?php
 	$content = str_replace('__PRICE_TABLE__', '[price_table effect_type='.$effect_type, $content);
 	$content = str_replace('__PRICE_TABLE_CLOSE__', ']', $content);

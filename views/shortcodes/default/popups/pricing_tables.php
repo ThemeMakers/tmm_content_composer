@@ -3,7 +3,7 @@
 
 <style type="text/css">
 
-	.simple-pricing-table .column {
+	.lc-pricing-table .column {
 		margin-bottom: 50px;
 		background-color: #fff;
 		-webkit-box-shadow: 2px 2px 3px rgba(0,0,0,.08), -1px -1px 1px rgba(0,0,0,.01);
@@ -14,8 +14,8 @@
 		box-sizing: border-box;
 	}
 
-	.simple-pricing-table.type-1 .column { padding: 10px 10px 25px; }
-	.simple-pricing-table.type-2 .column { padding: 10px 0 25px; }
+	.lc-pricing-table.type-1 .column { padding: 10px 10px 25px; }
+	.lc-pricing-table.type-2 .column { padding: 10px 0 25px; }
 
 	#price_tables_list > li {
 		display: inline;
@@ -25,31 +25,31 @@
 		width: 220px;
 	}
 
-	.simple-pricing-table.type-1 .header {
+	.lc-pricing-table.type-1 .header {
 		padding: 10px 5px 15px;
 		text-align: center;
 	}
 
-	.simple-pricing-table.type-2 .header {
+	.lc-pricing-table.type-2 .header {
 		padding: 10px 15px 15px;
 		text-align: center;
 	}
 
-	.simple-pricing-table .title { margin: 0; }
+	.lc-pricing-table .title { margin: 0; }
 
-	.simple-pricing-table .cost {
+	.lc-pricing-table .cost {
 		margin: 0;
 		font-weight: 600;
 	}
 
-	.simple-pricing-table .description {
+	.lc-pricing-table .description {
 		font-weight: 600;
 		font-size: 12px;
 	}
 
-	.simple-pricing-table .description { color: #9e9e9e; }
+	.lc-pricing-table .description { color: #9e9e9e; }
 
-	.simple-pricing-table .features li {
+	.lc-pricing-table .features li {
 		position: relative;
 		border-bottom-width: 1px;
 		border-bottom-style: solid;
@@ -58,27 +58,27 @@
 		text-shadow: 1px 1px 0 rgba(255,255,255,.5);
 	}
 
-	.simple-pricing-table .features li {
+	.lc-pricing-table .features li {
 		margin: 0;
 		padding: 5px 10px 5px 47px;
 	}
 
-	.simple-pricing-table .features li:first-child {
+	.lc-pricing-table .features li:first-child {
 		border-top-width: 1px;
 		border-top-style: solid;
 		border-top-color: #dedede;
 	}
 
-	.simple-pricing-table .features li:nth-child(odd) { background-color: #f2f2f2; }
-	.simple-pricing-table .featured .features li:nth-child(odd) { background-color: #fcfcfc; }
+	.lc-pricing-table .features li:nth-child(odd) { background-color: #f2f2f2; }
+	.lc-pricing-table .featured .features li:nth-child(odd) { background-color: #fcfcfc; }
 
-	.simple-pricing-table .features li {
+	.lc-pricing-table .features li {
 		-webkit-box-shadow: inset 0 1px 0 0 #f9f9f9;
 		-moz-box-shadow: inset 0 1px 0 0 #f9f9f9;
 		box-shadow: inset 0 1px 0 0 #f9f9f9;
 	}
 
-	.simple-pricing-table .features li:before {
+	.lc-pricing-table .features li:before {
 		position: absolute;
 		top: 50%;
 		margin-top: -7px;
@@ -86,18 +86,18 @@
 		content: "\e83a";
 	}
 
-	.simple-pricing-table .features li:before { left: 25px; }
+	.lc-pricing-table .features li:before { left: 25px; }
 
-	.simple-pricing-table .footer {
+	.lc-pricing-table .footer {
 		padding: 5px 10px 0;
 		text-align: center;
 	}
 
-	.simple-pricing-table .footer .label {
+	.lc-pricing-table .footer .label {
 		color: #8F9296;
 		font-style: italic;
 	}
-	.simple-pricing-table .footer .button { margin: 0; }
+	.lc-pricing-table .footer .button { margin: 0; }
 
 </style>
 
@@ -211,7 +211,7 @@
 			$options_content = explode('^', $_REQUEST["shortcode_mode_edit"]['content']);            
 			?>
 			<li>
-				<section class="simple-pricing-table type-1 col-1 clearfix">
+				<section class="lc-pricing-table type-1 col-1 clearfix">
 
 					<div class="column">
 
@@ -329,7 +329,7 @@
 		jQuery("#type").change(function() {
 			var type = parseInt(jQuery(this).val(), 10);
 			var count = parseInt(jQuery("#count").val(), 10);
-			var css_class = 'simple-pricing-table type-' + type + ' col-' + count + ' clearfix';
+			var css_class = 'lc-pricing-table type-' + type + ' col-' + count + ' clearfix';
 			jQuery("#price_tables_list > li > section").removeAttr('class');
 			jQuery("#price_tables_list > li > section").addClass(css_class);
 			tmm_ext_shortcodes.price_table_changer(shortcode_name);
