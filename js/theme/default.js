@@ -4,7 +4,7 @@
 
         if (!Modernizr.touch) {
 
-            $('.section-full-width, .container, .projects, .masonry, .clients-items, .progress-bar, .team-member.type-1').waypoints({ offset: '74%' });
+            $('.section-full-width, .container, .projects, .masonry, .clients-items, .lc-progress-bar, .team-member.type-1').waypoints({ offset: '74%' });
 
             if ($('.opacityEffect').length) {
                 $('.section-full-width').effect({ effect: 'opacityEffect' });
@@ -124,6 +124,14 @@
     };
 
     /* end Waypoints */
+
+    /* ---------------------------------------------------- */
+    /*	Widget Review Progress  							*/
+    /* ---------------------------------------------------- */
+
+    if ($('.lc-progress-bar').length) {
+        $('.lc-progress-bar').progressBar({ percent: true });
+    }
 
     /* ---------------------------------------------------- */
     /*	Effect												*/

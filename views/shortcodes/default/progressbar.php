@@ -3,9 +3,13 @@
 $titles = explode('^', $title);
 $colors = explode('^', $color);
 $percentages = explode('^', $percentage);
+
+if (!class_exists('TMM')) {
+	tmm_enqueue_script('progressbar');
+}
 ?>
 
-<ul class="progress-list-shortcode">
+<ul class="lc-progress-bar">
 	<?php if (!empty($colors)){ ?>
 		<?php foreach ($colors as $key => $color) { ?>
 			<li>
