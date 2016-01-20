@@ -293,6 +293,36 @@ $dropcap-sec-bg-color							: transparent;
 $dropcap-sec-font-color							: #4d90fe;
 $dropcap-sec-brd-color							: #dcdcdc;
 
+// Pricing Tables
+$pricing-font-family							: 'Roboto Slab', serif;
+
+$pricing-bg-color								: #ffffff;
+$pricing-bg-color-hover							: #4d90fe;
+
+$pricing-border-width							: 1px;
+$pricing-border-style							: solid;
+$pricing-border-color							: #cfcfcf;
+$pricing-border-color-hover						: transparent;
+
+$pricing-title-font-weight						: 400;
+$pricing-title-font-size						: 16px;
+$pricing-title-font-family						: $pricing-font-family;
+$pricing-title-font-color						: #333333;
+$pricing-title-font-color-hover					: #ffffff;
+
+$pricing-price-font-weight						: 300;
+$pricing-price-font-size						: 44px;
+$pricing-price-font-size-small					: 11px;
+$pricing-price-font-family						: $pricing-font-family;
+$pricing-price-font-color						: #333333;
+$pricing-price-font-color-hover					: #ffffff;
+
+$pricing-feature-font-weight					: 400;
+$pricing-feature-font-size						: 15px;
+$pricing-feature-font-family					: $pricing-font-family;
+$pricing-feature-font-color						: #333333;
+$pricing-feature-font-color-hover				: #ffffff;
+
 
 /* -------------------------------------------------- */
 /*	 Accordion and Toggle
@@ -1322,26 +1352,11 @@ ul.style-fall li a:hover:before {
 /*  Pricing Tables
 /* -------------------------------------------------- */
 
-// Pricing Tables
-$pricing-font-family						: 'Roboto Slab', serif;
-
-$pricing-font-color							: #4d90fe;
-$pricing-font-color-hover					: #ffffff;
-
-$pricing-bg-color							: transparent;
-$pricing-bg-color-hover						: #4d90fe;
-
-$pricing-border-width						: 2px;
-$pricing-border-style						: solid;
-$pricing-border-color						: #dcdcdc;
-$pricing-border-color-hover					: transparent;
-
 .lc-pricing-table {
 	font: {
 		size: 0;
 		family: $pricing-font-family;
 	};
-
 
 	&:after {
 		@include clearfix();
@@ -1353,8 +1368,12 @@ $pricing-border-color-hover					: transparent;
 		margin-left: -1px;
 		margin-top: -1px;
 		width: 25%;
-		border: 1px solid #cfcfcf;
-		background-color: #fff;
+		border: {
+			width: $pricing-border-width;
+			style: $pricing-border-style;
+			color: $pricing-border-color;
+		};
+		background-color: $pricing-bg-color;
 		text-align: center;
 		z-index: 9;
 		@include transform-transition(transform .25s ease-in-out .3s, color .25s ease-in-out, border-color .25s ease-in-out, background .25s ease-in-out);
@@ -1362,42 +1381,41 @@ $pricing-border-color-hover					: transparent;
 		&:hover,
 		&.featured {
 			z-index: 99;
-			border-color: transparent;
-			background-color: #f85c37;
+			border-color: $pricing-border-color-hover;
+			background-color: $pricing-bg-color-hover;
 			@include transform(scale(1.05));
 
 			.title {
-				color: #fff;
+				color: $pricing-title-font-color-hover;
 			}
 
 			.price {
-				border-color: #fb9981;
-				background-color: #f96d4b;
-			}
+				border-top-color: lighten($pricing-bg-color-hover, 20%);
+				background-color: lighten($pricing-bg-color-hover, 5%);
 
-			.cost {
-				color: #fff;
-			}
+				.cost {
+					color: $pricing-price-font-color-hover;
+				}
 
-			.description {
-				color: #fff;
+				.description {
+					color: $pricing-price-font-color-hover;
+				}
 			}
 
 			.features {
 				li {
-					border-top-color: #fa8d73;
-					color: #fff;
+					border-top-color: lighten($pricing-bg-color-hover, 20%);
+					color: $pricing-price-font-color-hover;
 				}
 			}
 
 			.footer {
-				border-top-color: #fb9981;
-				background-color: #f96d4b;
+				border-top-color: lighten($pricing-bg-color-hover, 20%);
+				background-color: lighten($pricing-bg-color-hover, 2%);
 
-				.button {
-					border-color: transparent;
-					background-color: #fff;
-					color: #f85c37;
+				.lc-button {
+					color: $pricing-price-font-color;
+					background-color: $pricing-bg-color;
 				}
 			}
 		}
@@ -1412,32 +1430,48 @@ $pricing-border-color-hover					: transparent;
 		margin: 0;
 		padding: 22px 5px;
 		text-transform: uppercase;
-		font-weight: 500;
+		font: {
+			weight: $pricing-title-font-weight;
+			size: $pricing-title-font-size;
+			family: $pricing-title-font-family;
+		};
+		color: $pricing-title-font-color;
 		@include transition(color .25s ease-in-out);
 	}
 
 	.price {
-		padding: 26px 0 15px;
-		border-top: 1px solid #e7e7e7;
-		background-color: #f7f7f7;
-		border-bottom: 1px solid #e7e7e7;
+		padding: 25px 0 15px;
+		border-top: {
+			width: $pricing-border-width;
+			style: $pricing-border-style;
+			color: $pricing-border-color;
+		};
+		border-bottom: {
+			width: $pricing-border-width;
+			style: $pricing-border-style;
+			color: $pricing-border-color;
+		};
+		background-color: darken($pricing-bg-color, 2%);
 		@include transition(color .25s ease-in-out, border-color .25s ease-in-out, background .25s ease-in-out);
-	}
 
-	.cost {
-		margin: 0;
-		font-weight: 300;
-		font-size: 44px;
-		line-height: .7em;
-		@include transition(color .25s ease-in-out);
-	}
+		.cost {
+			margin: 0;
+			font: {
+				weight: $pricing-price-font-weight;
+				size: $pricing-price-font-size;
+				family: $pricing-price-font-family;
+			};
+			color: $pricing-price-font-color;
+			line-height: .7em;
+			@include transition(color .25s ease-in-out);
+		}
 
-	.description {
-		color: #a8a8a8;
-		text-transform: uppercase;
-		font-weight: 300;
-		font-size: 11px;
-		@include transition(color .25s ease-in-out);
+		.description {
+			color: lighten($pricing-price-font-color, 55%);
+			text-transform: uppercase;
+			font-size: $pricing-price-font-size-small;
+			@include transition(color .25s ease-in-out);
+		}
 	}
 
 	.features {
@@ -1446,9 +1480,16 @@ $pricing-border-color-hover					: transparent;
 		li {
 			position: relative;
 			padding: 9px 20px;
-			border-top: 1px solid #ebebeb;
-			font-weight: 300;
-			font-size: 15px;
+			border-top: {
+				width: $pricing-border-width;
+				style: $pricing-border-style;
+				color: $pricing-border-color;
+			};
+			font: {
+				weight: $pricing-feature-font-weight;
+				size: $pricing-feature-font-size;
+				family: $pricing-feature-font-family;
+			};
 			list-style: none;
 			@include transition(color .25s ease-in-out, border-color .25s ease-in-out);
 
@@ -1458,13 +1499,15 @@ $pricing-border-color-hover					: transparent;
 
 	.footer {
 		padding: 30px 0;
-		border-top: 1px solid #e9e9e9;
-		background-color: #fcfcfc;
+		border-top: {
+			width: $pricing-border-width;
+			style: $pricing-border-style;
+			color: $pricing-border-color;
+		};
+		background-color: darken($pricing-bg-color, 1%);
 		@include transition(color .25s ease-in-out, border-color .25s ease-in-out, background .25s ease-in-out);
 
-		.button {
-			margin: 0;
-		}
+		.lc-button { margin: 0; }
 	}
 }
 
