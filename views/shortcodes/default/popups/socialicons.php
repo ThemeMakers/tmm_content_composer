@@ -5,29 +5,32 @@
 
 		<?php
 		$social_types_array = array(
-			'twitter' => 'Twitter',
-			'facebook' => 'Facebook',
-            'linkedin' => 'LinkedIn',
-            'pinterest' => 'Pinterest',
-            'rss' => 'Rss',
-            'gplus' => 'Google plus',
-            'flickr' => 'Flickr',
-            'dropbox' => 'Dropbox',
-            'instagram' => 'Instagram',
-            'youtube' => 'Youtube',
-            'blogger' => 'Blogger',
-            'evernote' => 'Evernote',                    
-			'dribbble' => 'Dribbble',
-            'behance' => 'Behance',
-            'skype' => 'Skype',
-			'vimeo' => 'Vimeo',
-			'digg' => 'Digg',
-			'appstore' => 'Appstore',
-			'stumbleupon' => 'Stubleupon',
-            'deviantart' => 'Deviantart',
-            'github' => 'Github',          
-			'mail' => 'Email'
-                    );
+            'twitter~icon-twitter' => 'Twitter',
+            'facebook~icon-facebook' => 'Facebook',
+            'linkedin~icon-linkedin' => 'Linkedin',
+            'pinterest~icon-pinterest-circled' => 'Pinterest',
+            'rss~icon-rss' => 'Rss',
+            'gplus~icon-gplus' => 'gPlus',
+            'youtube~icon-youtube' => 'Youtube',
+            'instagram~icon-instagramm' => 'Instagram',
+            'dribbble~icon-dribbble' => 'Dribbble',
+            'flickr~icon-flickr-1' => 'Flickr',
+            'dropbox~icon-dropbox' => 'Dropbox',
+            'blogger~icon-blogger-1' => 'Blogger',
+            'evernote~icon-evernote' => 'Evernote',
+            'behance~icon-behance' => 'Behance',
+            'lastfm~icon-lastfm' => 'LastFm',
+            'skype~icon-skype' => 'Skype',
+            'vimeo~icon-vimeo' => 'Vimeo',
+            'forrst~icon-forrst' => 'Forrst',
+            'digg~icon-digg' => 'Digg',
+            'appstore~icon-appstore' => 'Appstore',
+            'wordpress~icon-wordpress' => 'Wordpress',
+            'stumbleupon~icon-stumbleupon-2' => 'Stumbleupon',
+            'deviantart~icon-deviantart' => 'Deviantart',
+            'github~icon-github' => 'Github',
+            'mail~icon-mail-3' => 'Mail'
+        );
 		
 		$social_types = array('facebook');
 		$links = array('#');

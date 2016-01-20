@@ -28,7 +28,7 @@
         <?php
         TMM_Content_Composer::html_option(array(
             'type' => 'select',
-            'title' => __('Color', 'tmm_shortcodes'),
+            'title' => __('Color', TMM_CC_TEXTDOMAIN),
             'shortcode_field' => 'color',
             'id' => 'color',
             'options' => array(
@@ -47,7 +47,7 @@
         <?php
         TMM_Content_Composer::html_option(array(
             'type' => 'text',
-            'title' => __('URL', 'tmm_shortcodes'),
+            'title' => __('URL', TMM_CC_TEXTDOMAIN),
             'shortcode_field' => 'url',
             'id' => 'url',
             'default_value' => TMM_Content_Composer::set_default_value('url', ''),
@@ -58,7 +58,7 @@
         <?php
         TMM_Content_Composer::html_option(array(
             'type' => 'select',
-            'title' => __('Align', 'tmm_shortcodes'),
+            'title' => __('Align', TMM_CC_TEXTDOMAIN),
             'shortcode_field' => 'align',
             'id' => '',
             'options' => array(
@@ -72,18 +72,10 @@
 
         TMM_Content_Composer::html_option(array(
             'type' => 'select',
-            'title' => __('Animation', 'tmm_shortcodes'),
+            'title' => __('Animation', TMM_CC_TEXTDOMAIN),
             'shortcode_field' => 'animation',
             'id' => '',
-            'options' => array(
-                '' => 'None',
-                'opacity' => 'Opacity',
-                'scale' => 'Scale',
-                'slideRight' => 'SlideRight',
-                'slideLeft' => 'SlideLeft',
-                'slideDown' => 'SlideDown',
-                'slideUp' => 'SlideUp'
-            ),
+            'options' => TMM_Content_Composer::css_animation_array(),
             'default_value' => TMM_Content_Composer::set_default_value('animation', ''),
             'description' => 'Waypoints is a jQuery plugin that makes it easy to execute a function whenever you scroll to an element.'
         ));

@@ -26,30 +26,30 @@
 						<tr>
 							<td width="20%">
 								<?php
-								TMM_Content_Composer::html_option(array(
-									'type' => 'text',
-									'title' => '',
-									'shortcode_field' => 'title',
-									'id' => '',
-									'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
-									'default_value' => $titles[$key],
-									'description' => '',
-									'placeholder' => __('Title', TMM_CC_TEXTDOMAIN)
-								));
+                                TMM_Content_Composer::html_option(array(
+                                    'type' => 'text',
+                                    'title' => '',
+                                    'shortcode_field' => 'percentage',
+                                    'id' => '',
+                                    'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
+                                    'default_value' => $percentages[$key],
+                                    'description' => '',
+                                    'placeholder' => __('Percentage %', TMM_CC_TEXTDOMAIN)
+                                ));
 								?>
 							</td>
 							<td width="50%">
 								<?php
-								TMM_Content_Composer::html_option(array(
-									'type' => 'text',
-									'title' => '',
-									'shortcode_field' => 'percentage',
-									'id' => '',
-									'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
-									'default_value' => $percentages[$key],
-									'description' => '',
-									'placeholder' => __('Percentage %', TMM_CC_TEXTDOMAIN)
-								));
+                                TMM_Content_Composer::html_option(array(
+                                    'type' => 'text',
+                                    'title' => '',
+                                    'shortcode_field' => 'title',
+                                    'id' => '',
+                                    'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
+                                    'default_value' => $titles[$key],
+                                    'description' => '',
+                                    'placeholder' => __('Title', TMM_CC_TEXTDOMAIN)
+                                ));
 								?>
 							</td>
 							<td width="50%">

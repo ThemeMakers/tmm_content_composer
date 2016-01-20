@@ -6,11 +6,16 @@ $links = explode('^', $links);
 
 <?php if (!empty($social_types)): ?>
 
-	<ul class="social-icons style-fall">
+	<ul class="social-icons">
 
 		<?php foreach ($social_types as $key => $type) : ?>
-			<li class="<?php echo esc_attr($type) ?>">
-				<a href="<?php echo esc_url($links[$key]) ?>"></a>
+
+			<?php
+			list($k, $c) = explode('~', $type);
+			?>
+
+			<li class="<?php echo $k ?>">
+				<a target="_blank" href="<?php echo $links[$key] ?>"><i class="<?php echo $c ?>"></i></a>
 			</li>
 		<?php endforeach; ?>
 

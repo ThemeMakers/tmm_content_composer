@@ -5,22 +5,22 @@ $content_array = explode('^', $content);
 ?>
 
 <?php if (!empty($content_array)): ?>
-	<div class="tabs-holder <?php echo esc_attr($type_style) ?>">
+	<div class="tabs-holder">
 
-		<ul class="tabs-nav clearfix">
+		<ul class="tabs-nav">
 			<?php foreach ($titles_array as $key => $value) : ?>
-				<li><h3><?php echo esc_html($value) ?></h3></li>
-			<?php endforeach; ?>		
+				<li><a href="#"><?php echo $value ?></a></li>
+			<?php endforeach; ?>
 		</ul>
 
-		<div class="tabs-container clearfix">
+		<div class="tabs-container">
 			<?php foreach ($content_array as $key => $value) : ?>
 				<div class="tab-content">
-					<p><?php echo do_shortcode($value) ?></p>
+					<p><?php echo $value ?></p>
 				</div><!--/ .tab-content-->
 			<?php endforeach; ?>
 
-		</div><!--/ .tabs-container-->		
+		</div><!--/ .tabs-container-->
 
 	</div><!--/ .tabs-holder-->
 	

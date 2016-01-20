@@ -52,15 +52,7 @@
 			'title' => __('Animation', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'animation',
 			'id' => '',
-			'options' => array(
-				'' => 'None',
-				'opacity' => 'Opacity',
-				'scale' => 'Scale',
-				'slideRight' => 'SlideRight',
-				'slideLeft' => 'SlideLeft',
-				'slideDown' => 'SlideDown',
-				'slideUp' => 'SlideUp',
-			),
+			'options' => TMM_Content_Composer::css_animation_array(),
 			'default_value' => TMM_Content_Composer::set_default_value('animation', ''),
 			'description' => 'Waypoints is a jQuery plugin that makes it easy to execute a function whenever you scroll to an element.'
 		));

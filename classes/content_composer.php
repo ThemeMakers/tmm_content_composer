@@ -117,8 +117,7 @@ class TMM_Content_Composer {
 	public static function enqueue_scripts() {
 		wp_deregister_style('wp-mediaelement');
 
-
-		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
+		//wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
 
 		if (!class_exists('TMM')) {
 
@@ -307,6 +306,21 @@ class TMM_Content_Composer {
 
 		return $default_value;
 	}
+
+    /**
+     * Added for Accio Theme
+     */
+    public static function css_animation_array() {
+        return array(
+            '' => 'None',
+            'opacity' => 'Opacity',
+            'scale' => 'Scale',
+            'slideRight' => 'SlideRight',
+            'slideLeft' => 'SlideLeft',
+            'slideDown' => 'SlideDown',
+            'slideUp' => 'SlideUp',
+        );
+    }
 
 	public static function hex2RGB($hexStr, $returnAsString = false, $seperator = ',') {
 		$hexStr = preg_replace("/[^0-9A-Fa-f]/", '', $hexStr); // Gets a proper hex string

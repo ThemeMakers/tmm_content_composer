@@ -23,9 +23,9 @@
             'shortcode_field' => 'format',
             'id' => 'format',
             'options' => array(
-                'other' => __('Other', 'tmm_shortcodes'),
-                'wav' => __('Wav', 'tmm_shortcodes'),
-                'ogg' => __('Ogg', 'tmm_shortcodes'),
+                'other' => __('Other', TMM_CC_TEXTDOMAIN),
+                'wav' => __('Wav', TMM_CC_TEXTDOMAIN),
+                'ogg' => __('Ogg', TMM_CC_TEXTDOMAIN),
             ),
             'default_value' => TMM_Content_Composer::set_default_value('format', 'other'),
             'description' => ''

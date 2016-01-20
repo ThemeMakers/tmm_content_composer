@@ -55,15 +55,7 @@
 
 	<div class="one-half">
 		<?php
-		$animation_types = array(
-            '' => 'None',
-            'opacity' => 'Opacity',
-            'scale' => 'Scale',
-            'slideRight' => 'SlideRight',
-            'slideLeft' => 'SlideLeft',
-            'slideDown' => 'SlideDown',
-            'slideUp' => 'SlideUp',
-        );
+		$animation_types = TMM_Content_Composer::css_animation_array();
 
         TMM_Content_Composer::html_option(array(
              'type' => 'select',

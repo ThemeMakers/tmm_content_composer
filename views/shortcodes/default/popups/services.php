@@ -5,77 +5,47 @@
 	<div class="fullwidth">
 
 		<?php
-		$value_type = TMM_Content_Composer::set_default_value('type', 0);
-
-		TMM_Content_Composer::html_option(array(
-			'type' => 'radio',
-			'title' => __('Type', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'type',
-			'id' => 'type',
-			'name' => 'type',
-			'values' => array(
-				0 => array(
-					'title' => __('Normal', TMM_CC_TEXTDOMAIN),
-					'id' => 'type_normal',
-					'value' => 0,
-					'checked' => ($value_type == 0 ? 1 : 0)
-				),
-				1 => array(
-					'title' => __('Colorized', TMM_CC_TEXTDOMAIN),
-					'id' => 'type_colorized',
-					'value' => 1,
-					'checked' => ($value_type == 1 ? 1 : 0)
-				)
-			),
-			'value' => $value_type,
-			'description' => '',
-			'hidden_id' => 'list_type'
-		));
-		?>	
-
-		<?php
-		$type_array = array(                                     
-                                        
-            'icon-paper-plane-2' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-paper-plane-2',
-            'icon-pencil-7' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-pencil-7',
-            'icon-beaker-1' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-beaker-1',
-            'icon-megaphone-3' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-megaphone-3',
-            'icon-cog-6' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cog-6',
-            'icon-lightbulb-3' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-lightbulb-3',
-            'icon-comment-6' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-comment-6',
-            'icon-thumbs-up-5' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-thumbs-up-5',
-			'icon-laptop' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-laptop',
-			'icon-search' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-search',
-			'icon-wrench' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-wrench',
-			'icon-leaf' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-leaf',
-			'icon-cogs' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cogs',
-			'icon-group' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-group',
-			'icon-comments-alt' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-comments-alt',
-			'icon-folder-close' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-folder-close',
-			'icon-cloud' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cloud',
-			'icon-briefcase' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-briefcase',
-			'icon-beaker' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-beaker',
-			'icon-bullhorn' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-bullhorn',
-			'icon-comment' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-comment',
-			'icon-globe' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-globe',
-			'icon-globe-6' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-globe-6',
-			'icon-heart' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-heart',
-			'icon-rocket' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-rocket',
-			'icon-suitcase' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-suitcase',
-			'icon-pencil' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-pencil',
-			'icon-params' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-params',
-			'icon-folder-open' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-folder-open',
-			'icon-cog' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cog',
-			'icon-coffee' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-coffee',
-			'icon-gift' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-gift',
-			'icon-home' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-home',
-			'icon-lightbulb' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-lightbulb',
-			'icon-thumbs-up' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-thumbs-up',
-			'icon-umbrella' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-umbrella',
-			'icon-random' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-random',
-			'icon-th-list' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-th-list',
-			'icon-resize-small' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-resize-small',
-			'icon-download-alt' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-download-alt'
+		$type_array = array(
+			'icon-paper-plane-2' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-paper-plane-2',
+			'icon-pencil-7' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-pencil-7',
+			'icon-cog-6' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-cog-6',
+			'icon-beaker-1' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-beaker-1',
+			'icon-megaphone-3' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-megaphone-3',
+			'icon-search' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-search',
+			'icon-comment-6' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-comment-6',
+			'icon-lightbulb-3' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-lightbulb-3',
+			'icon-thumbs-up-5' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-thumbs-up-5',
+			'icon-laptop' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-laptop',
+			'icon-wrench' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-wrench',
+			'icon-leaf' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-leaf',
+			'icon-cogs' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-cogs',
+			'icon-group' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-group',
+			'icon-comments-alt' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-comments-alt',
+			'icon-folder-close' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-folder-close',
+			'icon-cloud' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-cloud',
+			'icon-briefcase' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-briefcase',
+			'icon-beaker' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-beaker',
+			'icon-bullhorn' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-bullhorn',
+			'icon-comment' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-comment',
+			'icon-globe' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-globe',
+			'icon-globe-6' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-globe-6',
+			'icon-heart' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-heart',
+			'icon-rocket' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-rocket',
+			'icon-suitcase' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-suitcase',
+			'icon-pencil' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-pencil',
+			'icon-params' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-params',
+			'icon-folder-open' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-folder-open',
+			'icon-cog' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-cog',
+			'icon-coffee' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-coffee',
+			'icon-gift' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-gift',
+			'icon-home' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-home',
+			'icon-lightbulb' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-lightbulb',
+			'icon-thumbs-up' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-thumbs-up',
+			'icon-umbrella' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-umbrella',
+			'icon-random' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-random',
+			'icon-th-list' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-th-list',
+			'icon-resize-small' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-resize-small',
+			'icon-download-alt' => __('Icon', 'tmm_shortcodes') . ': ' . 'icon-download-alt'
 		);
 		?>
 
@@ -181,9 +151,6 @@
 
 								<h5 class="label"><?php _e('Title', TMM_CC_TEXTDOMAIN); ?></h5>
 								<input type="text" value="<?php echo (isset($titles_edit_data[$key])) ? $titles_edit_data[$key] : '' ?>" class="list_item_title js_shortcode_template_changer data-input" style="width: 100%;" /><br />
-
-								<h5 class="label"><?php _e('Link', TMM_CC_TEXTDOMAIN); ?></h5>
-								<input type="text" value="<?php echo (isset($links_edit_data[$key])) ? $links_edit_data[$key] : '' ?>" class="list_item_link js_shortcode_template_changer data-input" style="width: 100%;" /><br />
                                 
                                 <div class="colorized_hover_title" <?php echo ($value_type==0) ? 'style="display:none"' : '' ?>>
                                     <h5 class="label"><?php _e('Hover Title', TMM_CC_TEXTDOMAIN); ?></h5>
@@ -209,6 +176,22 @@
 		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 	</div><!--/ .fullwidth-->
+
+    <div class="one-half">
+
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'select',
+            'title' => __('Animation', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'animation',
+            'id' => '',
+            'options' => TMM_Content_Composer::css_animation_array(),
+            'default_value' => TMM_Content_Composer::set_default_value('animation', ''),
+            'description' => 'Waypoints is a jQuery plugin that makes it easy to execute a function whenever you scroll to an element.'
+        ));
+        ?>
+
+    </div>
 
 </div>
 

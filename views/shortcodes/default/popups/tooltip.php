@@ -6,7 +6,7 @@
         <?php
         TMM_Content_Composer::html_option(array(
             'type' => 'text',
-            'title' => __('Enter Link', 'tmm_shortcodes'),
+            'title' => __('Enter Link', TMM_CC_TEXTDOMAIN),
             'shortcode_field' => 'link',
             'id' => 'link',
             'default_value' => TMM_Content_Composer::set_default_value('link', '#'),
@@ -21,12 +21,12 @@
         <?php
         TMM_Content_Composer::html_option(array(
             'type' => 'select',
-            'title' => __('Link target', 'tmm_shortcodes'),
+            'title' => __('Link target', TMM_CC_TEXTDOMAIN),
             'shortcode_field' => 'link_target',
             'id' => 'type',
             'options' => array(
-                '_self' => __('_self', 'tmm_shortcodes'),
-                '_blank' => __('_blank', 'tmm_shortcodes'),
+                '_self' => __('_self', TMM_CC_TEXTDOMAIN),
+                '_blank' => __('_blank', TMM_CC_TEXTDOMAIN),
             ),
             'default_value' => TMM_Content_Composer::set_default_value('link_target', '_self'),
             'description' => ''
