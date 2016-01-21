@@ -1,6 +1,6 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <div class="column<?php if ($featured == 1) echo ' featured' ?> <?php echo esc_attr($effect_type); ?>">
-    
+
 	<div class="header">
 		<h5 class="title"><?php echo esc_html($title) ?></h5>
 		<div class="price">
