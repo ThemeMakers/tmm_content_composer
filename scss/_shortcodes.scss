@@ -842,7 +842,6 @@ blockquote {
 /*	List
 /* -------------------------------------------------- */
 
-
 ul {
 	&.lc-list {
 		margin-bottom: 1.5em;
@@ -1020,24 +1019,6 @@ ol {
 			};
 		}
 	}
-}
-
-/* -------------------------------------------------- */
-/*  Simple Title
-/* -------------------------------------------------- */
-
-.simple-title {
-	margin-bottom: 60px;
-	color: #8c8c8c;
-	font-weight: 300;
-	font-family: 'Raleway', sans-serif;
-
-	a {
-		color: #f85c37;
-
-		&:hover { color: #262626; }
-	}
-
 }
 
 /* -------------------------------------------------- */
@@ -2324,6 +2305,15 @@ a.social-like.voted:before{ color: #f85c37; }
 /* -------------------------------------------------- */
 
 .lc-progress-bar {
+	list-style: none;
+	margin: 0 0 1.5em;
+	padding: 0;
+
+	li {
+		margin: 0;
+		padding: 0;
+	}
+
 	.progress-bar {
 		position: relative;
 		margin-bottom: 1.5em;
@@ -2375,6 +2365,25 @@ a.social-like.voted:before{ color: #f85c37; }
 
 				@include border-radius(5px);
 			}
+		}
+	}
+}
+
+/* -------------------------------------------------- */
+/* Archive List
+/* -------------------------------------------------- */
+
+.lc-archive-list {
+	list-style: none;
+	margin: 0 0 50px;
+	padding: 0;
+
+	li {
+		margin-bottom: 10px;
+		list-style: none;
+
+		a {
+			font-size: 15px;
 		}
 	}
 }

@@ -18,7 +18,7 @@ switch($archives_type){
 		}
 		if (!empty($archive_list)){
 			?>
-			<ul class="archive-list">
+			<ul class="lc-archive-list">
 				<?php
 				foreach ($archive_list as $list){
 					?>
@@ -82,7 +82,7 @@ switch($archives_type){
 		$archives = wp_list_categories( $args );
 		if (!empty($archives)){
 			?>
-			<ul class="archive-list">
+			<ul class="lc-archive-list">
 				<?php
 				echo $archives;
 				?>
