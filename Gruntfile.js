@@ -21,6 +21,9 @@ module.exports = function(grunt) {
 					],
 					'js/plugins/min/jquery.tooltipster.min.js': [
 						'js/plugins/jquery.tooltipster.js'
+					],
+					'js/plugins/min/jquery.progressBar.min.js': [
+						'js/plugins/jquery.progressBar.js'
 					]
 				}
 			}

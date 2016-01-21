@@ -75,7 +75,7 @@ class TMM_Content_Composer {
 		if ( $screen->base === 'toplevel_page_gf_edit_forms' || $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php'||  $pagenow === 'widgets.php' ) {
 			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc-admin.css');
 			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/admin/popup.js', array('jquery'));
-			wp_enqueue_script('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker/colorpicker.js', array('jquery'));
+			wp_enqueue_script('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker.js', array('jquery'));
 			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/admin/shortcodes.js', array('jquery'), false, true);
 
 			?>
@@ -137,6 +137,8 @@ class TMM_Content_Composer {
 			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/plugins/min/jquery.modernizr.min.js', array('jquery'), false, true);
 
 			wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/plugins/min/jquery.tooltipster.min.js', array('jquery'), false, true);   // TODO: concatenate to front.js
+
+			wp_register_script('tmm_progressbar', TMM_CC_URL . 'js/plugins/min/jquery.progressBar.min.js', array('jquery'), false, true);
 
 			wp_register_style('tmm_owltransitions', TMM_CC_URL . 'css/owl-carousel.css');
 			wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/plugins/min/owl.carousel.min.js', array('jquery'), false, true);

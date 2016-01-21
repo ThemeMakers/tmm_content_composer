@@ -18,7 +18,7 @@
 	<?php endif; ?>
 
 	<div class="footer">
-		<a href="<?php echo esc_url($button_link) ?>" class="lc-button secondary middle"><?php echo esc_html($button_text) ?></a>
+		<a href="<?php echo esc_url($button_link) ?>" class="lc-button secondary small"><?php echo esc_html($button_text) ?></a>
 	</div>
 
 </div><!-- .column -->
