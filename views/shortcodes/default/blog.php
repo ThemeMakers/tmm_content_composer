@@ -1,279 +1,108 @@
-<?php
-if (!defined('ABSPATH')) exit;
+<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 
+<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
+<?php
+//blog layout
 wp_reset_query();
 
-$count_column = '';
-$post_class = (isset($post_appearing_effect) && !empty($post_appearing_effect)) ? 'post-item '.$post_appearing_effect : 'post-item';
-$post_area = 'post-area';
-
-$path = 'content/' . $blog_type . '/content';
-
 $args = array(
-	'orderby' => $orderby,
-	'order' => $order,
-    'ignore_sticky_posts' => true,
-	'post_status' => array('publish')
+    'orderby' => $orderby,
+    'order' => $order,
+    'post_status' => array('publish')
 );
 
-$offset = 0;
-if (isset($_GET['offset'])) {
-	$offset = (int) $_GET['offset'];
-	$args['offset'] = $offset;
+if (!empty($posts_per_page)) {
+    $args['posts_per_page'] = $posts_per_page;
 }
 
-if (!empty($posts_per_page)&&($blog_type!='blog-masonry')) {
-	$args['posts_per_page'] = $posts_per_page;
+if ((int) $category > 0) {
+    $args['cat'] = $category;
 }
 
-if (!empty($category) && ($category!='null') && ($blog_type!='blog-masonry')) {
-    $args['category__in'] = $category;
+if (!empty($posts)) {
+    $posts = explode(',', $posts);
+    $args['post__in'] = $posts;
 }
-
-if (!empty($tag) && ($tag!='null') &&($blog_type!='blog-masonry')) {
-    $args['tag__in'] = explode(',', $tag) ;
-}
-
-if ((int) $category > 0 &&($blog_type!='blog-masonry')) {
-	$args['cat'] = (int) $category;
-}
-
-if (!empty($posts)&&($blog_type!='blog-masonry')) {
-	$posts = explode(',', $posts);
-	$args['post__in'] = $posts;
-}
-
-if(($exclude_post_types!='none') && ($blog_type!='blog-masonry')){
-
-    switch ($exclude_post_types){
-
-        case 'post-with-image':
-            $args['meta_query'] = array(
-                array(
-                    'key' => '_thumbnail_id',
-                    'compare' => 'NOT EXISTS'
-                ));
-            break;
-
-        case 'post-without-image':
-            $args['meta_query'] = array(
-                array(
-                    'key' => '_thumbnail_id',
-                    'compare' => 'EXISTS'
-                ));
-            break;
-
-    }
-
-}
-
-if (($blog_type!='blog-masonry')&&($exclude_post_formats!='none')) {
-    $exclude_post_formats = explode(',', $exclude_post_formats);
-    $args['tax_query'] = array(
-        array(
-            'taxonomy' => 'post_format',
-            'field' => 'slug',
-            'terms' => $exclude_post_formats,
-            'operator' => 'NOT IN',
-        )
-    );
-}
-
-if ($show_review){
-    $args['meta_key'] = 'tmm_review_total';
-    $args['meta_query'] = array(
-        array(
-            'key' => 'tmm_review_total',
-            'value' => array( 0.1, 100000),
-            'type' => 'numeric',
-            'compare' => 'BETWEEN'
-        ));
-}
-
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args['paged'] = $paged;
 
+
 global $wp_query;
 $original_query = $wp_query;
+
 $wp_query = new WP_Query($args);
-
-$posts_array = $wp_query->posts;
-
-switch($blog_type) {
-	case 'blog-classic':
-		$count_column = 'post-col-1';
-	break;
-	case 'blog-medium':
-		$post_area = 'post-list';
-		$post_class .= ' post-entry';
-	break;		
-	case 'blog-masonry':
-        $blog_type = 'masonry';
-        $post_class = 'animate post-item';
-        $count_column = 'post-col-' .$columns;
-        break;	
-	case 'blog-grid':
-	case 'blog-grid-overlay':
-	case 'blog-grid-layout':
-		$count_column = 'post-col-' .$columns;
-	break;
-}
-$data_columns = '';
-if (isset($post_carousel) && $post_carousel){
-    $blog_type = 'post-carousel';
-    $count_column = '';
-    $data_columns = 'data-columns="' . $columns . '"';
-
-    if (!class_exists('TMM')) {
-        tmm_enqueue_script('owlcarousel');
-        tmm_enqueue_style('owlcarousel');
-        tmm_enqueue_style('owltheme');
-        tmm_enqueue_style('owltransitions');
-    }
-}
-
-$data_infinity = '';
-$infinity_class = '';
-$data_next_posts = '';
-$data_effect = '';
-
-if (isset($infinity_pagination) && $infinity_pagination ){
-
-    $data_infinity  = 'data-infinity="true"';
-    $infinity_class = 'infinity';
-
-    $args['posts_per_page'] = '-1';
-    $all_wp_query = new WP_Query($args);
-
-    $all_posts_array = $all_wp_query->posts;
-
-    if (!empty($all_posts_array)){
-        $count = count($all_posts_array);
-        $next_posts = '';
-        for ($i = $posts_per_load; $i < $count; $i++) {
-            if (isset($all_posts_array[$i])) {
-                $str = $all_posts_array[$i]->ID;
-                $next_posts = (!empty($next_posts)) ? $next_posts . "," . $str : $next_posts.$str;
-            }
-        }
-        $data_next_posts = 'data-nextposts="' . $next_posts . '"';
-    }
-
-    if (!empty($post_appearing_effect)){
-        $data_effect = 'data-effect="' . $post_appearing_effect . '"';
-    }
-
-}
-
-$_REQUEST['title_symbols'] = $title_symbols;
-
+global $post;
 ?>
 
-	<div id="post-area" class="<?php echo esc_attr($post_area) ?>
-	    <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?>
-	    <?php echo esc_attr($infinity_class) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?>
-        <?php if(!empty($data_infinity)) echo $data_infinity; ?>
-        <?php if(!empty($data_next_posts)) echo $data_next_posts; ?>
-        <?php if(!empty($data_effect)) echo $data_effect; ?>>
-        
-        <?php 
-        if ($blog_type!='masonry'){           
+<div class="row">
 
-            if ( have_posts() ){
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                $_REQUEST['shortcode_show_metadata'] = $show_metadata;
+        <div class="col-sm-6 col-lg-4">
 
-                while ( have_posts() ) { 
+            <article class="entry">
 
-                the_post(); ?>
+                <div class="entry-image">
+                    <div class="work-item">
+                        <img src="<?php echo TMM_Helper::get_post_featured_image($post->ID, '560*390'); ?>" alt="<?php echo $post->post_title ?>" />
+                        <div class="image-extra">
+                            <div class="extra-content">
+                                <div class="inner-extra">
+                                    <a class="single-image link-icon" href="<?php the_permalink() ?>"></a>
+                                    <a class="single-image plus-icon" data-fancybox-group="posts" href="<?php echo TMM_Helper::get_post_featured_image($post->ID, ''); ?>"></a>
+                                </div><!--/ .inner-extra-->
+                            </div><!--/ .extra-content-->
+                        </div><!--/ .image-extra-->
+                    </div><!--/ .work-item-->
+                </div><!--/ .entry-image-->
 
-                <article id="post-<?php the_ID(); ?>" <?php post_class($post_class); ?>>
-                    <?php get_template_part( $path, 'content' ); ?>
-                </article>
+                <?php if ($show_metadata): ?>
+                    <div class="entry-meta">
+                        <span class="date"><a href="<?php echo home_url() ?>/<?php echo get_the_date('Y/m') ?>"><?php echo get_the_date() ?></a></span>
+                        <span class="comments"><a href="<?php the_permalink() ?>#comments"><?php echo get_comments_number(); ?></a>&nbsp;<?php _e('Comments', 'accio') ?></span>
+                    </div><!--/ .entry-meta-->
+                <?php endif; ?>
 
-                    
-            <?php }
-            }
+                <h2 class="entry-title">
+                    <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+                </h2><!--/ .entry-title-->
 
-        
-        } else{
-            if (!empty($posts_array)){
+                <div class="entry-body">
+                    <p><?php
+                        if (TMM::get_option("excerpt_symbols_count")) {
+                            if (empty($post->post_excerpt)) {
+                                $txt = do_shortcode($post->post_content);
+                                $txt = strip_tags($txt);
+                                if (function_exists('mb_substr')) {
+                                    echo do_shortcode(mb_substr($txt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
+                                } else {
+                                    echo do_shortcode(substr($txt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
+                                }
+                            } else {
+                                if (function_exists('mb_substr')) {
+                                    echo do_shortcode(mb_substr($post->post_excerpt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
+                                } else {
+                                    echo do_shortcode(substr($post->post_excerpt, 0, TMM::get_option("excerpt_symbols_count")) . " ...");
+                                }
+                            }
+                        } else {
+                            echo do_shortcode($post->post_excerpt);
+                        }
+                        ?></p>
+                </div><!--/ .entry-body-->
 
-                wp_enqueue_style('tmm_mediaelement');
-                wp_enqueue_script('mediaelement');
+            </article><!--/ .entry-->
 
-                for ($i = 0; $i < $posts_per_load; $i++) { 
-                    $post = $posts_array[$i];
-                    $data = array();			
-                    $data['post_key'] = $i;
-                    $data['title_symbols'] = $title_symbols;
-                    echo TMM::draw_html('post/masonry_piece', $data);
-                }
-            } 
-        } ?>       
-            
-	</div><!--/ .post-area-->
-
-	<?php if ($blog_type == 'masonry'){
-
-    tmm_enqueue_script('owlcarousel');
-    tmm_enqueue_style('owlcarousel');
-    tmm_enqueue_style('owltheme');
-    tmm_enqueue_style('owltransitions');
-
-        $next_posts = "";
-
-        for ($i = $posts_per_load; $i < ($posts_per_load * 2); $i++) {
-            if (isset($posts_array[$i])) {
-                $str = (string) $i;
-                $next_posts = $next_posts . $str . ",";
-            }
-        }
-
-        ?>
-
-        <div class="masonry-loader spinner">
-            <div id="fadingBarsG_1" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_2" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_3" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_4" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_5" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_6" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_7" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_8" class="fadingBarsG">
-            </div>
         </div>
-        
-		<div class='post-load-more'>
-			<a class='load-more button secondary middle' data-loadbyscroll="<?php echo esc_attr($load_by_scrolling) ?>" data-page-load="2" data-posts-per-load="<?php echo esc_attr($posts_per_load) ?>" data-posts="<?php echo esc_attr($next_posts) ?>" href='#load-more'><?php _e('Load More', TMM_CC_TEXTDOMAIN) ?></a>
-		</div><!--/ .post-load-more-->
 
-    <?php
-}
+        <?php
+    endwhile;
+    endif;
 
-if ($show_pagination && class_exists('TMM') && $blog_type != 'masonry' && (!isset($infinity_pagination) || !$infinity_pagination)) {
-	get_template_part('content', 'pagenavi');
-}
+    $wp_query = $original_query;
+    wp_reset_postdata();
 
-$wp_query = $original_query;
-wp_reset_postdata();
-
-if (!empty($posts_array) && ($blog_type == 'masonry')){
-    $load_with_animation = 1;
-
-    wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/plugins/min/jquery.masonry.min.js');
     ?>
-    <script type="text/javascript">
-        jQuery(function() {
-            jQuery(".masonry").init_masonry(<?php echo esc_js($columns) ?>, <?php echo esc_js($load_with_animation) ?>);
-        });
-    </script>
-<?php
-}
+
+</div><!--/ .row-->
+

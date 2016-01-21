@@ -143,33 +143,6 @@
 		?>
 
 	</div><!--/ .one-half-->
-        
-        <div class="one-half">
-            <?php
-            TMM_Content_Composer::html_option(array(
-                        'title' => __('Effect for Appearing Table', TMM_CC_TEXTDOMAIN),
-                        'type' => 'select',
-                        'shortcode_field' => 'effect_type',
-                        'id' => 'effect_type',
-                        'default_value' => TMM_Content_Composer::set_default_value('effect_type', 'elementFade'),
-                        'options' => array(
-                                'elementFade' => __('Element Fade', TMM_CC_TEXTDOMAIN),
-                                'opacity' => __('Opacity', TMM_CC_TEXTDOMAIN),
-                                'opacity2xRun' => __('Opacity 2x Run', TMM_CC_TEXTDOMAIN),
-                                'scale' => __('Scale', TMM_CC_TEXTDOMAIN),
-                                'slideRight' => __('Slide Right', TMM_CC_TEXTDOMAIN),
-                                'slideLeft' => __('Slide Left', TMM_CC_TEXTDOMAIN),
-                                'slideDown' => __('Slide Down', TMM_CC_TEXTDOMAIN),
-                                'slideUp' => __('Slide Up', TMM_CC_TEXTDOMAIN),
-                                'slideUp2x' => __('Slide Up 2x', TMM_CC_TEXTDOMAIN),
-                                'extraRadius' => __('Extra Radius', TMM_CC_TEXTDOMAIN)
-                        ),
-                        'description' => __('Effect for Appearing Post.', TMM_CC_TEXTDOMAIN)
-                        
-            ));
-                
-            ?>
-        </div>
 
 	<ul id="price_tables_list">
 

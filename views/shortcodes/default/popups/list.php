@@ -1,152 +1,95 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<link rel="stylesheet" href="<?php echo TMM_THEME_URI; ?>/css/fontello.css" type="text/css" media="all" />
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
 	<div class="fullwidth">
-           
-	<?php
+
+		<?php
 		$type_array = array(
-                        'icon-right-4' => 'icon-right-4',
-                        'icon-right-open-outline' => 'icon-right-open-outline',
-                        'icon-angle-double-right' => 'icon-angle-double-right',
-                        'icon-pencil-alt-1' => 'icon-pencil-alt-1',
-                        'icon-right-dir' => 'icon-right-dir',
-                        'icon-down-open' => 'icon-down-open',
-                        'icon-left-open' => 'icon-left-open',
-                        'icon-right-open' => 'icon-right-open',
-                        'icon-angle-left' => 'icon-angle-left',
-                        'icon-angle-right' => 'icon-angle-right',
-                        'icon-calendar' => 'icon-calendar',
-                        'icon-basket' => 'icon-basket',              
-                        'icon-wrench' => 'icon-wrench',
-                        'icon-cog-alt' => 'icon-cog-alt',
-                        'icon-cog' => 'icon-cog',
-                        'icon-menu' => 'icon-menu',
-                        'icon-phone-squared' => 'icon-phone-squared',
-                        'icon-phone' => 'icon-phone',
-                        'icon-rss-squared' => 'icon-rss-squared',
-                        'icon-rss' => 'icon-rss',
-                        'icon-box' => 'icon-box',
-                        'icon-folder-open-empty' => 'icon-folder-open-empty',
-                        'icon-folder-empty' => 'icon-folder-empty',
-                        'icon-folder-open' => 'icon-folder-open',
-                        'icon-folder' => 'icon-folder',
-                        'icon-doc-text-inv' => 'icon-doc-text-inv',
-                        'icon-doc-inv' => 'icon-doc-inv',
-                        'icon-doc-text' => 'icon-doc-text',
-                        'icon-docs' => 'icon-docs',
-                        'icon-doc' => 'icon-doc',
-                        'icon-trash' => 'icon-trash',
-                        'icon-compass' => 'icon-compass',
-                        'icon-direction' => 'icon-direction',
-                        'icon-location' => 'icon-location',
-                        'icon-attention-circled' => 'icon-attention-circled',
-                        'icon-attention' => 'icon-attention',
-                        'icon-attention-alt' => 'icon-attention-alt',
-                        'icon-bell-alt' => 'icon-bell-alt',
-                        'icon-bell' => 'icon-bell',
-                        'icon-chat-empty' => 'icon-chat-empty',
-                        'icon-comment-empty' => 'icon-comment-empty',
-                        'icon-chat' => 'icon-chat',
-                        'icon-comment' => 'icon-comment',
-                        'icon-gamepad' => 'icon-gamepad',
-                        'icon-keyboard' => 'icon-keyboard',
-                        'icon-retweet' => 'icon-retweet',
-                        'icon-print' => 'icon-print',
-                        'icon-edit' => 'icon-edit',
-                        'icon-pencil-squared' => 'icon-pencil-squared',
-                        'icon-pencil' => 'icon-pencil',
-                        'icon-export-alt' => 'icon-export-alt',
-                        'icon-export' => 'icon-export',
-                        'icon-code' => 'icon-code',
-                        'icon-quote-right' => 'icon-quote-right',
-                        'icon-reply' => 'icon-reply',
-                        'icon-download' => 'icon-download',
-                        'icon-plus' => 'icon-plus',
-                        'icon-help' => 'icon-help'                        
+			'icon-right-4' => 'icon-right-4',
+			'icon-right-open-outline' => 'icon-right-open-outline',
+			'icon-angle-double-right' => 'icon-angle-double-right',
+			'icon-pencil-alt-1' => 'icon-pencil-alt-1',
+			'icon-right-dir' => 'icon-right-dir',
+			'icon-right-open-1' => 'icon-right-open-1',
+			'icon-right-bold' => 'icon-right-bold',
+			'icon-right-thin' => 'icon-right-thin',
+			'icon-down-dir-1' => 'icon-down-dir-1',
+			'icon-fast-forward' => 'icon-fast-forward',
+			'icon-ok-2' => 'icon-ok-2',
+			'icon-ok-4' => 'icon-ok-4',
+			'icon-pencil-alt' => 'icon-pencil-alt',
+			'icon-right-open-3' => 'icon-right-open-3',
+			'icon-right-circle-1' => 'icon-right-circle-1',
+			'icon-share-2' => 'icon-share-2'
 		);
 
-		//***
+		$actions = array(key($type_array));
 
-		$styles_edit_data = array(key($type_array));
-		$color_data=array();
+		$color_data = array();
 		$content_edit_data = array('');
+
 		if (isset($_REQUEST["shortcode_mode_edit"])) {
-			if (isset($_REQUEST["shortcode_mode_edit"]['styles'])) {
-				$styles_edit_data = explode('^', $_REQUEST["shortcode_mode_edit"]['styles']);
+
+			if (isset($_REQUEST["shortcode_mode_edit"]['actions'])) {
+				$actions = explode('^', $_REQUEST["shortcode_mode_edit"]['actions']);
 			} else {
-				$styles_edit_data = array();
+				$actions = array();
 			}
-			
-			
+
 			if (isset($_REQUEST["shortcode_mode_edit"]['colors'])) {
 				$color_data = explode('^', $_REQUEST["shortcode_mode_edit"]['colors']);
 			} else {
 				$color_data = array();
 			}
 
-			$content_edit_data = explode('^', $_REQUEST["shortcode_mode_edit"]['content']);
+			$list_item_content = explode('^', $_REQUEST["shortcode_mode_edit"]['list_item_content']);
 		}
 		?>
 
 		<?php
-		$value_type = !empty($styles_edit_data) ? 0 : 1;
-		//ul == 0
 		TMM_Content_Composer::html_option(array(
-			'type' => 'radio',
+			'type' => 'select',
 			'title' => __('List Type', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'list_type',
-			'id' => 'list_type',
-			'name' => 'list_type',
-			'values' => array(
-				0 => array(
-					'title' => __('Unordered', TMM_CC_TEXTDOMAIN),
-					'id' => 'list_type_ul',
-					'value' => 0,
-					'checked' => ($value_type == 0 ? 1 : 0)
-				),
-				1 => array(
-					'title' => __('Ordered', TMM_CC_TEXTDOMAIN),
-					'id' => 'list_type_ol',
-					'value' => 1,
-					'checked' => ($value_type == 1 ? 1 : 0)
-				)
+			'id' => '',
+			'options' => array(
+				0 => __('Unordered', TMM_CC_TEXTDOMAIN),
+				1 => __('Ordered', TMM_CC_TEXTDOMAIN),
+				2 => __('Circle', TMM_CC_TEXTDOMAIN),
 			),
-			'value' => $value_type,
-			'description' => '',
-			'hidden_id' => 'list_type'
+			'default_value' => TMM_Content_Composer::set_default_value('list_type', 0),
+			'description' => ''
 		));
+
 		?>
 
 		<h4 class="label"><?php _e('List Styles', TMM_CC_TEXTDOMAIN); ?></h4>
 		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add list item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
-		<ul id="list_items" class="list-items">		
-			
-			<?php foreach ($content_edit_data as $key => $content_edit_text) : ?>
-			
-				<li class="list_item tmm-mover">
+		<ul id="list_items" class="list-items">
+
+			<?php foreach ($actions as $key => $action): ?>
+
+				<li class="list_item">
 					<table class="list-table">
 						<tr>
+							<td><i class="<?php echo @$action ?>"></i></td>
 							<td>
-								<i class="<?php echo(!empty($styles_edit_data) ? $type_array[$styles_edit_data[$key]] : ''); ?>"></i>
-							</td>
-							<td style="width: 15%">
 								<?php
 								TMM_Content_Composer::html_option(array(
 									'type' => 'select',
 									'title' => '',
-									'shortcode_field' => 'action',
+									'shortcode_field' => 'actions',
 									'id' => '',
 									'options' => $type_array,
-									'default_value' => empty($styles_edit_data) ? '' : $styles_edit_data[$key],
+									'default_value' => $action,
 									'description' => '',
-									'css_classes' => 'list_item_style',
-									'display' => empty($styles_edit_data) ? 0 : 1
+									'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
+									'display' => empty($action) ? 0 : 1
 								));
 								?>
 							</td>
-							<td style="width: 30%">
+							<td>
 								<?php
 								TMM_Content_Composer::html_option(array(
 									'title' => '',
@@ -155,21 +98,34 @@
 									'description' => '',
 									'default_value' => empty($color_data) ? '' : $color_data[$key],
 									'id' => '',
-									'css_classes' => 'list_item_color',
+									'css_classes' => 'list_item_color save_as_one js_shortcode_template_changer',
 									'display' => 1
-								));	
+								));
 								?>
 							</td>
-							<td style="width: 50%; vertical-align: top;">
-								<input type="text" value="<?php echo $content_edit_text ?>" class="list_item_content js_shortcode_template_changer data-area" />
+							<td>
+								<?php
+								TMM_Content_Composer::html_option(array(
+									'type' => 'text',
+									'title' => '',
+									'shortcode_field' => 'list_item_content',
+									'id' => '',
+									'css_classes' => 'list_item_content save_as_one js_shortcode_template_changer',
+									'default_value' => @$list_item_content[$key],
+									'description' => '',
+									'placeholder' => __('List item content', TMM_CC_TEXTDOMAIN)
+								));
+								?>
+
 							</td>
 							<td>
 								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
 							</td>
-							<td></td>
+							<td><div class="row-mover"></div></td>
 						</tr>
-					</table>
+					</table><!--/ .list-table-->
 				</li>
+
 			<?php endforeach; ?>
 
 		</ul>
@@ -177,6 +133,23 @@
 		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add list item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 	</div><!--/ .fullwidth-->
+
+	<div class="one-half">
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Animation', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'animation',
+			'id' => '',
+			'options' => TMM_Content_Composer::css_animation_array(),
+			'default_value' => TMM_Content_Composer::set_default_value('animation', ''),
+			'description' => 'Waypoints is a jQuery plugin that makes it easy to execute a function whenever you scroll to an element.'
+		));
+		?>
+
+	</div>
+
 
 </div>
 
@@ -188,52 +161,62 @@
 	var list_type = 0;
 
 	jQuery(function() {
-		
+
 		colorizator();
-        
-        if (jQuery('#list_type_ol').prop('checked')){              
-            setTimeout(function(){
-                jQuery(".sel").hide(200);
-            },900);
-            
-        }
-		
+		selectwrap();
+
 		jQuery("#list_items").sortable({
 			stop: function(event, ui) {
-				tmm_ext_shortcodes.list_changer(shortcode_name);
+				tmm_ext_shortcodes.changer(shortcode_name);
 			}
 		});
 
-
-		//***
-		tmm_ext_shortcodes.list_changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").life('keyup change', function() {
-			tmm_ext_shortcodes.list_changer(shortcode_name);
+		tmm_ext_shortcodes.changer(shortcode_name);
+		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").life('click change', function(e) {
+			e.preventDefault();
+			tmm_ext_shortcodes.changer(shortcode_name);
 		});
 
+		var list_type = jQuery('[data-shortcode-field=list_type]'),
+			select = jQuery('.sel', '.list-items'),
+			color = jQuery('.list-item-color'),
+			icon = jQuery('i');
 
-		//*****
-		jQuery("#list_type_ul").click(function() {
-			jQuery(".list_item_style").show(200).parent().show(200);
-            jQuery(".list-table tr>td>i").show(200);
-			list_type = 0;
+		function listItems(val, select, color, icon) {
+			switch (parseInt(val)) {
+				case 0:
+					select.add(color).add(icon).css({ display: 'inline-block' });
+					break;
+				case 1:
+					select.add(icon).css({ display: 'none' });
+					color.css({ display: 'inline-block'});
+					break;
+				case 2:
+					select.add(color).add(icon).css({ display: 'none' });
+					break;
+				default:
+					select.add(color).add(icon).css({ display: 'inline-block' });
+					break;
+			}
+		}
+
+		listItems(list_type.val(), select, color, icon);
+
+		list_type.on('change', function (e) {
+			var val = jQuery(this).val();
+			listItems(val, select, color, icon);
+			e.preventDefault();
 		});
 
-		jQuery("#list_type_ol").click(function() {
-			jQuery(".list_item_style").parent().hide(200);
-            jQuery(".list-table tr>td>i").hide(200);
-			list_type = 1;
-		});
-
-		jQuery(".js_add_list_item").click(function() {
+		jQuery(".js_add_list_item").on('click', function() {
 			var clone = jQuery(".list_item:last").clone(false);
 			var last_row = jQuery(".list_item:last");
 			jQuery(clone).insertAfter(last_row, clone);
 			jQuery(".list_item:last").find('input[type=text]').val("");
-			//***
+
 			var icon_class = jQuery(".list_item:first").find('select').val();
 			jQuery(".list_item:last").find('select').val(icon_class);
-			tmm_ext_shortcodes.list_changer(shortcode_name);
+			tmm_ext_shortcodes.changer(shortcode_name);
 			colorizator();
 			return false;
 		});
@@ -242,18 +225,17 @@
 			if (jQuery(".list_item").length > 1) {
 				jQuery(this).parents('li').hide(200, function() {
 					jQuery(this).remove();
-					tmm_ext_shortcodes.list_changer(shortcode_name);
+					tmm_ext_shortcodes.changer(shortcode_name);
 				});
 			}
-
 			return false;
 		});
 
 		jQuery(".list_item_style").life('change', function() {
 			jQuery(this).parents('li').find('i').removeAttr('class').addClass(jQuery(this).val());
-			tmm_ext_shortcodes.list_changer(shortcode_name);
+			tmm_ext_shortcodes.changer(shortcode_name);
 		});
-		
+
 	});
 </script>
 

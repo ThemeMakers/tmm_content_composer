@@ -15,6 +15,73 @@
 
 	</div><!--/ .one-half-->
 
+    <div class="one-half">
+
+        <?php
+        $action = TMM_Content_Composer::set_default_value('action', 'none');
+
+        TMM_Content_Composer::html_option(array(
+            'type' => 'select',
+            'title' => __('Action', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'action',
+            'id' => 'img_shortcode_action',
+            'options' => array(
+                'none' => __('No link on image', TMM_CC_TEXTDOMAIN),
+                'link' => __('Open link', TMM_CC_TEXTDOMAIN),
+                /*'lightbox' => __('Open Image in lightbox', TMM_CC_TEXTDOMAIN),*/
+            ),
+            'default_value' => $action,
+            'description' => ''
+        ));
+        ?>
+
+
+        <div id="image_action_link" style="display: <?php echo($action == 'link' ? 'block' : 'none') ?>;">
+            <?php
+            TMM_Content_Composer::html_option(array(
+                'type' => 'text',
+                'title' => __('Image Action Link', TMM_CC_TEXTDOMAIN),
+                'shortcode_field' => 'image_action_link',
+                'id' => 'image_action_link',
+                'default_value' => TMM_Content_Composer::set_default_value('image_action_link', '#'),
+                'description' => ''
+            ));
+            ?>
+
+            <br />
+
+            <?php
+            TMM_Content_Composer::html_option(array(
+                'type' => 'select',
+                'title' => __('Link Target', TMM_CC_TEXTDOMAIN),
+                'shortcode_field' => 'target',
+                'id' => 'target',
+                'options' => array(
+                    '_self' => __('Self', TMM_CC_TEXTDOMAIN),
+                    '_blank' => __('Blank', TMM_CC_TEXTDOMAIN),
+                ),
+                'default_value' => TMM_Content_Composer::set_default_value('target', '_self'),
+                'description' => ''
+            ));
+            ?>
+
+            <br />
+
+            <?php
+            TMM_Content_Composer::html_option(array(
+                'type' => 'text',
+                'title' => __('Link Title', TMM_CC_TEXTDOMAIN),
+                'shortcode_field' => 'link_title',
+                'id' => 'link_title',
+                'default_value' => TMM_Content_Composer::set_default_value('link_title', ''),
+                'description' => ''
+            ));
+            ?>
+
+        </div>
+
+    </div><!--/ .one-half-->
+
 	<div class="one-half">
 
 		<?php
@@ -125,85 +192,23 @@
 
 	</div><!--/ .one-half-->
     
+
+
     <div class="one-half">
 
-		<?php
-		$action = TMM_Content_Composer::set_default_value('action', 'none');
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'select',
+            'title' => __('Animation', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'animation',
+            'id' => '',
+            'options' => TMM_Content_Composer::css_animation_array(),
+            'default_value' => TMM_Content_Composer::set_default_value('animation', ''),
+            'description' => 'Waypoints is a jQuery plugin that makes it easy to execute a function whenever you scroll to an element.'
+        ));
+        ?>
 
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Action', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'action',
-			'id' => 'img_shortcode_action',
-			'options' => array(
-				'none' => __('No link on image', TMM_CC_TEXTDOMAIN),
-				'link' => __('Open link', TMM_CC_TEXTDOMAIN),
-				'lightbox' => __('Open Image in lightbox', TMM_CC_TEXTDOMAIN),
-			),
-			'default_value' => $action,
-			'description' => ''
-		));
-		?>
-
-
-		<div id="image_action_link" style="display: <?php echo($action == 'link' ? 'block' : 'none') ?>;">
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'type' => 'text',
-				'title' => __('Image Action Link', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'image_action_link',
-				'id' => 'image_action_link',
-				'default_value' => TMM_Content_Composer::set_default_value('image_action_link', '#'),
-				'description' => ''
-			));
-			?>
-
-			<br />
-
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'type' => 'select',
-				'title' => __('Link Target', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'target',
-				'id' => 'target',
-				'options' => array(
-					'_self' => __('Self', TMM_CC_TEXTDOMAIN),
-					'_blank' => __('Blank', TMM_CC_TEXTDOMAIN),
-				),
-				'default_value' => TMM_Content_Composer::set_default_value('target', '_self'),
-				'description' => ''
-			));
-			?>
-            
-            <br />
-            
-            <?php
-            TMM_Content_Composer::html_option(array(
-				'type' => 'text',
-				'title' => __('Link Title', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'link_title',
-				'id' => 'link_title',
-				'default_value' => TMM_Content_Composer::set_default_value('link_title', ''),
-				'description' => ''
-			));
-            ?>
-
-		</div>
-        
-        <div id="image_without_link" style="display: <?php echo($action == 'none' ? 'block' : 'none') ?>;">
-            <?php
-            TMM_Content_Composer::html_option(array(
-				'type' => 'checkbox',
-				'title' => __('Parallax Image (On / Off)', TMM_CC_TEXTDOMAIN),
-				'shortcode_field' => 'parallax',
-				'id' => 'parallax',
-				'is_checked' => TMM_Content_Composer::set_default_value('parallax', 0),
-				'description' => ''
-			));
-            ?>
-        </div>
-
-	</div><!--/ .one-half-->
+    </div>
        
 </div>
 
