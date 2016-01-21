@@ -52,7 +52,7 @@ foreach ($query as $p) {
 	<div class="col-xs-12">
 
 		<ul id="portfolio-filter" class="portfolio-filter opacity">
-			<li class="filter active" data-filter="all"><?php _e('All', 'tmm_shortcodes'); ?></li>
+			<li class="filter active" data-filter="all"><?php _e('All', TMM_CC_TEXTDOMAIN); ?></li>
 			<?php if (!empty($folio_cat)):?>
 				<?php foreach ($folio_cat as $term_id => $cat) : ?>
 					<li class="filter" data-filter="<?php echo $cat->slug ?>"><?php echo $cat->name ?></li>

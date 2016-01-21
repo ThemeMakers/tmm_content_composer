@@ -64,7 +64,7 @@ if (!empty($contact_form['inputs'])) {
 					$select_options = explode(",", $input['options']);
 					?>
 					<p class="input-block">						
-						<label for="url_<?php echo $unique_id ?>"><?php echo $input['label'] ?><?php echo($input['is_required'] ? ': <span class="required">('.__('required', 'tmm_shortcodes').')</span>' : '') ?></label><select id="url_<?php echo $unique_id ?>" name="<?php echo $name ?>">
+						<label for="url_<?php echo $unique_id ?>"><?php echo $input['label'] ?><?php echo($input['is_required'] ? ': <span class="required">('.__('required', TMM_CC_TEXTDOMAIN).')</span>' : '') ?></label><select id="url_<?php echo $unique_id ?>" name="<?php echo $name ?>">
 							<?php if (!empty($select_options)): ?>
 								<?php foreach ($select_options as $value) : ?>
 									<option value="<?php echo $value; ?>"><?php echo $value; ?></option>
