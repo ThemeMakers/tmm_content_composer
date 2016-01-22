@@ -18,7 +18,7 @@ class TMM_Shortcode {
 					continue;
 				}
 
-				if($file !== 'default' && $file !== 'woocommerce' && !class_exists('TMM')){
+				if($file !== 'default' && $file!== 'interpress' && $file !== 'woocommerce' && !class_exists('TMM')){
 					continue;
 				}
 
@@ -26,7 +26,10 @@ class TMM_Shortcode {
 			}
 		}
 
+
 		$shortcodes = self::get_shortcodes_array();
+
+
 		if (!empty($shortcodes)) {
 			foreach ($shortcodes as $value) {
 				$name = str_replace(array('tmm_', '_'), ' ', $value);

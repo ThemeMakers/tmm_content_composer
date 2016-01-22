@@ -128,7 +128,7 @@ class TMM_Content_Composer {
 			var lang_enter_correctly = "<?php echo esc_js(__('Please enter correct', 'tmm_content_composer')); ?>";
 			var lang_sended_succsessfully = "<?php echo esc_js(__('Your message has been sent successfully!', 'tmm_content_composer')); ?>";
 			var lang_server_failed = "<?php echo esc_js(__('Server failed. Send later', 'tmm_content_composer')); ?>";
-			var capcha_image_url = "<?php echo esc_js(TMM_THEME_URI) ?>/helper/capcha/image.php/";
+			var capcha_image_url = "<?php echo esc_js(get_template_directory_uri()) ?>/helper/capcha/image.php/";
 		</script>
 		<?php
 
