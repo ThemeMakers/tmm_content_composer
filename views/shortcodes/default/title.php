@@ -29,7 +29,7 @@ if (!empty($letter_spacing)) {
 	$single_styles.="letter-spacing:{$letter_spacing}px;";
 }
 // Align
-if (!empty($align)) {
+if (!empty($align) && $align!='left') {
 	$styles.="text-align: " . $align . "; ";
 	$general_styles.="text-align: " . $align . "; ";
 }
@@ -148,7 +148,9 @@ if ( isset($title_type) && $title_type=='section'){
 		$html.= '<h4 class="hdesc">'.$title_description.'</h4>';
 	}
 	$html.= '</div>';
-}else{   
+}else{
+
+	$class = (!empty($css_class)) ? 'class="' . $css_class . '"' : '';
     
     if (isset($word_animate) && $word_animate){
         $content = explode(' ', $content);
@@ -174,7 +176,7 @@ if ( isset($title_type) && $title_type=='section'){
         $html.= '</div></div>';         
         
     }else{
-        $html.= '<' . $type . ' class="' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '>';
+        $html.= '<' . $type .' '. $class . ' '. $styles . '>' . $content . '</' . $type . '>';
     }
 }
 
