@@ -1,8 +1,7 @@
-<?php if ( ! defined( 'ABSPATH' ) ) {
-	die( 'No direct access allowed' );
-} ?>
 <?php
-global $wp_query, $wpdb, $post;
+if ( !defined('ABSPATH') ) exit;
+
+global $post;
 $cars_count = (int) $content;
 
 $post_id = is_object($post) ? $post->ID : 0;
@@ -28,8 +27,8 @@ $args                   = array();
 $args['posts_per_page'] = $cars_count;
 $args['post_type']      = TMM_Ext_PostType_Car::$slug;
 $args['post_status']    = 'publish';
+$args['orderby']        = 'meta_value date';
 $args['order']          = 'DESC';
-$args['orderby']        = 'meta_value';
 $args['meta_key']       = 'car_is_featured';
 
 if ( ! defined( 'ICL_LANGUAGE_CODE' ) ) {
@@ -41,15 +40,6 @@ if ( ! defined( 'ICL_LANGUAGE_CODE' ) ) {
 }
 
 $query = new WP_Query( $args );
-
-$orderby = 'post_date';
-$order   = 'DESC';
-$request = str_replace( "SQL_CALC_FOUND_ROWS", "", $query->request );
-$tmp_request_array1 = explode( 'ORDER BY', $request );
-$tmp_request_array2 = explode( $order, $tmp_request_array1[1] );
-$request            = $tmp_request_array1[0] . ' ORDER BY ' . "$wpdb->postmeta.meta_value DESC, {$wpdb->posts}.{$orderby} $order" . $tmp_request_array2[1];
-
-$request_result = $wpdb->get_results( $request, OBJECT_K );
 
 $car_compare_list = TMM_Ext_PostType_Car::get_compare_list();
 $car_watch_list   = TMM_Ext_PostType_Car::get_watch_list();
@@ -79,8 +69,8 @@ $car_watch_list   = TMM_Ext_PostType_Car::get_watch_list();
 <div id="change-items" class="row tmm-view-mode <?php echo $cars_listing_layout_class ?>">
 
 	<?php
-	if ( ! empty( $request_result ) ) {
-		foreach ( $request_result as $post ) {
+	if ( ! empty( $query->posts ) ) {
+		foreach ( $query->posts as $post ) {
 			$GLOBALS['post_id']                             = $post->ID;
 			$GLOBALS['featured_cars_autoslide']             = ! isset( $set_featured_autoslide ) || $set_featured_autoslide;
 			$GLOBALS['recent_cars_show_currency_converter'] = ! isset( $show_recent_cars_currency_converter ) || $show_recent_cars_currency_converter;
@@ -100,5 +90,3 @@ $car_watch_list   = TMM_Ext_PostType_Car::get_watch_list();
 	?>
 	<a href="<?php echo $searching_page; ?>"><?php _e( 'Show all cars', TMM_CC_TEXTDOMAIN ); ?> <i class="icon-angle-double-right"></i></a>
 <?php endif; ?>
-
-
