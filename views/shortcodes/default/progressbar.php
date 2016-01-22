@@ -1,5 +1,10 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
+if (!class_exists('TMM')){
+	wp_enqueue_script('tmm_progressbar');
+}
+
+
 $titles = explode('^', $title);
 $colors = explode('^', $color);
 $percentages = explode('^', $percentage);

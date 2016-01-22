@@ -6,7 +6,7 @@
 		<?php
 		$colors = array('');
 		$titles = array('');
-		$percentages = array('0');
+		$percentages = array('');
 		if (isset($_REQUEST["shortcode_mode_edit"])) {
 			if (isset($_REQUEST["shortcode_mode_edit"]['color'])) {
 				$colors = explode('^', $_REQUEST["shortcode_mode_edit"]['color']);
