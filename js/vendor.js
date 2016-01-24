@@ -1334,8 +1334,6 @@ typeof c.getElementsByClassName&&(r=!1);var f=d=null,e=null;r?(d=c.getElementsBy
 /*
  * Textislide.js.custom
  * MIT licensed
- *
- * Copyright (C) 2012-2014 Shady
  */
 (function($, window) {
 
