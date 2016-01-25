@@ -187,14 +187,3 @@ function tmm_uniqid() {
 		uniqid = Math.random() * d.getTime();
 	return Math.round(uniqid);
 }
-
-/**
- * Added for Accio Theme
- */
-function selectwrap() {
-    if (jQuery('select').length) {
-        jQuery('select').each(function(idx, val) {
-            jQuery(val).wrap('<div class="sel">');
-        });
-    }
-};

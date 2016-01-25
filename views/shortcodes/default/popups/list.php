@@ -163,7 +163,6 @@
 	jQuery(function() {
 
 		colorizator();
-		selectwrap();
 
 		jQuery("#list_items").sortable({
 			stop: function(event, ui) {

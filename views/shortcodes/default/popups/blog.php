@@ -107,8 +107,6 @@
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
 
-		selectwrap();
-
 	});
 </script>
 
