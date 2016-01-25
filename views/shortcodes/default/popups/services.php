@@ -76,73 +76,20 @@
 					<table class="list-table">
 						<tr>
 							<td>
+								<h5 class="label"><?php _e('Icon View', TMM_CC_TEXTDOMAIN); ?></h5>
 								<i class="ca-icon <?php echo (isset($icons_edit_data[$key])) ? $icons_edit_data[$key] : 'con-paper-plane-2' ?>"></i>
 							</td>
 							<td>
 								<?php
 								TMM_Content_Composer::html_option(array(
 									'type' => 'select',
-									'title' => '',
+									'title' => __('Select Icon', TMM_CC_TEXTDOMAIN),
                                     'shortcode_field' => 'list_item_icon',
 									'id' => '',
 									'options' => $type_array,
 									'default_value' => (isset($icons_edit_data[$key])) ? $icons_edit_data[$key] : 'con-paper-plane-2',
 									'description' => '',
 									'css_classes' => 'list_item_icon'
-								));
-								?>
-								
-                                <?php                               
-                                
-								TMM_Content_Composer::html_option(array(
-									'title' => __('Text Color', TMM_CC_TEXTDOMAIN),
-									'shortcode_field' => 'list_item_color['.$key.']',
-									'type' => 'color',
-									'description' => '',
-									'default_value' => (isset($list_item_color[$key*4]) && !empty($list_item_color[$key*4])) ? TMM_Content_Composer::set_default_value('list_item_color',  $list_item_color[$key*4]) : '#fff',
-									'id' => '',
-									'css_classes' => 'list_item_color',
-									'display' => $value_type == 1 ? 1 : 0
-								));
-								?>
-								
-                                <?php
-								TMM_Content_Composer::html_option(array(
-									'title' => __('Background Color', TMM_CC_TEXTDOMAIN),
-									'shortcode_field' => 'list_item_color['.$key.']',
-									'type' => 'color',
-									'description' => '',
-									'default_value' => (isset($list_item_color[$key*4+1])) ? TMM_Content_Composer::set_default_value('list_item_bgcolor',  $list_item_color[$key*4+1]) : '#f85c37',
-									'id' => '',
-									'css_classes' => 'list_item_color',
-									'display' => $value_type == 1 ? 1 : 0
-								));
-								?>                                                       
-                                
-                                <?php
-                                
-								TMM_Content_Composer::html_option(array(
-									'title' => __('Text Hover Color', TMM_CC_TEXTDOMAIN),
-									'shortcode_field' => 'list_item_color['.$key.']',
-									'type' => 'color',
-									'description' => '',
-									'default_value' => (isset($list_item_color[$key*4+2])) ? TMM_Content_Composer::set_default_value('list_item_hover_textcolor',  $list_item_color[$key*4+2]) : '#fff',
-									'id' => '',
-									'css_classes' => 'list_item_color',
-									'display' => $value_type == 1 ? 1 : 0
-								));
-								?>
-                                                                
-                                <?php
-								TMM_Content_Composer::html_option(array(
-									'title' => __('Background Hover Color', TMM_CC_TEXTDOMAIN),
-									'shortcode_field' => 'list_item_hover_bgcolor['.$key.']',
-									'type' => 'color',
-									'description' => '',
-									'default_value' => (isset($list_item_color[$key*4+3])) ? TMM_Content_Composer::set_default_value('list_item_hover_bgcolor',  $list_item_color[$key*4+3]) : '#262626',
-									'id' => '',
-									'css_classes' => 'list_item_color',
-									'display' => $value_type == 1 ? 1 : 0
 								));
 								?>
                                                             
@@ -152,13 +99,8 @@
 								<h5 class="label"><?php _e('Title', TMM_CC_TEXTDOMAIN); ?></h5>
 								<input type="text" value="<?php echo (isset($titles_edit_data[$key])) ? $titles_edit_data[$key] : '' ?>" class="list_item_title js_shortcode_template_changer data-input" style="width: 100%;" /><br />
                                 
-                                <div class="colorized_hover_title" <?php echo ($value_type==0) ? 'style="display:none"' : '' ?>>
-                                    <h5 class="label"><?php _e('Hover Title', TMM_CC_TEXTDOMAIN); ?></h5>
-                                    <input type="text" value="<?php echo (isset($hover_titles_edit_data[$key])) ? $hover_titles_edit_data[$key] : '' ?>" class="list_item_hover_title js_shortcode_template_changer data-input" style="width: 100%;" /><br />
-                                </div>
-                                
-								<h5 class="label title_content" <?php echo ($value_type==1) ? 'style="display:none"' : '' ?>><?php  _e('Content', TMM_CC_TEXTDOMAIN); ?></h5>								
-								<h5 class="label hover_title_content" <?php echo ($value_type==0) ? 'style="display:none"' : '' ?>><?php  _e('Hover Content', TMM_CC_TEXTDOMAIN); ?></h5>								
+								<h5 class="label title_content" <?php echo ($icons_edit_data[$key]==1) ? 'style="display:none"' : '' ?>><?php  _e('Content', TMM_CC_TEXTDOMAIN); ?></h5>
+								<h5 class="label hover_title_content" <?php echo ($icons_edit_data[$key]==0) ? 'style="display:none"' : '' ?>><?php  _e('Hover Content', TMM_CC_TEXTDOMAIN); ?></h5>
 								<textarea class="list_item_content js_shortcode_template_changer data-area" style="width: 100%; min-height: 50px;"><?php echo $content_edit_text ?></textarea>
 							</td>
 							<td>
