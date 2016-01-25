@@ -561,13 +561,13 @@ class TMM_Content_Composer {
 				<?php if (!empty($data['title'])): ?>
 				<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
 			<?php endif; ?>
-
 				<div class="radio-holder">
-					<input <?php if ($data['values'][0]['checked'] == 1): ?>checked=""<?php endif; ?> type="radio" name="<?php echo $data['name'] ?>" id="<?php echo $data['values'][0]['id'] ?>" value="<?php echo $data['values'][0]['value'] ?>" class="js_shortcode_radio_self_update" />
-					<label for="<?php echo $data['values'][0]['id'] ?>" class="label-form"><span></span><?php echo $data['values'][0]['title'] ?></label>
-
-					<input <?php if ($data['values'][1]['checked'] == 1): ?>checked=""<?php endif; ?> type="radio" name="<?php echo $data['name'] ?>" id="<?php echo $data['values'][1]['id'] ?>" value="<?php echo $data['values'][1]['value'] ?>" class="js_shortcode_radio_self_update" />
-					<label for="<?php echo $data['values'][1]['id'] ?>" class="label-form"><span></span><?php echo $data['values'][1]['title'] ?></label>
+					<?php if (is_array($data['values'])) { ?>
+						<?php foreach ($data['values'] as $k => $v) { ?>
+							<input <?php checked($v['checked'], 1); ?> type="radio" id="<?php echo $v['id'] ?>" name="<?php echo $data['name'] ?>" value="<?php echo $v['value'] ?>" class="js_shortcode_radio_self_update" />
+							<label for="<?php echo $v['id'] ?>" class="label-form"><span></span><?php echo $v['title'] ?></label>
+						<?php } ?>
+					<?php } ?>
 
 					<input type="hidden" id="<?php echo @$data['hidden_id'] ?>" value="<?php echo $data['value'] ?>" class="js_shortcode_template_changer" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
 				</div><!--/ .radio-holder-->
