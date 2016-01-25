@@ -100,22 +100,12 @@
 	<div class="one-half">
 		
 		<?php
-		$css_animation_array = array(
-			'' => 'None',
-			'opacity' => __('Opacity', TMM_CC_TEXTDOMAIN),
-			'scale' => __('Scale', TMM_CC_TEXTDOMAIN),
-			'slideRight' => __('SlideRight', TMM_CC_TEXTDOMAIN),
-			'slideLeft' => __('SlideLeft', TMM_CC_TEXTDOMAIN),
-			'slideDown' => __('SlideDown', TMM_CC_TEXTDOMAIN),
-			'slideUp' => __('SlideUp', TMM_CC_TEXTDOMAIN),
-		);
-
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => __('Animation', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'animation',
 			'id' => '',
-			'options' => $css_animation_array,
+			'options' => TMM_Content_Composer::css_animation_array(),
 			'default_value' => TMM_Content_Composer::set_default_value('animation', ''),
 			'description' => 'Waypoints is a jQuery plugin that makes it easy to execute a function whenever you scroll to an element.'
 		));
