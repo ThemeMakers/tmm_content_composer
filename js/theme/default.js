@@ -442,11 +442,11 @@ function merge_objects_options(obj1, obj2) {
 
                 $tabsHolder.each(function(i, val) {
 
-                    var $tabsNav = $('.tabs-nav', val),
+                    var $tabsNav = $('.lc-tabs-nav', val),
                         eventtype = Modernizr.touch ? 'touchstart' : 'click';
 
                     $tabsNav.each(function() {
-                        $(this).next().children('.tab-content').first().stop(true, true).show();
+                        $(this).next().children('.lc-tab-content').first().stop(true, true).show();
                         $(this).children('li').first().addClass('active').stop(true, true).show();
                     });
 
@@ -455,7 +455,7 @@ function merge_objects_options(obj1, obj2) {
                         var $this = $(this).parent('li'),
                             $index = $this.index();
                         $this.siblings().removeClass('active').end().addClass('active');
-                        $this.parent().next().children('.tab-content').stop(true, true).hide().eq($index).stop(true, true).fadeIn(250);
+                        $this.parent().next().children('.lc-tab-content').stop(true, true).hide().eq($index).stop(true, true).fadeIn(250);
                         e.preventDefault();
                     });
                 });

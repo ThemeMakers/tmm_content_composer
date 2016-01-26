@@ -5,17 +5,17 @@ $content_array = explode('^', $content);
 ?>
 
 <?php if (!empty($content_array)): ?>
-	<div class="lc-tabs-holder <?php echo esc_attr($type_style) ?>">
+	<div class="lc-tabs-holder">
 
-		<ul class="tabs-nav clearfix">
+		<ul class="lc-tabs-nav">
 			<?php foreach ($titles_array as $key => $value) : ?>
 				<li><h3><?php echo esc_html($value) ?></h3></li>
 			<?php endforeach; ?>		
 		</ul>
 
-		<div class="tabs-container clearfix">
+		<div class="lc-tabs-container">
 			<?php foreach ($content_array as $key => $value) : ?>
-				<div class="tab-content">
+				<div class="lc-tab-content">
 					<p><?php echo do_shortcode($value) ?></p>
 				</div><!--/ .tab-content-->
 			<?php endforeach; ?>

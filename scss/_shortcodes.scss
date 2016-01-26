@@ -774,7 +774,7 @@ blockquote {
 		color: $tabs-holder-brd-color;
 	};
 
-	.tabs-nav {
+	.lc-tabs-nav {
 		border-bottom: {
 			width: $tabs-nav-brd-width;
 			style: $tabs-nav-brd-style;
@@ -824,9 +824,9 @@ blockquote {
 		}
 	}
 
-	.tabs-container { overflow: hidden; }
+	.lc-tabs-container { overflow: hidden; }
 
-	.tab-content {
+	.lc-tab-content {
 		display: none;
 		padding: 20px 0 0;
 
