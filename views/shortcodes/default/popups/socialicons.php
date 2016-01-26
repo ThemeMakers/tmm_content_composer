@@ -26,9 +26,10 @@
 			'stumbleupon' => 'Stubleupon',
             'deviantart' => 'Deviantart',
             'github' => 'Github',          
-			'mail' => 'Email'
-                    );
-		
+			'mail' => 'Email',
+			'wordpress' => 'WordPress'
+        );
+
 		$social_types = array('facebook');
 		$links = array('#');
 		if (isset($_REQUEST["shortcode_mode_edit"])) {
