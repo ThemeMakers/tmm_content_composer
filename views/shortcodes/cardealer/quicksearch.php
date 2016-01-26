@@ -22,7 +22,7 @@ $styles = '';
 
 // Background Color
 if (!empty($bg_color)) {
-	$styles.="background-color: " . $bg_color . "; ";
+	$styles .= "background-color: " . $bg_color . "; ";
 }
 
 // Styles
@@ -39,7 +39,7 @@ if (isset($search_widget_offset) && $search_widget_offset === 'none') {
 }
 
 if (isset($show_in_one_col)) {
-	$widget_class .= ' one-column';
+	$widget_class = ' one-column';
 }
 
 if (isset($_GET['car_condition'])) {
