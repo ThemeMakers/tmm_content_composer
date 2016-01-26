@@ -1,8 +1,6 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
 $inique_id = uniqid();
-wp_enqueue_script('tmm_theme_map_api_js', 'https://maps.googleapis.com/maps/api/js?sensor=false');
-wp_enqueue_script('tmm_composer_front');
 
 if (!isset($mode)) {
 	$mode = 'map';
@@ -49,7 +47,10 @@ if (!isset($marker_is_draggable)) {
 }
 ?>
 
-<?php if ($mode == 'map'): ?>
+<?php if ($mode == 'map'):
+	wp_enqueue_script('tmm_theme_map_api_js', 'https://maps.googleapis.com/maps/api/js?sensor=false');
+	wp_enqueue_script('tmm_composer_front');
+	?>
 
 	<div class="google_map" id="google_map_<?php echo $inique_id ?>" style="height: <?php echo $height ?>px;"></div>
 
@@ -67,8 +68,13 @@ if (!isset($marker_is_draggable)) {
 
 	$location_mode_string = 'center=' . $latitude . ',' . $longitude;
 	?>
-
-	<img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&amp;zoom=<?php echo $zoom ?>&amp;maptype=<?php echo strtolower($maptype) ?>&amp;size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&amp;sensor=false" alt="">
+	<script type="text/javascript">
+	jQuery(window).on('load', function(){
+		jQuery('.google_image_<?php echo $inique_id ?>')
+			.html('<img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&amp;zoom=<?php echo $zoom ?>&amp;maptype=<?php echo strtolower($maptype) ?>&amp;size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&amp;sensor=false" alt="">');
+	});
+	</script>
+	<div class="google_image_<?php echo $inique_id ?>"></div>
 
 <?php endif;
 

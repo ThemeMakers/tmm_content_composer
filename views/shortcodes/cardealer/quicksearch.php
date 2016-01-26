@@ -133,13 +133,8 @@ $uniqid = uniqid();
 					<?php if (!empty($show_location0)) { ?>
 						<p>
 							<label for="tmm_qs_location0_<?php echo $uniqid; ?>"><?php _e($locations_captions_on_search_widget[0], TMM_CC_TEXTDOMAIN); ?>:</label>
-							<select id="tmm_qs_location0_<?php echo $uniqid; ?>" name="carlocation[0]" class="qs_carlocation0 carlocations">
+							<select id="tmm_qs_location0_<?php echo $uniqid; ?>" name="carlocation[0]" class="qs_carlocation0 carlocations" data-location0="<?php echo (int) $carlocation[0] ?>">
 								<option value="0"><?php _e("Any", TMM_CC_TEXTDOMAIN) ?></option>
-								<?php
-								$_REQUEST['location_id'] = 0;
-								$_REQUEST['level'] = 0;
-								TMM_Ext_PostType_Car::draw_quicksearch_locations(false, $carlocation[0]); //print options of select
-								?>
 							</select>
 						</p>
 					<?php } else if(!empty($show_location1) || !empty($show_location2)) { ?>
@@ -166,20 +161,14 @@ $uniqid = uniqid();
 								if ($i > 1 && isset($carlocation[$i - 1])) {
 									$parent_id = $carlocation[$i - 1];
 								}
+
+
+								$data_attr = ' data-location'.($i-1).'="' . $carlocation[$i-1] . '" data-location'.$i.'="' . (isset($carlocation[$i]) ? $carlocation[$i] : 0) . '"';
 								?>
 								<p>
 									<label for="tmm_qs_location<?php echo $i.'_'.$uniqid; ?>"><?php _e($locations_captions_on_search_widget[$i], TMM_CC_TEXTDOMAIN); ?>:</label>
-									<select id="tmm_qs_location<?php echo $i.'_'.$uniqid; ?>" class="qs_carlocation<?php echo $i ?> carlocations" name="carlocation[<?php echo $i ?>]" data-level="<?php echo ($i ) ?>">
+									<select id="tmm_qs_location<?php echo $i.'_'.$uniqid; ?>" class="qs_carlocation<?php echo $i ?> carlocations" name="carlocation[<?php echo $i ?>]" data-level="<?php echo ($i ) ?>"<?php echo $data_attr ?>>
 										<option value="0"><?php _e("Any", TMM_CC_TEXTDOMAIN) ?></option>
-										<?php
-										$_REQUEST['parent_id'] = $parent_id;
-										$_REQUEST['level'] = $i;
-										$selected = 0;
-										if (isset($carlocation[$i])) {
-											$selected = $carlocation[$i];
-										}
-										TMM_Ext_PostType_Car::draw_quicksearch_locations(false, $selected); //print options of select
-										?>
 									</select>
 								</p>
 
@@ -220,6 +209,19 @@ $uniqid = uniqid();
 
 				</fieldset>
 
+				<?php
+				if(isset($carlocation[2])){
+					$_level = 3;
+					$_selected_region_id = $carlocation[2];
+				}else if(isset($carlocation[1])){
+					$_level = 2;
+					$_selected_region_id = $carlocation[1];
+				}else{
+					$_level = 0;
+					$_selected_region_id = 0;
+				}
+				?>
+
 				<!-- Make & Model-->
 				<?php if (!empty($show_makes)) { ?>
 				<fieldset>
@@ -227,50 +229,16 @@ $uniqid = uniqid();
 						<div class="col-xs-6">
 							<p>
 								<label for="tmm_qs_make_<?php echo $uniqid; ?>"><?php _e("Make", TMM_CC_TEXTDOMAIN) ?>:</label>
-								<select id="tmm_qs_make_<?php echo $uniqid; ?>" class="qs_carproducer" name="carproducer">
+								<select id="tmm_qs_make_<?php echo $uniqid; ?>" class="qs_carproducer" name="carproducer" data-make="<?php echo (int) $carproducer ?>" data-location="<?php echo (int) $carlocation[0] ?>" data-region="<?php echo (int) $_selected_region_id ?>" data-level="<?php echo (int) $_level ?>">
 									<option value="0"><?php _e("Any", TMM_CC_TEXTDOMAIN) ?></option>
-									<?php
-									$_REQUEST['location_id'] = $carlocation[0];
-									if(isset($carlocation[2])){
-										$_REQUEST['level'] = 3;
-										$_REQUEST['selected_region_id'] = $carlocation[2];
-									}else if(isset($carlocation[1])){
-										$_REQUEST['level'] = 2;
-										$_REQUEST['selected_region_id'] = $carlocation[1];
-									}else{
-										$_REQUEST['level'] = 0;
-										$_REQUEST['selected_region_id'] = 0;
-									}
-									?>
-									<?php echo TMM_Ext_PostType_Car::draw_quicksearch_producers(false, $carproducer); ?>
 								</select>
 							</p>
 						</div>
 						<div class="col-xs-6">
 							<p>
 								<label for="tmm_qs_model_<?php echo $uniqid; ?>"><?php _e("Model", TMM_CC_TEXTDOMAIN) ?>:</label>
-								<select id="tmm_qs_model_<?php echo $uniqid; ?>" class="qs_carmodel" name="carmodels" <?php if ($carproducer == 0) { ?>disabled=""<?php } ?>>
+								<select id="tmm_qs_model_<?php echo $uniqid; ?>" class="qs_carmodel" name="carmodels" <?php if ($carproducer == 0) { ?>disabled=""<?php } ?>  data-make="<?php echo (int) $carproducer ?>" data-location="<?php echo (int) $carlocation[0] ?>" data-region="<?php echo (int) $_selected_region_id ?>" data-level="<?php echo (int) $_level ?>" data-model="<?php echo (int) $carmodels ?>">
 									<option value="0"><?php _e("Any", TMM_CC_TEXTDOMAIN) ?></option>
-									<?php
-									if ($carproducer > 0) {
-
-										$_REQUEST['producer_id'] = $carproducer;
-										$_REQUEST['location_id'] = $carlocation[0];
-										$_REQUEST['selected_model'] = $carmodels;
-										if(isset($carlocation[2])){
-											$_REQUEST['level'] = 3;
-											$_REQUEST['selected_region_id'] = $carlocation[2];
-										}else if(isset($carlocation[1])){
-											$_REQUEST['level'] = 2;
-											$_REQUEST['selected_region_id'] = $carlocation[1];
-										}else{
-											$_REQUEST['level'] = 0;
-											$_REQUEST['selected_region_id'] = 0;
-										}
-
-										echo TMM_Ext_PostType_Car::draw_quicksearch_models(false);
-
-									} ?>
 								</select>
 							</p>
 						</div>

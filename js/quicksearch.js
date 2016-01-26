@@ -1,5 +1,110 @@
 jQuery(document).ready(function() {
 	if (jQuery('.car_form_search').length) {
+
+		/* load locations 0 level */
+		var loc_0 = jQuery('.qs_carlocation0');
+
+		if (loc_0.length) {
+
+			var data = {
+				action: "app_cardealer_draw_quicksearch_locations",
+				parent_id: 0,
+				level: 0,
+				selected_region: loc_0.eq(0).data('location0')
+			};
+
+			jQuery.post(ajaxurl, data, function(response) {
+				if (response && response != '0') {
+					loc_0.append(response);
+				}
+			});
+
+		}
+
+		/* load locations 1 level */
+		var loc_1 = jQuery('.qs_carlocation1');
+
+		if (loc_1.length && loc_1.eq(0).data('location0') > 0) {
+
+			var data = {
+				action: "app_cardealer_draw_quicksearch_locations",
+				parent_id: loc_1.eq(0).data('location0'),
+				level: loc_1.eq(0).data('level'),
+				selected_region: loc_1.eq(0).data('location1')
+			};
+
+			jQuery.post(ajaxurl, data, function(response) {
+				if (response && response != '0') {
+					loc_1.append(response);
+				}
+			});
+
+		}
+
+		/* load locations 2 level */
+		var loc_2 = jQuery('.qs_carlocation2');
+
+		if (loc_2.length && loc_2.eq(0).data('location1') > 0) {
+
+			var data = {
+				action: "app_cardealer_draw_quicksearch_locations",
+				parent_id: loc_2.eq(0).data('location1'),
+				level: loc_2.eq(0).data('level'),
+				selected_region: loc_2.eq(0).data('location2')
+			};
+
+			jQuery.post(ajaxurl, data, function(response) {
+				if (response && response != '0') {
+					loc_2.append(response);
+				}
+			});
+
+		}
+
+		/* load makes */
+		var $make = jQuery('.qs_carproducer');
+
+		if ($make.length) {
+
+			var data = {
+				action: "app_cardealer_draw_quicksearch_producers",
+				location_id: $make.eq(0).data('location'),
+				selected_region_id: $make.eq(0).data('region'),
+				selected_producer_id: $make.eq(0).data('make'),
+				selected_model: $make.eq(0).data('model'),
+				level: $make.eq(0).data('level')
+			};
+
+			jQuery.post(ajaxurl, data, function(response) {
+				if (response && response != '0') {
+					$make.append(response);
+				}
+			});
+
+		}
+
+		/* load models */
+		var $model = jQuery('.qs_carmodel');
+
+		if ($model.length && $model.eq(0).data('make') > 0) {
+
+			var data = {
+				action: "app_cardealer_draw_quicksearch_models",
+				producer_id: $model.eq(0).data('make'),
+				selected_model: $model.eq(0).data('model'),
+				location_id: $model.eq(0).data('location'),
+				selected_region_id: $model.eq(0).data('region'),
+				level: $model.eq(0).data('level')
+			};
+
+			jQuery.post(ajaxurl, data, function(response) {
+				if (response && response != '0') {
+					$model.append(response);
+				}
+			});
+
+		}
+
 		var app_cardealer_widget_quicksearch = new THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH();
 		app_cardealer_widget_quicksearch.init();
 	}
