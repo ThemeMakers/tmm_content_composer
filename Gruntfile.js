@@ -9,17 +9,8 @@ module.exports = function(grunt) {
 					'js/front.min.js': [
 						'js/theme/default.js'
 					],
-					'js/plugins/min/owl.carousel.min.js': [
-						'js/plugins/owl.carousel.js'
-					],
-					'js/plugins/min/jquery.masonry.min.js': [
-						'js/plugins/jquery.masonry.js'
-					],
 					'js/plugins/min/jquery.modernizr.min.js': [
 						'js/plugins/jquery.modernizr.js'
-					],
-					'js/plugins/min/jquery.tooltipster.min.js': [
-						'js/plugins/jquery.tooltipster.js'
 					]
 				}
 			}

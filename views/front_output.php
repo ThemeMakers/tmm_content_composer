@@ -1,202 +1,90 @@
+<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
+
 <?php
-if (!defined('ABSPATH')) die('No direct access allowed');
-global $post;
+$groups_array = array();
 
-$first_row = current($tmm_layout_constructor_row);
+if (!empty($tmm_layout_constructor_row)) {
+    foreach ($tmm_layout_constructor_row as $key => $value) {
+        $value['columns'] = $tmm_layout_constructor[$key];
+        if( !isset($value['row_group']) ) {
+            #var_dump($value);
+            $value['row_group'] = 0;
+        }
+        $groups_array[$value['row_group']][] = $value;
+    }
+}
 
-foreach ($tmm_layout_constructor as $row => $row_data) {   
-    
-    if (!empty($row_data) && ($tmm_layout_constructor_row[$row]['lc_displaying']==$row_displaying)) {
-        
-		$row_style = TMM_Layout_Constructor::get_row_bg($tmm_layout_constructor_row, $row);
-		
-		$section_class = 'section';
-		$display_overlay = false;
+if (!empty($groups_array)) {
 
-		/* Offset Options */
-		if ($tmm_layout_constructor_row[$row]['padding_top'] === '0' && $tmm_layout_constructor_row[$row]['padding_bottom'] === '0') {
-			$section_class .= ' padding-off';
-		}
+    foreach ($groups_array as $group => $rows) {
 
-		if ($tmm_layout_constructor_row[$row]['section_content']=='1'){
-			$section_class .=' section-content';
-		}
-		if ($tmm_layout_constructor_row[$row]['bg_type']=='none'){
-			$section_class .=' background-color-off';
-		}
-		if ($tmm_layout_constructor_row[$row]['full_width'] == 1 && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
-			$section_class .= ' theme-default-bg';
-		}
+        if (!empty($rows)) {
 
-		$margin_top = (isset($tmm_layout_constructor_row[$row]['margin_top'])) ? $tmm_layout_constructor_row[$row]['margin_top'] : '';
-		$margin_bottom = (isset($tmm_layout_constructor_row[$row]['margin_bottom'])) ? $tmm_layout_constructor_row[$row]['margin_bottom'] : '';
+            $border_bottom_css = "";
+            @$border_bottom_color = $tmm_layout_constructor_group[$group]['border_bottom_color'];
 
-		$section_style_attr = '';
-		if ($margin_top != '0'){
-			$section_style_attr .= 'margin-top:' . $margin_top . 'px;';
-		}
-		if ($margin_bottom != '0'){
-			$section_style_attr .= 'margin-bottom:' . $margin_bottom . 'px;';
-		}
+            if (!empty($border_bottom_color)) {
+                $border_bottom_css = "border-color:" . $border_bottom_color.';';
+            }
 
-		/* background */
-		if (!empty($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] !== 'none') {
+            @$padding_top = $tmm_layout_constructor_group[$group]['padding_top'];
+            @$padding_bottom = $tmm_layout_constructor_group[$group]['padding_bottom'];
 
-			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'image' && !empty($tmm_layout_constructor_row[$row]['bg_image'])) {
-				$section_class .= ' parallax';
-				$section_style_attr .= 'background-image: url(' . $tmm_layout_constructor_row[$row]["bg_image"] . ');';
+            $is_mobile_touch = "";
 
-				if (!empty($tmm_layout_constructor_row[$row]['bg_attachment'])) {
-					$section_class .= ' bg-scroll';
-				}
+            if (@$tmm_layout_constructor_group[$group]['is_parallax'] AND @!empty($tmm_layout_constructor_group[$group]['bg_touch_image'])) {
+                $is_mobile_touch = 1;
+            }
 
-			}
+            ?>
 
-			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'image'  && !empty($tmm_layout_constructor_row[$row]['overlay'])) {
-				$display_overlay = true;
-				$overlay_style_attr = '';
+            <section class="section <?php if ($is_mobile_touch): ?>mobile-video-image<?php endif; ?> <?php if (!empty($padding_top)): ?> padding-top-off<?php endif; ?><?php if (!empty($padding_bottom)): ?> padding-bottom-off<?php endif; ?><?php if (@!empty($tmm_layout_constructor_group[$group]['is_parallax'])): ?> parallax<?php endif; ?><?php if (!empty($border_bottom_color)): ?> border<?php endif; ?><?php if ($tmm_layout_constructor_group[$group]['bg_attachment']): ?> bg_attachment<?php endif; ?>" style="<?php if (@!empty($tmm_layout_constructor_group[$group]['bg_color'])): ?>background-color: <?php echo @$tmm_layout_constructor_group[$group]['bg_color'] ?>;<?php endif; ?><?php echo $border_bottom_css ?>">
 
-				if (!empty($tmm_layout_constructor_row[$row]['bg_overlay_color'])) {
-					$overlay_style_attr .= TMM_Content_Composer::hex2RGB($tmm_layout_constructor_row[$row]['bg_overlay_color'], true);
-				} else {
-					$overlay_style_attr .= '0,0,0';
-				}
+                <?php if (@$tmm_layout_constructor_group[$group]['is_overlay']): ?>
+                    <div class="parallax-overlay"></div>
+                <?php endif; ?>
 
-				if (isset($tmm_layout_constructor_row[$row]['bg_overlay_opacity'])) {
-					$overlay_style_attr .= ',' . intval($tmm_layout_constructor_row[$row]['bg_overlay_opacity']) / 100;
-				} else {
-					$overlay_style_attr .= ',1';
-				}
+                <?php if (@!empty($tmm_layout_constructor_group[$group]['bg_image'])): ?>
 
-				if (!empty($overlay_style_attr)) {
-					$overlay_style_attr = ' style="background-color:rgba(' . $overlay_style_attr . ')"';
-				}
-			}
+                    <div class="full-bg-image <?php if ($tmm_layout_constructor_group[$group]['bg_attachment']): ?>full-bg-image-fixed<?php endif; ?>" style="background-image: url(<?php echo @$tmm_layout_constructor_group[$group]['bg_image'] ?>); opacity: <?php echo (@$tmm_layout_constructor_group[$group]['opacity'] / 100) ?>; filter: alpha(opacity = <?php echo @$tmm_layout_constructor_group[$group]['opacity'] ?>);"></div>
 
-			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'video' && !empty($tmm_layout_constructor_row[$row]['bg_video'])) {
-				$video_type = TMM_Layout_Constructor::get_video_type($tmm_layout_constructor_row[$row]['bg_video']);
+                <?php endif; ?>
 
-				$top = ($post->post_type=='page' && empty($post->post_content) && $first_row['bg_custom_type']=='video') ? '0' : '100px';
-				$video_options=array(
-					'video_url' => $tmm_layout_constructor_row[$row]['bg_video'],
-					'bg_cover' => isset($tmm_layout_constructor_row[$row]['bg_cover']) ? $tmm_layout_constructor_row[$row]['bg_cover'] : '',
-					'video_type' => $video_type,
-					'video_quality' => 'default',
-					'top' => $top,
-					'panel' => $tmm_layout_constructor_row[$row]['bg_video_panel'],
-					'mute' => $tmm_layout_constructor_row[$row]['bg_video_mute'],
-					'loop' => $tmm_layout_constructor_row[$row]['bg_video_loop'],
-					'containment' => '#section_'.$row
-				);
+                <?php if (@$tmm_layout_constructor_group[$group]['is_parallax'] AND !(empty($tmm_layout_constructor_group[$group]['bg_touch_image']))): ?>
 
-				echo TMM_Layout_Constructor::display_rowbg_video($video_options);
-			}
+                    <div class="full-bg-image" style="background-image: url(<?php echo @$tmm_layout_constructor_group[$group]['bg_touch_image'] ?>);"></div>
 
-			if ($tmm_layout_constructor_row[$row]['bg_custom_type'] == 'color' && !empty($tmm_layout_constructor_row[$row]['bg_color'])) {
+                <?php endif; ?>
 
-				$section_style_attr .= 'background:'.$tmm_layout_constructor_row[$row]['bg_color'].'; ';
+                <div <?php if (!@$tmm_layout_constructor_group[$group]['is_full_width']): ?>class="container"<?php endif; ?>>
 
-			}
+                    <?php foreach ($rows as $row): ?>
 
-		}
+                        <div <?php if (!@$tmm_layout_constructor_group[$group]['is_full_width']): ?>class="row"<?php endif; ?>>
+                            <?php if (!empty($row) AND is_array($row)): ?>
+                                <?php if (!empty($row['columns']) AND is_array($row['columns']) AND !empty($row['columns'])): ?>
 
-		/* wrap section and row styles */
-		if (!empty($section_style_attr)) {
-			$section_style_attr = ' style="' . $section_style_attr . '"';
-		}
+                                    <?php foreach ($row['columns'] as $col_id => $column) : ?>
+                                        <div class="<?php if (!@$tmm_layout_constructor_group[$group]['is_full_width']) echo $column['front_css_class'] . ' ' ?><?php echo $column['grid_class'] ?>">
+                                            <?php echo preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
+                                        </div>
+                                    <?php endforeach; ?>
 
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        </div><!--/ .row-->
 
-		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){
-			?>
+                    <?php endforeach; ?>
 
-			<div class="container">
+                </div><!--/ .container-->
 
-		<?php
-		}
-		?>
+            </section><!--/ .section-->
 
-	<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
-
-		<?php
-		if ($display_overlay) { ?>
-			<div class="overlay"<?php echo $overlay_style_attr; ?>></div>
-		<?php } ?>
-                
             <?php
+        }
 
-				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
-				$padding_top = (isset($tmm_layout_constructor_row[$row]['padding_top'])) ? $tmm_layout_constructor_row[$row]['padding_top'] : '';
-				$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : '';
-				$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
+    }
 
-				$row_class = 'row';
-				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] == 'default') {
-					$row_class .= ' theme-default-bg';
-				}
+}
 
-				$row_style_attr = '';
-				if (isset($tmm_layout_constructor_row[$row]['bg_type']) && $tmm_layout_constructor_row[$row]['bg_type'] != 'custom' && isset($row_style['style_custom_color'])) {
-					$row_style_attr .= $row_style['style_custom_color'];
-				}
 
-				if ($padding_top != '0') {
-					$row_style_attr .= 'padding-top:'.$padding_top.'px; ';
-				}
-				if ($padding_bottom != '0') {
-					$row_style_attr .= 'padding-bottom:'.$padding_bottom.'px; ';
-				}
-				if (!empty($align) && ($align != 'left')) {
-					$row_style_attr .= 'text-align:'.$align.'; ';
-				}
-				if (!empty($row_style_attr)) {
-					$row_style_attr = ' style="'.$row_style_attr.'"';
-				}
-
-				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && ($row_displaying=='full_width' || $row_displaying == 'before_full_width')){
-					?>
-
-					<div class="container">
-
-					<?php
-				}
-					?>
-
-					<div class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
-
-						<?php foreach ($row_data as $uniqid => $column){
-
-							$content = TMM_Shortcode::remove_empty_tags($column['content']);
-							$content = do_shortcode(shortcode_unautop($content));
-							?>
-							<div class="<?php echo @$column['effect'] ?> <?php echo $column['front_css_class'] ?>"><?php echo $content ?></div>
-
-						<?php } ?>
-
-						<div class="clearfix"></div>
-
-					</div>
-
-					<?php
-				if ($tmm_layout_constructor_row[$row]['content_full_width'] == 0 && $tmm_layout_constructor_row[$row]['full_width'] != 0 && ($row_displaying=='full_width' || $row_displaying == 'before_full_width')){
-					?>
-
-					</div><!--/ .container -->
-
-					<?php
-				}
-
-			?>
-                             
-	</section><!--/ .section -->
-
-    <?php
-		if (($tmm_layout_constructor_row[$row]['full_width'] == 0)&&(($row_displaying=='full_width')||($row_displaying=='before_full_width'))){
-			?>
-
-			</div><!--/ .container-->
-
-		<?php
-		}
-	} 
-
-} 

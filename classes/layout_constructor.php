@@ -28,17 +28,67 @@ class TMM_Layout_Constructor {
 		return $content;
 	}
 
+    public static function extract_assoc_arr_val_by_index($arr, $index) {
+        $counter = 0;
+        $result = array();
+        foreach ($arr as $key => $val) {
+            if ($index == $counter) {
+                $result['key'] = $key;
+                $result['val'] = $val;
+            }
+            $counter++;
+        }
+        return $result;
+    }
+
+    public static function merge_arrays_for_view($row, $group) {
+        $result = array();
+        $index = 0;
+
+        /*if (count($row) < count($group)) {
+            foreach ($group as $key => $value) {
+                $row_arr = ((count($row) - 1) <= $key) ? self::extract_assoc_arr_val_by_index($row, $key) : array('key' => $key , 'val' => array());
+                $result[$row_arr['key']] = array_merge($value, $row_arr['val']);
+            }
+        } else {
+            foreach ($row as $key => $value) {
+                $group[$index] = (isset($group[$index])) ? $group[$index] : array() ;
+                $result[$key] = array_merge($value, $group[$index]);
+                $index++;
+            }
+        }*/
+        foreach ($row as $key => $value) {
+            $group[$index] = (isset($group[$index])) ? $group[$index] : array() ;
+            $result[$key] = array_replace($value, $group[$index]);
+            $index++;
+        }
+
+        return $result;
+    }
+
 	public static function draw_front($post_id, $row_displaying) {
 		$tmm_layout_constructor = get_post_meta($post_id, 'thememakers_layout_constructor', true);
 		if (!empty($tmm_layout_constructor)) {
 			$data = array();
 			$data['row_displaying'] = $row_displaying;
 			$data['tmm_layout_constructor'] = $tmm_layout_constructor;
-			$data['tmm_layout_constructor_row'] = get_post_meta($post_id, 'thememakers_layout_constructor_row', true);
+            $data['tmm_layout_constructor_row'] = get_post_meta($post_id, 'thememakers_layout_constructor_row', true);
+            $data['tmm_layout_constructor_group'] = get_post_meta($post_id, 'tmm_layout_constructor_group', true);
 
-			if (!is_array($data['tmm_layout_constructor_row'])) {
-				$data['tmm_layout_constructor_row'] = array();
-			}
+            foreach ($data['tmm_layout_constructor_row'] as $item) {
+                if (array_key_exists('row_group', $item)) {
+                    $row_group = true;
+                } else {
+                    $row_group = false;
+                }
+            }
+
+            /*if ($row_group) {
+                #$data['tmm_layout_constructor_row'] = self::merge_arrays_for_view($data['tmm_layout_constructor_row'], $data['tmm_layout_constructor_group']);
+                $data['tmm_layout_constructor_row'] = self::merge_arrays_for_view($data['tmm_layout_constructor_row'], $data['tmm_layout_constructor_group']);
+            }*/
+
+            $data['tmm_layout_constructor_row'] = self::merge_arrays_for_view($data['tmm_layout_constructor_row'], $data['tmm_layout_constructor_group']);
 
 			echo TMM::draw_free_page(TMM_CC_DIR . '/views/front_output.php', $data);
 		}
@@ -64,7 +114,7 @@ class TMM_Layout_Constructor {
 			global $post;
 			unset($_POST['tmm_layout_constructor']['__ROW_ID__']); //unset column html template
 			unset($_POST['tmm_layout_constructor_row']['__ROW_ID__']); //unset column html template
-			update_post_meta($post->ID, 'thememakers_layout_constructor', $_POST['tmm_layout_constructor']);
+			#update_post_meta($post->ID, 'thememakers_layout_constructor', $_POST['tmm_layout_constructor']);
 			update_post_meta($post->ID, 'thememakers_layout_constructor_row', $_POST['tmm_layout_constructor_row']);
 		}
 	}

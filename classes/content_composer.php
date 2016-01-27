@@ -128,12 +128,6 @@ class TMM_Content_Composer {
 			<?php
 
 			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/plugins/min/jquery.modernizr.min.js', array('jquery'), false, true);
-
-			wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/plugins/min/jquery.tooltipster.min.js', array('jquery'), false, true);   // TODO: concatenate to front.js
-
-			wp_register_style('tmm_owltransitions', TMM_CC_URL . 'css/owl-carousel.css');
-			wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/plugins/min/owl.carousel.min.js', array('jquery'), false, true);
-
 			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
 
 		}

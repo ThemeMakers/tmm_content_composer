@@ -65,6 +65,7 @@ $tmm_row_options = array(
 	'section_title' => '',
 	'lc_displaying' => 'default',
 	'full_width' => 0,
+	'is_full_width' => 0,
 	'content_full_width' => 0,
 	'padding_top' => 0,
 	'padding_bottom' => 0,
@@ -83,8 +84,15 @@ $tmm_row_options = array(
 	'bg_video_loop' => 1,
 	'bg_fullscreen' => 0,
 	'overlay' => 0,
+	'is_overlay' => 0,
 	'bg_overlay_color' => '#ffffff',
-	'bg_overlay_opacity' => 100
+	'bg_overlay_opacity' => 100,
+	'is_full_width' => 0,
+	'is_parallax' => 0,
+	'border_bottom_color' => '#ffffff',
+	'border_width' => 0,
+    'bg_touch_image' => '',
+    'opacity' => 100
 );
 
 $GLOBALS['tmm_row_options'] = $tmm_row_options;
