@@ -38,8 +38,8 @@ if (isset($search_widget_offset) && $search_widget_offset === 'none') {
 	$widget_class .= ' no-padding';
 }
 
-if (isset($show_in_one_col)) {
-	$widget_class = ' one-column';
+if (!empty($show_in_one_col)) {
+	$widget_class .= ' one-column';
 }
 
 if (isset($_GET['car_condition'])) {
@@ -246,7 +246,7 @@ $uniqid = uniqid();
 				</fieldset>
 				<?php } ?>
 
-				<?php if ($button_position == 1) { ?>
+				<?php if ($button_position == 1 && empty($show_in_one_col)) { ?>
 					<input class="button orange submit-search" type="submit" value="<?php _e("Search", TMM_CC_TEXTDOMAIN) ?>">
 
 					<?php if (!empty($show_advanced_options)) { ?>
@@ -345,7 +345,7 @@ $uniqid = uniqid();
 					</fieldset>
 				<?php } ?>
 
-				<?php if ($button_position == 2) { ?>
+				<?php if ($button_position == 2 && empty($show_in_one_col)) { ?>
 					<input class="button orange submit-search" type="submit" value="<?php _e("Search", TMM_CC_TEXTDOMAIN) ?>">
 
 					<?php if (!empty($show_advanced_options)) { ?>
@@ -470,7 +470,7 @@ $uniqid = uniqid();
 
 				<?php } ?>
 
-				<?php if ($button_position == 3) { ?>
+				<?php if ($button_position == 3 || !empty($show_in_one_col) ) { ?>
 
 					<input class="button orange submit-search" type="submit" value="<?php _e("Search", TMM_CC_TEXTDOMAIN) ?>">
 
