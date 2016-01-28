@@ -12,9 +12,38 @@ foreach ($allows_array as $key => $needle) {
 
 $image_size = "1036*576";
 
+global $is_iphone;
+$is_mobiles = wp_is_mobile() || $is_iphone || stripos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false;
+
+if (isset($cover_id)) {
+	if ($is_mobiles) {
+		$cover_id = (int) $cover_id;
+	} else {
+		$cover_id = '';
+	}
+
+} else {
+	$cover_id = '';
+}
+
+if (isset($cover_image_on_mobiles) && $cover_image_on_mobiles === '1') {
+	if (isset($cover_image) && !$is_mobiles) {
+		$cover_image = '';
+	}
+}
+
+$style = "height: 100%;";
+
+if(($video_type != $allows_array[0]) && ($video_type != $allows_array[1] )){
+	$style .= " display:none;";
+}
+
+$style = 'style="' . $style . '"';
+
+
 ?>
 
-<div style="height: 100%">
+<div class="video_wrapper" <?php echo $style; ?>>
 
 	<?php
 	switch ($video_type) {
@@ -26,7 +55,7 @@ $image_size = "1036*576";
 				$source_code = $source_code[0];
 			}
 			?>
-			<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" type="text/html" width="<?php echo $width ?>" height="<?php echo (!isset($width) || empty($width)) ? '' : $height ?>" src="http://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent"></iframe>
+			<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (!isset($width) || empty($width) || !isset($height)) ? '' : 'height="'.$height.'"';  ?> src="http://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent&amp;rel=0&amp;controls=0&amp;showinfo=0"></iframe>
 			<?php
 
 			break;
@@ -50,13 +79,12 @@ $image_size = "1036*576";
 			$cover = isset($cover_image) ? $cover_image : $cover;
 			?>
 
-			<video  poster="<?php echo $cover ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
+			<video poster="<?php echo esc_url($cover) ?>" controls="controls" <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (isset($height) && !empty($height)) ? 'height="'.$height.'"' : ''; ?>>
 				<source type="video/mp4" src="<?php echo esc_url($source_code) ?>" />
 			</video>
 
 			<?php
 
-			wp_enqueue_style('tmm_mediaelement');
 			wp_enqueue_script('mediaelement');
 			break;
 
@@ -68,12 +96,11 @@ $image_size = "1036*576";
 			$cover = isset($cover_image) ? $cover_image : $cover;
 			?>
 
-			<video poster="<?php echo $cover ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
+			<video poster="<?php echo esc_url($cover) ?>" controls="controls" <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (isset($height) && !empty($height)) ? 'height="'.$height.'"' : ''; ?>>
 				<source type="video/ogg" src="<?php echo esc_url($source_code) ?>" />
 			</video>
 
 			<?php
-			wp_enqueue_style('tmm_mediaelement');
 			wp_enqueue_script('mediaelement');
 			break;
 
@@ -84,12 +111,11 @@ $image_size = "1036*576";
 			$cover = isset($cover_image) ? $cover_image : $cover;
 			?>
 
-			<video poster="<?php echo $cover ?>" controls="controls" width="<?php echo (isset($width) && !empty($width)) ? $width : '100%'; ?>" height="<?php echo (!empty($height)) ? $height : '100%' ?>">
+			<video poster="<?php echo esc_url($cover) ?>" controls="controls" <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (isset($height) && !empty($height)) ? 'height="'.$height.'"' : ''; ?>>
 				<source type="video/webm" src="<?php echo esc_url($source_code) ?>" />
 			</video>
 
 			<?php
-			wp_enqueue_style('tmm_mediaelement');
 			wp_enqueue_script('mediaelement');
 			break;
 
@@ -97,13 +123,13 @@ $image_size = "1036*576";
 			$cover = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, '') : '';
 			if (!empty($cover)) {
 				?>
-				<img src="<?php echo TMM_Content_Composer::resize_image_cover($cover, $image_size); ?>" alt="<?php _e('Unsupported video format', 'tmm_content_composer') ?>" />
+				<img src="<?php echo esc_url(TMM_Content_Composer::resize_image_cover($cover, $image_size)); ?>" alt="<?php esc_attr_e('Unsupported video format', TMM_CC_TEXTDOMAIN) ?>" />
 			<?php
 			}else{
-				_e('Unsupported video format', 'tmm_content_composer');
+				esc_html_e('Unsupported video format', TMM_CC_TEXTDOMAIN);
 			}
 			break;
 	}
-
 	?>
+
 </div>
