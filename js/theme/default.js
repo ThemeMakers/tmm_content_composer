@@ -455,7 +455,7 @@ function merge_objects_options(obj1, obj2) {
                         var $this = $(this).parent('li'),
                             $index = $this.index();
                         $this.siblings().removeClass('active').end().addClass('active');
-                        $this.parent().next().children('.lc-tab-content').stop(true, true).slideUp(150).eq($index).stop(true, true).slideDown(400);
+                        $this.parent().next().children('.lc-tab-content').stop(true, true).slideUp(400).eq($index).stop(true, true).slideDown(400);
                         e.preventDefault();
                     });
                 });
