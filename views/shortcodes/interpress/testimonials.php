@@ -80,7 +80,8 @@
                     dots: false,
                     autoplay: true,
                     autoplayTimeout: "<?php echo esc_js($timeout) ?>",
-                    slideSpeed: "<?php echo esc_js($slidespeed) ?>",
+                   // slideSpeed: "<?php echo esc_js($slidespeed) ?>",
+                    smartSpeed : <?php echo esc_js($slidespeed) ?>,
                     responsiveClass: true,
                     themeClass : "owl-theme-cycle"
 
