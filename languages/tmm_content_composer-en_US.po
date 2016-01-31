@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2015-12-06 15:37+0100\n"
-"PO-Revision-Date: 2015-12-06 15:37+0100\n"
+"POT-Creation-Date: 2016-02-01 00:44+0100\n"
+"PO-Revision-Date: 2016-02-01 00:44+0100\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
@@ -257,145 +257,149 @@ msgid "Below content matching its layout"
 msgstr ""
 
 #: views/meta_panel.php:171
-msgid "Below main content with separate layout options"
+msgid "Before main content with separate layout options"
 msgstr ""
 
-#: views/meta_panel.php:183
+#: views/meta_panel.php:172
+msgid "After main content with separate layout options"
+msgstr ""
+
+#: views/meta_panel.php:184
 msgid "Container Width"
 msgstr ""
 
-#: views/meta_panel.php:187
+#: views/meta_panel.php:188
 msgid "Fixed Width"
 msgstr ""
 
-#: views/meta_panel.php:188 views/shortcodes/default/popups/blockquote.php:12
+#: views/meta_panel.php:189 views/shortcodes/default/popups/blockquote.php:12
 msgid "Full Width"
 msgstr ""
 
-#: views/meta_panel.php:200
+#: views/meta_panel.php:201
 msgid "Container Height"
 msgstr ""
 
-#: views/meta_panel.php:204
-msgid "Auto"
-msgstr ""
-
 #: views/meta_panel.php:205
-#, php-format
-msgid "50% of Screen"
+msgid "Auto"
 msgstr ""
 
 #: views/meta_panel.php:206
 #, php-format
+msgid "50% of Screen"
+msgstr ""
+
+#: views/meta_panel.php:207
+#, php-format
 msgid "100% of Screen"
 msgstr ""
 
-#: views/meta_panel.php:217
+#: views/meta_panel.php:218
 msgid "Content Align"
 msgstr ""
 
-#: views/meta_panel.php:221 views/shortcodes/cardealer/popups/slider.php:48
+#: views/meta_panel.php:222 views/shortcodes/cardealer/popups/slider.php:48
 #: views/shortcodes/default/popups/image.php:118
 #: views/shortcodes/default/popups/title.php:103
 msgid "Left"
 msgstr ""
 
-#: views/meta_panel.php:222 views/shortcodes/cardealer/popups/slider.php:47
+#: views/meta_panel.php:223 views/shortcodes/cardealer/popups/slider.php:47
 #: views/shortcodes/default/popups/image.php:119
 #: views/shortcodes/default/popups/title.php:104
 msgid "Right"
 msgstr ""
 
-#: views/meta_panel.php:223 views/shortcodes/default/popups/image.php:120
+#: views/meta_panel.php:224 views/shortcodes/default/popups/image.php:120
 #: views/shortcodes/default/popups/title.php:105
 msgid "Center"
 msgstr ""
 
-#: views/meta_panel.php:231
+#: views/meta_panel.php:232
 msgid "Border Top"
 msgstr ""
 
-#: views/meta_panel.php:235
+#: views/meta_panel.php:236
 msgid "No Top Border"
 msgstr ""
 
-#: views/meta_panel.php:236
+#: views/meta_panel.php:237
 msgid "Border Style 1"
 msgstr ""
 
-#: views/meta_panel.php:237
+#: views/meta_panel.php:238
 msgid "Border Style 2"
 msgstr ""
 
-#: views/meta_panel.php:238
+#: views/meta_panel.php:239
 msgid "Border Style 3"
 msgstr ""
 
-#: views/meta_panel.php:251
+#: views/meta_panel.php:252
 msgid "Offset Top"
 msgstr ""
 
-#: views/meta_panel.php:255
+#: views/meta_panel.php:256
 msgid "No Top Padding"
 msgstr ""
 
-#: views/meta_panel.php:256 views/meta_panel.php:277
+#: views/meta_panel.php:257 views/meta_panel.php:278
 msgid "20 PX"
 msgstr ""
 
-#: views/meta_panel.php:257 views/meta_panel.php:278
+#: views/meta_panel.php:258 views/meta_panel.php:279
 msgid "40 PX"
 msgstr ""
 
-#: views/meta_panel.php:258 views/meta_panel.php:279
+#: views/meta_panel.php:259 views/meta_panel.php:280
 msgid "60 PX"
 msgstr ""
 
-#: views/meta_panel.php:259 views/meta_panel.php:280
+#: views/meta_panel.php:260 views/meta_panel.php:281
 msgid "80 PX"
 msgstr ""
 
-#: views/meta_panel.php:260 views/meta_panel.php:281
+#: views/meta_panel.php:261 views/meta_panel.php:282
 msgid "100 PX"
 msgstr ""
 
-#: views/meta_panel.php:263
+#: views/meta_panel.php:264
 msgid "Default Value 0px"
 msgstr ""
 
-#: views/meta_panel.php:272
+#: views/meta_panel.php:273
 msgid "Offset Bottom"
 msgstr ""
 
-#: views/meta_panel.php:276
+#: views/meta_panel.php:277
 msgid "No Bottom Padding"
 msgstr ""
 
-#: views/meta_panel.php:284
+#: views/meta_panel.php:285
 msgid "Default Value 20px"
 msgstr ""
 
-#: views/meta_panel.php:296
+#: views/meta_panel.php:297
 msgid "Section Background Type"
 msgstr ""
 
-#: views/meta_panel.php:300
+#: views/meta_panel.php:301
 msgid "Transparent (default)"
 msgstr ""
 
-#: views/meta_panel.php:301 views/shortcodes/default/popups/title.php:153
+#: views/meta_panel.php:302 views/shortcodes/default/popups/title.php:153
 msgid "Color"
 msgstr ""
 
-#: views/meta_panel.php:302 views/shortcodes/default/popups/google_map.php:43
+#: views/meta_panel.php:303 views/shortcodes/default/popups/google_map.php:43
 msgid "Image"
 msgstr ""
 
-#: views/meta_panel.php:316
+#: views/meta_panel.php:317
 msgid "Preinstalled BG Colors"
 msgstr ""
 
-#: views/meta_panel.php:320 views/shortcodes/default/popups/image.php:25
+#: views/meta_panel.php:321 views/shortcodes/default/popups/image.php:25
 #: views/shortcodes/default/popups/image.php:117
 #: views/shortcodes/default/popups/image.php:217
 #: views/shortcodes/default/popups/image.php:238
@@ -407,60 +411,60 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: views/meta_panel.php:321 views/shortcodes/default/popups/image.php:371
+#: views/meta_panel.php:322 views/shortcodes/default/popups/image.php:371
 msgid "White"
 msgstr ""
 
-#: views/meta_panel.php:322
+#: views/meta_panel.php:323
 msgid "Silver"
 msgstr ""
 
-#: views/meta_panel.php:323
+#: views/meta_panel.php:324
 msgid "Light Gray"
 msgstr ""
 
-#: views/meta_panel.php:324
+#: views/meta_panel.php:325
 msgid "Light Blue"
 msgstr ""
 
-#: views/meta_panel.php:325
+#: views/meta_panel.php:326
 msgid "Custom"
 msgstr ""
 
-#: views/meta_panel.php:336
+#: views/meta_panel.php:337
 msgid "Custom Background Color"
 msgstr ""
 
-#: views/meta_panel.php:354
+#: views/meta_panel.php:355
 #: views/shortcodes/cardealer/popups/animated_banner.php:87
 msgid "Background Image"
 msgstr ""
 
-#: views/meta_panel.php:363
+#: views/meta_panel.php:364
 msgid "Background Attachment"
 msgstr ""
 
-#: views/meta_panel.php:367
+#: views/meta_panel.php:368
 msgid "scroll"
 msgstr ""
 
-#: views/meta_panel.php:368
+#: views/meta_panel.php:369
 msgid "fixed"
 msgstr ""
 
-#: views/meta_panel.php:380
+#: views/meta_panel.php:381
 msgid "Overlay"
 msgstr ""
 
-#: views/meta_panel.php:384
+#: views/meta_panel.php:385
 msgid "Set overlay on background image"
 msgstr ""
 
-#: views/meta_panel.php:394
+#: views/meta_panel.php:395
 msgid "Overlay Color"
 msgstr ""
 
-#: views/meta_panel.php:408
+#: views/meta_panel.php:409
 msgid "Overlay Opacity"
 msgstr ""
 
@@ -934,12 +938,12 @@ msgid "View Mode"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:84
-#: views/shortcodes/cardealer/recent_cars.php:68
+#: views/shortcodes/cardealer/recent_cars.php:58
 msgid "Grid View"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:85
-#: views/shortcodes/cardealer/recent_cars.php:71
+#: views/shortcodes/cardealer/recent_cars.php:61
 msgid "List View"
 msgstr ""
 
@@ -1081,118 +1085,118 @@ msgid "Remove"
 msgstr ""
 
 #: views/shortcodes/cardealer/quicksearch.php:137
-#: views/shortcodes/cardealer/quicksearch.php:173
-#: views/shortcodes/cardealer/quicksearch.php:191
-#: views/shortcodes/cardealer/quicksearch.php:213
-#: views/shortcodes/cardealer/quicksearch.php:231
-#: views/shortcodes/cardealer/quicksearch.php:253
-#: views/shortcodes/cardealer/quicksearch.php:327
-#: views/shortcodes/cardealer/quicksearch.php:344
-#: views/shortcodes/cardealer/quicksearch.php:404
-#: views/shortcodes/cardealer/quicksearch.php:421
-#: views/shortcodes/cardealer/quicksearch.php:440
-#: views/shortcodes/cardealer/quicksearch.php:456
-#: views/shortcodes/cardealer/quicksearch.php:479
-#: views/shortcodes/cardealer/quicksearch.php:492
-#: views/shortcodes/cardealer/quicksearch.php:569
+#: views/shortcodes/cardealer/quicksearch.php:171
+#: views/shortcodes/cardealer/quicksearch.php:180
+#: views/shortcodes/cardealer/quicksearch.php:202
+#: views/shortcodes/cardealer/quicksearch.php:233
+#: views/shortcodes/cardealer/quicksearch.php:241
+#: views/shortcodes/cardealer/quicksearch.php:295
+#: views/shortcodes/cardealer/quicksearch.php:312
+#: views/shortcodes/cardealer/quicksearch.php:372
+#: views/shortcodes/cardealer/quicksearch.php:389
+#: views/shortcodes/cardealer/quicksearch.php:408
+#: views/shortcodes/cardealer/quicksearch.php:424
+#: views/shortcodes/cardealer/quicksearch.php:447
+#: views/shortcodes/cardealer/quicksearch.php:460
+#: views/shortcodes/cardealer/quicksearch.php:537
 msgid "Any"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:211
+#: views/shortcodes/cardealer/quicksearch.php:200
 msgid "Condition"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:214
+#: views/shortcodes/cardealer/quicksearch.php:203
 msgid "Only new cars"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:215
+#: views/shortcodes/cardealer/quicksearch.php:204
 msgid "Only damaged cars"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:216
+#: views/shortcodes/cardealer/quicksearch.php:205
 msgid "Only used cars"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:229
+#: views/shortcodes/cardealer/quicksearch.php:231
 msgid "Make"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:251
+#: views/shortcodes/cardealer/quicksearch.php:239
 msgid "Model"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:282
-#: views/shortcodes/cardealer/quicksearch.php:381
-#: views/shortcodes/cardealer/quicksearch.php:507
-#: views/shortcodes/cardealer/quicksearch.php:585
+#: views/shortcodes/cardealer/quicksearch.php:250
+#: views/shortcodes/cardealer/quicksearch.php:349
+#: views/shortcodes/cardealer/quicksearch.php:475
+#: views/shortcodes/cardealer/quicksearch.php:553
 msgid "Search"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:288
-#: views/shortcodes/cardealer/quicksearch.php:387
-#: views/shortcodes/cardealer/quicksearch.php:513
+#: views/shortcodes/cardealer/quicksearch.php:256
+#: views/shortcodes/cardealer/quicksearch.php:355
+#: views/shortcodes/cardealer/quicksearch.php:481
 msgid "Advanced"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:304
-#: views/shortcodes/cardealer/quicksearch.php:310
+#: views/shortcodes/cardealer/quicksearch.php:272
+#: views/shortcodes/cardealer/quicksearch.php:278
 msgid "Price"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:304
+#: views/shortcodes/cardealer/quicksearch.php:272
 msgid "min"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:310
+#: views/shortcodes/cardealer/quicksearch.php:278
 msgid "max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:324
-#: views/shortcodes/cardealer/quicksearch.php:341
+#: views/shortcodes/cardealer/quicksearch.php:292
+#: views/shortcodes/cardealer/quicksearch.php:309
 msgid "Year"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:324
-#: views/shortcodes/cardealer/quicksearch.php:366
+#: views/shortcodes/cardealer/quicksearch.php:292
+#: views/shortcodes/cardealer/quicksearch.php:334
 msgid "from"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:341
-#: views/shortcodes/cardealer/quicksearch.php:372
+#: views/shortcodes/cardealer/quicksearch.php:309
+#: views/shortcodes/cardealer/quicksearch.php:340
 msgid "to"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:366
-#: views/shortcodes/cardealer/quicksearch.php:372
+#: views/shortcodes/cardealer/quicksearch.php:334
+#: views/shortcodes/cardealer/quicksearch.php:340
 msgid "Mileage"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:401
+#: views/shortcodes/cardealer/quicksearch.php:369
 msgid "Fuel Type"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:418
+#: views/shortcodes/cardealer/quicksearch.php:386
 msgid "Gearbox"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:437
+#: views/shortcodes/cardealer/quicksearch.php:405
 msgid "Body Type"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:454
+#: views/shortcodes/cardealer/quicksearch.php:422
 msgid "Door Count"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:477
+#: views/shortcodes/cardealer/quicksearch.php:445
 msgid "Interior Color"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:490
+#: views/shortcodes/cardealer/quicksearch.php:458
 msgid "Exterior Color"
 msgstr ""
 
-#: views/shortcodes/cardealer/recent_cars.php:101
+#: views/shortcodes/cardealer/recent_cars.php:91
 msgid "Show all cars"
 msgstr ""
 
