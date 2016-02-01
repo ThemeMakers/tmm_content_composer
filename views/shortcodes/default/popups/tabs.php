@@ -68,7 +68,7 @@
 				var last_row = jQuery(".list_item:last");
 				jQuery(clone).insertAfter(last_row, clone);
 				jQuery(".list_item:last").find('input[type=text]').val("");
-				jQuery(".list_item:last").find('textarea').text("");
+				jQuery(".list_item:last").find('textarea').text("").val("");;
 
 				tmm_ext_shortcodes.accordion_changer(shortcode_name);
 				return false;

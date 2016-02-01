@@ -89,7 +89,7 @@
 			var last_row = jQuery(".list_item:last");
 			jQuery(clone).insertAfter(last_row, clone);
 			jQuery(".list_item:last").find('input[type=text]').val("");
-			jQuery(".list_item:last").find('textarea').val("");
+			jQuery(".list_item:last").find('textarea').text("").val("");
 			//***
 			var icon_class = jQuery(".list_item:first").find('select').val();
 			jQuery(".list_item:last").find('select').val(icon_class);
