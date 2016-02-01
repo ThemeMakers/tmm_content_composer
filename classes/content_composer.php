@@ -376,9 +376,11 @@ class TMM_Content_Composer {
 			<?php endif; ?>
 
 				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a title="" class="button tmm_button_upload" href="#">
+                <?php if (!isset($data['data_type'])) $data['data_type'] = ''; ?>
+                <a title="" class="button tmm_button_upload" href="#" data-type="<?php echo $data['data_type'] ?>">
 					<?php _e('Browse', TMM_CC_TEXTDOMAIN); ?>
 				</a>
+
 				<span class="preset_description"><?php echo $data['description'] ?></span>
 				<?php
 				break;

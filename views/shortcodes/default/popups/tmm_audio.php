@@ -8,6 +8,7 @@
 			'title' => __('Link to Audio', 'tmm_shortcodes'),
 			'shortcode_field' => 'content',
 			'id' => 'content',
+			'data_type' => 'audio',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
 			'description' => ''
 		));

@@ -131,11 +131,17 @@
                                 
                             /* events handlers */
 	                        cur_popup.find('.tmm_button_upload').on('click', function() {
+                                var dataType = 'image';
+                                if( undefined !== typeof jQuery(this).attr('data-type') ) {
+                                    if ('audio' == jQuery(this).attr('data-type')) {
+                                        dataType = 'audio';
+                                    }
+                                }
 		                        var input_object = jQuery(this).prev('input, textarea'),
 			                        frame = wp.media({
 				                        title: wp.media.view.l10n.addMedia,
 				                        multiple: false,
-				                        library: { type: 'image,audio' }
+				                        library: { type: dataType }
 			                        });
 
 		                        frame.on( 'select', function() {
