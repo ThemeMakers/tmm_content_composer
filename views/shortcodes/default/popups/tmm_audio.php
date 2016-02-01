@@ -4,7 +4,7 @@
     <div class="full-width">
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'type' => 'upload',
+			'type' => 'upload_audio',
 			'title' => __('Link to Audio', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => '',

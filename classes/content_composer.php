@@ -522,28 +522,26 @@ class TMM_Content_Composer {
 				break;
 
 			case 'upload':
-				?>
-				<?php if (!empty($data['title'])): ?>
-				<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
-			<?php endif; ?>
-
-				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a title="" class="button tmm_button_upload" href="#">
-					<?php _e('Browse', 'tmm_content_composer'); ?>
-				</a>
-				<span class="preset_description"><?php echo $data['description'] ?></span>
-				<?php
-				break;
-
 			case 'upload_video':
+			case 'upload_audio':
+				if ($data['type'] === 'upload_video') {
+					$type = 'video';
+				} else if ($data['type'] === 'upload_audio') {
+					$type = 'audio';
+				} else {
+					$type = 'image';
+				}
 				?>
+
 				<?php if (!empty($data['title'])): ?>
-				<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
+				<h4 class="label" for="<?php echo esc_attr($data['id']); ?>"><?php echo esc_html($data['title']); ?></h4>
 			<?php endif; ?>
 
-				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;"><?php _e('Browse', 'tmm_content_composer'); ?></a>
-				<span class="preset_description"><?php echo $data['description'] ?></span>
+				<input type="text" id="<?php echo esc_attr($data['id']); ?>" value="<?php echo esc_attr($data['default_value']); ?>" class="js_shortcode_template_changer data-input data-upload <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" />
+				<a title="" class="button tmm_button_upload" data-type="<?php echo esc_attr($type); ?>" href="#">
+					<?php esc_html_e('Browse', 'tmm_content_composer'); ?>
+				</a>
+				<span class="preset_description"><?php echo esc_html($data['description']); ?></span>
 				<?php
 				break;
 
