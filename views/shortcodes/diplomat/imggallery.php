@@ -1,18 +1,18 @@
 <?php
 if (!defined('ABSPATH')) die('No direct access allowed');
 
-tmm_enqueue_script('magnific');
+//tmm_enqueue_script('magnific');
 tmm_enqueue_style('magnific');
 
 if (!isset($gallery_type)) {
 	$gallery_type = 'default';
 }
-
+/*
 if ($gallery_type === 'albums') {
 	tmm_enqueue_script('stapel');
 } else {
 	tmm_enqueue_script('mixitup');
-}
+}*/
 
 $display_images = isset($display_images) ? $display_images : 'cover';
 

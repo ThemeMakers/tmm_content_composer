@@ -31,7 +31,7 @@ $classAbs = "";
             }
             
             if ($action=='lightbox'){
-                tmm_enqueue_script('magnific');
+                //tmm_enqueue_script('magnific');
                 tmm_enqueue_style('magnific');
                 $html.= '<a title="' . esc_attr($image_alt) . '" class="single-image-link '. esc_attr($align) .'" href="' . esc_url($image_url) . '">';
             }
