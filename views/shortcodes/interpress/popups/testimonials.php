@@ -50,15 +50,35 @@
     <div class="one-half">
        <?php
        
-       $animation_types = array(
-           'fade' => 'Fade',
-           'fades' => 'Fades',
-           'slide' => 'Slide',
-		   'backSlide' => 'Back Slide',
-           'goDown' => 'go Down',
-           'scaleToFade' => 'Scale To Fade',
-           'fadeUp' => 'Fade Up',
-           'verticalSlide' => 'Vertical Slide'
+       	$animation_types = array(
+
+			'blindX' => 'blindX',
+			'blindY' => 'blindY',
+		   	'blindZ' => 'blindZ',
+		   	'cover' => 'cover',
+			'curtainX' => 'curtainX',
+		   	'curtainY' => 'curtainY',
+			'fade' => 'fade',
+			'fadeZoom' => 'fadeZoom',
+			'growX' => 'growX',
+			'growY' => 'growY',
+			'scrollUp' => 'scrollUp',
+			'scrollDown' => 'scrollDown',
+			'scrollLeft' => 'scrollLeft',
+			'scrollRight' => 'scrollRight',
+			'scrollHorz' => 'scrollHorz',
+			'scrollVert' => 'scrollVert',
+    		'shuffle' => 'shuffle',
+			'slideX' => 'slideX',
+			'slideY' => 'slideY',
+			'toss' => 'toss',
+			'turnUp' => 'turnUp',
+			'turnDown' => 'turnDown',
+			'turnLeft' => 'turnLeft',
+			'turnRight' => 'turnRight',
+			'uncover' => 'uncover',
+			'wipe' => 'wipe',
+			'zoom' => 'zoom'
        );
        
        TMM_Content_Composer::html_option(array(

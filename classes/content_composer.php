@@ -140,12 +140,11 @@ class TMM_Content_Composer {
 
 			wp_register_script('tmm_progressbar', TMM_CC_URL . 'js/plugins/min/jquery.progressBar.min.js', array('jquery'), false, true);
 
-			wp_register_style('tmm_owltransitions', TMM_CC_URL . 'css/owl-carousel.css');
-			wp_register_script('tmm_owlcarousel', TMM_CC_URL . 'js/plugins/min/owl.carousel.min.js', array('jquery'), false, true);
-
 			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
 
 		}
+
+		wp_register_script('tmm_cycle', TMM_CC_URL . 'js/plugins/min/jquery.cycle.min.js', array('jquery'), false, true);
 
 		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, true);
 	}

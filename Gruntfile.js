@@ -10,9 +10,6 @@ module.exports = function(grunt) {
 						'js/theme/default.js',
 						'js/plugins/waypoints.js'
 					],
-					'js/plugins/min/owl.carousel.min.js': [
-						'js/plugins/owl.carousel.js'
-					],
 					'js/plugins/min/jquery.masonry.min.js': [
 						'js/plugins/jquery.masonry.js'
 					],
@@ -27,6 +24,9 @@ module.exports = function(grunt) {
 					],
 					'js/plugins/min/gallery3d.min.js': [
 						'js/plugins/gallery3d.js'
+					],
+					'js/plugins/min/jquery.cycle.min.js': [
+						'js/plugins/jquery.cycle.js'
 					]
 				}
 			}

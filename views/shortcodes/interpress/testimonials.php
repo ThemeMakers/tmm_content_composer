@@ -1,7 +1,10 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <div class="widget widget_testimonials">
 
-	<?php	
+	<?php
+
+    wp_enqueue_script('tmm_cycle');
+
     $uniqid = uniqid();
 	
 	$args = array();
@@ -69,23 +72,24 @@
         jQuery(function() {		
             if (jQuery('.quotes-<?php echo $uniqid ?> .item').length>1){
 
+                var nav = <?php echo $nav?>,
+                pagination = '';
+                if (nav){
+                    var pagination  = '<div class="quotes-nav"><a class="prevBtn quotes-prev-<?php echo $uniqid ?>"><?php _e('Prev', TMM_CC_TEXTDOMAIN) ?></a> <a class="nextBtn quotes-next-<?php echo $uniqid ?>"><?php _e('Next', TMM_CC_TEXTDOMAIN) ?></a> </div>';
+                }
 
-                jQuery('.quotes-<?php echo $uniqid ?>').owlCarousel({
-                    animateOut: "<?php echo (isset($animation_type)&&(!empty($animation_type))) ? 'owl-' . esc_js($animation_type) . '-out' : 'owl-slide-out' ?>",
-                    animateIn: "<?php echo (isset($animation_type)&&(!empty($animation_type))) ? 'owl-' . esc_js($animation_type) . '-in' : 'owl-slide-in' ?>",
-                    singleItem: true,
-                    items: 1,
-                    loop: true,
-                    nav: <?php echo ($nav) ? 'true' : 'false' ?>,
-                    dots: false,
-                    autoplay: true,
-                    autoplayTimeout: "<?php echo esc_js($timeout) ?>",
-                   // slideSpeed: "<?php echo esc_js($slidespeed) ?>",
-                    smartSpeed : <?php echo esc_js($slidespeed) ?>,
-                    responsiveClass: true,
-                    themeClass : "owl-theme-cycle"
+                jQuery('.quotes-<?php echo $uniqid ?>')
+                    .after(pagination)
+                    .cycle({
+                        next: '.quotes-next-<?php echo $uniqid ?>',
+                        prev: '.quotes-prev-<?php echo $uniqid ?>',
+                        speed: <?php echo esc_js($slidespeed) ?>,
+                        timeout: <?php echo esc_js($timeout) ?>,
+                        pause: true,
+                        fx: <?php echo (isset($animation_type) && !empty($animation_type)) ? "'".esc_js($animation_type)."'" : 'fade' ?>,
+                        width : '100%'
 
-                });
+                    });
             }          
         });
         </script>
