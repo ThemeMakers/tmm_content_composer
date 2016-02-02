@@ -18,7 +18,7 @@ if (!isset($align)) {
 }
 
 // Font Weight
-if (!empty($font_weight)) {
+if (!empty($font_weight) && $font_weight != 'default') {
 	$styles.="font-weight: " . $font_weight . ";";
         $single_styles.="font-weight: " . $font_weight . ";";
 }
@@ -53,12 +53,6 @@ if (isset($font_size) && $font_size != 'default') {
 	$single_styles.="font-size: " . $font_size . "px; ";
 }
 
-// Line Height
-if (isset($line_height) && $line_height != '1.35') {
-	$styles.="line-height: " . $line_height . "em; ";
-	$single_styles.="line-height: " . $line_height . "em; ";
-}
-
 // Color
 if (!empty($color)) {
 	$styles.="color: " . $color . "; ";
@@ -69,48 +63,6 @@ if (!empty($color)) {
 if (isset($text_transform) && $text_transform) {
 	$styles.="text-transform: uppercase; ";
 	$single_styles.="text-transform: uppercase; ";
-}
-
-// Bg Color
-if (!empty($bg_color)) {
-	$styles.="background: " . $bg_color . "; ";
-	$general_styles.="background: " . $bg_color . "; ";
-}
-
-// Bg Opacity
-if (!empty($bg_opacity)) {
-	$styles.="opacity: " . $bg_opacity . "; ";
-	$general_styles.="opacity: " . $bg_opacity . "; ";
-}
-
-// Bg Radius
-if (!empty($bg_radius)) {
-	$styles.="border-radius: " . $bg_radius . "%; ";
-	$general_styles.="border-radius: " . $bg_radius . "%; ";
-}
-
-// Bg Padding
-if (!empty($bg_padding)) {
-	$styles.="padding: " . $bg_padding . "px; ";
-	$general_styles.="padding: " . $bg_padding . "px; ";
-}
-
-// Bg Width
-if (!empty($bg_width)) {
-	$styles.="width: " . $bg_width . "px; ";
-	$general_styles.="width: " . $bg_width . "px; ";
-}
-
-// Bg Height
-if (!empty($bg_height)) {
-	$styles.="height: " . $bg_height . "px; ";
-	$general_styles.="height: " . $bg_height . "px; ";
-}
-
-// Bg Center
-if ( isset($bg_center) && $bg_center) {
-	$styles.="margin: 0 auto; ";
-	$general_styles.="margin: 0 auto; ";
 }
 
 // Styles
@@ -128,22 +80,11 @@ if (!empty($single_styles)) {
 	$single_styles = 'style="' . $single_styles . '"';
 }
 
-
-if (isset($use_general_color) && $use_general_color) {
-	$css_class = 'theme-default-bg';
-} else {
-	$css_class = '';
-}
-
-if (!empty($title_effect)&&($title_effect!='none')){
-    $css_class = $css_class . ' ' . $title_effect;  
-}
-
 //Output Html
 $content = str_replace("`", "'", $content);
 
 if ( isset($title_type) && $title_type=='section'){
-    $html.= '<div class="section-title"><' . $type . ' class="htitle ' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '>';
+    $html.= '<div class="section-title"><' . $type . ' class="htitle " ' . $styles . '>' . $content . '</' . $type . '>';
 	if (isset($title_description) && !empty($title_description)){
 		$html.= '<h4 class="hdesc">'.$title_description.'</h4>';
 	}
@@ -151,33 +92,9 @@ if ( isset($title_type) && $title_type=='section'){
 }else{
 
 	$class = (!empty($css_class)) ? 'class="' . $css_class . '"' : '';
-    
-    if (isset($word_animate) && $word_animate){
-        $content = explode(' ', $content);
-        $separete_content = explode('^', $separate_row);
-        if (!empty($separete_content))
-            $content = $separete_content;
-        
-        if (isset($use_general_color) && $use_general_color) {
-            $css_class = 'theme-default-bg';
-        } else {
-            $css_class = '';
-        }
-        $css_content = '';
-        if (isset($bg_width) && $bg_width){
-            $css_class.='inner-extra';
-            $css_content = 'inner-content';
-        }
-        
-        $html.= '<div class=" extraRadius ' . $css_class . '" ' . $general_styles . '><div class="' . $css_content . '">'; 
-        foreach ($content as $title){
-            $html.= '<' . $type . ' ' .$single_styles . '>' . $title . '</' . $type . '>';
-        }
-        $html.= '</div></div>';         
-        
-    }else{
-        $html.= '<' . $type .' '. $class . ' '. $styles . '>' . $content . '</' . $type . '>';
-    }
+
+    $html.= '<' . $type .' '. $class . ' '. $styles . '>' . $content . '</' . $type . '>';
+
 }
 
 echo $html;

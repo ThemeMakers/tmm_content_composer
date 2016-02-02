@@ -3,18 +3,6 @@
 } ?>
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
-<div class="tabs-holder">
-<ul class="tabs-nav clearfix">
-
-	<li><a href="#"><?php _e( 'Default Options', 'tmm_content_composer' ); ?></a></li>
-	<li><a href="#"><?php _e( 'Advanced Title Options', 'tmm_content_composer' ); ?></a></li>
-
-</ul>
-
-<div class="tabs-container clearfix">
-
-<div class="tab-content">
-
 	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option( array(
@@ -94,6 +82,7 @@
 			'shortcode_field' => 'font_weight',
 			'id'              => 'font_weight',
 			'options'         => array(
+				'default' => __( 'Default', 'tmm_content_composer' ),
 				'normal' => __( 'Normal', 'tmm_content_composer' ),
 				'100'    => 100,
 				'200'    => 200,
@@ -103,7 +92,7 @@
 				'600'    => 600,
 				'700'    => 700
 			),
-			'default_value'   => TMM_Content_Composer::set_default_value( 'font_weight', '300' ),
+			'default_value'   => TMM_Content_Composer::set_default_value( 'font_weight', 'default' ),
 			'description'     => ''
 		) );
 		?>
@@ -181,7 +170,7 @@
 		<?php
 		TMM_Content_Composer::html_option( array(
 			'type'            => 'text',
-			'title'           => __( 'Margin Bottom (px)', 'tmm_content_composer' ),
+			'title'           => __( 'Margin Indent (px)', 'tmm_content_composer' ),
 			'shortcode_field' => 'bottom_indent',
 			'id'              => 'bottom_indent',
 			'default_value'   => TMM_Content_Composer::set_default_value( 'bottom_indent', '' ),
@@ -192,21 +181,6 @@
 	</div>
 	<!--/ .one-half-->
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'text',
-			'title'           => __( 'Line Height (em)', 'tmm_content_composer' ),
-			'shortcode_field' => 'line_height',
-			'id'              => 'line_height',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'line_height', '1.35' ),
-			'description'     => ''
-		) );
-		?>
-
-	</div>
-	<!--/ .one-half-->
-    
     <div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option( array(
@@ -236,197 +210,6 @@
 		?>
 
 	</div>
-
-</div>
-<!--/ .tab-content-->
-
-
-<div class="tab-content">
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'title'           => __( 'Background Color', 'tmm_content_composer' ),
-			'shortcode_field' => 'bg_color',
-			'type'            => 'color',
-			'description'     => '',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'bg_color', '' ),
-			'id'              => '',
-			'display'         => 1
-		) );
-		?>
-
-	</div>
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'title'           => __( 'Background Opacity (from 0 to 1)', 'tmm_content_composer' ),
-			'shortcode_field' => 'bg_opacity',
-			'type'            => 'text',
-			'description'     => '',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'bg_opacity', '' ),
-			'id'              => '',
-			'display'         => 1
-		) );
-		?>
-
-	</div>
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'title'           => __( 'Background Radius (%)', 'tmm_content_composer' ),
-			'shortcode_field' => 'bg_radius',
-			'type'            => 'text',
-			'description'     => '',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'bg_radius', '' ),
-			'id'              => '',
-			'display'         => 1
-		) );
-		?>
-
-	</div>
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'text',
-			'title'           => __( 'Padding (px)', 'tmm_content_composer' ),
-			'shortcode_field' => 'bg_padding',
-			'id'              => '',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'bg_padding', '' ),
-			'description'     => ''
-		) );
-		?>
-
-	</div>
-	<!--/ .one-half-->
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'title'           => __( 'Background Width (px)', 'tmm_content_composer' ),
-			'shortcode_field' => 'bg_width',
-			'type'            => 'text',
-			'description'     => '',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'bg_width', '' ),
-			'id'              => '',
-			'display'         => 1
-		) );
-		?>
-
-	</div>
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'title'           => __( 'Background Height (px)', 'tmm_content_composer' ),
-			'shortcode_field' => 'bg_height',
-			'type'            => 'text',
-			'description'     => '',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'bg_height', '' ),
-			'id'              => '',
-			'display'         => 1
-		) );
-		?>
-
-	</div>
-
-	<div class="one-half">
-
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'checkbox',
-			'title'           => __( 'Use Website General Color', 'tmm_content_composer' ),
-			'shortcode_field' => 'use_general_color',
-			'id'              => 'use_general_color',
-			'is_checked'      => TMM_Content_Composer::set_default_value( 'use_general_color', 0 ),
-			'description'     => ''
-		) );
-		?>
-
-	</div>
-
-	<div class="one-half">
-
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'checkbox',
-			'title'           => __( 'Background Align Center', 'tmm_content_composer' ),
-			'shortcode_field' => 'bg_center',
-			'id'              => 'bg_center',
-			'is_checked'      => TMM_Content_Composer::set_default_value( 'bg_center', 0 ),
-			'description'     => ''
-		) );
-		?>
-
-	</div>
-
-	<div class="one-half">
-
-		<?php
-
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'select',
-			'title'           => __( 'Effect for Appearing Title', 'tmm_content_composer' ),
-			'shortcode_field' => 'title_effect',
-			'id'              => 'title_effect',
-			'default_value'   => TMM_Content_Composer::set_default_value( 'title_effect', '' ),
-			'options'         => array(
-				'none'        => __( 'None', 'tmm_content_composer' ),
-				'elementFade' => __( 'Element Fade', 'tmm_content_composer' ),
-				'opacity2x'   => __( 'Opacity', 'tmm_content_composer' ),
-				'slideRight'  => __( 'Slide Right', 'tmm_content_composer' ),
-				'slideLeft'   => __( 'Slide Left', 'tmm_content_composer' ),
-				'slideDown'   => __( 'Slide Down', 'tmm_content_composer' ),
-				'slideUp'     => __( 'Slide Up', 'tmm_content_composer' ),
-				'slideUp2x'   => __( 'Slide Up 2x', 'tmm_content_composer' ),
-				'extraRadius' => __( 'Extra Radius', 'tmm_content_composer' )
-			),
-			'description'     => ''
-		) );
-		?>
-
-	</div>
-
-	<div class="one-half">
-
-		<?php
-		TMM_Content_Composer::html_option( array(
-			'type'            => 'checkbox',
-			'title'           => __( 'Split Title in Rows and Animate Each Row', 'tmm_content_composer' ),
-			'shortcode_field' => 'word_animate',
-			'id'              => 'word_animate',
-			'is_checked'      => TMM_Content_Composer::set_default_value( 'word_animate', 0 ),
-			'description'     => ''
-		) );
-
-		?>
-		<div class="separate_row"
-		     style="<?php echo ( TMM_Content_Composer::set_default_value( 'word_animate', 0 ) ) ? 'display:block' : 'display:none'; ?>">
-			<?php
-			TMM_Content_Composer::html_option( array(
-				'type'            => 'text',
-				'title'           => __( 'Split Title with the help "^" symbol', 'tmm_content_composer' ),
-				'shortcode_field' => 'separate_row',
-				'id'              => 'separate_row',
-				'description'     => '',
-				'default_value'   => TMM_Content_Composer::set_default_value( 'separate_row', '' ),
-			) );
-			?>
-		</div>
-
-	</div>
-
-</div>
-<!--/ .tab-content-->
-
-</div>
-<!--/ .tabs-container-->
-
-</div>
-
 </div>
 
 
@@ -435,22 +218,6 @@
 	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
 	jQuery(function () {
 
-		function separateRow() {
-			var title_text = jQuery('#title_text').val();
-			title_text = title_text.split(' ').join('^');
-			var prev_separate = jQuery('#separate_row').val();
-			if (prev_separate == '') {
-				jQuery('#separate_row').val(title_text);
-			}
-			if (jQuery('#word_animate').is(':checked')) {
-				jQuery('#title_text').prop('readonly', true);
-				jQuery('#title_effect').attr('disabled', true).css('background-color', '#eee');
-			} else {
-				jQuery('#title_text').prop('readonly', false);
-				jQuery('#title_effect').attr('disabled', false).css('background-color', '#fff');
-			}
-		};
-
 		tmm_ext_shortcodes.changer(shortcode_name);
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function () {
 			tmm_ext_shortcodes.changer(shortcode_name);
@@ -458,26 +225,6 @@
 		});
 
 		colorizator();
-		separateRow();
-
-		jQuery('#word_animate').life('click', function () {
-			if (jQuery(this).is(':checked')) {
-				var title_text = jQuery('#title_text').val();
-				var prev_separate = jQuery('#separate_row').val();
-				if (prev_separate == '') {
-					title_text = title_text.split(' ').join('^');
-					jQuery('#separate_row').val(title_text);
-				}
-				jQuery('.separate_row').fadeIn(300);
-				jQuery('#title_text').prop('readonly', true);
-				jQuery('#title_effect').attr('disabled', true).css('background-color', '#eee');
-
-			} else {
-				jQuery('.separate_row').fadeOut(300);
-				jQuery('#title_text').prop('readonly', false);
-				jQuery('#title_effect').attr('disabled', false).css('background-color', '#fff');
-			}
-		});
 
 		jQuery('#title_type').life('click', function(){
 			var val = jQuery(this).val(),
@@ -492,32 +239,6 @@
 					break;
 			}
 		});
-
-		if (jQuery('.tabs-holder').length) {
-
-			var $tabsHolder = jQuery('.tabs-holder');
-
-			$tabsHolder.each(function (i, val) {
-
-				var $tabsNav = jQuery('.tabs-nav', val),
-					tabsNavLis = $tabsNav.children('li'),
-					$tabsContainer = jQuery('.tabs-container', val),
-					eventtype = 'click';
-
-				$tabsNav.each(function () {
-					jQuery(this).next().children('.tab-content').first().stop(true, true).show();
-					jQuery(this).children('li').first().addClass('active').stop(true, true).show();
-				});
-
-				$tabsNav.on(eventtype, 'a', function (e) {
-					var $this = jQuery(this).parent('li'),
-						$index = $this.index();
-					$this.siblings().removeClass('active').end().addClass('active');
-					$this.parent().next().children('.tab-content').stop(true, true).hide().eq($index).stop(true, true).fadeIn(250);
-					e.preventDefault();
-				});
-			});
-		}
 
 	});
 </script>
