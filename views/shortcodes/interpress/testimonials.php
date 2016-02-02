@@ -1,5 +1,6 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<div class="widget widget_testimonials">
+
+<div class="lc-testimonials">
 
 	<?php
 
@@ -35,7 +36,17 @@
 	$posts = get_posts($args);
 		
 	?>
-        <div class="quotes quotes-<?php echo $uniqid ?> <?php echo (isset($content_color)) ? 'content_'.$content_color : ''; ?>">	
+
+        <ul class="quotes quotes-<?php echo $uniqid ?>"
+            data-cycle-slides="> li"
+            data-cycle-pause="true"
+            data-cycle-speed="<?php echo esc_js($slidespeed) ?>"
+            data-cycle-timeout="<?php echo esc_js($timeout) ?>"
+            data-cycle-fx="<?php echo (isset($animation_type) && !empty($animation_type)) ? "'".esc_js($animation_type)."'" : 'fade' ?>"
+	        <?php if ($nav) { ?>
+		        data-cycle-next=".quotes-next-<?php echo $uniqid ?>"
+		        data-cycle-prev=".quotes-prev-<?php echo $uniqid ?>"
+	        <?php } ?>>
 		
 	<?php
 		foreach ($posts as $post){ 
@@ -45,7 +56,7 @@
                 wp_enqueue_style('tmm_google_fonts_'. uniqid(), $fonts_link, null, false);
             }
             ?>
-                <div class="item">
+                <li>
                     <blockquote class="quote-text">
                         <?php echo do_shortcode($post->post_content); ?>
                     </blockquote>
@@ -60,41 +71,28 @@
                         }
                         ?>
                     </div><!--/ .quote-meta-->
-
-                </div>
+                </li>
 
             <?php
         }
 		?>
-        </div><!--/ .quotes-->	
+        </ul><!--/ .cycle slider-->
+
+		<?php if ($nav){ ?>
+			<!-- Pager	-->
+			<div class="quotes-nav">
+				<a class="quotes-prev-<?php echo $uniqid ?>"><?php _e('Prev', TMM_CC_TEXTDOMAIN) ?></a>
+				<a class="quotes-next-<?php echo $uniqid ?>"><?php _e('Next', TMM_CC_TEXTDOMAIN) ?></a>
+			</div>
+		<?php } ?>
         
-        <script>
-        jQuery(function() {		
-            if (jQuery('.quotes-<?php echo $uniqid ?> .item').length>1){
-
-                var nav = <?php echo $nav?>,
-                pagination = '';
-                if (nav){
-                    var pagination  = '<div class="quotes-nav"><a class="prevBtn quotes-prev-<?php echo $uniqid ?>"><?php _e('Prev', TMM_CC_TEXTDOMAIN) ?></a> <a class="nextBtn quotes-next-<?php echo $uniqid ?>"><?php _e('Next', TMM_CC_TEXTDOMAIN) ?></a> </div>';
-                }
-
-                jQuery('.quotes-<?php echo $uniqid ?>')
-                    .after(pagination)
-                    .cycle({
-                        next: '.quotes-next-<?php echo $uniqid ?>',
-                        prev: '.quotes-prev-<?php echo $uniqid ?>',
-                        speed: <?php echo esc_js($slidespeed) ?>,
-                        timeout: <?php echo esc_js($timeout) ?>,
-                        pause: true,
-                        fx: <?php echo (isset($animation_type) && !empty($animation_type)) ? "'".esc_js($animation_type)."'" : 'fade' ?>,
-                        width : '100%'
-
-                    });
+        <script type="text/javascript">
+        jQuery(function() {
+            if (jQuery('.quotes-<?php echo $uniqid ?> li').length>1){
+                jQuery('.quotes-<?php echo $uniqid ?>').cycle();
             }          
         });
         </script>
 	
 <?php wp_reset_query(); ?>
 </div><!--/ .widget-container-->
-
-

@@ -2579,86 +2579,67 @@ a.social-like.voted:before{ color: #f85c37; }
 /*	Testimonials
 /* -------------------------------------------------- */
 
-.quotes {
+.lc-testimonials {
+	padding-top: 40px;
 	position: relative;
-	list-style: none;
-}
 
-.quotes .item			  { display: none; }
-.quotes .item:first-child { display: block; }
+	.quotes {
+		position: relative;
+		list-style: none;
 
-.quote-meta, .quote-meta a {
-	color: #262626;
-	text-align: right;
+		> li {
+			display: none;
 
-	-webkit-transition: color .25s ease;
-	transition: color .25s ease;
-}
+			&:first-child { display: block;	}
 
-.theme-default-bg .quote-meta, .parallax .quote-meta { color: #f85c37; }
+			blockquote { margin: 0; }
+		}
 
-.quote-author,
-.quote-author a {
-	display: inline-block;
-	margin-right: 20px;
-	font-weight: 300;
-	font-style: italic;
-	font-size: 18px;
-	font-family: 'Raleway', sans-serif;
-	vertical-align: middle;
-}
+		.quote-meta {
+			color: #262626;
+			text-align: right;
 
-.theme-default-bg .quote-author, .parallax .quote-author { color: #fff; }
+			@include transition(color .25s ease);
 
-.quote-author:before { content: " - "; }
+			.quote-author {
+				display: inline-block;
+				margin-right: 20px;
+				font: {
+					weight: 300;
+					style: italic;
+					size: 18px;
+					family: 'Raleway', sans-serif;
+				};
+				vertical-align: middle;
 
-.quote-image {
-	display: inline-block;
-	vertical-align: middle;
-}
+				&:before { content: " - "; }
+			}
 
-.quote-image img {
-	overflow: hidden;
+			.quote-image {
+				display: inline-block;
+				vertical-align: middle;
 
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
-}
+				img {
+					overflow: hidden;
 
-/* Quote Navigation */
+					@include border-radius(50%);
+				}
+			}
+		}
+	}
 
-.quotes-control-nav {
-	position: absolute;
-	left: 0;
-	bottom: -20px;
-	z-index: 3;
-	padding: 10px 0 0;
-	width: 100%;
-	text-align: center;
-	font-size: 0;
-}
+	/* Quote Navigation */
+	.quotes-nav {
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 99;
+		text-align: right;
 
-.quotes-control-nav a {
-	display: inline-block;
-	margin: 2px 8px;
-	width: 10px;
-	height: 10px;
-	border-width: 1px;
-	border-style: solid;
-	border-color: transparent;
-	background-color: #d8d8d8;
-	cursor: pointer;
-	vertical-align: middle;
-
-	-webkit-transition: background-color .25s linear;
-	transition: background-color .25s linear;
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
-}
-
-.quotes-control-nav .activeSlide {
-	margin: 0 8px;
-	padding: 7px;
-	border-color: #d9d9d9;
-	background-color: transparent;
-	cursor: default;
+		a {
+			display: inline-block;
+			margin: 0 10px;
+			cursor: pointer;
+		}
+	}
 }
