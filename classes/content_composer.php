@@ -116,9 +116,11 @@ class TMM_Content_Composer {
 	public static function enqueue_scripts() {
 		wp_deregister_style('mediaelement');
 		wp_deregister_style('wp-mediaelement');
-		wp_register_style('tmm_mediaelement', TMM_CC_URL . 'js/shortcodes/mediaelement/mediaelementplayer.css');
+		wp_register_style('tmm_cc_mediaelement', TMM_CC_URL . 'js/shortcodes/mediaelement/jquery.mediaelementplayer.css');
 
-		//wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/layout_front.js', array('jquery'), false, 1);
+		wp_register_script('tmm_cc_map_api', 'https://maps.googleapis.com/maps/api/js?sensor=false');
+		wp_register_script("tmm_cc_mediaelement", TMM_CC_URL . 'js/shortcodes/mediaelement/mediaelement-and-player.min.js');
+		wp_register_script('tmm_cc_front', TMM_CC_URL . 'js/front.js', array('jquery'), false, 1);
 
 	}
 

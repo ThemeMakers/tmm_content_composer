@@ -3,7 +3,7 @@
 //contact form on front by shortcode
 $form_name = $content;
 $contact_form = TMM_Contact_Form::get_form($form_name);
-wp_enqueue_script("tmm_shortcode_contact_form_js", TMM_CC_URL . '/js/shortcodes/contact_form.js');
+wp_enqueue_script("tmm_cc_front");
 
 $unique_id=  uniqid();
 //output fields

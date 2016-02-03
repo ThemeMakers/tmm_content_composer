@@ -1,9 +1,8 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
 $inique_id = uniqid();
-wp_enqueue_script('tmm_theme_map_api_js', 'http://maps.google.com/maps/api/js?sensor=false');
-wp_enqueue_script('tmm_theme_markerwithlabel_js', TMM_CC_URL . '/js/shortcodes/markerwithlabel.js');
-wp_enqueue_script("tmm_shortcode_google_map_js", TMM_CC_URL . '/js/shortcodes/google_map.js');
+wp_enqueue_script('tmm_cc_map_api');
+wp_enqueue_script("tmm_cc_front");
 
 if (!isset($mode)) {
 	$mode = 'map';
