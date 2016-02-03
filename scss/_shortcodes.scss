@@ -2580,7 +2580,7 @@ a.social-like.voted:before{ color: #f85c37; }
 /* -------------------------------------------------- */
 
 .lc-testimonials {
-	padding-top: 40px;
+	padding-top: 30px;
 	position: relative;
 
 	.quotes {
@@ -2596,7 +2596,7 @@ a.social-like.voted:before{ color: #f85c37; }
 		}
 
 		.quote-meta {
-			color: #262626;
+			color: $q-quote-type-2-author-text-color;
 			text-align: right;
 
 			@include transition(color .25s ease);
@@ -2604,12 +2604,6 @@ a.social-like.voted:before{ color: #f85c37; }
 			.quote-author {
 				display: inline-block;
 				margin-right: 20px;
-				font: {
-					weight: 300;
-					style: italic;
-					size: 18px;
-					family: 'Raleway', sans-serif;
-				};
 				vertical-align: middle;
 
 				&:before { content: " - "; }
@@ -2635,11 +2629,14 @@ a.social-like.voted:before{ color: #f85c37; }
 		top: 0;
 		z-index: 99;
 		text-align: right;
+		font-size: 24px;
 
 		a {
 			display: inline-block;
-			margin: 0 10px;
 			cursor: pointer;
+			width: 27px;
+			height: 27px;
+			line-height: 27px;
 		}
 	}
 }

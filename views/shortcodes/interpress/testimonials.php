@@ -81,8 +81,8 @@
 		<?php if ($nav && ($show!='mode1')){ ?>
 			<!-- Pager	-->
 			<div class="quotes-nav">
-				<a class="quotes-prev-<?php echo $uniqid ?>"><?php _e('Prev', 'tmm_content_composer') ?></a>
-				<a class="quotes-next-<?php echo $uniqid ?>"><?php _e('Next', 'tmm_content_composer') ?></a>
+				<a class="icon-angle-left quotes-prev-<?php echo $uniqid ?>"></a>
+				<a class="icon-angle-right quotes-next-<?php echo $uniqid ?>"></a>
 			</div>
 		<?php } ?>
         
