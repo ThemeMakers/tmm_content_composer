@@ -51,34 +51,9 @@
        <?php
        
        	$animation_types = array(
-
-			'blindX' => 'blindX',
-			'blindY' => 'blindY',
-		   	'blindZ' => 'blindZ',
-		   	'cover' => 'cover',
-			'curtainX' => 'curtainX',
-		   	'curtainY' => 'curtainY',
-			'fade' => 'fade',
-			'fadeZoom' => 'fadeZoom',
-			'growX' => 'growX',
-			'growY' => 'growY',
-			'scrollUp' => 'scrollUp',
-			'scrollDown' => 'scrollDown',
-			'scrollLeft' => 'scrollLeft',
-			'scrollRight' => 'scrollRight',
-			'scrollHorz' => 'scrollHorz',
-			'scrollVert' => 'scrollVert',
-    		'shuffle' => 'shuffle',
-			'slideX' => 'slideX',
-			'slideY' => 'slideY',
-			'toss' => 'toss',
-			'turnUp' => 'turnUp',
-			'turnDown' => 'turnDown',
-			'turnLeft' => 'turnLeft',
-			'turnRight' => 'turnRight',
-			'uncover' => 'uncover',
-			'wipe' => 'wipe',
-			'zoom' => 'zoom'
+			'fade' => 'Fade',
+			'fadeout' => 'Fadeout',
+			'scrollHorz' => 'ScrollHorz'
        );
        
        TMM_Content_Composer::html_option(array(
@@ -87,7 +62,7 @@
 			'shortcode_field' => 'animation_type',
 			'id' => 'animation_type',
             'options' => $animation_types,
-			'default_value' => TMM_Content_Composer::set_default_value('animation_type', 'backSlide'),
+			'default_value' => TMM_Content_Composer::set_default_value('animation_type', 'fade'),
 			'description' => ''
 		));
 		?>       

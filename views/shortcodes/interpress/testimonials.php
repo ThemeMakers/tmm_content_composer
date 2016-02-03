@@ -36,13 +36,13 @@
 	$posts = get_posts($args);
 		
 	?>
-
         <ul class="quotes quotes-<?php echo $uniqid ?>"
             data-cycle-slides="> li"
             data-cycle-pause="true"
             data-cycle-speed="<?php echo esc_js($slidespeed) ?>"
             data-cycle-timeout="<?php echo esc_js($timeout) ?>"
-            data-cycle-fx="<?php echo (isset($animation_type) && !empty($animation_type)) ? "'".esc_js($animation_type)."'" : 'fade' ?>"
+            data-cycle-log="false"
+            data-cycle-fx="<?php echo (isset($animation_type) && !empty($animation_type)) ? esc_js($animation_type) : 'fade' ?>"
 	        <?php if ($nav) { ?>
 		        data-cycle-next=".quotes-next-<?php echo $uniqid ?>"
 		        data-cycle-prev=".quotes-prev-<?php echo $uniqid ?>"
@@ -78,7 +78,7 @@
 		?>
         </ul><!--/ .cycle slider-->
 
-		<?php if ($nav){ ?>
+		<?php if ($nav && ($show!='mode1')){ ?>
 			<!-- Pager	-->
 			<div class="quotes-nav">
 				<a class="quotes-prev-<?php echo $uniqid ?>"><?php _e('Prev', 'tmm_content_composer') ?></a>

@@ -47,7 +47,7 @@ module.exports = function(grunt) {
 		},
 		jshint: {
 			files: [
-				'js/front.js'
+				'js/theme/default.js'
 			],
 			options: {
 				globals: {
