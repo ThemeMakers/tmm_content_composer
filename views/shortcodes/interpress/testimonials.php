@@ -81,8 +81,8 @@
 		<?php if ($nav){ ?>
 			<!-- Pager	-->
 			<div class="quotes-nav">
-				<a class="quotes-prev-<?php echo $uniqid ?>"><?php _e('Prev', TMM_CC_TEXTDOMAIN) ?></a>
-				<a class="quotes-next-<?php echo $uniqid ?>"><?php _e('Next', TMM_CC_TEXTDOMAIN) ?></a>
+				<a class="quotes-prev-<?php echo $uniqid ?>"><?php _e('Prev', 'tmm_content_composer') ?></a>
+				<a class="quotes-next-<?php echo $uniqid ?>"><?php _e('Next', 'tmm_content_composer') ?></a>
 			</div>
 		<?php } ?>
         

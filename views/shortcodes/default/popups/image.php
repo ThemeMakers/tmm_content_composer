@@ -130,11 +130,11 @@
 
 				TMM_Content_Composer::html_option(array(
 					'type' => 'text',
-					'title' => __('Size', TMM_CC_TEXTDOMAIN),
+					'title' => __('Size', 'tmm_content_composer'),
 					'shortcode_field' => 'image_size_alias',
 					'id' => 'image_size_alias',
 					'default_value' => TMM_Content_Composer::set_default_value('image_size_alias', ''),
-					'description' => __('width*height. Fore example: 500*300. Empty field means full size', TMM_CC_TEXTDOMAIN),
+					'description' => __('width*height. Fore example: 500*300. Empty field means full size', 'tmm_content_composer'),
 				));
 				?>
 

@@ -123,10 +123,10 @@ $style = 'style="' . $style . '"';
 			$cover = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, '') : '';
 			if (!empty($cover)) {
 				?>
-				<img src="<?php echo esc_url(TMM_Content_Composer::resize_image_cover($cover, $image_size)); ?>" alt="<?php esc_attr_e('Unsupported video format', TMM_CC_TEXTDOMAIN) ?>" />
+				<img src="<?php echo esc_url(TMM_Content_Composer::resize_image_cover($cover, $image_size)); ?>" alt="<?php esc_attr_e('Unsupported video format', 'tmm_content_composer') ?>" />
 			<?php
 			}else{
-				esc_html_e('Unsupported video format', TMM_CC_TEXTDOMAIN);
+				esc_html_e('Unsupported video format', 'tmm_content_composer');
 			}
 			break;
 	}

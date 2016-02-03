@@ -170,7 +170,7 @@
 		<?php
 		TMM_Content_Composer::html_option( array(
 			'type'            => 'text',
-			'title'           => __( 'Margin Indent (px)', 'tmm_content_composer' ),
+			'title'           => __( 'Bottom Indent (px)', 'tmm_content_composer' ),
 			'shortcode_field' => 'bottom_indent',
 			'id'              => 'bottom_indent',
 			'default_value'   => TMM_Content_Composer::set_default_value( 'bottom_indent', '' ),
