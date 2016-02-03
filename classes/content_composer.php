@@ -118,7 +118,7 @@ class TMM_Content_Composer {
 		wp_deregister_style('wp-mediaelement');
 		wp_register_style('tmm_cc_mediaelement', TMM_CC_URL . 'js/shortcodes/mediaelement/jquery.mediaelementplayer.css');
 
-		wp_register_script('tmm_cc_map_api', 'https://maps.googleapis.com/maps/api/js?sensor=false');
+		wp_register_script('tmm_cc_map_api', 'https://maps.googleapis.com/maps/api/js');
 		wp_register_script("tmm_cc_mediaelement", TMM_CC_URL . 'js/shortcodes/mediaelement/mediaelement-and-player.min.js');
 		wp_register_script('tmm_cc_front', TMM_CC_URL . 'js/front.js', array('jquery'), false, 1);
 
