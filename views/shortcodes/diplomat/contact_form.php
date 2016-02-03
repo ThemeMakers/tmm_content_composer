@@ -10,7 +10,7 @@ $states = TMM_Contact_Form::get_states();
 
 if (!empty($contact_form['inputs'])) {
 
-	wp_enqueue_script("tmm_shortcode_contact_form_js", TMM_CC_URL . '/js/shortcodes/contact_form.js');
+
 	?>
 
 	<form method="post" class="contact-form" enctype="multipart/form-data">

@@ -258,7 +258,7 @@ wp_reset_postdata();
 
  if (!empty($posts_array) && ($blog_type == 'masonry')){     
      $load_with_animation = 1;
-     wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/shortcodes/jquery.masonry.min.js');
+     wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/plugins/min/jquery.masonry.min.js');
     ?>
 	<script type="text/javascript">
 		jQuery(function() {
