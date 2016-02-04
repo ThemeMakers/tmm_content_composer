@@ -1,0 +1,1235 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ThemeMakers Visual Content Composer\n"
+"POT-Creation-Date: 2016-02-05 00:18+0100\n"
+"PO-Revision-Date: 2016-02-05 00:18+0100\n"
+"Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
+"Language-Team: Alex TM <support@webtemplatemasters.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: index.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: classes/content_composer.php:53
+msgid "ThemeMakers Layout Constructor"
+msgstr ""
+
+#: classes/content_composer.php:86
+msgid "Loading ..."
+msgstr ""
+
+#: classes/content_composer.php:87
+msgid "Close"
+msgstr ""
+
+#: classes/content_composer.php:88
+msgid "Apply"
+msgstr ""
+
+#: classes/content_composer.php:89
+msgid "There is no options for shortcode!"
+msgstr ""
+
+#: classes/content_composer.php:90
+msgid "Shortcode updated!"
+msgstr ""
+
+#: classes/content_composer.php:91
+msgid "Insert Shortcode"
+msgstr ""
+
+#: classes/content_composer.php:92
+msgid "Edit shortcode"
+msgstr ""
+
+#: classes/content_composer.php:103
+msgid "Sure about column deleting?"
+msgstr ""
+
+#: classes/content_composer.php:104
+msgid "Sure about row deleting?"
+msgstr ""
+
+#: classes/content_composer.php:105 views/column_item.php:13
+msgid "Empty title"
+msgstr ""
+
+#: classes/content_composer.php:106
+msgid "Column content editor"
+msgstr ""
+
+#: classes/content_composer.php:107
+msgid "Section editor"
+msgstr ""
+
+#: classes/content_composer.php:173 index.php:42
+#: views/shortcodes/default/popups/title.php:51
+msgid "Default"
+msgstr ""
+
+#: classes/content_composer.php:174
+msgid "Default-white"
+msgstr ""
+
+#: classes/content_composer.php:185
+msgid "Small"
+msgstr ""
+
+#: classes/content_composer.php:186
+msgid "Middle"
+msgstr ""
+
+#: classes/content_composer.php:187
+msgid "Large"
+msgstr ""
+
+#: classes/content_composer.php:195
+msgid "All Categories"
+msgstr ""
+
+#: classes/content_composer.php:230
+msgid "All Tags"
+msgstr ""
+
+#: classes/content_composer.php:263
+msgid "Blog Classic"
+msgstr ""
+
+#: classes/content_composer.php:264
+msgid "Blog Medium"
+msgstr ""
+
+#: classes/content_composer.php:265
+msgid "Blog Masonry"
+msgstr ""
+
+#: classes/content_composer.php:266
+msgid "Blog Grid"
+msgstr ""
+
+#: classes/content_composer.php:267
+msgid "Grid Overlay"
+msgstr ""
+
+#: classes/content_composer.php:268
+msgid "Grid Multi Layout"
+msgstr ""
+
+#: classes/content_composer.php:398 classes/content_composer.php:412
+msgid "Browse"
+msgstr ""
+
+#: classes/layout_constructor.php:395
+msgid "Unsupported video format"
+msgstr ""
+
+#: classes/shortcode.php:39
+msgid "Price table"
+msgstr ""
+
+#: classes/shortcode.php:40
+msgid "Google table row"
+msgstr ""
+
+#: views/column_item.php:16 views/meta_panel.php:23 views/meta_panel.php:110
+msgid "Edit"
+msgstr ""
+
+#: views/column_item.php:17 views/meta_panel.php:24 views/meta_panel.php:111
+msgid "Delete"
+msgstr ""
+
+#: views/meta_panel.php:7
+msgid "Add New Row"
+msgstr ""
+
+#: views/meta_panel.php:8
+msgid "Insert Clipboard Row here"
+msgstr ""
+
+#: views/meta_panel.php:21 views/meta_panel.php:108
+#: views/shortcodes/default/popups/column.php:5
+msgid "Add Column"
+msgstr ""
+
+#: views/meta_panel.php:22
+msgid "Add Row to Clipboard"
+msgstr ""
+
+#: views/meta_panel.php:109
+msgid "Add to Clipboard"
+msgstr ""
+
+#: views/meta_panel.php:134
+msgid "No effects"
+msgstr ""
+
+#: views/meta_panel.php:135 views/shortcodes/default/popups/title.php:274
+msgid "Element Fade"
+msgstr ""
+
+#: views/meta_panel.php:136 views/shortcodes/default/popups/title.php:275
+msgid "Opacity"
+msgstr ""
+
+#: views/meta_panel.php:137 views/shortcodes/default/popups/title.php:276
+msgid "Slide Right"
+msgstr ""
+
+#: views/meta_panel.php:138 views/shortcodes/default/popups/title.php:277
+msgid "Slide Left"
+msgstr ""
+
+#: views/meta_panel.php:139 views/shortcodes/default/popups/title.php:278
+msgid "Slide Down"
+msgstr ""
+
+#: views/meta_panel.php:140 views/shortcodes/default/popups/title.php:279
+msgid "Slide Up"
+msgstr ""
+
+#: views/meta_panel.php:141 views/shortcodes/default/popups/title.php:280
+msgid "Slide Up 2x"
+msgstr ""
+
+#: views/meta_panel.php:142 views/shortcodes/default/popups/title.php:281
+msgid "Extra Radius"
+msgstr ""
+
+#: views/meta_panel.php:148
+msgid "Layout constructor"
+msgstr ""
+
+#: views/meta_panel.php:168
+msgid "Section Title"
+msgstr ""
+
+#: views/meta_panel.php:195
+msgid "Row Full Width"
+msgstr ""
+
+#: views/meta_panel.php:199 views/meta_panel.php:216
+#: views/shortcodes/default/popups/google_table.php:53
+#: views/shortcodes/default/popups/image.php:81
+msgid "No"
+msgstr ""
+
+#: views/meta_panel.php:200 views/meta_panel.php:217
+#: views/shortcodes/default/popups/google_table.php:47
+#: views/shortcodes/default/popups/image.php:75
+msgid "Yes"
+msgstr ""
+
+#: views/meta_panel.php:212
+msgid "Content Full Width"
+msgstr ""
+
+#: views/meta_panel.php:229
+msgid "Padding top"
+msgstr ""
+
+#: views/meta_panel.php:233
+msgid "No Top Padding"
+msgstr ""
+
+#: views/meta_panel.php:234 views/meta_panel.php:259 views/meta_panel.php:286
+#: views/meta_panel.php:312
+msgid "10 PX"
+msgstr ""
+
+#: views/meta_panel.php:235 views/meta_panel.php:260 views/meta_panel.php:287
+#: views/meta_panel.php:313
+msgid "20 PX"
+msgstr ""
+
+#: views/meta_panel.php:236 views/meta_panel.php:261 views/meta_panel.php:288
+#: views/meta_panel.php:314
+msgid "30 PX"
+msgstr ""
+
+#: views/meta_panel.php:237 views/meta_panel.php:262 views/meta_panel.php:289
+#: views/meta_panel.php:315
+msgid "40 PX"
+msgstr ""
+
+#: views/meta_panel.php:238 views/meta_panel.php:263 views/meta_panel.php:290
+#: views/meta_panel.php:316
+msgid "50 PX"
+msgstr ""
+
+#: views/meta_panel.php:239 views/meta_panel.php:264
+msgid "55 PX"
+msgstr ""
+
+#: views/meta_panel.php:240 views/meta_panel.php:265 views/meta_panel.php:291
+#: views/meta_panel.php:317
+msgid "60 PX"
+msgstr ""
+
+#: views/meta_panel.php:241 views/meta_panel.php:266 views/meta_panel.php:292
+#: views/meta_panel.php:318
+msgid "70 PX"
+msgstr ""
+
+#: views/meta_panel.php:242 views/meta_panel.php:267 views/meta_panel.php:293
+#: views/meta_panel.php:319
+msgid "80 PX"
+msgstr ""
+
+#: views/meta_panel.php:243 views/meta_panel.php:268 views/meta_panel.php:294
+#: views/meta_panel.php:320
+msgid "90 PX"
+msgstr ""
+
+#: views/meta_panel.php:244 views/meta_panel.php:269 views/meta_panel.php:295
+#: views/meta_panel.php:321
+msgid "100 PX"
+msgstr ""
+
+#: views/meta_panel.php:255
+msgid "Padding bottom"
+msgstr ""
+
+#: views/meta_panel.php:258
+msgid "No Bottom Padding"
+msgstr ""
+
+#: views/meta_panel.php:282
+msgid "Margin top"
+msgstr ""
+
+#: views/meta_panel.php:285
+msgid "No Top Margin"
+msgstr ""
+
+#: views/meta_panel.php:308
+msgid "Margin bottom"
+msgstr ""
+
+#: views/meta_panel.php:311
+msgid "No Bottom Margin"
+msgstr ""
+
+#: views/meta_panel.php:334
+msgid "Content Align"
+msgstr ""
+
+#: views/meta_panel.php:357
+msgid "Border width"
+msgstr ""
+
+#: views/meta_panel.php:374
+msgid "Border type"
+msgstr ""
+
+#: views/meta_panel.php:378 views/shortcodes/default/popups/divider.php:12
+msgid "Solid"
+msgstr ""
+
+#: views/meta_panel.php:379
+msgid "Dashed"
+msgstr ""
+
+#: views/meta_panel.php:380
+msgid "Dotted"
+msgstr ""
+
+#: views/meta_panel.php:387
+msgid "Border Color"
+msgstr ""
+
+#: views/meta_panel.php:403
+msgid "Row Background Type"
+msgstr ""
+
+#: views/meta_panel.php:407 views/shortcodes/default/popups/image.php:192
+#: views/shortcodes/default/popups/title.php:273
+msgid "None"
+msgstr ""
+
+#: views/meta_panel.php:409
+msgid "Custom"
+msgstr ""
+
+#: views/meta_panel.php:421
+msgid "Custom Background Type"
+msgstr ""
+
+#: views/meta_panel.php:425 views/shortcodes/default/popups/button.php:43
+msgid "Color"
+msgstr ""
+
+#: views/meta_panel.php:426 views/shortcodes/default/popups/google_map.php:43
+msgid "Image"
+msgstr ""
+
+#: views/meta_panel.php:437 views/shortcodes/default/popups/chart.php:146
+#: views/shortcodes/default/popups/title.php:145
+msgid "Background Color"
+msgstr ""
+
+#: views/meta_panel.php:453
+msgid "Background Image"
+msgstr ""
+
+#: views/meta_panel.php:477
+msgid "Overlay"
+msgstr ""
+
+#: views/meta_panel.php:489
+msgid "Overlay Color"
+msgstr ""
+
+#: views/meta_panel.php:503
+msgid "Overlay Opacity"
+msgstr ""
+
+#: views/meta_panel.php:522
+msgid "Background Video"
+msgstr ""
+
+#: views/meta_panel.php:533 views/meta_panel.php:538
+msgid "Show / Hide video control panel"
+msgstr ""
+
+#: views/meta_panel.php:545 views/meta_panel.php:550
+msgid "Mute audio on video"
+msgstr ""
+
+#: views/meta_panel.php:557 views/meta_panel.php:562
+msgid "Repeat videos automatically"
+msgstr ""
+
+#: views/shortcodes/default/blog.php:271
+msgid "Posted by"
+msgstr ""
+
+#: views/shortcodes/default/blog.php:275
+msgid "With"
+msgstr ""
+
+#: views/shortcodes/default/blog.php:275
+msgid "Comments"
+msgstr ""
+
+#: views/shortcodes/default/blog.php:280
+msgid "Category:"
+msgstr ""
+
+#: views/shortcodes/default/blog.php:316
+#: views/shortcodes/default/featured_post.php:80
+msgid "Read more"
+msgstr ""
+
+#: views/shortcodes/default/contact_form.php:66
+msgid "Submit"
+msgstr ""
+
+#: views/shortcodes/default/divider.php:12
+msgid "Back to Top"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:10
+#: views/shortcodes/default/popups/quotes.php:11
+msgid "Enter Text"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:22
+#: views/shortcodes/default/popups/alert.php:39
+#: views/shortcodes/default/popups/column.php:20
+#: views/shortcodes/default/popups/divider.php:8
+#: views/shortcodes/default/popups/featured_post.php:25
+#: views/shortcodes/default/popups/tabbed_content.php:6
+msgid "Select Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:26
+msgid "Error"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:27
+msgid "Success"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:28
+msgid "Info"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:29
+msgid "Notice"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:43
+msgid "Style-1"
+msgstr ""
+
+#: views/shortcodes/default/popups/alert.php:44
+msgid "Style-2"
+msgstr ""
+
+#: views/shortcodes/default/popups/alternate_gallery.php:20
+msgid "Galleries"
+msgstr ""
+
+#: views/shortcodes/default/popups/audio.php:11
+msgid "Link to Audio"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:8
+msgid "Blog Title"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:21
+msgid "Blog View"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:25
+msgid "Default Blog Layout"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:26
+msgid "Alternate Blog Layout"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:38
+#: views/shortcodes/default/popups/upcoming_events.php:110
+msgid "Category"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:54
+msgid "Order By"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:69
+msgid "Order"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:75
+#: views/shortcodes/default/popups/upcoming_events.php:86
+msgid "ASC"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:81
+#: views/shortcodes/default/popups/upcoming_events.php:85
+msgid "DESC"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:98
+msgid "Posts Per Page"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:112
+msgid "Posts"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:116
+msgid "Example: 56,73,119. It has the most hight priority!"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:126
+msgid "Show Full Content"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:132
+msgid "YES"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:138
+msgid "NO"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:156
+msgid "Show Image"
+msgstr ""
+
+#: views/shortcodes/default/popups/blog.php:169
+msgid "Show Pagination"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:11
+msgid "Buttons Text"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:27
+msgid "URL"
+msgstr ""
+
+#: views/shortcodes/default/popups/button.php:75
+msgid "Size"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:9
+msgid "Chart Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:13
+msgid "Pie Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:14
+msgid "Bar Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:15
+msgid "Column Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:16
+msgid "Geochart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:17
+msgid "Line Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:18
+msgid "Area Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:19
+msgid "Combo Chart"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:32
+msgid "Title"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:46
+msgid "Chart Width"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:60
+msgid "Chart Height"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:74
+#: views/shortcodes/default/popups/title.php:73
+msgid "Font Family"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:96
+msgid "Font Size"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:111
+msgid "Chart Titles"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:115
+#: views/shortcodes/default/popups/chart.php:132
+msgid "Example:"
+msgstr ""
+
+#: views/shortcodes/default/popups/chart.php:128
+msgid "Chart Data"
+msgstr ""
+
+#: views/shortcodes/default/popups/column.php:24
+msgid "One Third"
+msgstr ""
+
+#: views/shortcodes/default/popups/column.php:25
+msgid "One Fourth"
+msgstr ""
+
+#: views/shortcodes/default/popups/column.php:26
+msgid "One Fifth"
+msgstr ""
+
+#: views/shortcodes/default/popups/column.php:27
+msgid "One Half"
+msgstr ""
+
+#: views/shortcodes/default/popups/column.php:28
+msgid "Two Third"
+msgstr ""
+
+#: views/shortcodes/default/popups/column.php:29
+msgid "Three Fourth"
+msgstr ""
+
+#: views/shortcodes/default/popups/column.php:30
+msgid "Full Width"
+msgstr ""
+
+#: views/shortcodes/default/popups/column.php:43
+#: views/shortcodes/default/popups/featured_post.php:52
+#: views/shortcodes/default/popups/featured_post.php:313
+#: views/shortcodes/default/popups/home_holder.php:41
+#: views/shortcodes/default/popups/tabbed_content.php:44
+#: views/shortcodes/default/popups/testimonials.php:48
+#: views/shortcodes/default/popups/toggle.php:46
+msgid "Content"
+msgstr ""
+
+#: views/shortcodes/default/popups/contact_form.php:20
+msgid "Choose Contact Form"
+msgstr ""
+
+#: views/shortcodes/default/popups/divider.php:13
+msgid "White Space"
+msgstr ""
+
+#: views/shortcodes/default/popups/divider.php:14
+msgid "Dotted With Top Link"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:46
+msgid "Show content "
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:58
+msgid "Excerpt"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:86
+msgid "Excerpt Char Count"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:102
+msgid "Featured Image"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:106
+msgid "No image"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:107
+msgid "Show featured image"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:108
+msgid "Use custom image link"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:109
+msgid "Show image in fancybox"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:124
+msgid "Custom Image Link"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:140
+msgid "Thumb Width"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:156
+msgid "Thumb Height"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:176
+msgid "Read More Button"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:182
+msgid "Show readmore button"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:188
+msgid "No readmore button"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:225
+msgid "Button Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:251
+msgid "Button Size"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:268
+msgid "Title Align"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:272
+#: views/shortcodes/default/popups/featured_post.php:293
+#: views/shortcodes/default/popups/image.php:193
+msgid "Left"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:273
+#: views/shortcodes/default/popups/featured_post.php:294
+#: views/shortcodes/default/popups/image.php:195
+msgid "Center"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:274
+#: views/shortcodes/default/popups/featured_post.php:295
+#: views/shortcodes/default/popups/image.php:194
+msgid "Right"
+msgstr ""
+
+#: views/shortcodes/default/popups/featured_post.php:289
+msgid "Text Align"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:9
+#: views/shortcodes/default/popups/image.php:174
+#: views/shortcodes/default/popups/video.php:61
+msgid "Height"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:24
+#: views/shortcodes/default/popups/image.php:143
+#: views/shortcodes/default/popups/video.php:49
+msgid "Width"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:38
+msgid "Mode"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:42
+msgid "Map"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:56
+msgid "Location mode"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:60
+#: views/shortcodes/default/popups/google_map.php:126
+msgid "Address"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:61
+msgid "Coordinates"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:75
+msgid "Marker Latitude"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:79
+#: views/shortcodes/default/popups/google_map.php:95
+msgid ""
+"Point on which the viewport will be centered. If not given and no markers "
+"are defined the viewport defaults to world view. In address Location mode it "
+"is calculated automatically!"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:91
+msgid "Marker Longitude"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:111
+msgid "Zoom"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:116
+msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:139
+msgid "Maptype"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:143
+msgid "ROADMAP"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:144
+msgid "SATELLITE"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:145
+msgid "HYBRID"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:146
+msgid "TERRAIN"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:158
+msgid "Enable Scrollwheel"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:162
+msgid "Set to false to disable zooming with your mouses scrollwheel."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:171
+msgid "Enable Popup"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:175
+msgid ""
+"If true the info window for this marker will be shown when the map finished "
+"loading. If html is empty this option will be ignored."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:185
+msgid "Enable Marker"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:189
+msgid "Set to false to disable display a marker in the viewport."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:198
+msgid "Html Content"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:211
+msgid "Marker is draggable"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:215
+msgid "Set marker draggable"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:9
+#: views/shortcodes/default/popups/google_table.php:24
+msgid "Table Data"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:13
+msgid ""
+"Example: string:Name,number:Salary,number:Full Time Employee<br />\n"
+"\t\t\t\t\t\t\t\tDocumentation: https://developers.google.com/chart/"
+"interactive/docs/gallery/table"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:28
+msgid ""
+"Example: ^Mike^, {v: 10000, f: ^$10,000^}, 1~^Jim^, {v:8000, f: ^$8,000^}, "
+"1~^Alice^, {v: 12500, f: ^$12,500^}, 0~^Bob^, {v: 7000, f: ^$7,000^},1<br /"
+">\n"
+"\t\t\t\t\t\t\t\tDocumentation: https://developers.google.com/chart/"
+"interactive/docs/gallery/table"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_table.php:41
+msgid "Show Row Number"
+msgstr ""
+
+#: views/shortcodes/default/popups/home_holder.php:22
+msgid "Y-offset"
+msgstr ""
+
+#: views/shortcodes/default/popups/home_holder.php:26
+msgid "Need for home page"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:8
+msgid "Image URL"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:21
+msgid "Link Target"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:27
+msgid "Self"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:33
+msgid "Blank"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:51
+msgid "Action"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:55
+msgid "No link on image"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:56
+msgid "Open link"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:57
+msgid "Open Image in fancybox"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:69
+msgid "Show Border"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:100
+msgid "Image Action Link"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:113
+msgid "Fancybox Group"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:126
+msgid "Link Title"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:158
+msgid "Image Alt"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:188
+#: views/shortcodes/default/popups/title.php:119
+msgid "Align"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:208
+msgid "Top Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:222
+msgid "Right Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:236
+#: views/shortcodes/default/popups/title.php:104
+msgid "Bottom Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/image.php:250
+msgid "Left Indent (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:6
+msgid "List Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:10
+msgid "Unordered"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:12
+msgid "Ordered"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:16
+msgid ""
+"Ordered list has only 2 first types from a list below, Unordered has all "
+"16th list types there."
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:18
+msgid "List Styles"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:29
+#: views/shortcodes/default/popups/video.php:11
+msgid "Type"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:35
+msgid "List Items"
+msgstr ""
+
+#: views/shortcodes/default/popups/list.php:37
+msgid "Example: option 1^option 2^option 3"
+msgstr ""
+
+#: views/shortcodes/default/popups/staves.php:19
+msgid "Position"
+msgstr ""
+
+#: views/shortcodes/default/popups/staves.php:20
+msgid "All"
+msgstr ""
+
+#: views/shortcodes/default/popups/staves.php:36
+msgid "Per page"
+msgstr ""
+
+#: views/shortcodes/default/popups/staves.php:60
+msgid "Order by"
+msgstr ""
+
+#: views/shortcodes/default/popups/staves.php:62
+msgid "Name"
+msgstr ""
+
+#: views/shortcodes/default/popups/staves.php:63
+msgid "Date"
+msgstr ""
+
+#: views/shortcodes/default/popups/staves.php:81
+msgid "Sort order"
+msgstr ""
+
+#: views/shortcodes/default/popups/tabbed_content.php:10
+#: views/shortcodes/default/popups/tabbed_content.php:12
+#: views/shortcodes/default/popups/tabbed_content.php:14
+msgid "Style"
+msgstr ""
+
+#: views/shortcodes/default/popups/tabbed_content.php:18
+msgid "Add Tab"
+msgstr ""
+
+#: views/shortcodes/default/popups/tabbed_content.php:41
+msgid "Tab Title"
+msgstr ""
+
+#: views/shortcodes/default/popups/tabbed_content.php:43
+#: views/shortcodes/default/popups/toggle.php:40
+msgid "Remove"
+msgstr ""
+
+#: views/shortcodes/default/popups/testimonials.php:11
+msgid "Show"
+msgstr ""
+
+#: views/shortcodes/default/popups/testimonials.php:15
+msgid "Show selected testimonial"
+msgstr ""
+
+#: views/shortcodes/default/popups/testimonials.php:16
+msgid "Show random testimonial"
+msgstr ""
+
+#: views/shortcodes/default/popups/testimonials.php:17
+msgid "Show latest testimonial"
+msgstr ""
+
+#: views/shortcodes/default/popups/testimonials.php:65
+msgid "Count"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:16
+msgid "Title Text"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:31
+msgid "Title Heading"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:58
+msgid "Font Size (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:89
+msgid "Line Height (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:160
+msgid "Background Opacity (from 0 to 1)"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:175
+msgid "Background Radius (%)"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:191
+msgid "Padding (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:205
+msgid "Background Width (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:220
+msgid "Background Height (px)"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:237
+msgid "Use Website General Color"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:252
+msgid "Background Align Center"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:268
+msgid "Effect for Appearing Title"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:294
+msgid "Split Title in Rows and Animate Each Row"
+msgstr ""
+
+#: views/shortcodes/default/popups/title.php:307
+msgid "Split Title with the help \"^\" symbol"
+msgstr ""
+
+#: views/shortcodes/default/popups/toggle.php:13
+msgid "Add Toggle"
+msgstr ""
+
+#: views/shortcodes/default/popups/toggle.php:32
+msgid "Toggle Title"
+msgstr ""
+
+#: views/shortcodes/default/popups/upcoming_events.php:11
+msgid "Block Title"
+msgstr ""
+
+#: views/shortcodes/default/popups/upcoming_events.php:27
+msgid "Count of events"
+msgstr ""
+
+#: views/shortcodes/default/popups/upcoming_events.php:43
+msgid "Delay"
+msgstr ""
+
+#: views/shortcodes/default/popups/upcoming_events.php:47
+msgid "in hours"
+msgstr ""
+
+#: views/shortcodes/default/popups/upcoming_events.php:64
+msgid "Soonest event data parsing"
+msgstr ""
+
+#: views/shortcodes/default/popups/upcoming_events.php:81
+msgid "Sorting"
+msgstr ""
+
+#: views/shortcodes/default/popups/video.php:15
+msgid "Youtube"
+msgstr ""
+
+#: views/shortcodes/default/popups/video.php:16
+msgid "Vimeo"
+msgstr ""
+
+#: views/shortcodes/default/popups/video.php:17
+msgid "Html5"
+msgstr ""
+
+#: views/shortcodes/default/popups/video.php:31
+msgid "Youtube or Vimeo id"
+msgstr ""
+
+#: views/shortcodes/default/staves.php:77
+msgid "E-mail"
+msgstr ""
+
+#: views/shortcodes/default/upcoming_events.php:49
+msgid "There is no events added yet!"
+msgstr ""
+
+#: views/shortcodes/default/video.php:45
+msgid "No video playback capabilities"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "ThemeMakers Visual Content Composer"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://webtemplatemasters.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Universal Layout Composer with Shortcodes Package"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ThemeMakers"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://themeforest.net/user/ThemeMakers"
+msgstr ""
