@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2015-07-13 15:07+0200\n"
-"PO-Revision-Date: 2015-07-13 15:07+0200\n"
-"Last-Translator: ThemeMakers Team <support@webtemplatemasters.com>\n"
-"Language-Team: ThemeMakers Team <support@webtemplatemasters.com>\n"
+"POT-Creation-Date: 2016-02-04 22:04+0100\n"
+"PO-Revision-Date: 2016-02-04 22:04+0100\n"
+"Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
+"Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.2\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -20,89 +20,88 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: classes/content_composer.php:59
+#: classes/content_composer.php:56
 msgid "ThemeMakers Layout Constructor"
 msgstr ""
 
-#: classes/content_composer.php:92
+#: classes/content_composer.php:89
 msgid "Loading ..."
 msgstr ""
 
-#: classes/content_composer.php:93
+#: classes/content_composer.php:90
 msgid "Close"
 msgstr ""
 
-#: classes/content_composer.php:94
+#: classes/content_composer.php:91
 msgid "Apply"
 msgstr ""
 
-#: classes/content_composer.php:95
+#: classes/content_composer.php:92
 msgid "There is no options for shortcode!"
 msgstr ""
 
-#: classes/content_composer.php:96
+#: classes/content_composer.php:93
 msgid "Shortcode updated!"
 msgstr ""
 
-#: classes/content_composer.php:97
+#: classes/content_composer.php:94
 msgid "Insert Shortcode"
 msgstr ""
 
-#: classes/content_composer.php:98
+#: classes/content_composer.php:95
 msgid "Edit shortcode"
 msgstr ""
 
-#: classes/content_composer.php:108
+#: classes/content_composer.php:105
 msgid "Sure about column deleting?"
 msgstr ""
 
-#: classes/content_composer.php:109
+#: classes/content_composer.php:106
 msgid "Sure about row deleting?"
 msgstr ""
 
-#: classes/content_composer.php:110 views/column_item.php:13
+#: classes/content_composer.php:107 views/column_item.php:13
 msgid "Empty title"
 msgstr ""
 
-#: classes/content_composer.php:111
+#: classes/content_composer.php:108
 msgid "Column content editor"
 msgstr ""
 
-#: classes/content_composer.php:112
+#: classes/content_composer.php:109
 msgid "Row editor"
 msgstr ""
 
-#: classes/content_composer.php:228 index.php:40
+#: classes/content_composer.php:199 index.php:40
 #: views/shortcodes/default/popups/title.php:41
 msgid "Default"
 msgstr ""
 
-#: classes/content_composer.php:229
+#: classes/content_composer.php:200
 msgid "Default-white"
 msgstr ""
 
-#: classes/content_composer.php:240
+#: classes/content_composer.php:211
 msgid "Small"
 msgstr ""
 
-#: classes/content_composer.php:241
+#: classes/content_composer.php:212
 msgid "Middle"
 msgstr ""
 
-#: classes/content_composer.php:242
+#: classes/content_composer.php:213
 msgid "Large"
 msgstr ""
 
-#: classes/content_composer.php:250
+#: classes/content_composer.php:221
 msgid "All Categories"
 msgstr ""
 
-#: classes/content_composer.php:383 classes/content_composer.php:396
+#: classes/content_composer.php:355 classes/content_composer.php:369
 msgid "Browse"
 msgstr ""
 
-#: classes/layout_constructor.php:244
-#: views/shortcodes/default/tmm_video.php:26
+#: classes/layout_constructor.php:244 views/shortcodes/default/tmm_video.php:26
 msgid "Unsupported video format"
 msgstr ""
 
@@ -149,7 +148,7 @@ msgstr ""
 #: views/meta_panel.php:128 views/meta_panel.php:191
 #: views/shortcodes/almera/popups/imggallery.php:34
 #: views/shortcodes/default/popups/blockquote.php:32
-#: views/shortcodes/default/popups/image.php:81
+#: views/shortcodes/default/popups/image.php:82
 msgid "None"
 msgstr ""
 
@@ -194,7 +193,7 @@ msgstr ""
 msgid "Border Color"
 msgstr ""
 
-#: views/shortcodes/almera/imggallery.php:170
+#: views/shortcodes/almera/imggallery.php:167
 #: views/shortcodes/default/popups/testimonials.php:100
 msgid "All"
 msgstr ""
@@ -294,7 +293,7 @@ msgstr ""
 msgid "Add gallery item"
 msgstr ""
 
-#: views/shortcodes/almera/portfolio.php:302
+#: views/shortcodes/almera/portfolio.php:317
 msgid "More"
 msgstr ""
 
@@ -385,19 +384,19 @@ msgid "Notice"
 msgstr ""
 
 #: views/shortcodes/default/popups/blockquote.php:28
-#: views/shortcodes/default/popups/image.php:77
+#: views/shortcodes/default/popups/image.php:78
 #: views/shortcodes/default/popups/testimonials.php:50
 #: views/shortcodes/default/popups/title.php:84
 msgid "Align"
 msgstr ""
 
 #: views/shortcodes/default/popups/blockquote.php:33
-#: views/shortcodes/default/popups/image.php:82
+#: views/shortcodes/default/popups/image.php:83
 msgid "Left"
 msgstr ""
 
 #: views/shortcodes/default/popups/blockquote.php:34
-#: views/shortcodes/default/popups/image.php:83
+#: views/shortcodes/default/popups/image.php:84
 msgid "Right"
 msgstr ""
 
@@ -418,7 +417,7 @@ msgid "http://forums.webtemplatemasters.com/"
 msgstr ""
 
 #: views/shortcodes/default/popups/button.php:50
-#: views/shortcodes/default/popups/image.php:99
+#: views/shortcodes/default/popups/image.php:100
 msgid "Size"
 msgstr ""
 
@@ -563,65 +562,65 @@ msgstr ""
 msgid "Image URL"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:26
+#: views/shortcodes/default/popups/image.php:27
 msgid "Action"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:30
+#: views/shortcodes/default/popups/image.php:31
 msgid "No link on image"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:31
+#: views/shortcodes/default/popups/image.php:32
 msgid "Open link"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:43
+#: views/shortcodes/default/popups/image.php:44
 msgid "Image Action Link"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:56
+#: views/shortcodes/default/popups/image.php:57
 msgid "Link Target"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:60
+#: views/shortcodes/default/popups/image.php:61
 msgid "Self"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:61
+#: views/shortcodes/default/popups/image.php:62
 msgid "Blank"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:84
+#: views/shortcodes/default/popups/image.php:85
 msgid "Center"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:103
+#: views/shortcodes/default/popups/image.php:104
 #: views/shortcodes/default/popups/slider.php:36
 msgid "width*height. Fore example: 500*300. Empty field means full size"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:115
+#: views/shortcodes/default/popups/image.php:116
 msgid "Image Alt"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:129
+#: views/shortcodes/default/popups/image.php:130
 msgid "Link Title"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:143
+#: views/shortcodes/default/popups/image.php:144
 msgid "Top Indent (px)"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:157
+#: views/shortcodes/default/popups/image.php:158
 msgid "Right Indent (px)"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:171
+#: views/shortcodes/default/popups/image.php:172
 #: views/shortcodes/default/popups/title.php:142
 msgid "Bottom Indent (px)"
 msgstr ""
 
-#: views/shortcodes/default/popups/image.php:185
+#: views/shortcodes/default/popups/image.php:186
 msgid "Left Indent (px)"
 msgstr ""
 
@@ -825,19 +824,19 @@ msgstr ""
 msgid "Link to Audio"
 msgstr ""
 
-#: views/shortcodes/default/popups/tmm_audio.php:23
+#: views/shortcodes/default/popups/tmm_audio.php:24
 msgid "Audio format"
 msgstr ""
 
-#: views/shortcodes/default/popups/tmm_audio.php:27
+#: views/shortcodes/default/popups/tmm_audio.php:28
 msgid "Other"
 msgstr ""
 
-#: views/shortcodes/default/popups/tmm_audio.php:28
+#: views/shortcodes/default/popups/tmm_audio.php:29
 msgid "Wav"
 msgstr ""
 
-#: views/shortcodes/default/popups/tmm_audio.php:29
+#: views/shortcodes/default/popups/tmm_audio.php:30
 msgid "Ogg"
 msgstr ""
 
