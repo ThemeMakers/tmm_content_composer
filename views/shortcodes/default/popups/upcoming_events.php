@@ -65,7 +65,7 @@
         'shortcode_field' => 'deep',
         'id' => '',
         'options' => $month_array,
-        'default_value' => TMM_Content_Composer::set_default_value('deep', 0),
+        'default_value' => TMM_Content_Composer::set_default_value('deep', 1),
         'description' => ''
         ));
         ?>

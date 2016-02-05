@@ -8,6 +8,17 @@
 
 
 	<?php
+
+    if(!isset($category)) {
+        $category = 0;
+    }
+    if(!isset($sorting)) {
+        $sorting = 'DESC';
+    }
+    if(!isset($deep)) {
+        $deep = 1;
+    }
+
 	$start = current_time('timestamp');
 	if (isset($delay)) {
 		$start = $start - $delay * 3600;
