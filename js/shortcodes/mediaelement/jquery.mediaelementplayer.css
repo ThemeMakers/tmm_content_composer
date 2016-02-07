@@ -117,10 +117,10 @@
 	list-style-type: none;
 }
 
-.mejs-container .mejs-controls  div {
+.mejs-container .mejs-controls div {
 	display: block;
 	float: left;
-	margin: 0 2px;
+	margin: 0;
 	padding: 0;
 	width: 30px;
 	height: 28px;
@@ -158,11 +158,10 @@
 	color: #000;
 	display: block;
 	height: 17px;
-	width: auto;
+	width: 27px;
 	padding: 8px 3px 0 4px;
 	overflow: hidden;
 	text-align: center;
-	padding: auto 4px;
 }
 
 .mejs-container .mejs-controls .mejs-time span {
@@ -194,7 +193,6 @@
 /* Start: Progress bar */
 .mejs-controls div.mejs-time-rail {
 	width: 200px;
-	padding-top: 5px;
 }
 
 .mejs-controls .mejs-time-rail span {
@@ -206,7 +204,7 @@
 }
 
 .mejs-controls .mejs-time-rail .mejs-time-total {
-	margin: 5px;
+	margin: 9px 5px;
 	background-color: #c8c8c8;
 	border-width: 1px;
 	border-style: solid;
