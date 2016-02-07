@@ -362,6 +362,21 @@ $services-alt-1-title-color						: #ffffff;
 $services-alt-1-font-color						: #ffffff;
 $services-alt-1-cover-font-color				: #ffffff;
 
+// Highlight
+$highlight-bg-color								: #4d90fe;
+$highlight-text-color							: #ffffff;
+
+// Tooltip
+$tooltip-border-color							: #9b9b9b;
+$tooltip-border-radius							: 5px;
+$tooltip-bg-color								: #ffffff;
+$tooltip-font-color								: #4d90fe;
+$tooltip-font-weight							: 400;
+$tooltip-font-size								: 16px;
+$tooltip-font-family							: 'Roboto Slab', serif;
+$tooltip-inner-offset							: 8px 10px;
+
+
 
 /* -------------------------------------------------- */
 /*	 Accordion and Toggle
@@ -1098,10 +1113,10 @@ ol {
 /*	Highlight
 /* -------------------------------------------------- */
 
-.highlight {
+.lc-highlight {
 	padding: 0 3px;
-	background-color: #f85c37;
-	color: #fff;
+	background-color: $highlight-bg-color;
+	color: $highlight-text-color;
 }
 
 /* -------------------------------------------------- */
@@ -2638,5 +2653,40 @@ a.social-like.voted:before{ color: #f85c37; }
 			height: 27px;
 			line-height: 27px;
 		}
+	}
+}
+
+/* -------------------------------------------------- */
+/*	Tooltip
+/* -------------------------------------------------- */
+
+.lc-tooltip {
+	color: $tooltip-font-color;
+	border-bottom: {
+		width: 1px;
+		style: dashed;
+		color: $tooltip-font-color;
+	};
+}
+
+.lc-tooltipster-theme {
+	border: {
+		width: 1px;
+		style: solid;
+		color: $tooltip-border-color;
+	};
+	background-color: $tooltip-bg-color;
+	color: $tooltip-font-color;
+	@include border-radius($tooltip-border-radius);
+
+	.tooltipster-content {
+		padding: $tooltip-inner-offset;
+		font: {
+			weight: $tooltip-font-weight;
+			size: $tooltip-font-size;
+			family: $tooltip-font-family;
+		};
+		line-height: 1.2;
+		overflow: hidden;
 	}
 }

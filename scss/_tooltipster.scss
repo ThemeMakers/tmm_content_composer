@@ -1,30 +1,19 @@
-html {
-	/*-webkit-font-smoothing: antialiased;*/
-}
-
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
-.tooltipster-default {
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	border: 1px solid #9b9b9b;
-	background: #fff;
-	color: #f85c37;
-}
-
-/* Use this next selector to style things like font-size and line-height: */
-.tooltipster-default .tooltipster-content {
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-	line-height: 16px;
-	padding: 8px 10px;
-	overflow: hidden;
-}
-
-/* This next selector defines the color of the border on the outside of the arrow. This will automatically match the color and size of the border set on the main tooltip styles. Set display: none; if you would like a border around the tooltip but no border around the arrow */
-.tooltipster-default .tooltipster-arrow .tooltipster-arrow-border {
-	/* border-color: ... !important; */
-}
-
+//.tooltipster-default {
+//	border: 1px solid #9b9b9b;
+//	background: #fff;
+//	color: #4d90fe;
+//	@include border-radius(5px);
+//
+//	/* Use this next selector to style things like font-size and line-height: */
+//	.tooltipster-content {
+//		font-family: Arial, sans-serif;
+//		font-size: 14px;
+//		line-height: 16px;
+//		padding: 8px 10px;
+//		overflow: hidden;
+//	}
+//} Disabled default because it's using in shortcode section
 
 /* If you're using the icon option, use this next selector to style them */
 .tooltipster-icon {
@@ -42,11 +31,11 @@ html {
 	pointer-events: none;
 	width: auto;
 	overflow: visible;
-}
-.tooltipster-base .tooltipster-content {
-	overflow: hidden;
-}
 
+	.tooltipster-content {
+		overflow: hidden;
+	}
+}
 
 /* These next classes handle the styles for the little arrow attached to the tooltip. By default, the arrow will inherit the same colors and border as what is set on the main tooltip itself. */
 .tooltipster-arrow {
@@ -257,7 +246,6 @@ html {
 	left: 0px !important;
 	opacity: 0;
 }
-
 
 /* CSS transition for when contenting is changing in a tooltip that is still open. The only properties that will NOT transition are: width, height, top, and left */
 .tooltipster-content-changing {

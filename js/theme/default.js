@@ -473,6 +473,31 @@ function merge_objects_options(obj1, obj2) {
 
             }
 
+            /*----------------------------------------------------*/
+            /*	Tooltipster										  */
+            /*----------------------------------------------------*/
+
+            if ($('.lc-tooltip').length) {
+
+                $('.lc-tooltip').tooltipster({
+                    animation: 'grow',
+                    autoClose: true,
+                    debug: true,
+                    delay: 200,
+                    hideOnClick: false,
+                    icon: '(?)',
+                    iconTheme: 'tooltipster-icon',
+                    position: 'top',
+                    restoration: 'current',
+                    speed: 350,
+                    timer: 0,
+                    theme: 'lc-tooltipster-theme',
+                    touchDevices: true,
+                    trigger: 'hover'
+                });
+
+            }
+
         }());
     });
 }(jQuery, window, document));
