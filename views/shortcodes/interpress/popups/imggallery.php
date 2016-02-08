@@ -47,7 +47,7 @@
 		
 		<br>
 	
-		<ul id="tmm-gallery-items">
+		<ul class="tmm-gallery-items">
 
 		<?php
 		$items = array();
@@ -94,7 +94,7 @@
 	jQuery(function($) {
 		tmm_ext_shortcodes.gallery_changer(shortcode_name);
 
-		var wrapper = $('#tmm-gallery-items');
+		var wrapper = $('.tmm-gallery-items');
 		wrapper.sortable({
 			stop: function(event, ui) {
 				tmm_ext_shortcodes.gallery_changer(shortcode_name);
