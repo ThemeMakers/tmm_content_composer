@@ -1,5 +1,4 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<link rel="stylesheet" href="<?php echo TMM_THEME_URI; ?>/css/fontello.css" type="text/css" media="all" />
 
 <style type="text/css">
 
