@@ -1074,7 +1074,10 @@ $car-body-title-color-hover						: #ff600a;
 /* -------------------------------------------------- */
 
 .car_listing_carousel_wrapper {
-	width: 100%;
+	width: 1px;
+	min-width: 100%;
+	*width: 100%;
+	//width: 100%;
 	overflow: hidden;
 
 	.page-subheader {
@@ -1228,6 +1231,10 @@ $car-body-title-color-hover						: #ff600a;
 	}
 
 	.rnc_content {
+		width: 1px;
+		min-width: 100%;
+		*width: 100%;
+
 		> div {
 			margin-top: -1px !important;	// hide first item's border from viewport
 		}
