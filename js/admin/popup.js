@@ -13,6 +13,8 @@
             save: null /* optional callback */
         },
         zindex = 1002;
+
+    //zindex = 99999;
     
     self = $.tmm_popup = function(options) {
         

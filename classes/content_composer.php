@@ -72,31 +72,36 @@ class TMM_Content_Composer {
 		global $pagenow;
 		$screen = get_current_screen();
 
-		if ( $screen->base === 'toplevel_page_gf_edit_forms' || $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php'||  $pagenow === 'widgets.php' ) {
+		echo 'Pagenow='.$pagenow;
+
+		if ( $screen->base === 'toplevel_page_gf_edit_forms' || $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' ||  $pagenow === 'widgets.php' || $pagenow == 'customize.php') {
 			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc-admin.css');
 			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/admin/popup.js', array('jquery'));
 			wp_enqueue_script('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker.js', array('jquery'));
 			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/admin/shortcodes.js', array('jquery'), false, true);
 
-			?>
-			<script type="text/javascript">
-				var tmm_cc_plugin_url = "<?php echo TMM_CC_URL; ?>";
-				var tmm_shortcodes_items_keys = /\[(<?php print join('|', array_keys(TMM_Shortcode::$shortcodes)); ?>)\s?([^\]]*)(?:\s*\/)?\](([^\[\]]*)\[\/\1\])?/g;
-				var tmm_ext_shortcodes_items = <?php echo TMM_Shortcode::get_shortcodes_items() ?>;
 
-				if(!window.tmm_lang){
-					var tmm_lang = {};
-				}
+				?>
+				<script type="text/javascript">
+					var tmm_cc_plugin_url = "<?php echo TMM_CC_URL; ?>";
+					var tmm_shortcodes_items_keys = /\[(<?php print join('|', array_keys(TMM_Shortcode::$shortcodes)); ?>)\s?([^\]]*)(?:\s*\/)?\](([^\[\]]*)\[\/\1\])?/g;
+					var tmm_ext_shortcodes_items = <?php echo TMM_Shortcode::get_shortcodes_items() ?>;
 
-				tmm_lang['loading'] = "<?php _e("Loading ...", 'tmm_content_composer') ?>";
-				tmm_lang['close'] = "<?php _e("Close", 'tmm_content_composer') ?>";
-				tmm_lang['apply'] = "<?php _e("Apply", 'tmm_content_composer') ?>";
-				tmm_lang['shortcode_nooption'] = "<?php _e("There is no options for shortcode!", 'tmm_content_composer') ?>";
-				tmm_lang['shortcode_updated'] = "<?php _e("Shortcode updated!", 'tmm_content_composer') ?>";
-				tmm_lang['shortcode_insert'] = "<?php _e("Insert Shortcode", 'tmm_content_composer') ?>";
-				tmm_lang['shortcode_edit'] = "<?php _e("Edit shortcode", 'tmm_content_composer') ?>";
-			</script>
-		<?php
+					if(!window.tmm_lang){
+						var tmm_lang = {};
+					}
+
+					tmm_lang['loading'] = "<?php _e("Loading ...", 'tmm_content_composer') ?>";
+					tmm_lang['close'] = "<?php _e("Close", 'tmm_content_composer') ?>";
+					tmm_lang['apply'] = "<?php _e("Apply", 'tmm_content_composer') ?>";
+					tmm_lang['shortcode_nooption'] = "<?php _e("There is no options for shortcode!", 'tmm_content_composer') ?>";
+					tmm_lang['shortcode_updated'] = "<?php _e("Shortcode updated!", 'tmm_content_composer') ?>";
+					tmm_lang['shortcode_insert'] = "<?php _e("Insert Shortcode", 'tmm_content_composer') ?>";
+					tmm_lang['shortcode_edit'] = "<?php _e("Edit shortcode", 'tmm_content_composer') ?>";
+				</script>
+			<?php
+
+
 		}
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' ) {
 			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/admin/layout.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable', 'jquery-ui-slider'), false, true);
