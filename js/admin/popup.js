@@ -12,9 +12,8 @@
             close: function(){},
             save: null /* optional callback */
         },
-        zindex = 1002;
 
-    //zindex = 99999;
+         zindex = (tmm_is_customize) ? 99999 : 1002;
     
     self = $.tmm_popup = function(options) {
         

@@ -72,14 +72,11 @@ class TMM_Content_Composer {
 		global $pagenow;
 		$screen = get_current_screen();
 
-		echo 'Pagenow='.$pagenow;
-
 		if ( $screen->base === 'toplevel_page_gf_edit_forms' || $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' ||  $pagenow === 'widgets.php' || $pagenow == 'customize.php') {
 			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc-admin.css');
 			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/admin/popup.js', array('jquery'));
 			wp_enqueue_script('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker.js', array('jquery'));
 			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/admin/shortcodes.js', array('jquery'), false, true);
-
 
 				?>
 				<script type="text/javascript">
@@ -91,6 +88,8 @@ class TMM_Content_Composer {
 						var tmm_lang = {};
 					}
 
+					var tmm_is_customize = false;
+
 					tmm_lang['loading'] = "<?php _e("Loading ...", 'tmm_content_composer') ?>";
 					tmm_lang['close'] = "<?php _e("Close", 'tmm_content_composer') ?>";
 					tmm_lang['apply'] = "<?php _e("Apply", 'tmm_content_composer') ?>";
@@ -101,7 +100,13 @@ class TMM_Content_Composer {
 				</script>
 			<?php
 
-
+			if ($pagenow == 'customize.php'){
+				?>
+				<script type="text/javascript">
+					tmm_is_customize = true;
+				</script>
+			<?php
+			}
 		}
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' ) {
 			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/admin/layout.js', array('jquery', 'jquery-ui-core', 'jquery-ui-sortable', 'jquery-ui-slider'), false, true);
@@ -118,6 +123,8 @@ class TMM_Content_Composer {
 			</script>
 			<?php
 		}
+
+
 
 	}
 
