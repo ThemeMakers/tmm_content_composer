@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2016-01-16 00:07+0100\n"
-"PO-Revision-Date: 2016-01-16 00:07+0100\n"
+"POT-Creation-Date: 2016-02-12 14:29+0100\n"
+"PO-Revision-Date: 2016-02-12 14:29+0100\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -72,68 +72,68 @@ msgstr ""
 msgid "Row editor"
 msgstr ""
 
-#: classes/content_composer.php:208 index.php:40
+#: classes/content_composer.php:199 index.php:40
 #: views/shortcodes/default/popups/title.php:45
 #: views/shortcodes/default/popups/title.php:85
 #: views/shortcodes/diplomat/popups/imggallery.php:21
 msgid "Default"
 msgstr ""
 
-#: classes/content_composer.php:209
+#: classes/content_composer.php:200
 msgid "Default-white"
 msgstr ""
 
-#: classes/content_composer.php:220
+#: classes/content_composer.php:211
 msgid "Small"
 msgstr ""
 
-#: classes/content_composer.php:221
+#: classes/content_composer.php:212
 msgid "Middle"
 msgstr ""
 
-#: classes/content_composer.php:222
+#: classes/content_composer.php:213
 msgid "Large"
 msgstr ""
 
-#: classes/content_composer.php:230
+#: classes/content_composer.php:221
 msgid "All Categories"
 msgstr ""
 
-#: classes/content_composer.php:265
+#: classes/content_composer.php:256
 msgid "All Tags"
 msgstr ""
 
-#: classes/content_composer.php:330
+#: classes/content_composer.php:321
 msgid "Blog Classic"
 msgstr ""
 
-#: classes/content_composer.php:331
+#: classes/content_composer.php:322
 msgid "Blog Classic Alternate"
 msgstr ""
 
-#: classes/content_composer.php:332
+#: classes/content_composer.php:323
 msgid "Blog Masonry"
 msgstr ""
 
-#: classes/content_composer.php:333
+#: classes/content_composer.php:324
 #: views/shortcodes/default/popups/dropcap.php:13
 msgid "Type 1"
 msgstr ""
 
-#: classes/content_composer.php:334
+#: classes/content_composer.php:325
 #: views/shortcodes/default/popups/dropcap.php:14
 msgid "Type 2"
 msgstr ""
 
-#: classes/content_composer.php:335
+#: classes/content_composer.php:326
 msgid "Type 3"
 msgstr ""
 
-#: classes/content_composer.php:336
+#: classes/content_composer.php:327
 msgid "Type 4"
 msgstr ""
 
-#: classes/content_composer.php:466
+#: classes/content_composer.php:457
 msgid "Browse"
 msgstr ""
 
