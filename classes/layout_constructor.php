@@ -41,28 +41,32 @@ class TMM_Layout_Constructor {
         return $result;
     }
 
-    public static function merge_arrays_for_view($row, $group) {
+    /**
+    *  Method merges some meta data arrays from database in a single array.
+    *  Added for Accio Theme.
+    *
+    *  @param $arr1 (array of post meta data from `thememakers_layout_constructor` option)
+    *  @param $arr2 (array of post meta data from `tmm_layout_constructor` option)
+    *  @param $arr3 (array of post meta data from `tmm_layout_constructor_group` option)
+    *  @return array
+    */
+    public static function merge_post_meta_from_options($arr1, $arr2, $arr3) {
         $result = array();
-        $index = 0;
+        if ( count($arr1) == count($arr2) ) {
+            foreach ($arr1 as  $key => $value) {
+                if (key_exists($key, $arr2)) {
+                    $value['row_group'] = (isset($value['row_group'])) ? $value['row_group'] : 0;
+                    $i = $value['row_group'];
 
-        /*if (count($row) < count($group)) {
-            foreach ($group as $key => $value) {
-                $row_arr = ((count($row) - 1) <= $key) ? self::extract_assoc_arr_val_by_index($row, $key) : array('key' => $key , 'val' => array());
-                $result[$row_arr['key']] = array_merge($value, $row_arr['val']);
+                    if (key_exists($i, $arr3)) {
+                        $value = array_merge($value, $arr3[$i]);
+                    }
+                    $value['columns'] = $arr2[$key];
+                    $result[$i][] = $value;
+                }
+
             }
-        } else {
-            foreach ($row as $key => $value) {
-                $group[$index] = (isset($group[$index])) ? $group[$index] : array() ;
-                $result[$key] = array_merge($value, $group[$index]);
-                $index++;
-            }
-        }*/
-        foreach ($row as $key => $value) {
-            $group[$index] = (isset($group[$index])) ? $group[$index] : array() ;
-            $result[$key] = array_replace($value, $group[$index]);
-            $index++;
         }
-
         return $result;
     }
 
@@ -75,20 +79,11 @@ class TMM_Layout_Constructor {
             $data['tmm_layout_constructor_row'] = get_post_meta($post_id, 'thememakers_layout_constructor_row', true);
             $data['tmm_layout_constructor_group'] = get_post_meta($post_id, 'tmm_layout_constructor_group', true);
 
-            foreach ($data['tmm_layout_constructor_row'] as $item) {
-                if (array_key_exists('row_group', $item)) {
-                    $row_group = true;
-                } else {
-                    $row_group = false;
-                }
-            }
-
-            /*if ($row_group) {
-                #$data['tmm_layout_constructor_row'] = self::merge_arrays_for_view($data['tmm_layout_constructor_row'], $data['tmm_layout_constructor_group']);
-                $data['tmm_layout_constructor_row'] = self::merge_arrays_for_view($data['tmm_layout_constructor_row'], $data['tmm_layout_constructor_group']);
-            }*/
-
-            $data['tmm_layout_constructor_row'] = self::merge_arrays_for_view($data['tmm_layout_constructor_row'], $data['tmm_layout_constructor_group']);
+            $data['tmm_layout_constructor_total'] = self::merge_post_meta_from_options(
+                $data['tmm_layout_constructor_row'],
+                $data['tmm_layout_constructor'],
+                $data['tmm_layout_constructor_group']
+            );
 
 			echo TMM::draw_free_page(TMM_CC_DIR . '/views/front_output.php', $data);
 		}
@@ -100,6 +95,7 @@ class TMM_Layout_Constructor {
 		$data['post_id'] = $post->ID;
 		$data['tmm_layout_constructor'] = get_post_meta($post->ID, 'thememakers_layout_constructor', true);
 		$data['tmm_layout_constructor_row'] = get_post_meta($post->ID, 'thememakers_layout_constructor_row', true);
+        $data['tmm_layout_constructor_group'] = get_post_meta($post->ID, 'tmm_layout_constructor_group', true);
 		echo self::render_html('views/meta_panel.php', $data);
 	}
 

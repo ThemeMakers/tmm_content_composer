@@ -63,16 +63,17 @@ add_action( 'plugins_loaded', 'tmm_cc_load_textdomain' );
 
 $tmm_row_options = array(
 	'section_title' => '',
+	'section_content' => 1,
 	'lc_displaying' => 'default',
 	'full_width' => 0,
-	'is_full_width' => 0,
 	'content_full_width' => 0,
+	'opacity' => 100,
+	'align' => 'center',
+	'overlay' => 0,
 	'padding_top' => 0,
 	'padding_bottom' => 0,
 	'margin_top' => 0,
 	'margin_bottom' => 0,
-	'align' => 'center',
-	'section_content' => 1,
 	'bg_type' => 'custom',
 	'bg_custom_type' => 'color',
 	'bg_color' => '#ffffff',
@@ -83,16 +84,14 @@ $tmm_row_options = array(
 	'bg_video_mute' => 0,
 	'bg_video_loop' => 1,
 	'bg_fullscreen' => 0,
-	'overlay' => 0,
-	'is_overlay' => 0,
 	'bg_overlay_color' => '#ffffff',
-	'bg_overlay_opacity' => 100,
+	'bg_touch_image' => '',
 	'is_full_width' => 0,
+	'is_overlay' => 0,
 	'is_parallax' => 0,
+	'bg_overlay_opacity' => 100,
 	'border_bottom_color' => '#ffffff',
-	'border_width' => 0,
-    'bg_touch_image' => '',
-    'opacity' => 100
+	'border_width' => 0
 );
 
 $GLOBALS['tmm_row_options'] = $tmm_row_options;
