@@ -149,7 +149,7 @@ class TMM_Content_Composer {
 		wp_register_script('tmm_composer_front', TMM_CC_URL . 'js/min/front.min.js', array('jquery'), false, true);
 
 		wp_localize_script('tmm_composer_front', 'tmm_mail_l10n', $tmm_lang);
-		//wp_enqueue_script('tmm_composer_front');
+		wp_enqueue_script('tmm_composer_front');
 	}
 
 	public static function add_texturize_option($options) {
