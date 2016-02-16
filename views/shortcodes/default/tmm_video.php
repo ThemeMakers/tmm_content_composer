@@ -40,6 +40,7 @@ if(($video_type != $allows_array[0]) && ($video_type != $allows_array[1] )){
 
 $style = 'style="' . $style . '"';
 
+$controls = (isset($control_panel) && $control_panel ) ? '1' : '0';
 
 ?>
 
@@ -55,7 +56,7 @@ switch ($video_type) {
             $source_code = $source_code[0];
         }
 		?>
-		<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (!isset($width) || empty($width) || !isset($height)) ? '' : 'height="'.$height.'"';  ?> src="http://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent&amp;rel=0&amp;controls=0&amp;showinfo=0"></iframe>
+		<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (!isset($width) || empty($width) || !isset($height)) ? '' : 'height="'.$height.'"';  ?> src="http://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent&amp;rel=0&amp;controls=<?php echo $controls ?>&amp;showinfo=0"></iframe>
         <?php
 
 		break;
