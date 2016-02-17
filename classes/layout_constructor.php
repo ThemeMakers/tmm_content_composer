@@ -45,57 +45,87 @@ class TMM_Layout_Constructor {
     *  Method merges some meta data arrays from database in a single array.
     *  Added for Accio Theme.
     *
-    *  @param $arr1 (array of post meta data from `thememakers_layout_constructor` option)
-    *  @param $arr2 (array of post meta data from `tmm_layout_constructor` option)
-    *  @param $arr3 (array of post meta data from `tmm_layout_constructor_group` option)
-    *  @return array
+    *  @param $row_arr   (array of post meta data from `thememakers_layout_constructor_row` option)
+    *  @param $lc_arr    (array of post meta data from `tmm_layout_constructor` option)
+    *  @param $group_arr (array of post meta data from `tmm_layout_constructor_group` option)
+    *  @return array     (merged array)
     */
-    public static function merge_post_meta_from_options($arr1, $arr2, $arr3) {
+    public static function merge_old_post_meta($row_arr, $lc_arr, $group_arr) {
         $result = array();
-        if ( count($arr1) == count($arr2) ) {
-            foreach ($arr1 as  $key => $value) {
-                if (key_exists($key, $arr2)) {
+        if ( count($row_arr) == count($lc_arr) ) {
+            foreach ($row_arr as  $key => $value) {
+                if (key_exists($key, $lc_arr)) {
                     $value['row_group'] = (isset($value['row_group'])) ? $value['row_group'] : 0;
                     $i = $value['row_group'];
-
-                    if (key_exists($i, $arr3)) {
-                        $value = array_merge($value, $arr3[$i]);
-                    }
-                    $value['columns'] = $arr2[$key];
+                    $value['row_id'] = $key;
+                    $value['columns'] = $lc_arr[$key];
                     $result[$i][] = $value;
-                }
 
+                    if (key_exists($i, $group_arr)) {
+                        $result[$i]['group'] = $group_arr[$i];
+                    }
+                }
             }
         }
         return $result;
     }
 
+    /**
+    *
+    *
+    */
 	public static function draw_front($post_id, $row_displaying) {
-		$tmm_layout_constructor = get_post_meta($post_id, 'thememakers_layout_constructor', true);
-		if (!empty($tmm_layout_constructor)) {
-			$data = array();
-			$data['row_displaying'] = $row_displaying;
-			$data['tmm_layout_constructor'] = $tmm_layout_constructor;
-            $data['tmm_layout_constructor_row'] = get_post_meta($post_id, 'thememakers_layout_constructor_row', true);
-            $data['tmm_layout_constructor_group'] = get_post_meta($post_id, 'tmm_layout_constructor_group', true);
+		//old version post meta
+        $thememakers_layout_constructor = get_post_meta($post_id, 'thememakers_layout_constructor', true);
+        //new version post meta
+		$tmm_layout_constructor = get_post_meta($post_id, 'tmm_layout_constructor', true);
 
-            $data['tmm_layout_constructor_total'] = self::merge_post_meta_from_options(
-                $data['tmm_layout_constructor_row'],
-                $data['tmm_layout_constructor'],
-                $data['tmm_layout_constructor_group']
-            );
-
-			echo TMM::draw_free_page(TMM_CC_DIR . '/views/front_output.php', $data);
-		}
+        if (empty($tmm_layout_constructor)) {
+            if (!empty($thememakers_layout_constructor)) {
+                $data = array();
+                $data['row_displaying'] = $row_displaying;
+                $tmm_layout_constructor_row   = get_post_meta($post_id, 'thememakers_layout_constructor_row', true);
+                $tmm_layout_constructor_group = get_post_meta($post_id, 'tmm_layout_constructor_group', true);
+                $data['thememakers_layout_constructor'] = $thememakers_layout_constructor;
+                $data['tmm_layout_constructor'] = self::merge_old_post_meta(
+                    $tmm_layout_constructor_row,
+                    $thememakers_layout_constructor,
+                    $tmm_layout_constructor_group
+                );
+            }
+        } else {
+            $data['tmm_layout_constructor'] = $tmm_layout_constructor;
+        }
+        echo TMM::draw_free_page(TMM_CC_DIR . '/views/front_output.php', $data);
 	}
 
+    /**
+    *
+    */
 	public static function draw_page_meta_box() {
-		$data = array();
-		global $post;
-		$data['post_id'] = $post->ID;
-		$data['tmm_layout_constructor'] = get_post_meta($post->ID, 'thememakers_layout_constructor', true);
-		$data['tmm_layout_constructor_row'] = get_post_meta($post->ID, 'thememakers_layout_constructor_row', true);
-        $data['tmm_layout_constructor_group'] = get_post_meta($post->ID, 'tmm_layout_constructor_group', true);
+        global $post;
+        $data = array();
+        $data['post_id'] = $post->ID;
+
+        //old version post meta
+        $thememakers_layout_constructor = get_post_meta($data['post_id'], 'thememakers_layout_constructor', true);
+        //new version post meta
+        $tmm_layout_constructor = get_post_meta($data['post_id'], 'tmm_layout_constructor', true);
+
+        if (empty($tmm_layout_constructor)) {
+            if (!empty($thememakers_layout_constructor)) {
+                $data['tmm_layout_constructor_row']     = get_post_meta($data['post_id'], 'thememakers_layout_constructor_row', true);
+                $data['thememakers_layout_constructor'] = $thememakers_layout_constructor;
+                $tmm_layout_constructor_group = get_post_meta($data['post_id'], 'tmm_layout_constructor_group', true);
+                $data['tmm_layout_constructor'] = self::merge_old_post_meta(
+                    $data['tmm_layout_constructor_row'],
+                    $thememakers_layout_constructor,
+                    $tmm_layout_constructor_group
+                );
+            }
+        } else {
+            $data['tmm_layout_constructor'] = $tmm_layout_constructor;
+        }
 		echo self::render_html('views/meta_panel.php', $data);
 	}
 
@@ -105,16 +135,47 @@ class TMM_Layout_Constructor {
 		echo self::render_html('views/column_item.php', $col_data);
 	}
 
+    /**
+    *
+    *
+    * @param $lc_arr
+    * @param $row_arr
+    * @return array
+    */
+	public static function repack_meta_for_saving($lc_arr, $row_arr) {
+        $result = array();
+        foreach ($lc_arr as $row_id => $row_item) {
+            if ('__ROW_ID__' != $row_id) {
+                $row  = array();
+                if (key_exists($row_id, $row_arr)) {
+                    $row['group'] = $row_arr[$row_id];
+                }
+                $item = array();
+                $item['columns'] = array();
+                $item['row_id']  = $row_id;
+                foreach ($row_item as $col_id => $col_item) {
+                    if ('__UNIQUE_ID__' != $col_id) {
+                        $item['columns'][$col_id] = $col_item;
+                    }
+                }
+                array_push($row, $item);
+                array_push($result, $row);
+            }
+        }
+        return $result;
+    }
+
 	public static function save_post() {
 		if (!empty($_POST) && isset($_POST['tmm_layout_constructor'])) {
+            $post_meta = self::repack_meta_for_saving($_POST['tmm_layout_constructor'], $_POST['tmm_layout_constructor_row']);
 			global $post;
 			unset($_POST['tmm_layout_constructor']['__ROW_ID__']); //unset column html template
 			unset($_POST['tmm_layout_constructor_row']['__ROW_ID__']); //unset column html template
-			#update_post_meta($post->ID, 'thememakers_layout_constructor', $_POST['tmm_layout_constructor']);
-			update_post_meta($post->ID, 'thememakers_layout_constructor_row', $_POST['tmm_layout_constructor_row']);
+			update_post_meta($post->ID, 'tmm_layout_constructor', $post_meta);
 		}
 	}
 
+    // TODO rewrite method !!!
 	public static function get_front_html($post_id) {
 		$tmm_layout_constructor = get_post_meta($post_id, 'thememakers_layout_constructor', true);
 		if (!empty($tmm_layout_constructor)) {

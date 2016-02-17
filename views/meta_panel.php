@@ -8,78 +8,79 @@ global $tmm_row_options;
 <a href="#" class="tmm-lc-paste-row button button-large"><?php _e("Insert Clipboard Row here", TMM_CC_TEXTDOMAIN) ?></a><br />
 
 <ul id="tmm_lc_rows" class="tmm-lc-rows">
-
     <?php
     if (!empty($tmm_layout_constructor)) {
 
-        foreach ($tmm_layout_constructor as $row => $row_data) {
-            ?>
-            <li id="tmm_lc_row_<?php echo $row ?>" class="tmm-lc-row">
+        foreach ($tmm_layout_constructor as $rows) {
 
-                <div class="tmm-lc-row-buttons-wrapper">
-                    <a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>"></a>
-                    <a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php _e("Add Row to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-                    <a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
-                    <a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
-                </div>
+            $group = $rows['group'];
+            unset($rows['group']);
 
-                <div class="tmm-lc-columns" id="tmm_lc_columns_<?php echo $row ?>">
+            foreach ($rows as $key => $row_data) {
+                ?>
+                <li id="tmm_lc_row_<?php echo $row_data['row_id'] ?>" class="tmm-lc-row">
+
+                    <div class="tmm-lc-row-buttons-wrapper">
+                        <a class="tmm-lc-add-column" data-row-id="<?php echo $row_data['row_id'] ?>"
+                           title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>"></a>
+                        <a class="tmm-lc-copy-row" data-row-id="<?php echo $row_data['row_id'] ?>"
+                           title="<?php _e("Add Row to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
+                        <a class="tmm-lc-edit-row" data-row-id="<?php echo $row_data['row_id'] ?>"
+                           title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
+                        <a class="tmm-lc-delete-row" data-row-id="<?php echo $row_data['row_id'] ?>"
+                           title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
+                    </div>
+
+                    <div class="tmm-lc-columns" id="tmm_lc_columns_<?php echo $row_data['row_id'] ?>">
+
+                        <?php
+                        if (!empty($row_data['columns'])) {
+
+                            foreach ($row_data['columns'] as $uniqid => $column) {
+
+                                if ($uniqid == 'row_data') {
+                                    continue;
+                                }
+
+                                $col_data = array(
+                                    'row' => $row_data['row_id'],
+                                    'uniqid' => $uniqid,
+                                    'css_class' => $column['css_class'],
+                                    'front_css_class' => $column['front_css_class'],
+                                    'value' => $column['value'],
+                                    'content' => $column['content'],
+                                    'title' => $column['title'],
+                                    'effect' => @$column['effect'],
+                                    'row_align' => @$column['align'],
+                                    'row_overlay' => @$group['is_overlay'],
+                                    'padding_top' => @$group['padding_top'],
+                                    'padding_bottom' => @$group['padding_bottom'],
+                                );
+
+                                TMM_Layout_Constructor::draw_column_item($col_data);
+                            }
+                        }
+                        ?>
+
+                    </div>
 
                     <?php
-                    if (!empty($row_data)) {
-
-                        foreach ($row_data as $uniqid => $column) {
-
-                            if ($uniqid == 'row_data') {
-                                continue;
-                            }
-
-                            $col_data = array(
-                                'row' => $row,
-                                'uniqid' => $uniqid,
-                                'css_class' => $column['css_class'],
-                                'front_css_class' => $column['front_css_class'],
-                                'value' => $column['value'],
-                                'content' => $column['content'],
-                                'title' => $column['title'],
-                                'effect' => @$column['effect'],
-                                'row_align' => @$column['row_align'],
-                                'row_overlay' => @$column['row_overlay'],
-                                'padding_top' => @$column['padding_top'],
-                                'padding_bottom' => @$column['padding_bottom'],
-                            );
-
-                            TMM_Layout_Constructor::draw_column_item($col_data);
-
-                        }
-
+                    foreach ($tmm_row_options as $name => $def_value) {
+                        $value = (isset($group[$name]) && !empty($group[$name])) ? $group[$name] : $def_value;
+                        echo '<input type="hidden"
+                                     id="row_' . $name . '_' . $row_data['row_id'] . '"
+                                     value="' . $value . '"
+                                     name="tmm_layout_constructor_row[' . $row_data['row_id'] . '][' . $name . ']" />';
                     }
                     ?>
 
-                </div>
-
+                </li>
                 <?php
-                foreach ($tmm_row_options as $name => $def_value) {
-                    $value = isset($tmm_layout_constructor_row[$row][$name]) ? $tmm_layout_constructor_row[$row][$name] : $def_value;
-                    echo '<input
-							type="hidden"
-							id="row_' . $name . '_' . $row . '"
-                            value="' . $value . '"
-							name="tmm_layout_constructor_row[' . $row . '][' . $name . ']" />';
-
-                }
-                ?>
-
-            </li>
-
-            <?php
+            }
         }
-
     }
     ?>
-
 </ul>
-
 
 <div style="display: none;">
 
@@ -95,6 +96,7 @@ global $tmm_row_options;
             'title' => '',
             'effect' => '',
         );
+
         TMM_Layout_Constructor::draw_column_item($col_data);
         ?>
     </div>
@@ -113,23 +115,22 @@ global $tmm_row_options;
             <div class="tmm-lc-columns" id="tmm_lc_columns___ROW_ID__"></div>
 
             <?php
-
+            // Default values
             foreach ($tmm_row_options as $name => $def_value) {
                 echo '<input
-							type="hidden"
-							id="row_' . $name . '___ROW_ID__"
-                            value="' . $def_value . '"
-							name="tmm_layout_constructor_row[__ROW_ID__][' . $name . ']" />';
-
+                        type="hidden"
+                        id="row_' . $name . '___ROW_ID__"
+                        value="' . $def_value . '"
+                        name="tmm_layout_constructor_row[__ROW_ID__][' . $name . ']" />';
             }
             ?>
         </li>
 
     </ul>
 
-    <div id="tmm_lc_column_effects">
+    <!--<div id="tmm_lc_column_effects">
         <?php
-        $effects = array(
+/*        $effects = array(
             '' => __("No effects", TMM_CC_TEXTDOMAIN),
             'elementFade' => __('Element Fade', TMM_CC_TEXTDOMAIN),
             'opacity2x' => __('Opacity', TMM_CC_TEXTDOMAIN),
@@ -152,59 +153,60 @@ global $tmm_row_options;
             'description' => '',
             'css_classes' => 'tmm-lc-column-effects-selector'
         ));
-        ?>
-    </div>
+        */?>
+    </div>-->
 
     <!-- ------------------------ Edit Row Template ----------------------------------------- -->
 
     <div id="tmm_lc_row_edit_options">
 
         <div class="one-half">
-
             <?php
-            #var_dump($tmm_layout_constructor);
-            #var_dump($tmm_layout_constructor_row);
-            #var_dump($tmm_layout_constructor_group);
             TMM_Content_Composer::html_option(array(
-                'type' => 'checkbox',
+                'type' => 'select',
                 'title' => __('Full width', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'is_full_width',
-                'id' => 'row_content_full_width',
-                'is_checked'=> $tmm_row_options['is_full_width'],
-                'default_value' => $tmm_row_options['is_full_width'],
-                'description' => __('On / Off', TMM_CC_TEXTDOMAIN)
+                'id' => 'row_is_full_width',
+                'options' => array(
+                    0 => __('No', TMM_CC_TEXTDOMAIN),
+                    1 => __('Yes', TMM_CC_TEXTDOMAIN)
+                ),
+                /*'default_value' => $tmm_row_options['is_full_width'],*/
+                /*'description' => __('On / Off', TMM_CC_TEXTDOMAIN)*/
+                'description' => ''
             ));
             ?>
-
         </div>
 
         <div class="one-half">
-
             <?php
             TMM_Content_Composer::html_option(array(
                 'type' => 'upload',
                 'title' => __('Background Image', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'bg_image',
-                'id' => 'bg_image',
+                'id' => 'row_bg_image',
                 'default_value' => $tmm_row_options['bg_image'],
                 'description' => ''
             ));
             ?>
-
         </div>
 
         <div class="one-half">
             <?php
             TMM_Content_Composer::html_option(array(
-                'type' => 'checkbox',
+                'type' => 'select',
                 'title' => __('Disable Padding Top', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'padding_top',
-                'id' => 'padding_top',
-                'is_checked'=> $tmm_row_options['padding_top'],
-                'description' => __('On / Off', TMM_CC_TEXTDOMAIN)
+                'id' => 'row_padding_top',
+                'options' => array(
+                    0 => __('No', TMM_CC_TEXTDOMAIN),
+                    1 => __('Yes', TMM_CC_TEXTDOMAIN)
+                ),
+                /*'default_value'=> $tmm_row_options['padding_top'],*/
+                /*'description' => __('On / Off', TMM_CC_TEXTDOMAIN)*/
+                'description' => ''
             ));
             ?>
-
         </div>
 
         <div class="one-half">
@@ -213,116 +215,133 @@ global $tmm_row_options;
                 'type' => 'upload',
                 'title' => __('Image instead of video', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'bg_touch_image',
-                'id' => 'bg_touch_image',
+                'id' => 'row_bg_touch_image',
                 'default_value' => $tmm_row_options['bg_touch_image'],
                 'description' => __('(for touch devices)', TMM_CC_TEXTDOMAIN)
             ));
             ?>
-
         </div>
 
         <div class="one-half">
             <?php
             TMM_Content_Composer::html_option(array(
-                'type' => 'checkbox',
+                'type' => 'select',
                 'title' => __('Disable Padding Bottom', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'padding_bottom',
-                'id' => 'padding_bottom',
-                'is_checked'=> $tmm_row_options['padding_bottom'],
-                'description' => __('On / Off', TMM_CC_TEXTDOMAIN)
+                'id' => 'row_padding_bottom',
+                'options' => array(
+                    0 => __('No', TMM_CC_TEXTDOMAIN),
+                    1 => __('Yes', TMM_CC_TEXTDOMAIN)
+                ),
+                /*'default_value'=> $tmm_row_options['padding_bottom'],*/
+                /*'description' => __('On / Off', TMM_CC_TEXTDOMAIN)*/
+                'description' => ''
             ));
             ?>
-
         </div>
 
         <div class="one-half">
             <?php
             TMM_Content_Composer::html_option(array(
-                'title' => __('Opacity', TMM_CC_TEXTDOMAIN),
-                'shortcode_field' => 'opacity',
-                'id' => 'value_opacity',
-                'type' => 'slider',
-                'min' => '0',
-                'max' => '100',
-                'description' => '(add color shade over background image) min: 0, max: 100',
-                'default_value' => $tmm_row_options['opacity'],
+                'type' => 'select',
+                'title' => __('Background Attachment', TMM_CC_TEXTDOMAIN),
+                'shortcode_field' => 'bg_attachment',
+                'id' => 'row_bg_attachment',
+                'options' => array(
+                    0 => __('Fixed', TMM_CC_TEXTDOMAIN),
+                    1 => __('Scroll', TMM_CC_TEXTDOMAIN)
+                ),
+                /*'default_value'=> $tmm_row_options['bg_attachment'],*/
+                /*'description' => __('Fixed / Scroll', TMM_CC_TEXTDOMAIN)*/
+                'description' => ''
             ));
             ?>
-
         </div>
 
         <div class="one-half">
             <?php
             TMM_Content_Composer::html_option(array(
-                'type' => 'checkbox',
+                'type' => 'select',
                 'title' => __('Transparent Section', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'is_parallax',
-                'id' => 'is_parallax',
-                'is_checked'=> $tmm_row_options['is_parallax'],
+                'id' => 'row_is_parallax',
+                'options' => array(
+                    0 => __('No', TMM_CC_TEXTDOMAIN),
+                    1 => __('Yes', TMM_CC_TEXTDOMAIN)
+                ),
+                /*'default_value'=> $tmm_row_options['is_parallax'],*/
                 'description' => __('Set transparent section background for using video background and set white color to section text', TMM_CC_TEXTDOMAIN)
             ));
             ?>
-
         </div>
 
         <div class="one-half">
             <?php
             TMM_Content_Composer::html_option(array(
+                'type' => 'color',
                 'title' => __('Border Bottom Color', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'border_bottom_color',
-                'type' => 'color',
                 'description' => '',
                 'default_value' => $tmm_row_options['border_bottom_color'],
                 'id' => 'row_bg_color',
                 'display' =>1
             ));
             ?>
-
         </div>
 
         <div class="one-half">
-
             <?php
             TMM_Content_Composer::html_option(array(
-                'type' => 'checkbox',
-                'title' => __('Background Attachment', TMM_CC_TEXTDOMAIN),
-                'shortcode_field' => 'bg_attachment',
-                'id' => 'bg_attachment',
-                'is_checked'=> $tmm_row_options['bg_attachment'],
-                'description' => __('Fixed / Scroll', TMM_CC_TEXTDOMAIN)
+                'type' => 'select',
+                'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
+                'shortcode_field' => 'is_overlay',
+                'id' => 'row_is_overlay',
+                'options' => array(
+                    0 => __('No', TMM_CC_TEXTDOMAIN),
+                    1 => __('Yes', TMM_CC_TEXTDOMAIN)
+                ),
+                /*'default_value'=> $tmm_row_options['overlay'],*/
+                'description' => __('Set overlay on background image', TMM_CC_TEXTDOMAIN)
             ));
             ?>
-
         </div>
 
         <div class="one-half">
             <?php
             TMM_Content_Composer::html_option(array(
+                'type' => 'color',
                 'title' => __('Background Color', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'row_background_color',
-                'type' => 'color',
                 'description' => '',
                 'default_value' => $tmm_row_options['bg_color'],
                 'id' => 'row_bg_color',
                 'display' =>1
             ));
             ?>
-
         </div>
+
+        <div class="one-half"></div>
 
         <div class="one-half">
             <?php
             TMM_Content_Composer::html_option(array(
-                'type' => 'checkbox',
-                'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
-                'shortcode_field' => 'is_overlay',
-                'id' => 'is_overlay',
-                'is_checked'=> $tmm_row_options['overlay'],
-                'description' => __('Set overlay on background image', TMM_CC_TEXTDOMAIN)
+                'type' => 'slider',
+                'title' => __('Opacity', TMM_CC_TEXTDOMAIN),
+                'shortcode_field' => 'opacity',
+                'id' => 'row_opacity',
+                'min' => '0',
+                'max' => '100',
+                'description' => '(add color shade over background image) min: 0, max: 100',
+                'default_value' => $tmm_row_options['opacity'],
             ));
             ?>
-
         </div>
+
+
+
+
+
+
 
     </div>
 
