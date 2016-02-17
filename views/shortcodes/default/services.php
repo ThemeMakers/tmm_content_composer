@@ -71,10 +71,10 @@ switch($type){
         <?php
         break;
     case '2':
-        if (!empty($content)){
-            foreach ($content as $key => $text){
-                ?>
-                <div class="ca-shortcode-alt">
+        if (!empty($content)){ ?>
+            <ul class="ca-shortcode-alt">
+            <?php foreach ($content as $key => $text){ ?>
+                <li>
                     <i class="ca-icon <?php echo esc_attr($icons[$key]) ?>"></i>
                     <div class="ca-content">
                         <h3>
@@ -93,11 +93,10 @@ switch($type){
                             <?php echo esc_html($text) ?>
                         </p>
                     </div>
-                </div><!--/ .ca-shortcode-->
-
-                <?php
-            }
-        }
+                </li>
+            <?php } ?>
+            </ul><!--/ .ca-shortcode-->
+        <?php }
         break;
     default:
 

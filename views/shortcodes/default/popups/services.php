@@ -163,7 +163,7 @@
 									'shortcode_field' => 'list_item_color['.$key.']',
 									'type' => 'color',
 									'description' => '',
-									'default_value' => (isset($list_item_color[$key*4+1])) ? TMM_Content_Composer::set_default_value('list_item_bgcolor',  $list_item_color[$key*4+1]) : '#f85c37',
+									'default_value' => (isset($list_item_color[$key*4+1])) ? TMM_Content_Composer::set_default_value('list_item_bgcolor',  $list_item_color[$key*4+1]) : '#4d90fe',
 									'id' => '',
 									'css_classes' => 'list_item_color',
 									'display' => $value_type == 1 ? 1 : 0
