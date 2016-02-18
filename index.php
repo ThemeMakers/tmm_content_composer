@@ -91,7 +91,8 @@ $tmm_row_options = array(
 	'is_parallax' => 0,
 	'bg_overlay_opacity' => 100,
 	'border_bottom_color' => '#ffffff',
-	'border_width' => 0
+	'border_width' => 0,
+	'row_group' => 0 // for row groups
 );
 
 $GLOBALS['tmm_row_options'] = $tmm_row_options;

@@ -16,6 +16,11 @@ global $tmm_row_options;
             $group = $rows['group'];
             unset($rows['group']);
 
+            // in case row groups
+            if (1 < count($rows)) {
+                $group['row_group'] = uniqid();
+            }
+
             foreach ($rows as $key => $row_data) {
                 ?>
                 <li id="tmm_lc_row_<?php echo $row_data['row_id'] ?>" class="tmm-lc-row">
@@ -67,7 +72,7 @@ global $tmm_row_options;
                     <?php
                     foreach ($tmm_row_options as $name => $def_value) {
                         $value = (isset($group[$name]) && !empty($group[$name])) ? $group[$name] : $def_value;
-                        echo '<input type="hidden"
+                            echo '<input type="hidden"
                                      id="row_' . $name . '_' . $row_data['row_id'] . '"
                                      value="' . $value . '"
                                      name="tmm_layout_constructor_row[' . $row_data['row_id'] . '][' . $name . ']" />';
@@ -96,13 +101,11 @@ global $tmm_row_options;
             'title' => '',
             'effect' => '',
         );
-
         TMM_Layout_Constructor::draw_column_item($col_data);
         ?>
     </div>
 
     <ul id="tmm_lc_row_wrapper">
-
         <li id="tmm_lc_row___ROW_ID__" class="tmm-lc-row">
 
             <div class="tmm-lc-row-buttons-wrapper">
@@ -125,36 +128,7 @@ global $tmm_row_options;
             }
             ?>
         </li>
-
     </ul>
-
-    <!--<div id="tmm_lc_column_effects">
-        <?php
-/*        $effects = array(
-            '' => __("No effects", TMM_CC_TEXTDOMAIN),
-            'elementFade' => __('Element Fade', TMM_CC_TEXTDOMAIN),
-            'opacity2x' => __('Opacity', TMM_CC_TEXTDOMAIN),
-            'slideRight' => __('Slide Right', TMM_CC_TEXTDOMAIN),
-            'slideLeft' => __('Slide Left', TMM_CC_TEXTDOMAIN),
-            'slideDown' => __('Slide Down', TMM_CC_TEXTDOMAIN),
-            'slideUp' => __('Slide Up', TMM_CC_TEXTDOMAIN),
-            'slideUp2x' => __('Slide Up 2x', TMM_CC_TEXTDOMAIN),
-            'extraRadius' => __('Extra Radius', TMM_CC_TEXTDOMAIN)
-        );
-
-        TMM_Content_Composer::html_option(array(
-            'type' => 'select',
-            'title' => '',
-            'label' => __("Layout constructor", TMM_CC_TEXTDOMAIN),
-            'shortcode_field' => 'tmm-lc-column-effects-selector',
-            'id' => '',
-            'options' => $effects,
-            'default_value' => '',
-            'description' => '',
-            'css_classes' => 'tmm-lc-column-effects-selector'
-        ));
-        */?>
-    </div>-->
 
     <!-- ------------------------ Edit Row Template ----------------------------------------- -->
 
@@ -171,8 +145,6 @@ global $tmm_row_options;
                     0 => __('No', TMM_CC_TEXTDOMAIN),
                     1 => __('Yes', TMM_CC_TEXTDOMAIN)
                 ),
-                /*'default_value' => $tmm_row_options['is_full_width'],*/
-                /*'description' => __('On / Off', TMM_CC_TEXTDOMAIN)*/
                 'description' => ''
             ));
             ?>
@@ -202,8 +174,6 @@ global $tmm_row_options;
                     0 => __('No', TMM_CC_TEXTDOMAIN),
                     1 => __('Yes', TMM_CC_TEXTDOMAIN)
                 ),
-                /*'default_value'=> $tmm_row_options['padding_top'],*/
-                /*'description' => __('On / Off', TMM_CC_TEXTDOMAIN)*/
                 'description' => ''
             ));
             ?>
@@ -233,8 +203,6 @@ global $tmm_row_options;
                     0 => __('No', TMM_CC_TEXTDOMAIN),
                     1 => __('Yes', TMM_CC_TEXTDOMAIN)
                 ),
-                /*'default_value'=> $tmm_row_options['padding_bottom'],*/
-                /*'description' => __('On / Off', TMM_CC_TEXTDOMAIN)*/
                 'description' => ''
             ));
             ?>
@@ -251,8 +219,6 @@ global $tmm_row_options;
                     0 => __('Fixed', TMM_CC_TEXTDOMAIN),
                     1 => __('Scroll', TMM_CC_TEXTDOMAIN)
                 ),
-                /*'default_value'=> $tmm_row_options['bg_attachment'],*/
-                /*'description' => __('Fixed / Scroll', TMM_CC_TEXTDOMAIN)*/
                 'description' => ''
             ));
             ?>
@@ -269,7 +235,6 @@ global $tmm_row_options;
                     0 => __('No', TMM_CC_TEXTDOMAIN),
                     1 => __('Yes', TMM_CC_TEXTDOMAIN)
                 ),
-                /*'default_value'=> $tmm_row_options['is_parallax'],*/
                 'description' => __('Set transparent section background for using video background and set white color to section text', TMM_CC_TEXTDOMAIN)
             ));
             ?>
@@ -300,7 +265,6 @@ global $tmm_row_options;
                     0 => __('No', TMM_CC_TEXTDOMAIN),
                     1 => __('Yes', TMM_CC_TEXTDOMAIN)
                 ),
-                /*'default_value'=> $tmm_row_options['overlay'],*/
                 'description' => __('Set overlay on background image', TMM_CC_TEXTDOMAIN)
             ));
             ?>
@@ -336,12 +300,6 @@ global $tmm_row_options;
             ));
             ?>
         </div>
-
-
-
-
-
-
 
     </div>
 

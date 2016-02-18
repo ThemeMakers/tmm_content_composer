@@ -42,13 +42,15 @@ class TMM_Layout_Constructor {
     }
 
     /**
-    *  Method merges some meta data arrays from database in a single array.
-    *  Added for Accio Theme.
+    *   Method implements backward compatibility of Layout Constructor.
+    *   It implements merging of the data from the three options of post meta
+    *   (`thememakers_layout_constructor`, `thememakers_layout_constructor_row`, `tmm_layout_constructor_group`)
+    *   in one array for drawing in the front output and in the meta panel.
     *
-    *  @param $row_arr   (array of post meta data from `thememakers_layout_constructor_row` option)
-    *  @param $lc_arr    (array of post meta data from `tmm_layout_constructor` option)
-    *  @param $group_arr (array of post meta data from `tmm_layout_constructor_group` option)
-    *  @return array     (merged array)
+    *   @param $row_arr   (array of post meta data from `thememakers_layout_constructor_row` option)
+    *   @param $lc_arr    (array of post meta data from `tmm_layout_constructor` option)
+    *   @param $group_arr (array of post meta data from `tmm_layout_constructor_group` option)
+    *   @return array     (merged array)
     */
     public static function merge_old_post_meta($row_arr, $lc_arr, $group_arr) {
         $result = array();
@@ -70,10 +72,6 @@ class TMM_Layout_Constructor {
         return $result;
     }
 
-    /**
-    *
-    *
-    */
 	public static function draw_front($post_id, $row_displaying) {
 		//old version post meta
         $thememakers_layout_constructor = get_post_meta($post_id, 'thememakers_layout_constructor', true);
@@ -99,9 +97,6 @@ class TMM_Layout_Constructor {
         echo TMM::draw_free_page(TMM_CC_DIR . '/views/front_output.php', $data);
 	}
 
-    /**
-    *
-    */
 	public static function draw_page_meta_box() {
         global $post;
         $data = array();
@@ -136,11 +131,16 @@ class TMM_Layout_Constructor {
 	}
 
     /**
+    *   Method implements backward compatibility of Layout Constructor.
+    *   In the older versions the Layout Constructor data have been stored
+    *   in the three options of post meta (`thememakers_layout_constructor`,
+    *   `thememakers_layout_constructor_row`, `tmm_layout_constructor_group`).
+    *   If old type data saved (also demo content), method will repacks them
+    *   for saving into the one options of post meta (`tmm_layout_constructor`).
     *
-    *
-    * @param $lc_arr
-    * @param $row_arr
-    * @return array
+    *   @param $lc_arr (array of data for `layout_constructor`)
+    *   @param $row_arr (array of data for `layout_constructor_row`)
+    *   @return array
     */
 	public static function repack_meta_for_saving($lc_arr, $row_arr) {
         $result = array();
@@ -165,6 +165,9 @@ class TMM_Layout_Constructor {
         return $result;
     }
 
+    /**
+    *   Method saves Layout Constructor data into the one(!) options of post meta.
+    */
 	public static function save_post() {
 		if (!empty($_POST) && isset($_POST['tmm_layout_constructor'])) {
             $post_meta = self::repack_meta_for_saving($_POST['tmm_layout_constructor'], $_POST['tmm_layout_constructor_row']);

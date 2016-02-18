@@ -2,7 +2,6 @@
 
 if (!empty($tmm_layout_constructor)) {
     foreach ($tmm_layout_constructor as $key => $rows) {
-
         if (!empty($rows)) {
             global $tmm_row_options;
 
@@ -39,46 +38,76 @@ if (!empty($tmm_layout_constructor)) {
             if ($group['bg_attachment'])
                 $section_class = $section_class . ' bg_attachment';
 
+            /** row groups definition */
+            // in case of undefined groups
+            if (!isset($group['row_group']) || '0' == $group['row_group']) {
+                if (isset($group_id)) { // group closing
+                    echo "</div><!--/ .container--></section><!--/ .section-->";
+                    unset($group_id);
+                }
+                $section_open = true;
+                $section_close = true;
+            }
+            //in case of defined groups
+            else {
+                if (!isset($group_id)) { // group opening
+                    $group_id = $group['row_group'];
+                    $section_open = true;
+                    $section_close = false;
+                } elseif ($group_id == $group['row_group']) { // continue group
+                    $section_open = false;
+                    $section_close = false;
+                } elseif ($group_id != $group['row_group']) { // group closing
+                    echo "</div><!--/ .container--></section><!--/ .section-->";
+                    $group_id = $group['row_group'];
+                    $section_open = true;
+                    $section_close = false;
+                }
+            }
             ?>
 
-            <section class="<?php echo $section_class ?>" style="<?php echo $bg_color ?><?php echo $border_bottom_css ?>">
-                <?php if ($group['is_overlay']): ?>
-                    <div class="parallax-overlay"></div>
-                <?php endif; ?>
+            <?php if ($section_open): ?>
+                <section class="<?php echo $section_class ?>" style="<?php echo $bg_color ?><?php echo $border_bottom_css ?>">
+                    <?php if ($group['is_overlay']): ?>
+                        <div class="parallax-overlay"></div>
+                    <?php endif; ?>
 
-                <?php if (!empty($group['bg_image'])): ?>
-                    <div class="full-bg-image <?php echo $bg_class ?>"
-                         style="background-image: url(<?php echo @$group['bg_image'] ?>);
-                                opacity: <?php echo (@$group['opacity'] / 100) ?>;
-                                filter: alpha(opacity = <?php echo @$group['opacity'] ?>);"></div>
-                <?php endif; ?>
+                    <?php if (!empty($group['bg_image'])): ?>
+                        <div class="full-bg-image <?php echo $bg_class ?>"
+                             style="background-image: url(<?php echo @$group['bg_image'] ?>);
+                                    opacity: <?php echo (@$group['opacity'] / 100) ?>;
+                                    filter: alpha(opacity = <?php echo @$group['opacity'] ?>);"></div>
+                    <?php endif; ?>
 
-                <?php if ($group['is_parallax'] AND !(empty($group['bg_touch_image']))): ?>
-                    <div class="full-bg-image" style="background-image: url(<?php echo @$group['bg_touch_image'] ?>);"></div>
-                <?php endif; ?>
+                    <?php if ($group['is_parallax'] AND !(empty($group['bg_touch_image']))): ?>
+                        <div class="full-bg-image" style="background-image: url(<?php echo @$group['bg_touch_image'] ?>);"></div>
+                    <?php endif; ?>
 
-                <div class="<?php echo $container_class ?>">
+                    <div class="<?php echo $container_class ?>">
+            <?php endif; ?>
 
-                    <?php foreach ($rows as $row): ?>
+                        <?php foreach ($rows as $row): ?>
+                            <div class="<?php echo $row_class ?>">
 
-                        <div class="<?php echo $row_class ?>">
-                            <?php if (!empty($row) AND is_array($row)): ?>
-                                <?php if (!empty($row['columns']) AND is_array($row['columns'])): ?>
+                                <?php if (!empty($row) AND is_array($row)): ?>
+                                    <?php if (!empty($row['columns']) AND is_array($row['columns'])): ?>
 
-                                    <?php foreach ($row['columns'] as $col_id => $column) : ?>
-                                        <div class="<?php if (!@$group['is_full_width']) echo $column['front_css_class'] . ' ' ?><?php echo $column['grid_class'] ?>">
-                                            <?php echo preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
-                                        </div>
-                                    <?php endforeach; ?>
+                                        <?php foreach ($row['columns'] as $col_id => $column) : ?>
+                                            <div class="<?php if (!@$group['is_full_width']) echo $column['front_css_class'] . ' ' ?><?php echo $column['grid_class'] ?>">
+                                                <?php echo preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
+                                            </div>
+                                        <?php endforeach; ?>
 
+                                    <?php endif; ?>
                                 <?php endif; ?>
-                            <?php endif; ?>
-                        </div><!--/ .row-->
 
-                    <?php endforeach; ?>
+                            </div><!--/ .row-->
+                        <?php endforeach; ?>
 
-                </div><!--/ .container-->
-            </section><!--/ .section-->
+            <?php if ($section_close): ?>
+                    </div><!--/ .container-->
+                </section><!--/ .section-->
+            <?php endif; ?>
 
             <?php
         }
