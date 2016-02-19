@@ -2,7 +2,7 @@
 <?php
 $post_id = (int) $content;
 $post = get_post($post_id);
-$post_link = post_permalink($post_id);
+$post_link = get_permalink($post_id);
 ?>
 
 <?php if ($show_post_type_media == 1): ?>
