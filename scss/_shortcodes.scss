@@ -160,13 +160,21 @@ $lc-divider-type-3-width						: 100%;
 $lc-divider-type-3-height						: 0;
 $lc-divider-type-3-style						: solid;
 
+$lc-divider-type-4-width						: 100%;
+$lc-divider-type-4-height						: 1px;
+$lc-divider-type-4-style						: dashed;
+
+$lc-divider-type-5-width						: 100%;
+$lc-divider-type-5-height						: 1px;
+$lc-divider-type-5-style						: dashed;
+
 $lc-divider-small								: 15px;
 $lc-divider-middle								: 25px;
 $lc-divider-large								: 35px;
 
 $lc-divider-color-transparent					: transparent;
-$lc-divider-color-gray							: #b6b6b7;
-$lc-divider-color-dark							: #232527;
+$lc-divider-color-gray							: #ebebeb;
+$lc-divider-color-dark							: #bebebe;
 
 // 14. Dropcap
 $dropcap-width									: 60px;
@@ -1197,6 +1205,21 @@ blockquote {
 		width: $lc-divider-type-3-width;
 		border-top-width: $lc-divider-type-3-height;
 		border-top-style: $lc-divider-type-3-style;
+	}
+
+	&.type-4 {
+		width: $lc-divider-type-4-width;
+		border-top-width: $lc-divider-type-4-height;
+		border-top-style: $lc-divider-type-4-style;
+	}
+
+	&.type-5 {
+		padding-top: 2px;
+		width: $lc-divider-type-5-width;
+		border-top-width: $lc-divider-type-5-height;
+		border-bottom-width: 2px;
+		border-top-style: $lc-divider-type-5-style;
+		border-bottom-style: solid;
 	}
 
 	// Colors

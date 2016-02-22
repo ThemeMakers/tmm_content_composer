@@ -12,6 +12,8 @@
 				'type-1' => __('Solid', 'tmm_content_composer'),
 				'type-2' => __('Solid Short', 'tmm_content_composer'),
 				'type-3' => __('Empty Space', 'tmm_content_composer'),
+				'type-4' => __('Dashed', 'tmm_content_composer'),
+				'type-5' => __('Mixed (Dashed & Solid)', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type', 'type-1'),
 			'description' => ''
@@ -47,7 +49,7 @@
 			'options' => array(
 				'transparent' => __('Transparent', 'tmm_content_composer'),
 				'gray' => __('Gray', 'tmm_content_composer'),
-				'dark' => __('Dark', 'tmm_content_composer'),
+				'dark' => __('Dark Gray', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('color', 'gray'),
 			'description' => ''
