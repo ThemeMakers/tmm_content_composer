@@ -141,10 +141,9 @@ class TMM_Content_Composer {
 			wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/layout.css');
 
 			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/plugins/min/jquery.modernizr.min.js', array('jquery'));
-			wp_enqueue_script('tmm_composer_vendor', TMM_CC_URL . 'js/vendor.js', array('jquery'), false, true);
-			wp_enqueue_script('tmm_composer_theme', TMM_CC_URL . 'js/theme.js', array('jquery'), false, true);
 			wp_register_script('tmm_tooltipster', TMM_CC_URL . 'js/plugins/min/jquery.tooltipster.min.js', array('jquery'), false, true);
 			wp_register_script('tmm_mixitup', TMM_CC_URL . '/js/plugins/min/jquery.mixitup.min.js', array('jquery'), false, true);
+
 		}
 
 		$tmm_lang = array(
