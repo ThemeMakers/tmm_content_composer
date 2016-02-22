@@ -71,7 +71,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show / Hide control panel ', TMM_CC_TEXTDOMAIN),
+			'title' => __('Show / Hide control panel (for youtube video)', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'control_panel',
 			'id' => 'control_panel',
 			'is_checked' => TMM_Content_Composer::set_default_value('control_panel', 0),
