@@ -3,7 +3,7 @@
 <?php
 if (!isset($icon_css_class)) { $icon_css_class = ""; }
 ?>
-<div class="iconbox">
+<div class="lc-iconbox">
         <i class="circle-icon <?php  echo esc_attr($icon_css_class) ?>"></i>
 
         <div class="iconbox-entry">

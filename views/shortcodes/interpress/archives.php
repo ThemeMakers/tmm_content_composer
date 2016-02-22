@@ -26,7 +26,7 @@ switch($archives_type){
 				<?
 				}
 				?>
-			</ul><!--/ .archive-list-->
+			</ul><!--/ .lc-archive-list-->
 		<?php
 		}
 		break;
@@ -57,11 +57,11 @@ switch($archives_type){
 		$archives = wp_get_archives($args);
 		if (!empty($archives)){
 			?>
-			<ul class="archive-list">
+			<ul class="lc-archive-list">
 				<?php
 				echo $archives;
 				?>
-			</ul><!--/ .archive-list-->
+			</ul><!--/ .lc-archive-list-->
 			<?php
 		}
 
@@ -86,7 +86,7 @@ switch($archives_type){
 				<?php
 				echo $archives;
 				?>
-			</ul><!--/ .archive-list-->
+			</ul><!--/ .lc-archive-list-->
 		<?php
 		}
 
