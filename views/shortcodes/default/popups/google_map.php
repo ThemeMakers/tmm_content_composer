@@ -133,19 +133,6 @@
 		?>
 
 	</div><!--/ .one-half-->
-    
-    <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Enable Slide Up Effect', 'tmm_content_composer'),
-			'shortcode_field' => 'slide_up',
-			'id' => 'slide_up',
-			'is_checked' => TMM_Content_Composer::set_default_value('slide_up', 1),
-			'description' => __('Show with Slide Up Effect', 'tmm_content_composer')
-		));
-		?>		
-	</div><!--/ .one-half-->
 
 	<div class="one-half">
 		<?php
