@@ -194,7 +194,16 @@ $dropcap-sec-brd-color							: #dcdcdc;
 
 // 15. Google Map
 
-// 16. Data Table TODO: create styles for data tables
+// 16. Data Table
+$data-table-font-weight							: 400;
+$data-table-font-size							: 14px;
+$data-table-font-family							: 'Roboto Slab', serif;
+$data-table-cell-padding						: 10px 15px;
+$data-table-head-row-bg-color					: #ebebeb;
+$data-table-body-row-bg-color					: transparent;
+$data-table-body-row-bg-color-hover				: #4d90fe;
+$data-table-text-color							: #7e858b;
+$data-table-text-color-hover					: #ffffff;
 
 // 17. Highlight
 $highlight-bg-color								: #4d90fe;
@@ -1275,16 +1284,65 @@ blockquote {
 /*	15. Google Map
 /* -------------------------------------------------- */
 
-/* -------------------------------------------------- */
-/*	16. Data Table
-/* -------------------------------------------------- */
-
 .lc-google_map {
 	position: relative;
 	width: 100%;
 	height: 400px;
 
 	img { max-width: none; }
+}
+
+/* -------------------------------------------------- */
+/*	16. Data Table
+/* -------------------------------------------------- */
+
+.lc-data-table {
+	margin-bottom: 1.5em;
+
+	.google-visualization-table {
+		width: 100%;
+
+		table {
+			width: 100%;
+			font: {
+				weight: $data-table-font-weight;
+				size: $data-table-font-size;
+				family: $data-table-font-family;
+			};
+
+			thead {
+				tr {
+					background-color: $data-table-head-row-bg-color;
+
+					th {
+						padding: $data-table-cell-padding;
+						background-color: transparent;
+					}
+				}
+			}
+
+			tbody {
+				tr {
+					background-color: $data-table-body-row-bg-color;
+
+					&[class*="table-tr-over"] {
+						background-color: transparentize($data-table-body-row-bg-color-hover, .5);
+						@include transition(background-color .35s ease-in-out);
+
+						td {
+							color: $data-table-text-color-hover;
+						}
+					}
+
+					td {
+						padding: $data-table-cell-padding;
+						color: $data-table-text-color;
+						@include transition(color .35s ease-in-out);
+					}
+				}
+			}
+		}
+	}
 }
 
 /* -------------------------------------------------- */

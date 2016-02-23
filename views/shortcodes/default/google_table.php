@@ -11,7 +11,7 @@ foreach ($content as $value) {
 	$rows_shortcodes_content.='[google_table_row heads_types="' . implode('^', $heads_types) . '"]' . $value . '[/google_table_row]';
 }
 ?>
-<div id="table_<?php echo $unique_id; ?>" style="width: 100%; height: auto;" class="custom-table"></div>
+<div id="table_<?php echo $unique_id; ?>" style="width: 100%; height: auto;" class="lc-data-table"></div>
 <script type='text/javascript'>
 	google.load('visualization', '1', {packages: ['table']});
 	google.setOnLoadCallback(<?php echo "drawTable_" . $unique_id; ?>);
