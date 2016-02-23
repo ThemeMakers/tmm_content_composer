@@ -33,7 +33,9 @@
                                     shortcodes_list =  $('#tmm_shortcodes_list');
                             
                                 $.each(tmm_ext_shortcodes_items, function(key, value) {
-                                    html += '<li><a href="#" data-shortcode="'+value.key+'" title="'+value.name+'"><img src="'+value.icon+'"></a>';
+                                    var title_tag = value.name == 'Staves' ? 'Staff' : value.name;
+
+                                    html += '<li><a href="#" data-shortcode="'+value.key+'" title="'+title_tag+'"><img src="'+value.icon+'"></a>';
                                 });
                                                                                                 
                                 shortcodes_list.append(html)

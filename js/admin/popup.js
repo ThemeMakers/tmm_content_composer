@@ -41,7 +41,11 @@
         if(self.options.popup_class !== ''){
             self.instance.addClass(self.options.popup_class);
         }
-        
+
+        if (self.options.title == 'Staves') {
+            self.options.title = 'Staff';
+        }
+
         var title = '<h3 class="tmm-popup-title">' + self.options.title + '</h3>',
             output = '';
     

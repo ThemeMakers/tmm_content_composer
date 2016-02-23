@@ -162,32 +162,6 @@ global $tmm_row_options;
 
         <div class="one-half">
 
-           <?php
-
-		   TMM_Content_Composer::html_option(array(
-			   'title' => __('Section Title', TMM_CC_TEXTDOMAIN),
-			   'shortcode_field' => 'row_section_title',
-			   'type' => 'text',
-			   'description' => 'for One Page Menu',
-			   'default_value' => $tmm_row_options['section_title'],
-			   'id' => 'row_section_title'
-		   ));
-
-            /*TMM_Content_Composer::html_option(array(
-                'type' => 'select',
-                'title' => __('Row content displaying', TMM_CC_TEXTDOMAIN),
-                'shortcode_field' => 'row_lc_displaying',
-                'id' => 'row_lc_displaying',
-                'options' => array(
-                    'default' => __('Below content matching its layout', TMM_CC_TEXTDOMAIN),
-                    'before_full_width' => __('Before main content with separate layout options', TMM_CC_TEXTDOMAIN),
-		   			'full_width' => __('After main content with separate layout options', TMM_CC_TEXTDOMAIN)
-                ),
-                'default_value' => $tmm_row_options['lc_displaying'],
-                'description' => ''
-            ));*/
-            ?>
-
             <div class="row_full_width" style="display: none;">
             <?php
             TMM_Content_Composer::html_option(array(
