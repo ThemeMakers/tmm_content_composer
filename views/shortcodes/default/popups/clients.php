@@ -20,6 +20,58 @@
       
     </div>
 
+	<div class="one-half">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __("Auto Play Timeout", 'tmm_content_composer'),
+			'shortcode_field' => 'autoplayTimeout',
+			'id' => 'autoplayTimeout',
+			'default_value' => TMM_Content_Composer::set_default_value('autoplayTimeout', '5000'),
+			'description' => __("", 'tmm_content_composer')
+		));
+		?>
+	</div>
+
+	<div class="one-half">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __("Auto Play", 'tmm_content_composer'),
+			'shortcode_field' => 'autoplay',
+			'id' => 'autoplay',
+			'is_checked' => TMM_Content_Composer::set_default_value('autoplay', 1),
+			'description' => __("Auto Play", 'tmm_content_composer')
+		));
+		?>
+	</div>
+
+	<div class="one-half">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __("Show / Hide navigation buttons", 'tmm_content_composer'),
+			'shortcode_field' => 'nav',
+			'id' => 'nav',
+			'is_checked' => TMM_Content_Composer::set_default_value('nav', '1'),
+			'description' => __("Show / Hide navigation buttons", 'tmm_content_composer')
+		));
+		?>
+	</div>
+
+	<div class="one-half">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => __("Show / Hide bullets", 'tmm_content_composer'),
+			'shortcode_field' => 'dots',
+			'id' => 'dots',
+			'is_checked' => TMM_Content_Composer::set_default_value('dots', '0'),
+			'description' => __("Show / Hide navigation bullets", 'tmm_content_composer')
+		));
+		?>
+	</div>
+
 	<div class="fullwidth">
 
 		<h4 class="label"><?php _e('Items', 'tmm_content_composer'); ?></h4>
@@ -92,7 +144,6 @@
 			tmm_ext_shortcodes.clients_changer(shortcode_name);
 		});
 
-
 		//*****
 
 		jQuery(".js_add_accordion_item").on('click',function() {
@@ -106,6 +157,30 @@
 			tmm_ext_shortcodes.clients_changer(shortcode_name);
 			return false;
 		});
+
+		var autoplay = jQuery('#autoplay'),
+			autoplayTimeout = jQuery('#autoplayTimeout'),
+			autoplayVal = autoplay.val();
+
+		autoplayCheck(autoplayVal);
+
+		autoplay.on('change', function(){
+			var val = jQuery(this).val();
+			autoplayCheck(val);
+		});
+
+		function autoplayCheck(val){
+			if (val=='1'){
+				autoplayTimeout.prop({
+					"disabled": false
+				}).css('background-color', '#fff');;
+			}else{
+				autoplayTimeout.prop({
+					"disabled": true
+				}).css('background-color', '#eee');
+			}
+		}
+
 
 		jQuery(".js_delete_accordion_item").life('click',function() {
 			if (jQuery(".list_item").length > 1) {

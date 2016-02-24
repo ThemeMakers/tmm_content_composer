@@ -10,6 +10,7 @@ if (!class_exists('TMM')) {
     tmm_enqueue_style('owltransitions');
 }
 $slides_count = count($images);
+
 ?>
 <?php if (!empty($images)){ ?>
 	<div class="lc-clients clients-items-<?php echo esc_attr($uniqid) ?>">
@@ -29,13 +30,14 @@ $slides_count = count($images);
 
                     items:              <?php echo esc_js($items_per_slide) ?>,
                     loop:               true,
-                    nav:                false,
-                    dots:               false,
-                    autoplay:           true,
-                    autoplayTimeout:    5000,
+                    nav:                <?php echo (isset($nav) && $nav)? 'true' : 'false' ?>,
+                    dots:               <?php echo (isset($dots) && $dots) ? 'true' : 'false' ?>,
+                    autoplay:           <?php echo (isset($autoplay) && $autoplay) ? 'true' : 'false' ?>,
+                    autoplayTimeout:    <?php echo (isset($autoplayTimeout)) ? esc_js($autoplayTimeout) : '5000' ?>,
                     responsiveClass:    true,
                     itemElement:        'li',
-                    stageElement:       'ul'
+                    stageElement:       'ul',
+                    themeClass : "owl-theme-featured-carousel"
 
                 });
             }

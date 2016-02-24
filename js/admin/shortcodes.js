@@ -379,10 +379,30 @@ var TMM_APP_SHORTCODES = function() {
 			if (items_per_slide === undefined) {
 				items_per_slide = "";
 			}
-                        
-			var animation_type = jQuery('#animation_type').val();
-			if (animation_type === undefined) {
-				animation_type = "";
+
+			var autoplayTimeout = jQuery('#autoplayTimeout').val();
+			if (autoplayTimeout === undefined) {
+				autoplayTimeout = "";
+			}
+
+			var autoplay = jQuery('#autoplay').val();
+			if (autoplay === undefined) {
+				autoplay = "";
+			}
+
+			var autoplay = jQuery('#autoplay').val();
+			if (autoplay === undefined) {
+				autoplay = "";
+			}
+
+			var nav = jQuery('#nav').val();
+			if (nav === undefined) {
+				nav = "";
+			}
+
+			var dots = jQuery('#dots').val();
+			if (dots === undefined) {
+				dots = "";
 			}
 
 			var accordion_item_title = "";
@@ -402,7 +422,7 @@ var TMM_APP_SHORTCODES = function() {
 				accordion_item_content = accordion_item_content + value.value;
 			});
 			
-			var shortcode_text = begin_string + ' items_per_slide="' + items_per_slide + '" animation_type="' + animation_type + '" titles="' + accordion_item_title + '"' + ']' + accordion_item_content + end_string;
+			var shortcode_text = begin_string + ' items_per_slide="' + items_per_slide + '" dots="' + dots +'" nav="' + nav + '" autoplay="' + autoplay + '" autoplayTimeout="' + autoplayTimeout + '" titles="' + accordion_item_title + '"' + ']' + accordion_item_content + end_string;
 
 			self.insert_html_in_buffer(shortcode_text);
 		},
