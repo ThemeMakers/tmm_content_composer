@@ -22,9 +22,6 @@ module.exports = function(grunt) {
 					'js/plugins/min/jquery.progressBar.min.js': [
 						'js/plugins/jquery.progressBar.js'
 					],
-					'js/plugins/min/gallery3d.min.js': [
-						'js/plugins/gallery3d.js'
-					],
 					'js/plugins/min/jquery.cycle.min.js': [
 						'js/plugins/jquery.cycle.js'
 					]
