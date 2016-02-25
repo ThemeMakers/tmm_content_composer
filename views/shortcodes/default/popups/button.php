@@ -96,50 +96,7 @@
 		tmm_ext_shortcodes.changer(shortcode_name);
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
-            colorizator();
 		});
-		colorizator();
-        
-        function transparentChanger(a){
-            //var $this = jQuery(this),
-            var disableInput = a.parent().prev().find('input[type="text"]');                    
-            if (a.is(':checked')) {
-                disableInput.prop('readonly', true);
-            }
-            else{
-                disableInput.prop('readonly', false);
-            }      
-            a.on('change', function(){
-                    var $this = jQuery(this),
-                    disableInput = $this.parent().prev().find('input[type="text"]');                    
-                    if ($this.is(':checked')) {
-                        disableInput.prop('readonly', true);
-                    }
-                    else{
-                        disableInput.prop('readonly', false);
-                    }
-                    
-                });
-        };
-        
-        transparentChanger(jQuery('#bg_transparent'));
-        transparentChanger(jQuery('#border_color_transparent'));
-        transparentChanger(jQuery('#mouseover_bg_transparent'));
-        transparentChanger(jQuery('#mouseover_border_color_transparent'));
-                        
-        if (jQuery('#button_type').val()=='roll' || jQuery('#button_type').val()=='orange-roll'){
-            jQuery('.colors').hide();
-        }
-        jQuery('#button_type').on('change', function(){
-            if (jQuery(this).val()=='roll' || jQuery(this).val()=='orange-roll'){
-                jQuery('.colors').fadeOut();
-            }else{
-                jQuery('.colors').fadeIn();
-            }
-        });
-                
-                
-		
 	});
 </script>
 
