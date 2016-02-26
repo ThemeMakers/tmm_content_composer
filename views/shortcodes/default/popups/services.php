@@ -56,19 +56,15 @@
 			$content_edit_data = array('');
 			$links_edit_data = array('#');
 			$titles_edit_data = array('');
-			$hover_titles_edit_data = array('');
 			$icons_edit_data = array(key($type_array));
 			$list_item_color = array('');
 			if (isset($_REQUEST["shortcode_mode_edit"])) {
 				$content_edit_data = explode('^', $_REQUEST["shortcode_mode_edit"]['content']);
 				$links_edit_data = explode('^', $_REQUEST["shortcode_mode_edit"]['links']);
 				$titles_edit_data = explode('^', $_REQUEST["shortcode_mode_edit"]['titles']);
-				$hover_titles_edit_data = explode('^', $_REQUEST["shortcode_mode_edit"]['hover_titles']);
 				$icons_edit_data = explode(',', $_REQUEST["shortcode_mode_edit"]['icons']);
 				$list_item_color = explode(',', $_REQUEST["shortcode_mode_edit"]['colors']);
 			}
-            
-            //return;
 			?>
 
 			<?php foreach ($content_edit_data as $key => $content_edit_text){ ?>
@@ -143,89 +139,53 @@
 <script type="text/javascript">
 	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
 
-	jQuery(function() {
-		
+	jQuery(function () {
+
 		colorizator();
-        
-        tmm_ext_shortcodes.services_changer(shortcode_name);
-        
+
+		tmm_ext_shortcodes.services_changer(shortcode_name);
+
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").life('keyup change', function() {
-			tmm_ext_shortcodes.services_changer(shortcode_name);           
+			tmm_ext_shortcodes.services_changer(shortcode_name);
 		});
-		
+
 		jQuery("#list_items").sortable({
 			stop: function(event, ui) {
 				tmm_ext_shortcodes.services_changer(shortcode_name);
 			}
 		});
-        
-		jQuery("#type_colorized").life('click',function() {
-			jQuery(".list-item-color").slideDown(200);
-            jQuery(".colorized_hover_title").slideDown(200);
-            jQuery("h5.title_content").slideUp(200);
-            jQuery("h5.hover_title_content").slideDown(200);
-            
-			jQuery("#list_type").val(1);
-			tmm_ext_shortcodes.services_changer(shortcode_name);
-		});
 
-		jQuery("#type_normal").life('click', function() {
-			jQuery(".list-item-color").slideUp(200);
-            jQuery(".colorized_hover_title").slideUp(200);
-            jQuery("h5.title_content").slideDown(200);
-            jQuery("h5.hover_title_content").slideUp(200);
-			jQuery("#list_type").val(0);
-			tmm_ext_shortcodes.services_changer(shortcode_name);
-		});
+
 
 		jQuery(".js_add_list_item").on('click', function() {
 			var clone = jQuery(".list_item:last").clone(false);
 			var last_row = jQuery(".list_item:last");
-			jQuery(clone).insertAfter(last_row, clone);			
-            var item_color = jQuery(".list_item:last").find('.list-item-color');
-            jQuery(".list_item:last").find('.list_item_title').val('');
-            jQuery(".list_item:last").find('.list_item_hover_title').val('');
-            jQuery(".list_item:last").find('.list_item_content').text('');
-            item_color.each(function(id,el){
-                var inp = jQuery(el).find('input[type=text]');
-                switch (id){
-                    case 0:
-                        inp.val('#fff');
-                        break;
-                    case 1:
-                        inp.val('#f85c37');
-                        break;
-                    case 2:
-                        inp.val('#fff');
-                        break;
-                    case 3:
-                        inp.val('#262626');
-                        break;                    
-                }
-            });
-			
-			var icon_class = jQuery(".list_item:first").find('select').val();
-			jQuery(".list_item:last").find('select').val(icon_class);
+			jQuery(clone).insertAfter(last_row, clone);
 			tmm_ext_shortcodes.services_changer(shortcode_name);
+			jQuery(".list_item:last").find('input[type=text]').val("");
+			jQuery(".list_item:last").find('textarea').val("");
+			tmm_ext_shortcodes.services_changer(shortcode_name);
+
 			colorizator();
 			return false;
 		});
 
-		jQuery(".js_delete_list_item").life('click',function() {
+		jQuery(".js_delete_list_item").life('click', function () {
+
 			if (jQuery(".list_item").length > 1) {
-				jQuery(this).parents('li').hide(function(){                                     
-                                    jQuery(this).remove();
-                                    tmm_ext_shortcodes.services_changer(shortcode_name);
-                                });
-			}                        
+				jQuery(this).parents('li').hide(function(){
+					jQuery(this).remove();
+                    tmm_ext_shortcodes.services_changer(shortcode_name);
+				});
+			}
 			tmm_ext_shortcodes.services_changer(shortcode_name);
 			return false;
 		});
 
-		jQuery(".list_item_icon").life('change', function() {
+		jQuery(".list_item_icon").life('change', function () {
 			jQuery(this).parents('li').find('i').removeAttr('class').addClass(jQuery(this).val());
 			tmm_ext_shortcodes.services_changer(shortcode_name);
 		});
-		
+
 	});
 </script>
