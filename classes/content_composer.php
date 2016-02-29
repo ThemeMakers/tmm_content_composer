@@ -117,22 +117,20 @@ class TMM_Content_Composer {
 	public static function enqueue_scripts() {
 		wp_deregister_style('wp-mediaelement');
 
-		//wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
-
 		if (!class_exists('TMM')) {
-
 			?>
 			<script type="text/javascript">
 				var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 			</script>
 			<?php
 
-			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/plugins/min/jquery.modernizr.min.js', array('jquery'), false, true);
 			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
+			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
+			wp_enqueue_script('tmm_modernizr', TMM_CC_URL . 'js/plugins/min/jquery.modernizr.min.js', array('jquery'), false, true);
+			wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, true);
 
 		}
 
-		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, true);
 	}
 
 	public static function mce_buttons($buttons) {
