@@ -54,6 +54,8 @@ class TMM_Layout_Constructor {
     */
     public static function merge_old_post_meta($row_arr, $lc_arr, $group_arr) {
         $result = array();
+	    $group_arr = (array) $group_arr;
+
         if ( count($row_arr) == count($lc_arr) ) {
             foreach ($row_arr as  $key => $value) {
                 if (key_exists($key, $lc_arr)) {

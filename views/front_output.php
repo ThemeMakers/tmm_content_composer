@@ -93,7 +93,7 @@ if (!empty($tmm_layout_constructor)) {
                                     <?php if (!empty($row['columns']) AND is_array($row['columns'])): ?>
 
                                         <?php foreach ($row['columns'] as $col_id => $column) : ?>
-                                            <div class="<?php if (!@$group['is_full_width']) echo $column['front_css_class'] . ' ' ?><?php echo $column['grid_class'] ?>">
+                                            <div class="<?php if (!@$group['is_full_width']) echo $column['front_css_class']; ?>">
                                                 <?php echo preg_replace('/^<p>|<\/p>$/', '', do_shortcode($column['content'])); ?>
                                             </div>
                                         <?php endforeach; ?>
