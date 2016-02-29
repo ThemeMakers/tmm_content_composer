@@ -75,7 +75,7 @@
 			'shortcode_field' => 'control_panel',
 			'id' => 'control_panel',
 			'is_checked' => TMM_Content_Composer::set_default_value('control_panel', 0),
-			'description' => __('', TMM_CC_TEXTDOMAIN)
+			'description' => ''
 		));
 		?>
 	</div>

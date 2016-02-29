@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2015-12-08 19:31+0100\n"
-"PO-Revision-Date: 2015-12-08 19:31+0100\n"
+"POT-Creation-Date: 2016-02-29 21:37+0100\n"
+"PO-Revision-Date: 2016-02-29 21:37+0100\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -72,54 +72,54 @@ msgstr ""
 msgid "Row editor"
 msgstr ""
 
-#: classes/content_composer.php:153
+#: classes/content_composer.php:151
 msgid "Please enter correct"
 msgstr ""
 
-#: classes/content_composer.php:154
+#: classes/content_composer.php:152
 msgid "Your message has been sent successfully!"
 msgstr ""
 
-#: classes/content_composer.php:155
+#: classes/content_composer.php:153
 msgid "Server failed. Send later"
 msgstr ""
 
-#: classes/content_composer.php:169
+#: classes/content_composer.php:167
 msgid "Use wptexturize"
 msgstr ""
 
-#: classes/content_composer.php:252 index.php:42
+#: classes/content_composer.php:250 index.php:40
 #: views/shortcodes/default/popups/title.php:58
 msgid "Default"
 msgstr ""
 
-#: classes/content_composer.php:253
+#: classes/content_composer.php:251
 msgid "Default-white"
 msgstr ""
 
-#: classes/content_composer.php:264
+#: classes/content_composer.php:262
 msgid "Small"
 msgstr ""
 
-#: classes/content_composer.php:265
+#: classes/content_composer.php:263
 msgid "Middle"
 msgstr ""
 
-#: classes/content_composer.php:266
+#: classes/content_composer.php:264
 msgid "Large"
 msgstr ""
 
-#: classes/content_composer.php:274
+#: classes/content_composer.php:272
 msgid "All Categories"
 msgstr ""
 
-#: classes/content_composer.php:437
+#: classes/content_composer.php:435
 msgid "Browse"
 msgstr ""
 
 #: classes/layout_constructor.php:397
-#: views/shortcodes/default/tmm_video.php:126
-#: views/shortcodes/default/tmm_video.php:129
+#: views/shortcodes/default/tmm_video.php:127
+#: views/shortcodes/default/tmm_video.php:130
 msgid "Unsupported video format"
 msgstr ""
 
@@ -164,50 +164,50 @@ msgid "No effects"
 msgstr ""
 
 #: views/meta_panel.php:162
-#: views/shortcodes/default/popups/pricing_tables.php:156
+#: views/shortcodes/default/popups/pricing_tables.php:155
 #: views/shortcodes/default/popups/title.php:367
 msgid "Element Fade"
 msgstr ""
 
 #: views/meta_panel.php:163 views/meta_panel.php:454
 #: views/shortcodes/default/popups/counter.php:105
-#: views/shortcodes/default/popups/pricing_tables.php:157
+#: views/shortcodes/default/popups/pricing_tables.php:156
 #: views/shortcodes/default/popups/title.php:368
 msgid "Opacity"
 msgstr ""
 
 #: views/meta_panel.php:164
-#: views/shortcodes/default/popups/pricing_tables.php:160
+#: views/shortcodes/default/popups/pricing_tables.php:159
 #: views/shortcodes/default/popups/title.php:369
 msgid "Slide Right"
 msgstr ""
 
 #: views/meta_panel.php:165
-#: views/shortcodes/default/popups/pricing_tables.php:161
+#: views/shortcodes/default/popups/pricing_tables.php:160
 #: views/shortcodes/default/popups/title.php:370
 msgid "Slide Left"
 msgstr ""
 
 #: views/meta_panel.php:166
-#: views/shortcodes/default/popups/pricing_tables.php:162
+#: views/shortcodes/default/popups/pricing_tables.php:161
 #: views/shortcodes/default/popups/title.php:371
 msgid "Slide Down"
 msgstr ""
 
 #: views/meta_panel.php:167
-#: views/shortcodes/default/popups/pricing_tables.php:163
+#: views/shortcodes/default/popups/pricing_tables.php:162
 #: views/shortcodes/default/popups/title.php:372
 msgid "Slide Up"
 msgstr ""
 
 #: views/meta_panel.php:168
-#: views/shortcodes/default/popups/pricing_tables.php:164
+#: views/shortcodes/default/popups/pricing_tables.php:163
 #: views/shortcodes/default/popups/title.php:373
 msgid "Slide Up 2x"
 msgstr ""
 
 #: views/meta_panel.php:169
-#: views/shortcodes/default/popups/pricing_tables.php:165
+#: views/shortcodes/default/popups/pricing_tables.php:164
 #: views/shortcodes/default/popups/title.php:374
 msgid "Extra Radius"
 msgstr ""
@@ -765,7 +765,7 @@ msgid "to"
 msgstr ""
 
 #: views/shortcodes/default/popups/counter.php:106
-#: views/shortcodes/default/popups/pricing_tables.php:159
+#: views/shortcodes/default/popups/pricing_tables.php:158
 msgid "Scale"
 msgstr ""
 
@@ -1180,56 +1180,56 @@ msgstr ""
 msgid "Show / Hide Pinterest"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:112
+#: views/shortcodes/default/popups/pricing_tables.php:111
 msgid "Table Count"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:136
+#: views/shortcodes/default/popups/pricing_tables.php:135
 msgid "Row Count"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:150
+#: views/shortcodes/default/popups/pricing_tables.php:149
 msgid "Effect for Appearing Table"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:158
+#: views/shortcodes/default/popups/pricing_tables.php:157
 msgid "Opacity 2x Run"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:167
+#: views/shortcodes/default/popups/pricing_tables.php:166
 msgid "Effect for Appearing Post."
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:177
+#: views/shortcodes/default/popups/pricing_tables.php:176
 msgid "Starter Package"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:177
+#: views/shortcodes/default/popups/pricing_tables.php:176
 msgid "$19.95"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:177
+#: views/shortcodes/default/popups/pricing_tables.php:176
 msgid "per month"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:177
+#: views/shortcodes/default/popups/pricing_tables.php:176
 msgid "Get Started"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:228
+#: views/shortcodes/default/popups/pricing_tables.php:227
 msgid "Enter text here"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:233
+#: views/shortcodes/default/popups/pricing_tables.php:232
 msgid "Button Text"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:235
+#: views/shortcodes/default/popups/pricing_tables.php:234
 msgid "Button Link"
 msgstr ""
 
-#: views/shortcodes/default/popups/pricing_tables.php:237
-#: views/shortcodes/default/popups/pricing_tables.php:239
+#: views/shortcodes/default/popups/pricing_tables.php:236
+#: views/shortcodes/default/popups/pricing_tables.php:238
 msgid "Is Featured"
 msgstr ""
 
@@ -1457,6 +1457,10 @@ msgstr ""
 #: views/shortcodes/default/popups/tmm_video.php:33
 #: views/shortcodes/default/popups/tmm_video.php:37
 msgid "Show Cover Image Only on Mobiles"
+msgstr ""
+
+#: views/shortcodes/default/popups/tmm_video.php:74
+msgid "Show / Hide control panel (for youtube video)"
 msgstr ""
 
 #: views/shortcodes/default/popups/tooltip.php:9
