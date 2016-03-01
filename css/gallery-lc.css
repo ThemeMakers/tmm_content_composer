@@ -1,0 +1,19 @@
+.grid-wrap .grid figure{
+    position: relative;
+}
+.lc-gallery-popup{
+    height: 0;
+    width: 0;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 90;
+    opacity: 0;
+}
+.lc-close{
+    position: absolute;
+    right: 10px;
+    top : 40px;
+    z-index: 91;
+}

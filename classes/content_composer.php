@@ -131,8 +131,9 @@ class TMM_Content_Composer {
 	public static function enqueue_scripts() {
 		wp_deregister_style('wp-mediaelement');
 
-
 		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
+
+		wp_enqueue_style('tmm_gallery', TMM_CC_URL . 'css/gallery-lc.css');
 
 		?>
 		<script type="text/javascript">
@@ -159,6 +160,7 @@ class TMM_Content_Composer {
 		wp_register_script('tmm_cycle', TMM_CC_URL . 'js/plugins/min/jquery.cycle.min.js', array('jquery'), false, true);
 
 		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, true);
+
 	}
 
 	public static function mce_buttons($buttons) {

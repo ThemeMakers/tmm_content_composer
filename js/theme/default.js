@@ -498,6 +498,80 @@ function merge_objects_options(obj1, obj2) {
 
             }
 
+            /*----------------------------------------------------*/
+            /*	ImageGallery									  */
+            /*----------------------------------------------------*/
+
+            if ($('.lc-grid-gallery').length){
+
+                $('.lc-grid-gallery').each(function(){
+                    var item = $('.lc-grid-gallery').find('.post-image');
+                    var $this = $(this);
+                    item.on('click', function(event){
+
+                        if (!$('.lc-gallery-popup').length){
+                            $('body').append('<div class="lc-gallery-popup"><button class="lc-close" type="button" title="Close (Esc)">×</button></div>');
+                        }
+
+                        var popup = $('.lc-gallery-popup').css({'left' : event.clientX+'px', 'top' : event.clientY+'px'});
+
+                        popup.animate({
+                            'left' : '0',
+                            'top' : '0',
+                            'height' : '100%',
+                            'width' : '100%',
+                            'opacity' : '1'
+                        });
+
+                        var carousel = $this.find('.lc-grid-carousel').html();
+
+                        if (!$('.lc-gallery-popup .owl-carousel').length){
+                            popup.append(carousel);
+                        }
+
+                        if ($('.lc-gallery-popup').find('.lc-grid-carousel')){
+
+                            var id = $this.find('.lc-grid-carousel').data('id');
+
+                            if ($('.lc-grid-' + id + ' img').length>1){
+
+                                $('.lc-grid-'+id).owlCarousel({
+
+                                    items:              1,
+                                    loop:               true,
+                                    nav:               true,
+                                    dots:               false,
+                                    autoplay:           true,
+                                    autoplayTimeout:    '5000',
+                                    responsiveClass:    true,
+                                    itemElement:        'li',
+                                    stageElement:       'ul',
+                                    autoHeight: true,
+                                    themeClass : "owl-theme-featured-carousel"
+
+                                });
+                            }
+                        }
+
+                        return false;
+                    });
+
+                });
+
+                $('.lc-close').life('click', function(event){
+                    var popup = $('.lc-gallery-popup');
+
+                    popup.animate({
+                        'left' : event.clientX+'px',
+                        'top' : event.clientY+'px',
+                        'height' : '0',
+                        'width' : '0',
+                        'opacity' : '0'
+                    });
+
+                });
+            }
+
         }());
     });
 }(jQuery, window, document));
