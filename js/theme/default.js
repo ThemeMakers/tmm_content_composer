@@ -502,6 +502,20 @@ function merge_objects_options(obj1, obj2) {
             /*	ImageGallery									  */
             /*----------------------------------------------------*/
 
+            if ($('.popupGallery').length) {
+                $('.popupGallery').popupGallery({
+                    prevNext: true,
+                    continuous: true,
+                    autowidth: false,
+                    autoheight: false,
+                    clickableAni: false,
+                    ease: 'easeOutQuad',
+                    speed: 800
+                });
+            }
+
+            /*
+
             if ($('.lc-grid-gallery').length){
 
                 $('.lc-grid-gallery').each(function(){
@@ -571,6 +585,7 @@ function merge_objects_options(obj1, obj2) {
 
                 });
             }
+            */
 
         }());
     });
