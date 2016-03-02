@@ -6,6 +6,10 @@ $cols_count = count($staff);
 
 $col_class = ' col-md-6';
 $max_cols = 4;
+if($cols_count === 1){
+	$col_class = ' col-md-6';
+	$max_cols = 1;
+}
 if($cols_count === 2){
 	$col_class = ' col-md-6';
 	$max_cols = 2;
