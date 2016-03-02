@@ -3,6 +3,28 @@ if (!defined('ABSPATH')) exit;
 
 wp_reset_query();
 
+if (!isset($orderby)) {
+    $orderby = '';
+}
+if (!isset($order)) {
+    $order = 'DESC';
+}
+if (!isset($category)) {
+    $category = '';
+}
+if (!isset($posts)) {
+    $posts = '';
+}
+if (!isset($show_metadata)) {
+    $show_metadata = 1;
+}
+if (!isset($show_pagination)) {
+    $show_pagination = 1;
+}
+if (!isset($posts_per_page)) {
+    $posts_per_page = 5;
+}
+
 $args = array(
 	'orderby' => $orderby,
 	'order' => $order,
