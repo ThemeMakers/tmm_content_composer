@@ -182,7 +182,7 @@ class TMM_Layout_Constructor {
 					}
 					?>
 					<div class="mb-wrapper">
-						<iframe  class="fitwidth" type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent&autoplay=1&controls=0&loop=1"  allowfullscreen></iframe>
+						<iframe  class="fitwidth" type="text/html" width="100%" height="100%" src="//www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent&autoplay=1&controls=0&loop=1"  allowfullscreen></iframe>
 					</div>
 					<?php break; 
 
@@ -193,7 +193,7 @@ class TMM_Layout_Constructor {
                     }
                     ?>
                     <div class="mb-wrapper">
-                        <iframe src="http://player.vimeo.com/video/<?php echo $source_code ?>?autoplay=1&loop=1&portrait=0&controls=0&showinfo=0&autohide=1&rel=0&wmode=transparent"></iframe>
+                        <iframe src="//player.vimeo.com/video/<?php echo $source_code ?>?autoplay=1&loop=1&portrait=0&controls=0&showinfo=0&autohide=1&rel=0&wmode=transparent"></iframe>
                     </div><!--/ .mb-wrapper-->
 				<?php break; 
                 
