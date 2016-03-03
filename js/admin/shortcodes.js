@@ -95,7 +95,10 @@ var TMM_APP_SHORTCODES = function() {
 			var end_string = "[/" + shortcode + "]";
 			jQuery.each(items, function(key, value) {
 				var shortcode_field = jQuery(value).attr('data-shortcode-field');
-				begin_string = begin_string + " " + shortcode_field + '="' + jQuery(value).val() + '"';
+				if (shortcode_field) {
+					begin_string = begin_string + " " + shortcode_field + '="' + jQuery(value).val() + '"';
+				}
+
 			});
 
 			var heads_values = 'heads_values="';

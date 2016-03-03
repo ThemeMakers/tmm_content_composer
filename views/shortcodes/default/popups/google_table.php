@@ -15,7 +15,7 @@
 			'shortcode_field' => 'rows',
 			'id' => 'table_rows',
 			'options' => $numbers,
-			'default_value' => TMM_Content_Composer::set_default_value('rows', 2),
+			'default_value' => TMM_Content_Composer::set_default_value('rows', 3),
 			'description' => ''
 		));
 		?>
