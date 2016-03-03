@@ -8,6 +8,10 @@ $styles = "";
 $html = "";
 $figcaption = "";
 
+if ( !isset($img_caption) ) {
+    $img_caption = '';
+}
+
 // Styles
 if (!empty($styles)) {
 	$styles = ' style="' . $styles . '"';

@@ -139,7 +139,7 @@
 			'title' => __('Font Family', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'font_family',
 			'id' => 'font_family',
-			'options' => $google_fonts_array,
+			'options' => tmm_get_fonts_array(),
 			'default_value' => TMM_Content_Composer::set_default_value('font_family', '0'),
 			'description' => ''
 		));
