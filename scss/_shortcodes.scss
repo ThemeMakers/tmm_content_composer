@@ -1343,6 +1343,10 @@ blockquote {
 					th {
 						padding: $data-table-cell-padding;
 						background-color: transparent;
+
+						&.gradient {
+							background-image: none;
+						}
 					}
 				}
 			}
