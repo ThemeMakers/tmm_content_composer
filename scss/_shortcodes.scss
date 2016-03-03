@@ -209,7 +209,12 @@ $data-table-text-color-hover					: #ffffff;
 $highlight-bg-color								: #4d90fe;
 $highlight-text-color							: #ffffff;
 
-// 18. Iconbox TODO: create variables and assign them to properties
+// 18. Iconbox
+$lc-iconbox-icon-bg-color						: #f0f0f0;
+$lc-iconbox-icon-bg-color-hover					: #4d90fe;
+$lc-iconbox-icon-color							: #4d90fe;
+$lc-iconbox-icon-color-hover					: #ffffff;
+$lc-iconbox-readmore-color						: #4d90fe;
 
 // 19. Image
 $io-1											: 1px;
@@ -969,7 +974,6 @@ blockquote {
 
 .lc-clients {
 	position: relative;
-	overflow: hidden;
 	margin-bottom: 15px;
 	font-size: 0;
 	text-align: center;
@@ -1356,35 +1360,81 @@ blockquote {
 }
 
 /* -------------------------------------------------- */
-/*  18. Iconbox TODO: update styles
+/*  18. Iconbox
 /* -------------------------------------------------- */
 
 .lc-iconbox {
 	margin-bottom: 25px;
 
-	&:hover {
-		i[class^="circle-icon"],
-		i[class*=" circle-icon"] {
-			background-color: #f85c37;
+	// Icon Position
+	&.position-top {
+		text-align: center;
 
-			@include transform(scale(1.2));
+		i[class^="circle-icon"] {
+			margin:0 auto 20px;
+		}
+	}
+
+	&.position-left {
+		i[class^="circle-icon"] {
+			float: left;
+			margin-right: 25px;
+		}
+	}
+
+	// Icon Size
+	&.size-small {
+		i[class^="circle-icon"] {
+			width: 50px;
+			height: 50px;
 
 			&:before {
-				color: #fff;
+				font-size: 14px;
+				line-height: 50px;
 			}
 		}
 	}
 
-	i[class^="circle-icon"],
-	i[class*=" circle-icon"] {
+	&.size-middle {
+		i[class^="circle-icon"] {
+			width: 80px;
+			height: 80px;
+
+			&:before {
+				font-size: 24px;
+				line-height: 80px;
+			}
+		}
+	}
+
+	&.size-large {
+		i[class^="circle-icon"] {
+			width: 110px;
+			height: 110px;
+
+			&:before {
+				font-size: 42px;
+				line-height: 110px;
+			}
+		}
+	}
+
+	&:hover {
+		i[class^="circle-icon"] {
+			background-color: $lc-iconbox-icon-bg-color-hover;
+
+			@include transform(scale(1.2));
+
+			&:before {
+				color: $lc-iconbox-icon-color-hover;
+			}
+		}
+	}
+
+	i[class^="circle-icon"] {
 		position: relative;
 		display: block;
-		float: left;
-		margin-top: 5px;
-		margin-right: 25px;
-		width: 80px;
-		height: 80px;
-		background-color: #f0f0f0;
+		background-color: $lc-iconbox-icon-bg-color;
 		text-align: center;
 		font-size: 0;
 
@@ -1392,9 +1442,7 @@ blockquote {
 		@include border-radius(50%);
 
 		&:before {
-			color: #f85c37;
-			font-size: 24px;
-			line-height: 80px;
+			color: $lc-iconbox-icon-color;
 			text-align: center;
 
 			@include transition(color .35s ease);
@@ -1404,15 +1452,9 @@ blockquote {
 
 	.iconbox-entry { display: table; }
 
-	.iconbox-content-title { margin-bottom: 5px; }
-
-	p { margin-bottom: .3em; }
-
 	.read-more {
-		text-transform: uppercase;
-		color: #f85c37;
-		font-weight: 500;
-		font-family: 'Relaway', sans-serif;
+		text-transform: capitalize;
+		color: $lc-iconbox-readmore-color;
 	}
 }
 

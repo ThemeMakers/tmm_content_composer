@@ -2,34 +2,6 @@
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
 	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Title', 'tmm_content_composer'),
-			'shortcode_field' => 'content',
-			'id' => '',
-			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
-			'description' => ''
-		));
-		?>
-
-	</div><!--/ .one-half-->
-	
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('URL', 'tmm_content_composer'),
-			'shortcode_field' => 'url',
-			'id' => 'url',
-			'default_value' => TMM_Content_Composer::set_default_value('url', ''),
-			'description' => __('Example: ', 'tmm_content_composer') . 'http://forums.webtemplatemasters.com/'
-		));
-		?>
-	</div><!--/ .one-half-->
-
-	<div class="one-half">
 
 		<?php
 
@@ -38,7 +10,6 @@
 
 		<input type="hidden" class="js_shortcode_template_changer" data-shortcode-field="icon_css_class" id="chooced_icon_type" value="<?php echo $icon_css_class ?>" />				
 	
-		
 		<?php
 		$icon_groups = array(
 			'Fontelico' => __('Fontelico', 'tmm_content_composer'),
@@ -68,6 +39,53 @@
 			'default_value' => $view_icon_group,
 			'description' => ''
 		));
+
+		?>
+
+		<div class="one-half inner-left">
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => __('Icon Size', 'tmm_content_composer'),
+				'shortcode_field' => 'icon_size',
+				'id' => 'icon_size',
+				'options' => array(
+					'size-small' => __('Small', 'tmm_content_composer'),
+					'size-middle' => __('Middle', 'tmm_content_composer'),
+					'size-large' => __('Large', 'tmm_content_composer'),
+				),
+				'default_value' => TMM_Content_Composer::set_default_value('icon_size', 'size-middle'),
+				'description' => ''
+			));
+			?>
+		</div>
+
+		<div class="one-half inner-right">
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => __('Icon Position', 'tmm_content_composer'),
+				'shortcode_field' => 'icon_position',
+				'id' => 'icon_position',
+				'options' => array(
+					'position-top' => __('Top', 'tmm_content_composer'),
+					'position-left' => __('Left', 'tmm_content_composer'),
+				),
+				'default_value' => TMM_Content_Composer::set_default_value('icon_position', 'position-left'),
+				'description' => ''
+			));
+			?>
+		</div>
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('URL', 'tmm_content_composer'),
+			'shortcode_field' => 'url',
+			'id' => 'url',
+			'default_value' => TMM_Content_Composer::set_default_value('url', ''),
+			'description' => __('Example: ', 'tmm_content_composer') . 'http://forums.webtemplatemasters.com/'
+		));
 		?>
 
 	</div><!--/ .one-half-->
@@ -76,14 +94,24 @@
 	<div class="one-half">
 		
 	<?php
-	TMM_Content_Composer::html_option(array(
-		'type' => 'textarea',
-		'title' => __('Optional Text', 'tmm_content_composer'),
-		'shortcode_field' => 'text',
-		'id' => 'url',
-		'default_value' => TMM_Content_Composer::set_default_value('text', ''),
-		'description' => ''
-	));
+
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Title', 'tmm_content_composer'),
+			'shortcode_field' => 'content',
+			'id' => '',
+			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
+			'description' => ''
+		));
+
+		TMM_Content_Composer::html_option(array(
+			'type' => 'textarea',
+			'title' => __('Optional Text', 'tmm_content_composer'),
+			'shortcode_field' => 'text',
+			'id' => 'url',
+			'default_value' => TMM_Content_Composer::set_default_value('text', ''),
+			'description' => ''
+		));
 	?>
 		
 	</div>
