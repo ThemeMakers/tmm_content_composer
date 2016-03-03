@@ -974,9 +974,13 @@ blockquote {
 
 .lc-clients {
 	position: relative;
-	margin-bottom: 15px;
+	margin-bottom: 40px;
 	font-size: 0;
 	text-align: center;
+
+	.owl-stage-outer {
+		margin-bottom: 10px;
+	}
 
 	li {
 		display: inline-block;
@@ -988,6 +992,24 @@ blockquote {
 		@include transition(opacity .25s ease-in-out);
 
 		&:hover { opacity: .5; }
+	}
+
+	.owl-controls {
+		position: static;
+
+		.owl-nav {
+			width: 100%;
+			@include align-element(50%, 50%);
+
+			> div {
+				position: absolute;
+				margin: 0;
+				top: -32px;
+			}
+
+			.owl-prev { left: -5px; }
+			.owl-next { right: -5px; }
+		}
 	}
 }
 
