@@ -65,7 +65,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				$section_class .= ' viewport-100';
 			}
 
-			$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : 'left';
+			$align  = (isset($tmm_layout_constructor_row[$row]['align'])) ? $tmm_layout_constructor_row[$row]['align'] : 'left';
 
 			if (!empty($align) && $align === 'right') {
 				$section_class .= ' content-right';
