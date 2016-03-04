@@ -530,6 +530,8 @@ function merge_objects_options(obj1, obj2) {
                     clickableAni: false,
                     ease: 'easeOutQuad',
                     speed: 800
+
+
                 });
             }
 

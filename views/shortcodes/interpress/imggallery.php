@@ -31,7 +31,7 @@ $uniqid = uniqid();
 			<div class="popupGallery">
 				<ul>
 					<?php foreach ($galleries as $gallery) { ?>
-						<li><img src="<?php echo esc_url($gallery['url']) ?>" alt=""/></li>
+						<li data-effect="slide"><img src="<?php echo esc_url($gallery['url']) ?>" alt=""/></li>
 					<?php } ?>
 				</ul>
 			</div><!--/ .popupGallery-->

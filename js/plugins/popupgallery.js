@@ -59,13 +59,13 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
     $.fn.popupGallery = function(optionsOrg) {
         // default configuration properties
         var defaults = {
-            effect:            FALSE,  /*option[0]/*effect*/
+            effect:            false,  /*option[0]/*effect*/
             speed:             800, /*   option[1]/*speed*/
             customlink:        FALSE, /* option[2]/*customlink*/
             controlsshow:      TRUE, /*  option[3]/*controlsShow*/
             controlsfadespeed: 400, /*   option[4]/*controlsfadespeed*/
             controlsfade:      TRUE, /*  option[5]/*controlsfade*/
-            insertafter:       FALSE, /*  option[6]/*insertafter*/
+            insertafter:       true, /*  option[6]/*insertafter*/
             vertical:          FALSE, /* option[7]/*vertical*/
             slidecount:        1, /*     option[8]/*slidecount*/
             movecount:         1, /*     option[9]/*movecount*/
@@ -385,6 +385,9 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
             }
 
             function getEffectMethod(inputEffect) {
+
+                console.log('inputEffect='+inputEffect);
+
                 if ($.isArray(inputEffect)) {
                     return arrayToRandomEffect(inputEffect);
                 } else if (isFunc(inputEffect)) {
@@ -517,27 +520,24 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                         th.each(function(){
                             $(this).find('a').each(function(i){
                                 $(this).attr('data-rel', i + 1);
-                            }).on('click', function() {
+                            }).on('click', function(event) {
                                 var $this = $(this);
-                                self.animActiveSlider($this);
+                                self.animActiveSlider($this, event);
                                 animateToSlide(getRelDataAttribute(this) - 1, TRUE);
                                 return false;
                             });
                         });
                     },
-                    animActiveSlider: function($this) {
+                    animActiveSlider: function($this, event) {
                         actSlider = $this.parents('.grid-items').next();
                         if ( !actSlider.is('.active') ) {
-                            if (Modernizr.touch) {
-                                $('#header').css({
-                                    zIndex : 0
-                                });
-                            }
-                            //actSlider.css({'visibility':'visible'});
+
+                           // actSlider.css({'left' : event.clientX+'px', 'top' : event.clientY+'px'});
+                            console.log('open');
                             actSlider.animate({
                                 top: 0,
                                 opacity: 1
-                            },200, function(){
+                            },600, 'easeInOutCirc', function(){
                                 $(this).addClass('active');
                             });
                         }
@@ -545,16 +545,13 @@ eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a
                     animOutSlider: function($this) {
                         actSlider = $this.parents('.lc-popupGallery');
                         if ( actSlider.is('.active') ){
-                            $('#header').css({
-                                zIndex : 10
-                            });
 
                             actSlider.animate({
-                                top: '100%',
+                                top: '-100%',
                                 opacity: 0
-                            }, o.outspeed, function() {
+
+                            }, o.outspeed, 'easeInOutCirc', function() {
                                 $(this).removeClass('active');
-                                //actSlider.css({ visibility:'hidden'});
                             });
 
                         }
