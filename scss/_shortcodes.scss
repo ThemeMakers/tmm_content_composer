@@ -232,21 +232,21 @@ $brd-color-white								: #ffffff;
 $brd-color-grey-transparent						: rgba(126,133,139,0.7);
 $brd-color-white-transparent					: rgba(255,255,255,0.9);
 
-$caption-default-font-family					: 'Open Sans';
+$caption-default-font-family					: 'Roboto Slab', serif;
 $caption-default-font-size						: 12px;
 $caption-default-font-style						: normal;
 $caption-default-font-color						: #7e858b;
 $caption-default-bg-color						: #ffffff;
 $caption-default-offset							: 3px 10px;
 
-$caption-style-1-font-family					: 'Open Sans';
+$caption-style-1-font-family					: 'Roboto Slab', serif;
 $caption-style-1-font-size						: 12px;
 $caption-style-1-font-style						: normal;
-$caption-style-1-font-color						: #000000;
+$caption-style-1-font-color						: #7e858b;
 $caption-style-1-bg-color						: rgba(255,255,255,0.7);
 $caption-style-1-offset							: 3px 10px;
 
-$caption-style-2-font-family					: 'Open Sans';
+$caption-style-2-font-family					: 'Roboto Slab', serif;
 $caption-style-2-font-size						: 12px;
 $caption-style-2-font-style						: normal;
 $caption-style-2-font-color						: #ffffff;
@@ -1613,6 +1613,7 @@ blockquote {
 		padding: $caption-default-offset;
 		position: relative;
 		z-index: 99;
+		line-height: 1.8;
 
 		&.static {
 			position: absolute;
