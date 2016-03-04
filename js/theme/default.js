@@ -474,6 +474,25 @@ function merge_objects_options(obj1, obj2) {
             }
 
             /*----------------------------------------------------*/
+            /*	Image   										  */
+            /*----------------------------------------------------*/
+
+            if ($('.lc-image').length) {
+
+                var lcImg = $('.lc-image');
+
+                lcImg.each(function() {
+                    var imgWidth = $(this).find('img').width();
+
+                    $(this).children('figcaption').css({
+                        'width': imgWidth,
+                        'display': 'block'
+                    });
+                });
+
+            }
+
+            /*----------------------------------------------------*/
             /*	Tooltipster										  */
             /*----------------------------------------------------*/
 

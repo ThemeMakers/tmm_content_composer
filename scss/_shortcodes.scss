@@ -1604,7 +1604,7 @@ blockquote {
 
 	// Caption text style
 	figcaption {
-		max-width: 350px; // TODO: for each image size make appropriate max-width
+		display: none;
 		font-family: $caption-default-font-family;
 		font-size: $caption-default-font-size;
 		font-style: $caption-default-font-style;
