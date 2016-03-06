@@ -106,7 +106,7 @@ switch($type){
                 <div class="ca-shortcode">
                     <i class="ca-icon <?php echo esc_attr($icons[$key]) ?>"></i>
                     <div class="ca-content">
-                        <h4 class="ca-title">
+                        <h3 class="ca-title">
                             <?php
                             if (!empty($links[$key])){?>
                             <a href="<?php echo esc_url( $links[$key]); ?>">
@@ -119,7 +119,7 @@ switch($type){
                             </a>
                         <?php
                         }?>
-                        </h4>
+                        </h3>
                         <p>
                             <?php echo esc_html($text) ?>
                         </p>
