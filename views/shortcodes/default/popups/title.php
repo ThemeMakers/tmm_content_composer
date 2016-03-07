@@ -177,13 +177,13 @@
 			<?php
 			TMM_Content_Composer::html_option( array(
 				'type'            => 'select',
-				'title'           => __( 'Title Align', 'tmm_content_composer' ),
+				'title'           => __( 'Title Text Align', 'tmm_content_composer' ),
 				'shortcode_field' => 'align',
 				'id'              => 'align',
 				'options'         => array(
-					'left'   => 'Left',
-					'right'  => 'Right',
-					'center' => 'Center',
+					'align-left'   => __( 'Left', 'tmm_content_composer' ),
+					'align-right'  => __( 'Right', 'tmm_content_composer' ),
+					'align-center' => __( 'Center', 'tmm_content_composer' ),
 				),
 				'default_value'   => TMM_Content_Composer::set_default_value( 'align', 'left' ),
 				'description'     => ''

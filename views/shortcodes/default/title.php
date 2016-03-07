@@ -5,7 +5,7 @@
 
 $html = "";
 $styles = "";
-
+$css_class = "";
 $general_styles = "";
 $single_styles = "";
 
@@ -27,11 +27,6 @@ if (!empty($font_weight) && $font_weight != 'default') {
 if (!empty($letter_spacing)) {
 	$styles.="letter-spacing:{$letter_spacing}px;";
 	$single_styles.="letter-spacing:{$letter_spacing}px;";
-}
-// Align
-if (!empty($align) && $align!='left') {
-	$styles.="text-align: " . $align . "; ";
-	$general_styles.="text-align: " . $align . "; ";
 }
 
 // Bottom Indent
@@ -59,12 +54,6 @@ if (!empty($color)) {
 	$single_styles.="color: " . $color . "; ";
 }
 
-// Text Transform
-if (isset($text_transform) && $text_transform) {
-	$styles.="text-transform: uppercase; ";
-	$single_styles.="text-transform: uppercase; ";
-}
-
 // Styles
 if (!empty($styles)) {
 	$styles = 'style="' . $styles . '"';
@@ -80,21 +69,28 @@ if (!empty($single_styles)) {
 	$single_styles = 'style="' . $single_styles . '"';
 }
 
+// Align
+if (!empty($align))         { $css_class .= ' ' . $align; }
+
+// Text Transform
+if (isset($text_transform) && $text_transform) {
+	$css_class .= ' uppercase';
+}
+
 //Output Html
 $content = str_replace("`", "'", $content);
 
 if ( isset($title_type) && $title_type=='section'){
-//	TODO: att text align class; make it working for section title and default title
-    $html.= '<div class="section-title"><' . $type . ' class="htitle " ' . $styles . '>' . $content . '</' . $type . '>';
+
+    $html.= '<div class="lc-section-title ' . $type . $css_class . '"><' . $type . ' class="htitle " ' . $styles . '>' . $content . '</' . $type . '>';
 	if (isset($title_description) && !empty($title_description)){
 		$html.= '<h4 class="hdesc">'.$title_description.'</h4>';
 	}
 	$html.= '</div>';
+
 } else {
 
-	$class = (!empty($css_class)) ? 'class="' . $css_class . '"' : '';
-
-    $html.= '<' . $type .' '. $class . ' '. $styles . '>' . $content . '</' . $type . '>';
+    $html.= '<' . $type .' class="lc-title'. $css_class . '" '. $styles . '>' . $content . '</' . $type . '>';
 
 }
 

@@ -348,6 +348,12 @@ $tabs-nav-item-font-family						: 'Roboto Slab', serif;
 // 28. Testimonials
 
 // 29. Title
+$lc-title-bottom-offset							: 50px;
+$lc-title-border-color							: #dedede;
+$lc-title-htitle-font-weight					: 700;
+$lc-title-htitle-bg-color						: #ffffff;
+$lc-title-hdesc-font-weight						: 400;
+$lc-title-hdesc-font-color						: #c8c8c8;
 
 // 30. Tooltip
 $tooltip-border-color							: #9b9b9b;
@@ -2386,21 +2392,38 @@ ol {
 /*	29. Title
 /* -------------------------------------------------- */
 
-.section-title {
+.lc-title {
+	&.align-left {
+		text-align: left;
+	}
+
+	&.align-right {
+		text-align: right;
+	}
+
+	&.align-center {
+		text-align: center;
+	}
+
+	&.uppercase {
+		text-transform: uppercase;
+	}
+}
+
+.lc-section-title {
 	position: relative;
 	overflow: hidden;
-	padding-bottom: 50px;
-	text-align: center;
+	padding-bottom: $lc-title-bottom-offset;
 
 	&:before {
 		content: '';
 		position: absolute;
 		width: 100%;
 		height: 5px;
-		top: 20px;
+		top: 1.5em;
 		left: 0;
-		border-top: 1px dashed #dedede;
-		border-bottom: 2px solid #ebebeb;
+		border-top: 1px dashed $lc-title-border-color;
+		border-bottom: 2px solid $lc-title-border-color;
 	}
 
 	.htitle {
@@ -2408,16 +2431,42 @@ ol {
 		display: inline-block;
 		margin-bottom: 5px;
 		padding: 0 25px;
-		font-weight: 700;
-		text-transform: uppercase;
-		background-color: #fff;
+		font-weight: $lc-title-htitle-font-weight;
+		background-color: $lc-title-htitle-bg-color;
 	}
 
 	.hdesc {
 		margin-bottom: 0;
-		color: #c8c8c8;
-		font-weight: 400;
+		color: $lc-title-hdesc-font-color;
+		font-weight: $lc-title-hdesc-font-weight;
 	}
+
+	&.align-left {
+		text-align: left;
+
+		.htitle { padding-left: 0; }
+	}
+
+	&.align-right {
+		text-align: right;
+
+		.htitle { padding-right: 0; }
+	}
+
+	&.align-center {
+		text-align: center;
+	}
+
+	&.uppercase {
+		.htitle { text-transform: uppercase; }
+	}
+
+	&.h1:before { top: 2em; }
+	&.h2:before { top: 1.5em; }
+	&.h3:before { top: 0.7em; }
+	&.h4:before { top: 0.7em; }
+	&.h5:before { top: 0.7em; }
+	&.h6:before { top: 0.7em; }
 }
 
 /* -------------------------------------------------- */
