@@ -84,12 +84,13 @@ if (!empty($single_styles)) {
 $content = str_replace("`", "'", $content);
 
 if ( isset($title_type) && $title_type=='section'){
+//	TODO: att text align class; make it working for section title and default title
     $html.= '<div class="section-title"><' . $type . ' class="htitle " ' . $styles . '>' . $content . '</' . $type . '>';
 	if (isset($title_description) && !empty($title_description)){
 		$html.= '<h4 class="hdesc">'.$title_description.'</h4>';
 	}
 	$html.= '</div>';
-}else{
+} else {
 
 	$class = (!empty($css_class)) ? 'class="' . $css_class . '"' : '';
 
