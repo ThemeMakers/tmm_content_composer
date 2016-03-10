@@ -1,7 +1,7 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 
 <?php
-echo wp_enqueue_script('tmm_widget_twitterFetcher', TMM_THEME_URI . '/js/widgets/twitterFetcher.js');
+wp_enqueue_script('tmm_widget_twitterFetcher', TMM_THEME_URI . '/js/widgets/twitterFetcher.min.js');
 
 $limit = $count;
 if (!$limit) $limit = 5;
@@ -11,7 +11,17 @@ $hash = md5(rand(1, 999));
 
 <script type="text/javascript">
 	jQuery(function() {
-		twitterFetcher.fetch('<?php echo $twitter_id; ?>', 'tweets_<?php echo $hash; ?>', <?php echo $limit; ?>, true);
+		var config = {
+			"id": '<?php echo esc_js($twitter_id); ?>',
+			"domId": 'tweets_<?php echo esc_js($hash); ?>',
+			"maxTweets": <?php echo (int) $limit; ?>,
+			"enableLinks": true,
+			"showTime": true,
+			"showUser": false,
+			"showRetweet": false,
+			"showInteraction": false
+		};
+		twitterFetcher.fetch(config);
 	});
 </script>
 
