@@ -124,15 +124,6 @@
 
 	<div class="one-half">
 		<?php
-		$font_families = TMM_HelperFonts::get_google_fonts();
-		$google_fonts_array = array('0' => __('Default', TMM_CC_TEXTDOMAIN));
-		foreach ($font_families as $key => $value) {
-			$index = explode(":", $value);
-			$index = str_replace(' ', '_', $index[0]);
-			$google_fonts_array[$index] = $value;
-		}
-
-		//***
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
