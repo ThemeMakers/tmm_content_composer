@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2016-02-29 19:37+0100\n"
-"PO-Revision-Date: 2016-02-29 19:37+0100\n"
+"POT-Creation-Date: 2016-03-13 21:44+0100\n"
+"PO-Revision-Date: 2016-03-13 21:44+0100\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
@@ -140,7 +140,6 @@ msgstr ""
 #: views/shortcodes/default/popups/services.php:18
 #: views/shortcodes/default/popups/title.php:41
 #: views/shortcodes/default/popups/title.php:81
-#: views/shortcodes/default/popups/title.php:128
 msgid "Default"
 msgstr ""
 
@@ -387,7 +386,7 @@ msgstr ""
 msgid "Transparent (default)"
 msgstr ""
 
-#: views/meta_panel.php:302 views/shortcodes/default/popups/title.php:153
+#: views/meta_panel.php:302 views/shortcodes/default/popups/title.php:144
 msgid "Color"
 msgstr ""
 
@@ -1200,34 +1199,34 @@ msgstr ""
 msgid "Show all cars"
 msgstr ""
 
-#: views/shortcodes/cardealer/staff.php:60
-#: views/shortcodes/cardealer/staff.php:61
+#: views/shortcodes/cardealer/staff.php:64
+#: views/shortcodes/cardealer/staff.php:65
 msgid "Facebook"
 msgstr ""
 
-#: views/shortcodes/cardealer/staff.php:65
-#: views/shortcodes/cardealer/staff.php:66
+#: views/shortcodes/cardealer/staff.php:69
+#: views/shortcodes/cardealer/staff.php:70
 msgid "Twitter"
 msgstr ""
 
-#: views/shortcodes/cardealer/staff.php:70
-#: views/shortcodes/cardealer/staff.php:71
+#: views/shortcodes/cardealer/staff.php:74
+#: views/shortcodes/cardealer/staff.php:75
 msgid "Google+"
 msgstr ""
 
-#: views/shortcodes/cardealer/staff.php:80
+#: views/shortcodes/cardealer/staff.php:84
 msgid "Office"
 msgstr ""
 
-#: views/shortcodes/cardealer/staff.php:97
+#: views/shortcodes/cardealer/staff.php:101
 msgid "Mobile"
 msgstr ""
 
-#: views/shortcodes/cardealer/staff.php:114
+#: views/shortcodes/cardealer/staff.php:118
 msgid "Fax"
 msgstr ""
 
-#: views/shortcodes/cardealer/staff.php:130
+#: views/shortcodes/cardealer/staff.php:134
 #: views/shortcodes/default/contact_details.php:15
 msgid "Email"
 msgstr ""
@@ -1450,7 +1449,7 @@ msgid "Chart Height"
 msgstr ""
 
 #: views/shortcodes/default/popups/chart.php:74
-#: views/shortcodes/default/popups/title.php:139
+#: views/shortcodes/default/popups/title.php:130
 msgid "Font Family"
 msgstr ""
 
@@ -1993,7 +1992,7 @@ msgstr ""
 msgid "Show border under the title"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:167
+#: views/shortcodes/default/popups/title.php:158
 msgid "Bottom Indent (px)"
 msgstr ""
 
