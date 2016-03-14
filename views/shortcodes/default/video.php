@@ -1,6 +1,6 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
-wp_enqueue_style("thememakers_theme_mediaelementplayer_css", TMM_THEME_URI . '/js/mediaelement/mediaelementplayer.css');
+wp_enqueue_script('mediaelement');
 $unique_id = uniqid();
 switch ($type) {
     case 'youtube':
