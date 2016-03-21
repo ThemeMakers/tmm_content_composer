@@ -366,6 +366,10 @@ $tooltip-font-family							: 'Roboto Slab', serif;
 $tooltip-inner-offset							: 8px 10px;
 
 // 31. vCard
+$lc-list-font-size								: 15px;
+$lc-list-border-width							: 1px;
+$lc-list-border-style							: dashed;
+$lc-list-border-color							: #ebebeb;
 
 // 32. Video
 
@@ -2507,6 +2511,38 @@ ol {
 /* -------------------------------------------------- */
 /*	31. vCard
 /* -------------------------------------------------- */
+
+.lc-vCard {
+	h4 {
+		margin-bottom: 10px;
+	}
+
+	li {
+		margin: 0;
+		padding: 11px 0;
+		list-style: none;
+		font-size: $lc-list-font-size;
+		border-top: {
+			width: $lc-list-border-width;
+			style: $lc-list-border-style;
+			color: $lc-list-border-color;
+		};
+
+		&:first-child {
+			border-top: transparent;
+		}
+
+		.table { display: table; }
+
+		.label { font-weight: 600; }
+
+		&:before {
+			margin-top: 4px;
+			margin-right: 10px;
+			float: left;
+		}
+	}
+}
 
 /* -------------------------------------------------- */
 /*	32. Video

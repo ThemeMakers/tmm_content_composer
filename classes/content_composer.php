@@ -133,8 +133,6 @@ class TMM_Content_Composer {
 
 		wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc.css');
 
-		wp_enqueue_style('tmm_gallery', TMM_CC_URL . 'css/gallery-lc.css');
-
 		?>
 		<script type="text/javascript">
 			var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
