@@ -157,8 +157,6 @@ class TMM_Content_Composer {
 
 		wp_register_script('tmm_cycle', TMM_CC_URL . 'js/plugins/min/jquery.cycle.min.js', array('jquery'), false, true);
 
-		wp_enqueue_script('tmm_layout_gallery', TMM_CC_URL . 'js/plugins/popupgallery.js', array('jquery'), false, true);
-
 		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, true);
 
 	}
