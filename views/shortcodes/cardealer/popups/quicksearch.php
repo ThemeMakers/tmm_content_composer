@@ -137,7 +137,7 @@
 			$states = array();
 
 			if ($parent_id > 0) {
-				$terms = TMM_Ext_PostType_Car::get_locations(  );
+				$terms = TMM_Ext_PostType_Car::get_locations( $parent_id );
 
 				foreach ($terms as $term) {
 					$states[$term->id] = $term->name;
