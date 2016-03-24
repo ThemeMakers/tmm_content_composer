@@ -68,6 +68,10 @@ class TMM_Shortcode {
 			$continue_array[] = 'menu';
 		}
 
+		if (!class_exists('Essential_Grid')){
+			$continue_array[] = 'imggallery';
+		}
+
 		foreach (self::$shortcodes as $shortcode_key => $shortcode_name){
 
 			if (in_array($shortcode_key, $continue_array)) {
