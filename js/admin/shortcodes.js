@@ -426,28 +426,7 @@ var TMM_APP_SHORTCODES = function() {
 
 			self.insert_html_in_buffer(shortcode_text);
 		},
-		gallery_changer : function(shortcode){
-			var begin_string = "[" + shortcode;
-			var end_string = "[/" + shortcode + "]";
-			var images = "";
 
-			jQuery.each(jQuery(".tmm-gallery-item-val"), function(key, value){
-				if (key > 0) {
-					images = images + '^';
-				}
-				value.value = value.value.replace(/\"/gi, "\'");
-				images = images + value.value;
-			});
-
-			var effect = jQuery('#transition_effect').val();
-			if (effect === undefined) {
-				effect = "";
-			}
-
-			var shortcode_text = begin_string + ' images="' + images + '" effect="' + effect + '"]' + end_string;
-			self.insert_html_in_buffer(shortcode_text);
-
-		},
 		menu_changer:function(shortcode){
 			var begin_string = "[" + shortcode;
 			var end_string = "[/" + shortcode + "]";
