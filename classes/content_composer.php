@@ -124,8 +124,6 @@ class TMM_Content_Composer {
 			<?php
 		}
 
-
-
 	}
 
 	public static function enqueue_scripts() {
