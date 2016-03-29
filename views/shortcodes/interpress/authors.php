@@ -30,7 +30,7 @@ if ($userid=='all'){
 
 							<?php if (!empty($user->user_url)){ ?>
 								<p>
-									<a href="<?php echo esc_url($user->user_url); ?>" target="_blank"><?php echo $user->user_url; ?></a>
+									<a href="<?php echo esc_url($user->user_url); ?>" target="_blank"><?php echo esc_url( $user->user_url ); ?></a>
 								</p>
 							<?php } ?>
 
