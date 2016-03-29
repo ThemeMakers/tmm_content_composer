@@ -67,10 +67,10 @@ if ($lightbox) {
 $html.= '<figure class="lc-image' . $css_class . '">';
 
 if ($action == "link") {
-    $html.= '<a title="' . $img_caption . '" class="single-image ' . $link_class . '" href="' . $target_url . '" target="' . $target . '">';
+    $html.= '<a title="' . esc_attr( $img_caption ) . '" class="single-image ' . $link_class . '" href="' . esc_url( $target_url ) . '" target="' . esc_attr( $target ) . '">';
 }
 
-$html.= '<img alt="' . $image_alt . '" src="' . $src . '" />';
+$html.= '<img alt="' . esc_attr( $image_alt ) . '" src="' . esc_url( $src ) . '" />';
 
 if ($action == "link") {
     $html .= '<span class="curtain"></span></a>';

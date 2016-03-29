@@ -50,7 +50,7 @@ if (isset($latitude) && $latitude !== '' && isset($longitude) && $longitude !== 
 		$location_mode_string = 'center=' . $latitude . ',' . $longitude;
 		?>
 
-		<img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>">
+		<img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo esc_attr( $location_mode_string ) ?>&zoom=<?php echo esc_attr( $zoom ) ?>&maptype=<?php echo esc_attr( strtolower($maptype) ) ?>&size=<?php echo esc_attr( $width ) ?>x<?php echo esc_attr( $height ) ?><?php echo esc_attr( $marker_string ) ?>">
 
 	<?php
 	}

@@ -17,7 +17,7 @@ $slides_count = count($images);
         
         <?php
         for ($s=0; $s<$slides_count; $s++){ ?>
-            <a href="<?php echo(!empty($links[$s]) ? $links[$s] : '#') ?>"><img alt="" src="<?php echo esc_url(TMM_Content_Composer::resize_image($images[$s], '')) ?>"></a>
+            <a href="<?php echo(!empty($links[$s]) ? esc_url( links[$s] ) : '#') ?>"><img alt="" src="<?php echo esc_url(TMM_Content_Composer::resize_image($images[$s], '')) ?>"></a>
         <?php
 
         } ?>

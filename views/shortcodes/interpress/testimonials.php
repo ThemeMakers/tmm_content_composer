@@ -66,7 +66,7 @@
                         <?php } ?>
 
                         <?php if ($show_photo && has_post_thumbnail($post->ID)) { ?>
-                            <div class="quote-image"><img alt="<?php echo esc_attr(get_the_title($post->ID)); ?>" src="<?php echo esc_js(TMM_Content_Composer::get_post_featured_image($post->ID, $image_sizes)); ?>"></div>
+                            <div class="quote-image"><img alt="<?php echo esc_attr(get_the_title($post->ID)); ?>" src="<?php echo esc_url(TMM_Content_Composer::get_post_featured_image($post->ID, $image_sizes)); ?>"></div>
                         <?php
                         }
                         ?>

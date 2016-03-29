@@ -278,7 +278,7 @@ class TMM_Layout_Constructor {
 						?>
 						<div class="mb-wrapper">
 							<script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
-							<iframe id="vimeo_player" src="http://player.vimeo.com/video/<?php echo $source_code ?>?api=1&loop=<?php echo $loop ?>&player_id=vimeo_player&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							<iframe id="vimeo_player" src="http://player.vimeo.com/video/<?php echo esc_attr( $source_code ) ?>?api=1&loop=<?php echo esc_attr( $loop ) ?>&player_id=vimeo_player&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 						</div><!--/ .mb-wrapper-->
 						<script>
 
@@ -352,7 +352,7 @@ class TMM_Layout_Constructor {
 					case 'mp4': ?>
 						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
 							<video id="example_video" class="" width="100%" height="100%" >
-								<source src="<?php echo $video_options['video_url'] ?>" type='video/mp4' />
+								<source src="<?php echo esc_url( $video_options['video_url'] ) ?>" type='video/mp4' />
 							</video>
 						</div>
 						<?php
@@ -364,7 +364,7 @@ class TMM_Layout_Constructor {
 						?>
 						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
 							<video id="example_video" class="" width="100%" height="100%" >
-								<source src="<?php echo $video_options['video_url'] ?>" type='video/ogg' />
+								<source src="<?php echo esc_url( $video_options['video_url'] ) ?>" type='video/ogg' />
 							</video>
 						</div>
 						<?php
@@ -376,7 +376,7 @@ class TMM_Layout_Constructor {
 						?>
 						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
 							<video id="example_video" class="" width="100%" height="100%" >
-								<source src="<?php echo $video_options['video_url'] ?>" type='video/webm' />
+								<source src="<?php echo esc_url( $video_options['video_url'] ) ?>" type='video/webm' />
 							</video>
 						</div>
 						<?php
