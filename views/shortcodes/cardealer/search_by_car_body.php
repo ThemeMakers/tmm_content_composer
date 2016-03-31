@@ -23,7 +23,7 @@ foreach ($car_body_list as $k => $body_name) {
 			'meta_query' => array(
 				array(
 					'key' => 'car_body',
-					'value' => $body_name,
+					'value' => $k,
 					'compare' => '='
 				),
 			),
