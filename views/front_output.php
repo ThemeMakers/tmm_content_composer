@@ -44,7 +44,22 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$section_style = ' style="'. esc_attr($section_style) .'"';
 		}
 
+	    $cont_full_width = false;
+
+	    if ($row_displaying == 'full_width' || $row_displaying == 'before_full_width'){
+
+	        if ( empty($tmm_layout_constructor_row[$row]['full_width']) ) {
+			    $cont_full_width = true;
+		    }
+
+	    }
 		?>
+
+	    <?php if ( $cont_full_width ) { ?>
+
+	    <div class="row">
+
+	    <?php } ?>
 
 		<div id="<?php echo 'section_'.$row ?>" class="<?php echo esc_attr($section_class); ?>" <?php echo $section_style ?>>
 
@@ -142,6 +157,12 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				</div>
                              
 		</div><!--/ .section -->
+
+	    <?php if ( $cont_full_width ) { ?>
+
+	    </div>
+
+        <?php } ?>
 
     <?php
 
