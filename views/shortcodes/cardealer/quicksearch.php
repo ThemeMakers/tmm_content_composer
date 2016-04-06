@@ -195,14 +195,20 @@ $uniqid = uniqid();
 					?>
 
 					<!-- Condition -->
-					<?php if (!empty($show_condition)) { ?>
+					<?php if (!empty($show_condition)) {
+						$condition_list = tmm_get_car_condition_list();
+						?>
 						<p>
 							<label for="tmm_qs_condition_<?php echo $uniqid; ?>"><?php _e('Condition', TMM_CC_TEXTDOMAIN) ?>:</label>
 							<select id="tmm_qs_condition_<?php echo $uniqid; ?>" class="qs_condition" name="car_condition">
 								<option value="0"><?php _e("Any", TMM_CC_TEXTDOMAIN) ?></option>
-								<option value="car_is_new"     <?php selected($car_condition, 'car_is_new');      ?>><?php _e("Only new cars", TMM_CC_TEXTDOMAIN) ?></option>
-								<option value="car_is_damaged" <?php selected($car_condition, 'car_is_damaged');  ?>><?php _e("Only damaged cars", TMM_CC_TEXTDOMAIN) ?></option>
-								<option value="car_is_used"    <?php selected($car_condition, 'car_is_used');     ?>><?php _e("Only used cars", TMM_CC_TEXTDOMAIN) ?></option>
+								<?php
+								foreach ($condition_list as $cond_id => $cond_name) {
+									echo '<option value="'.$cond_id.'"' . selected($car_condition, $cond_id, false) . '>'
+										. sprintf( __("Only %s cars", TMM_CC_TEXTDOMAIN), strtolower($cond_name) )
+										. '</option>';
+								}
+								?>
 							</select>
 						</p>
 					<?php } ?>
