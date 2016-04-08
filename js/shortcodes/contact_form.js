@@ -1,15 +1,24 @@
 jQuery(document).ready(function() {
-	
-	jQuery('.contact-form').submit(function() {		
-            contact_form_submit(this, []);
+
+	jQuery('.contact-form').submit(function() {
+		contact_form_submit(this, []);
 		return false;
 	});
 
-	jQuery(".contact_form_option_checkbox").life('click', function() {
-		if (jQuery(this).is(":checked")) {
-			jQuery(this).val(1);
+	jQuery( '.tmm-country-select' ).on('change', function(){
+		var country = jQuery(this).val();
+		var stateSelect = jQuery(this).parents( '.contact-form' ).first().find( '.tmm-state-select' ).parents( 'p' ).first();
+		var countyInput = jQuery(this).parents( '.contact-form' ).first().find( '.tmm-county-input' );
+		var countyInputWrapper = countyInput.parents( 'p' ).first();
+
+		if ( country == 'US' ) {
+			stateSelect.show();
+			countyInput.attr('type', 'hidden');
+			countyInputWrapper.hide();
 		} else {
-			jQuery(this).val(0);
+			stateSelect.hide();
+			countyInput.attr('type', 'text');
+			countyInputWrapper.show();
 		}
 	});
 
@@ -28,7 +37,7 @@ function contact_form_submit(_this, contact_form_attachments) {
 		attachments: contact_form_attachments,
 		values: jQuery(_this).serialize()
 	};
-	jQuery.post(ajaxurl, data, function(response) {		
+	jQuery.post(ajaxurl, data, function(response) {
 		response = jQuery.parseJSON(response);
 		if (response.is_errors) {
 
@@ -53,7 +62,9 @@ function contact_form_submit(_this, contact_form_attachments) {
 				jQuery(form_self).find(".contact_form_responce ul").append('<li>' + lang_server_failed + '!</li>');
 			}
 
-			jQuery(form_self).find("[type=text],[type=email],textarea,checkbox").val("");
+			jQuery(form_self).find("[type=text],[type=email],[type=url],textarea").val("");
+			jQuery(form_self).find("[type=checkbox],[type=radio]").prop("checked", false);
+			jQuery(form_self).find("select").not('.tmm-state-select, .tmm-country-select').val("").find('option').first().prop("selected", true);
 			jQuery(form_self).find('.contact_form_attach_list').html('');
 		}
 
