@@ -48,6 +48,24 @@
 		?>
 	</div><!--/ .one-half-->
 
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'select',
+            'title' => __('Maptype', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'maptype',
+            'id' => 'maptype',
+            'options' => array(
+                'ROADMAP' => __('ROADMAP', TMM_CC_TEXTDOMAIN),
+                'SATELLITE' => __('SATELLITE', TMM_CC_TEXTDOMAIN),
+                'HYBRID' => __('HYBRID', TMM_CC_TEXTDOMAIN),
+                'TERRAIN' => __('TERRAIN', TMM_CC_TEXTDOMAIN),
+            ),
+            'default_value' => TMM_Content_Composer::set_default_value('maptype', 'ROADMAP'),
+            'description' => ''
+        ));
+        ?>
+    </div><!--/ .one-half-->
 
 	<div class="one-half">
 		<?php
@@ -66,7 +84,18 @@
 		?>
 	</div><!--/ .one-half-->
 
-
+    <div class="one-half location_mode_address location_mode_container">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('Address', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'address',
+            'id' => 'address',
+            'default_value' => TMM_Content_Composer::set_default_value('address', 'New York'),
+            'description' => ''
+        ));
+        ?>
+    </div><!--/ .one-half-->
 
 	<div class="one-half location_mode_coordinates location_mode_container">
 		<?php
@@ -82,7 +111,6 @@
 
 	</div><!--/ .one-half-->
 
-
 	<div class="one-half location_mode_coordinates location_mode_container">
 
 		<?php
@@ -96,21 +124,6 @@
 		));
 		?>
 	</div><!--/ .one-half-->
-
-
-	<div class="one-half location_mode_address location_mode_container">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Address', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'address',
-			'id' => 'address',
-			'default_value' => TMM_Content_Composer::set_default_value('address', 'New York'),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half-->
-
 
 	<div class="one-half">
 		<?php
@@ -133,21 +146,21 @@
 		?>
 
 	</div><!--/ .one-half-->
-    
-    <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Enable Slide Up Effect', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'slide_up',
-			'id' => 'slide_up',
-			'is_checked' => TMM_Content_Composer::set_default_value('slide_up', 1),
-			'description' => __('Show with Slide Up Effect', TMM_CC_TEXTDOMAIN)
-		));
-		?>		
-	</div><!--/ .one-half-->
 
-	<div class="one-half">
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'textarea',
+            'title' => __('Html Content', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'content',
+            'id' => '',
+            'default_value' => TMM_Content_Composer::set_default_value('content', ''),
+            'description' => ''
+        ));
+        ?>
+    </div><!--/ .one-half-->
+
+    <div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
@@ -160,79 +173,45 @@
 		?>
 	</div><!--/ .one-half-->
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Maptype', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'maptype',
-			'id' => 'maptype',
-			'options' => array(
-				'ROADMAP' => __('ROADMAP', TMM_CC_TEXTDOMAIN),
-				'SATELLITE' => __('SATELLITE', TMM_CC_TEXTDOMAIN),
-				'HYBRID' => __('HYBRID', TMM_CC_TEXTDOMAIN),
-				'TERRAIN' => __('TERRAIN', TMM_CC_TEXTDOMAIN),
-			),
-			'default_value' => TMM_Content_Composer::set_default_value('maptype', 'ROADMAP'),
-			'description' => ''
-		));
-		?>	
-	</div><!--/ .one-half-->
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'checkbox',
+            'title' => __('Enable Marker', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'enable_marker',
+            'id' => 'enable_marker',
+            'is_checked' => TMM_Content_Composer::set_default_value('enable_marker', 0),
+            'description' => __('Set to false to disable display a marker in the viewport.', TMM_CC_TEXTDOMAIN)
+        ));
+        ?>
+    </div><!--/ .one-half-->
 
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'checkbox',
+            'title' => __('Enable Popup', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'enable_popup',
+            'id' => 'enable_popup',
+            'is_checked' => TMM_Content_Composer::set_default_value('enable_popup', 0),
+            'description' => __('If true the info window for this marker will be shown when the map finished loading. If html is empty this option will be ignored.', TMM_CC_TEXTDOMAIN)
+        ));
+        ?>
 
+    </div><!--/ .one-half-->
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Enable Marker', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'enable_marker',
-			'id' => 'enable_marker',
-			'is_checked' => TMM_Content_Composer::set_default_value('enable_marker', 0),
-			'description' => __('Set to false to disable display a marker in the viewport.', TMM_CC_TEXTDOMAIN)
-		));
-		?>
-	</div><!--/ .one-half-->
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Enable Popup', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'enable_popup',
-			'id' => 'enable_popup',
-			'is_checked' => TMM_Content_Composer::set_default_value('enable_popup', 0),
-			'description' => __('If true the info window for this marker will be shown when the map finished loading. If html is empty this option will be ignored.', TMM_CC_TEXTDOMAIN)
-		));
-		?>
-
-	</div><!--/ .one-half-->
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Marker is draggable', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'marker_is_draggable',
-			'id' => 'marker_is_draggable',
-			'is_checked' => TMM_Content_Composer::set_default_value('marker_is_draggable', 0),
-			'description' => __('Set marker draggable', TMM_CC_TEXTDOMAIN)
-		));
-		?>		
-	</div><!--/ .one-half-->
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'textarea',
-			'title' => __('Html Content', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'content',
-			'id' => '',
-			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half--> 
+    <div class="one-half">
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'checkbox',
+            'title' => __('Marker is draggable', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'marker_is_draggable',
+            'id' => 'marker_is_draggable',
+            'is_checked' => TMM_Content_Composer::set_default_value('marker_is_draggable', 0),
+            'description' => __('Set marker draggable', TMM_CC_TEXTDOMAIN)
+        ));
+        ?>
+    </div><!--/ .one-half-->
 
 </div>
 
