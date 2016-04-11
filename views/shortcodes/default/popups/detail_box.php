@@ -3,6 +3,17 @@
 
     <div class="fullwidth">
 
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('Title', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'title',
+            'id' => 'title',
+            'default_value' => TMM_Content_Composer::set_default_value('title', ''),
+            'description' => ''
+        ));
+        ?>
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
@@ -24,6 +35,17 @@
 			'description' => ''
 		));
 		?>
+
+        <?php
+        TMM_Content_Composer::html_option(array(
+            'type' => 'text',
+            'title' => __('Enter Fax', TMM_CC_TEXTDOMAIN),
+            'shortcode_field' => 'fax',
+            'id' => 'fax',
+            'default_value' => TMM_Content_Composer::set_default_value('fax', ''),
+            'description' => ''
+        ));
+        ?>
 
 		<?php
 		TMM_Content_Composer::html_option(array(
