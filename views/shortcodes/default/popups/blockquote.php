@@ -1,7 +1,7 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
-    <div class="fullwidth">
+	<div class="fullwidth">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -15,39 +15,22 @@
 		?>
 
 
-    </div><!--/ .fullwidth-->
-    <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'title' => __('Text Color', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'type',
-			'type' => 'select',
-            'default_value' => '',
-			'description' => '',
-            'options' => array(
-                                'type-1' => 'type-1',
-                                'type-bg-color' => 'type-bg-color',
-                                ),
-			'default_value' => TMM_Content_Composer::set_default_value('type', 'type-1'),
-			'id' => '',
-			'display' => 1
-		));
-		?>
-    </div>
-    <div class="one-half">
+	</div><!--/ .fullwidth-->
+
+	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'title' => __('Author', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'author',
-			'type' => 'text',            
-			'description' => '',                        
+			'type' => 'text',
+			'description' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('author', ''),
 			'id' => '',
 			'display' => 1
 		));
 		?>
-    </div>
-    
+	</div>
+
 
 </div><!--/ .tmm_shortcode_template->
 		  
