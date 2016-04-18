@@ -103,7 +103,7 @@
 			'row' => '__ROW_ID__',
 			'uniqid' => '__UNIQUE_ID__',
 			'css_class' => 'element1-4',
-			'front_css_class' => 'medium-3',
+			'front_css_class' => 'four columns',
 			'value' => '1/4',
 			'content' => '',
 			'title' => '',
