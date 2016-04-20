@@ -45,6 +45,7 @@ if (isset($latitude) && $latitude !== '' && isset($longitude) && $longitude !== 
 		if ($enable_marker) {
 			$marker_string = '&markers=color:red|label:P|' . $latitude . ',' . $longitude;
 		}
+
 		$location_mode_string = 'center=' . $latitude . ',' . $longitude;
     ?>
 
