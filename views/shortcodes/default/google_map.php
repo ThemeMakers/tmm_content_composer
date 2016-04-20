@@ -1,5 +1,5 @@
 <?php
-wp_enqueue_script("tmm_shortcode_google_api_js", 'http://maps.google.com/maps/api/js?sensor=false');
+wp_enqueue_script("tmm_shortcode_google_api_js", '//maps.google.com/maps/api/js?sensor=false');
 
 $inique_id = uniqid();
 $js_controls = '{}';
