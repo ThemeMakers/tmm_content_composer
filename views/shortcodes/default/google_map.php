@@ -45,9 +45,8 @@ if (isset($latitude) && $latitude !== '' && isset($longitude) && $longitude !== 
 		if ($enable_marker) {
 			$marker_string = '&markers=color:red|label:P|' . $latitude . ',' . $longitude;
 		}
-
 		$location_mode_string = 'center=' . $latitude . ',' . $longitude;
-        ?>
+    ?>
 
         <img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false">
 
