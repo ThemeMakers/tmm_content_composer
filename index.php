@@ -5,7 +5,7 @@
  * Description: Universal Layout Composer with Shortcodes Package
  * Author: ThemeMakers
  * Author URI: http://themeforest.net/user/ThemeMakers
- * Version: 1.2.15
+ * Version: 1.2.16
  * Text Domain: tmm_content_composer
 */
 
