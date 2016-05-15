@@ -66,8 +66,8 @@ if ($gallery_type === 'albums') {
 					$data_group++;
 				}
 				?>
-
-				<li data-pile="<?php echo esc_attr($image['post_slug']) ?>">
+				
+				<li data-pile="<?php echo esc_attr($image['title']) ?>">
 					<a href="<?php echo esc_url(TMM_Content_Composer::resize_image($image['imgurl'], '')); ?>" data-group="<?php echo esc_attr($data_group) ?>" class="item-overlay gallery popup-link-<?php echo $data_group; ?>">
 						<img src="<?php echo esc_url(TMM_Content_Composer::resize_image($image['imgurl'], $image_size)); ?>" />
 					</a>
