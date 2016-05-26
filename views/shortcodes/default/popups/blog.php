@@ -225,6 +225,19 @@
 	</div><!--/ .ona-half-->
 
 	<div class="one-half option-default">
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'text',
+			'title' => __('Excerpt Symbols Count', 'tmm_content_composer'),
+			'shortcode_field' => 'excerpt_symbols',
+			'id' => 'excerpt_symbols',
+			'default_value' => TMM_Content_Composer::set_default_value('excerpt_symbols', '100'),
+			'description' => __('Truncate post excerpt depending on symbols number you want.', 'tmm_content_composer')
+		));
+		?>
+	</div><!--/ .ona-half-->
+
+	<div class="one-half option-default">
 
 		<?php
 		TMM_Content_Composer::html_option(array(
