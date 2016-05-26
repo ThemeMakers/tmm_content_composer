@@ -95,7 +95,7 @@ if ($userid=='all'){
 
 			<?php
 			global $post;
-			$path = $path = 'content/blog-medium/content';
+			$path = $path = 'content/blog-list/content';
 			$user_query = array(
 				'orderby' => $orderby,
 				'order' => $order,

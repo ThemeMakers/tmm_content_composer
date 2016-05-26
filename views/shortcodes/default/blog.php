@@ -101,11 +101,9 @@ $posts_array = $wp_query->posts;
 
 switch($blog_type) {
 	case 'blog-classic':
-		$count_column = 'post-col-1';
+		$count_column = '';
 	break;
-	case 'blog-medium':
-		$post_area = 'post-list';
-		$post_class .= ' post-entry';
+	case 'blog-list':
 	break;		
 	case 'blog-masonry':
         $blog_type = 'masonry';
@@ -177,9 +175,8 @@ $_REQUEST['title_symbols'] = $title_symbols;
 
 ?>
 
-	<div id="post-area" class="<?php echo esc_attr($post_area) ?>
-	    <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?>
-	    <?php echo esc_attr($infinity_class) ?>" <?php if (!empty($data_columns)) echo $data_columns; ?>
+	<div id="post-area" class="<?php echo esc_attr($post_area) ?> <?php echo esc_attr($count_column) ?> <?php echo esc_attr($blog_type) ?> <?php echo esc_attr($infinity_class) ?>"
+		<?php if (!empty($data_columns)) echo $data_columns; ?>
         <?php if(!empty($data_infinity)) echo $data_infinity; ?>
         <?php if(!empty($data_next_posts)) echo $data_next_posts; ?>
         <?php if(!empty($data_effect)) echo $data_effect; ?>
@@ -206,7 +203,7 @@ $_REQUEST['title_symbols'] = $title_symbols;
             }
 
         
-        } else{
+        } else {
             if (!empty($posts_array)){
 
                 wp_enqueue_style('tmm_mediaelement');
@@ -226,6 +223,7 @@ $_REQUEST['title_symbols'] = $title_symbols;
 
 	<?php if ($blog_type == 'masonry'){
 
+	// TODO: Check if the files exist
     tmm_enqueue_script('owlcarousel');
     tmm_enqueue_style('owlcarousel');
     tmm_enqueue_style('owltheme');
@@ -242,23 +240,16 @@ $_REQUEST['title_symbols'] = $title_symbols;
 
         ?>
 
+		<!-- TODO: replace id's with class names-->
         <div class="masonry-loader spinner">
-            <div id="fadingBarsG_1" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_2" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_3" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_4" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_5" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_6" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_7" class="fadingBarsG">
-            </div>
-            <div id="fadingBarsG_8" class="fadingBarsG">
-            </div>
+            <div id="fadingBarsG_1" class="fadingBarsG"></div>
+            <div id="fadingBarsG_2" class="fadingBarsG"></div>
+            <div id="fadingBarsG_3" class="fadingBarsG"></div>
+            <div id="fadingBarsG_4" class="fadingBarsG"></div>
+            <div id="fadingBarsG_5" class="fadingBarsG"></div>
+            <div id="fadingBarsG_6" class="fadingBarsG"></div>
+            <div id="fadingBarsG_7" class="fadingBarsG"></div>
+            <div id="fadingBarsG_8" class="fadingBarsG"></div>
         </div>
         
 		<div class='post-load-more'>

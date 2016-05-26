@@ -352,7 +352,7 @@
 					option_carousel.slideUp();
 					break;
 				case 'blog-classic':
-				case 'blog-medium':
+				case 'blog-list':
 					option_columns.slideUp();
 					option_default.slideDown(300);
 					option_masonry.slideUp();

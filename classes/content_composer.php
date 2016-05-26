@@ -404,7 +404,7 @@ class TMM_Content_Composer {
      public static function get_blog_type() {
 		return array(
 			'blog-classic' => __('Blog Classic', 'tmm_content_composer'),
-			'blog-medium' => __('Blog Medium', 'tmm_content_composer'),
+			'blog-list' => __('Blog List', 'tmm_content_composer'),
 			'blog-masonry' => __('Blog Masonry', 'tmm_content_composer'),
 			'blog-grid' => __('Blog Grid', 'tmm_content_composer'),
 			'blog-grid-overlay' => __('Grid Overlay', 'tmm_content_composer'),
