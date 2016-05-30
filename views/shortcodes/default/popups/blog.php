@@ -370,7 +370,7 @@
 					option_carousel.slideUp();
 					break;
 				case 'blog-grid-overlay':
-				case 'blog-grid-layout':
+				case 'blog-grid-review':
 					option_columns.slideDown(300);
 					option_default.slideDown(300);
 					option_masonry.slideUp();

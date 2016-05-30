@@ -112,7 +112,7 @@ switch($blog_type) {
         break;	
 	case 'blog-grid':
 	case 'blog-grid-overlay':
-	case 'blog-grid-layout':
+	case 'blog-grid-review':
 		$count_column = 'post-col-' .$columns;
 	break;
 }
