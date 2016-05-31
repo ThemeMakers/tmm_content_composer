@@ -45,7 +45,7 @@ if ($userid=='all'){
 			?>
 		</ul>
 
-		<?
+		<?php
 	}
 
 } else {
