@@ -253,8 +253,8 @@ $_REQUEST['excerpt_symbols'] = $excerpt_symbols;
             <div id="fadingBarsG_8" class="fadingBarsG"></div>
         </div>
         
-		<div class='post-load-more'>
-			<a class='load-more button secondary middle'
+		<div class="post-load-more">
+			<a class="load-more button secondary middle"
                data-loadbyscroll="<?php echo esc_attr($load_by_scrolling) ?>" data-page-load="2"
                data-posts-per-load="<?php echo esc_attr($posts_per_load) ?>"
                data-posts="<?php echo esc_attr($next_posts) ?>" href='#load-more'><?php _e('Load More', 'tmm_content_composer') ?></a>

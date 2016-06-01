@@ -63,25 +63,6 @@
 	.cycle-rotator .item h1 { font-size: 55px; }
 
 	/* ---------------------------------------------------------------------- */
-	/*	Blog
-	/* ---------------------------------------------------------------------- */
-
-	/* -------------------------------------------------- */
-	/*	Masonry Blog
-	/* -------------------------------------------------- */
-
-	.masonry .post-item,
-	.masonry.col-4 .post-item,
-	#main .masonry .post-item {
-		width: 46%;
-	}
-
-	.section > #post-area.masonry .post-item {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-
-	/* ---------------------------------------------------------------------- */
 	/*	Portfolio
 	/* ---------------------------------------------------------------------- */
 
@@ -155,35 +136,6 @@
 	.section-title *:after,
 	.section-title *:before { display: none; }
 
-	/* ---------------------------------------------------------------------- */
-	/*	Blog
-	/* ---------------------------------------------------------------------- */
-
-	/* -------------------------------------------------- */
-	/*	Masonry Blog
-	/* -------------------------------------------------- */
-
-	#main > #post-area.masonry,
-	.col-xs-12 > #post-area.masonry {
-		margin-left: 0;
-		margin-right: 0;
-	}
-
-	.masonry .post-item,
-	.masonry.col-4 .post-item,
-	#main .masonry .post-item {
-		margin-left: 0;
-		margin-right: 0;
-		padding-left: 0;
-		padding-right: 0;
-		width: 100%;
-	}
-
-	.section > #post-area.masonry .post-item {
-		padding-left: 25px;
-		padding-right: 25px;
-	}
-
 	/* -------------------------------------------------- */
 	/* Fullscreen
 	/* -------------------------------------------------- */
@@ -214,26 +166,6 @@
 		-webkit-transform: scale(1);
 		transform: scale(1);
 	}
-
-	/* ---------------------------------------------------------------------- */
-	/*	Blog
-	/* ---------------------------------------------------------------------- */
-
-	.entry-item .entry-meta {
-		position: relative;
-		left: auto;
-		top: auto;
-		margin-bottom: 10px;
-		width: auto;
-	}
-
-	.entry-item .entry-body {
-		margin-left: 0;
-		margin-bottom: 25px;
-		padding-bottom: 25px;
-	}
-
-	.entry-item .post-meta { margin-bottom: 15px; }
 
 	/* ---------------------------------------------------------------------- */
 	/*	Portfolio
@@ -311,26 +243,6 @@
 	/* -------------------------------------------------- */
 
 	.cycle-rotator .item h1 { font-size: 24px; }
-
-	/* ---------------------------------------------------------------------- */
-	/*	Blog
-	/* ---------------------------------------------------------------------- */
-
-	.entry-item .entry-body { margin-left: 0; }
-
-	.post-meta .entry-date:after {
-		padding: 0 2px 0 4px;
-		content: "/"
-	}
-
-	/* -------------------------------------------------- */
-	/*	Masonry Blog
-	/* -------------------------------------------------- */
-
-	.section > #post-area.masonry .post-item {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
 
 	/* -------------------------------------------------- */
 	/*	Tabs
