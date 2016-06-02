@@ -57,16 +57,10 @@
                     speed: 200,
                     beforeCall : function (el) {
                         $(el).find('.cover').addClass(this.effect);
+	                    $(el).find('article').addClass('shown');
                     }
                 });
 
-                $('.masonry').effect({
-                    effect: 'showMeEffect',
-                    speed: 200,
-                    beforeCall : function (el) {
-                        $(el).find('article').addClass(this.effect).addClass('shown');
-                    }
-                });
             }
 
             if ($('.clients-items').length) {
