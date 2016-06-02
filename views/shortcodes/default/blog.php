@@ -172,7 +172,7 @@ if (isset($infinity_pagination) && $infinity_pagination && $blog_type!='masonry'
 }
 
 $_REQUEST['title_symbols'] = $title_symbols;
-$_REQUEST['excerpt_symbols'] = $excerpt_symbols;
+$_REQUEST['excerpt_symbols'] = isset($excerpt_symbols) ? $excerpt_symbols : '220';
 
 ?>
 
