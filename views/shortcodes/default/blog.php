@@ -257,6 +257,7 @@ $_REQUEST['excerpt_symbols'] = isset($excerpt_symbols) ? $excerpt_symbols : '220
 			<a class="load-more button secondary middle"
                data-loadbyscroll="<?php echo esc_attr($load_by_scrolling) ?>" data-page-load="2"
                data-posts-per-load="<?php echo esc_attr($posts_per_load) ?>"
+               data-columns="<?php echo esc_attr($columns) ?>"
                data-posts="<?php echo esc_attr($next_posts) ?>" href='#load-more'><?php _e('Load More', 'tmm_content_composer') ?></a>
 		</div><!--/ .post-load-more-->
 
@@ -271,16 +272,10 @@ $wp_query = $original_query;
 wp_reset_postdata();
 
 if (!empty($posts_array) && ($blog_type == 'masonry')){
-    $load_with_animation = 1;
 
     if (!class_exists('TMM')) {
         wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/plugins/min/jquery.masonry.min.js');
     }
     ?>
-    <script type="text/javascript">
-        jQuery(function() {
-            jQuery(".masonry").init_masonry(<?php echo esc_js($columns) ?>, <?php echo esc_js($load_with_animation) ?>);
-        });
-    </script>
 <?php
 }
