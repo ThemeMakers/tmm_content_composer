@@ -205,7 +205,7 @@ $uniqid = uniqid();
 								<?php
 								foreach ($condition_list as $cond_id => $cond_name) {
 									echo '<option value="'.$cond_id.'"' . selected($car_condition, $cond_id, false) . '>'
-										. sprintf( __("Only %s cars", TMM_CC_TEXTDOMAIN), strtolower($cond_name) )
+										. sprintf( __("Only %s cars", TMM_CC_TEXTDOMAIN), strtolower( __($cond_name, TMM_CC_TEXTDOMAIN) ) )
 										. '</option>';
 								}
 								?>
