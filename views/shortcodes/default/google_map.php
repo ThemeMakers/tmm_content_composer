@@ -1,7 +1,10 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
 $inique_id = uniqid();
-wp_enqueue_script('tmm_cc_map_api');
+$google_maps_api_key = (isset($key)) ? 'key=' . $key . '&' : '' ;
+$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
+
+wp_enqueue_script('tmm_cc_map_api', $map_link);
 wp_enqueue_script("tmm_cc_front");
 
 if (!isset($mode)) {
@@ -46,11 +49,33 @@ if ($location_mode == 'address') {
 
 <?php if ($mode == 'map'): ?>
 
-	<div class="google_map" id="google_map_<?php echo $inique_id ?>" style="height: <?php echo $height ?> px;" data-latitude="<?php echo $latitude ?>" data-longitude="<?php echo $longitude ?>" data-inique_id="<?php echo $inique_id ?>" data-zoom="<?php echo $zoom ?>" data-maptype="<?php echo $maptype ?>" data-content="<?php echo $content ?>" data-enable_marker="<?php echo $enable_marker ?>" data-enable_popup="<?php echo $enable_popup ?>" data-enable_scrollwheel="<?php echo $enable_scrollwheel ?>" data-js_controls="<?php echo $js_controls ?>" data-marker_is_draggable="<?php echo $marker_is_draggable ?>"></div>
+	<div class="google_map"
+		 id="google_map_<?php echo $inique_id ?>"
+		 style="height: <?php echo $height ?> px;" data-latitude="<?php echo $latitude ?>"
+         data-longitude="<?php echo $longitude ?>"
+         data-inique_id="<?php echo $inique_id ?>"
+         data-zoom="<?php echo $zoom ?>" data-maptype="<?php echo $maptype ?>"
+         data-content="<?php echo $content ?>"
+         data-enable_marker="<?php echo $enable_marker ?>"
+         data-enable_popup="<?php echo $enable_popup ?>"
+         data-enable_scrollwheel="<?php echo $enable_scrollwheel ?>"
+         data-js_controls="<?php echo $js_controls ?>"
+         data-marker_is_draggable="<?php echo $marker_is_draggable ?>"></div>
 
 	<script type="text/javascript">
 		jQuery(function() {
-			gmt_init_map(<?php echo $latitude ?>,<?php echo $longitude ?>, "google_map_<?php echo $inique_id ?>", <?php echo $zoom ?>, "<?php echo $maptype ?>", "<?php echo $content ?>", "<?php echo $enable_marker ?>", "<?php echo $enable_popup ?>", "<?php echo $enable_scrollwheel ?>",<?php echo $js_controls ?>, "<?php echo @$marker_is_draggable ?>");
+			gmt_init_map(<?php echo $latitude ?>,
+                         <?php echo $longitude ?>,
+                         "google_map_<?php echo $inique_id ?>",
+                         <?php echo $zoom ?>,
+                         "<?php echo $maptype ?>",
+                         "<?php echo $content ?>",
+                         "<?php echo $enable_marker ?>",
+                         "<?php echo $enable_popup ?>",
+                         "<?php echo $enable_scrollwheel ?>",
+                         <?php echo $js_controls ?>,
+                         "<?php echo @$marker_is_draggable ?>"
+            );
 		});
 	</script>
 <?php else: ?>
