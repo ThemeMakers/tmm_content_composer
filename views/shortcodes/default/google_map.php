@@ -48,7 +48,10 @@ if (!isset($marker_is_draggable)) {
 ?>
 
 <?php if ($mode == 'map'):
-	wp_enqueue_script('tmm_theme_map_api_js', 'https://maps.googleapis.com/maps/api/js?sensor=false');
+	$google_maps_api_key = (isset($key)) ? 'key=' . $key . '&' : '' ;
+	$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
+
+	wp_enqueue_script('tmm_theme_map_api_js', $map_link);
 	wp_enqueue_script('tmm_composer_front');
 	?>
 
