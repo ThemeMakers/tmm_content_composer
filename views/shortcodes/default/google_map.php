@@ -1,8 +1,11 @@
 <?php
-wp_enqueue_script("tmm_shortcode_google_api_js", 'http://maps.google.com/maps/api/js?sensor=false');
+$inique_id = uniqid();
+$google_maps_api_key = (isset($key)) ? 'key=' . $key . '&' : '' ;
+$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
+
+wp_enqueue_script('tmm_shortcode_google_api_js', $map_link);
 wp_enqueue_script('thememakers_theme_markerwithlabel_js', TMM_THEME_URI . '/js/markerwithlabel.js');
 
-$inique_id = uniqid();
 $js_controls = '{}';
 
 if (!isset($mode)) {
