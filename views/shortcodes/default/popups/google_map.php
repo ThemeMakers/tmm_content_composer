@@ -6,7 +6,7 @@
         <?php
         TMM_Content_Composer::html_option(array(
             'type' => 'text',
-            'title' => __('Height', TMM_CC_TEXTDOMAIN),
+            'title' => __('API Key', TMM_CC_TEXTDOMAIN),
             'shortcode_field' => 'key',
             'id' => 'key',
             'default_value' => TMM_Content_Composer::set_default_value('key', ''),
