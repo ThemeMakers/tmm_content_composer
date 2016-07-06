@@ -405,7 +405,7 @@ class TMM_Content_Composer {
 							<?php } ?>
 						</select>
 					</label>
-					<div class="preset_description"><?php echo esc_html($data['description']); ?></div>
+					<div class="preset_description"><?php echo $data['description']; ?></div>
 					<?php
 				}
 
@@ -418,7 +418,7 @@ class TMM_Content_Composer {
 			<?php endif; ?>
 
 				<input type="text" value="<?php echo esc_attr($data['default_value']); ?>" <?php if (isset($data['placeholder'])): ?>placeholder="<?php echo esc_attr($data['placeholder']); ?>"<?php endif; ?> class="js_shortcode_template_changer data-input <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" id="<?php echo esc_attr($data['id']); ?>" />
-				<span class="preset_description"><?php echo esc_html($data['description']); ?></span>
+				<span class="preset_description"><?php echo $data['description']; ?></span>
 				<?php
 				break;
 
