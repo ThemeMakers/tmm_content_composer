@@ -6,11 +6,11 @@
         <?php
         TMM_Content_Composer::html_option(array(
             'type' => 'text',
-            'title' => __('API Key', TMM_CC_TEXTDOMAIN),
+            'title' => __('Google Map API Key', TMM_CC_TEXTDOMAIN),
             'shortcode_field' => 'key',
             'id' => 'key',
             'default_value' => TMM_Content_Composer::set_default_value('key', ''),
-            'description' => '<a target="_blank" href="//forums.webtemplatemasters.com/getting-keys-for-google-maps/">Obtaining an API key</a>'
+            'description' => '<a target="_blank" href="//forums.webtemplatemasters.com/getting-keys-for-google-maps/">' . __('Obtaining an API key', TMM_CC_TEXTDOMAIN) . '</a>'
         ));
         ?>
     </div><!--/ .one-half-->
