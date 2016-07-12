@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2016-02-04 22:04+0100\n"
-"PO-Revision-Date: 2016-02-04 22:04+0100\n"
+"POT-Creation-Date: 2016-07-12 21:27+0200\n"
+"PO-Revision-Date: 2016-07-12 21:27+0200\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -72,32 +72,32 @@ msgstr ""
 msgid "Row editor"
 msgstr ""
 
-#: classes/content_composer.php:199 index.php:40
+#: classes/content_composer.php:198 index.php:40
 #: views/shortcodes/default/popups/title.php:41
 msgid "Default"
 msgstr ""
 
-#: classes/content_composer.php:200
+#: classes/content_composer.php:199
 msgid "Default-white"
 msgstr ""
 
-#: classes/content_composer.php:211
+#: classes/content_composer.php:210
 msgid "Small"
 msgstr ""
 
-#: classes/content_composer.php:212
+#: classes/content_composer.php:211
 msgid "Middle"
 msgstr ""
 
-#: classes/content_composer.php:213
+#: classes/content_composer.php:212
 msgid "Large"
 msgstr ""
 
-#: classes/content_composer.php:221
+#: classes/content_composer.php:220
 msgid "All Categories"
 msgstr ""
 
-#: classes/content_composer.php:355 classes/content_composer.php:369
+#: classes/content_composer.php:354 classes/content_composer.php:368
 msgid "Browse"
 msgstr ""
 
@@ -157,7 +157,7 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: views/meta_panel.php:130 views/shortcodes/default/popups/google_map.php:43
+#: views/meta_panel.php:130 views/shortcodes/default/popups/google_map.php:58
 msgid "Image"
 msgstr ""
 
@@ -446,115 +446,119 @@ msgid "Gray"
 msgstr ""
 
 #: views/shortcodes/default/popups/google_map.php:9
+msgid "API Key"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:24
 #: views/shortcodes/default/popups/tmm_video.php:54
 msgid "Height"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:24
+#: views/shortcodes/default/popups/google_map.php:39
 #: views/shortcodes/default/popups/tmm_video.php:40
 msgid "Width"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:38
+#: views/shortcodes/default/popups/google_map.php:53
 msgid "Mode"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:42
+#: views/shortcodes/default/popups/google_map.php:57
 msgid "Map"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:56
+#: views/shortcodes/default/popups/google_map.php:71
 msgid "Location mode"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:60
-#: views/shortcodes/default/popups/google_map.php:105
+#: views/shortcodes/default/popups/google_map.php:75
+#: views/shortcodes/default/popups/google_map.php:120
 msgid "Address"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:61
+#: views/shortcodes/default/popups/google_map.php:76
 msgid "Coordinates"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:75
+#: views/shortcodes/default/popups/google_map.php:90
 msgid "Marker Latitude"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:79
-#: views/shortcodes/default/popups/google_map.php:95
+#: views/shortcodes/default/popups/google_map.php:94
+#: views/shortcodes/default/popups/google_map.php:110
 msgid ""
 "Point on which the viewport will be centered. If not given and no markers "
 "are defined the viewport defaults to world view. In address Location mode it "
 "is calculated automatically!"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:91
+#: views/shortcodes/default/popups/google_map.php:106
 msgid "Marker Longitude"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:126
+#: views/shortcodes/default/popups/google_map.php:141
 msgid "Zoom"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:131
+#: views/shortcodes/default/popups/google_map.php:146
 msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:141
+#: views/shortcodes/default/popups/google_map.php:156
 msgid "Enable Scrollwheel"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:145
+#: views/shortcodes/default/popups/google_map.php:160
 msgid "Set to false to disable zooming with your mouses scrollwheel."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:152
+#: views/shortcodes/default/popups/google_map.php:167
 msgid "Enable Marker"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:156
+#: views/shortcodes/default/popups/google_map.php:171
 msgid "Set to false to disable display a marker in the viewport."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:163
+#: views/shortcodes/default/popups/google_map.php:178
 msgid "Marker is draggable"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:167
+#: views/shortcodes/default/popups/google_map.php:182
 msgid "Set marker draggable"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:174
+#: views/shortcodes/default/popups/google_map.php:189
 msgid "Enable Popup"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:178
+#: views/shortcodes/default/popups/google_map.php:193
 msgid ""
 "If true the info window for this marker will be shown when the map finished "
 "loading. If html is empty this option will be ignored."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:188
+#: views/shortcodes/default/popups/google_map.php:203
 msgid "Maptype"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:192
+#: views/shortcodes/default/popups/google_map.php:207
 msgid "ROADMAP"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:193
+#: views/shortcodes/default/popups/google_map.php:208
 msgid "SATELLITE"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:194
+#: views/shortcodes/default/popups/google_map.php:209
 msgid "HYBRID"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:195
+#: views/shortcodes/default/popups/google_map.php:210
 msgid "TERRAIN"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:207
+#: views/shortcodes/default/popups/google_map.php:222
 msgid "Html Content"
 msgstr ""
 
