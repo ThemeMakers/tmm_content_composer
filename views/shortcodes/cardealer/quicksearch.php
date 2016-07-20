@@ -297,7 +297,7 @@ $uniqid = uniqid();
 								<p>
 									<label for="tmm_qs_year_from_<?php echo $uniqid; ?>"><?php _e("Year", TMM_CC_TEXTDOMAIN) ?> <span><?php _e("from", TMM_CC_TEXTDOMAIN) ?></span>:</label>
 									<?php
-									$now = (int) date("Y");
+									$now = (int) date("Y") + 1;
 									$years = array('any' => __("Any", TMM_CC_TEXTDOMAIN));
 									for ($i = $now; $i >= 1900; $i--) {
 										$years[$i] = $i;
@@ -314,7 +314,7 @@ $uniqid = uniqid();
 								<p>
 									<label for="tmm_qs_year_to_<?php echo $uniqid; ?>"><?php _e("Year", TMM_CC_TEXTDOMAIN) ?> <span><?php _e("to", TMM_CC_TEXTDOMAIN) ?></span>:</label>
 									<?php
-									$now = (int) date("Y");
+									$now = (int) date("Y") + 1;
 									$years = array('any' => __("Any", TMM_CC_TEXTDOMAIN));
 									for ($i = $now; $i >= 1900; $i--) {
 										$years[$i] = $i;
