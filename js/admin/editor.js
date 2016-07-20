@@ -128,7 +128,7 @@
                         popup_class: 'tmm-popup-single-shortcode',
                         open: function() {
 	                        var cur_popup = $('.tmm-popup-single-shortcode');
-                                
+
                             /* events handlers */
 	                        cur_popup.find('.tmm_button_upload').on('click', function() {
 		                        var input_object = $(this).prev('input, textarea'),
@@ -177,6 +177,7 @@
                             if (mode == 'edit') {                                                                       
                                 shortcode = self.toHTML(shortcode);                                                
                                 tinyMCE.activeEditor.selection.setContent(shortcode);
+	                            tinyMCE.execCommand('mceSetContent', false, tinyMCE.activeEditor.getContent());
 	                            tmm_info_popup_show(tmm_lang['shortcode_updated'], true);
                             } else {
                                 if (window.tinyMCE) {
