@@ -1,6 +1,4 @@
 <?php
-wp_enqueue_script("tmm_shortcode_google_api_js", 'https://maps.googleapis.com/maps/api/js');
-
 
 $inique_id = uniqid();
 $js_controls = '{}';
@@ -30,6 +28,15 @@ if (!isset($maptype)) {
 if (isset($latitude) && $latitude !== '' && isset($longitude) && $longitude !== '') {
 
 	if ($mode == 'map') {
+		if (TMM::get_option( "google_map_api" )) {
+			$key = TMM::get_option( "google_map_api" );
+		} else {
+			$key = '';
+		}
+
+		$google_maps_api_key = (isset($key)) ? 'key=' . $key . '&' : '' ;
+		$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
+		wp_enqueue_script('tmm_shortcode_google_api_js', $map_link);
 		?>
 		<div class="lc-google_map" id="google_map_<?php echo $inique_id ?>" style="height: <?php echo $height ?>px;"></div>
 
