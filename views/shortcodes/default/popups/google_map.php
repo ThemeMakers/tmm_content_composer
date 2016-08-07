@@ -9,7 +9,7 @@
             'title' => __('Google Map API Key', TMM_CC_TEXTDOMAIN),
             'shortcode_field' => 'key',
             'id' => 'key',
-            'default_value' => TMM_Content_Composer::set_default_value('key', ''),
+            'default_value' => TMM_Content_Composer::set_default_value('key', '') ? TMM_Content_Composer::set_default_value('key', '') : (TMM::get_option( "google_map_api" ) ? TMM::get_option( "google_map_api" ) : ''),
             'description' => '<a target="_blank" href="//forums.webtemplatemasters.com/getting-keys-for-google-maps/">' . __('Obtaining an API key', TMM_CC_TEXTDOMAIN) . '</a>'
         ));
         ?>

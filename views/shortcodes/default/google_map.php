@@ -12,8 +12,8 @@ $js_controls = '{';
 if (!empty($controls)) {
 	$controls = explode(',', $controls);
 	if (!empty($controls)) {
-		foreach ($controls as $key => $value) {
-			if ($key > 0) {
+		foreach ($controls as $k => $value) {
+			if ($k > 0) {
 				$js_controls.=',';
 			}
 			$js_controls.=$value . ': true';
@@ -48,6 +48,10 @@ if (!isset($marker_is_draggable)) {
 ?>
 
 <?php if ($mode == 'map'):
+	if (empty($key) && TMM::get_option( "google_map_api" )) {
+		$key = TMM::get_option( "google_map_api" );
+	}
+
 	$google_maps_api_key = (isset($key)) ? 'key=' . $key . '&' : '' ;
 	$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
 
