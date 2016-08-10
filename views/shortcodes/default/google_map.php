@@ -6,6 +6,9 @@ if (!isset($mode)) {
 	$mode = 'map';
 }
 
+if (empty($key) && TMM::get_option( "google_map_api" )) {
+	$key = TMM::get_option( "google_map_api" );
+}
 
 $controls = ""; //not need
 $js_controls = '{';
@@ -48,9 +51,7 @@ if (!isset($marker_is_draggable)) {
 ?>
 
 <?php if ($mode == 'map'):
-	if (empty($key) && TMM::get_option( "google_map_api" )) {
-		$key = TMM::get_option( "google_map_api" );
-	}
+
 
 	$google_maps_api_key = (isset($key)) ? 'key=' . $key . '&' : '' ;
 	$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
@@ -78,7 +79,7 @@ if (!isset($marker_is_draggable)) {
 	<script type="text/javascript">
 	jQuery(window).on('load', function(){
 		jQuery('.google_image_<?php echo $inique_id ?>')
-			.html('<img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&amp;zoom=<?php echo $zoom ?>&amp;maptype=<?php echo strtolower($maptype) ?>&amp;size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&amp;sensor=false" alt="">');
+			.html('<img src="http://maps.googleapis.com/maps/api/staticmap?key=<?php echo $key?>&<?php echo $location_mode_string ?>&amp;zoom=<?php echo $zoom ?>&amp;maptype=<?php echo strtolower($maptype) ?>&amp;size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&amp;sensor=false" alt="">');
 	});
 	</script>
 	<div class="google_image_<?php echo $inique_id ?>"></div>

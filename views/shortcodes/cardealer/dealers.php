@@ -184,6 +184,7 @@ if($order == 'random'){
 				if ($show_map && !empty($ud->address)) {
 
 					$map_data = TMM_Cardealer_User::get_user_map_data($user_data->ID);
+					$api_key = TMM::get_option( "google_map_api" );
 
 					if (!empty($map_data['map_latitude']) && $map_data['show_map_to_visitors']) {
 						?>
@@ -191,7 +192,7 @@ if($order == 'random'){
 						<p class="dealer-map">
 							<?php
 							if (shortcode_exists('google_map')) {
-								echo do_shortcode('[google_map height="200" width="300" mode="image" location_mode="coordinates" latitude="' . $map_data['map_latitude'] . '" longitude="' . $map_data['map_longitude'] . '" address="" zoom="15" enable_scrollwheel="0" maptype="ROADMAP" enable_marker="1" enable_popup="0" marker_is_draggable="0"]');
+								echo do_shortcode('[google_map height="200" width="300" key="'. $api_key .'" mode="image" location_mode="coordinates" latitude="' . $map_data['map_latitude'] . '" longitude="' . $map_data['map_longitude'] . '" address="" zoom="15" enable_scrollwheel="0" maptype="ROADMAP" enable_marker="1" enable_popup="0" marker_is_draggable="0"]');
 							}
 							?>
 						</p>
