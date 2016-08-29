@@ -1,7 +1,15 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
 
-$allows_array = array('youtube.com', 'vimeo.com', '.mp4', '.ogv', '.webm');
+$allows_array = array(
+	'youtube.com',
+	'youtu.be',
+	'vimeo.com',
+	'.mp4',
+	'.ogv',
+	'.webm'
+);
+
 $video_type = '';
 foreach ($allows_array as $key => $needle) {
 	$count = strpos($content, $needle);
@@ -48,19 +56,26 @@ $style = 'style="' . $style . '"';
 	<?php
 	switch ($video_type) {
 		case $allows_array[0]:
+		case $allows_array[1]:
 
-			$source_code = explode("?v=", $content);
-			$source_code = explode("&", $source_code[1]);
-			if (is_array($source_code)) {
-				$source_code = $source_code[0];
+			if ($video_type === $allows_array[0]) {
+				$source_code = explode("?v=", $content);
+				$source_code = explode("&", $source_code[1]);
+				if (is_array($source_code)) {
+					$source_code = $source_code[0];
+				}
+			} else {
+				$source_code = explode("youtu.be/", $content);
+				$source_code = $source_code[1];
 			}
+
 			?>
-			<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (!isset($width) || empty($width) || !isset($height)) ? '' : 'height="'.$height.'"';  ?> src="http://www.youtube.com/embed/<?php echo esc_attr( $source_code ) ?>?wmode=transparent&amp;rel=0&amp;controls=0&amp;showinfo=0"></iframe>
+			<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (!isset($width) || empty($width) || !isset($height)) ? '' : 'height="'.$height.'"';  ?> src="http://www.youtube.com/embed/<?php echo esc_attr( $source_code ) ?>?wmode=transparent&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;enablejsapi=1"></iframe>
 			<?php
 
 			break;
 
-		case $allows_array[1]:
+		case $allows_array[2]:
 
 			$source_code = explode("/", $content);
 			if (is_array($source_code)) {
@@ -71,7 +86,7 @@ $style = 'style="' . $style . '"';
 			<?php
 			break;
 
-		case $allows_array[2]:
+		case $allows_array[3]:
 
 			$source_code = $content;
 
@@ -88,7 +103,7 @@ $style = 'style="' . $style . '"';
 			wp_enqueue_script('mediaelement');
 			break;
 
-		case $allows_array[3]:
+		case $allows_array[4]:
 
 			$source_code = $content;
 
@@ -104,7 +119,7 @@ $style = 'style="' . $style . '"';
 			wp_enqueue_script('mediaelement');
 			break;
 
-		case $allows_array[4]:
+		case $allows_array[5]:
 
 			$source_code = $content;
 			$cover = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, $image_size) : '';
