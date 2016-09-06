@@ -1,7 +1,7 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
 $inique_id = uniqid();
-$google_maps_api_key = (isset($key)) ? 'key=' . $key . '&' : '' ;
+$google_maps_api_key = (TMM::get_option("api_key_google")) ? 'key=' . TMM::get_option("api_key_google") . '&' : '' ;
 $map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
 
 wp_enqueue_script('tmm_cc_map_api', $map_link);
@@ -34,7 +34,7 @@ if ($location_mode == 'address') {
 	if('' === $address & '' === $latitude & '' === $longitude) {
 		$address = 'New York';
 	}
-	
+
 	$address = str_replace(' ', '+', $address);
 	$geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
 	$output = json_decode($geocode);
@@ -88,6 +88,6 @@ if ($location_mode == 'address') {
 	$location_mode_string = 'center=' . $latitude . ',' . $longitude;
 	?>
 
-	<img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false">
+	<img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false&key=<?php echo TMM::get_option("api_key_google")?>">
 
 <?php endif; ?>
