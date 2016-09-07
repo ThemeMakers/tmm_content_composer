@@ -246,7 +246,7 @@ if (!empty($contact_form['inputs'])) {
 
             <p class="tmmFormStyling form-captcha">
                 <?php $hash = md5(time()); ?>
-                <img class="contact_form_capcha" src="<?php echo get_stylesheet_directory_uri(); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="54" width="72" />
+                <img class="contact_form_capcha" src="<?php echo get_template_directory_uri(); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="54" width="72" />
 	            <input type="text" value="" name="verify" class="verify" /><input type="hidden" name="verify_code" value="<?php echo $hash ?>" />
             </p>
 
