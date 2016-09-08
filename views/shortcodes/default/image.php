@@ -71,8 +71,7 @@ if ($fancybox) {
 
 // Fancybox enabled
 if ( $fancybox && ("link" == $action) ) {
-	$html.= '<a title="' . $img_caption . '" class="single-image ' . $link_class . '" href="' . $target_url . '" target="' . $target . '">';
-    $html.= '<figure class="lc-image' . $css_class . '"><img alt="' . $image_alt . '" src="' . $full_size_src . '" />' . $figcaption . '</figure>';
+    $html.= '<figure class="lc-image' . $css_class . '"><a title="' . $img_caption . '" class="single-image ' . $link_class . '" href="' . $target_url . '" target="' . $target . '"><img alt="' . $image_alt . '" src="' . $full_size_src . '" />' . $figcaption . '</a></figure>';
 }
 // Fancybox disabled
 elseif ( !$fancybox && ("link" == $action) ) {
