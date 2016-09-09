@@ -2,10 +2,12 @@
 <?php
 $inique_id = uniqid();
 $google_maps_api_key = (TMM::get_option("api_key_google")) ? 'key=' . TMM::get_option("api_key_google") . '&' : '' ;
-$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
+$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false&';
 
-wp_enqueue_script('tmm_cc_map_api', $map_link);
-wp_enqueue_script("tmm_cc_front");
+wp_enqueue_script("tmm_cc_front");?>
+<script type='text/javascript' src='//maps.google.com/maps/api/js?<?php echo $google_maps_api_key; ?>&sensor=false&callback=initMap&ver=4.6.1' async defer></script>
+
+<?php
 
 if (!isset($mode)) {
 	$mode = 'map';
@@ -63,7 +65,10 @@ if ($location_mode == 'address') {
          data-marker_is_draggable="<?php echo $marker_is_draggable ?>"></div>
 
 	<script type="text/javascript">
-		jQuery(function() {
+
+
+			var map;
+function initMap() {
 			gmt_init_map(<?php echo $latitude ?>,
                          <?php echo $longitude ?>,
                          "google_map_<?php echo $inique_id ?>",
@@ -76,7 +81,8 @@ if ($location_mode == 'address') {
                          <?php echo $js_controls ?>,
                          "<?php echo @$marker_is_draggable ?>"
             );
-		});
+		}
+
 	</script>
 <?php else: ?>
 	<?php
