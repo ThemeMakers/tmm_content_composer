@@ -12,7 +12,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
         $tmm_layout_constructor_row[$row]['section_title'] = $tmm_row_options['section_title'];
     }
     if ( !isset($tmm_layout_constructor_row[$row]['lc_displaying']) ) {
-        $tmm_layout_constructor_row[$row]['lc_displaying'] = $tmm_row_options['lc_displaying'];
+        //$tmm_layout_constructor_row[$row]['lc_displaying'] = $tmm_row_options['lc_displaying'];
     }
     if ( !isset($tmm_layout_constructor_row[$row]['full_width']) ) {
         $tmm_layout_constructor_row[$row]['full_width'] = $tmm_row_options['full_width'];
@@ -36,7 +36,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
         $tmm_layout_constructor_row[$row]['align'] = $tmm_row_options['align'];
     }
     if ( !isset($tmm_layout_constructor_row[$row]['section_content']) ) {
-        $tmm_layout_constructor_row[$row]['section_content'] = $tmm_row_options['section_content'];
+        //$tmm_layout_constructor_row[$row]['section_content'] = $tmm_row_options['section_content'];
     }
     if ( !isset($tmm_layout_constructor_row[$row]['bg_type']) ) {
         $tmm_layout_constructor_row[$row]['bg_type'] = $tmm_row_options['bg_type'];
@@ -204,7 +204,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		if ($display_overlay) { ?>
 			<!--<div class="overlay"<?php /*echo $overlay_style_attr; */?>></div>-->
 		<?php } ?>
-                
+
             <?php
 
 				$bg_color = (isset($tmm_layout_constructor_row[$row]['bg_color'])) ? $tmm_layout_constructor_row[$row]['bg_color'] : '';
@@ -289,7 +289,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 				}
 
 			?>
-                             
+
 	</section><!--/ .section -->
 
     <?php
@@ -300,6 +300,6 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 		<?php
 		}
-	} 
+	}
 
-} 
+}
