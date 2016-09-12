@@ -385,7 +385,7 @@ global $tmm_row_options;
 				'default_value' => $tmm_row_options['bg_type'],
 				'description' => ''
 			));
-			?>			
+			?>
 
 			<div id="row_background_image_box" style="display: none;">
 
@@ -404,7 +404,7 @@ global $tmm_row_options;
 					'description' => ''
 				));
 				?>
-                
+
                 <div id="row_background_color_box" style="display: none;">
                     <?php
                     TMM_Content_Composer::html_option(array(
