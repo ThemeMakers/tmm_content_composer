@@ -1,6 +1,6 @@
 <?php
 $inique_id = uniqid();
-$google_maps_api_key = (isset($key)) ? 'key=' . $key . '&' : '' ;
+$google_maps_api_key = (get_option(TMM_THEME_PREFIX . "api_key_google")) ? 'key=' . get_option(TMM_THEME_PREFIX . "api_key_google") . '&' : '' ;
 $map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
 
 wp_enqueue_script('tmm_shortcode_google_api_js', $map_link);
