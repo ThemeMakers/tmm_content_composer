@@ -22,9 +22,9 @@ if (isset($image_size_alias)) {
 $src = ThemeMakersHelper::resize_image($image_url, $width, true, $height);
 
 if ($action == "link" or $action == "fancybox") {
-    $html.= '<img alt="' . $image_alt . '" class="' . ($show_border ? "bordered" : "") . '" src="' . $src . '" />';
+    $html.= '<img alt="' . $image_alt . '" class="' . ($show_border ? "bordered" : "") . '" src="' . $image_url . '" />';
 } else {
-    $html.= '<img alt="' . $image_alt . '" class="' . ($show_border ? "bordered" : "") . '" style="float: ' . $align . ' ; margin:' . (int) $margin_top . 'px ' . (int) $margin_right . 'px ' . (int) $margin_bottom . 'px ' . (int) $margin_left . 'px;" src="' . $src . '" />';
+    $html.= '<img alt="' . $image_alt . '" class="' . ($show_border ? "bordered" : "") . '" style="float: ' . $align . ' ; margin:' . (int) $margin_top . 'px ' . (int) $margin_right . 'px ' . (int) $margin_bottom . 'px ' . (int) $margin_left . 'px;" src="' . $image_url . '" />';
 }
 
 if ($action) {
