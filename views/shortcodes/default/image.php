@@ -59,19 +59,19 @@ if (!empty($img_caption)) {
 
 // Fancybox
 if ($fancybox) {
-	$src = TMM_Helper::resize_image($image_url, '');
-	$full_size_src = TMM_Helper::resize_image($image_url, $image_size_alias);
+	$src = TMM_Helper::resize_image($image_url, $image_size_alias);
+	$full_size_src = TMM_Helper::resize_image($image_url, '');
 	$target_url = $src;
 	$link_class = 'fancybox';
 } else {
-	$src = TMM_Helper::resize_image($image_url, /*$image_size_alias*/'');
+	$src = TMM_Helper::resize_image($image_url, $image_size_alias);
 	$link_class = 'link-icon';
 }
 
 
 // Fancybox enabled
 if ( $fancybox && ("link" == $action) ) {
-    $html.= '<figure class="lc-image' . $css_class . '"><a title="' . $img_caption . '" class="single-image ' . $link_class . '" href="' . $target_url . '" target="' . $target . '"><img alt="' . $image_alt . '" src="' . $full_size_src . '" />' . $figcaption . '</a></figure>';
+    $html.= '<figure class="lc-image' . $css_class . '"><a title="' . $img_caption . '" class="single-image ' . $link_class . '" href="' . $full_size_src . '" target="' . $target . '"><img alt="' . $image_alt . '" src="' . $src . '" />' . $figcaption . '</a></figure>';
 }
 // Fancybox disabled
 elseif ( !$fancybox && ("link" == $action) ) {
