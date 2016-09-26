@@ -104,7 +104,7 @@ function initMap() {
 }
 else{
 	echo "<h4>"; 
-	echo _e('Enter your Google Maps API key on Theme Options Page.', 'almera');
+	echo _e('Enter your Google Maps API key on Theme Options Page.', 'tmm_shortcodes');
 	echo "</h4>";
 }
 
