@@ -66,7 +66,10 @@ if (get_option(TMM_THEME_PREFIX . "api_key_google")){
 }
 
 else{
-	echo "<h4>Enter your Google Maps API key on Theme Options Page.</h4>";
+	echo "<h4>"; 
+	echo _e('Enter your Google Maps API key on Theme Options Page.', TMM_CC_TEXTDOMAIN);
+	echo "</h4>";
+	
 }
 
 ?>
