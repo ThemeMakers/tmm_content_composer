@@ -1,5 +1,8 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
+
+if (TMM::get_option("api_key_google")){
+
 $inique_id = uniqid();
 $google_maps_api_key = (TMM::get_option("api_key_google")) ? 'key=' . TMM::get_option("api_key_google") . '&' : '' ;
 $map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false&';
@@ -96,4 +99,11 @@ function initMap() {
 
 	<img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false&key=<?php echo TMM::get_option("api_key_google")?>">
 
-<?php endif; ?>
+<?php endif;
+
+}
+else{
+	echo "<h4>Enter your Google Maps API on Theme Options Page.</h4>";
+}
+
+?>
