@@ -103,7 +103,7 @@ function initMap() {
 
 }
 else{
-	echo "<h4>Enter your Google Maps API on Theme Options Page.</h4>";
+	echo "<h4>Enter your Google Maps API key on Theme Options Page.</h4>";
 }
 
 ?>
