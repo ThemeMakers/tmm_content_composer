@@ -2,21 +2,7 @@
 
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('API Key', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'key',
-			'id' => 'key',
-			'default_value' => TMM_Content_Composer::set_default_value('key', ''),
-			'description' => '<a target="_blank" href="//forums.webtemplatemasters.com/getting-keys-for-google-maps/">Obtaining an API key</a>'
-		));
-		?>
 
-	</div><!--/ .one-half-->
-
-	<div class="one-half"></div><!--/ .one-half-->
 
 	<div class="one-half">
 		<?php
@@ -94,7 +80,7 @@
 			'default_value' => TMM_Content_Composer::set_default_value('latitude', 40.714623),
 			'description' => __('Point on which the viewport will be centered. If not given and no markers are defined the viewport defaults to world view. In address Location mode it is calculated automatically!', TMM_CC_TEXTDOMAIN)
 		));
-		?>		
+		?>
 
 	</div><!--/ .one-half-->
 
@@ -179,7 +165,7 @@
 			'default_value' => TMM_Content_Composer::set_default_value('maptype', 'ROADMAP'),
 			'description' => ''
 		));
-		?>	
+		?>
 	</div><!--/ .one-half-->
 
 
@@ -221,7 +207,7 @@
 			'is_checked' => TMM_Content_Composer::set_default_value('marker_is_draggable', 0),
 			'description' => __('Set marker draggable', TMM_CC_TEXTDOMAIN)
 		));
-		?>		
+		?>
 	</div><!--/ .one-half-->
 
 	<div class="one-half">
@@ -235,7 +221,7 @@
 			'description' => ''
 		));
 		?>
-	</div><!--/ .one-half--> 
+	</div><!--/ .one-half-->
 
 </div>
 
