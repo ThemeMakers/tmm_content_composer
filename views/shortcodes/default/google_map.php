@@ -1,89 +1,78 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<?php
-$inique_id = uniqid();
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
 
-if (!isset($mode)) {
-	$mode = 'map';
-}
+if (TMM::get_option("api_key_google")){
 
-if (empty($key) && TMM::get_option( "google_map_api" )) {
-	$key = TMM::get_option( "google_map_api" );
-}
+	$inique_id = uniqid();
 
-$controls = ""; //not need
-$js_controls = '{';
-if (!empty($controls)) {
-	$controls = explode(',', $controls);
-	if (!empty($controls)) {
-		foreach ($controls as $k => $value) {
-			if ($k > 0) {
-				$js_controls.=',';
-			}
-			$js_controls.=$value . ': true';
-		}
-	}
-}
-$js_controls.='}';
-?>
-
-<?php
-if (isset($location_mode)) {
-	if ($location_mode == 'address') {
-		$address = str_replace(' ', '+', $address);
-		$geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
-		$output = json_decode($geocode);
-		if ($output->status != 'OVER_QUERY_LIMIT') {
-			$latitude = $output->results[0]->geometry->location->lat;
-			$longitude = $output->results[0]->geometry->location->lng;
-		} else {
-			$maptype = 'image';
-		}
-	}
-}
-
-if (!isset($maptype)) {
-	$maptype = 'image';
-}
-
-if (!isset($marker_is_draggable)) {
-	$marker_is_draggable = 0;
-}
-?>
-
-<?php if ($mode == 'map'):
-
-
-	$google_maps_api_key = (isset($key)) ? 'key=' . $key . '&' : '' ;
+	$google_maps_api_key = (TMM::get_option("api_key_google")) ? 'key=' . TMM::get_option("api_key_google") . '&' : '' ;
 	$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
+	wp_enqueue_script("tmm_shortcode_google_api_js", $map_link);
 
-	wp_enqueue_script('tmm_theme_map_api_js', $map_link);
-	wp_enqueue_script('tmm_composer_front');
-	?>
+	$js_controls = '{}';
 
-	<div class="google_map" id="google_map_<?php echo $inique_id ?>" style="height: <?php echo $height ?>px;"></div>
-
-	<script type="text/javascript">
-		jQuery(function() {
-			gmt_init_map(<?php echo $latitude ?>,<?php echo $longitude ?>, "google_map_<?php echo $inique_id ?>", <?php echo $zoom ?>, "<?php echo $maptype ?>", "<?php echo $content ?>", "<?php echo $enable_marker ?>", "<?php echo $enable_popup ?>", "<?php echo $enable_scrollwheel ?>",<?php echo $js_controls ?>, "<?php echo @$marker_is_draggable ?>");
-		});
-	</script>
-<?php else: ?>
-	<?php
-	$marker_string = '';
-	if ($enable_marker) {
-		$marker_string = '&amp;markers=color:red%7cCourgette%7clabel:P%7cCourgette%7c' . $latitude . ',' . $longitude;
+	if (!isset($mode)) {
+		$mode = 'map';
 	}
 
-	$location_mode_string = 'center=' . $latitude . ',' . $longitude;
-	?>
-	<script type="text/javascript">
-	jQuery(window).on('load', function(){
-		jQuery('.google_image_<?php echo $inique_id ?>')
-			.html('<img src="http://maps.googleapis.com/maps/api/staticmap?key=<?php echo $key?>&<?php echo $location_mode_string ?>&amp;zoom=<?php echo $zoom ?>&amp;maptype=<?php echo strtolower($maptype) ?>&amp;size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&amp;sensor=false" alt="">');
-	});
-	</script>
-	<div class="google_image_<?php echo $inique_id ?>"></div>
+	if (isset($location_mode)) {
+		if ($location_mode == 'address') {
+			$address = str_replace(' ', '+', $address);
+			$geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
+			$output = json_decode($geocode);
+			if ($output->status != 'OVER_QUERY_LIMIT') {
+				$latitude = $output->results[0]->geometry->location->lat;
+				$longitude = $output->results[0]->geometry->location->lng;
+			} else {
+				$maptype = 'image';
+			}
+		}
+	}
 
-<?php endif;
+	if (!isset($maptype)) {
+		$maptype = 'image';
+	}
+
+	if (!isset($marker_is_draggable)) {
+		$marker_is_draggable = 0;
+	}
+
+	if ($mode == 'map'):
+
+		wp_enqueue_script('tmm_composer_front');
+		?>
+
+		<div class="google_map" id="google_map_<?php echo $inique_id ?>" style="height: <?php echo $height ?>px;"></div>
+
+		<script type="text/javascript">
+			jQuery(function() {
+				gmt_init_map(<?php echo $latitude ?>,<?php echo $longitude ?>, "google_map_<?php echo $inique_id ?>", <?php echo $zoom ?>, "<?php echo $maptype ?>", "<?php echo $content ?>", "<?php echo $enable_marker ?>", "<?php echo $enable_popup ?>", "<?php echo $enable_scrollwheel ?>",<?php echo $js_controls ?>, "<?php echo @$marker_is_draggable ?>");
+			});
+		</script>
+	<?php else: ?>
+		<?php
+		$marker_string = '';
+		if ($enable_marker) {
+			$marker_string = '&amp;markers=color:red%7cCourgette%7clabel:P%7cCourgette%7c' . $latitude . ',' . $longitude;
+		}
+
+		$location_mode_string = 'center=' . $latitude . ',' . $longitude;
+		?>
+		<script type="text/javascript">
+		jQuery(window).on('load', function(){
+			jQuery('.google_image_<?php echo $inique_id ?>')
+				.html('<img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo (int) $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo (int)$width ?>x<?php echo (int)$height ?><?php echo $marker_string ?>&key=<?php echo TMM::get_option("api_key_google")?>&sensor=false">');
+		});
+		</script>
+		<div class="google_image_<?php echo $inique_id ?>"></div>
+
+	<?php endif;
+
+}
+
+else{
+	echo "<h4>";
+	echo _e('Enter your Google Maps API key on Theme Options Page.', TMM_CC_TEXTDOMAIN);
+	echo "</h4>";
+}
 
 
