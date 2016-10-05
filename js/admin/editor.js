@@ -177,6 +177,7 @@
                             if (mode == 'edit') {                                                                       
                                 shortcode = self.toHTML(shortcode);                                                
                                 tinyMCE.activeEditor.selection.setContent(shortcode);
+                                tinyMCE.execCommand('mceSetContent', false, tinyMCE.activeEditor.getContent());
 	                            tmm_info_popup_show(tmm_lang['shortcode_updated'], true);
                             } else {
                                 if (window.tinyMCE) {
