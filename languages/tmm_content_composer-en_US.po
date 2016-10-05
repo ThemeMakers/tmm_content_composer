@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2016-07-11 22:57+0200\n"
-"PO-Revision-Date: 2016-07-11 22:57+0200\n"
+"POT-Creation-Date: 2016-10-05 20:37+0200\n"
+"PO-Revision-Date: 2016-10-05 20:37+0200\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -122,8 +122,8 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
-#: classes/layout_constructor.php:202 views/shortcodes/default/tmm_video.php:94
-#: views/shortcodes/default/tmm_video.php:97
+#: classes/layout_constructor.php:202 views/shortcodes/default/tmm_video.php:99
+#: views/shortcodes/default/tmm_video.php:102
 msgid "Unsupported video format"
 msgstr ""
 
@@ -390,7 +390,7 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: views/meta_panel.php:303 views/shortcodes/default/popups/google_map.php:58
+#: views/meta_panel.php:303 views/shortcodes/default/popups/google_map.php:43
 msgid "Image"
 msgstr ""
 
@@ -1240,6 +1240,10 @@ msgstr ""
 msgid "Are you human?"
 msgstr ""
 
+#: views/shortcodes/default/google_map.php:74
+msgid "Enter your Google Maps API key on Theme Options Page."
+msgstr ""
+
 #: views/shortcodes/default/popups/accordion.php:9
 #: views/shortcodes/default/popups/services.php:12
 #: views/shortcodes/default/popups/services.php:45
@@ -1519,123 +1523,115 @@ msgid "Dark"
 msgstr ""
 
 #: views/shortcodes/default/popups/google_map.php:9
-msgid "Google Map API Key"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:13
-msgid "Obtaining an API key"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:24
 #: views/shortcodes/default/popups/tmm_video.php:60
 msgid "Height"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:39
+#: views/shortcodes/default/popups/google_map.php:24
 #: views/shortcodes/default/popups/tmm_video.php:46
 msgid "Width"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:53
+#: views/shortcodes/default/popups/google_map.php:38
 msgid "Mode"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:57
+#: views/shortcodes/default/popups/google_map.php:42
 msgid "Map"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:71
+#: views/shortcodes/default/popups/google_map.php:56
 msgid "Location mode"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:75
-#: views/shortcodes/default/popups/google_map.php:120
+#: views/shortcodes/default/popups/google_map.php:60
+#: views/shortcodes/default/popups/google_map.php:105
 msgid "Address"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:76
+#: views/shortcodes/default/popups/google_map.php:61
 msgid "Coordinates"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:90
+#: views/shortcodes/default/popups/google_map.php:75
 msgid "Marker Latitude"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:94
-#: views/shortcodes/default/popups/google_map.php:110
+#: views/shortcodes/default/popups/google_map.php:79
+#: views/shortcodes/default/popups/google_map.php:95
 msgid ""
 "Point on which the viewport will be centered. If not given and no markers "
 "are defined the viewport defaults to world view. In address Location mode it "
 "is calculated automatically!"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:106
+#: views/shortcodes/default/popups/google_map.php:91
 msgid "Marker Longitude"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:141
+#: views/shortcodes/default/popups/google_map.php:126
 msgid "Zoom"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:146
+#: views/shortcodes/default/popups/google_map.php:131
 msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:156
+#: views/shortcodes/default/popups/google_map.php:141
 msgid "Enable Scrollwheel"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:160
+#: views/shortcodes/default/popups/google_map.php:145
 msgid "Set to false to disable zooming with your mouses scrollwheel."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:169
+#: views/shortcodes/default/popups/google_map.php:154
 msgid "Maptype"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:173
+#: views/shortcodes/default/popups/google_map.php:158
 msgid "ROADMAP"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:174
+#: views/shortcodes/default/popups/google_map.php:159
 msgid "SATELLITE"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:175
+#: views/shortcodes/default/popups/google_map.php:160
 msgid "HYBRID"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:176
+#: views/shortcodes/default/popups/google_map.php:161
 msgid "TERRAIN"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:190
+#: views/shortcodes/default/popups/google_map.php:175
 msgid "Enable Marker"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:194
+#: views/shortcodes/default/popups/google_map.php:179
 msgid "Set to false to disable display a marker in the viewport."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:203
+#: views/shortcodes/default/popups/google_map.php:188
 msgid "Enable Popup"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:207
+#: views/shortcodes/default/popups/google_map.php:192
 msgid ""
 "If true the info window for this marker will be shown when the map finished "
 "loading. If html is empty this option will be ignored."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:217
+#: views/shortcodes/default/popups/google_map.php:202
 msgid "Marker is draggable"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:221
+#: views/shortcodes/default/popups/google_map.php:206
 msgid "Set marker draggable"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:230
+#: views/shortcodes/default/popups/google_map.php:215
 msgid "Html Content"
 msgstr ""
 
