@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2016-02-12 14:29+0100\n"
-"PO-Revision-Date: 2016-02-12 14:29+0100\n"
+"POT-Creation-Date: 2016-10-08 15:57+0200\n"
+"PO-Revision-Date: 2016-10-08 15:57+0200\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -255,35 +255,47 @@ msgstr ""
 msgid "Below main content with separate layout options"
 msgstr ""
 
-#: views/meta_panel.php:269
+#: views/meta_panel.php:235
+msgid "Row Full Width"
+msgstr ""
+
+#: views/meta_panel.php:239 views/shortcodes/default/popups/google_table.php:58
+msgid "No"
+msgstr ""
+
+#: views/meta_panel.php:240 views/shortcodes/default/popups/google_table.php:52
+msgid "Yes"
+msgstr ""
+
+#: views/meta_panel.php:268
 msgid "Padding top"
 msgstr ""
 
-#: views/meta_panel.php:278
+#: views/meta_panel.php:277
 msgid "Padding bottom"
 msgstr ""
 
-#: views/meta_panel.php:287
+#: views/meta_panel.php:286
 msgid "Margin top"
 msgstr ""
 
-#: views/meta_panel.php:296
+#: views/meta_panel.php:295
 msgid "Margin bottom"
 msgstr ""
 
-#: views/meta_panel.php:306
+#: views/meta_panel.php:305
 msgid "Content Align"
 msgstr ""
 
-#: views/meta_panel.php:326
+#: views/meta_panel.php:325
 msgid "Custom css class"
 msgstr ""
 
-#: views/meta_panel.php:336
+#: views/meta_panel.php:335
 msgid "Row Background Type"
 msgstr ""
 
-#: views/meta_panel.php:340 views/shortcodes/default/popups/blog.php:39
+#: views/meta_panel.php:339 views/shortcodes/default/popups/blog.php:39
 #: views/shortcodes/default/popups/blog.php:192
 #: views/shortcodes/default/popups/blog.php:212
 #: views/shortcodes/default/popups/image.php:27
@@ -292,27 +304,27 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: views/meta_panel.php:341
+#: views/meta_panel.php:340
 msgid "Default Theme Color"
 msgstr ""
 
-#: views/meta_panel.php:342
+#: views/meta_panel.php:341
 msgid "Custom"
 msgstr ""
 
-#: views/meta_panel.php:354
+#: views/meta_panel.php:353
 msgid "Custom Background Type"
 msgstr ""
 
-#: views/meta_panel.php:358 views/shortcodes/default/popups/title.php:174
+#: views/meta_panel.php:357 views/shortcodes/default/popups/title.php:174
 msgid "Color"
 msgstr ""
 
-#: views/meta_panel.php:359 views/shortcodes/default/popups/google_map.php:43
+#: views/meta_panel.php:358 views/shortcodes/default/popups/google_map.php:45
 msgid "Image"
 msgstr ""
 
-#: views/meta_panel.php:369 views/shortcodes/default/popups/button.php:106
+#: views/meta_panel.php:368 views/shortcodes/default/popups/button.php:106
 #: views/shortcodes/default/popups/chart.php:146
 #: views/shortcodes/default/popups/services.php:141
 #: views/shortcodes/diplomat/popups/featured-boxes.php:182
@@ -321,13 +333,17 @@ msgstr ""
 msgid "Background Color"
 msgstr ""
 
-#: views/meta_panel.php:385
+#: views/meta_panel.php:384
 msgid "Background Image"
 msgstr ""
 
 #: views/shortcodes/default/blog.php:245
 #: views/shortcodes/diplomat/imggallery.php:183
 msgid "Load More"
+msgstr ""
+
+#: views/shortcodes/default/google_map.php:69
+msgid "Enter your Google Maps API key on Theme Options Page."
 msgstr ""
 
 #: views/shortcodes/default/mail_subscription.php:28
@@ -865,116 +881,116 @@ msgstr ""
 msgid "Enter Symbol"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:9
+#: views/shortcodes/default/popups/google_map.php:11
 #: views/shortcodes/default/popups/tmm_video.php:60
 msgid "Height"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:24
+#: views/shortcodes/default/popups/google_map.php:26
 #: views/shortcodes/default/popups/tmm_video.php:46
 msgid "Width"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:38
+#: views/shortcodes/default/popups/google_map.php:40
 msgid "Mode"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:42
+#: views/shortcodes/default/popups/google_map.php:44
 msgid "Map"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:56
+#: views/shortcodes/default/popups/google_map.php:58
 msgid "Location mode"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:60
-#: views/shortcodes/default/popups/google_map.php:105
+#: views/shortcodes/default/popups/google_map.php:62
+#: views/shortcodes/default/popups/google_map.php:107
 msgid "Address"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:61
+#: views/shortcodes/default/popups/google_map.php:63
 msgid "Coordinates"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:75
+#: views/shortcodes/default/popups/google_map.php:77
 msgid "Marker Latitude"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:79
-#: views/shortcodes/default/popups/google_map.php:95
+#: views/shortcodes/default/popups/google_map.php:81
+#: views/shortcodes/default/popups/google_map.php:97
 msgid ""
 "Point on which the viewport will be centered. If not given and no markers "
 "are defined the viewport defaults to world view. In address Location mode it "
 "is calculated automatically!"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:91
+#: views/shortcodes/default/popups/google_map.php:93
 msgid "Marker Longitude"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:126
+#: views/shortcodes/default/popups/google_map.php:128
 msgid "Zoom"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:131
+#: views/shortcodes/default/popups/google_map.php:133
 msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:141
+#: views/shortcodes/default/popups/google_map.php:143
 msgid "Enable Scrollwheel"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:145
+#: views/shortcodes/default/popups/google_map.php:147
 msgid "Set to false to disable zooming with your mouses scrollwheel."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:154
+#: views/shortcodes/default/popups/google_map.php:156
 msgid "Maptype"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:158
+#: views/shortcodes/default/popups/google_map.php:160
 msgid "ROADMAP"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:159
+#: views/shortcodes/default/popups/google_map.php:161
 msgid "SATELLITE"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:160
+#: views/shortcodes/default/popups/google_map.php:162
 msgid "HYBRID"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:161
+#: views/shortcodes/default/popups/google_map.php:163
 msgid "TERRAIN"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:175
+#: views/shortcodes/default/popups/google_map.php:177
 msgid "Enable Marker"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:179
+#: views/shortcodes/default/popups/google_map.php:181
 msgid "Set to false to disable display a marker in the viewport."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:188
+#: views/shortcodes/default/popups/google_map.php:190
 msgid "Enable Popup"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:192
+#: views/shortcodes/default/popups/google_map.php:194
 msgid ""
 "If true the info window for this marker will be shown when the map finished "
 "loading. If html is empty this option will be ignored."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:202
+#: views/shortcodes/default/popups/google_map.php:204
 msgid "Marker is draggable"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:206
+#: views/shortcodes/default/popups/google_map.php:208
 msgid "Set marker draggable"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:215
+#: views/shortcodes/default/popups/google_map.php:217
 msgid "Html Content"
 msgstr ""
 
@@ -988,14 +1004,6 @@ msgstr ""
 
 #: views/shortcodes/default/popups/google_table.php:46
 msgid "Show Row Number"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_table.php:52
-msgid "Yes"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_table.php:58
-msgid "No"
 msgstr ""
 
 #: views/shortcodes/default/popups/google_table.php:74
