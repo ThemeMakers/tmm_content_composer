@@ -70,9 +70,10 @@ if (TMM::get_option("api_key_google")){
 }
 
 else{
-	echo "<h4>";
-	echo _e('Enter your Google Maps API key on Theme Options Page.', TMM_CC_TEXTDOMAIN);
-	echo "</h4>";
+	$full_width = ($width == '') ? '1920' : $width;
+	$custom_height = ($height == '') ? '400' : $height;
+	$link_url = 'http://placehold.it/'. $full_width . 'x' . $custom_height . '?text=Please+enter+valid+google+API+key';
+	echo "<img src=" . $link_url . ">";
 }
 
 
