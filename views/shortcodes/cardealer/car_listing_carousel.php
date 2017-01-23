@@ -43,11 +43,9 @@ if (!empty($sort_by_dealer)) {
 
 $query = new WP_Query( $args );
 
-$request_result = $query->posts;
-
 $uniqid = uniqid();
 
-if ( !empty($request_result) ) {
+if ( !empty($query->posts) ) {
 
 	wp_enqueue_script('tmm_sudoSlider');
 ?>
@@ -71,8 +69,8 @@ if ( !empty($request_result) ) {
 	<!--	clc - Car Listing Carousel -->
 	<div id="clc_<?php echo $uniqid ?>" class="clc_content tmm-view-mode item-grid">
 		<?php
-		if ( !empty($request_result) ) {
-			foreach ( $request_result as $post ) {
+		if ( !empty($query->posts) ) {
+			foreach ( $query->posts as $post ) {
 				$GLOBALS['post_id']                             = $post->ID;
 				$GLOBALS['featured_cars_autoslide']             = ! isset( $set_featured_autoslide ) || $set_featured_autoslide;
 				$GLOBALS['recent_cars_show_currency_converter'] = ! isset( $show_currency_converter ) || $show_currency_converter;
