@@ -36,7 +36,7 @@ if (TMM::get_option("api_key_google")){
 		$marker_is_draggable = 0;
 	}
 
-	if ($mode == 'map'):
+	if ($mode == 'map') {
 
 		wp_enqueue_script('tmm_composer_front');
 		?>
@@ -48,7 +48,7 @@ if (TMM::get_option("api_key_google")){
 				gmt_init_map(<?php echo $latitude ?>,<?php echo $longitude ?>, "google_map_<?php echo $inique_id ?>", <?php echo $zoom ?>, "<?php echo $maptype ?>", "<?php echo $content ?>", "<?php echo $enable_marker ?>", "<?php echo $enable_popup ?>", "<?php echo $enable_scrollwheel ?>",<?php echo $js_controls ?>, "<?php echo @$marker_is_draggable ?>");
 			});
 		</script>
-	<?php else: ?>
+	<?php } else { ?>
 		<?php
 		$marker_string = '';
 		if ($enable_marker) {
@@ -65,11 +65,9 @@ if (TMM::get_option("api_key_google")){
 		</script>
 		<div class="google_image_<?php echo $inique_id ?>"></div>
 
-	<?php endif;
+	<?php }
 
-}
-
-else{
+} else {
 	$full_width = ($width == '' || $width == '100%') ? '1130' : $width;
 	$custom_height = ($height == '') ? '400' : $height;
 	$link_url = 'http://placeholdit.imgix.net/~text?txtsize=40&txt=Please+Enter+a+Valid+Google+API+key&w='. $full_width . '&h=' . $custom_height;
