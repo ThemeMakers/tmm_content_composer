@@ -267,7 +267,7 @@ $counter           = 0;
 						   class="single-image plus-icon <?php echo $icon_class ?> <?php echo $video_icon ?>"
 						   title="<?php echo $t = ( ( TMM::get_option( 'hide_image_titles' ) ) == '0' ) ? $image['title'] : '' ?>"
 						   data-fancybox-group="masonry">
-							<img alt="" <?php if ( $folio_slide_up ) {
+							<img alt="<?php echo $image['title'] ?>" <?php if ( $folio_slide_up ) {
 								echo 'class="slideup"';
 							} ?>
 							     src="<?php echo TMM_Helper::resize_image( $th_url, $columns_img_sizes[ $col ] ) ?>">

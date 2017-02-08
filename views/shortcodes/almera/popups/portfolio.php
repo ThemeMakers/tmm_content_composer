@@ -23,6 +23,7 @@
 
 		<?php
 		$col_algorims_ids = array(
+			"random" => __('Algorithm random', 'tmm_shortcodes'),
 			1 => __('Algoritm 1', 'tmm_shortcodes'),
 			2 => __('Algoritm 2', 'tmm_shortcodes'),
 		);

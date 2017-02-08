@@ -90,7 +90,7 @@ $slide_up = $gallery_slide_up;
 
         <ul class="thumbnails-items clearfix">
             <?php foreach ($images as $img) : ?>
-                <li class="two columns <?php echo $effect_class; ?>"><a class="single-image" href="#"><img src="<?php echo TMM_Helper::resize_image($img['imgurl'], '130*130') ?>" alt="" /></a></li>
+                <li class="two columns <?php echo $effect_class; ?>"><a class="single-image" href="#"><img src="<?php echo TMM_Helper::resize_image($img['imgurl'], '130*130') ?>" alt="<?php echo $img['title'] ?>" /></a></li>
             <?php endforeach; ?>
         </ul><!--/ #thumbnails-->
 
@@ -98,7 +98,7 @@ $slide_up = $gallery_slide_up;
             <div class="sudo">
                 <ul>
                     <?php foreach ($images as $img) : ?>
-                        <li><img src="<?php echo $img['imgurl'] ?>" alt=""/></li>
+                        <li><img src="<?php echo $img['imgurl'] ?>" alt="<?php echo $img['title'] ?>"/></li>
                     <?php endforeach; ?>
                 </ul>
             </div><!--/ .sudo-->
@@ -123,7 +123,7 @@ $slide_up = $gallery_slide_up;
                             <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
                                title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
                                data-fancybox-group="<?php echo $title_array[$img['post_id']]['title'] ?>">
-                                <img alt="" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
+                                <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
                                      src="<?php echo TMM_Helper::resize_image($img['imgurl'], '270*200') ?>">
                             </a>
 
@@ -199,7 +199,7 @@ $slide_up = $gallery_slide_up;
                                 <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
                                    title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
                                    data-fancybox-group="gallery">
-                                    <img alt="" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
+                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
                                          src="<?php echo TMM_Helper::resize_image($img['imgurl'], '420*300') ?>">
                                 </a>
 
@@ -235,7 +235,7 @@ $slide_up = $gallery_slide_up;
                             <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
                                title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
                                data-fancybox-group="gallery">
-                                <img alt="" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
+                                <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
                                      src="<?php echo TMM_Helper::resize_image($img['imgurl'], '420*300') ?>">
                             </a>
 
@@ -359,7 +359,7 @@ $slide_up = $gallery_slide_up;
                             <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
                                title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
                                data-fancybox-group="gallery">
-                                <img alt="" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
+                                <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
                                      src="<?php echo TMM_Helper::resize_image($img['imgurl'], '420*300') ?>">
                             </a>
 
@@ -394,7 +394,7 @@ $slide_up = $gallery_slide_up;
                             <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
                                title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
                                data-fancybox-group="gallery">
-                                <img alt="" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
+                                <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
                                      src="<?php echo TMM_Helper::resize_image($img['imgurl'], '420*300') ?>">
                             </a>
 
