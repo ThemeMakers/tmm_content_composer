@@ -1,87 +1,5 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 
-<style type="text/css">
-
-	.simple-pricing-table .column {
-		margin-bottom: 50px;
-		background-color: #fff;
-		-webkit-box-shadow: 2px 2px 3px rgba(0,0,0,.08), -1px -1px 1px rgba(0,0,0,.01);
-				box-shadow: 2px 2px 3px rgba(0,0,0,.08), -1px -1px 1px rgba(0,0,0,.01);
-		-webkit-box-sizing: border-box;
-				box-sizing: border-box;
-	}
-
-	.simple-pricing-table .column { padding: 10px 10px 25px; }
-
-	#price_tables_list > li {
-		display: inline;
-		float: left;
-		margin-left: 1%;
-		margin-right: 1%;
-		width: 23%;
-	}
-
-		.simple-pricing-table .header {
-			padding: 10px 5px 15px;
-			text-align: center;
-		}
-
-		.simple-pricing-table .title { margin: 0; }
-
-			.simple-pricing-table .cost {
-				margin: 0;
-				font-weight: 600;
-			}
-
-			.simple-pricing-table .description {
-				font-weight: 600;
-				font-size: 12px;
-			}
-
-			.simple-pricing-table .description { color: #9e9e9e; }
-
-	.simple-pricing-table .features li {
-		position: relative;
-		border-bottom-width: 1px;
-		border-bottom-style: solid;
-		border-bottom-color: #dedede;
-		color: #6b6b6b;
-		text-shadow: 1px 1px 0 rgba(255,255,255,.5);
-	}
-
-	.simple-pricing-table .features li {
-		margin: 0;
-		padding: 5px 10px;
-	}
-
-	.simple-pricing-table .features li:first-child {
-		border-top-width: 1px;
-		border-top-style: solid;
-		border-top-color: #dedede;
-	}
-
-	.simple-pricing-table .features li:nth-child(odd) { background-color: #f2f2f2; }
-	.simple-pricing-table .featured .features li:nth-child(odd) { background-color: #fcfcfc; }
-
-	.simple-pricing-table .features li {
-		-webkit-box-shadow: inset 0 1px 0 0 #f9f9f9;
-		-moz-box-shadow: inset 0 1px 0 0 #f9f9f9;
-		box-shadow: inset 0 1px 0 0 #f9f9f9;
-	}
-
-		.simple-pricing-table .footer {
-			padding: 5px 10px 0;
-			text-align: center;
-		}
-
-		.simple-pricing-table .footer .label {
-			color: #8F9296;
-			font-style: italic;
-		}
-		.simple-pricing-table .footer .button { margin: 0; }
-
-</style>
-
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
 	<div class="one-half">
@@ -183,9 +101,8 @@
 							<h4 class="label"><?php _e('Button Text', TMM_CC_TEXTDOMAIN); ?></h4>
 							<input type="text" class="price_table_button_text price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['button_text'] ?>" />
 							<h4 class="label"><?php _e('Button Link', TMM_CC_TEXTDOMAIN); ?></h4>
-							<input type="text" class="price_table_button_link price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['button_link'] ?>" />
-							<!--<h4 class="label"><?php _e('Is Featured', TMM_CC_TEXTDOMAIN); ?></h4>-->
-							<br /><input type="checkbox" value="<?php echo $_REQUEST["shortcode_mode_edit"]['featured'] ?>" <?php echo($_REQUEST["shortcode_mode_edit"]['featured'] == 1 ? 'checked' : '') ?> class="featured_price_list data-check js_shortcode_checkbox_self_update" />
+							<input type="text" class="price_table_button_link price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['button_link'] ?>" /><br />
+							<input type="checkbox" value="<?php echo $_REQUEST["shortcode_mode_edit"]['featured'] ?>" <?php echo($_REQUEST["shortcode_mode_edit"]['featured'] == 1 ? 'checked' : '') ?> class="featured_price_list data-check js_shortcode_checkbox_self_update" />
 							<label class="label">
 								<span></span>
 								<i class="description"><?php _e('Is Featured', TMM_CC_TEXTDOMAIN); ?></i>

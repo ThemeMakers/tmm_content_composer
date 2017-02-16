@@ -1,18 +1,6 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed');
 
-$col_class = 'col-md-3';
-
-if ($count === '1') {
-	$col_class = 'col-md-12';
-} else if ($count === '2') {
-	$col_class = 'col-md-6';
-} else if ($count === '3') {
-	$col_class = 'col-md-4';
-} else if ($count === '4') {
-	$col_class = 'col-md-3';
-} else if ($count === '6') {
-	$col_class = 'col-md-2';
-}
+$col_class = '';
 
 if ($featured === '1') {
 	$col_class .= ' featured';
@@ -21,7 +9,7 @@ if ($featured === '1') {
 $currency = class_exists('TMM_Ext_Car_Dealer') && isset(TMM_Ext_Car_Dealer::$default_currency['symbol']) ? TMM_Ext_Car_Dealer::$default_currency['symbol'] : '$';
 ?>
 
-<div class="<?php echo $col_class; ?>">
+<div class="pricing-item<?php echo $col_class; ?>">
 
 	<header class="pricing-header">
 
@@ -36,7 +24,7 @@ $currency = class_exists('TMM_Ext_Car_Dealer') && isset(TMM_Ext_Car_Dealer::$def
 		
 	</header><!--/ .header -->
 
-	<div class="heading">
+	<div class="pricing">
 
 		<dl>
 			<span class="currency"><?php echo $currency ?></span>
@@ -69,7 +57,4 @@ $currency = class_exists('TMM_Ext_Car_Dealer') && isset(TMM_Ext_Car_Dealer::$def
 		<a href="<?php echo $button_link ?>" class="button big orange"><?php echo $button_text ?></a>
 	</footer><!--/.footer -->
 
-
 </div>
-
-
