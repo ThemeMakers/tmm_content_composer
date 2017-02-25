@@ -1,4 +1,5 @@
-<?php
+<?php if ( !defined('ABSPATH') ) exit;
+
 $products_per_page = (int) $products_per_page;
 
 if($type == 'top_rated_products'){

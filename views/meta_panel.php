@@ -1,7 +1,6 @@
 <?php if (!defined('ABSPATH')) exit;
 
-global $tmm_row_options;
-?>
+global $tmm_row_options; ?>
 
 <input type="hidden" name="tmm_meta_saving" value="1" />
 <a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php _e("Add New Section", TMM_CC_TEXTDOMAIN) ?></a>

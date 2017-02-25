@@ -1,5 +1,4 @@
-<?php
-if (!defined('ABSPATH')) die('No direct access allowed');
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
 
 $terms = TMM_Ext_PostType_Car::get_locations(0);
 $searching_page = get_permalink(TMM::get_option('searching_page', TMM_APP_CARDEALER_PREFIX));

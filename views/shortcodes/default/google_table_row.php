@@ -1,6 +1,5 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
 
-<?php
 $cols = explode('^', $content);
 $heads_types = explode('^', $heads_types);
 ?>

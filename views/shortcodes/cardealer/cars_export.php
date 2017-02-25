@@ -1,4 +1,4 @@
-<?php
+<?php if ( !defined('ABSPATH') ) exit;
 
 global $wpdb;
 $query = "SELECT make,model FROM VehicleModelYear";

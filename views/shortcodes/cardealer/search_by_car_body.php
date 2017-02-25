@@ -1,5 +1,4 @@
-<?php
-if (!defined('ABSPATH')) exit();
+<?php if (!defined('ABSPATH')) exit();
 
 $car_bodies = array();
 $car_body_list = TMM_Ext_PostType_Car::$car_options['body'];

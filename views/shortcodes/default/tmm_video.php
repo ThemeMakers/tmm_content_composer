@@ -1,5 +1,4 @@
-<?php
-if (!defined('ABSPATH')) exit();
+<?php if (!defined('ABSPATH')) exit();
 
 global $is_iphone;
 $is_mobiles = wp_is_mobile() || $is_iphone || stripos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false;

@@ -1,5 +1,5 @@
-<?php
-if (!defined('ABSPATH')) die('No direct access allowed');
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
+
 global $post;
 
 $first_row = current($tmm_layout_constructor_row);

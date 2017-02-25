@@ -1,5 +1,4 @@
-<?php
-if (!defined('ABSPATH')) exit();
+<?php if (!defined('ABSPATH')) exit();
 
 if (!empty($logos_list)) {
 	if (!is_array($logos_list)) {

@@ -1,5 +1,4 @@
-<?php
-if (!defined('ABSPATH')) exit;
+<?php if (!defined('ABSPATH')) exit;
 
 global $wpdb;
 $users = array();

@@ -1,3 +1,5 @@
+<?php if ( !defined('ABSPATH') ) exit; ?>
+
 <div class="single-product">
 
 <?php

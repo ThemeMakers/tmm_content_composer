@@ -1,3 +1,5 @@
+<?php if ( !defined('ABSPATH') ) exit; ?>
+
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
 	<div class="one-half">

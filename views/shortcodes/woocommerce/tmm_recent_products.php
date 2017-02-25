@@ -1,4 +1,5 @@
-<?php
+<?php if ( !defined('ABSPATH') ) exit;
+
 $products_per_page = (int) $products_per_page;
 $shortcode = '[recent_products per_page="'.$products_per_page.'" columns="'.$columns.'"]';
 
