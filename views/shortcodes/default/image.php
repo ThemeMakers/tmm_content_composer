@@ -74,7 +74,7 @@ if ( $fancybox && ("link" == $action) ) {
 }
 // Fancybox disabled
 elseif ( !$fancybox && ("link" == $action) ) {
-    $html.= '<a title="' . $img_caption . '" class="single-image ' . $link_class . '" href="' . $target_url . '" target="' . $target . '">';
+    $html.= '<a title="' . $img_caption . '" class="single-image ' . $link_class . '" href="' . $target_url . '" target="' . $target . '"><img alt="' . $image_alt . '" src="' . $src . '" />';
 }
 // Image-link disabled
 else {
