@@ -118,7 +118,7 @@
 
 		//***
 		tmm_ext_shortcodes.list_changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").life('click change keyup', function() {
+		jQuery('#tmm_shortcode_template').on('click change keyup', '.js_shortcode_template_changer', function() {
 			tmm_ext_shortcodes.list_changer(shortcode_name);
 		});
 

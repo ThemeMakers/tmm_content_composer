@@ -274,7 +274,7 @@
         
         tmm_ext_shortcodes.services_changer(shortcode_name);
         
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").life('keyup change', function() {
+		jQuery("#tmm_shortcode_template").on('keyup change', '.js_shortcode_template_changer', function() {
 			tmm_ext_shortcodes.services_changer(shortcode_name);           
 		});
 		
@@ -284,7 +284,7 @@
 			}
 		});
         
-		jQuery("#type_colorized").life('click',function() {
+		jQuery(document.body).on('click', '#type_colorized', function() {
 			jQuery(".list-item-color").slideDown(200);
             jQuery(".colorized_hover_title").slideDown(200);
             jQuery("h5.title_content").slideUp(200);
@@ -294,7 +294,7 @@
 			tmm_ext_shortcodes.services_changer(shortcode_name);
 		});
 
-		jQuery("#type_normal").life('click', function() {
+		jQuery(document.body).on('click', '#type_normal', function() {
 			jQuery(".list-item-color").slideUp(200);
             jQuery(".colorized_hover_title").slideUp(200);
             jQuery("h5.title_content").slideDown(200);
@@ -303,7 +303,7 @@
 			tmm_ext_shortcodes.services_changer(shortcode_name);
 		});
 
-		jQuery("#type_icon_top").life('click', function() {
+		jQuery(document.body).on('click', '#type_icon_top', function() {
 			jQuery(".list-item-color").slideUp(200);
             jQuery(".colorized_hover_title").slideUp(200);
             jQuery("h5.title_content").slideDown(200);
@@ -346,7 +346,7 @@
 			return false;
 		});
 
-		jQuery(".js_delete_list_item").life('click',function() {
+		jQuery(document.body).on('click', '.js_delete_list_item', function() {
 			if (jQuery(".list_item").length > 1) {
 				jQuery(this).parents('li').hide(function(){                                     
                                     jQuery(this).remove();
@@ -357,7 +357,7 @@
 			return false;
 		});
 
-		jQuery(".list_item_icon").life('change', function() {
+		jQuery(document.body).on('change', '.list_item_icon', function() {
 			jQuery(this).parents('li').find('i').removeAttr('class').addClass(jQuery(this).val());
 			tmm_ext_shortcodes.services_changer(shortcode_name);
 		});

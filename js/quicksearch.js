@@ -114,7 +114,7 @@ var THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH = function() {
 	var self = {
 		init: function() {
 			
-            jQuery('.qs_carlocation0').life('change', function() {
+            jQuery(document.body).on('change', '.qs_carlocation0', function() {
 				var value = jQuery(this).val(),
                     widget = jQuery(this).parents('.quicksearch-container'),
                     car_condition = widget.find('.qs_condition').val(),
@@ -134,7 +134,7 @@ var THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH = function() {
                 }
 			});
 
-			jQuery('.qs_carlocation1').life('change', function() {
+			jQuery(document.body).on('change', '.qs_carlocation1', function() {
 				var level = jQuery(this).data('level'),
                     value = jQuery(this).val(),
                     widget = jQuery(this).parents('.quicksearch-container'),
@@ -150,7 +150,7 @@ var THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH = function() {
                 }
 			});
             
-            jQuery('.qs_carlocation2').life('change', function() {
+            jQuery(document.body).on('change', '.qs_carlocation2', function() {
 				var widget = jQuery(this).parents('.quicksearch-container');
                     
                 self.load_producers(widget);
@@ -160,12 +160,12 @@ var THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH = function() {
                 jQuery('.qs_carlocation2').attr('disabled', false).parent().removeClass('active')
             }
             
-			jQuery('.qs_carproducer').life('change', function() {
+			jQuery(document.body).on('change', '.qs_carproducer', function() {
                 var widget = jQuery(this).parents('.quicksearch-container');
 				self.load_models(widget);
 			});
 
-			jQuery('.car_adv_search_btn').life('click', function() {
+			jQuery(document.body).on('click', '.car_adv_search_btn', function() {
 
 				var button = jQuery(this),
                     widget = jQuery(this).parents('.quicksearch-container');
