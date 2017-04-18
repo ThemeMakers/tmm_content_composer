@@ -1,0 +1,1121 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ThemeMakers Shortcodes Package\n"
+"POT-Creation-Date: 2015-07-03 22:46+0200\n"
+"PO-Revision-Date: 2017-03-22 11:07+0100\n"
+"Last-Translator: ThemeMakers Team <support@webtemplatemasters.com>\n"
+"Language-Team: ThemeMakers Team <support@webtemplatemasters.com>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: index.php\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: index.php:54
+msgid "Price table"
+msgstr "Tabella dei prezzi"
+
+#: index.php:55
+msgid "Google table row"
+msgstr "Fila della tabella di Google"
+
+#: index.php:97
+msgid "Loading ..."
+msgstr "Caricamento in corso..."
+
+#: index.php:121
+msgid "Shortcode updated"
+msgstr "Shortcode aggiornato"
+
+#: index.php:122
+msgid "Insert Shortcode"
+msgstr "Inserisci uno shortcode"
+
+#: index.php:123
+msgid "Edit shortcode"
+msgstr "Modifica uno shortcode"
+
+#: index.php:310
+msgid "Upload"
+msgstr "Carica"
+
+#: views/cardealer/car_locations.php:22 views/cardealer/car_locations.php:41
+#: views/cardealer/car_locations.php:56
+#, php-format
+msgid "View all posts filed under %s"
+msgstr "Visualizza tutti i post archiviati in %s"
+
+#: views/cardealer/car_makes.php:61
+#, php-format
+msgid "View all ads filed under %s"
+msgstr "Visualizza tutte le inserzioni archiviate in %s"
+
+#: views/cardealer/popups/car_locations.php:8
+msgid "Hierarchy level"
+msgstr "Livello di gerarchia"
+
+#: views/cardealer/popups/car_locations.php:12
+msgid "Countries"
+msgstr "Paesi"
+
+#: views/cardealer/popups/car_locations.php:13
+msgid "States"
+msgstr "Province"
+
+#: views/cardealer/popups/car_locations.php:14
+msgid "Cities"
+msgstr "Città"
+
+#: views/cardealer/popups/car_locations.php:17
+msgid "Show locations by level"
+msgstr "Mostra le località per livello"
+
+#: views/cardealer/popups/car_locations.php:23
+msgid "Hide empty locations"
+msgstr "Nascondi i campi località vuoti"
+
+#: views/cardealer/popups/car_locations.php:27
+msgid "Hide locations whithout related cars"
+msgstr "Nascondi le località senza auto correlate"
+
+#: views/cardealer/popups/car_makes.php:8
+msgid "Hide empty producers"
+msgstr "Nascondi i campi costruttori auto vuoti"
+
+#: views/cardealer/popups/car_makes.php:22
+msgid "Display car make logos along with their names"
+msgstr "Mostra i loghi dei costruttori di auto a fianco dei rispettivi nomi"
+
+#: views/cardealer/popups/car_makes.php:36
+msgid "Display only cars, that have their logo"
+msgstr "Mostra solo le auto che sono corredate del loro logo"
+
+#: views/cardealer/popups/dealers.php:9
+msgid "Dealers Number"
+msgstr "Numero dei rivenditori"
+
+#: views/cardealer/popups/dealers.php:24
+msgid "Display Order"
+msgstr "Ordine di visualizzazione"
+
+#: views/cardealer/popups/dealers.php:28
+msgid "Latest First"
+msgstr "Ultimi per primi"
+
+#: views/cardealer/popups/dealers.php:29
+msgid "Oldest First"
+msgstr "Più attempati per primi"
+
+#: views/cardealer/popups/dealers.php:30
+msgid "Random"
+msgstr "Casuale"
+
+#: views/cardealer/popups/dealers.php:44 views/cardealer/popups/dealers.php:71
+msgid "All"
+msgstr "Tutto"
+
+#: views/cardealer/popups/dealers.php:45
+msgid "Administrator"
+msgstr "Amministratore"
+
+#: views/cardealer/popups/dealers.php:54
+msgid "Dealer Type"
+msgstr "Tipo di rivenditore"
+
+#: views/cardealer/popups/dealers.php:88
+msgid "Specific Dealer"
+msgstr "Rivenditore specializzato"
+
+#: views/cardealer/popups/dealers.php:106
+msgid "Display Dealer Logo"
+msgstr "Mostra il logo del rivenditore"
+
+#: views/cardealer/popups/dealers.php:121
+msgid "Display Dealer Bio"
+msgstr "Mostra la biografia del rivenditore"
+
+#: views/cardealer/popups/dealers.php:136
+msgid "Display Phone"
+msgstr "Mostra il numero di telefono"
+
+#: views/cardealer/popups/dealers.php:151
+msgid "Display Cell Phone"
+msgstr "Mostra il numero di cellulare"
+
+#: views/cardealer/popups/dealers.php:166
+msgid "Display Fax"
+msgstr "Mostra il numero di fax"
+
+#: views/cardealer/popups/dealers.php:181
+msgid "Display Email"
+msgstr "Mostra l'indirizzo e-mail"
+
+#: views/cardealer/popups/dealers.php:196
+msgid "Display Skype ID"
+msgstr "Mostra l'ID Skype"
+
+#: views/cardealer/popups/dealers.php:211
+msgid "Display Website Url"
+msgstr "Mostra l'URL del sito"
+
+#: views/cardealer/popups/dealers.php:226
+msgid "Display Postal Address"
+msgstr "Mostra l'indirizzo postale"
+
+#: views/cardealer/popups/dealers.php:241
+msgid "Display Map Location"
+msgstr "Mostra la località su mappa"
+
+#: views/cardealer/popups/dealers.php:256
+msgid "Excerpt Bio symbol count"
+msgstr "Conteggio dei caratteri del riassunto della biografia"
+
+#: views/cardealer/popups/pricing_tables.php:92
+msgid "Table Count"
+msgstr "Tabella di conteggio"
+
+#: views/cardealer/popups/pricing_tables.php:115
+msgid "Row Count"
+msgstr "Riga di conteggio"
+
+#: views/cardealer/popups/pricing_tables.php:129
+msgid "Starter Package"
+msgstr "Pacchetto base"
+
+#: views/cardealer/popups/pricing_tables.php:129
+msgid "19.95"
+msgstr "19,95"
+
+#: views/cardealer/popups/pricing_tables.php:129
+msgid "Details"
+msgstr "Dettagli"
+
+#: views/cardealer/popups/pricing_tables.php:177
+msgid "Enter text here"
+msgstr "Inserisci qui il testo"
+
+#: views/cardealer/popups/pricing_tables.php:182
+msgid "Button Text"
+msgstr "Testo del bottone"
+
+#: views/cardealer/popups/pricing_tables.php:184
+msgid "Button Link"
+msgstr "Link del bottone"
+
+#: views/cardealer/popups/pricing_tables.php:186
+#: views/cardealer/popups/pricing_tables.php:190
+msgid "Is Featured"
+msgstr "È in vetrina"
+
+#: views/cardealer/popups/quicksearch.php:11
+msgid "Display country"
+msgstr "Mostra il paese"
+
+#: views/cardealer/popups/quicksearch.php:22
+msgid "Display state"
+msgstr "Mostra la provincia"
+
+#: views/cardealer/popups/quicksearch.php:33
+msgid "Display city"
+msgstr "Mostra la città"
+
+#: views/cardealer/popups/quicksearch.php:44
+msgid "Display condition"
+msgstr "Mostra le condizioni del veicolo"
+
+#: views/cardealer/popups/quicksearch.php:55
+msgid "Display producers &amp; models"
+msgstr "Mostra il costruttore &amp; modello"
+
+#: views/cardealer/popups/quicksearch.php:66
+msgid "Display price range"
+msgstr "Mostra la fascia di prezzo"
+
+#: views/cardealer/popups/quicksearch.php:77
+msgid "Display year range"
+msgstr "Mostra la fascia di età"
+
+#: views/cardealer/popups/quicksearch.php:88
+msgid "Search button position"
+msgstr "Posizione del bottone di ricerca"
+
+#: views/cardealer/popups/quicksearch.php:92
+msgid "First column"
+msgstr "Prima colonna"
+
+#: views/cardealer/popups/quicksearch.php:93
+msgid "Second column"
+msgstr "Seconda colonna"
+
+#: views/cardealer/popups/quicksearch.php:94
+msgid "Third column"
+msgstr "Terza colonna"
+
+#: views/cardealer/popups/quicksearch.php:117
+msgid "Select default country"
+msgstr "Seleziona il paese predefinito"
+
+#: views/cardealer/popups/quicksearch.php:146
+msgid "Select default state"
+msgstr "Seleziona la provincia predefinita"
+
+#: views/cardealer/popups/quicksearch.php:167
+msgid "Display mileage"
+msgstr "Mostra il chilometraggio"
+
+#: views/cardealer/popups/quicksearch.php:178
+msgid "Display fuel type"
+msgstr "Mostra il tipo di carburante"
+
+#: views/cardealer/popups/quicksearch.php:189
+msgid "Display gearbox"
+msgstr "Mostra il tipo di cambio"
+
+#: views/cardealer/popups/quicksearch.php:200
+msgid "Display body type"
+msgstr "Mostra il tipo di carrozzeria"
+
+#: views/cardealer/popups/quicksearch.php:211
+msgid "Display doors count"
+msgstr "Mostra il numero di porte"
+
+#: views/cardealer/popups/quicksearch.php:222
+msgid "Display colors"
+msgstr "Mostra i colori"
+
+#: views/cardealer/popups/quicksearch.php:233
+msgid "Display advanced search"
+msgstr "Mostra le opzioni avanzate di ricerca"
+
+#: views/cardealer/popups/recent_cars.php:9
+#: views/default/popups/accordion.php:45 views/default/popups/chart.php:32
+#: views/default/popups/tabs.php:26
+msgid "Title"
+msgstr "Titolo"
+
+#: views/cardealer/popups/recent_cars.php:20
+msgid "Show details button"
+msgstr "Mostra il bottone dettagli"
+
+#: views/cardealer/popups/recent_cars.php:31
+msgid "Show link to all cars"
+msgstr "Mostra il link a tutte le auto"
+
+#: views/cardealer/popups/recent_cars.php:42
+msgid "Enable Currency Converter"
+msgstr "Attiva il convertitore di valute"
+
+#: views/cardealer/popups/recent_cars.php:57
+msgid "Enter number of cars"
+msgstr "Inserisce il numero di auto"
+
+#: views/cardealer/popups/recent_cars.php:68
+msgid "Show layout switcher"
+msgstr "Mostra lo switcher per il layout"
+
+#: views/cardealer/popups/recent_cars.php:80
+msgid "View Mode"
+msgstr "Modalità di visualizzazione"
+
+#: views/cardealer/popups/recent_cars.php:84 views/cardealer/recent_cars.php:66
+msgid "Grid View"
+msgstr "Visualizzazione a griglia"
+
+#: views/cardealer/popups/recent_cars.php:85 views/cardealer/recent_cars.php:69
+msgid "List View"
+msgstr "Visualizzazione ad elenco"
+
+#: views/cardealer/popups/recent_cars.php:96
+msgid "Slide featured cars images on hover"
+msgstr "Fai scorrere le auto in vetrina all'evento \"hover\" del mouse"
+
+#: views/cardealer/popups/recent_cars.php:107
+msgid "Thumbnail size"
+msgstr "Dimensioni della miniatura"
+
+#: views/cardealer/popups/recent_cars.php:111
+msgid "Small"
+msgstr "Piccola"
+
+#: views/cardealer/popups/recent_cars.php:112
+msgid "Middle"
+msgstr "Media"
+
+#: views/cardealer/popups/recent_cars.php:113
+msgid "Large"
+msgstr "Grande"
+
+#: views/cardealer/popups/slider.php:9
+msgid "Choose slider"
+msgstr "Scegli slider"
+
+#: views/cardealer/popups/slider.php:12
+msgid "Car Posts"
+msgstr "Pubblica auto"
+
+#: views/cardealer/popups/slider.php:21
+msgid "Images count"
+msgstr "Totale delle immagini"
+
+#: views/cardealer/popups/slider.php:32
+msgid "Display sidebar (widgets defined in Cars Slider Sidebar)"
+msgstr ""
+"Mostra la barra laterale (i widget definiti nella Barra laterale dello "
+"slider delle auto)"
+
+#: views/cardealer/popups/slider.php:43
+msgid "Slider sidebar position"
+msgstr "Posizione della sidebar dello slider"
+
+#: views/cardealer/popups/slider.php:47 views/default/popups/image.php:93
+#: views/default/popups/title.php:103
+msgid "Right"
+msgstr "Destra"
+
+#: views/cardealer/popups/slider.php:48 views/default/popups/image.php:92
+#: views/default/popups/title.php:102
+msgid "Left"
+msgstr "Sinistra"
+
+#: views/cardealer/popups/slider.php:58
+msgid "Display caption"
+msgstr "Mostra didasclia"
+
+#: views/cardealer/popups/slider.php:73
+msgid "Animation type"
+msgstr "Tipo di animazione"
+
+#: views/cardealer/popups/slider.php:77
+msgid "Fade"
+msgstr "Dissolvenza"
+
+#: views/cardealer/popups/slider.php:78
+msgid "Slide"
+msgstr "Scorrimento"
+
+#: views/cardealer/popups/slider.php:88
+msgid "Enable animation loop"
+msgstr "Attiva animazione in loop"
+
+#: views/cardealer/popups/slider.php:99
+msgid "Enable slideshow"
+msgstr "Attiva lo slideshow"
+
+#: views/cardealer/popups/slider.php:110
+msgid "Reverse the animation direction"
+msgstr "Inverti il senso dell'animazione"
+
+#: views/cardealer/popups/slider.php:121
+msgid "Randomize slide order"
+msgstr "Rendi casuale l'ordine delle slide"
+
+#: views/cardealer/popups/slider.php:132
+msgid "Slideshow speed"
+msgstr "Velocità dello slideshow"
+
+#: views/cardealer/popups/slider.php:136
+msgid "Set the speed of the slideshow cycling, in milliseconds"
+msgstr "Imposta la velocità del ciclo dello slideshow (in millisecondi)"
+
+#: views/cardealer/popups/slider.php:143
+msgid "Animation speed"
+msgstr "Velocità dell'animazione"
+
+#: views/cardealer/popups/slider.php:147
+msgid "Set the speed of animations, in milliseconds"
+msgstr "Imposta la velocità dell'animazione (in millisecondi)"
+
+#: views/cardealer/popups/slider.php:154
+msgid "Init delay"
+msgstr "Ritardo nella riproduzione"
+
+#: views/cardealer/popups/slider.php:158
+msgid "Set an initialization delay, in milliseconds"
+msgstr "Imposta un ritardo nella riproduzione (in millisecondi)"
+
+#: views/cardealer/popups/staff.php:25
+msgid "Staff"
+msgstr "Staff"
+
+#: views/cardealer/popups/staff.php:26 views/cardealer/popups/staff.php:58
+msgid "Add staff item"
+msgstr "Aggiungi elemento staff"
+
+#: views/cardealer/popups/staff.php:48 views/default/popups/accordion.php:46
+#: views/default/popups/list.php:88 views/default/popups/tabs.php:27
+msgid "Remove"
+msgstr "Rimuovi"
+
+#: views/cardealer/quicksearch.php:117 views/cardealer/quicksearch.php:153
+#: views/cardealer/quicksearch.php:171 views/cardealer/quicksearch.php:193
+#: views/cardealer/quicksearch.php:211 views/cardealer/quicksearch.php:233
+#: views/cardealer/quicksearch.php:305 views/cardealer/quicksearch.php:322
+#: views/cardealer/quicksearch.php:382 views/cardealer/quicksearch.php:399
+#: views/cardealer/quicksearch.php:418 views/cardealer/quicksearch.php:434
+#: views/cardealer/quicksearch.php:457 views/cardealer/quicksearch.php:470
+#: views/cardealer/quicksearch.php:545
+msgid "Any"
+msgstr "Qualunque"
+
+#: views/cardealer/quicksearch.php:191
+msgid "Condition"
+msgstr "Condizione"
+
+#: views/cardealer/quicksearch.php:194
+msgid "Only new cars"
+msgstr "Solo auto nuove"
+
+#: views/cardealer/quicksearch.php:195
+msgid "Only damaged cars"
+msgstr "Solo auto incidentate"
+
+#: views/cardealer/quicksearch.php:196
+msgid "Only used cars"
+msgstr "Solo auto di occasione"
+
+#: views/cardealer/quicksearch.php:209
+msgid "Make"
+msgstr "Costruttore"
+
+#: views/cardealer/quicksearch.php:231
+msgid "Model"
+msgstr "Modello"
+
+#: views/cardealer/quicksearch.php:260 views/cardealer/quicksearch.php:359
+#: views/cardealer/quicksearch.php:485 views/cardealer/quicksearch.php:561
+msgid "Search"
+msgstr "Ricerca"
+
+#: views/cardealer/quicksearch.php:266 views/cardealer/quicksearch.php:365
+#: views/cardealer/quicksearch.php:491
+msgid "Advanced"
+msgstr "Avanzate"
+
+#: views/cardealer/quicksearch.php:282 views/cardealer/quicksearch.php:288
+msgid "Price"
+msgstr "Prezzo"
+
+#: views/cardealer/quicksearch.php:282
+msgid "min"
+msgstr "minimo"
+
+#: views/cardealer/quicksearch.php:288
+msgid "max"
+msgstr "massimo"
+
+#: views/cardealer/quicksearch.php:302 views/cardealer/quicksearch.php:319
+msgid "Year"
+msgstr "Anno"
+
+#: views/cardealer/quicksearch.php:302 views/cardealer/quicksearch.php:344
+msgid "from"
+msgstr "da"
+
+#: views/cardealer/quicksearch.php:319 views/cardealer/quicksearch.php:350
+msgid "to"
+msgstr "a"
+
+#: views/cardealer/quicksearch.php:344 views/cardealer/quicksearch.php:350
+msgid "Mileage"
+msgstr "Chilometraggio"
+
+#: views/cardealer/quicksearch.php:379
+msgid "Fuel Type"
+msgstr "Tipo di carburante"
+
+#: views/cardealer/quicksearch.php:396
+msgid "Gearbox"
+msgstr "Cambio"
+
+#: views/cardealer/quicksearch.php:415
+msgid "Body Type"
+msgstr "Tipo di carrozzeria"
+
+#: views/cardealer/quicksearch.php:432
+msgid "Door Count"
+msgstr "Numero di porte"
+
+#: views/cardealer/quicksearch.php:455
+msgid "Interior Color"
+msgstr "Colore interni"
+
+#: views/cardealer/quicksearch.php:468
+msgid "Exterior Color"
+msgstr "Colore esterno"
+
+#: views/cardealer/recent_cars.php:99
+msgid "Show all cars"
+msgstr "Mostra tutte le auto"
+
+#: views/cardealer/staff.php:60 views/cardealer/staff.php:61
+msgid "Facebook"
+msgstr "Facebook"
+
+#: views/cardealer/staff.php:65 views/cardealer/staff.php:66
+msgid "Twitter"
+msgstr "Twitter"
+
+#: views/cardealer/staff.php:70 views/cardealer/staff.php:71
+msgid "Google+"
+msgstr "Google+"
+
+#: views/cardealer/staff.php:80
+msgid "Office"
+msgstr "Numero aziendale"
+
+#: views/cardealer/staff.php:97
+msgid "Mobile"
+msgstr "Numero di cellulare"
+
+#: views/cardealer/staff.php:114
+msgid "Fax"
+msgstr "Numero di fax"
+
+#: views/cardealer/staff.php:130 views/default/contact_details.php:15
+msgid "Email"
+msgstr "Indirizzo E-mail"
+
+#: views/default/contact_details.php:4
+msgid "Address Info"
+msgstr "Dettagli dell'indirizzo"
+
+#: views/default/contact_details.php:7
+msgid "Phone"
+msgstr "Telefono"
+
+#: views/default/contact_details.php:11
+msgid "FAX"
+msgstr "Fax"
+
+#: views/default/contact_form.php:101
+msgid "Are you human?"
+msgstr "Sei un essere umano?"
+
+#: views/default/popups/accordion.php:9 views/default/popups/tmm_video.php:8
+msgid "Type"
+msgstr "Tipo"
+
+#: views/default/popups/accordion.php:13
+msgid "Accordion"
+msgstr "Fisarmonica"
+
+#: views/default/popups/accordion.php:14
+msgid "Toggle"
+msgstr "Aziona"
+
+#: views/default/popups/accordion.php:28 views/default/popups/accordion.php:59
+#: views/default/popups/tabs.php:8 views/default/popups/tabs.php:40
+msgid "Add item"
+msgstr "Aggiungi elemento"
+
+#: views/default/popups/accordion.php:51 views/default/popups/tabs.php:32
+msgid "Content"
+msgstr "Contenuto"
+
+#: views/default/popups/alert.php:10
+msgid "Enter Text"
+msgstr "Inserisci il testo"
+
+#: views/default/popups/alert.php:22 views/default/popups/divider.php:8
+msgid "Select Type"
+msgstr "Seleziona la tipologia"
+
+#: views/default/popups/alert.php:26
+msgid "Error"
+msgstr "Errore"
+
+#: views/default/popups/alert.php:27
+msgid "Success"
+msgstr "Operazione completata con successo"
+
+#: views/default/popups/alert.php:28
+msgid "Info"
+msgstr "Informazioni"
+
+#: views/default/popups/alert.php:29
+msgid "Notice"
+msgstr "Attenzione"
+
+#: views/default/popups/blockquote.php:9
+msgid "Enter text"
+msgstr "Inserisci il testo"
+
+#: views/default/popups/button.php:8
+msgid "Buttons Text"
+msgstr "Testo dei bottoni"
+
+#: views/default/popups/button.php:21
+msgid "URL"
+msgstr "URL"
+
+#: views/default/popups/button.php:25
+msgid "http://forums.webtemplatemasters.com/"
+msgstr "http://forums.webtemplatemasters.com/"
+
+#: views/default/popups/button.php:35 views/default/popups/title.php:152
+msgid "Color"
+msgstr "Colore"
+
+#: views/default/popups/chart.php:9
+msgid "Chart Type"
+msgstr "Tipo di grafico"
+
+#: views/default/popups/chart.php:13
+msgid "Pie Chart"
+msgstr "Grafico a torta"
+
+#: views/default/popups/chart.php:14
+msgid "Bar Chart"
+msgstr "Grafico a barre"
+
+#: views/default/popups/chart.php:15
+msgid "Column Chart"
+msgstr "Diagramma"
+
+#: views/default/popups/chart.php:16
+msgid "Geochart"
+msgstr "Grafico a mappa"
+
+#: views/default/popups/chart.php:17
+msgid "Line Chart"
+msgstr "Grafico lineare"
+
+#: views/default/popups/chart.php:18
+msgid "Area Chart"
+msgstr "Grafico ad area"
+
+#: views/default/popups/chart.php:19
+msgid "Combo Chart"
+msgstr "Grafico combinato"
+
+#: views/default/popups/chart.php:46
+msgid "Chart Width"
+msgstr "Larghezza del grafico"
+
+#: views/default/popups/chart.php:60
+msgid "Chart Height"
+msgstr "Altezza del grafico"
+
+#: views/default/popups/chart.php:74 views/default/popups/title.php:138
+msgid "Font Family"
+msgstr "Famiglia dei fonti"
+
+#: views/default/popups/chart.php:96 views/default/popups/title.php:48
+msgid "Font Size"
+msgstr "Dimensioni del font"
+
+#: views/default/popups/chart.php:111
+msgid "Chart Titles"
+msgstr "Titoli del grafico"
+
+#: views/default/popups/chart.php:115 views/default/popups/chart.php:132
+msgid "Example"
+msgstr "Esempio"
+
+#: views/default/popups/chart.php:128
+msgid "Chart Data"
+msgstr "Dati del grafico"
+
+#: views/default/popups/chart.php:146
+msgid "Background Color"
+msgstr "Colore dello sfondo"
+
+#: views/default/popups/contact_details.php:9
+msgid "Enter Address"
+msgstr "Inserisci indirizzo"
+
+#: views/default/popups/contact_details.php:20
+msgid "Enter Phone"
+msgstr "Inserisci telefono"
+
+#: views/default/popups/contact_details.php:31
+msgid "Enter Fax"
+msgstr "Inserisci fax"
+
+#: views/default/popups/contact_details.php:42
+msgid "Enter Email"
+msgstr "Inserisci e-mail"
+
+#: views/default/popups/contact_form.php:11
+msgid "Choose Contact Form"
+msgstr "Seleziona il modulo di contatto"
+
+#: views/default/popups/divider.php:12
+msgid "Solid"
+msgstr "Stile solid"
+
+#: views/default/popups/divider.php:13
+msgid "Empty Space"
+msgstr "Spazio vuoto"
+
+#: views/default/popups/google_map.php:9 views/default/popups/tmm_video.php:54
+msgid "Height"
+msgstr "Altezza"
+
+#: views/default/popups/google_map.php:24 views/default/popups/tmm_video.php:40
+msgid "Width"
+msgstr "Larghezza"
+
+#: views/default/popups/google_map.php:38
+msgid "Mode"
+msgstr "Modalità"
+
+#: views/default/popups/google_map.php:42
+msgid "Map"
+msgstr "Mappa"
+
+#: views/default/popups/google_map.php:43
+msgid "Image"
+msgstr "Immagine"
+
+#: views/default/popups/google_map.php:56
+msgid "Location mode"
+msgstr "Modalità località"
+
+#: views/default/popups/google_map.php:60
+#: views/default/popups/google_map.php:105
+msgid "Address"
+msgstr "Indirizzo"
+
+#: views/default/popups/google_map.php:61
+msgid "Coordinates"
+msgstr "Coordinate"
+
+#: views/default/popups/google_map.php:75
+msgid "Marker Latitude"
+msgstr "Latitudine dell'evidenziatore"
+
+#: views/default/popups/google_map.php:79
+#: views/default/popups/google_map.php:95
+msgid ""
+"Point on which the viewport will be centered. If not given and no markers "
+"are defined the viewport defaults to world view. In address Location mode it "
+"is calculated automatically!"
+msgstr ""
+"Il punto attorno al quale sarà focalizzata la visualizzazione. Se lo stesso "
+"non fosse definito e non fossero presenti degli evidenziatori, la "
+"visualizzazione predefinita sarà sul mondo. Con la modalità indirizzo, lo "
+"stesso punto è calcolato automaticamente!"
+
+#: views/default/popups/google_map.php:91
+msgid "Marker Longitude"
+msgstr "Longitudine dell'evidenziatore"
+
+#: views/default/popups/google_map.php:126
+msgid "Zoom"
+msgstr "Zoom"
+
+#: views/default/popups/google_map.php:131
+msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
+msgstr ""
+"Valore dello zoom tra 1 e 19, dove 19 è il valore più elevato e 1 il più "
+"piccolo."
+
+#: views/default/popups/google_map.php:141
+msgid "Enable Scrollwheel"
+msgstr "Attiva la rotellina di scorrimento"
+
+#: views/default/popups/google_map.php:145
+msgid "Set to false to disable zooming with your mouses scrollwheel."
+msgstr ""
+"Imposta su falso per disabilitare lo zoom con la rotellina di scorrimento "
+"del mouse."
+
+#: views/default/popups/google_map.php:154
+msgid "Maptype"
+msgstr "Tipo di mappa"
+
+#: views/default/popups/google_map.php:158
+msgid "ROADMAP"
+msgstr "Cartina stradale"
+
+#: views/default/popups/google_map.php:159
+msgid "SATELLITE"
+msgstr "Satellite"
+
+#: views/default/popups/google_map.php:160
+msgid "HYBRID"
+msgstr "Ibrido"
+
+#: views/default/popups/google_map.php:161
+msgid "TERRAIN"
+msgstr "Terrestre"
+
+#: views/default/popups/google_map.php:175
+msgid "Enable Marker"
+msgstr "Attiva l'evidenziatore"
+
+#: views/default/popups/google_map.php:179
+msgid "Set to false to disable display a marker in the viewport."
+msgstr ""
+"Imposta su falso per disabilitare la visualizzazione di un evidenziatore."
+
+#: views/default/popups/google_map.php:188
+msgid "Enable Popup"
+msgstr "Attiva popup"
+
+#: views/default/popups/google_map.php:192
+msgid ""
+"If true the info window for this marker will be shown when the map finished "
+"loading. If html is empty this option will be ignored."
+msgstr ""
+"Se il valore è impostato su vero, la finestra con le informazioni per "
+"l'evidenziatore sarà mostrata al termine del caricamento della cartina. Se "
+"l'html è vuoto, questa opzione sarà ignorata."
+
+#: views/default/popups/google_map.php:202
+msgid "Marker is draggable"
+msgstr "L'evidenziatore è trascinabile"
+
+#: views/default/popups/google_map.php:206
+msgid "Set marker draggable"
+msgstr "Imposta un evidenziatore trascinabile"
+
+#: views/default/popups/google_map.php:215
+msgid "Html Content"
+msgstr "Contenuto HTML"
+
+#: views/default/popups/google_table.php:14
+msgid "Rows count"
+msgstr "Totale delle righe"
+
+#: views/default/popups/google_table.php:29
+msgid "Columns count"
+msgstr "Totale delle colonne"
+
+#: views/default/popups/google_table.php:46
+msgid "Show Row Number"
+msgstr "Mostra il numero della riga"
+
+#: views/default/popups/google_table.php:52
+msgid "Yes"
+msgstr "Sì"
+
+#: views/default/popups/google_table.php:58
+msgid "No"
+msgstr "No"
+
+#: views/default/popups/google_table.php:75
+msgid "string"
+msgstr "stringa"
+
+#: views/default/popups/google_table.php:76
+msgid "number"
+msgstr "numero"
+
+#: views/default/popups/google_table.php:92
+msgid "Table headers"
+msgstr "Intestazioni della tabella"
+
+#: views/default/popups/google_table.php:124
+msgid "Table data"
+msgstr "Dati della tabella"
+
+#: views/default/popups/image.php:8
+msgid "Image URL"
+msgstr "URL dell'immagine"
+
+#: views/default/popups/image.php:26
+msgid "Action"
+msgstr "Azione"
+
+#: views/default/popups/image.php:30
+msgid "No link on image"
+msgstr "Nessun link nell'immagine"
+
+#: views/default/popups/image.php:31
+msgid "Open link"
+msgstr "Apri il link"
+
+#: views/default/popups/image.php:42
+msgid "Image Action Link"
+msgstr "Link dell'azione immagine"
+
+#: views/default/popups/image.php:55
+msgid "Link Target"
+msgstr "Link obiettivo"
+
+#: views/default/popups/image.php:59
+msgid "Self"
+msgstr "Self"
+
+#: views/default/popups/image.php:60
+msgid "Blank"
+msgstr "Blank"
+
+#: views/default/popups/image.php:70
+msgid "Open in Fancybox"
+msgstr "Apri in Fancybox"
+
+#: views/default/popups/image.php:87 views/default/popups/title.php:98
+msgid "Align"
+msgstr "Allinea"
+
+#: views/default/popups/image.php:91
+msgid "None"
+msgstr "Nessuno"
+
+#: views/default/popups/image.php:94 views/default/popups/title.php:104
+msgid "Center"
+msgstr "Centro"
+
+#: views/default/popups/image.php:108
+msgid "Size"
+msgstr "Dimensioni"
+
+#: views/default/popups/image.php:123
+msgid "Image Alt"
+msgstr "Alt immagine"
+
+#: views/default/popups/image.php:137
+msgid "Link Title"
+msgstr "Titolo del link"
+
+#: views/default/popups/image.php:151
+msgid "Top Indent (px)"
+msgstr "Indent superiore (px)"
+
+#: views/default/popups/image.php:165
+msgid "Right Indent (px)"
+msgstr "Indent destra (px)"
+
+#: views/default/popups/image.php:179 views/default/popups/title.php:166
+msgid "Bottom Indent (px)"
+msgstr "Indent inferiore (px)"
+
+#: views/default/popups/image.php:193
+msgid "Left Indent (px)"
+msgstr "Indent sinistra (px)"
+
+#: views/default/popups/list.php:8
+msgid "Type 1"
+msgstr "Tipo 1"
+
+#: views/default/popups/list.php:9
+msgid "Type 2"
+msgstr "Tipo 2"
+
+#: views/default/popups/list.php:10
+msgid "Type 3"
+msgstr "Tipo 3"
+
+#: views/default/popups/list.php:37
+msgid "List Type"
+msgstr "Tipo di elenco"
+
+#: views/default/popups/list.php:43
+msgid "Unordered"
+msgstr "Non ordinato"
+
+#: views/default/popups/list.php:49
+msgid "Ordered"
+msgstr "Ordinato"
+
+#: views/default/popups/list.php:61
+msgid "List Styles"
+msgstr "Stili dell'elenco"
+
+#: views/default/popups/list.php:62 views/default/popups/list.php:98
+msgid "Add list item"
+msgstr "Aggiungi elemento all'elenco"
+
+#: views/default/popups/tabs.php:6
+msgid "Items"
+msgstr "Elementi"
+
+#: views/default/popups/title.php:8
+msgid "Title Text"
+msgstr "Titolo del testo"
+
+#: views/default/popups/title.php:22
+msgid "Title Heading"
+msgstr "Titolo dell'intestazione"
+
+#: views/default/popups/title.php:41 views/default/popups/title.php:80
+msgid "Default"
+msgstr "Predefinito"
+
+#: views/default/popups/title.php:63
+msgid "Letter spacing (px)"
+msgstr "Spaziatura caratteri (px)"
+
+#: views/default/popups/title.php:76
+msgid "Font weight"
+msgstr "Formattazione testo"
+
+#: views/default/popups/title.php:81
+msgid "Normal"
+msgstr "Normale"
+
+#: views/default/popups/title.php:86
+msgid "Bold"
+msgstr "Grassetto"
+
+#: views/default/popups/title.php:114
+msgid "Show border under the title"
+msgstr "Mostra i bordi sotto il titolo"
+
+#: views/default/popups/tmm_audio.php:8
+msgid "Link to Audio"
+msgstr "Link all'audio"
+
+#: views/default/popups/tmm_audio.php:23
+msgid "Audio format"
+msgstr "Formato audio"
+
+#: views/default/popups/tmm_audio.php:27
+msgid "Other"
+msgstr "Altro"
+
+#: views/default/popups/tmm_audio.php:28
+msgid "Wav"
+msgstr "Wav"
+
+#: views/default/popups/tmm_audio.php:29
+msgid "Ogg"
+msgstr "ogg"
+
+#: views/default/popups/tmm_video.php:26
+msgid "Youtube or Vimeo link"
+msgstr "Link a YouTube o Vimeo"
+
+#: views/default/popups/tmm_video.php:30
+msgid ""
+"Examples:https://www.youtube.com/watch?v=_EBYf3lYSEg or http://vimeo."
+"com/22439234"
+msgstr ""
+"Esempi:https://www.youtube.com/watch?v=_EBYf3lYSEg o http://vimeo."
+"com/22439234"
+
+#: views/default/tmm_video.php:27
+msgid "Unsupported video format"
+msgstr "Formato video non supportato"
+
+#. Plugin Name of the plugin/theme
+msgid "ThemeMakers Shortcodes Package"
+msgstr "ThemeMakers Shortcodes Package"
+
+#. Plugin URI of the plugin/theme
+msgid "http://webtemplatemasters.com"
+msgstr "http://webtemplatemasters.com"
+
+#. Description of the plugin/theme
+msgid "Universal Shortcodes Package (CarDealer)"
+msgstr "Universal Shortcodes Package (CarDealer)"
+
+#. Author of the plugin/theme
+msgid "ThemeMakers"
+msgstr "ThemeMakers"
+
+#. Author URI of the plugin/theme
+msgid "http://themeforest.net/user/ThemeMakers"
+msgstr "http://themeforest.net/user/ThemeMakers"
