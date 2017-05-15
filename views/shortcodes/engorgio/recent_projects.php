@@ -8,14 +8,21 @@ $args = array('numberposts' => $count, 'post_type' => TMM_Portfolio::$slug, 'sup
 $posts = get_posts($args);
 ?>
 <div class="portfolio-items popup-gallery recent_folio col-<?php echo $template ?>">
-    
-    <?php foreach ($posts as $post){ ?>  
+
+    <?php foreach ($posts as $post){
+	    $imgID  = get_post_thumbnail_id($post->ID);
+	    $alt_text = get_post_meta($imgID, '_wp_attachment_image_alt', true);
+	    if(empty($alt_text)) {
+		    $attachment = get_post($post->ID);
+		    $alt_text = trim(strip_tags( $attachment->post_title ));
+	    }
+	    ?>
     
     <article class="slideUp2x">
 
         <div class="work-item">
 
-            <img src="<?php echo esc_url(TMM_Content_Composer::get_post_featured_image($post->ID, '510*375')); ?>" alt="" />
+            <img src="<?php echo esc_url(TMM_Content_Composer::get_post_featured_image($post->ID, '510*375')); ?>" alt="<?php echo esc_attr($alt_text); ?>" />
             <div class="item-overlay">
                 <div class="extra-content">
                     <h2 class="extra-title"><?php echo esc_html($post->post_title); ?></h2>
