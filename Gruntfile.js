@@ -47,11 +47,24 @@ module.exports = function(grunt) {
 					jQuery: true
 				}
 			}
+		},
+		// cssminify tool https://github.com/gruntjs/grunt-contrib-cssmin
+		cssmin: {
+			options: {
+				shorthandCompacting: false,
+				roundingPrecision: -1
+			},
+			target: {
+				files: [{
+					'css/front.min.css': ['css/mediaelement/mediaelementplayer.css', 'css/front.css']
+				}]
+			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
 	grunt.registerTask('default', ['watch']);
 

@@ -1,0 +1,23 @@
+{
+  "name": "content-composer-engorgio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt-contrib-cssmin": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThemeMakers/tmm_content_composer.git"
+  },
+  "author": "ThemeMakers",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/ThemeMakers/tmm_content_composer/issues"
+  },
+  "homepage": "https://github.com/ThemeMakers/tmm_content_composer#readme"
+}
