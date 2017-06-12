@@ -9,17 +9,19 @@ if (!empty($logos_list)) {
 }
 
 $args = array(
+	'taxonomy'          => 'carproducer',
 	'orderby'           => 'name',
 	'order'             => 'ASC',
-	'include'             => $logos_list,
+	'include'           => $logos_list,
 	'hide_empty'        => $hide_empty,
 	'fields'            => 'all',
 	'parent'            => 0,
 	'hierarchical'      => 1,
 	'pad_counts'        => 1,
+	'suppress_filters'  => false,
 );
 
-$makes = get_terms('carproducer', $args);
+$makes = get_terms($args);
 
 if (!isset($show_name)) {
 	$show_name = 1;
