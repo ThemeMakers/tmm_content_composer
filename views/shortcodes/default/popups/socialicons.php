@@ -26,6 +26,7 @@
 			'stumbleupon' => 'Stubleupon',
             'deviantart' => 'Deviantart',
             'github' => 'Github',          
+            'vkontakte' => 'Vkontakte',
 			'mail' => 'Email'
                     );
 		

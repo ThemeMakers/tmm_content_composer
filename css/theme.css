@@ -614,6 +614,9 @@ ul.social-icons {
 		ul.social-icons .github a:after			{ content: '\e96b'; }
 		ul.social-icons .github a:before		{ content: '\e96b'; }
 
+		ul.social-icons .vkontakte a:after		{ content: '\e981'; }
+		ul.social-icons .vkontakte a:before		{ content: '\e981'; }
+
 		ul.social-icons .mail a:after			{ content: '\ebdc'; }
 		ul.social-icons .mail a:before			{ content: '\ebdc'; }
 
@@ -641,6 +644,7 @@ ul.social-icons {
 		ul.social-icons .stumbleupon a:after { background-color: #eb4924; }
 		ul.social-icons .deviantart a:after  { background-color: #5f7162; }
 		ul.social-icons .github a:after		 { background-color: #7292a2; }
+		ul.social-icons .vkontakte a:after	 { background-color: #507299; }
 		ul.social-icons .mail a:after		 { background-color: #65a413; }
 		ul.social-icons .love a:after		 { background-color: #f85c37; }
 
