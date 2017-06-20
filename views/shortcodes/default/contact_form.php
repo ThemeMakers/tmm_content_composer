@@ -101,9 +101,9 @@ if (!empty($contact_form['inputs'])) {
 			<p class="input-block">
 				<label><?php _e('Are you human?', TMM_CC_TEXTDOMAIN); ?></label>
 				<?php $hash = md5(time()); ?>
-				<img class="contact_form_capcha" src="<?php echo get_template_directory_uri(); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="29" width="72" alt="" />
+				<img class="contact_form_capcha" src="<?php echo esc_js(get_template_directory_uri()); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="29" width="72" alt="CAPTCHA image" />
 				<input type="text" value="" name="verify" class="verify" />
-				<input type="hidden" name="verify_code" value="<?php echo $hash ?>" />
+				<input type="hidden" name="verify_code" value="<?php echo esc_attr($hash) ?>" />
 			</p><!--/ .row-->
 
 		<?php endif; ?>

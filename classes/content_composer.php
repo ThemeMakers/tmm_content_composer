@@ -141,7 +141,7 @@ class TMM_Content_Composer {
 
 
 		$tmm_lang = array(
-			'captcha_image_url' => get_template_directory_uri() . '/helper/capcha/image.php/',
+			'captcha_image_url' => get_template_directory_uri() . '/helper/capcha/image.php',
 			'wrong_field_value' => __('Please enter correct', TMM_CC_TEXTDOMAIN),
 			'success' => __('Your message has been sent successfully!', TMM_CC_TEXTDOMAIN),
 			'fail' => __('Server failed. Send later', TMM_CC_TEXTDOMAIN),
