@@ -43,7 +43,7 @@
 			'shortcode_field' => 'show_recent_cars_currency_converter',
 			'id' => 'show_recent_cars_currency_converter',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_recent_cars_currency_converter', 1),
-			'description' => 'Show currency converter'
+			'description' => __('Show currency converter', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
@@ -58,7 +58,7 @@
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', 9),
-			'description' => '',
+			'description' => ''
 		));
 		?>
 		
