@@ -17,9 +17,9 @@ if (TMM::get_option("api_key_google")){
 	if (isset($location_mode)) {
 		if ($location_mode == 'address') {
 			$address = str_replace(' ', '+', $address);
-			$geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address);
+			$geocode = file_get_contents('//maps.googleapis.com/maps/api/geocode/json?address=' . $address);
 			$output = json_decode($geocode);
-			if ($output->status != 'OVER_QUERY_LIMIT') {
+			if ($output->status == 'OK') {
 				$latitude = $output->results[0]->geometry->location->lat;
 				$longitude = $output->results[0]->geometry->location->lng;
 			} else {
@@ -60,7 +60,7 @@ if (TMM::get_option("api_key_google")){
 		<script type="text/javascript">
 		jQuery(window).on('load', function(){
 			jQuery('.google_image_<?php echo $inique_id ?>')
-				.html('<img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo (int) $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo (int)$width ?>x<?php echo (int)$height ?><?php echo $marker_string ?>&key=<?php echo TMM::get_option("api_key_google")?>">');
+				.html('<img src="//maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo (int) $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo (int)$width ?>x<?php echo (int)$height ?><?php echo $marker_string ?>">');
 		});
 		</script>
 		<div class="google_image_<?php echo $inique_id ?>"></div>
