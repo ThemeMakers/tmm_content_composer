@@ -74,8 +74,6 @@ class TMM_Content_Composer {
 			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_admin.css');
 			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/shortcodes_admin.js', array('jquery'), false, true);
 
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
-
 			?>
 			<script type="text/javascript">
 				var tmm_cc_plugin_url = "<?php echo TMM_CC_URL; ?>";
