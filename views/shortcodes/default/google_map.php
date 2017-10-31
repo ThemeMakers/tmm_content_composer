@@ -70,7 +70,7 @@ if (TMM::get_option("api_key_google")){
 } else {
 	$full_width = ($width == '' || $width == '100%') ? '1130' : $width;
 	$custom_height = ($height == '') ? '400' : $height;
-	$link_url = 'http://placeholdit.imgix.net/~text?txtsize=40&txt=Please+Enter+a+Valid+Google+API+key&w='. $full_width . '&h=' . $custom_height;
+	$link_url = '//placeholdit.imgix.net/~text?txtsize=40&txt=Please+Enter+a+Valid+Google+API+key&w='. $full_width . '&h=' . $custom_height;
 	echo '<img class="aligncenter" src=' . $link_url . '>';
 }
 
