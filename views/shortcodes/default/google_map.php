@@ -6,7 +6,6 @@ if (TMM::get_option("api_key_google")){
 
 	$google_maps_api_key = (TMM::get_option("api_key_google")) ? 'key=' . TMM::get_option("api_key_google") . '&' : '' ;
 	$map_link = 'https://maps.google.com/maps/api/js?' . $google_maps_api_key;
-	wp_enqueue_script("tmm_shortcode_google_api_js", $map_link);
 
 	$js_controls = '{}';
 
@@ -38,6 +37,7 @@ if (TMM::get_option("api_key_google")){
 
 	if ($mode == 'map') {
 
+		wp_enqueue_script("tmm_shortcode_google_api_js", $map_link);
 		wp_enqueue_script('tmm_composer_front');
 		?>
 
@@ -60,7 +60,7 @@ if (TMM::get_option("api_key_google")){
 		<script type="text/javascript">
 		jQuery(window).on('load', function(){
 			jQuery('.google_image_<?php echo $inique_id ?>')
-				.html('<img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo (int) $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo (int)$width ?>x<?php echo (int)$height ?><?php echo $marker_string ?>" width="<?php echo (int)$width ?>" height="<?php echo (int)$height ?>">');
+				.html('<img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo (int) $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo (int)$width ?>x<?php echo (int)$height ?><?php echo $marker_string ?>&<?php  echo $google_maps_api_key ?>" width="<?php echo (int)$width ?>" height="<?php echo (int)$height ?>">');
 		});
 		</script>
 		<div class="google_image_<?php echo $inique_id ?>"></div>
