@@ -4,7 +4,7 @@ if (get_option(TMM_THEME_PREFIX . "api_key_google")){
 
 	$inique_id = uniqid();
 	$google_maps_api_key = (get_option(TMM_THEME_PREFIX . "api_key_google")) ? 'key=' . get_option(TMM_THEME_PREFIX . "api_key_google") . '&' : '' ;
-	$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
+	$map_link = 'https://maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
 
 	wp_enqueue_script('tmm_shortcode_google_api_js', $map_link);
 	wp_enqueue_script('thememakers_theme_markerwithlabel_js', TMM_THEME_URI . '/js/markerwithlabel.js');
@@ -17,7 +17,7 @@ if (get_option(TMM_THEME_PREFIX . "api_key_google")){
 
 	if (isset($location_mode) && $location_mode == 'address') {
 		$address = str_replace(' ', '+', $address);
-		$geocode = @file_get_contents('//maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
+		$geocode = @file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
 		if($geocode){
 			$output = json_decode($geocode);
 			if ($output->status != 'OVER_QUERY_LIMIT') {
@@ -56,7 +56,7 @@ if (get_option(TMM_THEME_PREFIX . "api_key_google")){
 			$location_mode_string = 'center=' . $latitude . ',' . $longitude;
 			?>
 
-			<img src="//maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false">
+			<img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false">
 
 		<?php
 		}

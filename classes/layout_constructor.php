@@ -355,7 +355,7 @@ class TMM_Layout_Constructor {
 							</video>
 						</div>
 						<?php
-						wp_enqueue_script('mediaelement');
+						wp_enqueue_script('wp-mediaelement');
 
 						break;
 
@@ -367,7 +367,7 @@ class TMM_Layout_Constructor {
 							</video>
 						</div>
 						<?php
-						wp_enqueue_script('mediaelement');
+						wp_enqueue_script('wp-mediaelement');
 
 						break;
 
@@ -379,7 +379,7 @@ class TMM_Layout_Constructor {
 							</video>
 						</div>
 						<?php
-						wp_enqueue_script('mediaelement');
+						wp_enqueue_script('wp-mediaelement');
 
 						break;
 

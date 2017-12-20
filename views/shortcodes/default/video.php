@@ -1,6 +1,6 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<?php
-wp_enqueue_script('mediaelement');
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
+
+wp_enqueue_script('wp-mediaelement');
 $unique_id = uniqid();
 switch ($type) {
     case 'youtube':
@@ -37,14 +37,6 @@ switch ($type) {
 
 
             <source src="<?php echo $html5_video_url ?>" type="video/mp4" />
-
-            <!-- Fallback flash player for no-HTML5 browsers with JavaScript turned off -->
-            <object width="<?php echo $width ?>" height="<?php echo $height ?>" type="application/x-shockwave-flash" data="<?php echo TMM_THEME_URI ?>/js/mediaelement/flashmediaelement.swf">
-                <param name="movie" value="<?php echo TMM_THEME_URI ?>/js/mediaelement/flashmediaelement.swf" />
-                <param name="flashvars" value="controls=true&file=<?php echo $html5_video_url ?>" />
-                <img src="<?php echo $html5_poster ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" alt="<?php _e('No video playback capabilities', TMM_CC_TEXTDOMAIN); ?>" />
-            </object>
-
         </video>
 
         <script type="text/javascript">
@@ -58,12 +50,8 @@ switch ($type) {
 
                     }
                 );
-
             });
-
-
         </script>
-
 
         <?php
         break;
