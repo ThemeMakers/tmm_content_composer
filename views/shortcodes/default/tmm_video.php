@@ -56,7 +56,7 @@ switch ($video_type) {
             $source_code = $source_code[0];
         }
 		?>
-		<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (!isset($width) || empty($width) || !isset($height)) ? '' : 'height="'.$height.'"';  ?> src="http://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent&amp;rel=0&amp;controls=<?php echo $controls ?>&amp;showinfo=0"></iframe>
+		<iframe  class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (!isset($width) || empty($width) || !isset($height)) ? '' : 'height="'.$height.'"';  ?> src="https://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent&amp;rel=0&amp;controls=<?php echo $controls ?>&amp;showinfo=0"></iframe>
         <?php
 
 		break;
@@ -68,7 +68,7 @@ switch ($video_type) {
 			$source_code = $source_code[count($source_code) - 1];
 		}
 		?>
-        <iframe class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" width="<?php echo $width ?>" height="<?php echo (!isset($width) || empty($width)) ? '' : $height ?>" src="http://player.vimeo.com/video/<?php echo $source_code ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=f6e200"></iframe>
+        <iframe class="<?php echo (!isset($width) || empty($width)) ? 'fitwidth' : '' ?>" width="<?php echo $width ?>" height="<?php echo (!isset($width) || empty($width)) ? '' : $height ?>" src="https://player.vimeo.com/video/<?php echo $source_code ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=f6e200"></iframe>
 		<?php
 		break;
         

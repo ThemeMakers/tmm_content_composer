@@ -279,7 +279,7 @@ class TMM_Layout_Constructor {
 						?>
 						<div class="mb-wrapper">
 							<script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
-							<iframe id="vimeo_player" src="http://player.vimeo.com/video/<?php echo $source_code ?>?api=1&loop=<?php echo $loop ?>&player_id=vimeo_player&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							<iframe id="vimeo_player" src="https://player.vimeo.com/video/<?php echo $source_code ?>?api=1&loop=<?php echo $loop ?>&player_id=vimeo_player&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 						</div><!--/ .mb-wrapper-->
 						<script>
 
