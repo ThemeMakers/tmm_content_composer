@@ -234,7 +234,7 @@ $counter           = 0;
 					$video_icon  = 'video-icon';
 					$ip          = $image['imgurl2'];
 					if ( empty( $ip ) ) {
-						$th_url = '	http://img.youtube.com/vi/' . $youtubecode . '/default.jpg';
+						$th_url = '	https://img.youtube.com/vi/' . $youtubecode . '/default.jpg';
 					} else {
 						$th_url = $ip;
 					}
@@ -245,7 +245,7 @@ $counter           = 0;
 						$ip         = $image['imgurl2'];
 						if ( empty( $ip ) ) {
 							$arr = parse_url( $image['imgurl'] );
-							$xml = simplexml_load_file( 'http://vimeo.com/api/v2/video' . $arr['path'] . '.xml' );
+							$xml = simplexml_load_file( 'https://vimeo.com/api/v2/video' . $arr['path'] . '.xml' );
 							if ( $xml ) {
 								$th_url = (string) $xml->video->thumbnail_medium;
 							}
@@ -314,7 +314,7 @@ $counter           = 0;
 if ( count( $folioposts_array ) > 1 ) {
 	?>
 	<a href="javascript:masonry_scroll(true);void(0);"
-	   class="masonry_view_more_button"><?php _e( 'More', 'tmm_shortcodes' ); ?></a>
+	   class="masonry_view_more_button"><?php esc_html_e( 'More', 'tmm_shortcodes' ); ?></a>
 	<?php
 }
 wp_reset_query();

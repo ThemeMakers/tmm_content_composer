@@ -164,7 +164,7 @@ $slide_up = $gallery_slide_up;
             ?> 
         
         <ul id="gallery-filter" class="gallery-filter clearfix">
-            <li><a data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="1" data-post-per-page="<?php echo $post_per_page ?>" data-categories="<?php echo ($pagination == 2) ? $cat_id : '*'; ?>"><?php _e('All', 'tmm_shortcodes') ?></a></li>
+            <li><a data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="1" data-post-per-page="<?php echo $post_per_page ?>" data-categories="<?php echo ($pagination == 2) ? $cat_id : '*'; ?>"><?php esc_html_e('All', 'tmm_shortcodes') ?></a></li>
             <?php if (!empty($filter)): ?>
                 <?php foreach ($filter as $key) : ?>
                     <li><a data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="1" data-post-per-page="<?php echo $post_per_page ?>" data-categories="<?php echo ($pagination == 2) ? $key['slug'] : $key['id']; ?>"><?php echo $key['name'] ?></a></li>
