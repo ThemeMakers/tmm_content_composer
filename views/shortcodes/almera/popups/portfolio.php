@@ -6,11 +6,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Layout', 'tmm_shortcodes'),
+			'title' => esc_html__('Layout', 'tmm_shortcodes'),
 			'shortcode_field' => 'content',
 			'id' => 'type',
 			'options' => array(
-				1 => __('Masonry', 'tmm_shortcodes'),
+				1 => esc_html__('Masonry', 'tmm_shortcodes'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('content', 1),
 			'description' => ''
@@ -23,13 +23,13 @@
 
 		<?php
 		$col_algorims_ids = array(
-			"random" => __('Algorithm random', 'tmm_shortcodes'),
-			1 => __('Algoritm 1', 'tmm_shortcodes'),
-			2 => __('Algoritm 2', 'tmm_shortcodes'),
+			"random" => esc_html__('Algorithm random', 'tmm_shortcodes'),
+			1 => esc_html__('Algoritm 1', 'tmm_shortcodes'),
+			2 => esc_html__('Algoritm 2', 'tmm_shortcodes'),
 		);
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Image Sizes', 'tmm_shortcodes'),
+			'title' => esc_html__('Image Sizes', 'tmm_shortcodes'),
 			'shortcode_field' => 'col_alg',
 			'id' => 'type',
 			'options' => $col_algorims_ids,
@@ -45,7 +45,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Enable Slide-Up Effect', 'almera'),
+			'title' => esc_html__('Enable Slide-Up Effect', 'almera'),
 			'shortcode_field' => 'folio_slide_up',
 			'id' => 'folio_slide_up',
 			'is_checked' => TMM_Content_Composer::set_default_value('folio_slide_up', 1),

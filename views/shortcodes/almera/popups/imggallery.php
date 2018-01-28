@@ -6,14 +6,14 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Layout', 'tmm_shortcodes'),
+			'title' => esc_html__('Layout', 'tmm_shortcodes'),
 			'shortcode_field' => 'layout',
 			'id' => 'album_layout',
 			'options' => array(
-				0 => __('Thumbnails', 'tmm_shortcodes'),
-				2 => __('Albums', 'tmm_shortcodes'),
-				3 => __('3 Columns', 'tmm_shortcodes'),
-				4 => __('4 Columns', 'tmm_shortcodes'),
+				0 => esc_html__('Thumbnails', 'tmm_shortcodes'),
+				2 => esc_html__('Albums', 'tmm_shortcodes'),
+				3 => esc_html__('3 Columns', 'tmm_shortcodes'),
+				4 => esc_html__('4 Columns', 'tmm_shortcodes'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('layout', 0),
 			'description' => ''
@@ -27,12 +27,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Pagination', 'tmm_shortcodes'),
+			'title' => esc_html__('Pagination', 'tmm_shortcodes'),
 			'shortcode_field' => 'pagination',
 			'id' => 'album_pagination',
 			'options' => array(
-				0 => __('None', 'tmm_shortcodes'),
-				2 => __('Standard pagination', 'tmm_shortcodes')
+				0 => esc_html__('None', 'tmm_shortcodes'),
+				2 => esc_html__('Default pagination', 'tmm_shortcodes')
 			
 							),
 			'default_value' => TMM_Content_Composer::set_default_value('pagination', 0),
@@ -47,7 +47,7 @@
 		<?php
         TMM_Content_Composer::html_option(array(
                 'type' => 'checkbox',
-                'title' => __('Enable Slide-Up Effect', 'almera'),
+                'title' => esc_html__('Enable Slide-Up Effect', 'almera'),
                 'shortcode_field' => 'gallery_slide_up',
 				'id' => 'gallery_slide_up',
                 'is_checked' => TMM_Content_Composer::set_default_value('gallery_slide_up', 1),
@@ -82,11 +82,11 @@
 			
 				TMM_Content_Composer::html_option(array(
                     'type' => 'text',
-                    'title' => __('Items Per Page', 'tmm_shortcodes'),
+                    'title' => esc_html__('Items Per Page', 'tmm_shortcodes'),
                     'shortcode_field' => 'post_per_page',
                     'id' => 'post_per_page',
                     'default_value' => TMM_Content_Composer::set_default_value('post_per_page', '10'),
-                    'description' => __('Number of items per page', 'tmm_shortcodes')
+                    'description' => esc_html__('Number of items per page', 'tmm_shortcodes')
                 ));
                 ?>
 
@@ -97,11 +97,11 @@
 			
 				TMM_Content_Composer::html_option(array(
                     'type' => 'checkbox',
-                    'title' => __('Show / Hide filter', 'tmm_shortcodes'),
+                    'title' => esc_html__('Show / Hide filter', 'tmm_shortcodes'),
                     'shortcode_field' => 'show_filter',
                     'id' => 'show_filter',
                     'is_checked' => TMM_Content_Composer::set_default_value('show_filter', 1),
-                    'description' => __('This option enables filter bar', 'tmm_shortcodes')
+                    'description' => esc_html__('This option enables filter bar', 'tmm_shortcodes')
                 ));
                 ?>
 
@@ -124,9 +124,9 @@
 	?>
 
 	<div class="fullwidth">
-
-		<h4 class="label"><?php _e('List Styles', 'tmm_shortcodes'); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add album', 'tmm_shortcodes'); ?></a><br />
+		<hr>
+		<h3><?php esc_html_e('Album List', 'tmm_shortcodes'); ?></h3>
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add album', 'tmm_shortcodes'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 			<?php if (!empty($content_edit_data)): ?>
@@ -151,7 +151,7 @@
 
 								</td>						
 								<td>
-									<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php _e('Remove', 'tmm_shortcodes'); ?></a>
+									<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'tmm_shortcodes'); ?></a>
 								</td>
 								<td><div class="row-mover"></div></td>
 							</tr>
@@ -180,7 +180,7 @@
 
 							</td>						
 							<td>
-								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php _e('Remove', 'tmm_shortcodes'); ?></a>
+								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'tmm_shortcodes'); ?></a>
 							</td>
 							<td><div class="row-mover"></div></td>
 						</tr>
@@ -189,7 +189,7 @@
 			<?php endif; ?>
 		</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add album', 'tmm_shortcodes'); ?></a><br />	
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add album', 'tmm_shortcodes'); ?></a><br />
 
 	</div>
 

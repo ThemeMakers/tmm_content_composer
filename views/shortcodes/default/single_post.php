@@ -1,11 +1,12 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<?php
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
+
 $post_id = (int) $content;
 $post = get_post($post_id);
 $post_link = post_permalink($post_id);
 ?>
 
-<div class="item">
+<article class="entry clearfix">
+    <div class="ten columns">
 
     <?php
     $post_pod_type = get_post_meta($post->ID, 'post_pod_type', true);
@@ -19,8 +20,8 @@ $post_link = post_permalink($post_id);
             ?>
 
             <?php
-            $video_width = 420;
-            $video_height = 300;
+            $video_width = 580;
+            $video_height = 360;
 
             $source_url = $post_type_values[$post_pod_type];
             if (!empty($source_url)) {
@@ -66,7 +67,7 @@ $post_link = post_permalink($post_id);
                 <div class="image-post-slider">
                     <ul>
                         <?php foreach ($gall as $key => $source_url): ?>
-                            <li><a data-fancybox-group="lightbox" href="<?php echo $post_link ?>" class="single-image link-icon"><img src="<?php echo TMM_Helper::resize_image($source_url, '420*300') ?>" alt="<?php echo $post->post_title ?>" /></a></li>
+                            <li><a data-fancybox-group="lightbox" href="<?php echo $post_link ?>" class="single-image link-icon"><img src="<?php echo TMM_Helper::resize_image($source_url, '580*360') ?>" width="580" height="360" alt="<?php echo $post->post_title ?>" /></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div><!--/ .image-post-slider-->
@@ -79,13 +80,23 @@ $post_link = post_permalink($post_id);
             ?>
             <?php if (has_post_thumbnail($post->ID)) : ?>
                 <a class="single-image link-icon" href="<?php echo get_permalink($post->ID) ?>">
-                    <img src="<?php echo TMM_Helper::get_post_featured_image($post->ID, '420*300'); ?>" alt="<?php echo get_the_title($post->ID); ?>" />
+                    <img src="<?php echo TMM_Helper::get_post_featured_image($post->ID, '580*360'); ?>" width="580" height="360" alt="<?php echo get_the_title($post->ID); ?>" />
                 </a>
             <?php endif; ?>
             <?php
             break;
     }
     ?>
+
+    <?php if ($show_post_metadata == 1): ?>
+        <div class="entry-date">
+            <a href="<?php echo home_url() ?>/?m=<?php echo mysql2date('Ym', get_post_field('post_date', $post->ID)) ?>">
+                <span class="entry-day"><?php echo get_the_date('d') ?></span>
+                <span class="entry-month"><?php echo get_the_date('M') ?></span>
+            </a>
+            <span class="entry-year"><?php echo get_the_date('Y') ?></span>
+        </div><!--/ .entry-date-->
+    <?php endif; ?>
 				
     <div class="entry-meta">
 		
@@ -93,7 +104,6 @@ $post_link = post_permalink($post_id);
 		
 		<?php if ($show_post_metadata == 1): ?>
 		
-			<span class="date"><a href="<?php echo home_url() ?>/?m=<?php echo mysql2date('Ym', get_post_field('post_date', $post->ID)) ?>"><?php echo mysql2date(get_option('date_format'), get_post_field('post_date', $post->ID)) ?></a></span>
 			<span class="comments"><a href="<?php echo $post_link ?>#comments"><?php echo get_comments_number($post->ID); ?> <?php _e('Comments', 'tmm_shortcodes'); ?></a></span>
 	
 		<?php endif; ?>
@@ -129,3 +139,4 @@ $post_link = post_permalink($post_id);
     </div><!--/ .entry-body-->
 
 </div><!--/ .item-->
+</article>

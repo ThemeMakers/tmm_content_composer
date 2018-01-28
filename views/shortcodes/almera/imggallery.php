@@ -1,5 +1,5 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<?php
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
+
 $effect_class = (TMM::get_option('images_loader')) ? 'translateEffect' : '';
 $icons_type = ($gall_amount_icons ) ? $gall_amount_icons : '2';
 $icon_class = ($icons_type=='1') ? 'one_icon' : '';
@@ -20,7 +20,7 @@ if (!empty($album_ids)) {
             $filter[$cat->term_id]['slug'] = $cat->slug;
         }  
         
-        $tmp = get_post_meta($gallery_id, 'thememakers_gallery', true);             
+        $tmp = get_post_meta($gallery_id, 'thememakers_gallery', true);
         
         if (!empty($tmp)) {            
             foreach ($tmp as $key => $value) {
@@ -90,7 +90,7 @@ $slide_up = $gallery_slide_up;
 
         <ul class="thumbnails-items clearfix">
             <?php foreach ($images as $img) : ?>
-                <li class="two columns <?php echo $effect_class; ?>"><a class="single-image" href="#"><img src="<?php echo TMM_Helper::resize_image($img['imgurl'], '130*130') ?>" alt="<?php echo $img['title'] ?>" /></a></li>
+                <li class="two columns <?php echo $effect_class; ?>"><a class="single-image" href="#"><img src="<?php echo TMM_Helper::resize_image($img['imgurl'], '100*100') ?>" width="100" height="100" alt="<?php echo $img['title'] ?>" /></a></li>
             <?php endforeach; ?>
         </ul><!--/ #thumbnails-->
 
@@ -123,22 +123,17 @@ $slide_up = $gallery_slide_up;
                             <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
                                title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
                                data-fancybox-group="<?php echo $title_array[$img['post_id']]['title'] ?>">
-                                <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
-                                     src="<?php echo TMM_Helper::resize_image($img['imgurl'], '270*200') ?>">
+                                <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '270*200') ?>" width="270" height="200">
                             </a>
 
                             <?php if ($gallery_slide_up) {
                                 ?>
-                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"
-                                   class="project-meta">
+                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>" class="project-meta">
                                     <h6 class="title"><?php echo $img['title'] ?></h6>
                                     <span class="categories"><?php echo $img_terms[$img['category']]['name'] ?></span>
                                 </a>
-                            <?php
-                            } elseif($icons_type=='2') {
-                                ?>
-                                <a class="gr-link single-image link-icon"
-                                   href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
+                            <?php } elseif($icons_type=='2') { ?>
+                                <a class="gr-link single-image link-icon" href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
                             <?php
                             } ?>
 
@@ -186,8 +181,15 @@ $slide_up = $gallery_slide_up;
             <?php $i = 1 ?>
             
             <?php foreach ($images as $img) : ?>
-                    <?php $t=$img['title']; ?>
                 <?php
+
+                $t=$img['title'];
+
+                if (class_exists('TMM_Portfolio')) {
+                    $folio_img_id = TMM_Portfolio::get_attachment_id_by_url($img['imgurl']);
+                    $image_attributes = wp_get_attachment_image_src( $folio_img_id, 'gallery-thumb-m' );
+                }
+
                 if ($pagination == 2) {
                     ?>
                     <?php if (($img['key'] > ($post_per_page * $current_page - $post_per_page)) && ($img['key'] <= $post_per_page * $current_page)) { ?>
@@ -199,22 +201,20 @@ $slide_up = $gallery_slide_up;
                                 <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
                                    title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
                                    data-fancybox-group="gallery">
-                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
-                                         src="<?php echo TMM_Helper::resize_image($img['imgurl'], '420*300') ?>">
+                                    <?php if ( checkRemoteFile($image_attributes[0])) : ?>
+                                        <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo $image_attributes[0] ?>" width="<?php echo $image_attributes[1] ?>" height="<?php echo $image_attributes[2] ?>">
+                                    <?php else : ?>
+                                        <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '300*215') ?>" width="300" height="215">
+                                    <?php endif; ?>
                                 </a>
 
-                                <?php if ($gallery_slide_up) {
-                                    ?>
-                                    <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"
-                                       class="project-meta">
+                                <?php if ($gallery_slide_up) { ?>
+                                    <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>" class="project-meta">
                                         <h6 class="title"><?php echo $img['title'] ?></h6>
                                         <span class="categories"><?php echo $img_terms[$img['category']]['name'] ?></span>
                                     </a>
-                                <?php
-                                } elseif($icons_type=='2') {
-                                    ?>
-                                    <a class="gr-link single-image link-icon"
-                                       href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
+                                <?php } elseif($icons_type=='2') { ?>
+                                    <a class="gr-link single-image link-icon" href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
                                 <?php
                                 } ?>
 
@@ -235,22 +235,20 @@ $slide_up = $gallery_slide_up;
                             <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
                                title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
                                data-fancybox-group="gallery">
-                                <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
-                                     src="<?php echo TMM_Helper::resize_image($img['imgurl'], '420*300') ?>">
+                                <?php if ( checkRemoteFile($image_attributes[0])) : ?>
+                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo $image_attributes[0] ?>" width="<?php echo $image_attributes[1] ?>" height="<?php echo $image_attributes[2] ?>">
+                                <?php else : ?>
+                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '300*215') ?>" width="300" height="215">
+                                <?php endif; ?>
                             </a>
 
-                            <?php if ($gallery_slide_up) {
-                                ?>
-                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"
-                                   class="project-meta">
+                            <?php if ($gallery_slide_up) { ?>
+                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>" class="project-meta">
                                     <h6 class="title"><?php echo $img['title'] ?></h6>
                                     <span class="categories"><?php echo $img_terms[$img['category']]['name'] ?></span>
                                 </a>
-                            <?php
-                            } elseif($icons_type=='2') {
-                                ?>
-                                <a class="gr-link single-image link-icon"
-                                   href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
+                            <?php } elseif($icons_type=='2') { ?>
+                                <a class="gr-link single-image link-icon" href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
                             <?php
                             } ?>
 
@@ -281,15 +279,10 @@ $slide_up = $gallery_slide_up;
                             if ($i == 1) {
                                 ?>
                                 <li><a class="prev page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page - 1 ?>"  href="#"></a></li>
-                                <?php
-                            } else if ($i == $page_count + $t) {
-                                ?>
+                                <?php } else if ($i == $page_count + $t) { ?>
                                 <span class="page-numbers current"><?php echo $current_page ?></span>
-                                <?php
-                            } else {
-                                ?>
+                                <?php } else { ?>
                                 <li><a class="page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $i - 1 ?>" href="#"><?php echo $i - 1 ?></a></li>
-
                                 <?php
                             }
                         } else {
@@ -297,9 +290,7 @@ $slide_up = $gallery_slide_up;
                                 if ($current_page == $i) {
                                     ?>
                                     <span class="page-numbers current"><?php echo $current_page ?></span>
-                                    <?php
-                                } else {
-                                    ?>
+                                    <?php } else { ?>
                                     <li><a class="prev page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page - 1 ?>"  href="#"></a></li>
                                     <?php
                                 }
@@ -307,9 +298,7 @@ $slide_up = $gallery_slide_up;
                                 if ($current_page == $i - $t) {
                                     ?>
                                     <span class="page-numbers current"><?php echo $current_page ?></span>
-                                    <?php
-                                } else {
-                                    ?>
+                                    <?php } else { ?>
                                     <li><a class="next page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page + 1 ?>" href="#"></a></li>
                                     <?php
                                 }
@@ -320,9 +309,7 @@ $slide_up = $gallery_slide_up;
                                 if ($current_page == $i) {
                                     ?>
                                     <span class="page-numbers current"><?php echo $current_page ?></span>
-                                    <?php
-                                } else {
-                                    ?>
+                                    <?php } else { ?>
                                     <li><a class="page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $i ?>" href="#"><?php echo $i ?></a></li>
                                     <?php
                                 }
@@ -348,6 +335,11 @@ $slide_up = $gallery_slide_up;
 
             $t = $img['title'];
 
+            if (class_exists('TMM_Portfolio')) {
+                $folio_img_id = TMM_Portfolio::get_attachment_id_by_url($img['imgurl']);
+                $image_attributes = wp_get_attachment_image_src( $folio_img_id, 'gallery-thumb-s' );
+            }
+
             if ($pagination == 2) {
                 ?>
                 <?php if (($img['key'] > ($post_per_page * $current_page - $post_per_page)) && ($img['key'] <= $post_per_page * $current_page)) { ?>
@@ -359,24 +351,21 @@ $slide_up = $gallery_slide_up;
                             <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
                                title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
                                data-fancybox-group="gallery">
-                                <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
-                                     src="<?php echo TMM_Helper::resize_image($img['imgurl'], '420*300') ?>">
+                                <?php if ( checkRemoteFile($image_attributes[0])) : ?>
+                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo $image_attributes[0] ?>" width="<?php echo $image_attributes[1] ?>" height="<?php echo $image_attributes[2] ?>">
+                                <?php else : ?>
+                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '220*157') ?>" width="220" height="157">
+                                <?php endif; ?>
                             </a>
 
-                            <?php if ($gallery_slide_up) {
-                                ?>
-                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"
-                                   class="project-meta">
+                            <?php if ($gallery_slide_up) { ?>
+                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>" class="project-meta">
                                     <h6 class="title"><?php echo $img['title'] ?></h6>
                                     <span class="categories"><?php echo $img_terms[$img['category']]['name'] ?></span>
                                 </a>
-                            <?php
-                            } elseif($icons_type=='2') {
-                                ?>
-                                <a class="gr-link single-image link-icon"
-                                   href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
-                            <?php
-                            } ?>
+                            <?php } elseif($icons_type=='2') { ?>
+                                <a class="gr-link single-image link-icon" href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
+                            <?php } ?>
 
                         </div>
                         <!--/ .project-thumb-->
@@ -394,24 +383,21 @@ $slide_up = $gallery_slide_up;
                             <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
                                title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
                                data-fancybox-group="gallery">
-                                <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?>
-                                     src="<?php echo TMM_Helper::resize_image($img['imgurl'], '420*300') ?>">
+                                <?php if ( checkRemoteFile($image_attributes[0])) : ?>
+                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo $image_attributes[0] ?>" width="<?php echo $image_attributes[1] ?>" height="<?php echo $image_attributes[2] ?>">
+                                <?php else : ?>
+                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '220*157') ?>" width="220" height="157">
+                                <?php endif; ?>
                             </a>
 
-                            <?php if ($gallery_slide_up) {
-                                ?>
-                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"
-                                   class="project-meta">
+                            <?php if ($gallery_slide_up) { ?>
+                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>" class="project-meta">
                                     <h6 class="title"><?php echo $img['title'] ?></h6>
                                     <span class="categories"><?php echo $img_terms[$img['category']]['name'] ?></span>
                                 </a>
-                            <?php
-                            } elseif($icons_type=='2') {
-                                ?>
-                                <a class="gr-link single-image link-icon"
-                                   href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
-                            <?php
-                            } ?>
+                            <?php } elseif($icons_type=='2') { ?>
+                                <a class="gr-link single-image link-icon" href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
+                            <?php } ?>
 
                         </div>
                         <!--/ .project-thumb-->
@@ -437,9 +423,7 @@ $slide_up = $gallery_slide_up;
                         if ($i == 1) {
                             ?>
                                 <li><a class="prev page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page - 1 ?>"  href="#"></a></li>
-                                <?php
-                            } else if ($i == $page_count + $t) {
-                                ?>
+                                <?php } else if ($i == $page_count + $t) { ?>
                                 <span class="page-numbers current"><?php echo $current_page ?></span>
                                 <?php
                             } else {
@@ -453,9 +437,7 @@ $slide_up = $gallery_slide_up;
                         if ($current_page == $i) {
                             ?>
                                     <span class="page-numbers current"><?php echo $current_page ?></span>
-                                    <?php
-                                } else {
-                                    ?>
+                                    <?php } else { ?>
                                     <li><a class="prev page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page - 1 ?>"  href="#"></a></li>
                                     <?php
                                 }
@@ -463,9 +445,7 @@ $slide_up = $gallery_slide_up;
                                 if ($current_page == $i - $t) {
                                     ?>
                                     <span class="page-numbers current"><?php echo $current_page ?></span>
-                                    <?php
-                                } else {
-                                    ?>
+                                    <?php } else { ?>
                                     <li><a class="next page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page + 1 ?>" href="#"></a></li>
                                     <?php
                                 }
@@ -476,9 +456,7 @@ $slide_up = $gallery_slide_up;
                                 if ($current_page == $i) {
                                     ?>
                                     <span class="page-numbers current"><?php echo $current_page ?></span>
-                                    <?php
-                                } else {
-                                    ?>
+                                    <?php } else { ?>
                                     <li><a class="page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $i ?>" href="#"><?php echo $i ?></a></li>
                                     <?php
                                 }

@@ -40,7 +40,7 @@ $counter           = 0;
 ?>
 <?php if ( ! empty( $folioposts_array ) ) { ?>
 
-	<script type="text/javascript">    var IE8 = false;</script>
+	<script type="text/javascript">var IE8 = false;</script>
 	<!--[if IE 8]>
 	<script type="text/javascript">IE8 = true;</script><![endif]-->
 
