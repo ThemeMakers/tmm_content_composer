@@ -131,15 +131,15 @@ switch ($columns){
 	    $posts_list .= ' full-width';
         break;
     case '2':
-        $columns_class .= 'medium-6 large-6 columns';
+        $columns_class .= 'small-6 medium-6 large-6 columns';
         $posts_list .= ' two-cols';
         break;
     case '3':
-        $columns_class .= 'medium-4 large-4 columns';
+        $columns_class .= 'small-4 medium-4 large-4 columns';
 	    $posts_list .= ' three-cols';
         break;
     case '4':
-        $columns_class .= 'medium-3 large-3 columns';
+        $columns_class .= 'small-3 medium-3 large-3 columns';
 	    $posts_list .= ' four-cols';
         break;
 }
