@@ -121,6 +121,7 @@ class TMM_Content_Composer {
 		wp_deregister_style('mediaelement');
 		wp_deregister_style('wp-mediaelement');
 		wp_register_style('tmm_mediaelement', TMM_CC_URL . 'css/mediaelement/mediaelementplayer.css');
+		wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
 
 		if (!class_exists('TMM')) {
 
@@ -133,7 +134,6 @@ class TMM_Content_Composer {
 			<?php
 
 			wp_enqueue_style('tmm_grid', TMM_CC_URL . 'css/grid.css');
-			wp_enqueue_style('tmm_fontello', TMM_CC_URL . 'css/fontello.css');
 			wp_enqueue_style('tmm_layout', TMM_CC_URL . 'css/shortcodes_layout.css');
 			wp_enqueue_style('tmm_shortcodes', TMM_CC_URL . 'css/shortcodes_front.css');
 
