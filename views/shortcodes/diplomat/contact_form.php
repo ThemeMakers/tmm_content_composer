@@ -34,7 +34,7 @@ if (!empty($contact_form['inputs'])) {
                 case "textinput":
                     ?>
                     <p class="tmmFormStyling form-input-text">
-                        <input id="name_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo esc_attr($name) ?>" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php echo esc_attr($input['label']) ?><?php echo($input['is_required'] ? " *" : "") ?>" />
+                        <input id="name_<?php echo uniqid() ?>" <?php echo($input['is_required'] ? "required" : "") ?> type="text" name="<?php echo esc_attr($name) ?>" value="<?php echo !empty($_POST[$name]) ? esc_attr($_POST[$name]) : ''; ?>" placeholder="<?php echo esc_attr($input['label']) ?><?php echo($input['is_required'] ? " *" : "") ?>" />
                     </p>
                     <?php
                     break;
