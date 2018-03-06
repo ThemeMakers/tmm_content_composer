@@ -1374,7 +1374,7 @@ msgstr ""
 
 #: views/shortcodes/default/popups/button.php:23
 msgid "http://forums.webtemplatemasters.com/"
-msgstr "http://24for7millioncarparts.eu/"
+msgstr "http://forums.webtemplatemasters.com/"
 
 #: views/shortcodes/default/popups/button.php:30
 msgid "Buttons Position"
