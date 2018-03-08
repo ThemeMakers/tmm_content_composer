@@ -7,8 +7,21 @@
 			'type' => 'text',
 			'title' => __('Buttons Text', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'text',
-			'id' => '',
+			'id' => 'button_text',
 			'default_value' => TMM_Content_Composer::set_default_value('text', ''),
+			'description' => __('Inser here your text for a button', TMM_CC_TEXTDOMAIN),
+		));
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Button type', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'type',
+			'id' => 'button_type',
+			'options' => array(
+				'default' => 'Default',
+				'roll' => 'Roll Button',
+				'orange-roll' => 'Orange Roll Button'
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('type', ''),
 			'description' => ''
 		));
 		?>
@@ -23,6 +36,18 @@
 			'id' => 'url',
 			'default_value' => TMM_Content_Composer::set_default_value('url', ''),
 			'description' => 'http://forums.webtemplatemasters.com/'
+		));
+		TMM_Content_Composer::html_option(array(
+			'type' => 'select',
+			'title' => __('Target', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'target',
+			'id' => 'target',
+			'options' => array(
+				'_self' => 'Same Window',
+				'_blank' => 'New Window'
+			),
+			'default_value' => TMM_Content_Composer::set_default_value('_self', ''),
+			'description' => ''
 		));
 		?>
 	</div><!--/ .one-half-->
@@ -50,25 +75,6 @@
 			'id' => 'size',
 			'options' => TMM_Content_Composer::get_theme_buttons_sizes(),
 			'default_value' => TMM_Content_Composer::set_default_value('size', ''),
-			'description' => ''
-		));
-		?>	
-
-	</div><!--/ .one-half-->
-        
-    <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Button type', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'type',
-			'id' => 'button_type',
-			'options' => array(
-                                    'default' => 'Default',
-                                    'roll' => 'Roll Button',
-                                    'orange-roll' => 'Orange Roll Button'
-                                    ),
-			'default_value' => TMM_Content_Composer::set_default_value('type', ''),
 			'description' => ''
 		));
 		?>	

@@ -67,12 +67,23 @@ if (!empty($styles)) {
             $styles .= ' '. $hover_styles;
         }
 }
+
+$target = (isset($target)) ? $target : '_self';
+switch ($target){
+	case  '_blank':
+		$target = '_blank';
+		break;
+	default:
+		$target = '_self';
+		break;
+}
+
 $type = (isset($type)) ? $type : 'default';
     switch ($type){
         case 'roll':
             ?>
 			<div class="button-overflow">
-				<a href="<?php echo esc_url($url) ?>" <?php echo ($roll_styles ? $roll_styles : '') ?> class="button-roll">
+				<a href="<?php echo esc_url($url) ?>" target="<?php echo esc_attr($target) ?>" <?php echo ($roll_styles ? $roll_styles : '') ?> class="button-roll">
 					<span data-hover="<?php echo esc_attr($text) ?>"><?php echo esc_html($text) ?></span>
 				</a>
 			</div>
@@ -82,7 +93,7 @@ $type = (isset($type)) ? $type : 'default';
         case 'orange-roll':
             ?>
 	            <div class="button-overflow">
-		            <a href="<?php echo esc_url($url) ?>" <?php echo ($roll_styles ? $roll_styles : '') ?> class="button-roll  orange-roll">
+		            <a href="<?php echo esc_url($url) ?>" target="<?php echo esc_attr($target) ?>" <?php echo ($roll_styles ? $roll_styles : '') ?> class="button-roll  orange-roll">
 			            <span data-hover="<?php echo esc_attr($text) ?>"><?php echo esc_html($text) ?></span>
 		            </a>
 	            </div>
@@ -90,7 +101,7 @@ $type = (isset($type)) ? $type : 'default';
             break;
         default:
             ?>
-                <a href="<?php echo esc_url($url) ?>" <?php echo ($styles ? $styles : '') ?> class="button <?php echo esc_attr($size) ?> <?php echo (isset($color)) ? esc_attr($color) : '' ?>"><?php echo esc_html($text) ?></a>
+                <a href="<?php echo esc_url($url) ?>" target="<?php echo esc_attr($target) ?>" <?php echo ($styles ? $styles : '') ?> class="button <?php echo esc_attr($size) ?> <?php echo (isset($color)) ? esc_attr($color) : '' ?>"><?php echo esc_html($text) ?></a>
             <?php
             break;
     }
