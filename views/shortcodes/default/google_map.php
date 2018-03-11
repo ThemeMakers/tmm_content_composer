@@ -56,11 +56,14 @@ if (TMM::get_option("api_key_google")){
 		}
 
 		$location_mode_string = 'center=' . $latitude . ',' . $longitude;
+
+		$staticmap = 'https://maps.googleapis.com/maps/api/staticmap?' . $location_mode_string . '&zoom=' . (int) $zoom . '&maptype=' . strtolower($maptype) . '&size=' . (int)$width . 'x' . (int)$height . $marker_string . '&' . $google_maps_api_key;
+
 		?>
 		<script type="text/javascript">
 		jQuery(window).on('load', function(){
 			jQuery('.google_image_<?php echo $inique_id ?>')
-				.html('<img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo (int) $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo (int)$width ?>x<?php echo (int)$height ?><?php echo $marker_string ?>&<?php  echo $google_maps_api_key ?>" width="<?php echo (int)$width ?>" height="<?php echo (int)$height ?>">');
+				.html('<img src="' + encodeURI('<?php echo esc_attr($staticmap); ?>') + '" width="<?php echo (int)$width ?>" height="<?php echo (int)$height ?>">');
 		});
 		</script>
 		<div class="google_image_<?php echo $inique_id ?>"></div>
