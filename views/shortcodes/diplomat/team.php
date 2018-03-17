@@ -14,7 +14,7 @@ if ($layout == 2) {
 }
 ?>
 
-<div class="row">
+<div class="row staff-shortcode">
 
 <?php
 if (!empty($staff)){
