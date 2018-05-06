@@ -62,8 +62,9 @@ if (TMM::get_option("api_key_google")){
 		?>
 		<script type="text/javascript">
 		jQuery(window).on('load', function(){
+			var address = '<?php echo esc_attr($address); ?>';
 			jQuery('.google_image_<?php echo $inique_id ?>')
-				.html('<img src="' + encodeURI('<?php echo esc_attr($staticmap); ?>') + '" width="<?php echo (int)$width ?>" height="<?php echo (int)$height ?>">');
+				.html('<img src="' + encodeURI('<?php echo esc_attr($staticmap); ?>') + '" width="<?php echo esc_attr((int)$width); ?>" height="<?php echo esc_attr((int)$height); ?>" alt="' + address.split('+').join(' ') + '">');
 		});
 		</script>
 		<div class="google_image_<?php echo $inique_id ?>"></div>

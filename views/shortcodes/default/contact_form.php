@@ -99,7 +99,7 @@ if (!empty($contact_form['inputs'])) {
 		<?php if ($contact_form['has_capture']): ?>
 
 			<p class="input-block">
-				<label><?php _e('Are you human?', TMM_CC_TEXTDOMAIN); ?></label>
+				<label><?php esc_html_e('Are you human?', TMM_CC_TEXTDOMAIN); ?></label>
 				<?php $hash = md5(time()); ?>
 				<img class="contact_form_capcha" src="<?php echo esc_js(get_template_directory_uri()); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="29" width="72" alt="CAPTCHA image" />
 				<input type="text" value="" name="verify" class="verify" />

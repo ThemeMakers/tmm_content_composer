@@ -44,43 +44,7 @@ if($order == 'random'){
 }
 ?>
 
-<style type="text/css">
-	.tmm-shortcode-dealers .image-post {
-		float: left;
-		width: 100px;
-		margin-right: 10px;
-		margin-bottom: 10px;
-	}
-
-	.tmm-shortcode-dealers .image-post > a {
-		margin-bottom: 0;
-	}
-
-	.tmm-shortcode-dealers .title-item {
-		word-break: break-word;
-	}
-
-	.tmm-shortcode-dealers .dealer-bio {
-		font-size: 14px;
-		margin-bottom: 10px;
-	}
-
-	.tmm-shortcode-dealers .list-entry li {
-		font-size: 14px;
-		line-height: 28px;
-	}
-
-	.tmm-shortcode-dealers .dealer-map {
-		margin-top: 10px;
-	}
-
-	.tmm-shortcode-dealers .dealer-map img {
-		max-width: 100%;
-	}
-
-</style>
-
-<div id="change-items" class="row item-grid tmm-shortcode-dealers">
+<div id="change-items" class="row item-grid">
 
 	<?php
 
