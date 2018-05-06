@@ -103,25 +103,25 @@ if($order == 'random'){
 
 				<?php if ($show_phone && !empty($ud->phone)) { ?>
 
-					<li><i class="icon-phone-2"></i> <?php echo $ud->phone ?></li>
+					<li><i class="icon-phone"></i> <?php echo $ud->phone ?></li>
 
 				<?php } ?>
 
 				<?php if ($show_mobile && !empty($ud->mobile)) { ?>
 
-					<li><i class="icon-mobile-alt"></i> <?php echo $ud->mobile ?></li>
+					<li><i class="icon-mobile"></i> <?php echo $ud->mobile ?></li>
 
 				<?php } ?>
 
 				<?php if ($show_fax && !empty($ud->fax)) { ?>
 
-					<li><i class="icon-print-3"></i> <?php echo $ud->fax ?></li>
+					<li><i class="icon-fax"></i> <?php echo $ud->fax ?></li>
 
 				<?php } ?>
 
 				<?php if ($show_email && !empty($ud->user_email)) { ?>
 
-					<li><i class="icon-mail"></i> <a href="mailto:<?php echo $ud->user_email ?>" rel="nofollow"><?php echo $ud->user_email ?></a></li>
+					<li><i class="icon-at"></i> <a href="mailto:<?php echo $ud->user_email ?>" rel="nofollow"><?php echo $ud->user_email ?></a></li>
 
 				<?php } ?>
 
@@ -133,13 +133,13 @@ if($order == 'random'){
 
 				<?php if ($show_site && !empty($ud->user_url)) { ?>
 
-					<li><i class="icon-link-1"></i> <a href="<?php echo $ud->user_url ?>" rel="nofollow" target="_blank"><?php echo $ud->user_url ?></a></li>
+					<li><i class="icon-globe"></i> <a href="<?php echo $ud->user_url ?>" rel="nofollow" target="_blank"><?php echo $ud->user_url ?></a></li>
 
 				<?php } ?>
 
 				<?php if ($show_address && !empty($ud->address)) { ?>
 
-					<li><i class="icon-address"></i> <?php echo $ud->address ?></li>
+					<li><i class="icon-warehouse"></i> <?php echo $ud->address ?></li>
 
 				<?php } ?>
 
