@@ -5,8 +5,7 @@ $post = get_post($post_id);
 $post_link = post_permalink($post_id);
 ?>
 
-<article class="entry clearfix">
-    <div class="ten columns">
+<div class="item clearfix">
 
     <?php
     $post_pod_type = get_post_meta($post->ID, 'post_pod_type', true);
@@ -88,22 +87,13 @@ $post_link = post_permalink($post_id);
     }
     ?>
 
-    <?php if ($show_post_metadata == 1): ?>
-        <div class="entry-date">
-            <a href="<?php echo home_url() ?>/?m=<?php echo mysql2date('Ym', get_post_field('post_date', $post->ID)) ?>">
-                <span class="entry-day"><?php echo get_the_date('d') ?></span>
-                <span class="entry-month"><?php echo get_the_date('M') ?></span>
-            </a>
-            <span class="entry-year"><?php echo get_the_date('Y') ?></span>
-        </div><!--/ .entry-date-->
-    <?php endif; ?>
-				
     <div class="entry-meta">
 		
 		<h5 class="title"><a href="<?php echo $post_link ?>"><?php echo $post->post_title ?></a></h5>
 		
 		<?php if ($show_post_metadata == 1): ?>
-		
+
+            <span class="date"><a href="<?php echo home_url() ?>/?m=<?php echo mysql2date('Ym', get_post_field('post_date', $post->ID)) ?>"><?php echo mysql2date(get_option('date_format'), get_post_field('post_date', $post->ID)) ?></a></span>
 			<span class="comments"><a href="<?php echo $post_link ?>#comments"><?php echo get_comments_number($post->ID); ?> <?php _e('Comments', 'tmm_shortcodes'); ?></a></span>
 	
 		<?php endif; ?>
@@ -139,4 +129,3 @@ $post_link = post_permalink($post_id);
     </div><!--/ .entry-body-->
 
 </div><!--/ .item-->
-</article>
