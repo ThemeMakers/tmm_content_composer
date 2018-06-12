@@ -84,13 +84,13 @@ class TMM_Content_Composer {
 					var tmm_lang = {};
 				}
 
-				tmm_lang['loading'] = "<?php _e("Loading ...", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['close'] = "<?php _e("Close", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['apply'] = "<?php _e("Apply", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_nooption'] = "<?php _e("There is no options for shortcode!", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_updated'] = "<?php _e("Shortcode updated!", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_insert'] = "<?php _e("Insert Shortcode", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_edit'] = "<?php _e("Edit shortcode", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['loading'] = "<?php esc_html_e("Loading ...", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['close'] = "<?php esc_html_e("Close", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['apply'] = "<?php esc_html_e("Apply", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['shortcode_nooption'] = "<?php esc_html_e("There is no options for shortcode!", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['shortcode_updated'] = "<?php esc_html_e("Shortcode updated!", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['shortcode_insert'] = "<?php esc_html_e("Insert Shortcode", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['shortcode_edit'] = "<?php esc_html_e("Edit shortcode", TMM_CC_TEXTDOMAIN) ?>";
 			</script>
 		<?php
 		}
@@ -100,11 +100,11 @@ class TMM_Content_Composer {
 
 			?>
 			<script type="text/javascript">
-				tmm_lang['column_delete'] = "<?php _e("Sure about column deleting?", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['row_delete'] = "<?php _e("Sure about row deleting?", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['empty_title'] = "<?php _e("Empty title", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['column_popup_title'] = "<?php _e("Column content editor", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['row_popup_title'] = "<?php _e("Row editor", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['column_delete'] = "<?php esc_html_e("Sure about column deleting?", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['row_delete'] = "<?php esc_html_e("Sure about row deleting?", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['empty_title'] = "<?php esc_html_e("Empty title", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['column_popup_title'] = "<?php esc_html_e("Column content editor", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['row_popup_title'] = "<?php esc_html_e("Row editor", TMM_CC_TEXTDOMAIN) ?>";
 			</script>
 			<?php
 		}
@@ -112,11 +112,6 @@ class TMM_Content_Composer {
 	}
 
 	public static function enqueue_scripts() {
-		wp_deregister_style('mediaelement');
-		wp_deregister_style('wp-mediaelement');
-		wp_register_style('tmm_cc_mediaelement', TMM_CC_URL . 'js/shortcodes/mediaelement/jquery.mediaelementplayer.css');
-
-		wp_register_script("tmm_cc_mediaelement", TMM_CC_URL . 'js/shortcodes/mediaelement/mediaelement-and-player.min.js', array('jquery'), false, 1);
 		wp_register_script('tmm_cc_front', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, 1);
 
 	}
@@ -349,7 +344,7 @@ class TMM_Content_Composer {
 				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
                 <?php if (!isset($data['data_type'])) $data['data_type'] = ''; ?>
                 <a title="" class="button tmm_button_upload" href="#" data-type="<?php echo $data['data_type'] ?>">
-					<?php _e('Browse', TMM_CC_TEXTDOMAIN); ?>
+					<?php esc_html_e('Browse', TMM_CC_TEXTDOMAIN); ?>
 				</a>
 
 				<span class="preset_description"><?php echo $data['description'] ?></span>
@@ -363,7 +358,7 @@ class TMM_Content_Composer {
 			<?php endif; ?>
 
 				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;"><?php _e('Browse', TMM_CC_TEXTDOMAIN); ?></a>
+				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;"><?php esc_html_e('Browse', TMM_CC_TEXTDOMAIN); ?></a>
 				<span class="preset_description"><?php echo $data['description'] ?></span>
 				<?php
 				break;

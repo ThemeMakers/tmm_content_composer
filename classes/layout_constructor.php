@@ -204,8 +204,6 @@ class TMM_Layout_Constructor {
                         </video>
                     </div>
                     <?php
-                    wp_enqueue_style('tmm_mediaelement');
-                    wp_enqueue_script('mediaelement');
 				break;
             
                 case 'ogv':                    
@@ -216,8 +214,6 @@ class TMM_Layout_Constructor {
                         </video>
                     </div>
                     <?php
-                    wp_enqueue_style('tmm_mediaelement');
-                    wp_enqueue_script('mediaelement');
 				break;
             
                 case 'webm':                    
@@ -228,8 +224,6 @@ class TMM_Layout_Constructor {
                         </video>
                     </div>
                     <?php
-                    wp_enqueue_style('tmm_mediaelement');
-                    wp_enqueue_script('mediaelement');
 				break;
             
 				default:
