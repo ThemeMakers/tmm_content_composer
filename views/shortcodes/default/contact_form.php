@@ -85,7 +85,7 @@ if (!empty($contact_form['inputs'])) {
 
 			<p class="input-block">
 				<?php $hash = md5(time()); ?>
-				<img class="contact_form_capcha" src="<?php echo get_stylesheet_directory_uri(); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="27" width="72" />
+				<img class="contact_form_capcha" src="<?php echo get_stylesheet_directory_uri(); ?>/helper/capcha/image.php?hash=<?php echo $hash ?>" height="40" width="72" />
 				<input type="text" value="" name="verify" class="verify" />
 				<input type="hidden" name="verify_code" value="<?php echo $hash ?>" />
 			</p><!--/ .row-->
