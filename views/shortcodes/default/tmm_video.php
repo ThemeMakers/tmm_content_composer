@@ -1,5 +1,5 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<?php
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
+
 switch ($type) {
 	case 'youtube':
 		$source_code = explode("?v=", $content);
@@ -8,7 +8,7 @@ switch ($type) {
 			$source_code = $source_code[0];
 		}
 		?>
-		<iframe allowtransparency="true" width="<?php echo $width ?>" height="<?php echo $height ?>" src="//www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent" allowfullscreen></iframe>
+		<iframe allowtransparency="true" width="<?php echo esc_attr($width) ?>" height="<?php echo esc_attr($height) ?>" src="//www.youtube.com/embed/<?php echo esc_attr($source_code) ?>?wmode=transparent" allowfullscreen></iframe>
 		<?php
 		return "";
 		break;
@@ -18,7 +18,7 @@ switch ($type) {
 			$source_code = $source_code[count($source_code) - 1];
 		}
 		?>
-		<iframe width="<?php echo $width ?>" height="<?php echo $height ?>" src="//player.vimeo.com/video/<?php echo $source_code ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=f6e200"></iframe>
+		<iframe width="<?php echo esc_attr($width) ?>" height="<?php echo esc_attr($height) ?>" src="//player.vimeo.com/video/<?php echo esc_attr($source_code) ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=f6e200"></iframe>
 		<?php
 		break;
 
