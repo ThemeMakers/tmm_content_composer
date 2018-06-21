@@ -204,6 +204,8 @@ class TMM_Layout_Constructor {
                         </video>
                     </div>
                     <?php
+	                wp_enqueue_script('mediaelement');
+	                wp_enqueue_style('mediaelement');
 				break;
             
                 case 'ogv':                    
@@ -214,6 +216,8 @@ class TMM_Layout_Constructor {
                         </video>
                     </div>
                     <?php
+	                wp_enqueue_script('mediaelement');
+	                wp_enqueue_style('mediaelement');
 				break;
             
                 case 'webm':                    
@@ -224,6 +228,8 @@ class TMM_Layout_Constructor {
                         </video>
                     </div>
                     <?php
+	                wp_enqueue_script('mediaelement');
+	                wp_enqueue_style('mediaelement');
 				break;
             
 				default:
@@ -235,7 +241,7 @@ class TMM_Layout_Constructor {
                          
                          <?php 
                     }else{
-                        _e('Unsupported video format', TMM_CC_TEXTDOMAIN);
+	                    esc_html_e('Unsupported video format', TMM_CC_TEXTDOMAIN);
                     }					
 					break;
 			}
