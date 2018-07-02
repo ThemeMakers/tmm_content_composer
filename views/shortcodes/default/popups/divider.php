@@ -5,13 +5,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Select Type', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Select Type', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'options' => array(
-				'separator' => __('Solid Long', TMM_CC_TEXTDOMAIN),
-				'divider' => __('Solid Short', TMM_CC_TEXTDOMAIN),
-				'empty' => __('Empty Space', TMM_CC_TEXTDOMAIN),
+				'separator' => esc_html__('Solid Long', TMM_CC_TEXTDOMAIN),
+				'divider' => esc_html__('Solid Short', TMM_CC_TEXTDOMAIN),
+				'empty' => esc_html__('Empty Space', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('content', 'separator'),
 			'description' => ''

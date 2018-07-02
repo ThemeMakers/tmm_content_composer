@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Enter Symbol', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Enter Symbol', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),

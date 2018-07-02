@@ -92,13 +92,13 @@ class TMM_Content_Composer {
 					var tmm_lang = {};
 				}
 
-				tmm_lang['loading'] = "<?php _e("Loading ...", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['close'] = "<?php _e("Close", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['apply'] = "<?php _e("Apply", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_nooption'] = "<?php _e("There is no options for shortcode!", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_updated'] = "<?php _e("Shortcode updated!", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_insert'] = "<?php _e("Insert Shortcode", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_edit'] = "<?php _e("Edit shortcode", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['loading'] = "<?php esc_html_e("Loading ...", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['close'] = "<?php esc_html_e("Close", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['apply'] = "<?php esc_html_e("Apply", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['shortcode_nooption'] = "<?php esc_html_e("There is no options for shortcode!", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['shortcode_updated'] = "<?php esc_html_e("Shortcode updated!", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['shortcode_insert'] = "<?php esc_html_e("Insert Shortcode", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['shortcode_edit'] = "<?php esc_html_e("Edit shortcode", TMM_CC_TEXTDOMAIN) ?>";
 			</script>
 		<?php
 		}
@@ -108,11 +108,11 @@ class TMM_Content_Composer {
 
 			?>
 			<script type="text/javascript">
-				tmm_lang['column_delete'] = "<?php _e("Sure about column deleting?", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['row_delete'] = "<?php _e("Sure about row deleting?", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['empty_title'] = "<?php _e("Empty title", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['column_popup_title'] = "<?php _e("Column content editor", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['row_popup_title'] = "<?php _e("Row editor", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['column_delete'] = "<?php esc_html_e("Sure about column deleting?", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['row_delete'] = "<?php esc_html_e("Sure about row deleting?", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['empty_title'] = "<?php esc_html_e("Empty title", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['column_popup_title'] = "<?php esc_html_e("Column content editor", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['row_popup_title'] = "<?php esc_html_e("Row editor", TMM_CC_TEXTDOMAIN) ?>";
 			</script>
 			<?php
 		}
@@ -146,9 +146,9 @@ class TMM_Content_Composer {
 
 		$tmm_lang = array(
 			'captcha_image_url' => get_template_directory_uri() . '/helper/capcha/image.php/',
-			'wrong_field_value' => __('Please enter correct', TMM_CC_TEXTDOMAIN),
-			'success' => __('Your message has been sent successfully!', TMM_CC_TEXTDOMAIN),
-			'fail' => __('Server failed. Send later', TMM_CC_TEXTDOMAIN),
+			'wrong_field_value' => esc_html__('Please enter correct', TMM_CC_TEXTDOMAIN),
+			'success' => esc_html__('Your message has been sent successfully!', TMM_CC_TEXTDOMAIN),
+			'fail' => esc_html__('Server failed. Send later', TMM_CC_TEXTDOMAIN),
 		);
 
 		wp_register_script('tmm_masonry', TMM_CC_URL . 'js/plugins/min/jquery.masonry.min.js', false, true);
@@ -162,7 +162,7 @@ class TMM_Content_Composer {
 
 		if (is_array($options)) {
 			$options['use_wptexturize'] = array(
-				'title' => __('Use wptexturize', TMM_CC_TEXTDOMAIN),
+				'title' => esc_html__('Use wptexturize', TMM_CC_TEXTDOMAIN),
 				'type' => 'checkbox',
 				'default_value' => 0,
 				'description' => '',
@@ -245,8 +245,8 @@ class TMM_Content_Composer {
 			$buttons = TMM_OptionsHelper::get_theme_buttons();
 		}else{
 			$buttons = array(
-				'default' => __('Default', TMM_CC_TEXTDOMAIN),
-				'default-white' => __('Default-white', TMM_CC_TEXTDOMAIN)
+				'default' => esc_html__('Default', TMM_CC_TEXTDOMAIN),
+				'default-white' => esc_html__('Default-white', TMM_CC_TEXTDOMAIN)
 			);
 		}
 		return $buttons;
@@ -257,9 +257,9 @@ class TMM_Content_Composer {
 			$button_sizes = TMM_OptionsHelper::get_theme_buttons_sizes();
 		}else{
 			$button_sizes = array(
-				'small' => __('Small', TMM_CC_TEXTDOMAIN),
-				'middle' => __('Middle', TMM_CC_TEXTDOMAIN),
-				'large' => __('Large', TMM_CC_TEXTDOMAIN),
+				'small' => esc_html__('Small', TMM_CC_TEXTDOMAIN),
+				'middle' => esc_html__('Middle', TMM_CC_TEXTDOMAIN),
+				'large' => esc_html__('Large', TMM_CC_TEXTDOMAIN),
 			);
 		}
 		return $button_sizes;
@@ -267,7 +267,7 @@ class TMM_Content_Composer {
 
 	public static function get_post_categories() {
 		$post_categories = array(
-			0 => __('All Categories', TMM_CC_TEXTDOMAIN)
+			0 => esc_html__('All Categories', TMM_CC_TEXTDOMAIN)
 		);
 
 		$args = 	array(

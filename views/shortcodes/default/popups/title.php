@@ -7,8 +7,8 @@
 
 		<ul class="tabs-nav clearfix">
 
-			<li><a href="#"><?php _e( 'Default Options', TMM_CC_TEXTDOMAIN ); ?></a></li>
-			<li><a href="#"><?php _e( 'Advanced Title Options', TMM_CC_TEXTDOMAIN ); ?></a></li>
+			<li><a href="#"><?php esc_html_e( 'Default Options', TMM_CC_TEXTDOMAIN ); ?></a></li>
+			<li><a href="#"><?php esc_html_e( 'Advanced Title Options', TMM_CC_TEXTDOMAIN ); ?></a></li>
 
 		</ul>
 
@@ -20,7 +20,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'text',
-						'title'           => __( 'Title Text', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Title Text', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'content',
 						'id'              => 'title_text',
 						'default_value'   => TMM_Content_Composer::set_default_value( 'content', '' ),
@@ -35,7 +35,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'select',
-						'title'           => __( 'Title Heading', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Title Heading', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'type',
 						'id'              => 'type',
 						'options'         => array(
@@ -55,14 +55,14 @@
 
 				<div class="one-half">
 					<?php
-					$font_size = array( 'default' => __( 'Default', TMM_CC_TEXTDOMAIN ) );
+					$font_size = array( 'default' => esc_html__( 'Default', TMM_CC_TEXTDOMAIN ) );
 					for ( $i = 8; $i <= 72; $i ++ ) {
 						$font_size[ $i ] = $i;
 					}
 					//***
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'select',
-						'title'           => __( 'Font Size', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Font Size', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'font_size',
 						'id'              => 'font_size',
 						'options'         => $font_size,
@@ -77,7 +77,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'text',
-						'title'           => __( 'Letter spacing (px)', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Letter spacing (px)', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'letter_spacing',
 						'id'              => 'letter_spacing',
 						'default_value'   => TMM_Content_Composer::set_default_value( 'letter_spacing', '' ),
@@ -91,11 +91,11 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'select',
-						'title'           => __( 'Font weight', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Font weight', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'font_weight',
 						'id'              => 'font_weight',
 						'options'         => array(
-							'normal' => __( 'Normal', TMM_CC_TEXTDOMAIN ),
+							'normal' => esc_html__( 'Normal', TMM_CC_TEXTDOMAIN ),
 							'100'    => 100,
 							'200'    => 200,
 							'300'    => 300,
@@ -115,7 +115,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'select',
-						'title'           => __( 'Title Align', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Title Align', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'align',
 						'id'              => 'align',
 						'options'         => array(
@@ -134,7 +134,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'select',
-						'title'           => __( 'Font Family', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Font Family', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'font_family',
 						'id'              => 'font_family',
 						'options'         => tmm_get_fonts_array(),
@@ -149,7 +149,7 @@
 				<div class="one-half">
 					<?php
 					TMM_Content_Composer::html_option( array(
-						'title'           => __( 'Title type', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Title type', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'title_type',
 						'type'            => 'select',
 						'description'     => '',
@@ -170,7 +170,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'text',
-						'title'           => __( 'Margin Bottom (px)', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Margin Bottom (px)', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'bottom_indent',
 						'id'              => 'bottom_indent',
 						'default_value'   => TMM_Content_Composer::set_default_value( 'bottom_indent', '' ),
@@ -185,7 +185,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'text',
-						'title'           => __( 'Line Height (em)', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Line Height (em)', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'line_height',
 						'id'              => 'line_height',
 						'default_value'   => TMM_Content_Composer::set_default_value( 'line_height', '1.35' ),
@@ -199,7 +199,7 @@
 				<div class="one-half">
 					<?php
 					TMM_Content_Composer::html_option( array(
-						'title'           => __( 'Color', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Color', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'color',
 						'type'            => 'color',
 						'description'     => '',
@@ -216,7 +216,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'checkbox',
-						'title'           => __( 'Text Transform Uppercase', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Text Transform Uppercase', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'text_transform',
 						'id'              => 'text_transform',
 						'is_checked'      => TMM_Content_Composer::set_default_value( 'text_transform', 0 ),
@@ -235,7 +235,7 @@
 				<div class="one-half">
 					<?php
 					TMM_Content_Composer::html_option( array(
-						'title'           => __( 'Background Color', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Background Color', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'bg_color',
 						'type'            => 'color',
 						'description'     => '',
@@ -250,7 +250,7 @@
 				<div class="one-half">
 					<?php
 					TMM_Content_Composer::html_option( array(
-						'title'           => __( 'Background Opacity (from 0 to 1)', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Background Opacity (from 0 to 1)', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'bg_opacity',
 						'type'            => 'text',
 						'description'     => '',
@@ -265,7 +265,7 @@
 				<div class="one-half">
 					<?php
 					TMM_Content_Composer::html_option( array(
-						'title'           => __( 'Background Radius (%)', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Background Radius (%)', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'bg_radius',
 						'type'            => 'text',
 						'description'     => '',
@@ -281,7 +281,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'text',
-						'title'           => __( 'Padding (px)', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Padding (px)', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'bg_padding',
 						'id'              => '',
 						'default_value'   => TMM_Content_Composer::set_default_value( 'bg_padding', '' ),
@@ -295,7 +295,7 @@
 				<div class="one-half">
 					<?php
 					TMM_Content_Composer::html_option( array(
-						'title'           => __( 'Background Width (px)', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Background Width (px)', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'bg_width',
 						'type'            => 'text',
 						'description'     => '',
@@ -310,7 +310,7 @@
 				<div class="one-half">
 					<?php
 					TMM_Content_Composer::html_option( array(
-						'title'           => __( 'Background Height (px)', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Background Height (px)', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'bg_height',
 						'type'            => 'text',
 						'description'     => '',
@@ -327,7 +327,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'checkbox',
-						'title'           => __( 'Use Website General Color', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Use Website General Color', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'use_general_color',
 						'id'              => 'use_general_color',
 						'is_checked'      => TMM_Content_Composer::set_default_value( 'use_general_color', 0 ),
@@ -342,7 +342,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'checkbox',
-						'title'           => __( 'Background Align Center', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Background Align Center', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'bg_center',
 						'id'              => 'bg_center',
 						'is_checked'      => TMM_Content_Composer::set_default_value( 'bg_center', 0 ),
@@ -358,20 +358,20 @@
 
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'select',
-						'title'           => __( 'Effect for Appearing Title', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Effect for Appearing Title', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'title_effect',
 						'id'              => 'title_effect',
 						'default_value'   => TMM_Content_Composer::set_default_value( 'title_effect', '' ),
 						'options'         => array(
-							'none'        => __( 'None', TMM_CC_TEXTDOMAIN ),
-							'elementFade' => __( 'Element Fade', TMM_CC_TEXTDOMAIN ),
-							'opacity2x'   => __( 'Opacity', TMM_CC_TEXTDOMAIN ),
-							'slideRight'  => __( 'Slide Right', TMM_CC_TEXTDOMAIN ),
-							'slideLeft'   => __( 'Slide Left', TMM_CC_TEXTDOMAIN ),
-							'slideDown'   => __( 'Slide Down', TMM_CC_TEXTDOMAIN ),
-							'slideUp'     => __( 'Slide Up', TMM_CC_TEXTDOMAIN ),
-							'slideUp2x'   => __( 'Slide Up 2x', TMM_CC_TEXTDOMAIN ),
-							'extraRadius' => __( 'Extra Radius', TMM_CC_TEXTDOMAIN )
+							'none'        => esc_html__( 'None', TMM_CC_TEXTDOMAIN ),
+							'elementFade' => esc_html__( 'Element Fade', TMM_CC_TEXTDOMAIN ),
+							'opacity2x'   => esc_html__( 'Opacity', TMM_CC_TEXTDOMAIN ),
+							'slideRight'  => esc_html__( 'Slide Right', TMM_CC_TEXTDOMAIN ),
+							'slideLeft'   => esc_html__( 'Slide Left', TMM_CC_TEXTDOMAIN ),
+							'slideDown'   => esc_html__( 'Slide Down', TMM_CC_TEXTDOMAIN ),
+							'slideUp'     => esc_html__( 'Slide Up', TMM_CC_TEXTDOMAIN ),
+							'slideUp2x'   => esc_html__( 'Slide Up 2x', TMM_CC_TEXTDOMAIN ),
+							'extraRadius' => esc_html__( 'Extra Radius', TMM_CC_TEXTDOMAIN )
 						),
 						'description'     => ''
 					) );
@@ -384,7 +384,7 @@
 					<?php
 					TMM_Content_Composer::html_option( array(
 						'type'            => 'checkbox',
-						'title'           => __( 'Split Title in Rows and Animate Each Row', TMM_CC_TEXTDOMAIN ),
+						'title'           => esc_html__( 'Split Title in Rows and Animate Each Row', TMM_CC_TEXTDOMAIN ),
 						'shortcode_field' => 'word_animate',
 						'id'              => 'word_animate',
 						'is_checked'      => TMM_Content_Composer::set_default_value( 'word_animate', 0 ),
@@ -397,7 +397,7 @@
 						<?php
 						TMM_Content_Composer::html_option(array(
 							'type'            => 'text',
-							'title'           => __( 'Split Title with the help "^" symbol', TMM_CC_TEXTDOMAIN ),
+							'title'           => esc_html__( 'Split Title with the help "^" symbol', TMM_CC_TEXTDOMAIN ),
 							'shortcode_field' => 'separate_row',
 							'id'              => 'separate_row',
 							'description'     => '',

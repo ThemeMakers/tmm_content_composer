@@ -4,7 +4,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Products Per Page', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Products Per Page', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'products_per_page',
 			'id' => 'products_per_page',
 			'default_value' => TMM_Content_Composer::set_default_value('products_per_page', 12),
@@ -17,7 +17,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Columns', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Columns', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'columns',
 			'id' => 'columns',
 			'options' => array(2 => 2, 3 => 3 , 4 => 4),
@@ -30,20 +30,20 @@
 	<div class="one-half">
 		<?php
 		$product_type = array(
-			'featured_products' => __('Featured', TMM_CC_TEXTDOMAIN),
-			//'top_rated_products' => __('Top Rated', TMM_CC_TEXTDOMAIN),
-			'best_selling_products' => __('Best Selling', TMM_CC_TEXTDOMAIN),
-			'sale_products' => __('Sale Products', TMM_CC_TEXTDOMAIN),
+			'featured_products' => esc_html__('Featured', TMM_CC_TEXTDOMAIN),
+			//'top_rated_products' => esc_html__('Top Rated', TMM_CC_TEXTDOMAIN),
+			'best_selling_products' => esc_html__('Best Selling', TMM_CC_TEXTDOMAIN),
+			'sale_products' => esc_html__('Sale Products', TMM_CC_TEXTDOMAIN),
 		);
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Select Products Type', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Select Products Type', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'options' => $product_type,
 			'default_value' => TMM_Content_Composer::set_default_value('type','featured_products'),
-			'description' => __('Select products type', TMM_CC_TEXTDOMAIN)
+			'description' => esc_html__('Select products type', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 	</div><!--/ .one-half-->

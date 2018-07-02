@@ -9,7 +9,7 @@
 		}
        TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Items Per Slide', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Items Per Slide', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'items_per_slide',
 			'id' => 'items_per_slide',
             'options' => $items_per_slide,
@@ -35,7 +35,7 @@
        
        TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Slides Animation Effect', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Slides Animation Effect', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'animation_type',
 			'id' => 'animation_type',
             'options' => $animation_types,
@@ -48,9 +48,9 @@
 
 	<div class="fullwidth">
 
-		<h4 class="label"><?php _e('Items', TMM_CC_TEXTDOMAIN); ?></h4>
+		<h4 class="label"><?php esc_html_e('Items', TMM_CC_TEXTDOMAIN); ?></h4>
 
-		<a class="button button-secondary js_add_accordion_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a>
+		<a class="button button-secondary js_add_accordion_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a>
 
 		<ul id="list_items" class="list-items">
 
@@ -80,7 +80,7 @@
 								));
 								?>
 							</td>
-							<td><a class="button button-secondary js_delete_accordion_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a></td>
+							<td><a class="button button-secondary js_delete_accordion_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', TMM_CC_TEXTDOMAIN); ?></a></td>
 						</tr>
 						<tr>
 							<td valign="top" style="width: 100%;" colspan="2">
@@ -94,7 +94,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_accordion_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_accordion_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

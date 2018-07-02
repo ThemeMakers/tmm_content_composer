@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Title', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Title', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -20,11 +20,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('URL', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('URL', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'url',
 			'id' => 'url',
 			'default_value' => TMM_Content_Composer::set_default_value('url', ''),
-			'description' => __('Example: ', TMM_CC_TEXTDOMAIN) . 'http://forums.webtemplatemasters.com/'
+			'description' => esc_html__('Example: ', TMM_CC_TEXTDOMAIN) . 'http://forums.webtemplatemasters.com/'
 		));
 		?>
 	</div><!--/ .one-half-->
@@ -41,19 +41,19 @@
 		
 		<?php
 		$icon_groups = array(
-			'New_Icons' => __('New Icons', TMM_CC_TEXTDOMAIN),
-			'Web_Application_Icons' => __('Web Application Icons', TMM_CC_TEXTDOMAIN),
-			'Text_Editor_Icons' => __('Text Editor Icons', TMM_CC_TEXTDOMAIN),
-			'Directional_Icons' => __('Directional Icons', TMM_CC_TEXTDOMAIN),
-			'Video_Player_Icons' => __('Video Player Icons', TMM_CC_TEXTDOMAIN),
-			'Brand_Icons' => __('Brand Icons', TMM_CC_TEXTDOMAIN),
-			'Medical_Icons' => __('Medical Icons', TMM_CC_TEXTDOMAIN),
+			'New_Icons' => esc_html__('New Icons', TMM_CC_TEXTDOMAIN),
+			'Web_Application_Icons' => esc_html__('Web Application Icons', TMM_CC_TEXTDOMAIN),
+			'Text_Editor_Icons' => esc_html__('Text Editor Icons', TMM_CC_TEXTDOMAIN),
+			'Directional_Icons' => esc_html__('Directional Icons', TMM_CC_TEXTDOMAIN),
+			'Video_Player_Icons' => esc_html__('Video Player Icons', TMM_CC_TEXTDOMAIN),
+			'Brand_Icons' => esc_html__('Brand Icons', TMM_CC_TEXTDOMAIN),
+			'Medical_Icons' => esc_html__('Medical Icons', TMM_CC_TEXTDOMAIN),
 		);
 
 		$view_icon_group = TMM_Content_Composer::set_default_value('view_icon_group', 'New_Icons');
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('View icon group', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('View icon group', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'view_icon_group',
 			'id' => 'view_icon_group',
 			'options' => $icon_groups,
@@ -70,7 +70,7 @@
 	<?php
 	TMM_Content_Composer::html_option(array(
 		'type' => 'textarea',
-		'title' => __('Optional Text', TMM_CC_TEXTDOMAIN),
+		'title' => esc_html__('Optional Text', TMM_CC_TEXTDOMAIN),
 		'shortcode_field' => 'text',
 		'id' => 'url',
 		'default_value' => TMM_Content_Composer::set_default_value('text', ''),
@@ -354,7 +354,7 @@
 
 			<div id="New_Icons" class="icon_types_container" style="display: <?php echo($view_icon_group == 'New_Icons' ? 'block' : 'none') ?>">
 				
-				<h4><?php _e('New Icons', TMM_CC_TEXTDOMAIN) ?></h4>
+				<h4><?php esc_html_e('New Icons', TMM_CC_TEXTDOMAIN) ?></h4>
 
 				<ul class="icons-type-list icons-type-awesome">
 					<?php foreach ($new_icons as $name): ?>
@@ -367,7 +367,7 @@
 			</div><!--/ .icons_types_container-->
 
 			<div id="Web_Application_Icons" class="icon_types_container" style="display: <?php echo($view_icon_group == 'Web_Application_Icons' ? 'block' : 'none') ?>">
-				<h4><?php _e('Web Application Icons', TMM_CC_TEXTDOMAIN) ?></h4>
+				<h4><?php esc_html_e('Web Application Icons', TMM_CC_TEXTDOMAIN) ?></h4>
 
 				<ul class="icons-type-list icons-type-awesome">
 					<?php foreach ($web_application_icons as $name): ?>
@@ -380,7 +380,7 @@
 			</div><!--/ .icon_types_container-->
 
 			<div id="Text_Editor_Icons" class="icon_types_container" style="display: <?php echo($view_icon_group == 'Text_Editor_Icons' ? 'block' : 'none') ?>">
-				<h4><?php _e('Text Editor Icons', TMM_CC_TEXTDOMAIN) ?></h4>
+				<h4><?php esc_html_e('Text Editor Icons', TMM_CC_TEXTDOMAIN) ?></h4>
 
 				<ul class="icons-type-list icons-type-awesome">
 					<?php foreach ($text_editor_icons as $name): ?>
@@ -393,7 +393,7 @@
 			</div><!--/ .icon_types_container-->
 
 			<div id="Directional_Icons" class="icon_types_container" style="display: <?php echo($view_icon_group == 'Directional_Icons' ? 'block' : 'none') ?>">
-				<h4><?php _e('Directional Icons', TMM_CC_TEXTDOMAIN) ?></h4>
+				<h4><?php esc_html_e('Directional Icons', TMM_CC_TEXTDOMAIN) ?></h4>
 
 				<ul class="icons-type-list icons-type-awesome">
 					<?php foreach ($directional_icons as $name): ?>
@@ -406,7 +406,7 @@
 			</div><!--/ .icon_types_container-->
 
 			<div id="Video_Player_Icons" class="icon_types_container" style="display: <?php echo($view_icon_group == 'Video_Player_Icons' ? 'block' : 'none') ?>">
-				<h4><?php _e('Video Player Icons', TMM_CC_TEXTDOMAIN) ?></h4>
+				<h4><?php esc_html_e('Video Player Icons', TMM_CC_TEXTDOMAIN) ?></h4>
 
 				<ul class="icons-type-list icons-type-awesome">
 					<?php foreach ($video_player_icons as $name): ?>
@@ -419,7 +419,7 @@
 			</div><!--/ .icon_types_container-->
 
 			<div id="Brand_Icons" class="icon_types_container" style="display: <?php echo($view_icon_group == 'Social_Icons' ? 'block' : 'none') ?>">
-				<h4><?php _e('Brand Icons', TMM_CC_TEXTDOMAIN) ?></h4>
+				<h4><?php esc_html_e('Brand Icons', TMM_CC_TEXTDOMAIN) ?></h4>
 
 				<ul class="icons-type-list icons-type-awesome">
 					<?php foreach ($brand_icons as $name): ?>
@@ -432,7 +432,7 @@
 			</div><!--/ .icon_types_container-->
 
 			<div id="Medical_Icons" class="icon_types_container" style="display: <?php echo($view_icon_group == 'Medical_Icons' ? 'block' : 'none') ?>">
-				<h4><?php _e('Medical Icons', TMM_CC_TEXTDOMAIN) ?></h4>
+				<h4><?php esc_html_e('Medical Icons', TMM_CC_TEXTDOMAIN) ?></h4>
 
 				<ul class="icons-type-list icons-type-awesome">
 					<?php foreach ($medical_icons as $name): ?>

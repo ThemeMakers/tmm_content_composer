@@ -64,7 +64,7 @@ if (!in_array($post_pod_type, $post_types)) {
             <?php } ?>
 
             <?php if (!class_exists('TMM') || !TMM::get_option("blog_listing_show_comments")){ ?>
-                <span class="comments"><a href="<?php echo esc_url($post_link) ?>#comments"><?php echo get_comments_number($post->ID); ?></a>&nbsp;<?php _e('Comments', TMM_CC_TEXTDOMAIN); ?></span>
+                <span class="comments"><a href="<?php echo esc_url($post_link) ?>#comments"><?php echo get_comments_number($post->ID); ?></a>&nbsp;<?php esc_html_e('Comments', TMM_CC_TEXTDOMAIN); ?></span>
             <?php } ?>
 
         </div>

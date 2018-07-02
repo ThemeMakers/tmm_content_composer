@@ -94,19 +94,19 @@
 		//ul == 0
 		TMM_Content_Composer::html_option(array(
 			'type' => 'radio',
-			'title' => __('List Type', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('List Type', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'list_type',
 			'id' => 'list_type',
 			'name' => 'list_type',
 			'values' => array(
 				0 => array(
-					'title' => __('Unordered', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Unordered', TMM_CC_TEXTDOMAIN),
 					'id' => 'list_type_ul',
 					'value' => 0,
 					'checked' => ($value_type == 0 ? 1 : 0)
 				),
 				1 => array(
-					'title' => __('Ordered', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Ordered', TMM_CC_TEXTDOMAIN),
 					'id' => 'list_type_ol',
 					'value' => 1,
 					'checked' => ($value_type == 1 ? 1 : 0)
@@ -118,8 +118,8 @@
 		));
 		?>
 
-		<h4 class="label"><?php _e('List Styles', TMM_CC_TEXTDOMAIN); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add list item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<h4 class="label"><?php esc_html_e('List Styles', TMM_CC_TEXTDOMAIN); ?></h4>
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add list item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 		<ul id="list_items" class="list-items">		
 			
@@ -164,7 +164,7 @@
 								<input type="text" value="<?php echo $content_edit_text ?>" class="list_item_content js_shortcode_template_changer data-area" />
 							</td>
 							<td>
-								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
+								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
 							</td>
 							<td></td>
 						</tr>
@@ -174,7 +174,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add list item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add list item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

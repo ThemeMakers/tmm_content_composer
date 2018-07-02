@@ -2,12 +2,12 @@
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
 	<div class="one-half">
-		<h4 class="label"><?php _e('Category', TMM_CC_TEXTDOMAIN); ?></h4>
+		<h4 class="label"><?php esc_html_e('Category', TMM_CC_TEXTDOMAIN); ?></h4>
 
 		<label class="sel">
 		<?php
 		wp_dropdown_categories(array(
-			'show_option_all' => __('All categories', TMM_CC_TEXTDOMAIN),
+			'show_option_all' => esc_html__('All categories', TMM_CC_TEXTDOMAIN),
 			'hide_empty' => 0,
 			'hierarchical' => true,
 			'id' => 'posts_category',
@@ -23,7 +23,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Posts count', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Posts count', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'count',
 			'id' => 'count',
 			'options' => array(
@@ -44,11 +44,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show "Read more" button', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Show "Read more" button', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_readmore_button',
 			'id' => 'show_readmore_button',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_readmore_button', 1),
-			'description' => __('Show "Read more" button', TMM_CC_TEXTDOMAIN)
+			'description' => esc_html__('Show "Read more" button', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
@@ -58,11 +58,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show post metadata', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Show post metadata', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_post_metadata',
 			'id' => 'show_post_metadata',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_post_metadata', 1),
-			'description' => __('Show post metadata', TMM_CC_TEXTDOMAIN)
+			'description' => esc_html__('Show post metadata', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
@@ -72,7 +72,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Content Char Count', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Content Char Count', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'char_count',
 			'id' => 'char_count',
 			'default_value' => TMM_Content_Composer::set_default_value('char_count', 140),

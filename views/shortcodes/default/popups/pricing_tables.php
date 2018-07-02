@@ -108,7 +108,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Table Count', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Table Count', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'count',
 			'id' => 'count',
 			'options' => array(
@@ -132,7 +132,7 @@
 		}
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Row Count', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Row Count', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'row_count',
 			'id' => 'row_count',
 			'options' => $row_count_array,
@@ -146,24 +146,24 @@
         <div class="one-half">
             <?php
             TMM_Content_Composer::html_option(array(
-                        'title' => __('Effect for Appearing Table', TMM_CC_TEXTDOMAIN),
+                        'title' => esc_html__('Effect for Appearing Table', TMM_CC_TEXTDOMAIN),
                         'type' => 'select',
                         'shortcode_field' => 'effect_type',
                         'id' => 'effect_type',
                         'default_value' => TMM_Content_Composer::set_default_value('effect_type', 'elementFade'),
                         'options' => array(
-                                'elementFade' => __('Element Fade', TMM_CC_TEXTDOMAIN),
-                                'opacity' => __('Opacity', TMM_CC_TEXTDOMAIN),
-                                'opacity2xRun' => __('Opacity 2x Run', TMM_CC_TEXTDOMAIN),
-                                'scale' => __('Scale', TMM_CC_TEXTDOMAIN),
-                                'slideRight' => __('Slide Right', TMM_CC_TEXTDOMAIN),
-                                'slideLeft' => __('Slide Left', TMM_CC_TEXTDOMAIN),
-                                'slideDown' => __('Slide Down', TMM_CC_TEXTDOMAIN),
-                                'slideUp' => __('Slide Up', TMM_CC_TEXTDOMAIN),
-                                'slideUp2x' => __('Slide Up 2x', TMM_CC_TEXTDOMAIN),
-                                'extraRadius' => __('Extra Radius', TMM_CC_TEXTDOMAIN)
+                                'elementFade' => esc_html__('Element Fade', TMM_CC_TEXTDOMAIN),
+                                'opacity' => esc_html__('Opacity', TMM_CC_TEXTDOMAIN),
+                                'opacity2xRun' => esc_html__('Opacity 2x Run', TMM_CC_TEXTDOMAIN),
+                                'scale' => esc_html__('Scale', TMM_CC_TEXTDOMAIN),
+                                'slideRight' => esc_html__('Slide Right', TMM_CC_TEXTDOMAIN),
+                                'slideLeft' => esc_html__('Slide Left', TMM_CC_TEXTDOMAIN),
+                                'slideDown' => esc_html__('Slide Down', TMM_CC_TEXTDOMAIN),
+                                'slideUp' => esc_html__('Slide Up', TMM_CC_TEXTDOMAIN),
+                                'slideUp2x' => esc_html__('Slide Up 2x', TMM_CC_TEXTDOMAIN),
+                                'extraRadius' => esc_html__('Extra Radius', TMM_CC_TEXTDOMAIN)
                         ),
-                        'description' => __('Effect for Appearing Post.', TMM_CC_TEXTDOMAIN)
+                        'description' => esc_html__('Effect for Appearing Post.', TMM_CC_TEXTDOMAIN)
                         
             ));
                 
@@ -173,7 +173,7 @@
 	<ul id="price_tables_list">
 
 		<?php
-		$shortcodes_texts_array = array(0 => '[price_table title="' . __('Starter Package', TMM_CC_TEXTDOMAIN) . '" price="' . __('$19.95', TMM_CC_TEXTDOMAIN) . '" period="' . __('per month', TMM_CC_TEXTDOMAIN) . '" button_text="' . __('Get Started', TMM_CC_TEXTDOMAIN) . '" button_link="#" featured="0"]^^^[/price_table]');
+		$shortcodes_texts_array = array(0 => '[price_table title="' . esc_html__('Starter Package', TMM_CC_TEXTDOMAIN) . '" price="' . esc_html__('$19.95', TMM_CC_TEXTDOMAIN) . '" period="' . esc_html__('per month', TMM_CC_TEXTDOMAIN) . '" button_text="' . esc_html__('Get Started', TMM_CC_TEXTDOMAIN) . '" button_link="#" featured="0"]^^^[/price_table]');
 		//***
 		if (isset($_REQUEST["shortcode_mode_edit"])) {
 			$shortcodes_texts_array = array();
@@ -224,18 +224,18 @@
 
 						<ul class="features">
 							<?php foreach ($options_content as $option_text) : ?>
-								<li><input type="text" class="price_table_option_row price_table_row_input data-input" value="<?php echo $option_text ?>" placeholder="<?php _e('Enter text here', TMM_CC_TEXTDOMAIN); ?>" /></li>
+								<li><input type="text" class="price_table_option_row price_table_row_input data-input" value="<?php echo $option_text ?>" placeholder="<?php esc_html_e('Enter text here', TMM_CC_TEXTDOMAIN); ?>" /></li>
 							<?php endforeach; ?>
 						</ul><!-- .features -->
 
 						<div class="footer">
-							<h4 class="label"><?php _e('Button Text', TMM_CC_TEXTDOMAIN); ?></h4>
+							<h4 class="label"><?php esc_html_e('Button Text', TMM_CC_TEXTDOMAIN); ?></h4>
 							<input type="text" class="price_table_button_text price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['button_text'] ?>" />
-							<h4 class="label"><?php _e('Button Link', TMM_CC_TEXTDOMAIN); ?></h4>
+							<h4 class="label"><?php esc_html_e('Button Link', TMM_CC_TEXTDOMAIN); ?></h4>
 							<input type="text" class="price_table_button_link price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['button_link'] ?>" />
-							<!--<h4 class="label"><?php _e('Is Featured', TMM_CC_TEXTDOMAIN); ?></h4>-->
+							<!--<h4 class="label"><?php esc_html_e('Is Featured', TMM_CC_TEXTDOMAIN); ?></h4>-->
 							<br /><input type="checkbox" value="<?php echo $_REQUEST["shortcode_mode_edit"]['featured'] ?>" <?php echo($_REQUEST["shortcode_mode_edit"]['featured'] == 1 ? 'checked' : '') ?> class="featured_price_list data-check js_shortcode_checkbox_self_update" />
-							<label class="label"><span></span><i class="description"><?php _e('Is Featured', TMM_CC_TEXTDOMAIN); ?></i></label>
+							<label class="label"><span></span><i class="description"><?php esc_html_e('Is Featured', TMM_CC_TEXTDOMAIN); ?></i></label>
 						</div><!-- .footer -->
 
 					</div><!-- .column -->

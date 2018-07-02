@@ -9,7 +9,7 @@
 		}
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Projects Per Page', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Projects Per Page', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'count',
 			'id' => '',
 			'options' => $content,
@@ -23,15 +23,15 @@
 	<div class="one-half">
 		<?php
 		$template = array(
-                        3 => __('3 Columns', TMM_CC_TEXTDOMAIN),
-			4 => __('4 Columns', TMM_CC_TEXTDOMAIN),
-                        5 => __('5 Columns', TMM_CC_TEXTDOMAIN),
-                        6 => __('6 Columns', TMM_CC_TEXTDOMAIN),
+                        3 => esc_html__('3 Columns', TMM_CC_TEXTDOMAIN),
+			4 => esc_html__('4 Columns', TMM_CC_TEXTDOMAIN),
+                        5 => esc_html__('5 Columns', TMM_CC_TEXTDOMAIN),
+                        6 => esc_html__('6 Columns', TMM_CC_TEXTDOMAIN),
 		);
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Template', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Template', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'template',
 			'id' => 'template',
 			'options' => $template,

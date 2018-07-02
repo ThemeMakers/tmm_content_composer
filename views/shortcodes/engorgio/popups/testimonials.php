@@ -9,13 +9,13 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Show', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Show', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show',
 			'id' => 'show_testimonial_value',
 			'options' => array(
-				'mode1' => __('Show selected testimonial', TMM_CC_TEXTDOMAIN),
-				'mode2' => __('Show random testimonial', TMM_CC_TEXTDOMAIN),
-				'mode3' => __('Show latest testimonial', TMM_CC_TEXTDOMAIN),
+				'mode1' => esc_html__('Show selected testimonial', TMM_CC_TEXTDOMAIN),
+				'mode2' => esc_html__('Show random testimonial', TMM_CC_TEXTDOMAIN),
+				'mode3' => esc_html__('Show latest testimonial', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => $show,
 			'description' => ''
@@ -35,7 +35,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Testimonials', TMM_CC_TEXTDOMAIN),
+				'title' => esc_html__('Testimonials', TMM_CC_TEXTDOMAIN),
 				'options' => $testimonials,
 				'shortcode_field' => 'content',
 				'id' => '',
@@ -63,7 +63,7 @@
        
        TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Slides Animation Effect', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Slides Animation Effect', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'animation_type',
 			'id' => 'animation_type',
             'options' => $animation_types,
@@ -80,11 +80,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Count', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Count', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'count',
 			'id' => '',
 			'options' => array(
-				-1 => __('All', TMM_CC_TEXTDOMAIN),
+				-1 => esc_html__('All', TMM_CC_TEXTDOMAIN),
 				1 => 1,
 				2 => 2,
 				3 => 3,
@@ -103,12 +103,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Content Color', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Content Color', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content_color',
 			'id' => 'content_color',
             'options' => array(
-                'dark' =>  __('Dark', TMM_CC_TEXTDOMAIN),
-                'light' =>  __('Light', TMM_CC_TEXTDOMAIN),
+                'dark' =>  esc_html__('Dark', TMM_CC_TEXTDOMAIN),
+                'light' =>  esc_html__('Light', TMM_CC_TEXTDOMAIN),
             ),
 			'default_value' => TMM_Content_Composer::set_default_value('content_color', 'dark'),
 			'description' => ''
@@ -122,11 +122,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show photo', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Show photo', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_photo',
 			'id' => 'show_photo',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_photo', 1),
-			'description' => __('Show/Hide Photo', TMM_CC_TEXTDOMAIN)
+			'description' => esc_html__('Show/Hide Photo', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 

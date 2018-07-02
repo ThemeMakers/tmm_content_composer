@@ -37,7 +37,7 @@ function tmm_cc_register() {
 	if ( !function_exists('tmm_get_fonts_array') ) {
 		function tmm_get_fonts_array() {
 			return array(
-				'' => __('Default', TMM_CC_TEXTDOMAIN),
+				'' => esc_html__('Default', TMM_CC_TEXTDOMAIN),
 				'Arial' => 'Arial',
 				'Tahoma' => 'Tahoma',
 				'Verdana' => 'Verdana',

@@ -106,12 +106,12 @@ if (!empty($folio_category)) {
             <div class="filter-container">
                 <ul id="portfolio_filter_<?php echo $uniqid; ?>" class="portfolio-filter">
 
-                    <li><a class="filter active" data-filter="all"><?php _e('All', TMM_CC_TEXTDOMAIN); ?></a></li>
+                    <li><a class="filter active" data-filter="all"><?php esc_html_e('All', TMM_CC_TEXTDOMAIN); ?></a></li>
 
                     <?php if (!empty($folio_tags)): ?>
                         <?php foreach ($folio_tags as $term_id => $tag) : ?>
                             <?php if (empty($folio_category) || in_array($term_id, $folio_category)): ?>
-                                <li><a class="filter" data-filter=".<?php echo $tag->slug ?>"><?php _e($tag->name, TMM_CC_TEXTDOMAIN); ?></a></li>
+                                <li><a class="filter" data-filter=".<?php echo $tag->slug ?>"><?php esc_html_e($tag->name, TMM_CC_TEXTDOMAIN); ?></a></li>
                             <?php endif; ?>
                         <?php endforeach; ?>
                     <?php endif; ?>
@@ -177,7 +177,7 @@ if (!empty($folio_category)) {
     </div>
 
     <div class="portfolio-paging">
-        <a  href="#" data-total="<?php echo esc_attr($count_images_by_cat); ?>" data-loaded="<?php echo esc_attr(implode(',', array_keys($loaded_images))); ?>" data-perpage="<?php echo esc_attr($posts_per_page); ?>" data-perload="<?php echo esc_attr($posts_per_load); ?>" data-category="<?php echo !empty($folio_category_slugs) ? esc_attr(implode(',', $folio_category_slugs)) : 'all'; ?>" data-showcategories="<?php echo esc_attr($show_categories); ?>" class="load-more"><?php _e('Load More', TMM_CC_TEXTDOMAIN); ?></a>
+        <a  href="#" data-total="<?php echo esc_attr($count_images_by_cat); ?>" data-loaded="<?php echo esc_attr(implode(',', array_keys($loaded_images))); ?>" data-perpage="<?php echo esc_attr($posts_per_page); ?>" data-perload="<?php echo esc_attr($posts_per_load); ?>" data-category="<?php echo !empty($folio_category_slugs) ? esc_attr(implode(',', $folio_category_slugs)) : 'all'; ?>" data-showcategories="<?php echo esc_attr($show_categories); ?>" class="load-more"><?php esc_html_e('Load More', TMM_CC_TEXTDOMAIN); ?></a>
     </div><!--/ .portfolio-paging-->
 
 <?php } ?>

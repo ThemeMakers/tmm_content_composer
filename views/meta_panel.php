@@ -1,8 +1,8 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 
 <input type="hidden" name="tmm_meta_saving" value="1" />
-<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php _e("Add New Row", TMM_CC_TEXTDOMAIN) ?></a>
-<a href="#" class="tmm-lc-paste-row button button-large"><?php _e("Insert Clipboard Row here", TMM_CC_TEXTDOMAIN) ?></a><br />
+<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php esc_html_e("Add New Row", TMM_CC_TEXTDOMAIN) ?></a>
+<a href="#" class="tmm-lc-paste-row button button-large"><?php esc_html_e("Insert Clipboard Row here", TMM_CC_TEXTDOMAIN) ?></a><br />
 
 <ul id="tmm_lc_rows" class="tmm-lc-rows">
 
@@ -15,10 +15,10 @@
 			<li id="tmm_lc_row_<?php echo $row ?>" class="tmm-lc-row">
 
 				<div class="tmm-lc-row-buttons-wrapper">
-					<a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php _e("Add Row to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php esc_html_e("Add Column", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php esc_html_e("Add Row to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php esc_html_e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php esc_html_e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
 				</div>
 
 				<div class="tmm-lc-columns" id="tmm_lc_columns_<?php echo $row ?>">
@@ -119,10 +119,10 @@
 		<li id="tmm_lc_row___ROW_ID__" class="tmm-lc-row">
 
             <div class="tmm-lc-row-buttons-wrapper">
-                <a class="tmm-lc-add-column" title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>" data-row-id="__ROW_ID__"></a>
-                <a class="tmm-lc-copy-row" data-row-id="__ROW_ID__" title="<?php _e("Add to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-                <a class="tmm-lc-edit-row" data-row-id="__ROW_ID__" title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
-                <a class="tmm-lc-delete-row" data-row-id="__ROW_ID__" title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
+                <a class="tmm-lc-add-column" title="<?php esc_html_e("Add Column", TMM_CC_TEXTDOMAIN) ?>" data-row-id="__ROW_ID__"></a>
+                <a class="tmm-lc-copy-row" data-row-id="__ROW_ID__" title="<?php esc_html_e("Add to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
+                <a class="tmm-lc-edit-row" data-row-id="__ROW_ID__" title="<?php esc_html_e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
+                <a class="tmm-lc-delete-row" data-row-id="__ROW_ID__" title="<?php esc_html_e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
             </div>
 
 			<div class="tmm-lc-columns" id="tmm_lc_columns___ROW_ID__"></div>
@@ -158,21 +158,21 @@
 	<div id="tmm_lc_column_effects">
 		<?php
 		$effects = array(
-			'' => __("No effects", TMM_CC_TEXTDOMAIN),
-			'elementFade' => __('Element Fade', TMM_CC_TEXTDOMAIN),
-			'opacity2x' => __('Opacity', TMM_CC_TEXTDOMAIN),
-			'slideRight' => __('Slide Right', TMM_CC_TEXTDOMAIN),
-			'slideLeft' => __('Slide Left', TMM_CC_TEXTDOMAIN),
-			'slideDown' => __('Slide Down', TMM_CC_TEXTDOMAIN),
-			'slideUp' => __('Slide Up', TMM_CC_TEXTDOMAIN),
-			'slideUp2x' => __('Slide Up 2x', TMM_CC_TEXTDOMAIN),
-			'extraRadius' => __('Extra Radius', TMM_CC_TEXTDOMAIN)
+			'' => esc_html__("No effects", TMM_CC_TEXTDOMAIN),
+			'elementFade' => esc_html__('Element Fade', TMM_CC_TEXTDOMAIN),
+			'opacity2x' => esc_html__('Opacity', TMM_CC_TEXTDOMAIN),
+			'slideRight' => esc_html__('Slide Right', TMM_CC_TEXTDOMAIN),
+			'slideLeft' => esc_html__('Slide Left', TMM_CC_TEXTDOMAIN),
+			'slideDown' => esc_html__('Slide Down', TMM_CC_TEXTDOMAIN),
+			'slideUp' => esc_html__('Slide Up', TMM_CC_TEXTDOMAIN),
+			'slideUp2x' => esc_html__('Slide Up 2x', TMM_CC_TEXTDOMAIN),
+			'extraRadius' => esc_html__('Extra Radius', TMM_CC_TEXTDOMAIN)
 		);
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'title' => '',
-			'label' => __("Layout constructor", TMM_CC_TEXTDOMAIN),
+			'label' => esc_html__("Layout constructor", TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'tmm-lc-column-effects-selector',
 			'id' => '',
 			'options' => $effects,
@@ -192,12 +192,12 @@
            <?php
             TMM_Content_Composer::html_option(array(
                 'type' => 'select',
-                'title' => __('Row content displaying', TMM_CC_TEXTDOMAIN),
+                'title' => esc_html__('Row content displaying', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'row_lc_displaying',
                 'id' => 'row_lc_displaying',
                 'options' => array(
-                    'default' => __('Below content matching its layout', TMM_CC_TEXTDOMAIN),
-                    'full_width' => __('Below main content with separate layout options', TMM_CC_TEXTDOMAIN)
+                    'default' => esc_html__('Below content matching its layout', TMM_CC_TEXTDOMAIN),
+                    'full_width' => esc_html__('Below main content with separate layout options', TMM_CC_TEXTDOMAIN)
                 ),
                 'default_value' => TMM_Content_Composer::set_default_value('row_lc_displaying', 'default'),
                 'description' => ''
@@ -208,12 +208,12 @@
             <?php
             TMM_Content_Composer::html_option(array(
                 'type' => 'select',
-                'title' => __('Row Full Width', TMM_CC_TEXTDOMAIN),
+                'title' => esc_html__('Row Full Width', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'row_full_width',
                 'id' => 'row_full_width',
                 'options' => array(
-                    0 => __('No', TMM_CC_TEXTDOMAIN),
-                    1 => __('Yes', TMM_CC_TEXTDOMAIN)
+                    0 => esc_html__('No', TMM_CC_TEXTDOMAIN),
+                    1 => esc_html__('Yes', TMM_CC_TEXTDOMAIN)
                 ),
                 'default_value' => TMM_Content_Composer::set_default_value('full_width', 0),
                 'description' => ''
@@ -225,12 +225,12 @@
             <?php
             TMM_Content_Composer::html_option(array(
                 'type' => 'select',
-                'title' => __('Content Full Width', TMM_CC_TEXTDOMAIN),
+                'title' => esc_html__('Content Full Width', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'row_content_full_width',
                 'id' => 'row_content_full_width',
                 'options' => array(
-                    0 => __('No', TMM_CC_TEXTDOMAIN),
-                    1 => __('Yes', TMM_CC_TEXTDOMAIN)
+                    0 => esc_html__('No', TMM_CC_TEXTDOMAIN),
+                    1 => esc_html__('Yes', TMM_CC_TEXTDOMAIN)
                 ),
                 'default_value' => TMM_Content_Composer::set_default_value('content_full_width', 0),
                 'description' => ''
@@ -240,7 +240,7 @@
 
             <?php
             TMM_Content_Composer::html_option(array(
-				'title' => __('Padding top', TMM_CC_TEXTDOMAIN),
+				'title' => esc_html__('Padding top', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_padding_top',
 				'type' => 'text',
 				'description' => 'Default Value 80px',
@@ -249,7 +249,7 @@
 			));
 
 			TMM_Content_Composer::html_option(array(
-				'title' => __('Padding bottom', TMM_CC_TEXTDOMAIN),
+				'title' => esc_html__('Padding bottom', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_padding_bottom',
 				'type' => 'text',
 				'description' => 'Default Value 80px',
@@ -259,7 +259,7 @@
 
             TMM_Content_Composer::html_option(array(
                 'type' => 'select',
-                'title' => __('Content Align', TMM_CC_TEXTDOMAIN),
+                'title' => esc_html__('Content Align', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'row_align',
                 'id' => 'row_align',
                 'options' => array(
@@ -273,7 +273,7 @@
 
             TMM_Content_Composer::html_option(array(
                 'type' => 'checkbox',
-                'title' => __('Inner Content Center', TMM_CC_TEXTDOMAIN),
+                'title' => esc_html__('Inner Content Center', TMM_CC_TEXTDOMAIN),
                 'shortcode_field' => 'row_center',
                 'id' => 'row_center',
                 'is_checked'=>TMM_Content_Composer::set_default_value('row_center', 0),
@@ -288,13 +288,13 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Row Background Type', TMM_CC_TEXTDOMAIN),
+				'title' => esc_html__('Row Background Type', TMM_CC_TEXTDOMAIN),
 				'shortcode_field' => 'row_background_type',
 				'id' => 'row_background_type',
 				'options' => array(
-					'none' => __('None', TMM_CC_TEXTDOMAIN),
-					'default' => __('Default Theme Color', TMM_CC_TEXTDOMAIN),
-					'custom' => __('Custom', TMM_CC_TEXTDOMAIN),
+					'none' => esc_html__('None', TMM_CC_TEXTDOMAIN),
+					'default' => esc_html__('Default Theme Color', TMM_CC_TEXTDOMAIN),
+					'custom' => esc_html__('Custom', TMM_CC_TEXTDOMAIN),
 				),
 				'default_value' => 'default',
 				'description' => ''
@@ -306,13 +306,13 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Custom Background Type', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Custom Background Type', TMM_CC_TEXTDOMAIN),
 					'shortcode_field' => 'row_background_custom_type',
 					'id' => 'row_bg_custom_type',
                     'options' => array(
-                        'color' => __('Color', TMM_CC_TEXTDOMAIN),
-                        'image' => __('Image', TMM_CC_TEXTDOMAIN),
-                        'video' => __('Video', TMM_CC_TEXTDOMAIN)                        
+                        'color' => esc_html__('Color', TMM_CC_TEXTDOMAIN),
+                        'image' => esc_html__('Image', TMM_CC_TEXTDOMAIN),
+                        'video' => esc_html__('Video', TMM_CC_TEXTDOMAIN)
                     ),
                     'default_value' => 'color',
 					'description' => ''
@@ -322,7 +322,7 @@
                 <div id="row_background_color_box" style="display: none;">
                     <?php
                     TMM_Content_Composer::html_option(array(
-                        'title' => __('Background Color', TMM_CC_TEXTDOMAIN),
+                        'title' => esc_html__('Background Color', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'row_background_color',
                         'type' => 'color',
                         'description' => '',
@@ -338,7 +338,7 @@
                     <?php
                     TMM_Content_Composer::html_option(array(
                         'type' => 'upload',
-                        'title' => __('Background Image', TMM_CC_TEXTDOMAIN),
+                        'title' => esc_html__('Background Image', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'row_background_image',
                         'id' => 'row_background_image',
                         'default_value' => '',
@@ -348,12 +348,12 @@
                     <?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Background Attachment', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Background Attachment', TMM_CC_TEXTDOMAIN),
 					'shortcode_field' => 'row_bg_attachment',
 					'id' => 'row_bg_attachment',
 					'options' => array(
-						'scroll' => __('scroll', TMM_CC_TEXTDOMAIN),
-						'fixed' => __('fixed', TMM_CC_TEXTDOMAIN)
+						'scroll' => esc_html__('scroll', TMM_CC_TEXTDOMAIN),
+						'fixed' => esc_html__('fixed', TMM_CC_TEXTDOMAIN)
 					),
 					'default_value' => 'scroll',
 					'description' => ''
@@ -364,7 +364,7 @@
                     <?php
                     TMM_Content_Composer::html_option(array(
                         'type' => 'upload_video',
-                        'title' => __('Background Video', TMM_CC_TEXTDOMAIN),
+                        'title' => esc_html__('Background Video', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'row_background_video',
                         'id' => 'row_background_video',
                         'default_value' => '',
@@ -375,7 +375,7 @@
                     <?php
                     TMM_Content_Composer::html_option(array(
                         'type' => 'upload',
-                        'title' => __('Cover Image', TMM_CC_TEXTDOMAIN),
+                        'title' => esc_html__('Cover Image', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'row_background_cover',
                         'id' => 'row_background_cover',
                         'default_value' => '',
@@ -386,36 +386,36 @@
 					<?php
 					TMM_Content_Composer::html_option(array(
 						'type' => 'checkbox',
-						'title' => __('Show / Hide video control panel', TMM_CC_TEXTDOMAIN),
+						'title' => esc_html__('Show / Hide video control panel', TMM_CC_TEXTDOMAIN),
 						'shortcode_field' => 'row_background_video_panel',
 						'id' => 'row_bg_video_panel',
 						'default_value' => 1,
 						'is_checked'=>true,
-						'description' => __('Show / Hide video control panel', TMM_CC_TEXTDOMAIN),
+						'description' => esc_html__('Show / Hide video control panel', TMM_CC_TEXTDOMAIN),
 					));
 					?>
 
 					<?php
 					TMM_Content_Composer::html_option(array(
 						'type' => 'checkbox',
-						'title' => __('Mute audio on video', TMM_CC_TEXTDOMAIN),
+						'title' => esc_html__('Mute audio on video', TMM_CC_TEXTDOMAIN),
 						'shortcode_field' => 'row_background_video_mute',
 						'id' => 'row_bg_video_mute',
 						'default_value' => 0,
 						'is_checked'=>false,
-						'description' => __('Mute audio on video', TMM_CC_TEXTDOMAIN),
+						'description' => esc_html__('Mute audio on video', TMM_CC_TEXTDOMAIN),
 					));
 					?>
 
 					<?php
 					TMM_Content_Composer::html_option(array(
 						'type' => 'checkbox',
-						'title' => __('Repeat videos automatically', TMM_CC_TEXTDOMAIN),
+						'title' => esc_html__('Repeat videos automatically', TMM_CC_TEXTDOMAIN),
 						'shortcode_field' => 'row_background_video_loop',
 						'id' => 'row_bg_video_loop',
 						'default_value' => 1,
 						'is_checked'=>true,
-						'description' => __('Repeat videos automatically', TMM_CC_TEXTDOMAIN),
+						'description' => esc_html__('Repeat videos automatically', TMM_CC_TEXTDOMAIN),
 					));
 					?>
 
@@ -425,19 +425,19 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'checkbox',
-					'title' => __('Row Background Fullscreen', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Row Background Fullscreen', TMM_CC_TEXTDOMAIN),
 					'shortcode_field' => 'row_background_fullscreen',
 					'id' => 'row_bg_fullscreen',
 					'default_value' => 0,
 					'is_checked'=>false,
-					'description' => __('Set The Row Background Image Fullscreen', TMM_CC_TEXTDOMAIN),
+					'description' => esc_html__('Set The Row Background Image Fullscreen', TMM_CC_TEXTDOMAIN),
 				));
 				?>
 
                 <?php
                 TMM_Content_Composer::html_option(array(
                         'type' => 'checkbox',
-                        'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
+                        'title' => esc_html__('Overlay', TMM_CC_TEXTDOMAIN),
                         'shortcode_field' => 'row_overlay',
                         'id' => 'row_overlay',
                         'is_checked'=>TMM_Content_Composer::set_default_value('overlay', false),
@@ -451,7 +451,7 @@
 
 				<?php
 				TMM_Content_Composer::html_option(array(
-					'title' => __('Opacity', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Opacity', TMM_CC_TEXTDOMAIN),
 					'shortcode_field' => 'row_background_opacity',
 					'type' => 'text',
 					'description' => 'min:0, max:100',

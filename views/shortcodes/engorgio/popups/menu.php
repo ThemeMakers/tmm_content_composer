@@ -3,9 +3,9 @@
 
 	<div class="fullwidth">
 
-		<h4 class="label"><?php _e('Menu Items', TMM_CC_TEXTDOMAIN); ?></h4>
+		<h4 class="label"><?php esc_html_e('Menu Items', TMM_CC_TEXTDOMAIN); ?></h4>
 
-		<a class="button button-secondary js_add_accordion_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a>
+		<a class="button button-secondary js_add_accordion_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a>
 
 		<ul id="list_items" class="list-items">
 
@@ -38,45 +38,45 @@
             }
             
             $icon_type_array = array(
-                'none' => __('None', TMM_THEME_TEXTDOMAIN),
-                'icon-paper-plane-2' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-paper-plane-2',
-                'icon-pencil-7' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-pencil-7',
-                'icon-beaker-1' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-beaker-1',
-                'icon-megaphone-3' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-megaphone-3',
-                'icon-cog-6' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-cog-6',
-                'icon-lightbulb-3' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-lightbulb-3',
-                'icon-comment-6' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-comment-6',
-                'icon-thumbs-up-5' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-thumbs-up-5',
-                'icon-laptop' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-laptop',
-                'icon-search' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-search',
-                'icon-wrench' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-wrench',
-                'icon-leaf' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-leaf',
-                'icon-cogs' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-cogs',
-                'icon-group' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-group',            
-                'icon-folder-close' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-folder-close',
-                'icon-cloud' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-cloud',
-                'icon-briefcase' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-briefcase',
-                'icon-beaker' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-beaker',
-                'icon-bullhorn' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-bullhorn',
-                'icon-comment' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-comment',
-                'icon-globe' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-globe',
-                'icon-globe-6' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-globe-6',
-                'icon-heart' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-heart',
-                'icon-rocket' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-rocket',
-                'icon-suitcase' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-suitcase',
-                'icon-pencil' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-pencil',
-                'icon-params' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-params',
-                'icon-folder-open' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-folder-open',
-                'icon-cog' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-cog',
-                'icon-coffee' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-coffee',
-                'icon-gift' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-gift',
-                'icon-home' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-home',
-                'icon-lightbulb' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-lightbulb',
-                'icon-thumbs-up' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-thumbs-up',
-                'icon-umbrella' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-umbrella',            
-                'icon-th-list' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-th-list',
-                'icon-resize-small' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-resize-small',
-                'icon-download-alt' => __('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-download-alt'
+                'none' => esc_html__('None', TMM_THEME_TEXTDOMAIN),
+                'icon-paper-plane-2' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-paper-plane-2',
+                'icon-pencil-7' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-pencil-7',
+                'icon-beaker-1' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-beaker-1',
+                'icon-megaphone-3' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-megaphone-3',
+                'icon-cog-6' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-cog-6',
+                'icon-lightbulb-3' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-lightbulb-3',
+                'icon-comment-6' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-comment-6',
+                'icon-thumbs-up-5' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-thumbs-up-5',
+                'icon-laptop' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-laptop',
+                'icon-search' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-search',
+                'icon-wrench' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-wrench',
+                'icon-leaf' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-leaf',
+                'icon-cogs' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-cogs',
+                'icon-group' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-group',
+                'icon-folder-close' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-folder-close',
+                'icon-cloud' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-cloud',
+                'icon-briefcase' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-briefcase',
+                'icon-beaker' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-beaker',
+                'icon-bullhorn' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-bullhorn',
+                'icon-comment' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-comment',
+                'icon-globe' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-globe',
+                'icon-globe-6' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-globe-6',
+                'icon-heart' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-heart',
+                'icon-rocket' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-rocket',
+                'icon-suitcase' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-suitcase',
+                'icon-pencil' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-pencil',
+                'icon-params' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-params',
+                'icon-folder-open' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-folder-open',
+                'icon-cog' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-cog',
+                'icon-coffee' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-coffee',
+                'icon-gift' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-gift',
+                'icon-home' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-home',
+                'icon-lightbulb' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-lightbulb',
+                'icon-thumbs-up' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-thumbs-up',
+                'icon-umbrella' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-umbrella',
+                'icon-th-list' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-th-list',
+                'icon-resize-small' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-resize-small',
+                'icon-download-alt' => esc_html__('Type', TMM_THEME_TEXTDOMAIN) . ': ' . 'icon-download-alt'
             );
            
 			?>
@@ -99,7 +99,7 @@
 								));                         
 								?>
 							</td>
-							<td><a class="button button-secondary js_delete_accordion_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a></td>
+							<td><a class="button button-secondary js_delete_accordion_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', TMM_CC_TEXTDOMAIN); ?></a></td>
 						</tr>
 						<tr>
                             <td colspan="2">
@@ -107,7 +107,7 @@
                                     <?php 
                                     TMM_Content_Composer::html_option(array(
                                         'type' => 'text',
-                                        'title' => __('Link Text', TMM_CC_TEXTDOMAIN),
+                                        'title' => esc_html__('Link Text', TMM_CC_TEXTDOMAIN),
                                         'shortcode_field' => 'link_text',
                                         'id' => '',
                                         'css_classes' => 'link_text',                                        
@@ -121,7 +121,7 @@
                                     <?php 
                                     TMM_Content_Composer::html_option(array(
                                         'type' => 'text',
-                                        'title' => __('Link URL', TMM_CC_TEXTDOMAIN),
+                                        'title' => esc_html__('Link URL', TMM_CC_TEXTDOMAIN),
                                         'shortcode_field' => 'link_url',
                                         'id' => '',
                                         'css_classes' => 'link_url',                                         
@@ -134,7 +134,7 @@
                                     <?php 
                                     TMM_Content_Composer::html_option(array(
                                         'type' => 'select',
-                                        'title' => __(' Icon Type', TMM_CC_TEXTDOMAIN),
+                                        'title' => esc_html__(' Icon Type', TMM_CC_TEXTDOMAIN),
                                         'shortcode_field' => 'icon_type',
                                         'id' => '',
                                         'css_classes' => 'icon_type',    
@@ -155,7 +155,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_accordion_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_accordion_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

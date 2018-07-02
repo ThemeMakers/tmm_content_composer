@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'textarea',
-			'title' => __('Enter Tooltip Text', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Enter Tooltip Text', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'tooltip',
 			'id' => 'tooltip',
 			'default_value' => TMM_Content_Composer::set_default_value('tooltip', ''),
@@ -17,7 +17,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'textarea',
-			'title' => __('Enter Text', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Enter Text', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),

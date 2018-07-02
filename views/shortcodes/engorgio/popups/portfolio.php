@@ -17,14 +17,14 @@ if ($folio_terms) {
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Layout', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Layout', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'options' => array(                           
-				3 => __('3 Columns', TMM_CC_TEXTDOMAIN),
-				4 => __('4 Columns', TMM_CC_TEXTDOMAIN),
-                5 => __('5 Columns', TMM_CC_TEXTDOMAIN),
-                6 => __('6 Columns', TMM_CC_TEXTDOMAIN),
+				3 => esc_html__('3 Columns', TMM_CC_TEXTDOMAIN),
+				4 => esc_html__('4 Columns', TMM_CC_TEXTDOMAIN),
+                5 => esc_html__('5 Columns', TMM_CC_TEXTDOMAIN),
+                6 => esc_html__('6 Columns', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('content', 1),
 			'description' => ''
@@ -38,12 +38,12 @@ if ($folio_terms) {
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Display', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Display', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'display_images',
 			'id' => '',
 			'options' => array(
-				'cover' => __('Cover Images', TMM_CC_TEXTDOMAIN),
-				'inside' => __('Images From Portfolio', TMM_CC_TEXTDOMAIN)
+				'cover' => esc_html__('Cover Images', TMM_CC_TEXTDOMAIN),
+				'inside' => esc_html__('Images From Portfolio', TMM_CC_TEXTDOMAIN)
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('display_images', 'cover'),
 			'description' => ''
@@ -57,11 +57,11 @@ if ($folio_terms) {
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Posts per page', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Posts per page', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'posts_per_page',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('posts_per_page', 6),
-			'description' => __('Posts per page', TMM_CC_TEXTDOMAIN),
+			'description' => esc_html__('Posts per page', TMM_CC_TEXTDOMAIN),
 		));
 		?>
 
@@ -71,15 +71,15 @@ if ($folio_terms) {
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Hover Appearance Effect', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Hover Appearance Effect', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'hover_effect',
 			'id' => 'hover_effect',
 			'options' => array(
-				'colored' => __('Colored with info', TMM_CC_TEXTDOMAIN),
-				'without_effect' => __('Without any effect', TMM_CC_TEXTDOMAIN),
+				'colored' => esc_html__('Colored with info', TMM_CC_TEXTDOMAIN),
+				'without_effect' => esc_html__('Without any effect', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('hover_effect', 'colored'),
-			'description' => __('Hover appearance effect', TMM_CC_TEXTDOMAIN)
+			'description' => esc_html__('Hover appearance effect', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 	</div>
@@ -89,11 +89,11 @@ if ($folio_terms) {
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Posts per load', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Posts per load', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'posts_per_load',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('posts_per_load', 6),
-			'description' => __('Posts per load', TMM_CC_TEXTDOMAIN),
+			'description' => esc_html__('Posts per load', TMM_CC_TEXTDOMAIN),
 		));
 		?>
 
@@ -104,7 +104,7 @@ if ($folio_terms) {
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
 			'multiple' => true,
-			'title' => __('Category', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Category', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'folio_category',
 			'id' => 'folio_category',
 			'options' => $folio_categories,
@@ -119,20 +119,20 @@ if ($folio_terms) {
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Enable Folio Filter', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Enable Folio Filter', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'folio_filter',
 			'id' => 'folio_filter',
 			'is_checked' => TMM_Content_Composer::set_default_value('folio_filter', 1),
-			'description' => __('Enable Folio Filter', TMM_CC_TEXTDOMAIN)
+			'description' => esc_html__('Enable Folio Filter', TMM_CC_TEXTDOMAIN)
 		));
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show categories', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Show categories', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_categories',
 			'id' => 'show_categories',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_categories', 1),
-			'description' => __('Show/Hide Categories', TMM_CC_TEXTDOMAIN)
+			'description' => esc_html__('Show/Hide Categories', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 	</div>

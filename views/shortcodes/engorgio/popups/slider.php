@@ -19,7 +19,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Page slider type', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Page slider type', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'type',
 			'id' => 'shortcode_page_slider_type',
 			'options' => $slider_types,
@@ -39,7 +39,7 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Slider groups', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Slider groups', TMM_CC_TEXTDOMAIN),
 					'shortcode_field' => 'slider_group',
 					'id' => 'slider_group',
 					'options' => $slides,
@@ -50,7 +50,7 @@
 				?>
 
 			<?php else: ?>
-				<?php _e("No one slider exists", TMM_CC_TEXTDOMAIN) ?>
+				<?php esc_html_e("No one slider exists", TMM_CC_TEXTDOMAIN) ?>
 			<?php endif; ?>
 		</div>
         
@@ -65,7 +65,7 @@
                 }
 	            TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Grid Slider groups', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Grid Slider groups', TMM_CC_TEXTDOMAIN),
 					'shortcode_field' => 'grid_slider_group',
 					'id' => 'grid_slider_group',
 					'options' => $sliders_options,
@@ -74,7 +74,7 @@
 					'css_classes' => 'grid_slider_group'
 				));
             }else{
-                 _e('Please, create accordion grid slider at first', TMM_CC_TEXTDOMAIN);
+                 esc_html_e('Please, create accordion grid slider at first', TMM_CC_TEXTDOMAIN);
             }  ?>
         </div>
         <?php } ?>
@@ -99,10 +99,10 @@
 					//***
 					TMM_Content_Composer::html_option(array(
 						'type' => 'select',
-						'title' => __('Layerslider plugins groups', TMM_CC_TEXTDOMAIN),
+						'title' => esc_html__('Layerslider plugins groups', TMM_CC_TEXTDOMAIN),
 						'shortcode_field' => 'layerslider_group',
 						'id' => 'layerslider_group',
-						'options' => array('' => __("Choose sliders group", TMM_CC_TEXTDOMAIN)) + $slides,
+						'options' => array('' => esc_html__("Choose sliders group", TMM_CC_TEXTDOMAIN)) + $slides,
 						'default_value' => TMM_Content_Composer::set_default_value('layerslider_group', ''),
 						'description' => '',
 						'css_classes' => 'layerslider_group'
@@ -110,7 +110,7 @@
 					?>
 
 				<?php else: ?>
-					<?php _e("No one Layerslider group exists", TMM_CC_TEXTDOMAIN) ?>
+					<?php esc_html_e("No one Layerslider group exists", TMM_CC_TEXTDOMAIN) ?>
 				<?php endif; ?>
 
 			</div>

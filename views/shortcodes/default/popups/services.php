@@ -9,19 +9,19 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'radio',
-			'title' => __('Type', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Type', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'name' => 'type',
 			'values' => array(
 				0 => array(
-					'title' => __('Normal', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Normal', TMM_CC_TEXTDOMAIN),
 					'id' => 'type_normal',
 					'value' => 0,
 					'checked' => ($value_type == 0 ? 1 : 0)
 				),
 				1 => array(
-					'title' => __('Colorized', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Colorized', TMM_CC_TEXTDOMAIN),
 					'id' => 'type_colorized',
 					'value' => 1,
 					'checked' => ($value_type == 1 ? 1 : 0)
@@ -36,51 +36,51 @@
 		<?php
 		$type_array = array(                                     
                                         
-            'icon-paper-plane-2' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-paper-plane-2',
-            'icon-pencil-7' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-pencil-7',
-            'icon-beaker-1' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-beaker-1',
-            'icon-megaphone-3' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-megaphone-3',
-            'icon-cog-6' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cog-6',
-            'icon-lightbulb-3' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-lightbulb-3',
-            'icon-comment-6' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-comment-6',
-            'icon-thumbs-up-5' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-thumbs-up-5',
-			'icon-laptop' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-laptop',
-			'icon-search' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-search',
-			'icon-wrench' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-wrench',
-			'icon-leaf' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-leaf',
-			'icon-cogs' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cogs',
-			'icon-group' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-group',
-			'icon-comments-alt' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-comments-alt',
-			'icon-folder-close' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-folder-close',
-			'icon-cloud' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cloud',
-			'icon-briefcase' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-briefcase',
-			'icon-beaker' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-beaker',
-			'icon-bullhorn' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-bullhorn',
-			'icon-comment' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-comment',
-			'icon-globe' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-globe',
-			'icon-globe-6' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-globe-6',
-			'icon-heart' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-heart',
-			'icon-rocket' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-rocket',
-			'icon-suitcase' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-suitcase',
-			'icon-pencil' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-pencil',
-			'icon-params' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-params',
-			'icon-folder-open' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-folder-open',
-			'icon-cog' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cog',
-			'icon-coffee' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-coffee',
-			'icon-gift' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-gift',
-			'icon-home' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-home',
-			'icon-lightbulb' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-lightbulb',
-			'icon-thumbs-up' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-thumbs-up',
-			'icon-umbrella' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-umbrella',
-			'icon-random' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-random',
-			'icon-th-list' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-th-list',
-			'icon-resize-small' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-resize-small',
-			'icon-download-alt' => __('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-download-alt'
+            'icon-paper-plane-2' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-paper-plane-2',
+            'icon-pencil-7' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-pencil-7',
+            'icon-beaker-1' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-beaker-1',
+            'icon-megaphone-3' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-megaphone-3',
+            'icon-cog-6' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cog-6',
+            'icon-lightbulb-3' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-lightbulb-3',
+            'icon-comment-6' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-comment-6',
+            'icon-thumbs-up-5' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-thumbs-up-5',
+			'icon-laptop' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-laptop',
+			'icon-search' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-search',
+			'icon-wrench' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-wrench',
+			'icon-leaf' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-leaf',
+			'icon-cogs' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cogs',
+			'icon-group' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-group',
+			'icon-comments-alt' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-comments-alt',
+			'icon-folder-close' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-folder-close',
+			'icon-cloud' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cloud',
+			'icon-briefcase' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-briefcase',
+			'icon-beaker' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-beaker',
+			'icon-bullhorn' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-bullhorn',
+			'icon-comment' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-comment',
+			'icon-globe' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-globe',
+			'icon-globe-6' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-globe-6',
+			'icon-heart' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-heart',
+			'icon-rocket' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-rocket',
+			'icon-suitcase' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-suitcase',
+			'icon-pencil' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-pencil',
+			'icon-params' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-params',
+			'icon-folder-open' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-folder-open',
+			'icon-cog' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-cog',
+			'icon-coffee' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-coffee',
+			'icon-gift' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-gift',
+			'icon-home' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-home',
+			'icon-lightbulb' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-lightbulb',
+			'icon-thumbs-up' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-thumbs-up',
+			'icon-umbrella' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-umbrella',
+			'icon-random' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-random',
+			'icon-th-list' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-th-list',
+			'icon-resize-small' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-resize-small',
+			'icon-download-alt' => esc_html__('Type', TMM_CC_TEXTDOMAIN) . ': ' . 'icon-download-alt'
 		);
 		?>
 
-		<h4 class="label"><?php _e('Blocks', TMM_CC_TEXTDOMAIN); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<h4 class="label"><?php esc_html_e('Blocks', TMM_CC_TEXTDOMAIN); ?></h4>
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 		<ul id="list_items" class="list-items">
 			<?php
 			$content_edit_data = array('');
@@ -125,7 +125,7 @@
                                 <?php                               
                                 
 								TMM_Content_Composer::html_option(array(
-									'title' => __('Text Color', TMM_CC_TEXTDOMAIN),
+									'title' => esc_html__('Text Color', TMM_CC_TEXTDOMAIN),
 									'shortcode_field' => 'list_item_color['.$key.']',
 									'type' => 'color',
 									'description' => '',
@@ -138,7 +138,7 @@
 								
                                 <?php
 								TMM_Content_Composer::html_option(array(
-									'title' => __('Background Color', TMM_CC_TEXTDOMAIN),
+									'title' => esc_html__('Background Color', TMM_CC_TEXTDOMAIN),
 									'shortcode_field' => 'list_item_color['.$key.']',
 									'type' => 'color',
 									'description' => '',
@@ -152,7 +152,7 @@
                                 <?php
                                 
 								TMM_Content_Composer::html_option(array(
-									'title' => __('Text Hover Color', TMM_CC_TEXTDOMAIN),
+									'title' => esc_html__('Text Hover Color', TMM_CC_TEXTDOMAIN),
 									'shortcode_field' => 'list_item_color['.$key.']',
 									'type' => 'color',
 									'description' => '',
@@ -165,7 +165,7 @@
                                                                 
                                 <?php
 								TMM_Content_Composer::html_option(array(
-									'title' => __('Background Hover Color', TMM_CC_TEXTDOMAIN),
+									'title' => esc_html__('Background Hover Color', TMM_CC_TEXTDOMAIN),
 									'shortcode_field' => 'list_item_hover_bgcolor['.$key.']',
 									'type' => 'color',
 									'description' => '',
@@ -179,23 +179,23 @@
 							</td>
 							<td style="width: 50%;">							
 
-								<h5 class="label"><?php _e('Title', TMM_CC_TEXTDOMAIN); ?></h5>
+								<h5 class="label"><?php esc_html_e('Title', TMM_CC_TEXTDOMAIN); ?></h5>
 								<input type="text" value="<?php echo (isset($titles_edit_data[$key])) ? $titles_edit_data[$key] : '' ?>" class="list_item_title js_shortcode_template_changer data-input" style="width: 100%;" /><br />
 
-								<h5 class="label"><?php _e('Link', TMM_CC_TEXTDOMAIN); ?></h5>
+								<h5 class="label"><?php esc_html_e('Link', TMM_CC_TEXTDOMAIN); ?></h5>
 								<input type="text" value="<?php echo (isset($links_edit_data[$key])) ? $links_edit_data[$key] : '' ?>" class="list_item_link js_shortcode_template_changer data-input" style="width: 100%;" /><br />
                                 
                                 <div class="colorized_hover_title" <?php echo ($value_type==0) ? 'style="display:none"' : '' ?>>
-                                    <h5 class="label"><?php _e('Hover Title', TMM_CC_TEXTDOMAIN); ?></h5>
+                                    <h5 class="label"><?php esc_html_e('Hover Title', TMM_CC_TEXTDOMAIN); ?></h5>
                                     <input type="text" value="<?php echo (isset($hover_titles_edit_data[$key])) ? $hover_titles_edit_data[$key] : '' ?>" class="list_item_hover_title js_shortcode_template_changer data-input" style="width: 100%;" /><br />
                                 </div>
                                 
-								<h5 class="label title_content" <?php echo ($value_type==1) ? 'style="display:none"' : '' ?>><?php  _e('Content', TMM_CC_TEXTDOMAIN); ?></h5>								
-								<h5 class="label hover_title_content" <?php echo ($value_type==0) ? 'style="display:none"' : '' ?>><?php  _e('Hover Content', TMM_CC_TEXTDOMAIN); ?></h5>								
+								<h5 class="label title_content" <?php echo ($value_type==1) ? 'style="display:none"' : '' ?>><?php  esc_html_e('Content', TMM_CC_TEXTDOMAIN); ?></h5>
+								<h5 class="label hover_title_content" <?php echo ($value_type==0) ? 'style="display:none"' : '' ?>><?php  esc_html_e('Hover Content', TMM_CC_TEXTDOMAIN); ?></h5>
 								<textarea class="list_item_content js_shortcode_template_changer data-area" style="width: 100%; min-height: 50px;"><?php echo $content_edit_text ?></textarea>
 							</td>
 							<td>
-								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
+								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
 							</td>
 							<td></td>
 						</tr>
@@ -206,7 +206,7 @@
             <?php } ?>
 
 		</ul>
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

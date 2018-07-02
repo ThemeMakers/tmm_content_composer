@@ -40,7 +40,7 @@
 		}
 		?>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 			<?php foreach ($social_types as $key => $type) : ?>
@@ -71,12 +71,12 @@
 									'css_classes' => 'list_item_style save_as_one',
 									'default_value' => (isset($links[$key])) ? $links[$key] : '',
 									'description' => '',
-									'placeholder' => __('http://', TMM_CC_TEXTDOMAIN)
+									'placeholder' => esc_html__('http://', TMM_CC_TEXTDOMAIN)
 								));
 								?>
 							</td>
 							<td>
-								<a class="button button-secondary js_delete_list_item" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
+								<a class="button button-secondary js_delete_list_item" href="#"><?php esc_html_e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
 							</td>
 							<td></td>
 						</tr>
@@ -86,7 +86,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 	</div>
 

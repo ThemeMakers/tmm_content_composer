@@ -6,13 +6,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Layout', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Layout', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'columns',
 			'id' => '',
 			'options' => array(
-				'col-2' => __('2 Columns', TMM_CC_TEXTDOMAIN),
-				'col-3' => __('3 Columns', TMM_CC_TEXTDOMAIN),
-				'col-4' => __('4 Columns', TMM_CC_TEXTDOMAIN),
+				'col-2' => esc_html__('2 Columns', TMM_CC_TEXTDOMAIN),
+				'col-3' => esc_html__('3 Columns', TMM_CC_TEXTDOMAIN),
+				'col-4' => esc_html__('4 Columns', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('columns', 'col-3'),
 			'description' => ''
@@ -26,12 +26,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Category', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Category', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'category',
 			'id' => 'category',
 			'options' => TMM_Content_Composer::get_post_categories(),
 			'default_value' => TMM_Content_Composer::set_default_value('category', ''),
-			'description' => __('Show posts from selected category', TMM_CC_TEXTDOMAIN)
+			'description' => esc_html__('Show posts from selected category', TMM_CC_TEXTDOMAIN)
 		));
 		?>
 
@@ -41,7 +41,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Posts Per Load', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Posts Per Load', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'posts_per_load',
 			'id' => 'posts_per_load',
 			'default_value' => TMM_Content_Composer::set_default_value('posts_per_load', 5),
@@ -55,7 +55,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Load Posts By Scrolling', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Load Posts By Scrolling', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'load_by_scrolling',
 			'id' => 'load_by_scrolling',
             'is_checked' => TMM_Content_Composer::set_default_value('load_by_scrolling', true),
@@ -65,7 +65,7 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Load Posts With Animation', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Load Posts With Animation', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'load_with_animation',
 			'id' => 'load_with_animation',
             'is_checked' => TMM_Content_Composer::set_default_value('load_with_animation', true),
@@ -77,11 +77,11 @@
 	</div><!--/ .one-half-->     
     
     <div class="one-half">
-        <h4><?php _e('Social Share Buttons', TMM_CC_TEXTDOMAIN) ?></h4>
+        <h4><?php esc_html_e('Social Share Buttons', TMM_CC_TEXTDOMAIN) ?></h4>
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show / Hide Twitter', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Show / Hide Twitter', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_twitter',
 			'id' => 'show_twitter',
             'is_checked' => TMM_Content_Composer::set_default_value('show_twitter', true),
@@ -91,7 +91,7 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show / Hide Facebook', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Show / Hide Facebook', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_facebook',
 			'id' => 'show_facebook',
             'is_checked' => TMM_Content_Composer::set_default_value('show_facebook', true),
@@ -101,7 +101,7 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show / Hide Google+', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Show / Hide Google+', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_google',
 			'id' => 'show_google',
             'is_checked' => TMM_Content_Composer::set_default_value('show_google', true),
@@ -111,7 +111,7 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show / Hide Pinterest', TMM_CC_TEXTDOMAIN),
+			'title' => esc_html__('Show / Hide Pinterest', TMM_CC_TEXTDOMAIN),
 			'shortcode_field' => 'show_pinterest',
 			'id' => 'show_pinterest',
             'is_checked' => TMM_Content_Composer::set_default_value('show_pinterest', true),
