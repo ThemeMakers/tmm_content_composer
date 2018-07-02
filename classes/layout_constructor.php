@@ -213,6 +213,7 @@ class TMM_Layout_Constructor {
 							}
 
 							function onPlayerReady(event) {
+								event.target.playVideo();
 								var mute = <?php echo $mute; ?>;
 								if (mute == 1){
 									event.target.mute();
@@ -278,8 +279,8 @@ class TMM_Layout_Constructor {
 						}
 						?>
 						<div class="mb-wrapper">
-							<script src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
-							<iframe id="vimeo_player" src="https://player.vimeo.com/video/<?php echo $source_code ?>?api=1&loop=<?php echo $loop ?>&player_id=vimeo_player&autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							<iframe src="https://player.vimeo.com/video/<?php echo $source_code ?>?autoplay=1&loop=<?php echo $loop ?>&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							<script src="https://player.vimeo.com/api/player.js"></script>
 						</div><!--/ .mb-wrapper-->
 						<script>
 
@@ -352,7 +353,7 @@ class TMM_Layout_Constructor {
 
 					case 'mp4': ?>
 						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
-							<video id="example_video" class="" width="100%" height="100%" >
+							<video class="mejsVideoBg" width="100%" height="100%" >
 								<source src="<?php echo $video_options['video_url'] ?>" type='video/mp4' />
 							</video>
 						</div>
@@ -364,7 +365,7 @@ class TMM_Layout_Constructor {
 					case 'ogv':
 						?>
 						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
-							<video id="example_video" class="" width="100%" height="100%" >
+							<video class="mejsVideoBg" width="100%" height="100%" >
 								<source src="<?php echo $video_options['video_url'] ?>" type='video/ogg' />
 							</video>
 						</div>
@@ -376,7 +377,7 @@ class TMM_Layout_Constructor {
 					case 'webm':
 						?>
 						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
-							<video id="example_video" class="" width="100%" height="100%" >
+							<video class="mejsVideoBg" width="100%" height="100%" >
 								<source src="<?php echo $video_options['video_url'] ?>" type='video/webm' />
 							</video>
 						</div>

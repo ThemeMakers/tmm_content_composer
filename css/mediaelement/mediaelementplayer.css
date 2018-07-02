@@ -26,9 +26,10 @@
 
 .mejs-overlay-play { cursor: pointer }
 
-.mejs-overlay-button { position: absolute; top: 50%; left: 50%; width: 100px; height: 100px; margin: -50px 0 0 -50px; background: url(bigplay.svg) no-repeat }
+.mejs-overlay-button { position: absolute; top: 50%; left: 50%; width: 100px; height: 100px; margin: -50px 0 0 -50px; background: url(mediaelement/bigplay.svg) no-repeat }
+.mejsVideoBg .mejs-overlay-button { display: none }
 
-.no-svg .mejs-overlay-button { background-image: url(bigplay.png) }
+.no-svg .mejs-overlay-button { background-image: url(mediaelement/bigplay.png) }
 
 .mejs-overlay:hover .mejs-overlay-button { background-position: 0 -100px }
 
