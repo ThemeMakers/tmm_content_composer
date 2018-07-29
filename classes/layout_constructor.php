@@ -353,7 +353,7 @@ class TMM_Layout_Constructor {
 
 					case 'mp4': ?>
 						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
-							<video class="mejsVideoBg" width="100%" height="100%" >
+							<video class="mejsVideoBg" width="100%" height="100%" muted="muted">
 								<source src="<?php echo $video_options['video_url'] ?>" type='video/mp4' />
 							</video>
 						</div>
@@ -365,7 +365,7 @@ class TMM_Layout_Constructor {
 					case 'ogv':
 						?>
 						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
-							<video class="mejsVideoBg" width="100%" height="100%" >
+							<video class="mejsVideoBg" width="100%" height="100%" muted="muted">
 								<source src="<?php echo $video_options['video_url'] ?>" type='video/ogg' />
 							</video>
 						</div>
@@ -377,7 +377,7 @@ class TMM_Layout_Constructor {
 					case 'webm':
 						?>
 						<div class="mb-wrapper" data-mute="<?php echo $mute ?>" data-loop="<?php echo $loop ?>">
-							<video class="mejsVideoBg" width="100%" height="100%" >
+							<video class="mejsVideoBg" width="100%" height="100%" muted="muted">
 								<source src="<?php echo $video_options['video_url'] ?>" type='video/webm' />
 							</video>
 						</div>
@@ -395,7 +395,7 @@ class TMM_Layout_Constructor {
 
 						<?php
 						}else{
-							_e('Unsupported video format', TMM_CC_TEXTDOMAIN);
+							esc_html_e('Unsupported video format', TMM_CC_TEXTDOMAIN);
 						}
 						break;
 				}

@@ -1,5 +1,4 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<?php
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
 
 // Html
 
@@ -174,4 +173,25 @@ if ( isset($title_type) && $title_type=='section'){
     }
 }
 
-echo $html;
+//echo $html;
+
+echo wp_kses( $html, array(
+	'h1' => array(
+		'style' => array()
+	),
+	'h2' => array(
+		'style' => array()
+	),
+	'h3' => array(
+		'style' => array()
+	),
+	'h4' => array(
+		'style' => array()
+	),
+	'h5' => array(
+		'style' => array()
+	),
+	'h6' => array(
+		'style' => array()
+	)
+) );
