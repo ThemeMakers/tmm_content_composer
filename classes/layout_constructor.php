@@ -273,26 +273,29 @@ class TMM_Layout_Constructor {
 						break;
 
 					case 'vimeo':
-						$source_code = explode("/", $video_options['video_url']);
+						preg_match("/[^\/]+$/", $video_options['video_url'], $source_code);
+						$source_code = $source_code[0];
+
+//						$source_code = explode("/", $video_options['video_url']);
 						if (is_array($source_code)) {
 							$source_code = $source_code[count($source_code) - 1];
 						}
 						?>
 						<div class="mb-wrapper">
-							<iframe src="https://player.vimeo.com/video/<?php echo $source_code ?>?autoplay=1&loop=<?php echo $loop ?>&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							<iframe src="https://player.vimeo.com/video/<?php echo $source_code ?>?autoplay=1&loop=<?php echo $loop ?>&player_id=vimeo_player&autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay; encrypted-media"></iframe>
 							<script src="https://player.vimeo.com/api/player.js"></script>
 						</div><!--/ .mb-wrapper-->
 						<script>
 
 							(function($) {
 								$(function() {
-									var iframe = $('#vimeo_player')[0];
-									var player = $(iframe);
+									var iframe = document.querySelector('iframe');
+									var player = new Vimeo.Player(iframe);
 									var status = $('.status');
 									var mute = <?php echo $mute; ?>;
 
 									// When the player is ready, add listeners for pause, finish, and playProgress
-									player.addEvent('ready', function() {
+									player.on('ready', function() {
 										if (mute == 1){
 											player.api('setVolume', '0');
 											$('.bt_mute').attr({'data-click': 'unMute'});
