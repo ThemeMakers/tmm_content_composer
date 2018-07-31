@@ -287,7 +287,7 @@ class TMM_Layout_Constructor {
 							(function($) {
 								$(function() {
 									var iframe = $('#vimeo_player')[0];
-									var player = $f(iframe);
+									var player = $(iframe);
 									var status = $('.status');
 									var mute = <?php echo $mute; ?>;
 
