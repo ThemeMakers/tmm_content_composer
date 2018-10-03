@@ -54,7 +54,7 @@ $counter           = 0;
 				$container.masonry({
 					itemSelector: '.box',
 					columnWidth: 227,
-					gutterWidth: 10
+					gutter: 10
 				});
 				$container.animate({'opacity': 1}, 700, function () {
 					jQuery('#infscr-loading').animate({opacity: 'hide'}, 300);
@@ -98,7 +98,8 @@ $counter           = 0;
 
 				if (post_key > 0) {
 
-					jQuery('#masonry').masonry('reload');
+					jQuery('#masonry').masonry('reloadItems');
+					jQuery('#masonry').masonry('layout');
 
 
 					jQuery('#infscr-loading').animate({opacity: 'show'}, 300);
@@ -116,13 +117,15 @@ $counter           = 0;
 						jQuery.post(ajaxurl, data, function (response) {
 
 							jQuery('#masonryjaxloader').replaceWith(response);
-							jQuery('#masonry').masonry('reload');
+							jQuery('#masonry').masonry('reloadItems');
+							jQuery('#masonry').masonry('layout');
 
 							jQuery('.masonry').effect({
 								effect: 'translateEffect',
 								speed: 200,
 								afterCall: function (el) {
-									jQuery(el).masonry('reload');
+									jQuery(el).masonry('reloadItems');
+									jQuery(el).masonry('layout');
 								}
 							});
 
@@ -198,7 +201,8 @@ $counter           = 0;
 								return false;
 							});
 
-							jQuery('#masonry').masonry('reload');
+							jQuery('#masonry').masonry('reloadItems');
+							jQuery('#masonry').masonry('layout');
 
 						});
 						test_post_key = post_key;
