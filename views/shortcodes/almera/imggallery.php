@@ -1,7 +1,10 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed');
 
 $effect_class = (TMM::get_option('images_loader')) ? 'translateEffect' : '';
-$icons_type = ($gall_amount_icons ) ? $gall_amount_icons : '2';
+$gall_amount_icons = isset($gall_amount_icons) ? $gall_amount_icons : '2';
+$show_filter = isset($show_filter) ? $show_filter : '1';
+$pagination = isset($pagination) ? $pagination : '0';
+$icons_type = $gall_amount_icons;
 $icon_class = ($icons_type=='1') ? 'one_icon' : '';
 
 $album_ids = explode('^', $content);
@@ -90,7 +93,7 @@ $slide_up = $gallery_slide_up;
 
         <ul class="thumbnails-items clearfix">
             <?php foreach ($images as $img) : ?>
-                <li class="two columns <?php echo $effect_class; ?>"><a class="single-image" href="#"><img src="<?php echo TMM_Helper::resize_image($img['imgurl'], '100*100') ?>" width="100" height="100" alt="<?php echo $img['title'] ?>" /></a></li>
+                <li class="two columns <?php echo esc_attr($effect_class) ?>"><a class="single-image" href="#"><img src="<?php echo TMM_Helper::resize_image($img['imgurl'], '100*100') ?>" width="100" height="100" alt="<?php echo esc_attr($img['title']) ?>" /></a></li>
             <?php endforeach; ?>
         </ul><!--/ #thumbnails-->
 
@@ -98,7 +101,7 @@ $slide_up = $gallery_slide_up;
             <div class="sudo">
                 <ul>
                     <?php foreach ($images as $img) : ?>
-                        <li><img src="<?php echo $img['imgurl'] ?>" alt="<?php echo $img['title'] ?>"/></li>
+                        <li><img src="<?php echo esc_attr($img['imgurl']) ?>" alt="<?php echo esc_attr($img['title']) ?>"/></li>
                     <?php endforeach; ?>
                 </ul>
             </div><!--/ .sudo-->
@@ -114,26 +117,26 @@ $slide_up = $gallery_slide_up;
             <ul id="tp-grid" class="tp-grid">			
                 <?php foreach ($images as $img){                                       
                         $gall = get_post( $img['post_id'] ); ?>
-                    <input type="hidden" class="item_description" data-title="<?php echo $title_array[$img['post_id']]['title'] ?>" data-exerpt="<?php echo $gall->post_excerpt; ?>">
+                    <input type="hidden" class="item_description" data-title="<?php echo esc_attr($title_array[$img['post_id']]['title']) ?>" data-exerpt="<?php echo esc_attr($gall->post_excerpt) ?>">
                     <?php $t=$img['title']; ?>
-                    <li data-pile="<?php echo $title_array[$img['post_id']]['title'] ?>">
+                    <li data-pile="<?php echo esc_attr($title_array[$img['post_id']]['title']) ?>">
 
                         <div class="project-thumb animTop <?php if (!$gallery_slide_up) echo 'links' ?>">
 
-                            <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
-                               title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
-                               data-fancybox-group="<?php echo $title_array[$img['post_id']]['title'] ?>">
-                                <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '270*200') ?>" width="270" height="200">
+                            <a href="<?php echo esc_attr($img['imgurl']) ?>" class="single-image plus-icon <?php echo esc_attr($icon_class) ?>"
+                               title="<?php echo esc_attr($t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '') ?>"
+                               data-fancybox-group="<?php echo esc_attr($title_array[$img['post_id']]['title']) ?>">
+                                <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '270*200') ?>" width="270" height="200">
                             </a>
 
                             <?php if ($gallery_slide_up) {
                                 ?>
-                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>" class="project-meta">
-                                    <h6 class="title"><?php echo $img['title'] ?></h6>
-                                    <span class="categories"><?php echo $img_terms[$img['category']]['name'] ?></span>
+                                <a href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>" class="project-meta">
+                                    <h6 class="title"><?php echo esc_attr($img['title']) ?></h6>
+                                    <span class="categories"><?php echo (!empty($img_terms[$img['category']])) ? esc_attr($img_terms[$img['category']]['name']) : esc_html_e('Category is not set', 'tmm_shortcodes') ?></span>
                                 </a>
                             <?php } elseif($icons_type=='2') { ?>
-                                <a class="gr-link single-image link-icon" href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
+                                <a class="gr-link single-image link-icon" href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>"></a>
                             <?php
                             } ?>
 
@@ -159,10 +162,10 @@ $slide_up = $gallery_slide_up;
             ?> 
         
         <ul id="gallery-filter" class="gallery-filter clearfix">
-            <li><a data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="1" data-post-per-page="<?php echo $post_per_page ?>" data-categories="<?php echo ($pagination == 2) ? $cat_id : '*'; ?>"><?php esc_html_e('All', 'tmm_shortcodes') ?></a></li>
+            <li><a data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="1" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-categories="<?php echo esc_attr(($pagination == 2) ? $cat_id : '*') ?>"><?php esc_html_e('All', 'tmm_shortcodes') ?></a></li>
             <?php if (!empty($filter)): ?>
                 <?php foreach ($filter as $key) : ?>
-                    <li><a data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="1" data-post-per-page="<?php echo $post_per_page ?>" data-categories="<?php echo ($pagination == 2) ? $key['slug'] : $key['id']; ?>"><?php echo $key['name'] ?></a></li>
+                    <li><a data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="1" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-categories="<?php echo esc_attr(($pagination == 2) ? $key['slug'] : $key['id']) ?>"><?php echo esc_attr($key['name']) ?></a></li>
                 <?php endforeach; ?>
             <?php endif; ?>
         </ul><!--/ #filter -->		
@@ -177,7 +180,7 @@ $slide_up = $gallery_slide_up;
 
     <?php if ($layout == 3){ ?>		
 
-        <section id="gallery-items" data-listing-page-id="<?php echo get_the_ID(); ?>" class="gallery-items clearfix" data-layout="<?php echo $layout ?>" data-pagination="<?php echo $pagination ?>">
+        <section id="gallery-items" data-listing-page-id="<?php echo esc_attr(get_the_ID()) ?>" class="gallery-items clearfix" data-layout="<?php echo esc_attr($layout) ?>" data-pagination="<?php echo esc_attr($pagination) ?>">
             <?php $i = 1 ?>
             
             <?php foreach ($images as $img) : ?>
@@ -194,27 +197,27 @@ $slide_up = $gallery_slide_up;
                     ?>
                     <?php if (($img['key'] > ($post_per_page * $current_page - $post_per_page)) && ($img['key'] <= $post_per_page * $current_page)) { ?>
 
-                        <article class="one-third column <?php echo $effect_class; ?>" data-categories="<?php echo $img['category'] ?>">
+                        <article class="one-third column <?php echo esc_attr($effect_class) ?>" data-categories="<?php echo esc_attr($img['category']) ?>">
 
                             <div class="project-thumb animTop <?php if (!$gallery_slide_up) echo 'links' ?>">
 
-                                <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
-                                   title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
+                                <a href="<?php echo esc_attr($img['imgurl']) ?>" class="single-image plus-icon <?php echo esc_attr($icon_class) ?>"
+                                   title="<?php echo esc_attr($t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '') ?>"
                                    data-fancybox-group="gallery">
                                     <?php if ( checkRemoteFile($image_attributes[0])) : ?>
-                                        <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo $image_attributes[0] ?>" width="<?php echo $image_attributes[1] ?>" height="<?php echo $image_attributes[2] ?>">
+                                        <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
                                     <?php else : ?>
-                                        <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '300*215') ?>" width="300" height="215">
+                                        <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '300*215') ?>" width="300" height="215">
                                     <?php endif; ?>
                                 </a>
 
                                 <?php if ($gallery_slide_up) { ?>
-                                    <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>" class="project-meta">
-                                        <h6 class="title"><?php echo $img['title'] ?></h6>
-                                        <span class="categories"><?php echo $img_terms[$img['category']]['name'] ?></span>
+                                    <a href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>" class="project-meta">
+                                        <h6 class="title"><?php echo esc_attr($img['title']) ?></h6>
+                                        <span class="categories"><?php echo (!empty($img_terms[$img['category']]) ? esc_attr($img_terms[$img['category']]['name']) : esc_html_e('Category is not set', 'tmm_shortcodes')) ?></span>
                                     </a>
                                 <?php } elseif($icons_type=='2') { ?>
-                                    <a class="gr-link single-image link-icon" href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
+                                    <a class="gr-link single-image link-icon" href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>"></a>
                                 <?php
                                 } ?>
 
@@ -228,27 +231,27 @@ $slide_up = $gallery_slide_up;
                 } else {
                     ?>
 
-                    <article class="one-third column <?php echo $effect_class; ?>" data-categories="<?php echo $img['category'] ?>">
+                    <article class="one-third column <?php echo esc_attr($effect_class) ?>" data-categories="<?php echo esc_attr($img['category']) ?>">
 
                         <div class="project-thumb animTop <?php if (!$gallery_slide_up) echo 'links' ?>">
 
-                            <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
-                               title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
+                            <a href="<?php echo esc_attr($img['imgurl']) ?>" class="single-image plus-icon <?php echo esc_attr($icon_class) ?>"
+                               title="<?php echo esc_attr($t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '') ?>"
                                data-fancybox-group="gallery">
                                 <?php if ( checkRemoteFile($image_attributes[0])) : ?>
-                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo $image_attributes[0] ?>" width="<?php echo $image_attributes[1] ?>" height="<?php echo $image_attributes[2] ?>">
+                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
                                 <?php else : ?>
-                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '300*215') ?>" width="300" height="215">
+                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '300*215') ?>" width="300" height="215">
                                 <?php endif; ?>
                             </a>
 
                             <?php if ($gallery_slide_up) { ?>
-                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>" class="project-meta">
-                                    <h6 class="title"><?php echo $img['title'] ?></h6>
-                                    <span class="categories"><?php echo $img_terms[$img['category']]['name'] ?></span>
+                                <a href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>" class="project-meta">
+                                    <h6 class="title"><?php echo esc_attr($img['title']) ?></h6>
+                                    <span class="categories"><?php echo (!empty($img_terms[$img['category']])) ? esc_attr($img_terms[$img['category']]['name']) : esc_html_e('Category is not set', 'tmm_shortcodes') ?></span>
                                 </a>
                             <?php } elseif($icons_type=='2') { ?>
-                                <a class="gr-link single-image link-icon" href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
+                                <a class="gr-link single-image link-icon" href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>"></a>
                             <?php
                             } ?>
 
@@ -278,28 +281,28 @@ $slide_up = $gallery_slide_up;
                         if ($page_count == $current_page) {
                             if ($i == 1) {
                                 ?>
-                                <li><a class="prev page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page - 1 ?>"  href="#"></a></li>
+                                <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page - 1) ?>" href="#"></a></li>
                                 <?php } else if ($i == $page_count + $t) { ?>
-                                <span class="page-numbers current"><?php echo $current_page ?></span>
+                                <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
                                 <?php } else { ?>
-                                <li><a class="page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $i - 1 ?>" href="#"><?php echo $i - 1 ?></a></li>
+                                <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($i - 1) ?>" href="#"><?php echo esc_attr($i - 1) ?></a></li>
                                 <?php
                             }
                         } else {
                             if ($i == 1) {
                                 if ($current_page == $i) {
                                     ?>
-                                    <span class="page-numbers current"><?php echo $current_page ?></span>
+                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
                                     <?php } else { ?>
-                                    <li><a class="prev page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page - 1 ?>"  href="#"></a></li>
+                                    <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page - 1) ?>"  href="#"></a></li>
                                     <?php
                                 }
                             } else if ($i == $page_count + $t) {
                                 if ($current_page == $i - $t) {
                                     ?>
-                                    <span class="page-numbers current"><?php echo $current_page ?></span>
+                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
                                     <?php } else { ?>
-                                    <li><a class="next page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page + 1 ?>" href="#"></a></li>
+                                    <li><a class="next page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page + 1) ?>" href="#"></a></li>
                                     <?php
                                 }
                                 ?>
@@ -308,9 +311,9 @@ $slide_up = $gallery_slide_up;
                             } else {
                                 if ($current_page == $i) {
                                     ?>
-                                    <span class="page-numbers current"><?php echo $current_page ?></span>
+                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
                                     <?php } else { ?>
-                                    <li><a class="page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $i ?>" href="#"><?php echo $i ?></a></li>
+                                    <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($i) ?>" href="#"><?php echo esc_attr($i) ?></a></li>
                                     <?php
                                 }
                                 ?>
@@ -329,7 +332,7 @@ $slide_up = $gallery_slide_up;
     <?php } ?>
 
     <?php if ($layout == 4) { ?>
-        <section id="gallery-items" data-listing-page-id="<?php echo get_the_ID(); ?>" class="gallery-items clearfix" data-layout="<?php echo $layout ?>" data-pagination="<?php echo $pagination ?>">
+        <section id="gallery-items" data-listing-page-id="<?php echo get_the_ID(); ?>" class="gallery-items clearfix" data-layout="<?php echo esc_attr($layout) ?>" data-pagination="<?php echo esc_attr($pagination) ?>">
 
             <?php foreach ($images as $img) {
 
@@ -344,27 +347,27 @@ $slide_up = $gallery_slide_up;
                 ?>
                 <?php if (($img['key'] > ($post_per_page * $current_page - $post_per_page)) && ($img['key'] <= $post_per_page * $current_page)) { ?>
 
-                    <article class="four columns <?php echo $effect_class; ?>" data-categories="<?php echo $img['category'] ?>">
+                    <article class="four columns <?php echo esc_attr($effect_class) ?>" data-categories="<?php echo esc_attr($img['category']) ?>">
 
                         <div class="project-thumb animTop <?php if (!$gallery_slide_up) echo 'links' ?>">
 
-                            <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
-                               title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
+                            <a href="<?php echo esc_attr($img['imgurl']) ?>" class="single-image plus-icon <?php echo esc_attr($icon_class) ?>"
+                               title="<?php echo esc_attr($t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '') ?>"
                                data-fancybox-group="gallery">
                                 <?php if ( checkRemoteFile($image_attributes[0])) : ?>
-                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo $image_attributes[0] ?>" width="<?php echo $image_attributes[1] ?>" height="<?php echo $image_attributes[2] ?>">
+                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
                                 <?php else : ?>
-                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '220*157') ?>" width="220" height="157">
+                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '220*157') ?>" width="220" height="157">
                                 <?php endif; ?>
                             </a>
 
                             <?php if ($gallery_slide_up) { ?>
-                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>" class="project-meta">
-                                    <h6 class="title"><?php echo $img['title'] ?></h6>
-                                    <span class="categories"><?php echo $img_terms[$img['category']]['name'] ?></span>
+                                <a href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>" class="project-meta">
+                                    <h6 class="title"><?php echo esc_attr($img['title']) ?></h6>
+                                    <span class="categories"><?php echo (!empty($img_terms[$img['category']])) ? esc_attr($img_terms[$img['category']]['name']) : esc_html_e('Category is not set', 'tmm_shortcodes') ?></span>
                                 </a>
                             <?php } elseif($icons_type=='2') { ?>
-                                <a class="gr-link single-image link-icon" href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
+                                <a class="gr-link single-image link-icon" href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>"></a>
                             <?php } ?>
 
                         </div>
@@ -376,27 +379,27 @@ $slide_up = $gallery_slide_up;
 
                 } else {
                     ?>
-                    <article class="four columns <?php echo $effect_class; ?>" data-categories="<?php echo $img['category'] ?>">
+                    <article class="four columns <?php echo esc_attr($effect_class) ?>" data-categories="<?php echo esc_attr($img['category']) ?>">
 
                         <div class="project-thumb animTop <?php if (!$gallery_slide_up) echo 'links' ?>">
 
-                            <a href="<?php echo $img['imgurl'] ?>" class="single-image plus-icon <?php echo $icon_class ?>"
-                               title="<?php echo $t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '' ?>"
+                            <a href="<?php echo esc_attr($img['imgurl']) ?>" class="single-image plus-icon <?php echo esc_attr($icon_class) ?>"
+                               title="<?php echo esc_attr($t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '') ?>"
                                data-fancybox-group="gallery">
                                 <?php if ( checkRemoteFile($image_attributes[0])) : ?>
-                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo $image_attributes[0] ?>" width="<?php echo $image_attributes[1] ?>" height="<?php echo $image_attributes[2] ?>">
+                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
                                 <?php else : ?>
-                                    <img alt="<?php echo $img['title'] ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '220*157') ?>" width="220" height="157">
+                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '220*157') ?>" width="220" height="157">
                                 <?php endif; ?>
                             </a>
 
                             <?php if ($gallery_slide_up) { ?>
-                                <a href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>" class="project-meta">
-                                    <h6 class="title"><?php echo $img['title'] ?></h6>
-                                    <span class="categories"><?php echo $img_terms[$img['category']]['name'] ?></span>
+                                <a href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>" class="project-meta">
+                                    <h6 class="title"><?php echo esc_attr($img['title']) ?></h6>
+                                    <span class="categories"><?php echo (!empty($img_terms[$img['category']])) ? esc_attr($img_terms[$img['category']]['name']) : esc_html_e('Category is not set', 'tmm_shortcodes') ?></span>
                                 </a>
                             <?php } elseif($icons_type=='2') { ?>
-                                <a class="gr-link single-image link-icon" href="<?php echo $title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink'] ?>"></a>
+                                <a class="gr-link single-image link-icon" href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>"></a>
                             <?php } ?>
 
                         </div>
@@ -422,13 +425,13 @@ $slide_up = $gallery_slide_up;
                     if ($page_count == $current_page) {
                         if ($i == 1) {
                             ?>
-                                <li><a class="prev page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page - 1 ?>"  href="#"></a></li>
+                                <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page - 1) ?>"  href="#"></a></li>
                                 <?php } else if ($i == $page_count + $t) { ?>
-                                <span class="page-numbers current"><?php echo $current_page ?></span>
+                                <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
                                 <?php
                             } else {
                                 ?>
-                                <li><a class="page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $i - 1 ?>" href="#"><?php echo $i - 1 ?></a></li>
+                                <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($i - 1) ?>" href="#"><?php echo esc_attr($i - 1) ?></a></li>
 
                         <?php
                     }
@@ -436,17 +439,17 @@ $slide_up = $gallery_slide_up;
                     if ($i == 1) {
                         if ($current_page == $i) {
                             ?>
-                                    <span class="page-numbers current"><?php echo $current_page ?></span>
+                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
                                     <?php } else { ?>
-                                    <li><a class="prev page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page - 1 ?>"  href="#"></a></li>
+                                    <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page - 1) ?>"  href="#"></a></li>
                                     <?php
                                 }
                             } else if ($i == $page_count + $t) {
                                 if ($current_page == $i - $t) {
                                     ?>
-                                    <span class="page-numbers current"><?php echo $current_page ?></span>
+                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
                                     <?php } else { ?>
-                                    <li><a class="next page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $current_page + 1 ?>" href="#"></a></li>
+                                    <li><a class="next page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page + 1) ?>" href="#"></a></li>
                                     <?php
                                 }
                                 ?>
@@ -455,9 +458,9 @@ $slide_up = $gallery_slide_up;
                             } else {
                                 if ($current_page == $i) {
                                     ?>
-                                    <span class="page-numbers current"><?php echo $current_page ?></span>
+                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
                                     <?php } else { ?>
-                                    <li><a class="page-numbers" data-categories="<?php echo $cat_id ?>" data-post-per-page="<?php echo $post_per_page ?>" data-icons="<?php echo $icons_type ?>" data-slideup=<?php echo $slide_up; ?> data-page-namber="<?php echo $i ?>" href="#"><?php echo $i ?></a></li>
+                                    <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($i) ?>" href="#"><?php echo esc_attr($i) ?></a></li>
                                     <?php
                                 }
                                 ?>
