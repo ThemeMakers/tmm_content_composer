@@ -7,7 +7,7 @@ $google_maps_api_key = (TMM::get_option("api_key_google")) ? 'key=' . TMM::get_o
 $map_link = 'https://maps.google.com/maps/api/js?' . $google_maps_api_key . '&';
 
 wp_enqueue_script("tmm_cc_front");?>
-<script type='text/javascript' src='https://maps.google.com/maps/api/js?<?php echo $google_maps_api_key; ?>&callback=initMap&ver=4.6.1' defer></script>
+<script type='text/javascript' src='https://maps.google.com/maps/api/js?<?php echo esc_attr($google_maps_api_key) ?>&callback=initMap&ver=4.6.1' defer></script>
 
 <?php
 
@@ -54,32 +54,32 @@ if ($location_mode == 'address') {
 <?php if ($mode == 'map'): ?>
 
 	<div class="google_map"
-		 id="google_map_<?php echo $inique_id ?>"
-		 style="height: <?php echo $height ?> px;" data-latitude="<?php echo $latitude ?>"
-         data-longitude="<?php echo $longitude ?>"
-         data-inique_id="<?php echo $inique_id ?>"
-         data-zoom="<?php echo $zoom ?>" data-maptype="<?php echo $maptype ?>"
-         data-content="<?php echo $content ?>"
-         data-enable_marker="<?php echo $enable_marker ?>"
-         data-enable_popup="<?php echo $enable_popup ?>"
-         data-enable_scrollwheel="<?php echo $enable_scrollwheel ?>"
-         data-js_controls="<?php echo $js_controls ?>"
-         data-marker_is_draggable="<?php echo $marker_is_draggable ?>"></div>
+		 id="google_map_<?php echo esc_attr($inique_id) ?>"
+		 style="height: <?php echo $height ?> px;" data-latitude="<?php echo esc_attr($latitude) ?>"
+         data-longitude="<?php echo esc_attr($longitude) ?>"
+         data-inique_id="<?php echo esc_attr($inique_id) ?>"
+         data-zoom="<?php echo esc_attr($zoom) ?>" data-maptype="<?php echo esc_attr($maptype) ?>"
+         data-content="<?php echo esc_attr($content) ?>"
+         data-enable_marker="<?php echo esc_attr($enable_marker) ?>"
+         data-enable_popup="<?php echo esc_attr($enable_popup) ?>"
+         data-enable_scrollwheel="<?php echo esc_attr($enable_scrollwheel) ?>"
+         data-js_controls="<?php echo esc_attr($js_controls) ?>"
+         data-marker_is_draggable="<?php echo esc_attr($marker_is_draggable) ?>"></div>
 
 	<script type="text/javascript">
 		var map;
 		function initMap() {
-			gmt_init_map(<?php echo $latitude ?>,
-				<?php echo $longitude ?>,
-				"google_map_<?php echo $inique_id ?>",
-				<?php echo $zoom ?>,
-				"<?php echo $maptype ?>",
-				"<?php echo $content ?>",
-				"<?php echo $enable_marker ?>",
-				"<?php echo $enable_popup ?>",
-				"<?php echo $enable_scrollwheel ?>",
-				<?php echo $js_controls ?>,
-				"<?php echo @$marker_is_draggable ?>"
+			gmt_init_map(<?php echo esc_attr($latitude) ?>,
+				<?php echo esc_attr($longitude) ?>,
+				"google_map_<?php echo esc_attr($inique_id) ?>",
+				<?php echo esc_attr($zoom) ?>,
+				"<?php echo esc_attr($maptype) ?>",
+				"<?php echo esc_attr($content) ?>",
+				"<?php echo esc_attr($enable_marker) ?>",
+				"<?php echo esc_attr($enable_popup) ?>",
+				"<?php echo esc_attr($enable_scrollwheel) ?>",
+				<?php echo esc_attr($js_controls) ?>,
+				"<?php echo esc_attr($marker_is_draggable) ?>"
 			);
 		}
 	</script>
@@ -93,14 +93,14 @@ if ($location_mode == 'address') {
 	$location_mode_string = 'center=' . $latitude . ',' . $longitude;
 	?>
 
-	<img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false&key=<?php echo TMM::get_option("api_key_google")?>">
+	<img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo esc_attr($location_mode_string) ?>&zoom=<?php echo esc_attr($zoom) ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo esc_attr($width) ?>x<?php echo esc_attr($height) ?><?php echo esc_attr($marker_string) ?>&sensor=false&key=<?php echo TMM::get_option("api_key_google")?>">
 
 <?php endif;
 
 }
 else{
 	echo "<h4>"; 
-	echo _e('Enter your Google Maps API key on Theme Options Page.', 'tmm_shortcodes');
+	echo esc_html_e('Enter your Google Maps API key on Theme Options Page.', 'tmm_shortcodes');
 	echo "</h4>";
 }
 
