@@ -1,14 +1,13 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<?php
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
 
 if (TMM::get_option("api_key_google")){
 
 $inique_id = uniqid();
 $google_maps_api_key = (TMM::get_option("api_key_google")) ? 'key=' . TMM::get_option("api_key_google") . '&' : '' ;
-$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false&';
+$map_link = 'https://maps.google.com/maps/api/js?' . $google_maps_api_key . '&';
 
 wp_enqueue_script("tmm_cc_front");?>
-<script type='text/javascript' src='//maps.google.com/maps/api/js?<?php echo $google_maps_api_key; ?>&sensor=false&callback=initMap&ver=4.6.1' async defer></script>
+<script type='text/javascript' src='https://maps.google.com/maps/api/js?<?php echo $google_maps_api_key; ?>&callback=initMap&ver=4.6.1' defer></script>
 
 <?php
 
@@ -41,7 +40,7 @@ if ($location_mode == 'address') {
 	}
 
 	$address = str_replace(' ', '+', $address);
-	$geocode = file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
+	$geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $address);
 	$output = json_decode($geocode);
 
 	// if latitude & longitude does not defined by user
@@ -68,24 +67,21 @@ if ($location_mode == 'address') {
          data-marker_is_draggable="<?php echo $marker_is_draggable ?>"></div>
 
 	<script type="text/javascript">
-
-
-			var map;
-function initMap() {
+		var map;
+		function initMap() {
 			gmt_init_map(<?php echo $latitude ?>,
-                         <?php echo $longitude ?>,
-                         "google_map_<?php echo $inique_id ?>",
-                         <?php echo $zoom ?>,
-                         "<?php echo $maptype ?>",
-                         "<?php echo $content ?>",
-                         "<?php echo $enable_marker ?>",
-                         "<?php echo $enable_popup ?>",
-                         "<?php echo $enable_scrollwheel ?>",
-                         <?php echo $js_controls ?>,
-                         "<?php echo @$marker_is_draggable ?>"
-            );
+				<?php echo $longitude ?>,
+				"google_map_<?php echo $inique_id ?>",
+				<?php echo $zoom ?>,
+				"<?php echo $maptype ?>",
+				"<?php echo $content ?>",
+				"<?php echo $enable_marker ?>",
+				"<?php echo $enable_popup ?>",
+				"<?php echo $enable_scrollwheel ?>",
+				<?php echo $js_controls ?>,
+				"<?php echo @$marker_is_draggable ?>"
+			);
 		}
-
 	</script>
 <?php else: ?>
 	<?php
@@ -97,7 +93,7 @@ function initMap() {
 	$location_mode_string = 'center=' . $latitude . ',' . $longitude;
 	?>
 
-	<img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false&key=<?php echo TMM::get_option("api_key_google")?>">
+	<img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo $width ?>x<?php echo $height ?><?php echo $marker_string ?>&sensor=false&key=<?php echo TMM::get_option("api_key_google")?>">
 
 <?php endif;
 
