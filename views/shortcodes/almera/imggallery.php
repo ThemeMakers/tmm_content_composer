@@ -162,10 +162,10 @@ $slide_up = $gallery_slide_up;
             ?> 
         
         <ul id="gallery-filter" class="gallery-filter clearfix">
-            <li><a data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="1" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-categories="<?php echo esc_attr(($pagination == 2) ? $cat_id : '*') ?>"><?php esc_html_e('All', 'tmm_shortcodes') ?></a></li>
+            <li><a data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="1" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-categories="<?php echo esc_attr(($pagination == 2) ? $cat_id : '*') ?>"><?php esc_html_e('All', 'tmm_shortcodes') ?></a></li>
             <?php if (!empty($filter)): ?>
                 <?php foreach ($filter as $key) : ?>
-                    <li><a data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="1" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-categories="<?php echo esc_attr(($pagination == 2) ? $key['slug'] : $key['id']) ?>"><?php echo esc_attr($key['name']) ?></a></li>
+                    <li><a data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="1" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-categories="<?php echo esc_attr(($pagination == 2) ? $key['slug'] : $key['id']) ?>"><?php echo esc_attr($key['name']) ?></a></li>
                 <?php endforeach; ?>
             <?php endif; ?>
         </ul><!--/ #filter -->		
@@ -274,35 +274,35 @@ $slide_up = $gallery_slide_up;
                 }
                 ?>
                    
-                <div class="wp-pagenavi gall">
+                <ul class="wp-pagenavi gall">
                     <?php
 
                     for ($i = 1; $i <= $page_count + $t; $i++) {
                         if ($page_count == $current_page) {
                             if ($i == 1) {
                                 ?>
-                                <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page - 1) ?>" href="#"></a></li>
+                                <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="<?php echo esc_attr($current_page - 1) ?>" href="#"></a></li>
                                 <?php } else if ($i == $page_count + $t) { ?>
-                                <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
+                                <li class="page-numbers current"><?php echo esc_attr($current_page) ?></li>
                                 <?php } else { ?>
-                                <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($i - 1) ?>" href="#"><?php echo esc_attr($i - 1) ?></a></li>
+                                <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="<?php echo esc_attr($i - 1) ?>" href="#"><?php echo esc_attr($i - 1) ?></a></li>
                                 <?php
                             }
                         } else {
                             if ($i == 1) {
                                 if ($current_page == $i) {
                                     ?>
-                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
+                                    <li class="page-numbers current"><?php echo esc_attr($current_page) ?></li>
                                     <?php } else { ?>
-                                    <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page - 1) ?>"  href="#"></a></li>
+                                    <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="<?php echo esc_attr($current_page - 1) ?>"  href="#"></a></li>
                                     <?php
                                 }
                             } else if ($i == $page_count + $t) {
                                 if ($current_page == $i - $t) {
                                     ?>
-                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
+                                    <li class="page-numbers current"><?php echo esc_attr($current_page) ?></li>
                                     <?php } else { ?>
-                                    <li><a class="next page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page + 1) ?>" href="#"></a></li>
+                                    <li><a class="next page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="<?php echo esc_attr($current_page + 1) ?>" href="#"></a></li>
                                     <?php
                                 }
                                 ?>
@@ -311,9 +311,9 @@ $slide_up = $gallery_slide_up;
                             } else {
                                 if ($current_page == $i) {
                                     ?>
-                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
+                                    <li class="page-numbers current"><?php echo esc_attr($current_page) ?></li>
                                     <?php } else { ?>
-                                    <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($i) ?>" href="#"><?php echo esc_attr($i) ?></a></li>
+                                    <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="<?php echo esc_attr($i) ?>" href="#"><?php echo esc_attr($i) ?></a></li>
                                     <?php
                                 }
                                 ?>
@@ -323,7 +323,7 @@ $slide_up = $gallery_slide_up;
                         }
                     }
                     ?>
-                </div>
+                </ul>
                 <?php
             }
             ?>			
@@ -418,20 +418,20 @@ $slide_up = $gallery_slide_up;
                     $t = 1;
                 }
                 ?>
-                <div class="wp-pagenavi gall">
+                <ul class="wp-pagenavi gall">
                 <?php               
                 
                 for ($i = 1; $i <= $page_count + $t; $i++) {
                     if ($page_count == $current_page) {
                         if ($i == 1) {
                             ?>
-                                <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page - 1) ?>"  href="#"></a></li>
+                                <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="<?php echo esc_attr($current_page - 1) ?>"  href="#"></a></li>
                                 <?php } else if ($i == $page_count + $t) { ?>
-                                <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
+                                <li class="page-numbers current"><?php echo esc_attr($current_page) ?></li>
                                 <?php
                             } else {
                                 ?>
-                                <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($i - 1) ?>" href="#"><?php echo esc_attr($i - 1) ?></a></li>
+                                <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="<?php echo esc_attr($i - 1) ?>" href="#"><?php echo esc_attr($i - 1) ?></a></li>
 
                         <?php
                     }
@@ -439,17 +439,17 @@ $slide_up = $gallery_slide_up;
                     if ($i == 1) {
                         if ($current_page == $i) {
                             ?>
-                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
+                                    <li class="page-numbers current"><?php echo esc_attr($current_page) ?></li>
                                     <?php } else { ?>
-                                    <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page - 1) ?>"  href="#"></a></li>
+                                    <li><a class="prev page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="<?php echo esc_attr($current_page - 1) ?>"  href="#"></a></li>
                                     <?php
                                 }
                             } else if ($i == $page_count + $t) {
                                 if ($current_page == $i - $t) {
                                     ?>
-                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
+                                    <li class="page-numbers current"><?php echo esc_attr($current_page) ?></li>
                                     <?php } else { ?>
-                                    <li><a class="next page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($current_page + 1) ?>" href="#"></a></li>
+                                    <li><a class="next page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="<?php echo esc_attr($current_page + 1) ?>" href="#"></a></li>
                                     <?php
                                 }
                                 ?>
@@ -458,9 +458,9 @@ $slide_up = $gallery_slide_up;
                             } else {
                                 if ($current_page == $i) {
                                     ?>
-                                    <span class="page-numbers current"><?php echo esc_attr($current_page) ?></span>
+                                    <li class="page-numbers current"><?php echo esc_attr($current_page) ?></li>
                                     <?php } else { ?>
-                                    <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-namber="<?php echo esc_attr($i) ?>" href="#"><?php echo esc_attr($i) ?></a></li>
+                                    <li><a class="page-numbers" data-categories="<?php echo esc_attr($cat_id) ?>" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="<?php echo esc_attr($i) ?>" href="#"><?php echo esc_attr($i) ?></a></li>
                                     <?php
                                 }
                                 ?>
@@ -470,7 +470,7 @@ $slide_up = $gallery_slide_up;
                             }
                         }
                         ?>
-                </div>
+                </ul>
                     <?php
                 }
                 ?>			
