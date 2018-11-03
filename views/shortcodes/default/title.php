@@ -8,6 +8,9 @@ $styles = "";
 $general_styles = "";
 $single_styles = "";
 
+// Generate unique id for class name generation
+$uuid = uniqid();
+
 if (!isset($letter_spacing)) {
 	$letter_spacing = '';
 }
@@ -71,22 +74,13 @@ if (isset($text_transform) && $text_transform) {
 }
 
 // Bg Color
-if (!empty($bg_color)) {
-	$styles.="background: " . $bg_color . "; ";
-	$general_styles.="background: " . $bg_color . "; ";
-}
+$bg_color = (!empty($bg_color)) ? 'background-color: ' . $bg_color . '; ' : '';
 
 // Bg Opacity
-if (!empty($bg_opacity)) {
-	$styles.="opacity: " . $bg_opacity . "; ";
-	$general_styles.="opacity: " . $bg_opacity . "; ";
-}
+$bg_opacity = (!empty($bg_opacity)) ? 'opacity: ' . $bg_opacity . '; ' : '';
 
 // Bg Radius
-if (!empty($bg_radius)) {
-	$styles.="border-radius: " . $bg_radius . "%; ";
-	$general_styles.="border-radius: " . $bg_radius . "%; ";
-}
+$bg_radius = (!empty($bg_radius)) ? 'border-radius:' . $bg_radius . '%;' : '';
 
 // Bg Padding
 if (!empty($bg_padding)) {
@@ -114,22 +108,22 @@ if ( isset($bg_center) && $bg_center) {
 
 // Styles
 if (!empty($styles)) {
-	$styles = 'style="' . esc_attr($styles) . '"';
+	$styles = 'style="' . $styles . '"';
 }
 
 // General Styles
-if (!empty($general_styles)) {
-	$general_styles = 'style="' . esc_attr($general_styles) . '"';
+if (isset($general_styles)) {
+	$general_styles = 'style="' . $general_styles . '"';
 }
 
 // Single Styles
 if (!empty($single_styles)) {
-	$single_styles = 'style="' . esc_attr($single_styles) . '"';
+	$single_styles = 'style="' . $single_styles . '"';
 }
 
 
 if (isset($use_general_color) && $use_general_color) {
-	$css_class = 'theme-default-bg';
+	$css_class = 'theme-default-bg ';
 } else {
 	$css_class = '';
 }
@@ -138,44 +132,50 @@ if (!empty($title_effect)&&($title_effect!='none')){
     $css_class = $css_class . ' ' . $title_effect;  
 }
 
+$type = isset($type) ? $type : '';
+
+$css_content = '';
+if (isset($bg_width) && $bg_width){
+	$css_class .= 'inner-extra';
+	$css_content = 'inner-content id_' . $uuid;
+}
+
+$separate_row = isset($separate_row) ? $separate_row : '';
+
 //Output Html
 $content = str_replace("`", "'", $content);
 
-if ( isset($title_type) && $title_type=='section'){
-    $html.= '<div class="section-title"><' . $type . ' class="' . esc_attr($css_class) . '" ' . $styles . '>' . $content . '</' . $type . '></div>';
-}else{   
-    
-    if (isset($word_animate) && $word_animate){
-        $content = explode(' ', $content);
-        $separete_content = explode('^', $separate_row);
-        if (!empty($separete_content))
-            $content = $separete_content;
-        
-        if (isset($use_general_color) && $use_general_color) {
-            $css_class = 'theme-default-bg';
-        } else {
-            $css_class = '';
-        }
-        $css_content = '';
-        if (isset($bg_width) && $bg_width){
-            $css_class.='inner-extra';
-            $css_content = 'inner-content';
-        }
-        
-        $html.= '<div class=" extraRadius ' . esc_attr($css_class) . '" ' . $general_styles . '><div class="' . esc_attr($css_content) . '">';
-        foreach ($content as $title){
-            $html.= '<' . $type . ' ' .$single_styles . '>' . esc_html($title) . '</' . $type . '>';
-        }
-        $html.= '</div></div>';         
-        
-    }else{
-        $html.= '<' . $type . ' class="' . esc_attr($css_class) . '" ' . $styles . '>' . $content . '</' . $type . '>';
-    }
-}
-
-//echo $html;
-
-echo wp_kses( $html, array(
+$allowed_html = array(
+	'a' => array(
+		'class' => array(),
+		'href'  => array(),
+		'rel'   => array(),
+		'title' => array(),
+	),
+	'abbr' => array(
+		'title' => array(),
+	),
+	'b' => array(),
+	'blockquote' => array(
+		'cite'  => array(),
+	),
+	'cite' => array(
+		'title' => array(),
+	),
+	'code' => array(),
+	'del' => array(
+		'datetime' => array(),
+		'title' => array(),
+	),
+	'dd' => array(),
+	'div' => array(
+		'class' => array(),
+		'title' => array(),
+		'style' => array(),
+	),
+	'dl' => array(),
+	'dt' => array(),
+	'em' => array(),
 	'h1' => array(
 		'style' => array()
 	),
@@ -193,5 +193,65 @@ echo wp_kses( $html, array(
 	),
 	'h6' => array(
 		'style' => array()
+	),
+	'i' => array(),
+	'img' => array(
+		'alt'    => array(),
+		'class'  => array(),
+		'height' => array(),
+		'src'    => array(),
+		'width'  => array(),
+	),
+	'li' => array(
+		'class' => array(),
+	),
+	'ol' => array(
+		'class' => array(),
+	),
+	'p' => array(
+		'class' => array(),
+	),
+	'q' => array(
+		'cite' => array(),
+		'title' => array(),
+	),
+	'span' => array(
+		'class' => array(),
+		'title' => array(),
+		'style' => array(),
+	),
+	'strike' => array(),
+	'strong' => array(),
+	'ul' => array(
+		'class' => array(),
+	),
+	'style' => array(
+		'type' => array()
 	)
-) );
+);
+
+if ( isset($title_type) && $title_type=='section'){
+    $html .= '<div class="section-title"><' . esc_attr($type) . ' class="' . esc_attr($css_class) . '" ' . esc_attr($styles) . '>' . $content . '</' . esc_attr($type) . '></div>';
+} else {
+    
+    if (isset($word_animate) && $word_animate){
+
+	    $content = explode(' ', $content);
+	    $separete_content = explode('^', $separate_row);
+	    if (!empty($separete_content)) {
+		    $content = $separete_content;
+	    }
+
+        $html .= '<style type="text/css">.id_' . $uuid . ':before {content:"";position: absolute;left:0;top:0;right:0;bottom:0;' . $bg_radius . $bg_color . $bg_opacity . '}</style>';
+	    $html .= '<div class="extraRadius ' . esc_attr($css_class) . '" ' . wp_kses($general_styles, $allowed_html) . '><div class="' . esc_attr($css_content) . '">';
+        foreach ($content as $title){
+            $html .= '<' . esc_attr($type) . ' ' . wp_kses($single_styles, $allowed_html) . '>' . esc_html($title) . '</' . esc_attr($type) . '>';
+        }
+        $html .= '</div></div>';
+        
+    } else {
+        $html .= '<' . esc_attr($type) . ' class="' . esc_attr($css_class) . '" ' . esc_attr($styles) . '>' . $content . '</' . esc_attr($type) . '>';
+    }
+}
+
+echo wp_kses( $html, $allowed_html );

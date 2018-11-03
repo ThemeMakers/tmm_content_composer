@@ -103,20 +103,28 @@ class TMM_Shortcode {
 
 		foreach (self::$shortcodes_folders as $shortcode_folder) {
 			$handler = opendir(TMM_CC_DIR . "views/shortcodes/" . $shortcode_folder . "/popups/");
-			while ($file = readdir($handler)) {
-				if ($file != "." AND $file != "..") {
-					$results[] = $file;
-				}
-			}
 
-			foreach ($results as $key => $value) {
-				$value = explode(".", $value);
-				if (!empty($value[0])) {
-					$results[$key] = $value[0];
-					self::$shortcodes_keys_by_folders[$shortcode_folder][] = $value[0];
+			if ( $handler ) {
+
+				while ( $file = readdir( $handler ) ) {
+					if ( $file != "." AND $file != ".." ) {
+						$results[] = $file;
+					}
 				}
+
+				foreach ( $results as $key => $value ) {
+					$value = explode( ".", $value );
+					if ( ! empty( $value[0] ) ) {
+						$results[ $key ]                                         = $value[0];
+						self::$shortcodes_keys_by_folders[ $shortcode_folder ][] = $value[0];
+					}
+				}
+
+				$results = array();
+
+				closedir($handler);
+
 			}
-			$results = array();
 		}
 
 		self::$shortcodes_keys_by_folders['default'][] = 'price_table';
