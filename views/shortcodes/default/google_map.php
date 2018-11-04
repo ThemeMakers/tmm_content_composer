@@ -5,7 +5,7 @@ if (TMM::get_option("api_key_google")){
 	$inique_id = uniqid();
 
 	$google_maps_api_key = (TMM::get_option("api_key_google")) ? 'key=' . TMM::get_option("api_key_google") . '&' : '' ;
-	$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . 'sensor=false';
+	$map_link = '//maps.google.com/maps/api/js?' . $google_maps_api_key . '';
 	wp_enqueue_script("tmm_shortcode_google_api_js", $map_link);
 
 	$js_controls = '{}';
@@ -16,7 +16,7 @@ if (TMM::get_option("api_key_google")){
 
 	if (isset($location_mode) && $location_mode == 'address') {
 		$address = str_replace(' ', '+', $address);
-		$geocode = @file_get_contents('http://maps.google.com/maps/api/geocode/json?address=' . $address . '&sensor=false');
+		$geocode = @file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $address . '');
 		if($geocode){
 			$output = json_decode($geocode);
 			if (isset($output->status) && $output->status != 'OVER_QUERY_LIMIT') {
@@ -73,7 +73,7 @@ if (TMM::get_option("api_key_google")){
 	                <div id="map_extended" class="google_map_toggle" data-height="<?php echo $height-260; ?>" style="height: <?php echo $height-260 ?>px;">
 	        <?php } ?>
 
-	                <img src="http://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo (int) $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo (int)$width ?>x<?php echo (int)$height ?><?php echo $marker_string ?>&key=<?php echo TMM::get_option("api_key_google")?>&sensor=false">
+	                <img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo $location_mode_string ?>&zoom=<?php echo (int) $zoom ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo (int)$width ?>x<?php echo (int)$height ?><?php echo $marker_string ?>&key=<?php echo TMM::get_option("api_key_google")?>">
 
 	        <?php if ($slide_up){ ?>
 	                </div>
@@ -87,7 +87,7 @@ if (TMM::get_option("api_key_google")){
 } else {
 	$full_width = ($width == '' || $width == '100%') ? '1130' : $width;
 	$custom_height = ($height == '') ? '400' : $height;
-	$link_url = 'http://placeholdit.imgix.net/~text?txtsize=40&txt=Please+Enter+a+Valid+Google+API+key&w='. $full_width . '&h=' . $custom_height;
+	$link_url = 'https://placeholdit.imgix.net/~text?txtsize=40&txt=Please+Enter+a+Valid+Google+API+key&w='. $full_width . '&h=' . $custom_height;
 	echo '<img class="aligncenter" src=' . $link_url . '>';
 }
 

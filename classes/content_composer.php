@@ -330,13 +330,13 @@ class TMM_Content_Composer {
 
 				if (!empty($data['title'])) {
 					?>
-					<h4 class="label" for="<?php echo $data['id'] ?>"><?php echo $data['title'] ?></h4>
+					<h4 class="label" for="<?php echo esc_attr( $data['id'] ) ?>"><?php echo esc_html( $data['title'] ) ?></h4>
 					<?php
 				}
 				?>
 
-				<textarea id="<?php echo $data['id'] ?>" class="js_shortcode_template_changer data-area <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>"><?php echo $data['default_value'] ?></textarea>
-				<span class="preset_description"><?php echo $data['description'] ?></span>
+				<textarea id="<?php echo esc_attr( $data['id'] ) ?>" class="js_shortcode_template_changer data-area <?php echo esc_attr( $css_class ) ?>" data-shortcode-field="<?php echo esc_attr( $data['shortcode_field'] ) ?>"><?php echo esc_html( $data['default_value'] ) ?></textarea>
+				<span class="preset_description"><?php echo esc_html( $data['description'] ) ?></span>
 
 				<?php
 				break;
