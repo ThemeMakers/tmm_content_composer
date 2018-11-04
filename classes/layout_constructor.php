@@ -361,7 +361,7 @@ class TMM_Layout_Constructor {
 							</video>
 						</div>
 						<?php
-						wp_enqueue_script('mediaelement');
+						wp_enqueue_script( 'wp-mediaelement', false, array('jquery'), false, true );
 
 						break;
 
@@ -373,7 +373,7 @@ class TMM_Layout_Constructor {
 							</video>
 						</div>
 						<?php
-						wp_enqueue_script('mediaelement');
+						wp_enqueue_script( 'wp-mediaelement', false, array('jquery'), false, true );
 
 						break;
 
@@ -385,7 +385,7 @@ class TMM_Layout_Constructor {
 							</video>
 						</div>
 						<?php
-						wp_enqueue_script('mediaelement');
+						wp_enqueue_script( 'wp-mediaelement', false, array('jquery'), false, true );
 
 						break;
 

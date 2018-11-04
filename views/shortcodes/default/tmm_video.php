@@ -84,9 +84,9 @@ switch ($video_type) {
                 <source type="video/mp4" src="<?php echo esc_url($source_code) ?>" />
             </video>
            
-        <?php    
-        
-	    wp_enqueue_script('mediaelement');
+        <?php
+
+        wp_enqueue_script( 'wp-mediaelement', false, array('jquery'), false, true );
         break;
     
     case $allows_array[3]: 
@@ -102,7 +102,7 @@ switch ($video_type) {
             </video>
            
         <?php
-	    wp_enqueue_script('mediaelement');
+        wp_enqueue_script( 'wp-mediaelement', false, array('jquery'), false, true );
         break;
     
     case $allows_array[4]: 
@@ -117,7 +117,7 @@ switch ($video_type) {
             </video>
            
         <?php
-	    wp_enqueue_script('mediaelement');
+        wp_enqueue_script( 'wp-mediaelement', false, array('jquery'), false, true );
         break;
 
 	default:

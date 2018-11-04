@@ -1,7 +1,7 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php
 wp_enqueue_script('tmm_masonry');
-wp_enqueue_script('mediaelement');
+wp_enqueue_script( 'wp-mediaelement', false, array('jquery'), false, true );
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 

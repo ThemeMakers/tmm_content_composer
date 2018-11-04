@@ -120,8 +120,7 @@ class TMM_Content_Composer {
 	}
 
 	public static function enqueue_scripts() {
-		wp_deregister_style('mediaelement');
-		wp_deregister_style('wp-mediaelement');
+		wp_enqueue_style( 'wp-mediaelement' );
 		wp_enqueue_style('tmm_composer_front', TMM_CC_URL . 'css/front.min.css');
 
 		if (!class_exists('TMM')) {
