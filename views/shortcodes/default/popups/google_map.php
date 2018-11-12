@@ -6,16 +6,14 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('API Key', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'key',
-			'id' => 'key',
-			'default_value' => TMM_Content_Composer::set_default_value('key', ''),
-			'description' => '<a target="_blank" href="//forums.webtemplatemasters.com/getting-keys-for-google-maps/">Obtaining an API key</a>'
+			'title' => __('Width', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'width',
+			'id' => 'width',
+			'default_value' => TMM_Content_Composer::set_default_value('width', '100%'),
+			'description' => ''
 		));
 		?>
 	</div><!--/ .one-half-->
-
-	<div class="one-half"></div><!--/ .one-half-->
 
 	<div class="one-half">
 		<?php
@@ -30,21 +28,6 @@
 		?>
 
 	</div><!--/ .one-half-->
-
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Width', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'width',
-			'id' => 'width',
-			'default_value' => TMM_Content_Composer::set_default_value('width', '100%'),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half-->
-
 
 	<div class="one-half">
 		<?php
@@ -63,7 +46,6 @@
 		?>
 	</div><!--/ .one-half-->
 
-
 	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -81,8 +63,6 @@
 		?>
 	</div><!--/ .one-half-->
 
-
-
 	<div class="one-half location_mode_coordinates location_mode_container">
 		<?php
 		TMM_Content_Composer::html_option(array(
@@ -96,7 +76,6 @@
 		?>		
 
 	</div><!--/ .one-half-->
-
 
 	<div class="one-half location_mode_coordinates location_mode_container">
 

@@ -1,5 +1,5 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<?php
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
+
 $title_styles = 'style="';
 if (!empty($title_align)) {
 	$title_styles.="text-align: " . $title_align . ";";
@@ -12,6 +12,10 @@ if (!empty($text_align)) {
 }
 $text_styles.='"';
 
+$post_id = isset($post_id) ? $post_id : '';
+$char_count = isset($char_count) ? $char_count : '';
+$show_featured_image = isset($show_featured_image) ? $show_featured_image : '';
+$show_readmore_button = isset($show_readmore_button) ? $show_readmore_button : '';
 
 $post = get_post($post_id);
 $post_link = get_permalink($post_id);

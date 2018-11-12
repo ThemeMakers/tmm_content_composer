@@ -29,6 +29,7 @@ if (!empty($posts)) {
 }
 
 $paged = (get_query_var('page')) ? get_query_var('page') : 1;
+$show_image = isset($show_image) ? $show_image : 1;
 $args['paged'] = $paged;
 
 

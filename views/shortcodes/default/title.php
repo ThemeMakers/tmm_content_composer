@@ -3,7 +3,8 @@
 
 $html = "";
 $show_border = false;//not in blessing
-
+$font_size = isset($font_size) ? $font_size : '';
+$type = isset($type) ? $type : '';
 
 $styles = 'style="';
 

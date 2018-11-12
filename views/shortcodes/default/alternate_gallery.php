@@ -69,7 +69,7 @@ $images = get_post_meta($post_id, 'thememakers_gallery', true);
 											$source_url = $source_url[0];
 										}
 										?>
-										<a href="http://www.youtube.com/v/<?php echo $source_url ?>?version=3&feature=player_detailpage" rel="gallery" class="single-image video-icon video">
+										<a href="https://www.youtube.com/v/<?php echo $source_url ?>?version=3&feature=player_detailpage" rel="gallery" class="single-image video-icon video">
 											<img alt="" src="<?php echo TMM_THEME_URI . '/images/video_poster2.jpg' ?>"><span class="curtain">&nbsp;</span>
 										</a>
 										<?php
@@ -80,7 +80,7 @@ $images = get_post_meta($post_id, 'thememakers_gallery', true);
 											$source_url = $source_url[3];
 										}
 										?>
-										<a href="http://player.vimeo.com/video/<?php echo $source_url ?>?byline=0&portrait=0" rel="gallery" class="single-image video-icon video">
+										<a href="https://player.vimeo.com/video/<?php echo $source_url ?>?byline=0&portrait=0" rel="gallery" class="single-image video-icon video">
 											<img alt="" src="<?php echo TMM_THEME_URI . '/images/video_poster2.jpg' ?>"><span class="curtain">&nbsp;</span>
 										</a>
 										<?php
