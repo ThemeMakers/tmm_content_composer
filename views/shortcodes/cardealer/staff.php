@@ -1,5 +1,4 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<?php
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
 
 $staff = explode('^', $staff);
 $cols_count = count($staff);
@@ -7,7 +6,7 @@ $cols_count = count($staff);
 $col_class = ' col-md-6';
 $max_cols = 4;
 if($cols_count === 1){
-	$col_class = ' col-md-6';
+	$col_class = ' col-md-12';
 	$max_cols = 1;
 }
 if($cols_count === 2){
