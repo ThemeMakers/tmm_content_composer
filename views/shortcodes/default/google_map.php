@@ -41,11 +41,11 @@ if (TMM::get_option("api_key_google")){
 		wp_enqueue_script('tmm_composer_front');
 		?>
 
-		<div class="google_map" id="google_map_<?php echo $inique_id ?>" style="height: <?php echo $height ?>px;"></div>
+		<div class="google_map" id="google_map_<?php echo esc_attr($inique_id) ?>" style="height: <?php echo esc_attr($height) ?>px;"></div>
 
 		<script type="text/javascript">
 			jQuery(function() {
-				gmt_init_map(<?php echo $latitude ?>,<?php echo $longitude ?>, "google_map_<?php echo $inique_id ?>", <?php echo $zoom ?>, "<?php echo $maptype ?>", "<?php echo $content ?>", "<?php echo $enable_marker ?>", "<?php echo $enable_popup ?>", "<?php echo $enable_scrollwheel ?>",<?php echo $js_controls ?>, "<?php echo @$marker_is_draggable ?>");
+				gmt_init_map(<?php echo esc_attr($latitude) ?>,<?php echo esc_attr($longitude) ?>, "google_map_<?php echo esc_attr($inique_id) ?>", <?php echo esc_attr($zoom) ?>, "<?php echo esc_attr($maptype) ?>", "<?php echo esc_attr($content) ?>", "<?php echo esc_attr($enable_marker) ?>", "<?php echo esc_attr($enable_popup) ?>", "<?php echo esc_attr($enable_scrollwheel) ?>",<?php echo esc_attr($js_controls) ?>, "<?php echo esc_attr($marker_is_draggable) ?>");
 			});
 		</script>
 	<?php } else { ?>
@@ -62,12 +62,12 @@ if (TMM::get_option("api_key_google")){
 		?>
 		<script type="text/javascript">
 		jQuery(window).on('load', function(){
-			var address = '<?php echo esc_attr($address); ?>';
-			jQuery('.google_image_<?php echo $inique_id ?>')
+			var address = '<?php echo esc_attr($address) ?>';
+			jQuery('.google_image_<?php echo esc_attr($inique_id) ?>')
 				.html('<img src="' + encodeURI('<?php echo esc_attr($staticmap); ?>') + '" width="<?php echo esc_attr((int)$width); ?>" height="<?php echo esc_attr((int)$height); ?>" alt="' + address.split('+').join(' ') + '">');
 		});
 		</script>
-		<div class="google_image_<?php echo $inique_id ?>"></div>
+		<div class="google_image_<?php echo esc_attr($inique_id) ?>"></div>
 
 	<?php }
 
@@ -77,5 +77,3 @@ if (TMM::get_option("api_key_google")){
 	$link_url = 'https://placeholdit.imgix.net/~text?txtsize=40&txt=Please+Enter+a+Valid+Google+API+key&w='. $full_width . '&h=' . $custom_height;
 	echo '<img class="aligncenter" src=' . $link_url . '>';
 }
-
-
