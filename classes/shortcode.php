@@ -45,12 +45,22 @@ class TMM_Shortcode {
 
 		$shortcodes_keys = array_keys(self::$shortcodes);
 
-		function tmm_do_shortcode($attributes = array(), $content = "", $shortcode_key) {
-			$attributes["content"] = $content;
+		function tmm_do_shortcode($atts, $content = '', $shortcode_key) {
+			if (is_array($atts) && isset($atts['content'])) {
+				$atts["content"] = $content;
+			}
+
+			if (!is_array($atts)) {
+				$atts = array();
+				$atts["content"] = $content;
+			}
+
+			$atts["content"] = $content;
+
 			if (isset($_REQUEST["shortcode_mode_edit"])) {
-				$_REQUEST["shortcode_mode_edit"] = $attributes;
+				$_REQUEST["shortcode_mode_edit"] = $atts;
 			} else {
-				return TMM_Shortcode::draw_html($shortcode_key, $attributes);
+				return TMM_Shortcode::draw_html($shortcode_key, $atts);
 			}
 		}
 
