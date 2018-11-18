@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2016-07-11 22:57+0200\n"
-"PO-Revision-Date: 2017-01-27 09:26+0100\n"
-"Last-Translator: \n"
-"Language-Team: Alex TM <support@webtemplatemasters.com>\n"
+"POT-Creation-Date: 2016-11-22 14:13+0100\n"
+"PO-Revision-Date: 2018-07-11 21:28+0000\n"
+"Last-Translator: admin <lefan@webtemplatemasters.com>\n"
+"Language-Team: Deutsch\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -19,6 +19,7 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+"Report-Msgid-Bugs-To: "
 
 #: classes/content_composer.php:63
 msgid "ThemeMakers Layout Constructor"
@@ -122,8 +123,8 @@ msgstr "Alle Kategorien"
 msgid "Browse"
 msgstr "durchsuchen"
 
-#: classes/layout_constructor.php:202 views/shortcodes/default/tmm_video.php:94
-#: views/shortcodes/default/tmm_video.php:97
+#: classes/layout_constructor.php:202 views/shortcodes/default/tmm_video.php:99
+#: views/shortcodes/default/tmm_video.php:102
 msgid "Unsupported video format"
 msgstr "Nicht unterstütztes Videoformat"
 
@@ -390,7 +391,7 @@ msgstr "Transparent (default)"
 msgid "Color"
 msgstr "Farbe"
 
-#: views/meta_panel.php:303 views/shortcodes/default/popups/google_map.php:58
+#: views/meta_panel.php:303 views/shortcodes/default/popups/google_map.php:43
 msgid "Image"
 msgstr "Bild"
 
@@ -568,7 +569,7 @@ msgstr ""
 #: views/shortcodes/cardealer/popups/search_by_car_body.php:9
 #: views/shortcodes/default/popups/accordion.php:45
 #: views/shortcodes/default/popups/chart.php:32
-#: views/shortcodes/default/popups/services.php:203
+#: views/shortcodes/default/popups/services.php:232
 #: views/shortcodes/default/popups/tabs.php:26
 msgid "Title"
 msgstr "Titel"
@@ -1078,7 +1079,7 @@ msgstr "Personal-Element hinzufügen"
 #: views/shortcodes/cardealer/popups/staff.php:48
 #: views/shortcodes/default/popups/accordion.php:46
 #: views/shortcodes/default/popups/list.php:88
-#: views/shortcodes/default/popups/services.php:219
+#: views/shortcodes/default/popups/services.php:248
 #: views/shortcodes/default/popups/tabs.php:27
 msgid "Remove"
 msgstr "Herausnehmen"
@@ -1242,61 +1243,6 @@ msgstr "Sind Sie ein Mensch?"
 
 #: views/shortcodes/default/popups/accordion.php:9
 #: views/shortcodes/default/popups/services.php:12
-#: views/shortcodes/default/popups/services.php:45
-#: views/shortcodes/default/popups/services.php:46
-#: views/shortcodes/default/popups/services.php:47
-#: views/shortcodes/default/popups/services.php:48
-#: views/shortcodes/default/popups/services.php:49
-#: views/shortcodes/default/popups/services.php:50
-#: views/shortcodes/default/popups/services.php:51
-#: views/shortcodes/default/popups/services.php:52
-#: views/shortcodes/default/popups/services.php:53
-#: views/shortcodes/default/popups/services.php:54
-#: views/shortcodes/default/popups/services.php:55
-#: views/shortcodes/default/popups/services.php:56
-#: views/shortcodes/default/popups/services.php:57
-#: views/shortcodes/default/popups/services.php:58
-#: views/shortcodes/default/popups/services.php:59
-#: views/shortcodes/default/popups/services.php:60
-#: views/shortcodes/default/popups/services.php:61
-#: views/shortcodes/default/popups/services.php:62
-#: views/shortcodes/default/popups/services.php:63
-#: views/shortcodes/default/popups/services.php:64
-#: views/shortcodes/default/popups/services.php:65
-#: views/shortcodes/default/popups/services.php:66
-#: views/shortcodes/default/popups/services.php:67
-#: views/shortcodes/default/popups/services.php:68
-#: views/shortcodes/default/popups/services.php:69
-#: views/shortcodes/default/popups/services.php:70
-#: views/shortcodes/default/popups/services.php:71
-#: views/shortcodes/default/popups/services.php:72
-#: views/shortcodes/default/popups/services.php:73
-#: views/shortcodes/default/popups/services.php:74
-#: views/shortcodes/default/popups/services.php:75
-#: views/shortcodes/default/popups/services.php:76
-#: views/shortcodes/default/popups/services.php:77
-#: views/shortcodes/default/popups/services.php:78
-#: views/shortcodes/default/popups/services.php:79
-#: views/shortcodes/default/popups/services.php:80
-#: views/shortcodes/default/popups/services.php:81
-#: views/shortcodes/default/popups/services.php:82
-#: views/shortcodes/default/popups/services.php:83
-#: views/shortcodes/default/popups/services.php:84
-#: views/shortcodes/default/popups/services.php:85
-#: views/shortcodes/default/popups/services.php:86
-#: views/shortcodes/default/popups/services.php:87
-#: views/shortcodes/default/popups/services.php:88
-#: views/shortcodes/default/popups/services.php:89
-#: views/shortcodes/default/popups/services.php:90
-#: views/shortcodes/default/popups/services.php:91
-#: views/shortcodes/default/popups/services.php:92
-#: views/shortcodes/default/popups/services.php:93
-#: views/shortcodes/default/popups/services.php:94
-#: views/shortcodes/default/popups/services.php:95
-#: views/shortcodes/default/popups/services.php:96
-#: views/shortcodes/default/popups/services.php:97
-#: views/shortcodes/default/popups/services.php:98
-#: views/shortcodes/default/popups/services.php:99
 msgid "Type"
 msgstr "Typ"
 
@@ -1310,15 +1256,15 @@ msgstr "Umschalten"
 
 #: views/shortcodes/default/popups/accordion.php:28
 #: views/shortcodes/default/popups/accordion.php:59
-#: views/shortcodes/default/popups/services.php:104
-#: views/shortcodes/default/popups/services.php:230
+#: views/shortcodes/default/popups/services.php:133
+#: views/shortcodes/default/popups/services.php:259
 #: views/shortcodes/default/popups/tabs.php:8
 #: views/shortcodes/default/popups/tabs.php:40
 msgid "Add item"
 msgstr "Posten hinzufügen"
 
 #: views/shortcodes/default/popups/accordion.php:51
-#: views/shortcodes/default/popups/services.php:214
+#: views/shortcodes/default/popups/services.php:243
 #: views/shortcodes/default/popups/tabs.php:32
 msgid "Content"
 msgstr "Inhalt"
@@ -1465,7 +1411,7 @@ msgid "Chart Data"
 msgstr "Diagrammdaten"
 
 #: views/shortcodes/default/popups/chart.php:146
-#: views/shortcodes/default/popups/services.php:162
+#: views/shortcodes/default/popups/services.php:191
 msgid "Background Color"
 msgstr "Hintergrund Farbe"
 
@@ -1519,50 +1465,42 @@ msgid "Dark"
 msgstr "Dunkel"
 
 #: views/shortcodes/default/popups/google_map.php:9
-msgid "Google Map API Key"
-msgstr "Google Map API Key"
-
-#: views/shortcodes/default/popups/google_map.php:13
-msgid "Obtaining an API key"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:24
 #: views/shortcodes/default/popups/tmm_video.php:60
 msgid "Height"
 msgstr "Höhe"
 
-#: views/shortcodes/default/popups/google_map.php:39
+#: views/shortcodes/default/popups/google_map.php:24
 #: views/shortcodes/default/popups/tmm_video.php:46
 msgid "Width"
 msgstr "Breite"
 
-#: views/shortcodes/default/popups/google_map.php:53
+#: views/shortcodes/default/popups/google_map.php:38
 msgid "Mode"
 msgstr "Modus"
 
-#: views/shortcodes/default/popups/google_map.php:57
+#: views/shortcodes/default/popups/google_map.php:42
 msgid "Map"
 msgstr "Lageplan"
 
-#: views/shortcodes/default/popups/google_map.php:71
+#: views/shortcodes/default/popups/google_map.php:56
 msgid "Location mode"
 msgstr "Location-Modus"
 
-#: views/shortcodes/default/popups/google_map.php:75
-#: views/shortcodes/default/popups/google_map.php:120
+#: views/shortcodes/default/popups/google_map.php:60
+#: views/shortcodes/default/popups/google_map.php:105
 msgid "Address"
 msgstr "Adresse"
 
-#: views/shortcodes/default/popups/google_map.php:76
+#: views/shortcodes/default/popups/google_map.php:61
 msgid "Coordinates"
 msgstr "Koordinaten"
 
-#: views/shortcodes/default/popups/google_map.php:90
+#: views/shortcodes/default/popups/google_map.php:75
 msgid "Marker Latitude"
 msgstr "Markierung Latitude"
 
-#: views/shortcodes/default/popups/google_map.php:94
-#: views/shortcodes/default/popups/google_map.php:110
+#: views/shortcodes/default/popups/google_map.php:79
+#: views/shortcodes/default/popups/google_map.php:95
 msgid ""
 "Point on which the viewport will be centered. If not given and no markers "
 "are defined the viewport defaults to world view. In address Location mode it "
@@ -1572,61 +1510,61 @@ msgstr ""
 "definiert der Viewport standardmaessig Weltbild. Im Adressmodus Lage wird es "
 "automatisch berechnet!"
 
-#: views/shortcodes/default/popups/google_map.php:106
+#: views/shortcodes/default/popups/google_map.php:91
 msgid "Marker Longitude"
 msgstr "Markierung Länge"
 
-#: views/shortcodes/default/popups/google_map.php:141
+#: views/shortcodes/default/popups/google_map.php:126
 msgid "Zoom"
 msgstr "vergrößern"
 
-#: views/shortcodes/default/popups/google_map.php:146
+#: views/shortcodes/default/popups/google_map.php:131
 msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
 msgstr "Zoomwert von 1 bis 19, wobei 19 die höchste und 1 der kleinste ist."
 
-#: views/shortcodes/default/popups/google_map.php:156
+#: views/shortcodes/default/popups/google_map.php:141
 msgid "Enable Scrollwheel"
 msgstr "Scrollrad ermöglichen"
 
-#: views/shortcodes/default/popups/google_map.php:160
+#: views/shortcodes/default/popups/google_map.php:145
 msgid "Set to false to disable zooming with your mouses scrollwheel."
 msgstr ""
 "Deaktivieren Sie Zoomen mit Ihrer Mäuse Scrollwheel auf False festgelegt."
 
-#: views/shortcodes/default/popups/google_map.php:169
+#: views/shortcodes/default/popups/google_map.php:154
 msgid "Maptype"
 msgstr "Type de carte"
 
-#: views/shortcodes/default/popups/google_map.php:173
+#: views/shortcodes/default/popups/google_map.php:158
 msgid "ROADMAP"
 msgstr "STRASSENKARTE"
 
-#: views/shortcodes/default/popups/google_map.php:174
+#: views/shortcodes/default/popups/google_map.php:159
 msgid "SATELLITE"
 msgstr "Satelliten"
 
-#: views/shortcodes/default/popups/google_map.php:175
+#: views/shortcodes/default/popups/google_map.php:160
 msgid "HYBRID"
 msgstr "HYBRID"
 
-#: views/shortcodes/default/popups/google_map.php:176
+#: views/shortcodes/default/popups/google_map.php:161
 msgid "TERRAIN"
 msgstr "GELÄNDE"
 
-#: views/shortcodes/default/popups/google_map.php:190
+#: views/shortcodes/default/popups/google_map.php:175
 msgid "Enable Marker"
 msgstr "Marker aktivieren"
 
-#: views/shortcodes/default/popups/google_map.php:194
+#: views/shortcodes/default/popups/google_map.php:179
 msgid "Set to false to disable display a marker in the viewport."
 msgstr ""
 "Setzen Sie auf False, Anzeige deaktivieren eine Markierung im Sichtbereich."
 
-#: views/shortcodes/default/popups/google_map.php:203
+#: views/shortcodes/default/popups/google_map.php:188
 msgid "Enable Popup"
 msgstr "Aktivieren Sie Popup"
 
-#: views/shortcodes/default/popups/google_map.php:207
+#: views/shortcodes/default/popups/google_map.php:192
 msgid ""
 "If true the info window for this marker will be shown when the map finished "
 "loading. If html is empty this option will be ignored."
@@ -1634,15 +1572,15 @@ msgstr ""
 "Wenn true wird das Info-Fenster für diese Marker angezeigt, wenn die Karte "
 "fertig geladen. Wenn html leer ist, wird diese Option ignoriert."
 
-#: views/shortcodes/default/popups/google_map.php:217
+#: views/shortcodes/default/popups/google_map.php:202
 msgid "Marker is draggable"
 msgstr "Ziehbare Marke setzen"
 
-#: views/shortcodes/default/popups/google_map.php:221
+#: views/shortcodes/default/popups/google_map.php:206
 msgid "Set marker draggable"
 msgstr "Ziehbare Marke setzen"
 
-#: views/shortcodes/default/popups/google_map.php:230
+#: views/shortcodes/default/popups/google_map.php:215
 msgid "Html Content"
 msgstr "HTML-Inhalt"
 
@@ -1940,31 +1878,31 @@ msgstr ""
 msgid "Alternate Icon on Top"
 msgstr ""
 
-#: views/shortcodes/default/popups/services.php:103
+#: views/shortcodes/default/popups/services.php:132
 msgid "Blocks"
 msgstr ""
 
-#: views/shortcodes/default/popups/services.php:149
+#: views/shortcodes/default/popups/services.php:178
 msgid "Text Color"
 msgstr "Text Farbe"
 
-#: views/shortcodes/default/popups/services.php:176
+#: views/shortcodes/default/popups/services.php:205
 msgid "Text Hover Color"
 msgstr ""
 
-#: views/shortcodes/default/popups/services.php:189
+#: views/shortcodes/default/popups/services.php:218
 msgid "Background Hover Color"
 msgstr ""
 
-#: views/shortcodes/default/popups/services.php:206
+#: views/shortcodes/default/popups/services.php:235
 msgid "Link"
 msgstr "Link"
 
-#: views/shortcodes/default/popups/services.php:210
+#: views/shortcodes/default/popups/services.php:239
 msgid "Hover Title"
 msgstr ""
 
-#: views/shortcodes/default/popups/services.php:215
+#: views/shortcodes/default/popups/services.php:244
 msgid "Hover Content"
 msgstr ""
 
@@ -2100,64 +2038,3 @@ msgstr "ThemeMakers"
 #. Author URI of the plugin/theme
 msgid "http://themeforest.net/user/ThemeMakers"
 msgstr "http://themeforest.net/user/Thememakers"
-
-#~ msgid "Default-white"
-#~ msgstr "Standard-weiß"
-
-#~ msgid "Below main content with separate layout options"
-#~ msgstr "Unterhalb der Hauptinhalt separate Layout-Optionen"
-
-#~ msgid "Hide empty producers"
-#~ msgstr "Verstecke leer Hersteller"
-
-#~ msgid "Display car make logos along with their names"
-#~ msgstr "Display-Herstellerlogo mit Ihrem Namen"
-
-#~ msgid "Display only cars, that have their logo"
-#~ msgstr "Nur empfohlene Autos anzeigen"
-
-#~ msgid "Only new cars"
-#~ msgstr "Nur Neuwagen"
-
-#~ msgid "Only damaged cars"
-#~ msgstr "Nur beschädigte Autos"
-
-#~ msgid "Only used cars"
-#~ msgstr "Nur Gebrauchtwagen"
-
-#~ msgid "URL"
-#~ msgstr "URL"
-
-#~ msgid "Image Action Link"
-#~ msgstr "Bildlink Aktion"
-
-#~ msgid "Open in Fancybox"
-#~ msgstr "Bild in Lightbox öffnen"
-
-#~ msgid "Link Title"
-#~ msgstr "Link-Titel"
-
-#~ msgid "Top Indent (px)"
-#~ msgstr "Oberen Einzug (px)"
-
-#~ msgid "Right Indent (px)"
-#~ msgstr "Rechten Einzug (px)"
-
-#~ msgid "Left Indent (px)"
-#~ msgstr "Linken Einzug (px)"
-
-#~ msgid ""
-#~ "Examples:https://www.youtube.com/watch?v=_EBYf3lYSEg or http://vimeo."
-#~ "com/22439234"
-#~ msgstr ""
-#~ "Beispiele: http://vimeo.com/22439234 https://www.youtube.com/watch?"
-#~ "v=_EBYf3lYSEg oder Upload selbst gehosteten Video"
-
-#~ msgid "Country"
-#~ msgstr "Land"
-
-#~ msgid "State"
-#~ msgstr "Staats"
-
-#~ msgid "City"
-#~ msgstr "Stadt"
