@@ -18,7 +18,7 @@ $content_array = explode('^', $content);
 			
 			<?php foreach ($content_array as $key => $value) : ?>
 			
-				<div class="tab-content clearfix">
+				<div class="tab-content">
 					<p><?php echo do_shortcode($value) ?></p>
 				</div><!--/ .tab-content-->
 				
