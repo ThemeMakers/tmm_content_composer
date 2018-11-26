@@ -1,41 +1,41 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
+<?php if (!defined('ABSPATH')) die('No direct access allowed');
+
+$uniqid = uniqid();
+
+$args = array();
+
+if ($show == 'mode1') {
+    $args = array(
+        'post_type' => TMM_Testimonial::$slug,
+        'include' => $content,
+        'suppress_filters' => false
+		);
+} elseif ($show == 'mode2') {
+    $args = array(
+        'post_type' => TMM_Testimonial::$slug,
+        'orderby' => 'rand',
+        'posts_per_page' => $count,
+        'suppress_filters' => false
+    );
+} else {
+    $args = array(
+        'post_type' => TMM_Testimonial::$slug,
+        'posts_per_page' => $count,
+        'suppress_filters' => false
+    );
+}
+
+$image_sizes = '50*50';
+
+$posts = get_posts($args);
+?>
+
 <div class="widget widget_testimonials">
 
-	<?php	
-    $uniqid = uniqid();
-	
-	$args = array();
-
-	if ($show == 'mode1') {
-		$args = array(
-			'post_type' => TMM_Testimonial::$slug,
-			'p' => $content,
-            'suppress_filters' => false
-		);
-	} elseif ($show == 'mode2') {
-		$args = array(
-			'post_type' => TMM_Testimonial::$slug,
-			'orderby' => 'rand',
-			'posts_per_page' => $count,
-             'suppress_filters' => false
-		);
-	} else {
-		$args = array(
-			'post_type' => TMM_Testimonial::$slug,
-			'posts_per_page' => $count,
-            'suppress_filters' => false
-		);
-	}
-
-        $image_sizes = '50*50';
-			
-	$posts = get_posts($args);
-		
-	?>
-        <div class="quotes quotes-<?php echo $uniqid ?> <?php echo (isset($content_color)) ? 'content_'.$content_color : ''; ?>">	
+    <div class="quotes quotes-<?php echo esc_attr($uniqid) ?> <?php echo (isset($content_color)) ? 'content_'.$content_color : ''; ?>">
 		
 	<?php
-		foreach ($posts as $post){ 
+		foreach ($posts as $post){
 				
             $fonts_link = tmm_get_font_link( $post->ID );
             if(!empty($fonts_link)){
@@ -59,13 +59,15 @@
 
             <?php
         }
+
+        wp_reset_query();
 		?>
         </div><!--/ .quotes-->	
         
         <script>
         jQuery(function() {		
-            if (jQuery('.quotes-<?php echo $uniqid ?> .item').length>1){
-                jQuery('.quotes-<?php echo $uniqid ?>').owlCarousel({                               
+            if (jQuery('.quotes-<?php echo esc_attr($uniqid) ?> .item').length>1){
+                jQuery('.quotes-<?php echo esc_attr($uniqid) ?>').owlCarousel({
                     autoPlay : 5000,
                     stopOnHover : true,
                     navigation: false,
@@ -76,8 +78,4 @@
             }          
         });
         </script>
-	
-<?php wp_reset_query(); ?>
 </div><!--/ .widget-container-->
-
-

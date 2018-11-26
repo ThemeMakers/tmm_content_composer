@@ -13,39 +13,16 @@
 			'shortcode_field' => 'show',
 			'id' => 'show_testimonial_value',
 			'options' => array(
-				'mode1' => esc_html__('Show selected testimonial', TMM_CC_TEXTDOMAIN),
-				'mode2' => esc_html__('Show random testimonial', TMM_CC_TEXTDOMAIN),
-				'mode3' => esc_html__('Show latest testimonial', TMM_CC_TEXTDOMAIN),
+				'mode1' => esc_html__('Selected testimonials', TMM_CC_TEXTDOMAIN),
+				'mode2' => esc_html__('Random testimonials', TMM_CC_TEXTDOMAIN),
+				'mode3' => esc_html__('Latest testimonials', TMM_CC_TEXTDOMAIN),
 			),
 			'default_value' => $show,
 			'description' => ''
 		));
 		?>
 
-		<?php
-		$tt = get_posts(array('numberposts' => -1, 'post_type' => TMM_Testimonial::$slug, 'suppress_filters' => false));
-		$testimonials = array();
-		if (!empty($tt)) {
-			foreach ($tt as $value) {
-				$testimonials[$value->ID] = $value->post_title . ". " . substr(strip_tags($value->post_content), 0, 90) . " ...";
-			}
-		}
-		?>
-		<div class="content_select" style="display: <?php if ($show == 'mode2' OR $show == 'mode3'): ?>none<?php else: ?>inline-block<?php endif; ?>;">
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'type' => 'select',
-				'title' => esc_html__('Testimonials', TMM_CC_TEXTDOMAIN),
-				'options' => $testimonials,
-				'shortcode_field' => 'content',
-				'id' => '',
-				'default_value' => TMM_Content_Composer::set_default_value('content', ''),
-				'description' => ''
-			));
-			?>
-		</div>
-
-    </div><!--/ .ona-half-->
+    </div>
     
     <div class="one-half">
        <?php
@@ -116,6 +93,35 @@
 		?>
 
 	</div>
+
+	<div class="one-half">
+
+		<?php
+		$tt = get_posts(array('numberposts' => -1, 'post_type' => TMM_Testimonial::$slug, 'suppress_filters' => false));
+		$testimonials = array();
+		$testimonialsID = array();
+		if (!empty($tt)) {
+			foreach ($tt as $value) {
+				$testimonials[$value->ID] = $value->post_title . ". " . substr(strip_tags($value->post_content), 0, 90) . " ...";
+			}
+		}
+		?>
+		<div class="content_select">
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => esc_html__('Testimonials', TMM_CC_TEXTDOMAIN),
+				'options' => $testimonials,
+				'multiple' => ($show == 'mode1') ? true : false,
+				'shortcode_field' => 'content',
+				'id' => 'content',
+				'default_value' => TMM_Content_Composer::set_default_value('content', ''),
+				'description' => esc_html__('Hold down the Ctrl (for Mac users use Cmd) key and select as many options as you need.', TMM_CC_TEXTDOMAIN)
+			));
+			?>
+		</div>
+
+	</div><!--/ .ona-half-->
     
 	<div class="one-half">
 
@@ -146,7 +152,7 @@
 
 		//***
 
-		jQuery("#show_testimonial_value").change(function() {
+		jQuery("#show_testimonial_value").on('change', function() {
 			var val = jQuery(this).val();
 			tmm_ext_shortcodes.changer(shortcode_name);
 
