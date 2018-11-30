@@ -23,7 +23,7 @@
 		if (!empty($featured_cars)) {
 			?>
 
-			<div id="<?php echo $slider_id; ?>" class="flexslider clearfix <?php echo $show_sidebar ? 'col-md-8' : 'col-xs-12'; ?>">
+			<div id="<?php echo esc_attr( $slider_id ) ?>" class="flexslider clearfix <?php echo esc_attr( $show_sidebar ? 'col-md-8' : 'col-xs-12' ) ?>">
 
 				<ul class="slides">
 
@@ -58,7 +58,7 @@
 
 						<li<?php if(!$placeholder) echo ' class="resized"' . ' style="width:' . $slider_size['width'] . 'px;height:' . $slider_size['height'] . 'px;"'; ?>>
 
-							<img src="<?php echo $slider_img_src; ?>" alt="" />
+							<img src="<?php echo esc_url( $slider_img_src ) ?>" alt="" />
 
 							<?php if ($show_caption) { ?>
 
@@ -82,10 +82,10 @@
 											<?php if( !empty($car_engine_size) || !empty($car_fuel_type) || !empty($car_mileage) ){ ?>
 											<dd class="media-hidden">
 												<?php
-												echo $car_engine_size . ' ';
+												echo html_entity_decode( $car_engine_size ) . ' ';
 
 												if(!empty($car_fuel_type)){
-													echo $car_fuel_type;
+													echo esc_attr( $car_fuel_type );
 													if(!empty($car_mileage)){
 														echo ' ';
 													}
@@ -97,7 +97,7 @@
 											<?php } ?>
 											<?php if (!empty($car_transmission)) { ?>
 											<dd class="media-hidden">
-												<?php echo $car_transmission; ?>
+												<?php echo esc_attr( $car_transmission ) ?>
 											</dd>
 											<?php } ?>
 										</dl><!--/ .auto-detailed-->
@@ -145,7 +145,7 @@
 				<script type="text/javascript">
 
 					jQuery(function() {
-						jQuery('#<?php echo $slider_id; ?>').flexslider(<?php echo json_encode($slider_opts); ?>);
+						jQuery('#<?php echo esc_attr( $slider_id ) ?>').flexslider(<?php echo json_encode($slider_opts); ?>);
 					});
 
 				</script>
@@ -158,7 +158,7 @@
 	} else {
 		?>
 
-		<div class="wrapper-slider <?php echo $show_sidebar ? 'col-md-8' : 'col-xs-12'; ?>">
+		<div class="wrapper-slider <?php echo esc_attr( $show_sidebar ? 'col-md-8' : 'col-xs-12' ) ?>">
 			<?php
 			$alias = TMM_Ext_PostType_Car::slider_image_size($show_sidebar, 1);
 			$options = array(

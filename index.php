@@ -39,11 +39,11 @@ function tmm_cc_register() {
 	if ( !function_exists('tmm_get_fonts_array') ) {
 		function tmm_get_fonts_array() {
 			return array(
-				'' => __('Default', TMM_CC_TEXTDOMAIN),
-				'Arial' => __('Arial', TMM_CC_TEXTDOMAIN),
-				'Tahoma' => __('Tahoma', TMM_CC_TEXTDOMAIN),
-				'Verdana' => __('Verdana', TMM_CC_TEXTDOMAIN),
-				'Calibri' => __('Calibri', TMM_CC_TEXTDOMAIN),
+				'' => 'Default',
+				'Arial' => 'Arial',
+				'Tahoma' => 'Tahoma',
+				'Verdana' => 'Verdana',
+				'Calibri' => 'Calibri'
 			);
 		}
 	}
