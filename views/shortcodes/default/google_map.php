@@ -41,12 +41,20 @@ if ($location_mode == 'address') {
 
 	$address = str_replace(' ', '+', $address);
 	$geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $address . '&' . $google_maps_api_key);
-	$output = json_decode($geocode);
+	$output = json_decode($geocode, true);
 
 	// if latitude & longitude does not defined by user
 	if ('' === $latitude & '' === $longitude) {
-		$latitude = $output->results[0]->geometry->location->lat;
-		$longitude = $output->results[0]->geometry->location->lng;
+		if ($output) {
+			if( $output['status'] == 'OK' ) {
+				$latitude = $output['results'][0]['geometry']['location']['lat'];
+				$longitude = $output['results'][0]['geometry']['location']['lng'];
+			} else {
+				printf( $output['error_message'] );
+			}
+		} else {
+			printf( 'GPS coordinates were not available because connection failed or malformed request' );
+		}
 	}
 }
 ?>
