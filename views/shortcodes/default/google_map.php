@@ -40,7 +40,7 @@ if ($location_mode == 'address') {
 	}
 
 	$address = str_replace(' ', '+', $address);
-	$geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $address);
+	$geocode = file_get_contents('https://maps.google.com/maps/api/geocode/json?address=' . $address . '&' . $google_maps_api_key);
 	$output = json_decode($geocode);
 
 	// if latitude & longitude does not defined by user
@@ -55,7 +55,7 @@ if ($location_mode == 'address') {
 
 	<div class="google_map"
 		 id="google_map_<?php echo esc_attr($inique_id) ?>"
-		 style="height: <?php echo $height ?> px;" data-latitude="<?php echo esc_attr($latitude) ?>"
+		 style="height: <?php echo esc_attr( $height ) ?> px;" data-latitude="<?php echo esc_attr($latitude) ?>"
          data-longitude="<?php echo esc_attr($longitude) ?>"
          data-inique_id="<?php echo esc_attr($inique_id) ?>"
          data-zoom="<?php echo esc_attr($zoom) ?>" data-maptype="<?php echo esc_attr($maptype) ?>"
