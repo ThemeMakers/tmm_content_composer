@@ -13,19 +13,28 @@ if (TMM::get_option("api_key_google")){
 		$mode = 'map';
 	}
 
-	if (isset($location_mode)) {
-		if ($location_mode == 'address') {
-			$address = str_replace(' ', '+', $address);
-			$geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address);
-			$output = json_decode($geocode);
-			if ($output->status == 'OK') {
-				$latitude = $output->results[0]->geometry->location->lat;
-				$longitude = $output->results[0]->geometry->location->lng;
-			} else {
-				$maptype = 'image';
-			}
-		}
-	}
+    $location_mode = isset($location_mode) ? $location_mode : '';
+
+    if ($location_mode === 'address') {
+        $address = str_replace(' ', '+', $address);
+        $geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&' . $google_maps_api_key);
+        $output = json_decode($geocode, true);
+
+        $latitude = '';
+        $longitude = '';
+
+        // if latitude & longitude does not defined by user
+        if ($output) {
+            if( $output['status'] == 'OK' ) {
+                $latitude = $output['results'][0]['geometry']['location']['lat'];
+                $longitude = $output['results'][0]['geometry']['location']['lng'];
+            } else {
+                printf( $output['error_message'] );
+            }
+        } else {
+            printf( 'GPS coordinates were not available because connection failed or malformed request' );
+        }
+    }
 
 	if (!isset($maptype)) {
 		$maptype = 'ROADMAP';
@@ -35,7 +44,7 @@ if (TMM::get_option("api_key_google")){
 		$marker_is_draggable = 0;
 	}
 
-	if ($mode == 'map') {
+	if ($mode === 'map') {
 
 		wp_enqueue_script("tmm_shortcode_google_api_js", $map_link);
 		wp_enqueue_script('tmm_composer_front');
@@ -45,7 +54,19 @@ if (TMM::get_option("api_key_google")){
 
 		<script type="text/javascript">
 			jQuery(function() {
-				gmt_init_map(<?php echo esc_attr($latitude) ?>,<?php echo esc_attr($longitude) ?>, "google_map_<?php echo esc_attr($inique_id) ?>", <?php echo esc_attr($zoom) ?>, "<?php echo esc_attr($maptype) ?>", "<?php echo esc_attr($content) ?>", "<?php echo esc_attr($enable_marker) ?>", "<?php echo esc_attr($enable_popup) ?>", "<?php echo esc_attr($enable_scrollwheel) ?>",<?php echo esc_attr($js_controls) ?>, "<?php echo esc_attr($marker_is_draggable) ?>");
+				gmt_init_map(
+                    <?php echo esc_attr($latitude) ?>,
+                    <?php echo esc_attr($longitude) ?>,
+                    "google_map_<?php echo esc_attr($inique_id) ?>",
+                    <?php echo esc_attr($zoom) ?>,
+                    "<?php echo esc_attr($maptype) ?>",
+                    "<?php echo esc_attr($content) ?>",
+                    "<?php echo esc_attr($enable_marker) ?>",
+                    "<?php echo esc_attr($enable_popup) ?>",
+                    "<?php echo esc_attr($enable_scrollwheel) ?>",
+                    <?php echo esc_attr($js_controls) ?>,
+                    "<?php echo esc_attr($marker_is_draggable) ?>"
+                );
 			});
 		</script>
 	<?php } else { ?>
@@ -60,14 +81,8 @@ if (TMM::get_option("api_key_google")){
 		$staticmap = 'https://maps.googleapis.com/maps/api/staticmap?' . $location_mode_string . '&zoom=' . (int) $zoom . '&maptype=' . strtolower($maptype) . '&size=' . (int)$width . 'x' . (int)$height . $marker_string . '&' . $google_maps_api_key;
 
 		?>
-		<script type="text/javascript">
-		jQuery(window).on('load', function(){
-			var address = '<?php echo esc_attr($address) ?>';
-			jQuery('.google_image_<?php echo esc_attr($inique_id) ?>')
-				.html('<img src="' + encodeURI('<?php echo esc_attr($staticmap); ?>') + '" width="<?php echo esc_attr((int)$width); ?>" height="<?php echo esc_attr((int)$height); ?>" alt="' + address.split('+').join(' ') + '">');
-		});
-		</script>
-		<div class="google_image_<?php echo esc_attr($inique_id) ?>"></div>
+
+        <img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo esc_attr($location_mode_string) ?>&zoom=<?php echo esc_attr($zoom) ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo esc_attr($width) ?>x<?php echo esc_attr($height) ?><?php echo esc_attr($marker_string) ?>&<?php echo esc_attr( $google_maps_api_key ) ?>">
 
 	<?php }
 
