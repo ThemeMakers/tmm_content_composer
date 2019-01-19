@@ -100,8 +100,9 @@ $slide_up = $gallery_slide_up;
         <div class="activeSlider">
             <div class="sudo">
                 <ul>
-                    <?php foreach ($images as $img) : ?>
-                        <li><img src="<?php echo esc_attr($img['imgurl']) ?>" alt="<?php echo esc_attr($img['title']) ?>"/></li>
+                    <?php foreach ($images as $img) :
+                        $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_shortcodes'); ?>
+                        <li><img src="<?php echo esc_attr($img['imgurl']) ?>" alt="<?php echo esc_attr($t) ?>"/></li>
                     <?php endforeach; ?>
                 </ul>
             </div><!--/ .sudo-->
@@ -116,24 +117,28 @@ $slide_up = $gallery_slide_up;
 
             <ul id="tp-grid" class="tp-grid">			
                 <?php foreach ($images as $img){                                       
-                        $gall = get_post( $img['post_id'] ); ?>
-                    <input type="hidden" class="item_description" data-title="<?php echo esc_attr($title_array[$img['post_id']]['title']) ?>" data-exerpt="<?php echo esc_attr($gall->post_excerpt) ?>">
-                    <?php $t=$img['title']; ?>
+                        $gall = get_post( $img['post_id'] );
+                        $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_shortcodes');
+                        $post_excerpt = !empty($gall->post_excerpt) ? $gall->post_excerpt : '';
+                        $cat = !empty($img_terms[$img['category']]) ? $img_terms[$img['category']]['name'] : esc_html__('Category is not set', 'tmm_shortcodes');
+                    ?>
+                    <input type="hidden" class="item_description" data-title="<?php echo esc_attr($title_array[$img['post_id']]['title']) ?>" data-exerpt="<?php echo esc_attr($post_excerpt) ?>">
+
                     <li data-pile="<?php echo esc_attr($title_array[$img['post_id']]['title']) ?>">
 
                         <div class="project-thumb animTop <?php if (!$gallery_slide_up) echo 'links' ?>">
 
                             <a href="<?php echo esc_attr($img['imgurl']) ?>" class="single-image plus-icon <?php echo esc_attr($icon_class) ?>"
-                               title="<?php echo esc_attr($t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '') ?>"
+                               <?php echo (((TMM::get_option('hide_image_titles')) == '0') ? 'title="' . esc_attr( $t ) . '"' : '') ?>"
                                data-fancybox-group="<?php echo esc_attr($title_array[$img['post_id']]['title']) ?>">
-                                <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '270*200') ?>" width="270" height="200">
+                                <img alt="<?php echo esc_attr($t) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '270*200') ?>" width="270" height="200">
                             </a>
 
                             <?php if ($gallery_slide_up) {
                                 ?>
                                 <a href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>" class="project-meta">
-                                    <h6 class="title"><?php echo esc_attr($img['title']) ?></h6>
-                                    <span class="categories"><?php echo (!empty($img_terms[$img['category']])) ? esc_attr($img_terms[$img['category']]['name']) : esc_html_e('Category is not set', 'tmm_shortcodes') ?></span>
+                                    <h6 class="title"><?php echo esc_html_e( $t ) ?></h6>
+                                    <span class="categories"><?php echo esc_html_e( $cat ) ?></span>
                                 </a>
                             <?php } elseif($icons_type=='2') { ?>
                                 <a class="gr-link single-image link-icon" href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>"></a>
@@ -186,7 +191,8 @@ $slide_up = $gallery_slide_up;
             <?php foreach ($images as $img) : ?>
                 <?php
 
-                $t=$img['title'];
+                $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_shortcodes');
+                $cat = !empty($img_terms[$img['category']]) ? $img_terms[$img['category']]['name'] : esc_html__('Category is not set', 'tmm_shortcodes');
 
                 if (class_exists('TMM_Portfolio')) {
                     $folio_img_id = TMM_Portfolio::get_attachment_id_by_url($img['imgurl']);
@@ -202,19 +208,19 @@ $slide_up = $gallery_slide_up;
                             <div class="project-thumb animTop <?php if (!$gallery_slide_up) echo 'links' ?>">
 
                                 <a href="<?php echo esc_attr($img['imgurl']) ?>" class="single-image plus-icon <?php echo esc_attr($icon_class) ?>"
-                                   title="<?php echo esc_attr($t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '') ?>"
+                                   <?php echo (((TMM::get_option('hide_image_titles')) == '0') ? 'title="' . esc_attr( $t ) . '"' : '') ?>"
                                    data-fancybox-group="gallery">
                                     <?php if ( checkRemoteFile($image_attributes[0])) : ?>
-                                        <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
+                                        <img alt="<?php echo esc_attr($t) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
                                     <?php else : ?>
-                                        <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '300*215') ?>" width="300" height="215">
+                                        <img alt="<?php echo esc_attr($t) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '300*215') ?>" width="300" height="215">
                                     <?php endif; ?>
                                 </a>
 
                                 <?php if ($gallery_slide_up) { ?>
                                     <a href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>" class="project-meta">
-                                        <h6 class="title"><?php echo esc_attr($img['title']) ?></h6>
-                                        <span class="categories"><?php echo (!empty($img_terms[$img['category']]) ? esc_attr($img_terms[$img['category']]['name']) : esc_html_e('Category is not set', 'tmm_shortcodes')) ?></span>
+                                        <h6 class="title"><?php echo esc_html_e( $t ) ?></h6>
+                                        <span class="categories"><?php echo esc_html_e( $cat ) ?></span>
                                     </a>
                                 <?php } elseif($icons_type=='2') { ?>
                                     <a class="gr-link single-image link-icon" href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>"></a>
@@ -236,19 +242,19 @@ $slide_up = $gallery_slide_up;
                         <div class="project-thumb animTop <?php if (!$gallery_slide_up) echo 'links' ?>">
 
                             <a href="<?php echo esc_attr($img['imgurl']) ?>" class="single-image plus-icon <?php echo esc_attr($icon_class) ?>"
-                               title="<?php echo esc_attr($t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '') ?>"
+                               <?php echo (((TMM::get_option('hide_image_titles')) == '0') ? 'title="' . esc_attr( $t ) . '"' : '') ?>"
                                data-fancybox-group="gallery">
                                 <?php if ( checkRemoteFile($image_attributes[0])) : ?>
-                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
+                                    <img alt="<?php echo esc_attr($t) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
                                 <?php else : ?>
-                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '300*215') ?>" width="300" height="215">
+                                    <img alt="<?php echo esc_attr($t) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '300*215') ?>" width="300" height="215">
                                 <?php endif; ?>
                             </a>
 
                             <?php if ($gallery_slide_up) { ?>
                                 <a href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>" class="project-meta">
-                                    <h6 class="title"><?php echo esc_attr($img['title']) ?></h6>
-                                    <span class="categories"><?php echo (!empty($img_terms[$img['category']])) ? esc_attr($img_terms[$img['category']]['name']) : esc_html_e('Category is not set', 'tmm_shortcodes') ?></span>
+                                    <h6 class="title"><?php echo esc_html_e( $t ) ?></h6>
+                                    <span class="categories"><?php echo esc_html_e( $cat ) ?></span>
                                 </a>
                             <?php } elseif($icons_type=='2') { ?>
                                 <a class="gr-link single-image link-icon" href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>"></a>
@@ -336,7 +342,8 @@ $slide_up = $gallery_slide_up;
 
             <?php foreach ($images as $img) {
 
-            $t = $img['title'];
+            $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_shortcodes');
+            $cat = !empty($img_terms[$img['category']]) ? $img_terms[$img['category']]['name'] : esc_html__('Category is not set', 'tmm_shortcodes');
 
             if (class_exists('TMM_Portfolio')) {
                 $folio_img_id = TMM_Portfolio::get_attachment_id_by_url($img['imgurl']);
@@ -352,19 +359,19 @@ $slide_up = $gallery_slide_up;
                         <div class="project-thumb animTop <?php if (!$gallery_slide_up) echo 'links' ?>">
 
                             <a href="<?php echo esc_attr($img['imgurl']) ?>" class="single-image plus-icon <?php echo esc_attr($icon_class) ?>"
-                               title="<?php echo esc_attr($t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '') ?>"
+                               <?php echo (((TMM::get_option('hide_image_titles')) == '0') ? 'title="' . esc_attr( $t ) . '"' : '') ?>"
                                data-fancybox-group="gallery">
                                 <?php if ( checkRemoteFile($image_attributes[0])) : ?>
-                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
+                                    <img alt="<?php echo esc_attr($t) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
                                 <?php else : ?>
-                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '220*157') ?>" width="220" height="157">
+                                    <img alt="<?php echo esc_attr($t) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '220*157') ?>" width="220" height="157">
                                 <?php endif; ?>
                             </a>
 
                             <?php if ($gallery_slide_up) { ?>
                                 <a href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>" class="project-meta">
-                                    <h6 class="title"><?php echo esc_attr($img['title']) ?></h6>
-                                    <span class="categories"><?php echo (!empty($img_terms[$img['category']])) ? esc_attr($img_terms[$img['category']]['name']) : esc_html_e('Category is not set', 'tmm_shortcodes') ?></span>
+                                    <h6 class="title"><?php echo esc_html_e( $t ) ?></h6>
+                                    <span class="categories"><?php echo esc_html_e( $cat ) ?></span>
                                 </a>
                             <?php } elseif($icons_type=='2') { ?>
                                 <a class="gr-link single-image link-icon" href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>"></a>
@@ -384,19 +391,19 @@ $slide_up = $gallery_slide_up;
                         <div class="project-thumb animTop <?php if (!$gallery_slide_up) echo 'links' ?>">
 
                             <a href="<?php echo esc_attr($img['imgurl']) ?>" class="single-image plus-icon <?php echo esc_attr($icon_class) ?>"
-                               title="<?php echo esc_attr($t = ((TMM::get_option('hide_image_titles')) == '0') ? $t : '') ?>"
+                               <?php echo (((TMM::get_option('hide_image_titles')) == '0') ? 'title="' . esc_attr( $t ) . '"' : '') ?>"
                                data-fancybox-group="gallery">
                                 <?php if ( checkRemoteFile($image_attributes[0])) : ?>
-                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
+                                    <img alt="<?php echo esc_attr($t) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo esc_attr($image_attributes[0]) ?>" width="<?php echo esc_attr($image_attributes[1]) ?>" height="<?php echo esc_attr($image_attributes[2]) ?>">
                                 <?php else : ?>
-                                    <img alt="<?php echo esc_attr($img['title']) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '220*157') ?>" width="220" height="157">
+                                    <img alt="<?php echo esc_attr($t) ?>" <?php if ($gallery_slide_up) echo 'class="slideup"'; ?> src="<?php echo TMM_Helper::resize_image($img['imgurl'], '220*157') ?>" width="220" height="157">
                                 <?php endif; ?>
                             </a>
 
                             <?php if ($gallery_slide_up) { ?>
                                 <a href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>" class="project-meta">
-                                    <h6 class="title"><?php echo esc_attr($img['title']) ?></h6>
-                                    <span class="categories"><?php echo (!empty($img_terms[$img['category']])) ? esc_attr($img_terms[$img['category']]['name']) : esc_html_e('Category is not set', 'tmm_shortcodes') ?></span>
+                                    <h6 class="title"><?php echo esc_html_e( $t ) ?></h6>
+                                    <span class="categories"><?php echo esc_html_e( $cat ) ?></span>
                                 </a>
                             <?php } elseif($icons_type=='2') { ?>
                                 <a class="gr-link single-image link-icon" href="<?php echo esc_attr($title_href = (!empty($img['title_href'])) ? $img['title_href'] : $title_array[$img['post_id']]['permalink']) ?>"></a>
