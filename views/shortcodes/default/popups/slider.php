@@ -6,10 +6,10 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Page slider type', 'tmm_shortcodes'),
+			'title' => esc_html__('Page slider type', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'id' => 'shortcode_page_slider_type',
-			'options' => array('' => __("Choose slider type", 'tmm_shortcodes')) + TMM_Ext_Sliders::get_slider_types(),
+			'options' => array('' => esc_html__("Choose slider type", 'tmm_content_composer')) + TMM_Ext_Sliders::get_slider_types(),
 			'default_value' => TMM_Content_Composer::set_default_value('type', ''),
 			'description' => ''
 		));
@@ -29,11 +29,11 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'text',
-				'title' => __('Size of slides', 'tmm_shortcodes'),
+				'title' => esc_html__('Size of slides', 'tmm_content_composer'),
 				'shortcode_field' => 'content',
 				'id' => 'content',
 				'default_value' => TMM_Content_Composer::set_default_value('content', ''),
-				'description' => __('width*height. Fore example: 500*300. Empty field means full size', 'tmm_shortcodes')
+				'description' => esc_html__('width*height. Fore example: 500*300. Empty field means full size', 'tmm_content_composer')
 			));
 			?>
 		</div>
@@ -45,10 +45,10 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Slider groups', 'tmm_shortcodes'),
+					'title' => esc_html__('Slider groups', 'tmm_content_composer'),
 					'shortcode_field' => 'slider_group',
 					'id' => 'slider_group',
-					'options' => array('' => __("Choose sliders group", 'tmm_shortcodes')) + $slides,
+					'options' => array('' => esc_html__("Choose sliders group", 'tmm_content_composer')) + $slides,
 					'default_value' => TMM_Content_Composer::set_default_value('slider_group', ''),
 					'description' => '',
 					'css_classes' => 'slider_group'
@@ -56,7 +56,7 @@
 				?>
 
 			<?php else: ?>
-				<?php _e("No one slider exists", 'tmm_shortcodes') ?>
+				<?php esc_html_e("No one slider exists", 'tmm_content_composer') ?>
 			<?php endif; ?>
 		</div>
 
@@ -80,10 +80,10 @@
 					//***
 					TMM_Content_Composer::html_option(array(
 						'type' => 'select',
-						'title' => __('Layerslider plugins groups', 'tmm_shortcodes'),
+						'title' => esc_html__('Layerslider plugins groups', 'tmm_content_composer'),
 						'shortcode_field' => 'layerslider_group',
 						'id' => 'layerslider_group',
-						'options' => array('' => __("Choose sliders group", 'tmm_shortcodes')) + $slides,
+						'options' => array('' => esc_html__("Choose sliders group", 'tmm_content_composer')) + $slides,
 						'default_value' => TMM_Content_Composer::set_default_value('layerslider_group', ''),
 						'description' => '',
 						'css_classes' => 'layerslider_group'
@@ -91,7 +91,7 @@
 					?>
 
 				<?php else: ?>
-					<?php _e("No one Layerslider group exists", 'tmm_shortcodes') ?>
+					<?php esc_html_e("No one Layerslider group exists", 'tmm_content_composer') ?>
 				<?php endif; ?>
 
 			</div>

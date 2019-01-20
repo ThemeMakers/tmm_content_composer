@@ -9,7 +9,7 @@
 		}
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Projects Count', 'tmm_shortcodes'),
+			'title' => esc_html__('Projects Count', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'options' => $content,
@@ -30,7 +30,7 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Template', 'tmm_shortcodes'),
+			'title' => esc_html__('Template', 'tmm_content_composer'),
 			'shortcode_field' => 'template',
 			'id' => '',
 			'options' => $template,
@@ -48,7 +48,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show "See all projects" button', 'tmm_shortcodes'),
+			'title' => esc_html__('Show "See all projects" button', 'tmm_content_composer'),
 			'shortcode_field' => 'show_button',
 			'id' => 'show_button',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_button', 0)

@@ -14,7 +14,7 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Staff', 'tmm_shortcodes'),
+			'title' => esc_html__('Staff', 'tmm_content_composer'),
 			'options' => $staff,
 			'shortcode_field' => 'content',
 			'id' => 'content',
@@ -30,7 +30,7 @@
 		<?php 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Type', 'tmm_shortcodes'),
+			'title' => esc_html__('Type', 'tmm_content_composer'),
 			'options' => array(
 				'half' => 'Half',
 				'full' => 'Full'
@@ -54,7 +54,5 @@
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('keyup change', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
-
-
 	});
 </script>

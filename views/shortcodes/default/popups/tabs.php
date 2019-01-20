@@ -3,9 +3,9 @@
 
 	<div class="fullwidth">
 
-		<h4 class="label"><?php _e('Items', 'tmm_shortcodes'); ?></h4>
+		<h4 class="label"><?php esc_html_e('Items', 'tmm_content_composer'); ?></h4>
 
-		<a class="button button-small js_add_accordion_item" href="#"><?php _e('Add item', 'tmm_shortcodes'); ?></a><br />
+		<a class="button button-small js_add_accordion_item" href="#"><?php esc_html_e('Add item', 'tmm_content_composer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 
@@ -23,13 +23,13 @@
 					<table class="list-table">
 						<tr>
 							<td valign="top" style="width: 100%;">
-								<input placeholder="Title" type="text" value="<?php echo $titles_edit_data[$key] ?>" placeholder="<?php _e('Title', 'tmm_shortcodes'); ?>" class="accordion_item_title js_shortcode_template_changer data-input" style="width: 50%;" />
-								&nbsp;<a class="button button-small js_delete_accordion_item js_shortcode_template_changer" href="#"><?php _e('Remove', 'tmm_shortcodes'); ?></a>
+								<input placeholder="Title" type="text" value="<?php echo $titles_edit_data[$key] ?>" placeholder="<?php esc_html_e('Title', 'tmm_content_composer'); ?>" class="accordion_item_title js_shortcode_template_changer data-input" style="width: 50%;" />
+								&nbsp;<a class="button button-small js_delete_accordion_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'tmm_content_composer'); ?></a>
 							</td>
 						</tr>
 						<tr>
 							<td valign="top" style="width: 100%;" colspan="2">
-								<textarea placeholder="Content" class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php _e('Content', 'tmm_shortcodes'); ?>"><?php echo $content_edit_text ?></textarea>
+								<textarea placeholder="Content" class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php esc_html_e('Content', 'tmm_content_composer'); ?>"><?php echo $content_edit_text ?></textarea>
 							</td>
 						</tr>
 					</table>
@@ -37,7 +37,7 @@
 			<?php endforeach; ?>
 		</ul>
 
-		<a class="button button-small js_add_accordion_item" href="#"><?php _e('Add item', 'tmm_shortcodes'); ?></a><br />	
+		<a class="button button-small js_add_accordion_item" href="#"><?php esc_html_e('Add item', 'tmm_content_composer'); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

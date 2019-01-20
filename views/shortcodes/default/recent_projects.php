@@ -35,7 +35,7 @@ $posts = get_posts($args);
 <div class="clear"></div>
 
 <?php if ($show_button): ?>
-	<a class="button small default" href="<?php echo get_post_type_archive_link(TMM_Portfolio::$slug) ?>"><?php esc_html_e('See all projects', 'tmm_shortcodes'); ?></a>
+	<a class="button small default" href="<?php echo get_post_type_archive_link(TMM_Portfolio::$slug) ?>"><?php esc_html_e('See all projects', 'tmm_content_composer'); ?></a>
 <?php endif; ?>
 
 <?php wp_reset_query(); ?>

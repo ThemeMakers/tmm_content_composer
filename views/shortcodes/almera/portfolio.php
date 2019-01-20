@@ -317,8 +317,7 @@ $counter           = 0;
 <?php
 if ( count( $folioposts_array ) > 1 ) {
 	?>
-	<a href="javascript:masonry_scroll(true);void(0);"
-	   class="masonry_view_more_button"><?php esc_html_e( 'More', 'tmm_shortcodes' ); ?></a>
+	<a href="javascript:masonry_scroll(true);void(0);" class="masonry_view_more_button"><?php esc_html_e( 'More', 'tmm_content_composer' ); ?></a>
 	<?php
 }
 wp_reset_query();

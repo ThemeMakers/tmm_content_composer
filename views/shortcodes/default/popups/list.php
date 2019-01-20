@@ -42,19 +42,19 @@
 		//ul == 0
 		TMM_Content_Composer::html_option(array(
 			'type' => 'radio',
-			'title' => __('List Type', 'tmm_shortcodes'),
+			'title' => esc_html__('List Type', 'tmm_content_composer'),
 			'shortcode_field' => 'list_type',
 			'id' => 'list_type',
 			'name' => 'list_type',
 			'values' => array(
 				0 => array(
-					'title' => __('Unordered', 'tmm_shortcodes'),
+					'title' => esc_html__('Unordered', 'tmm_content_composer'),
 					'id' => 'list_type_ul',
 					'value' => 0,
 					'checked' => ($value_type == 0 ? 1 : 0)
 				),
 				1 => array(
-					'title' => __('Ordered', 'tmm_shortcodes'),
+					'title' => esc_html__('Ordered', 'tmm_content_composer'),
 					'id' => 'list_type_ol',
 					'value' => 1,
 					'checked' => ($value_type == 1 ? 1 : 0)
@@ -66,8 +66,8 @@
 		));
 		?>
 
-		<h4 class="label"><?php _e('List Styles', 'tmm_shortcodes'); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add list item', 'tmm_shortcodes'); ?></a><br />
+		<h4 class="label"><?php esc_html_e('List Styles', 'tmm_content_composer'); ?></h4>
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add list item', 'tmm_content_composer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 			<?php foreach ($content_edit_data as $key => $content_edit_text) : ?>
@@ -97,7 +97,7 @@
 								<input type="text" value="<?php echo $content_edit_text ?>" class="list_item_content js_shortcode_template_changer data-area" />
 							</td>
 							<td>
-								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php _e('Remove', 'tmm_shortcodes'); ?></a>
+								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'tmm_content_composer'); ?></a>
 							</td>
 							<td><div class="row-mover"></div></td>
 						</tr>
@@ -107,7 +107,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add list item', 'tmm_shortcodes'); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add list item', 'tmm_content_composer'); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

@@ -6,12 +6,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Type', 'tmm_shortcodes'),
+			'title' => esc_html__('Type', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'id' => 'toggle_type',
 			'options' => array(
-				'' => __('Type 1', 'tmm_shortcodes'),
-				'type-2' => __('Type 2', 'tmm_shortcodes'),
+				'' => esc_html__('Type 1', 'tmm_content_composer'),
+				'type-2' => esc_html__('Type 2', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type', ''),
 			'description' => ''
@@ -25,13 +25,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Align', 'tmm_shortcodes'),
+			'title' => esc_html__('Align', 'tmm_content_composer'),
 			'shortcode_field' => 'align',
 			'id' => 'align',
 			'options' => array(
-				'' => __('None', 'tmm_shortcodes'),
-				'quoteleft' => __('Left', 'tmm_shortcodes'),
-				'quoteright' => __('Right', 'tmm_shortcodes'),
+				'' => esc_html__('None', 'tmm_content_composer'),
+				'quoteleft' => esc_html__('Left', 'tmm_content_composer'),
+				'quoteright' => esc_html__('Right', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('align', ''),
 			'description' => ''
@@ -45,7 +45,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'textarea',
-			'title' => __('Enter text', 'tmm_shortcodes'),
+			'title' => esc_html__('Enter text', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),

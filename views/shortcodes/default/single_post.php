@@ -94,7 +94,7 @@ $post_link = post_permalink($post_id);
 		<?php if ($show_post_metadata == 1): ?>
 
             <span class="date"><a href="<?php echo home_url() ?>/?m=<?php echo mysql2date('Ym', get_post_field('post_date', $post->ID)) ?>"><?php echo mysql2date(get_option('date_format'), get_post_field('post_date', $post->ID)) ?></a></span>
-			<span class="comments"><a href="<?php echo $post_link ?>#comments"><?php echo get_comments_number($post->ID); ?> <?php _e('Comments', 'tmm_shortcodes'); ?></a></span>
+			<span class="comments"><a href="<?php echo $post_link ?>#comments"><?php echo get_comments_number($post->ID); ?> <?php esc_html_e('Comments', 'tmm_content_composer'); ?></a></span>
 	
 		<?php endif; ?>
 		

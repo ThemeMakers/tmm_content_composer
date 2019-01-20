@@ -2,7 +2,7 @@
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
 	<div class="one-half">
-		<h4 class="label"><?php _e('Category', 'tmm_shortcodes'); ?></h4>
+		<h4 class="label"><?php esc_html_e('Category', 'tmm_content_composer'); ?></h4>
 		<?php
 		wp_dropdown_categories(array(
 			'hide_empty' => 0,
@@ -17,7 +17,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Posts count', 'tmm_shortcodes'),
+			'title' => esc_html__('Posts count', 'tmm_content_composer'),
 			'shortcode_field' => 'count',
 			'id' => 'count',
 			'options' => array(
@@ -39,11 +39,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show "Read more" button', 'tmm_shortcodes'),
+			'title' => esc_html__('Show "Read more" button', 'tmm_content_composer'),
 			'shortcode_field' => 'show_readmore_button',
 			'id' => 'show_readmore_button',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_readmore_button', 1),
-			'description' => __('Show "Read more" button', 'tmm_shortcodes')
+			'description' => esc_html__('Show "Read more" button', 'tmm_content_composer')
 		));
 		?>
 
@@ -54,11 +54,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show post metadata', 'tmm_shortcodes'),
+			'title' => esc_html__('Show post metadata', 'tmm_content_composer'),
 			'shortcode_field' => 'show_post_metadata',
 			'id' => 'show_post_metadata',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_post_metadata', 1),
-			'description' => __('Show post metadata', 'tmm_shortcodes')
+			'description' => esc_html__('Show post metadata', 'tmm_content_composer')
 		));
 		?>
 
@@ -69,7 +69,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Content Char Count', 'tmm_shortcodes'),
+			'title' => esc_html__('Content Char Count', 'tmm_content_composer'),
 			'shortcode_field' => 'char_count',
 			'id' => 'char_count',
 			'default_value' => TMM_Content_Composer::set_default_value('char_count', 140),
@@ -105,7 +105,7 @@
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
 		//***
-		jQuery("#posts_category").prepend('<option value="0" class="level--1"><?php _e('All categories', 'tmm_shortcodes'); ?></option>');
+		jQuery("#posts_category").prepend('<option value="0" class="level--1"><?php esc_html_e('All categories', 'tmm_content_composer'); ?></option>');
 		jQuery("#posts_category option:eq(0)").attr('selected', 'selected');
 		tmm_ext_shortcodes.changer(shortcode_name);
 	});

@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Title Text', 'tmm_shortcodes'),
+			'title' => esc_html__('Title Text', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -19,7 +19,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Title Heading', 'tmm_shortcodes'),
+			'title' => esc_html__('Title Heading', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'options' => array(
@@ -38,14 +38,14 @@
 
 	<div class="one-half">
 		<?php
-		$font_size = array('default' => __('Default', 'tmm_shortcodes'));
+		$font_size = array('default' => esc_html__('Default', 'tmm_content_composer'));
 		for ($i = 8; $i <= 72; $i++) {
 			$font_size[$i] = $i;
 		}
 		//***
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Font Size', 'tmm_shortcodes'),
+			'title' => esc_html__('Font Size', 'tmm_content_composer'),
 			'shortcode_field' => 'font_size',
 			'id' => 'font_size',
 			'options' => $font_size,
@@ -60,16 +60,16 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Font weight', 'tmm_shortcodes'),
+			'title' => esc_html__('Font weight', 'tmm_content_composer'),
 			'shortcode_field' => 'font_weight',
 			'id' => 'font_weight',
 			'options' => array(
-				'normal' => __('Normal', 'tmm_shortcodes'),
+				'normal' => esc_html__('Normal', 'tmm_content_composer'),
 				'200' => 200,
 				'400' => 400,
 				'600' => 600,
 				'800' => 800,
-				'bold' => __('Bold', 'tmm_shortcodes'),
+				'bold' => esc_html__('Bold', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('font_weight', 'normal'),
 			'description' => ''
@@ -81,7 +81,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Align', 'tmm_shortcodes'),
+			'title' => esc_html__('Align', 'tmm_content_composer'),
 			'shortcode_field' => 'align',
 			'id' => 'align',
 			'options' => array(
@@ -110,7 +110,7 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Font Family', 'tmm_shortcodes'),
+			'title' => esc_html__('Font Family', 'tmm_content_composer'),
 			'shortcode_field' => 'font_family',
 			'id' => 'font_family',
 			'options' => $google_fonts_array,
@@ -124,7 +124,7 @@
 	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'title' => __('Color', 'tmm_shortcodes'),
+			'title' => esc_html__('Color', 'tmm_content_composer'),
 			'shortcode_field' => 'color',
 			'type' => 'color',
 			'description' => '',
@@ -139,7 +139,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Bottom Indent (px)', 'tmm_shortcodes'),
+			'title' => esc_html__('Bottom Indent (px)', 'tmm_content_composer'),
 			'shortcode_field' => 'bottom_indent',
 			'id' => 'bottom_indent',
 			'default_value' => TMM_Content_Composer::set_default_value('bottom_indent', ''),
@@ -150,7 +150,6 @@
 	</div><!--/ .one-half-->
 
 </div>
-
 
 <!-- --------------------------  PROCESSOR  --------------------------- -->
 <script type="text/javascript">
@@ -164,4 +163,3 @@
 		colorizator();
 	});
 </script>
-

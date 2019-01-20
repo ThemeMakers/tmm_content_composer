@@ -1,8 +1,8 @@
 <?php if (!defined('ABSPATH')) exit; ?>
 
 <input type="hidden" name="tmm_meta_saving" value="1" />
-<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php _e("Add New Row", TMM_CC_TEXTDOMAIN) ?></a>
-<a href="#" class="tmm-lc-paste-row button button-large"><?php _e("Insert Clipboard Row here", TMM_CC_TEXTDOMAIN) ?></a><br />
+<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php esc_html_e("Add New Row", 'tmm_content_composer') ?></a>
+<a href="#" class="tmm-lc-paste-row button button-large"><?php esc_html_e("Insert Clipboard Row here", 'tmm_content_composer') ?></a><br />
 
 <ul id="tmm_lc_rows" class="tmm-lc-rows">
 
@@ -15,10 +15,10 @@
 			<li id="tmm_lc_row_<?php echo $row ?>" class="tmm-lc-row">
 
 				<div class="tmm-lc-row-buttons-wrapper">
-					<a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php _e("Add Row to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php esc_html_e("Add Column", 'tmm_content_composer') ?>"></a>
+					<a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php esc_html_e("Add Row to Clipboard", 'tmm_content_composer') ?>"></a>
+					<a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php esc_html_e("Edit", 'tmm_content_composer') ?>"></a>
+					<a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php esc_html_e("Delete", 'tmm_content_composer') ?>"></a>
 				</div>
 
 				<div class="tmm-lc-columns" id="tmm_lc_columns_<?php echo $row ?>">
@@ -94,10 +94,10 @@
 		<li id="tmm_lc_row___ROW_ID__" class="tmm-lc-row">
 
             <div class="tmm-lc-row-buttons-wrapper">
-                <a class="tmm-lc-add-column" title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>" data-row-id="__ROW_ID__"></a>
-                <a class="tmm-lc-copy-row" data-row-id="__ROW_ID__" title="<?php _e("Add to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-                <a class="tmm-lc-edit-row" data-row-id="__ROW_ID__" title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
-                <a class="tmm-lc-delete-row" data-row-id="__ROW_ID__" title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
+                <a class="tmm-lc-add-column" title="<?php esc_html_e("Add Column", 'tmm_content_composer') ?>" data-row-id="__ROW_ID__"></a>
+                <a class="tmm-lc-copy-row" data-row-id="__ROW_ID__" title="<?php esc_html_e("Add to Clipboard", 'tmm_content_composer') ?>"></a>
+                <a class="tmm-lc-edit-row" data-row-id="__ROW_ID__" title="<?php esc_html_e("Edit", 'tmm_content_composer') ?>"></a>
+                <a class="tmm-lc-delete-row" data-row-id="__ROW_ID__" title="<?php esc_html_e("Delete", 'tmm_content_composer') ?>"></a>
             </div>
 
 			<div class="tmm-lc-columns" id="tmm_lc_columns___ROW_ID__"></div>
@@ -121,13 +121,13 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Row Background Type', TMM_CC_TEXTDOMAIN),
+				'title' => esc_html__('Row Background Type', 'tmm_content_composer'),
 				'shortcode_field' => 'row_background_type',
 				'id' => 'row_background_type',
 				'options' => array(
-					'none' => __('None', TMM_CC_TEXTDOMAIN),
-					'color' => __('Color', TMM_CC_TEXTDOMAIN),
-					'image' => __('Image', TMM_CC_TEXTDOMAIN),
+					'none' => esc_html__('None', 'tmm_content_composer'),
+					'color' => esc_html__('Color', 'tmm_content_composer'),
+					'image' => esc_html__('Image', 'tmm_content_composer'),
 				),
 				'default_value' => TMM_Content_Composer::set_default_value('row_background_type', 'color'),
 				'description' => ''
@@ -137,7 +137,7 @@
 			<div class="option_bg_color" style="display: none">
 				<?php
 				TMM_Content_Composer::html_option(array(
-					'title' => __('Background Color', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Background Color', 'tmm_content_composer'),
 					'shortcode_field' => 'row_background_color',
 					'type' => 'color',
 					'description' => '',
@@ -151,7 +151,7 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'upload',
-					'title' => __('Background Image', TMM_CC_TEXTDOMAIN),
+					'title' => esc_html__('Background Image', 'tmm_content_composer'),
 					'shortcode_field' => 'row_background_image',
 					'id' => 'row_background_image',
 					'default_value' => '',
@@ -166,7 +166,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Border width', TMM_CC_TEXTDOMAIN),
+				'title' => esc_html__('Border width', 'tmm_content_composer'),
 				'shortcode_field' => 'row_border_width',
 				'id' => 'row_border_width',
 				'options' => array(
@@ -184,14 +184,14 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Border type', TMM_CC_TEXTDOMAIN),
+				'title' => esc_html__('Border type', 'tmm_content_composer'),
 				'shortcode_field' => 'row_border_type',
 				'id' => 'row_border_type',
 				'options' => array(
-					'none' => __('None', TMM_CC_TEXTDOMAIN),
-					'solid' => __('Solid', TMM_CC_TEXTDOMAIN),
-					'dashed' => __('Dashed', TMM_CC_TEXTDOMAIN),
-					'dotted' => __('Dotted', TMM_CC_TEXTDOMAIN),
+					'none' => esc_html__('None', 'tmm_content_composer'),
+					'solid' => esc_html__('Solid', 'tmm_content_composer'),
+					'dashed' => esc_html__('Dashed', 'tmm_content_composer'),
+					'dotted' => esc_html__('Dotted', 'tmm_content_composer'),
 				),
 				'default_value' => 'solid',
 				'description' => ''
@@ -199,7 +199,7 @@
 			?>
 			<?php
 			TMM_Content_Composer::html_option(array(
-				'title' => __('Border Color', TMM_CC_TEXTDOMAIN),
+				'title' => esc_html__('Border Color', 'tmm_content_composer'),
 				'shortcode_field' => 'row_border_color',
 				'type' => 'color',
 				'description' => '',

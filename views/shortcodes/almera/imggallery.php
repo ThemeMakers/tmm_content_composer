@@ -101,7 +101,7 @@ $slide_up = $gallery_slide_up;
             <div class="sudo">
                 <ul>
                     <?php foreach ($images as $img) :
-                        $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_shortcodes'); ?>
+                        $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_content_composer'); ?>
                         <li><img src="<?php echo esc_attr($img['imgurl']) ?>" alt="<?php echo esc_attr($t) ?>"/></li>
                     <?php endforeach; ?>
                 </ul>
@@ -118,9 +118,9 @@ $slide_up = $gallery_slide_up;
             <ul id="tp-grid" class="tp-grid">			
                 <?php foreach ($images as $img){                                       
                         $gall = get_post( $img['post_id'] );
-                        $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_shortcodes');
+                        $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_content_composer');
                         $post_excerpt = !empty($gall->post_excerpt) ? $gall->post_excerpt : '';
-                        $cat = !empty($img_terms[$img['category']]) ? $img_terms[$img['category']]['name'] : esc_html__('Category is not set', 'tmm_shortcodes');
+                        $cat = !empty($img_terms[$img['category']]) ? $img_terms[$img['category']]['name'] : esc_html__('Category is not set', 'tmm_content_composer');
                     ?>
                     <input type="hidden" class="item_description" data-title="<?php echo esc_attr($title_array[$img['post_id']]['title']) ?>" data-exerpt="<?php echo esc_attr($post_excerpt) ?>">
 
@@ -167,7 +167,7 @@ $slide_up = $gallery_slide_up;
             ?> 
         
         <ul id="gallery-filter" class="gallery-filter clearfix">
-            <li><a data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="1" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-categories="<?php echo esc_attr(($pagination == 2) ? $cat_id : '*') ?>"><?php esc_html_e('All', 'tmm_shortcodes') ?></a></li>
+            <li><a data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="1" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-categories="<?php echo esc_attr(($pagination == 2) ? $cat_id : '*') ?>"><?php esc_html_e('All', 'tmm_content_composer') ?></a></li>
             <?php if (!empty($filter)): ?>
                 <?php foreach ($filter as $key) : ?>
                     <li><a data-icons="<?php echo esc_attr($icons_type) ?>" data-slideup="<?php echo esc_attr($slide_up) ?>" data-page-number="1" data-post-per-page="<?php echo esc_attr($post_per_page) ?>" data-categories="<?php echo esc_attr(($pagination == 2) ? $key['slug'] : $key['id']) ?>"><?php echo esc_attr($key['name']) ?></a></li>
@@ -191,8 +191,8 @@ $slide_up = $gallery_slide_up;
             <?php foreach ($images as $img) : ?>
                 <?php
 
-                $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_shortcodes');
-                $cat = !empty($img_terms[$img['category']]) ? $img_terms[$img['category']]['name'] : esc_html__('Category is not set', 'tmm_shortcodes');
+                $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_content_composer');
+                $cat = !empty($img_terms[$img['category']]) ? $img_terms[$img['category']]['name'] : esc_html__('Category is not set', 'tmm_content_composer');
 
                 if (class_exists('TMM_Portfolio')) {
                     $folio_img_id = TMM_Portfolio::get_attachment_id_by_url($img['imgurl']);
@@ -342,8 +342,8 @@ $slide_up = $gallery_slide_up;
 
             <?php foreach ($images as $img) {
 
-            $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_shortcodes');
-            $cat = !empty($img_terms[$img['category']]) ? $img_terms[$img['category']]['name'] : esc_html__('Category is not set', 'tmm_shortcodes');
+            $t = !empty($img['title']) ? $img['title'] : esc_html__('Title is not set', 'tmm_content_composer');
+            $cat = !empty($img_terms[$img['category']]) ? $img_terms[$img['category']]['name'] : esc_html__('Category is not set', 'tmm_content_composer');
 
             if (class_exists('TMM_Portfolio')) {
                 $folio_img_id = TMM_Portfolio::get_attachment_id_by_url($img['imgurl']);

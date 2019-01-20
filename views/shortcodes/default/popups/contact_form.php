@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Choose Contact Form', 'tmm_shortcodes'),
+			'title' => esc_html__('Choose Contact Form', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => 'content',
 			'options' => TMM_Contact_Form::get_forms_names(),

@@ -8,13 +8,13 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Show', 'tmm_shortcodes'),
+			'title' => esc_html__('Show', 'tmm_content_composer'),
 			'shortcode_field' => 'show',
 			'id' => 'show_testimonial_value',
 			'options' => array(
-				'mode1' => __('Show selected testimonial', 'tmm_shortcodes'),
-				'mode2' => __('Show random testimonial', 'tmm_shortcodes'),
-				'mode3' => __('Show latest testimonial', 'tmm_shortcodes'),
+				'mode1' => esc_html__('Show selected testimonial', 'tmm_content_composer'),
+				'mode2' => esc_html__('Show random testimonial', 'tmm_content_composer'),
+				'mode3' => esc_html__('Show latest testimonial', 'tmm_content_composer'),
 			),
 			'default_value' => $show,
 			'description' => ''
@@ -34,7 +34,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Testimonials', 'tmm_shortcodes'),
+				'title' => esc_html__('Testimonials', 'tmm_content_composer'),
 				'options' => $testimonials,
 				'shortcode_field' => 'content',
 				'id' => 'content',
@@ -47,7 +47,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Align', 'tmm_shortcodes'),
+			'title' => esc_html__('Align', 'tmm_content_composer'),
 			'shortcode_field' => 'align',
 			'id' => 'align',
 			'options' => array(
@@ -67,7 +67,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Timeout', 'tmm_shortcodes'),
+			'title' => esc_html__('Timeout', 'tmm_content_composer'),
 			'shortcode_field' => 'timeout',
 			'id' => 'timeout',
 			'default_value' => TMM_Content_Composer::set_default_value('timeout', 3000),
@@ -78,7 +78,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Speed', 'tmm_shortcodes'),
+			'title' => esc_html__('Speed', 'tmm_content_composer'),
 			'shortcode_field' => 'speed',
 			'id' => 'speed',
 			'default_value' => TMM_Content_Composer::set_default_value('speed', 600),
@@ -93,11 +93,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Count', 'tmm_shortcodes'),
+			'title' => esc_html__('Count', 'tmm_content_composer'),
 			'shortcode_field' => 'count',
 			'id' => 'type',
 			'options' => array(
-				-1 => __('All', 'tmm_shortcodes'),
+				-1 => esc_html__('All', 'tmm_content_composer'),
 				1 => 1,
 				2 => 2,
 				3 => 3,
@@ -139,7 +139,6 @@
 					jQuery(".content_select").hide(200);
 					break;
 			}
-
 
 			return true;
 		});

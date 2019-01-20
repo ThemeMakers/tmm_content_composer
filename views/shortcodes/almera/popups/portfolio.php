@@ -6,11 +6,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => esc_html__('Layout', 'tmm_shortcodes'),
+			'title' => esc_html__('Layout', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => 'type',
 			'options' => array(
-				1 => esc_html__('Masonry', 'tmm_shortcodes'),
+				1 => esc_html__('Masonry', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('content', 1),
 			'description' => ''
@@ -23,13 +23,13 @@
 
 		<?php
 		$col_algorims_ids = array(
-			"random" => esc_html__('Algorithm random', 'tmm_shortcodes'),
-			1 => esc_html__('Algoritm 1', 'tmm_shortcodes'),
-			2 => esc_html__('Algoritm 2', 'tmm_shortcodes'),
+			"random" => esc_html__('Algorithm random', 'tmm_content_composer'),
+			1 => esc_html__('Algoritm 1', 'tmm_content_composer'),
+			2 => esc_html__('Algoritm 2', 'tmm_content_composer'),
 		);
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => esc_html__('Image Sizes', 'tmm_shortcodes'),
+			'title' => esc_html__('Image Sizes', 'tmm_content_composer'),
 			'shortcode_field' => 'col_alg',
 			'id' => 'type',
 			'options' => $col_algorims_ids,
@@ -96,8 +96,8 @@
 		}
 		?>
 
-		<h4 class="label"><?php _e('Galleries', 'tmm_shortcodes'); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add gallery item', 'tmm_shortcodes'); ?></a><br />
+		<h4 class="label"><?php esc_html_e('Galleries', 'tmm_content_composer'); ?></h4>
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add gallery item', 'tmm_content_composer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 			<?php foreach ($albums_edit_data as $album_id) : ?>
@@ -119,7 +119,7 @@
 								?>
 							</td>
 							<td>
-								<a class="button button-secondary js_delete_list_item" href="#"><?php _e('Remove', 'tmm_shortcodes'); ?></a>
+								<a class="button button-secondary js_delete_list_item" href="#"><?php esc_html_e('Remove', 'tmm_content_composer'); ?></a>
 							</td>
 							<td><div class="row-mover"></div></td>
 						</tr>
@@ -129,7 +129,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add gallery item', 'tmm_shortcodes'); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add gallery item', 'tmm_content_composer'); ?></a><br />
 
 
 	</div>

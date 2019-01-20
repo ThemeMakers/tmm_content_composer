@@ -92,7 +92,7 @@ if (!empty($contact_form['inputs'])) {
 
 		<?php endif; ?>
 
-		<button class="button <?php echo $contact_form['submit_button'] ?> small" type="submit"><?php _e('Submit', 'tmm_shortcodes'); ?></button>
+		<button class="button <?php echo $contact_form['submit_button'] ?> small" type="submit"><?php esc_html_e('Submit', 'tmm_content_composer'); ?></button>
 
 	</form>
 	<div class="contact_form_responce" style="display: none;"><ul></ul></div>

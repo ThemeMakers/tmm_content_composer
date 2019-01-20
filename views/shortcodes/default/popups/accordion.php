@@ -6,12 +6,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Type', 'tmm_shortcodes'),
+			'title' => esc_html__('Type', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'options' => array(
-				'' => __('Accordion', 'tmm_shortcodes'),
-				'toggle' => __('Toggle', 'tmm_shortcodes'),
+				'' => esc_html__('Accordion', 'tmm_content_composer'),
+				'toggle' => esc_html__('Toggle', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type', ''),
 			'description' => ''
@@ -25,12 +25,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Type Style', 'tmm_shortcodes'),
+			'title' => esc_html__('Type Style', 'tmm_content_composer'),
 			'shortcode_field' => 'type_style',
 			'id' => 'type_style',
 			'options' => array(
-				'' => __('Type 1', 'tmm_shortcodes'),
-				'type-2' => __('Type 2', 'tmm_shortcodes'),
+				'' => esc_html__('Type 1', 'tmm_content_composer'),
+				'type-2' => esc_html__('Type 2', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type_style', ''),
 			'description' => ''
@@ -44,7 +44,7 @@
 
 	<div class="fullwidth">
 
-		<a class="button button-secondary js_add_accordion_item" href="#"><?php _e('Add item', 'tmm_shortcodes'); ?></a><br />
+		<a class="button button-secondary js_add_accordion_item" href="#"><?php esc_html_e('Add item', 'tmm_content_composer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 
@@ -63,13 +63,13 @@
 					<table class="list-table">
 						<tr>
 							<td valign="top" style="width: 100%;">
-								<input type="text" value="<?php echo $titles_edit_data[$key] ?>" placeholder="<?php _e('Title', 'tmm_shortcodes'); ?>" class="accordion_item_title js_shortcode_template_changer data-input" style="width: 50%;" />
-								&nbsp;<a class="button button-secondary js_delete_accordion_item js_shortcode_template_changer" href="#"><?php _e('Remove', 'tmm_shortcodes'); ?></a>
+								<input type="text" value="<?php echo $titles_edit_data[$key] ?>" placeholder="<?php esc_html_e('Title', 'tmm_content_composer'); ?>" class="accordion_item_title js_shortcode_template_changer data-input" style="width: 50%;" />
+								&nbsp;<a class="button button-secondary js_delete_accordion_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'tmm_content_composer'); ?></a>
 							</td>
 						</tr>
 						<tr>
 							<td valign="top" style="width: 100%;" colspan="2">
-								<textarea class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php _e('Content', 'tmm_shortcodes'); ?>"><?php echo $content_edit_text ?></textarea>
+								<textarea class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php esc_html_e('Content', 'tmm_content_composer'); ?>"><?php echo $content_edit_text ?></textarea>
 							</td>
 						</tr>
 					</table>
@@ -80,7 +80,7 @@
 
 		</ul>
 		
-		<a class="button button-secondary js_add_accordion_item" href="#"><?php _e('Add item', 'tmm_shortcodes'); ?></a>
+		<a class="button button-secondary js_add_accordion_item" href="#"><?php esc_html_e('Add item', 'tmm_content_composer'); ?></a>
 		
 		<br />
 

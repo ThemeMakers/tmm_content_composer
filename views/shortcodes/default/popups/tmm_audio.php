@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'upload',
-			'title' => __('Link to Audio', 'tmm_shortcodes'),
+			'title' => esc_html__('Link to Audio', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => 'content',
 			'data_type' => 'audio',
@@ -21,13 +21,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Audio format', 'tmm_shortcodes'),
+			'title' => esc_html__('Audio format', 'tmm_content_composer'),
 			'shortcode_field' => 'format',
 			'id' => 'format',
 			'options' => array(
-				'other' => __('Other', 'tmm_shortcodes'),
-				'wav' => __('Wav', 'tmm_shortcodes'),
-				'ogg' => __('Ogg', 'tmm_shortcodes'),
+				'other' => esc_html__('Other', 'tmm_content_composer'),
+				'wav' => esc_html__('Wav', 'tmm_content_composer'),
+				'ogg' => esc_html__('Ogg', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('format', 'other'),
 			'description' => ''

@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Enter Symbol', 'tmm_shortcodes'),
+			'title' => esc_html__('Enter Symbol', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -21,13 +21,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Select Type', 'tmm_shortcodes'),
+			'title' => esc_html__('Select Type', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'options' => array(
-				'dropcapcircle' => __('Circle Small', 'tmm_shortcodes'),
-				'dropcap circle' => __('Circle Big', 'tmm_shortcodes'),
-				'dropcap gray' => __('Gray', 'tmm_shortcodes')
+				'dropcapcircle' => esc_html__('Circle Small', 'tmm_content_composer'),
+				'dropcap circle' => esc_html__('Circle Big', 'tmm_content_composer'),
+				'dropcap gray' => esc_html__('Gray', 'tmm_content_composer')
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type', 'dropcapcircle'),
 			'description' => ''

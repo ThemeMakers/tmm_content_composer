@@ -32,6 +32,6 @@ switch ($video_type) {
 		break;
 
 	default:
-		esc_html_e('Unsupported video format', 'tmm_shortcodes');
+		esc_html_e('Unsupported video format', 'tmm_content_composer');
 		break;
 }

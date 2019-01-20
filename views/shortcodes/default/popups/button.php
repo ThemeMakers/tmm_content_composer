@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Buttons Text', 'tmm_shortcodes'),
+			'title' => esc_html__('Buttons Text', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -18,11 +18,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('URL', 'tmm_shortcodes'),
+			'title' => esc_html__('URL', 'tmm_content_composer'),
 			'shortcode_field' => 'url',
 			'id' => 'url',
 			'default_value' => TMM_Content_Composer::set_default_value('url', ''),
-			'description' => __('http://forums.webtemplatemasters.com/', 'tmm_shortcodes')
+			'description' => esc_html__('http://forums.webtemplatemasters.com/', 'tmm_content_composer')
 		));
 		?>
 	</div><!--/ .one-half-->
@@ -32,7 +32,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Color', 'tmm_shortcodes'),
+			'title' => esc_html__('Color', 'tmm_content_composer'),
 			'shortcode_field' => 'color',
 			'id' => 'color',
 			'options' => TMM_OptionsHelper::get_theme_buttons(),
@@ -47,7 +47,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Size', 'tmm_shortcodes'),
+			'title' => esc_html__('Size', 'tmm_content_composer'),
 			'shortcode_field' => 'size',
 			'id' => 'size',
 			'options' => TMM_OptionsHelper::get_theme_buttons_sizes(),

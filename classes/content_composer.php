@@ -53,7 +53,7 @@ class TMM_Content_Composer {
 		if ( in_array( $post_type, $post_types )) {
 			add_meta_box(
 				'tmm_layout_constructor',
-				__("ThemeMakers Layout Constructor", TMM_CC_TEXTDOMAIN),
+				esc_html__("ThemeMakers Layout Constructor", 'tmm_content_composer'),
 				array('TMM_Layout_Constructor', 'draw_page_meta_box'),
 				$post_type,
 				'normal',
@@ -84,13 +84,13 @@ class TMM_Content_Composer {
 					var tmm_lang = {};
 				}
 
-				tmm_lang['loading'] = "<?php esc_html_e("Loading ...", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['close'] = "<?php esc_html_e("Close", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['apply'] = "<?php esc_html_e("Apply", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_nooption'] = "<?php esc_html_e("There is no options for shortcode!", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_updated'] = "<?php esc_html_e("Shortcode updated!", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_insert'] = "<?php esc_html_e("Insert Shortcode", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['shortcode_edit'] = "<?php esc_html_e("Edit shortcode", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['loading'] = "<?php esc_html_e("Loading ...", 'tmm_content_composer') ?>";
+				tmm_lang['close'] = "<?php esc_html_e("Close", 'tmm_content_composer') ?>";
+				tmm_lang['apply'] = "<?php esc_html_e("Apply", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_nooption'] = "<?php esc_html_e("There is no options for shortcode!", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_updated'] = "<?php esc_html_e("Shortcode updated!", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_insert'] = "<?php esc_html_e("Insert Shortcode", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_edit'] = "<?php esc_html_e("Edit shortcode", 'tmm_content_composer') ?>";
 			</script>
 		<?php
 		}
@@ -100,11 +100,11 @@ class TMM_Content_Composer {
 
 			?>
 			<script type="text/javascript">
-				tmm_lang['column_delete'] = "<?php esc_html_e("Sure about column deleting?", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['row_delete'] = "<?php esc_html_e("Sure about row deleting?", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['empty_title'] = "<?php esc_html_e("Empty title", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['column_popup_title'] = "<?php esc_html_e("Column content editor", TMM_CC_TEXTDOMAIN) ?>";
-				tmm_lang['row_popup_title'] = "<?php esc_html_e("Row editor", TMM_CC_TEXTDOMAIN) ?>";
+				tmm_lang['column_delete'] = "<?php esc_html_e("Sure about column deleting?", 'tmm_content_composer') ?>";
+				tmm_lang['row_delete'] = "<?php esc_html_e("Sure about row deleting?", 'tmm_content_composer') ?>";
+				tmm_lang['empty_title'] = "<?php esc_html_e("Empty title", 'tmm_content_composer') ?>";
+				tmm_lang['column_popup_title'] = "<?php esc_html_e("Column content editor", 'tmm_content_composer') ?>";
+				tmm_lang['row_popup_title'] = "<?php esc_html_e("Row editor", 'tmm_content_composer') ?>";
 			</script>
 			<?php
 		}
@@ -188,8 +188,8 @@ class TMM_Content_Composer {
 			$buttons = TMM_OptionsHelper::get_theme_buttons();
 		}else{
 			$buttons = array(
-				'default' => __('Default', TMM_CC_TEXTDOMAIN),
-				'default-white' => __('Default-white', TMM_CC_TEXTDOMAIN)
+				'default' => esc_html__('Default', 'tmm_content_composer'),
+				'default-white' => esc_html__('Default-white', 'tmm_content_composer')
 			);
 		}
 		return $buttons;
@@ -200,9 +200,9 @@ class TMM_Content_Composer {
 			$button_sizes = TMM_OptionsHelper::get_theme_buttons_sizes();
 		}else{
 			$button_sizes = array(
-				'small' => __('Small', TMM_CC_TEXTDOMAIN),
-				'middle' => __('Middle', TMM_CC_TEXTDOMAIN),
-				'large' => __('Large', TMM_CC_TEXTDOMAIN),
+				'small' => esc_html__('Small', 'tmm_content_composer'),
+				'middle' => esc_html__('Middle', 'tmm_content_composer'),
+				'large' => esc_html__('Large', 'tmm_content_composer'),
 			);
 		}
 		return $button_sizes;
@@ -210,7 +210,7 @@ class TMM_Content_Composer {
 
 	public static function get_post_categories() {
 		$post_categories = array(
-			0 => __('All Categories', TMM_CC_TEXTDOMAIN)
+			0 => esc_html__('All Categories', 'tmm_content_composer')
 		);
 
 		$args = 	array(
@@ -344,7 +344,7 @@ class TMM_Content_Composer {
 				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
                 <?php if (!isset($data['data_type'])) $data['data_type'] = ''; ?>
                 <a title="" class="button tmm_button_upload" href="#" data-type="<?php echo $data['data_type'] ?>">
-					<?php esc_html_e('Browse', TMM_CC_TEXTDOMAIN); ?>
+					<?php esc_html_e('Browse', 'tmm_content_composer'); ?>
 				</a>
 
 				<span class="preset_description"><?php echo $data['description'] ?></span>
@@ -358,7 +358,7 @@ class TMM_Content_Composer {
 			<?php endif; ?>
 
 				<input type="text" id="<?php echo $data['id'] ?>" value="<?php echo $data['default_value'] ?>" class="js_shortcode_template_changer data-input data-upload <?php echo $css_class; ?>" data-shortcode-field="<?php echo $data['shortcode_field'] ?>" />
-				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;"><?php esc_html_e('Browse', TMM_CC_TEXTDOMAIN); ?></a>
+				<a class="button tmm_button_upload_video" href="#" style="margin-left: 9px;"><?php esc_html_e('Browse', 'tmm_content_composer'); ?></a>
 				<span class="preset_description"><?php echo $data['description'] ?></span>
 				<?php
 				break;

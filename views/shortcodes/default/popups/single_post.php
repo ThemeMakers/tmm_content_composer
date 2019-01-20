@@ -12,7 +12,7 @@
 		//***
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Select Type', 'tmm_shortcodes'),
+			'title' => esc_html__('Select Type', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => 'content',
 			'options' => $post_select_array,
@@ -30,19 +30,19 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'radio',
-			'title' => __('Content', 'tmm_shortcodes'),
+			'title' => esc_html__('Content', 'tmm_content_composer'),
 			'shortcode_field' => 'show_content',
 			'id' => 'show_content',
 			'name' => 'show_content',
 			'values' => array(
 				0 => array(
-					'title' => __('Excerpt', 'tmm_shortcodes'),
+					'title' => esc_html__('Excerpt', 'tmm_content_composer'),
 					'id' => 'content_radio_0',
 					'value' => 0,
 					'checked' => ($value_type == 0 ? 1 : 0)
 				),
 				1 => array(
-					'title' => __('Content', 'tmm_shortcodes'),
+					'title' => esc_html__('Content', 'tmm_content_composer'),
 					'id' => 'content_radio_1',
 					'value' => 1,
 					'checked' => ($value_type == 1 ? 1 : 0)
@@ -61,7 +61,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Content Char Count', 'tmm_shortcodes'),
+			'title' => esc_html__('Content Char Count', 'tmm_content_composer'),
 			'shortcode_field' => 'char_count',
 			'id' => 'char_count',
 			'default_value' => TMM_Content_Composer::set_default_value('char_count', 140),
@@ -75,12 +75,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Show post type media', 'tmm_shortcodes'),
+			'title' => esc_html__('Show post type media', 'tmm_content_composer'),
 			'shortcode_field' => 'show_post_type_media',
 			'id' => 'show_post_type_media',
 			'options' => array(
-				1 => __('Yes', 'tmm_shortcodes'),
-				0 => __('No', 'tmm_shortcodes'),
+				1 => esc_html__('Yes', 'tmm_content_composer'),
+				0 => esc_html__('No', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('show_post_type_media', 1),
 			'description' => ''
@@ -93,12 +93,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Show post metadata', 'tmm_shortcodes'),
+			'title' => esc_html__('Show post metadata', 'tmm_content_composer'),
 			'shortcode_field' => 'show_post_metadata',
 			'id' => 'show_post_metadata',
 			'options' => array(
-				1 => __('Yes', 'tmm_shortcodes'),
-				0 => __('No', 'tmm_shortcodes'),
+				1 => esc_html__('Yes', 'tmm_content_composer'),
+				0 => esc_html__('No', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('show_post_metadata', 1),
 			'description' => ''
@@ -114,19 +114,19 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'radio',
-			'title' => __('Read More Button', 'tmm_shortcodes'),
+			'title' => esc_html__('Read More Button', 'tmm_content_composer'),
 			'shortcode_field' => 'show_readmore_button',
 			'id' => 'show_readmore_button',
 			'name' => 'show_readmore_button',
 			'values' => array(
 				0 => array(
-					'title' => __('No readmore button', 'tmm_shortcodes'),
+					'title' => esc_html__('No readmore button', 'tmm_content_composer'),
 					'id' => 'show_button_0',
 					'value' => 0,
 					'checked' => ($value_type == 0 ? 1 : 0)
 				),
 				1 => array(
-					'title' => __('Show readmore button', 'tmm_shortcodes'),
+					'title' => esc_html__('Show readmore button', 'tmm_content_composer'),
 					'id' => 'show_button_1',
 					'value' => 1,
 					'checked' => ($value_type == 1 ? 1 : 0)
@@ -145,7 +145,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Button Color', 'tmm_shortcodes'),
+			'title' => esc_html__('Button Color', 'tmm_content_composer'),
 			'shortcode_field' => 'button_color',
 			'id' => 'button_color',
 			'options' => TMM_OptionsHelper::get_theme_buttons(),
@@ -161,7 +161,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Button Size', 'tmm_shortcodes'),
+			'title' => esc_html__('Button Size', 'tmm_content_composer'),
 			'shortcode_field' => 'button_size',
 			'id' => 'button_size',
 			'options' => TMM_OptionsHelper::get_theme_buttons_sizes(),
@@ -175,7 +175,6 @@
 
 </div>
 
-
 <!-- --------------------------  PROCESSOR  --------------------------- -->
 <script type="text/javascript">
 	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
@@ -187,5 +186,3 @@
 
 	});
 </script>
-
-
