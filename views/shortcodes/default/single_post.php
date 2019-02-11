@@ -2,7 +2,7 @@
 
 $post_id = (int) $content;
 $post = get_post($post_id);
-$post_link = post_permalink($post_id);
+$post_link = get_permalink($post_id);
 ?>
 
 <div class="item clearfix">
@@ -44,6 +44,7 @@ $post_link = post_permalink($post_id);
                         echo do_shortcode('[tmm_video type="vimeo" width="' . $video_width . '" height="' . $video_height . '"]' . $source_url . '[/tmm_video]');
                         break;
                     default:
+                        echo esc_html_e('Unsupported video format', 'tmm_content_composer');
                         break;
                 }
             }
@@ -66,7 +67,7 @@ $post_link = post_permalink($post_id);
                 <div class="image-post-slider">
                     <ul>
                         <?php foreach ($gall as $key => $source_url): ?>
-                            <li><a data-fancybox-group="lightbox" href="<?php echo $post_link ?>" class="single-image link-icon"><img src="<?php echo TMM_Helper::resize_image($source_url, '580*360') ?>" width="580" height="360" alt="<?php echo $post->post_title ?>" /></a></li>
+                            <li><a data-fancybox-group="lightbox" href="<?php echo esc_url( $post_link ) ?>" class="single-image link-icon"><img src="<?php echo TMM_Helper::resize_image($source_url, '580*360') ?>" width="580" height="360" alt="<?php echo esc_attr( $post->post_title ) ?>" /></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div><!--/ .image-post-slider-->
@@ -89,12 +90,12 @@ $post_link = post_permalink($post_id);
 
     <div class="entry-meta">
 		
-		<h5 class="title"><a href="<?php echo $post_link ?>"><?php echo $post->post_title ?></a></h5>
+		<h5 class="title"><a href="<?php echo esc_url( $post_link ) ?>"><?php echo esc_attr( $post->post_title ) ?></a></h5>
 		
 		<?php if ($show_post_metadata == 1): ?>
 
             <span class="date"><a href="<?php echo home_url() ?>/?m=<?php echo mysql2date('Ym', get_post_field('post_date', $post->ID)) ?>"><?php echo mysql2date(get_option('date_format'), get_post_field('post_date', $post->ID)) ?></a></span>
-			<span class="comments"><a href="<?php echo $post_link ?>#comments"><?php echo get_comments_number($post->ID); ?> <?php esc_html_e('Comments', 'tmm_content_composer'); ?></a></span>
+			<span class="comments"><a href="<?php echo esc_url( $post_link ) ?>#comments"><?php echo get_comments_number($post->ID); ?> <?php esc_html_e('Comments', 'tmm_content_composer'); ?></a></span>
 	
 		<?php endif; ?>
 		
@@ -123,7 +124,7 @@ $post_link = post_permalink($post_id);
         </p>
 		
 		 <?php if ($show_readmore_button == 1): ?>
-			<a href="<?php echo $post_link ?>" class="button <?php if (!empty($button_color)) echo $button_color; ?>">Read More</a>
+			<a href="<?php echo esc_url( $post_link ) ?>" class="button <?php if (!empty($button_color)) echo esc_attr( $button_color ) ?>"><?php esc_html_e('Read More', 'tmm_content_composer'); ?></a>
 		<?php endif; ?>
 
     </div><!--/ .entry-body-->
