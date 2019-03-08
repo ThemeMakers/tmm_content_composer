@@ -58,7 +58,7 @@ if ( !empty($query->posts) ) {
 
 		<h3 class="section-title"><?php _e( $title, TMM_CC_TEXTDOMAIN ) ?></h3>
 
-		<span class="clc_controls" id="clc_controls_<?php echo $uniqid ?>">
+		<span class="clc_controls" id="clc_controls_<?php echo esc_attr( $uniqid ) ?>">
 			<a href="#" data-target="prev" class="prevBtn icon-angle-left" title="<?php _e('Previous', 'cardealer'); ?>"></a>
 			<a href="#" data-target="next" class="nextBtn icon-angle-right" title="<?php _e('Next', 'cardealer'); ?>"></a>
 		</span>
@@ -67,7 +67,7 @@ if ( !empty($query->posts) ) {
 
 <?php } ?>
 	<!--	clc - Car Listing Carousel -->
-	<div id="clc_<?php echo $uniqid ?>" class="clc_content tmm-view-mode item-grid">
+	<div id="clc_<?php echo esc_attr( $uniqid ) ?>" class="clc_content tmm-view-mode item-grid">
 		<?php
 		if ( !empty($query->posts) ) {
 			foreach ( $query->posts as $post ) {
@@ -90,20 +90,20 @@ if ( !empty($query->posts) ) {
 <script type="text/javascript">
 	jQuery(function ($) {
 
-		$("#clc_<?php echo $uniqid ?>").sudoSlider({
-			auto: <?php echo (int) $autoslide ?>,
+		$("#clc_<?php echo esc_attr( $uniqid ) ?>").sudoSlider({
+			auto: <?php echo esc_attr( (int) $autoslide ) ?>,
 			ease: 'swing',
 			speed: 800,
 			pause: 2000,
 			resumePause: 2000,
 			touch: true,
 			prevNext: false,
-			slideCount: <?php echo (int) $items_per_set ?>,
+			slideCount: <?php echo esc_attr( (int) $items_per_set ) ?>,
 			moveCount: 1,
 			startSlide: false,
 			continuous: true,
 			controlsFade: false,
-			customLink: "#clc_controls_<?php echo $uniqid ?> a"
+			customLink: "#clc_controls_<?php echo esc_attr( $uniqid ) ?> a"
 		});
 
 	});
