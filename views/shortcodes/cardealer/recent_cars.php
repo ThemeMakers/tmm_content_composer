@@ -74,9 +74,9 @@ $car_watch_list   = TMM_Ext_PostType_Car::get_watch_list();
 			$GLOBALS['featured_cars_autoslide']             = ! isset( $set_featured_autoslide ) || $set_featured_autoslide;
 			$GLOBALS['recent_cars_show_currency_converter'] = ! isset( $show_recent_cars_currency_converter ) || $show_recent_cars_currency_converter;
 			$GLOBALS['recent_cars_show_details_button']     = ! isset( $show_details_button ) || $show_details_button;
-			$GLOBALS['hide_cars_options']     = false;
-			$GLOBALS['hide_cars_compare']     = false;
-			$GLOBALS['thumbnail_size']     = isset( $thumbnail_size ) ? $thumbnail_size : 'large';
+			$GLOBALS['hide_cars_options']                   = false;
+			$GLOBALS['compare_watchlist']                   = true;
+			$GLOBALS['thumbnail_size']                      = isset( $thumbnail_size ) ? $thumbnail_size : 'large';
 			get_template_part( 'article', 'car' );
 		}
 	}
