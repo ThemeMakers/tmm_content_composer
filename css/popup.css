@@ -140,15 +140,15 @@
         .tmm-popup-content .one-third,
 		.tmm-popup-content .one-half,
 		.tmm-popup-content .fullwidth {
-			display: inline-block;
-			margin: 0 1%;
+			display: block;
+			float: left;
+			margin: 0 15px;
 			vertical-align: top;
 		}
 
-		.tmm-popup-content .one-fourth { width: 22.5%; }
-        .tmm-popup-content .one-third { width: 30.3%; }
-		.tmm-popup-content .one-half { width: 47.5%; }
-		.tmm-popup-content .fullwidth { width: 98%; }
+		.tmm-popup-content .one-fourth { width: calc(25% - 30px); }
+        .tmm-popup-content .one-half { width: calc(50% - 30px); }
+		.tmm-popup-content .fullwidth { width: calc(100% - 30px); }
                 
                 .tmm-popup-content .align-left{
                     float:left;
@@ -158,6 +158,19 @@
                 .tmm-popup-content .align-right{
                     float:right;
                 }
+
+		.tmm_shortcode_template {
+			display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+			display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+			display: -ms-flexbox;      /* TWEENER - IE 10 */
+			display: -webkit-flex;     /* NEW - Chrome */
+			display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+			flex-flow: row nowrap;
+		}
+
+		.tmm_shortcode_template .column {
+			flex: 1 0 50%;
+		}
 
 		/* -------------------------------------------------- */
 		/*	Form Elements
