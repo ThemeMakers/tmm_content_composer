@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2018-11-18 18:31+0100\n"
-"PO-Revision-Date: 2018-11-18 18:31+0100\n"
+"POT-Creation-Date: 2019-03-16 02:26+0100\n"
+"PO-Revision-Date: 2019-03-16 02:26+0100\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -134,30 +134,6 @@ msgstr ""
 
 #: classes/shortcode.php:44
 msgid "Google table row"
-msgstr ""
-
-#: index.php:42 views/shortcodes/default/popups/button.php:34
-#: views/shortcodes/default/popups/image.php:168
-#: views/shortcodes/default/popups/services.php:18
-#: views/shortcodes/default/popups/title.php:41
-#: views/shortcodes/default/popups/title.php:81
-msgid "Default"
-msgstr ""
-
-#: index.php:43
-msgid "Arial"
-msgstr ""
-
-#: index.php:44
-msgid "Tahoma"
-msgstr ""
-
-#: index.php:45
-msgid "Verdana"
-msgstr ""
-
-#: index.php:46
-msgid "Calibri"
 msgstr ""
 
 #: views/column_item.php:16 views/meta_panel.php:105
@@ -391,7 +367,7 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: views/meta_panel.php:302 views/shortcodes/default/popups/google_map.php:43
+#: views/meta_panel.php:302 views/shortcodes/default/popups/google_map.php:111
 msgid "Image"
 msgstr ""
 
@@ -1087,108 +1063,113 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:137
-#: views/shortcodes/cardealer/quicksearch.php:171
-#: views/shortcodes/cardealer/quicksearch.php:180
-#: views/shortcodes/cardealer/quicksearch.php:204
-#: views/shortcodes/cardealer/quicksearch.php:239
-#: views/shortcodes/cardealer/quicksearch.php:247
-#: views/shortcodes/cardealer/quicksearch.php:301
-#: views/shortcodes/cardealer/quicksearch.php:318
-#: views/shortcodes/cardealer/quicksearch.php:378
-#: views/shortcodes/cardealer/quicksearch.php:395
-#: views/shortcodes/cardealer/quicksearch.php:414
-#: views/shortcodes/cardealer/quicksearch.php:430
-#: views/shortcodes/cardealer/quicksearch.php:453
-#: views/shortcodes/cardealer/quicksearch.php:466
-#: views/shortcodes/cardealer/quicksearch.php:543
+#: views/shortcodes/cardealer/quicksearch.php:139
+#: views/shortcodes/cardealer/quicksearch.php:173
+#: views/shortcodes/cardealer/quicksearch.php:182
+#: views/shortcodes/cardealer/quicksearch.php:206
+#: views/shortcodes/cardealer/quicksearch.php:241
+#: views/shortcodes/cardealer/quicksearch.php:249
+#: views/shortcodes/cardealer/quicksearch.php:303
+#: views/shortcodes/cardealer/quicksearch.php:320
+#: views/shortcodes/cardealer/quicksearch.php:380
+#: views/shortcodes/cardealer/quicksearch.php:397
+#: views/shortcodes/cardealer/quicksearch.php:416
+#: views/shortcodes/cardealer/quicksearch.php:432
+#: views/shortcodes/cardealer/quicksearch.php:455
+#: views/shortcodes/cardealer/quicksearch.php:468
+#: views/shortcodes/cardealer/quicksearch.php:545
 msgid "Any"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:202
+#: views/shortcodes/cardealer/quicksearch.php:204
 msgid "Condition"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:208
+#: views/shortcodes/cardealer/quicksearch.php:210
 #, php-format
 msgid "Only %s cars"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:237
+#: views/shortcodes/cardealer/quicksearch.php:239
 msgid "Make"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:245
+#: views/shortcodes/cardealer/quicksearch.php:247
 msgid "Model"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:256
-#: views/shortcodes/cardealer/quicksearch.php:355
-#: views/shortcodes/cardealer/quicksearch.php:481
-#: views/shortcodes/cardealer/quicksearch.php:559
+#: views/shortcodes/cardealer/quicksearch.php:258
+#: views/shortcodes/cardealer/quicksearch.php:357
+#: views/shortcodes/cardealer/quicksearch.php:483
+#: views/shortcodes/cardealer/quicksearch.php:561
 msgid "Search"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:262
-#: views/shortcodes/cardealer/quicksearch.php:361
-#: views/shortcodes/cardealer/quicksearch.php:487
+#: views/shortcodes/cardealer/quicksearch.php:264
+#: views/shortcodes/cardealer/quicksearch.php:363
+#: views/shortcodes/cardealer/quicksearch.php:489
 msgid "Advanced"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:278
-#: views/shortcodes/cardealer/quicksearch.php:284
+#: views/shortcodes/cardealer/quicksearch.php:280
+#: views/shortcodes/cardealer/quicksearch.php:286
 msgid "Price"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:278
+#: views/shortcodes/cardealer/quicksearch.php:280
 msgid "min"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:284
+#: views/shortcodes/cardealer/quicksearch.php:286
 msgid "max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:298
-#: views/shortcodes/cardealer/quicksearch.php:315
+#: views/shortcodes/cardealer/quicksearch.php:300
+#: views/shortcodes/cardealer/quicksearch.php:317
 msgid "Year"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:298
-#: views/shortcodes/cardealer/quicksearch.php:340
+#: views/shortcodes/cardealer/quicksearch.php:300
+#: views/shortcodes/cardealer/quicksearch.php:342
 msgid "from"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:315
-#: views/shortcodes/cardealer/quicksearch.php:346
+#: views/shortcodes/cardealer/quicksearch.php:317
+#: views/shortcodes/cardealer/quicksearch.php:348
 msgid "to"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:340
-#: views/shortcodes/cardealer/quicksearch.php:346
+#: views/shortcodes/cardealer/quicksearch.php:342
+#: views/shortcodes/cardealer/quicksearch.php:348
+msgid "Kilometer"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:342
+#: views/shortcodes/cardealer/quicksearch.php:348
 msgid "Mileage"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:375
+#: views/shortcodes/cardealer/quicksearch.php:377
 msgid "Fuel Type"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:392
+#: views/shortcodes/cardealer/quicksearch.php:394
 msgid "Gearbox"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:411
+#: views/shortcodes/cardealer/quicksearch.php:413
 msgid "Body Type"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:428
+#: views/shortcodes/cardealer/quicksearch.php:430
 msgid "Door Count"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:451
+#: views/shortcodes/cardealer/quicksearch.php:453
 msgid "Interior Color"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:464
+#: views/shortcodes/cardealer/quicksearch.php:466
 msgid "Exterior Color"
 msgstr ""
 
@@ -1329,6 +1310,14 @@ msgstr ""
 msgid "Buttons Position"
 msgstr ""
 
+#: views/shortcodes/default/popups/button.php:34
+#: views/shortcodes/default/popups/image.php:168
+#: views/shortcodes/default/popups/services.php:18
+#: views/shortcodes/default/popups/title.php:41
+#: views/shortcodes/default/popups/title.php:81
+msgid "Default"
+msgstr ""
+
 #: views/shortcodes/default/popups/button.php:35
 msgid "Push to Left"
 msgstr ""
@@ -1467,117 +1456,105 @@ msgstr ""
 msgid "Dark"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:9
-#: views/shortcodes/default/popups/tmm_video.php:60
-msgid "Height"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:24
+#: views/shortcodes/default/popups/google_map.php:10
 #: views/shortcodes/default/popups/tmm_video.php:46
 msgid "Width"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:38
-msgid "Mode"
+#: views/shortcodes/default/popups/google_map.php:23
+#: views/shortcodes/default/popups/tmm_video.php:60
+msgid "Height"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:42
-msgid "Map"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:56
-msgid "Location mode"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:60
-#: views/shortcodes/default/popups/google_map.php:105
-msgid "Address"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:61
-msgid "Coordinates"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:75
+#: views/shortcodes/default/popups/google_map.php:36
 msgid "Marker Latitude"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:79
-#: views/shortcodes/default/popups/google_map.php:95
+#: views/shortcodes/default/popups/google_map.php:40
+#: views/shortcodes/default/popups/google_map.php:55
 msgid ""
 "Point on which the viewport will be centered. If not given and no markers "
 "are defined the viewport defaults to world view. In address Location mode it "
 "is calculated automatically!"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:91
+#: views/shortcodes/default/popups/google_map.php:51
 msgid "Marker Longitude"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:126
-msgid "Zoom"
+#: views/shortcodes/default/popups/google_map.php:64
+#: views/shortcodes/default/popups/google_map.php:127
+msgid "Address"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:131
-msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:141
-msgid "Enable Scrollwheel"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:145
-msgid "Set to false to disable zooming with your mouses scrollwheel."
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:154
-msgid "Maptype"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:158
-msgid "ROADMAP"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:159
-msgid "SATELLITE"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:160
-msgid "HYBRID"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:161
-msgid "TERRAIN"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:175
-msgid "Enable Marker"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:179
-msgid "Set to false to disable display a marker in the viewport."
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:188
+#: views/shortcodes/default/popups/google_map.php:77
 msgid "Enable Popup"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:192
+#: views/shortcodes/default/popups/google_map.php:81
 msgid ""
 "If true the info window for this marker will be shown when the map finished "
 "loading. If html is empty this option will be ignored."
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:202
-msgid "Marker is draggable"
+#: views/shortcodes/default/popups/google_map.php:90
+msgid "Html Content"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:206
-msgid "Set marker draggable"
+#: views/shortcodes/default/popups/google_map.php:106
+msgid "Map Mode"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:110
+msgid "Map"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:123
+msgid "Location mode"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:128
+msgid "Coordinates"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:147
+msgid "Zoom"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:152
+msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:162
+msgid "Maptype"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:181
+msgid "Map Scale"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:198
+msgid "Enable Scrollwheel"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:202
+msgid "Set to false to disable zooming with your mouses scrollwheel."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:211
+msgid "Enable Marker"
 msgstr ""
 
 #: views/shortcodes/default/popups/google_map.php:215
-msgid "Html Content"
+msgid "Set to false to disable display a marker in the viewport."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:224
+msgid "Marker is draggable"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:228
+msgid "Set marker draggable"
 msgstr ""
 
 #: views/shortcodes/default/popups/google_table.php:14
