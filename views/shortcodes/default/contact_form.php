@@ -38,7 +38,7 @@ if (!empty($contact_form['inputs'])) {
 				case "email":
 					?>
 					<p class="input-block">
-						<label for="email_<?php echo $unique_id ?>"><?php _e($input['label'], TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? ': <span class="required">*</span>' : '') ?></label>
+						<label for="email_<?php echo $unique_id ?>"><?php esc_html_e($input['label'], TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? ': <span class="required">*</span>' : '') ?></label>
 						<input id="email_<?php echo $unique_id ?>"<?php echo($input['is_required'] ? " required" : "") ?> type="email" name="<?php echo $name ?>" value="<?php echo(!empty($_POST) ? $dont_fill_inputs ? "" : $_POST[$name]  : "") ?>" />
 					</p>
 					<?php
@@ -47,7 +47,7 @@ if (!empty($contact_form['inputs'])) {
 				case "textinput":
 					?>
 					<p class="input-block">
-						<label for="name_<?php echo $unique_id ?>"><?php _e($input['label'], TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? ': <span class="required">*</span>' : '') ?></label>
+						<label for="name_<?php echo $unique_id ?>"><?php esc_html_e($input['label'], TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? ': <span class="required">*</span>' : '') ?></label>
 						<input id="name_<?php echo $unique_id ?>"<?php echo($input['is_required'] ? " required" : "") ?> type="text" name="<?php echo $name ?>" value="<?php echo(!empty($_POST) ? $dont_fill_inputs ? "" : $_POST[$name]  : "") ?>" />
 					</p>
 					<?php
@@ -56,7 +56,7 @@ if (!empty($contact_form['inputs'])) {
 				case "website":
 					?>
 					<p class="input-block">
-						<label for="url_<?php echo $unique_id ?>"><?php _e($input['label'], TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? ': <span class="required">*</span>' : '') ?></label>
+						<label for="url_<?php echo $unique_id ?>"><?php esc_html_e($input['label'], TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? ': <span class="required">*</span>' : '') ?></label>
 						<input id="url_<?php echo $unique_id ?>"<?php echo($input['is_required'] ? " required" : "") ?> type="url" name="<?php echo $name ?>" value="<?php echo(!empty($_POST) ? $dont_fill_inputs ? "" : $_POST[$name]  : "") ?>" />
 					</p>
 					<?php
@@ -68,7 +68,7 @@ if (!empty($contact_form['inputs'])) {
 					}
 					?>
 					<p class="input-block">
-						<label for="message_<?php echo $unique_id ?>"><?php _e($input['label'], TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? ': <span class="required">*</span>' : '') ?></label>
+						<label for="message_<?php echo $unique_id ?>"><?php esc_html_e($input['label'], TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? ': <span class="required">*</span>' : '') ?></label>
 						<textarea id="message_<?php echo $unique_id ?>" <?php echo($input['is_required'] ? " required" : "") ?> name="<?php echo $name ?>"><?php echo(!empty($_POST) ? $dont_fill_inputs ? "" : $_POST[$name]  : "") ?></textarea>
 					</p>
 					<?php
@@ -78,11 +78,11 @@ if (!empty($contact_form['inputs'])) {
 					$select_options = explode(",", $input['options']);
 					?>
 					<p class="input-block">
-						<label for="sel_<?php echo $unique_id ?>"><?php _e($input['label'], TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? ': <span class="required">*</span>' : '') ?></label>
+						<label for="sel_<?php echo $unique_id ?>"><?php esc_html_e($input['label'], TMM_CC_TEXTDOMAIN); ?><?php echo($input['is_required'] ? ': <span class="required">*</span>' : '') ?></label>
 						<select id="sel_<?php echo $unique_id ?>" name="<?php echo $name ?>">
 							<?php if (!empty($select_options)): ?>
 								<?php foreach ($select_options as $value) : ?>
-									<option value="<?php echo $value; ?>"><?php _e($value, TMM_CC_TEXTDOMAIN); ?></option>
+									<option value="<?php echo $value; ?>"><?php esc_html_e($value, TMM_CC_TEXTDOMAIN); ?></option>
 								<?php endforeach; ?>
 							<?php endif; ?>
 						</select>

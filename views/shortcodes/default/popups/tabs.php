@@ -3,9 +3,9 @@
 	
 	<div class="fullwidth">
 
-		<h4 class="label"><?php _e('Items', TMM_CC_TEXTDOMAIN); ?></h4>
+		<h4 class="label"><?php esc_html_e('Items', TMM_CC_TEXTDOMAIN); ?></h4>
 
-		<a class="button button-small js_add_accordion_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-small js_add_accordion_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 
@@ -23,13 +23,13 @@
 					<table style="width: 100%;">
 						<tr>
 							<td valign="top" style="width: 100%;">
-								<input placeholder="<?php _e('Title', TMM_CC_TEXTDOMAIN); ?>" type="text" value="<?php echo $titles_edit_data[$key] ?>" class="accordion_item_title js_shortcode_template_changer" style="width: 67%;" />
-								&nbsp;<a class="button button-small js_delete_accordion_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
+								<input placeholder="<?php esc_html_e('Title', TMM_CC_TEXTDOMAIN); ?>" type="text" value="<?php echo $titles_edit_data[$key] ?>" class="accordion_item_title js_shortcode_template_changer" style="width: 67%;" />
+								&nbsp;<a class="button button-small js_delete_accordion_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
 							</td>
 						</tr>
 						<tr>
 							<td valign="top" style="width: 100%;" colspan="2">
-								<textarea placeholder="<?php _e('Content', TMM_CC_TEXTDOMAIN); ?>" class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php _e('Content', TMM_CC_TEXTDOMAIN); ?>"><?php echo $content_edit_text ?></textarea>
+								<textarea placeholder="<?php esc_html_e('Content', TMM_CC_TEXTDOMAIN); ?>" class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php esc_html_e('Content', TMM_CC_TEXTDOMAIN); ?>"><?php echo $content_edit_text ?></textarea>
 							</td>
 						</tr>
 					</table>
@@ -37,7 +37,7 @@
 			<?php endforeach; ?>
 		</ul>
 
-		<a class="button button-small js_add_accordion_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-small js_add_accordion_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

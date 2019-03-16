@@ -18,6 +18,6 @@ if ($positioning == "left") {
 
 ?>
 
-<blockquote <?php echo $css_class ?>>
-	<p><?php echo $content ?></p>
+<blockquote <?php echo esc_attr( $css_class ) ?>>
+	<p><?php echo esc_html( $content ) ?></p>
 </blockquote>

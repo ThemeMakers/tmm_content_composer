@@ -47,7 +47,7 @@ foreach ($car_body_list as $k => $body_name) {
 <?php if (!empty($title)) { ?>
 <div class="page-subheader">
 
-	<h3 class="section-title"><?php _e( $title, TMM_CC_TEXTDOMAIN ) ?></h3>
+	<h3 class="section-title"><?php esc_html_e( $title, TMM_CC_TEXTDOMAIN ) ?></h3>
 
 </div><!--/ .page-header-->
 <?php } ?>

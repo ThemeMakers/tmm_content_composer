@@ -10,7 +10,7 @@ $content_array = explode('^', $content);
 	
 		<div class="acc-entry">
 			
-			<span data-mode="<?php echo $type ?>" class="acc-trigger"><a href="#"><?php echo $titles_array[$key] ?></a></span>
+			<span data-mode="<?php echo esc_attr( $type ) ?>" class="acc-trigger"><a href="#"><?php echo esc_html( $titles_array[$key] ) ?></a></span>
 			
 			<div class="acc-container">
 				<p><?php echo do_shortcode($value) ?></p>

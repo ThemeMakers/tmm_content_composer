@@ -20,7 +20,7 @@
 	</div>
 	
 	<div class="one-half">
-		<h4 class="label" for="location_level"><?php _e('Hide empty locations', TMM_CC_TEXTDOMAIN); ?></h4>
+		<h4 class="label" for="location_level"><?php esc_html_e('Hide empty locations', TMM_CC_TEXTDOMAIN); ?></h4>
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',

@@ -129,8 +129,8 @@
 		);
 		?>
 
-		<h4 class="label"><?php _e('Blocks', TMM_CC_TEXTDOMAIN); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<h4 class="label"><?php esc_html_e('Blocks', TMM_CC_TEXTDOMAIN); ?></h4>
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 		<ul id="list_items" class="list-items">
 			<?php
 			$content_edit_data = array('');
@@ -229,23 +229,23 @@
 							</td>
 							<td style="width: 50%;">							
 
-								<h5 class="label"><?php _e('Title', TMM_CC_TEXTDOMAIN); ?></h5>
+								<h5 class="label"><?php esc_html_e('Title', TMM_CC_TEXTDOMAIN); ?></h5>
 								<input type="text" value="<?php echo (isset($titles_edit_data[$key])) ? $titles_edit_data[$key] : '' ?>" class="list_item_title js_shortcode_template_changer data-input" style="width: 100%;" /><br />
 
-								<h5 class="label"><?php _e('Link', TMM_CC_TEXTDOMAIN); ?></h5>
+								<h5 class="label"><?php esc_html_e('Link', TMM_CC_TEXTDOMAIN); ?></h5>
 								<input type="text" value="<?php echo (isset($links_edit_data[$key])) ? $links_edit_data[$key] : '' ?>" class="list_item_link js_shortcode_template_changer data-input" style="width: 100%;" /><br />
                                 
                                 <div class="colorized_hover_title" <?php echo ($value_type!==1) ? 'style="display:none"' : '' ?>>
-                                    <h5 class="label"><?php _e('Hover Title', TMM_CC_TEXTDOMAIN); ?></h5>
+                                    <h5 class="label"><?php esc_html_e('Hover Title', TMM_CC_TEXTDOMAIN); ?></h5>
                                     <input type="text" value="<?php echo (isset($hover_titles_edit_data[$key])) ? $hover_titles_edit_data[$key] : '' ?>" class="list_item_hover_title js_shortcode_template_changer data-input" style="width: 100%;" /><br />
                                 </div>
                                 
-								<h5 class="label title_content" <?php echo ($value_type==1) ? 'style="display:none"' : '' ?>><?php  _e('Content', TMM_CC_TEXTDOMAIN); ?></h5>								
-								<h5 class="label hover_title_content" <?php echo ($value_type!==1) ? 'style="display:none"' : '' ?>><?php  _e('Hover Content', TMM_CC_TEXTDOMAIN); ?></h5>
+								<h5 class="label title_content" <?php echo ($value_type==1) ? 'style="display:none"' : '' ?>><?php  esc_html_e('Content', TMM_CC_TEXTDOMAIN); ?></h5>
+								<h5 class="label hover_title_content" <?php echo ($value_type!==1) ? 'style="display:none"' : '' ?>><?php  esc_html_e('Hover Content', TMM_CC_TEXTDOMAIN); ?></h5>
 								<textarea class="list_item_content js_shortcode_template_changer data-area" style="width: 100%; min-height: 50px;"><?php echo $content_edit_text ?></textarea>
 							</td>
 							<td>
-								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php _e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
+								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
 							</td>
 							<td></td>
 						</tr>
@@ -256,7 +256,7 @@
             <?php } ?>
 
 		</ul>
-		<a class="button button-secondary js_add_list_item" href="#"><?php _e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 
