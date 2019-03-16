@@ -2,224 +2,234 @@
 
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
-    <div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Height', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'height',
-			'id' => 'height',
-			'default_value' => TMM_Content_Composer::set_default_value('height', 200),
-			'description' => ''
-		));
-		?>
+    <div class="column">
+	    <div class="one-half">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'text',
+			    'title' => esc_html__('Width', 'cardealer'),
+			    'shortcode_field' => 'width',
+			    'id' => 'width',
+			    'default_value' => TMM_Content_Composer::set_default_value('width', '100%'),
+			    'description' => ''
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
-	</div><!--/ .one-half-->
+	    <div class="one-half">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'text',
+			    'title' => esc_html__('Height', 'cardealer'),
+			    'shortcode_field' => 'height',
+			    'id' => 'height',
+			    'default_value' => TMM_Content_Composer::set_default_value('height', 200),
+			    'description' => ''
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
+	    <div class="one-half location_mode_coordinates location_mode_container">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'text',
+			    'title' => esc_html__('Marker Latitude', 'cardealer'),
+			    'shortcode_field' => 'latitude',
+			    'id' => 'latitude',
+			    'default_value' => TMM_Content_Composer::set_default_value('latitude', 40.714623),
+			    'description' => esc_html__('Point on which the viewport will be centered. If not given and no markers are defined the viewport defaults to world view. In address Location mode it is calculated automatically!', 'cardealer')
+		    ));
+		    ?>
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Width', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'width',
-			'id' => 'width',
-			'default_value' => TMM_Content_Composer::set_default_value('width', '100%'),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half-->
+	    </div><!--/ .one-half-->
 
+	    <div class="one-half location_mode_coordinates location_mode_container">
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Mode', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'mode',
-			'id' => 'mode',
-			'options' => array(
-				'map' => __('Map', TMM_CC_TEXTDOMAIN),
-				'image' => __('Image', TMM_CC_TEXTDOMAIN),
-			),
-			'default_value' => TMM_Content_Composer::set_default_value('mode', 'map'),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half-->
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'text',
+			    'title' => esc_html__('Marker Longitude', 'cardealer'),
+			    'shortcode_field' => 'longitude',
+			    'id' => 'longitude',
+			    'default_value' => TMM_Content_Composer::set_default_value('longitude', -74.006605),
+			    'description' => esc_html__('Point on which the viewport will be centered. If not given and no markers are defined the viewport defaults to world view. In address Location mode it is calculated automatically!', 'cardealer')
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
+	    <div class="fullwidth location_mode_address location_mode_container">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'text',
+			    'title' => esc_html__('Address', 'cardealer'),
+			    'shortcode_field' => 'address',
+			    'id' => 'address',
+			    'default_value' => TMM_Content_Composer::set_default_value('address', 'New York'),
+			    'description' => ''
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Location mode', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'location_mode',
-			'id' => 'location_mode',
-			'options' => array(
-				'address' => __('Address', TMM_CC_TEXTDOMAIN),
-				'coordinates' => __('Coordinates', TMM_CC_TEXTDOMAIN),
-			),
-			'default_value' => TMM_Content_Composer::set_default_value('location_mode', 'address'),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half-->
+	    <div class="fullwidth map_mode_only">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'checkbox',
+			    'title' => esc_html__('Enable Popup', 'cardealer'),
+			    'shortcode_field' => 'enable_popup',
+			    'id' => 'enable_popup',
+			    'is_checked' => TMM_Content_Composer::set_default_value('enable_popup', 0),
+			    'description' => esc_html__('If true the info window for this marker will be shown when the map finished loading. If html is empty this option will be ignored.', 'cardealer')
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
-
-
-	<div class="one-half location_mode_coordinates location_mode_container">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Marker Latitude', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'latitude',
-			'id' => 'latitude',
-			'default_value' => TMM_Content_Composer::set_default_value('latitude', 40.714623),
-			'description' => __('Point on which the viewport will be centered. If not given and no markers are defined the viewport defaults to world view. In address Location mode it is calculated automatically!', TMM_CC_TEXTDOMAIN)
-		));
-		?>
-
-	</div><!--/ .one-half-->
-
-
-	<div class="one-half location_mode_coordinates location_mode_container">
-
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Marker Longitude', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'longitude',
-			'id' => 'longitude',
-			'default_value' => TMM_Content_Composer::set_default_value('longitude', -74.006605),
-			'description' => __('Point on which the viewport will be centered. If not given and no markers are defined the viewport defaults to world view. In address Location mode it is calculated automatically!', TMM_CC_TEXTDOMAIN)
-		));
-		?>
-	</div><!--/ .one-half-->
-
-
-	<div class="one-half location_mode_address location_mode_container">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'text',
-			'title' => __('Address', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'address',
-			'id' => 'address',
-			'default_value' => TMM_Content_Composer::set_default_value('address', 'New York'),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half-->
+	    <div class="fullwidth map_mode_only">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'textarea',
+			    'title' => esc_html__('Html Content', 'cardealer'),
+			    'shortcode_field' => 'content',
+			    'id' => 'content',
+			    'default_value' => TMM_Content_Composer::set_default_value('content', ''),
+			    'description' => ''
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
 
-	<div class="one-half">
-		<?php
-		$zoom_array = array();
-		for ($i = 1; $i <= 19; $i++) {
-			$zoom_array[$i] = $i;
-		}
-		?>
+    </div>
+    <div class="column">
+	    <div class="one-half">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'select',
+			    'title' => esc_html__('Map Mode', 'cardealer'),
+			    'shortcode_field' => 'mode',
+			    'id' => 'mode',
+			    'options' => array(
+				    'map' => esc_html__('Map', 'cardealer'),
+				    'image' => esc_html__('Image', 'cardealer'),
+			    ),
+			    'default_value' => TMM_Content_Composer::set_default_value('mode', 'map'),
+			    'description' => ''
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Zoom', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'zoom',
-			'id' => 'zoom',
-			'options' => $zoom_array,
-			'default_value' => TMM_Content_Composer::set_default_value('zoom', 11),
-			'description' => __('Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest.', TMM_CC_TEXTDOMAIN)
-		));
-		?>
+	    <div class="one-half">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'select',
+			    'title' => esc_html__('Location mode', 'cardealer'),
+			    'shortcode_field' => 'location_mode',
+			    'id' => 'location_mode',
+			    'options' => array(
+				    'address' => esc_html__('Address', 'cardealer'),
+				    'coordinates' => esc_html__('Coordinates', 'cardealer'),
+			    ),
+			    'default_value' => TMM_Content_Composer::set_default_value('location_mode', 'address'),
+			    'description' => ''
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
-	</div><!--/ .one-half-->
+	    <div class="one-half">
+		    <?php
+		    $zoom_array = array();
+		    for ($i = 1; $i <= 19; $i++) {
+			    $zoom_array[$i] = $i;
+		    }
+		    ?>
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Enable Scrollwheel', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'enable_scrollwheel',
-			'id' => 'enable_scrollwheel',
-			'is_checked' => TMM_Content_Composer::set_default_value('enable_scrollwheel', 0),
-			'description' => __('Set to false to disable zooming with your mouses scrollwheel.', TMM_CC_TEXTDOMAIN)
-		));
-		?>
-	</div><!--/ .one-half-->
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'select',
+			    'title' => esc_html__('Zoom', 'cardealer'),
+			    'shortcode_field' => 'zoom',
+			    'id' => 'zoom',
+			    'options' => $zoom_array,
+			    'default_value' => TMM_Content_Composer::set_default_value('zoom', 11),
+			    'description' => esc_html__('Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest.', 'cardealer')
+		    ));
+		    ?>
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Maptype', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'maptype',
-			'id' => 'maptype',
-			'options' => array(
-				'ROADMAP' => __('ROADMAP', TMM_CC_TEXTDOMAIN),
-				'SATELLITE' => __('SATELLITE', TMM_CC_TEXTDOMAIN),
-				'HYBRID' => __('HYBRID', TMM_CC_TEXTDOMAIN),
-				'TERRAIN' => __('TERRAIN', TMM_CC_TEXTDOMAIN),
-			),
-			'default_value' => TMM_Content_Composer::set_default_value('maptype', 'ROADMAP'),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half-->
+	    </div><!--/ .one-half-->
 
+	    <div class="one-half">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'select',
+			    'title' => esc_html__('Maptype', 'cardealer'),
+			    'shortcode_field' => 'maptype',
+			    'id' => 'maptype',
+			    'options' => array(
+				    'ROADMAP' => 'ROADMAP',
+				    'SATELLITE' => 'SATELLITE',
+				    'HYBRID' => 'HYBRID',
+				    'TERRAIN' => 'TERRAIN',
+			    ),
+			    'default_value' => TMM_Content_Composer::set_default_value('maptype', 'ROADMAP'),
+			    'description' => ''
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
+	    <div class="one-half image_mode_only">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'select',
+			    'title' => esc_html__('Map Scale', 'cardealer'),
+			    'shortcode_field' => 'mapscale',
+			    'id' => 'mapscale',
+			    'options' => array(
+				    '1' => '1',
+				    '2' => '2',
+			    ),
+			    'default_value' => TMM_Content_Composer::set_default_value('mapscale', '1'),
+			    'description' => ''
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Enable Marker', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'enable_marker',
-			'id' => 'enable_marker',
-			'is_checked' => TMM_Content_Composer::set_default_value('enable_marker', 0),
-			'description' => __('Set to false to disable display a marker in the viewport.', TMM_CC_TEXTDOMAIN)
-		));
-		?>
-	</div><!--/ .one-half-->
+	    <div class="one-half map_mode_only">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'checkbox',
+			    'title' => esc_html__('Enable Scrollwheel', 'cardealer'),
+			    'shortcode_field' => 'enable_scrollwheel',
+			    'id' => 'enable_scrollwheel',
+			    'is_checked' => TMM_Content_Composer::set_default_value('enable_scrollwheel', 0),
+			    'description' => esc_html__('Set to false to disable zooming with your mouses scrollwheel.', 'cardealer')
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Enable Popup', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'enable_popup',
-			'id' => 'enable_popup',
-			'is_checked' => TMM_Content_Composer::set_default_value('enable_popup', 0),
-			'description' => __('If true the info window for this marker will be shown when the map finished loading. If html is empty this option will be ignored.', TMM_CC_TEXTDOMAIN)
-		));
-		?>
+	    <div class="one-half map_mode_only">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'checkbox',
+			    'title' => esc_html__('Enable Marker', 'cardealer'),
+			    'shortcode_field' => 'enable_marker',
+			    'id' => 'enable_marker',
+			    'is_checked' => TMM_Content_Composer::set_default_value('enable_marker', 0),
+			    'description' => esc_html__('Set to false to disable display a marker in the viewport.', 'cardealer')
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
 
-	</div><!--/ .one-half-->
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => __('Marker is draggable', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'marker_is_draggable',
-			'id' => 'marker_is_draggable',
-			'is_checked' => TMM_Content_Composer::set_default_value('marker_is_draggable', 0),
-			'description' => __('Set marker draggable', TMM_CC_TEXTDOMAIN)
-		));
-		?>
-	</div><!--/ .one-half-->
-
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'textarea',
-			'title' => __('Html Content', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'content',
-			'id' => 'content',
-			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half-->
+	    <div class="one-half map_mode_only">
+		    <?php
+		    TMM_Content_Composer::html_option(array(
+			    'type' => 'checkbox',
+			    'title' => esc_html__('Marker is draggable', 'cardealer'),
+			    'shortcode_field' => 'marker_is_draggable',
+			    'id' => 'marker_is_draggable',
+			    'is_checked' => TMM_Content_Composer::set_default_value('marker_is_draggable', 0),
+			    'description' => esc_html__('Set marker draggable', 'cardealer')
+		    ));
+		    ?>
+	    </div><!--/ .one-half-->
+    </div>
 
 </div>
 
@@ -231,17 +241,36 @@
 	jQuery(function() {
 
 		var $mode = jQuery('select#mode'),
-				$input = jQuery('input[type=text]#width');
+			$input = jQuery('input[type=text]#width'),
+			$locationMode = jQuery('select#location_mode'),
+			$coords = jQuery('.location_mode_coordinates'),
+			$address = jQuery('.location_mode_address'),
+			$imageModeOnly = jQuery('.image_mode_only'),
+			$mapModeOnly = jQuery('.map_mode_only');
 
 		var checkMode = function(mode) {
-			if (mode.children(':selected').val() == 'map') {
+			if (mode.children(':selected').val() === 'map') {
 				$input.prop({
 					"disabled": true
 				}).css('background-color', '#eee');
+				$imageModeOnly.fadeOut();
+				$mapModeOnly.fadeIn();
 			} else {
 				$input.prop({
 					"disabled": false
 				}).css('background-color', '#fff');
+				$imageModeOnly.fadeIn();
+				$mapModeOnly.fadeOut();
+			}
+		};
+
+		var checkLocationMode = function(mode) {
+			if (mode.children(':selected').val() === 'address') {
+				$coords.fadeOut();
+				$address.fadeIn();
+			} else {
+				$coords.fadeIn();
+				$address.fadeOut();
 			}
 		};
 
@@ -249,6 +278,12 @@
 
 		$mode.on('change', function() {
 			checkMode(jQuery(this));
+		});
+
+		checkLocationMode($locationMode);
+
+		$locationMode.on('change', function() {
+			checkLocationMode(jQuery(this));
 		});
 
 		tmm_ext_shortcodes.changer(shortcode_name);

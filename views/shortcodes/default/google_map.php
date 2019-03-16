@@ -4,8 +4,9 @@ if (TMM::get_option("api_key_google")){
 
 	$inique_id = uniqid();
 
-	$google_maps_api_key = (TMM::get_option("api_key_google")) ? 'key=' . TMM::get_option("api_key_google") . '&' : '' ;
+	$google_maps_api_key = (TMM::get_option("api_key_google")) ? 'key=' . TMM::get_option("api_key_google") : '' ;
 	$map_link = 'https://maps.google.com/maps/api/js?' . $google_maps_api_key;
+	$mapscale = isset($mapscale) ? $mapscale : '1';
 
 	$js_controls = '{}';
 
@@ -77,12 +78,9 @@ if (TMM::get_option("api_key_google")){
 		}
 
 		$location_mode_string = 'center=' . $latitude . ',' . $longitude;
-
-		$staticmap = 'https://maps.googleapis.com/maps/api/staticmap?' . $location_mode_string . '&zoom=' . (int) $zoom . '&maptype=' . strtolower($maptype) . '&size=' . (int)$width . 'x' . (int)$height . $marker_string . '&' . $google_maps_api_key;
-
 		?>
 
-        <img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo esc_attr($location_mode_string) ?>&zoom=<?php echo esc_attr($zoom) ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo esc_attr($width) ?>x<?php echo esc_attr($height) ?><?php echo esc_attr($marker_string) ?>&<?php echo esc_attr( $google_maps_api_key ) ?>">
+        <img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo esc_attr($location_mode_string) ?>&zoom=<?php echo esc_attr($zoom) ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo esc_attr($width) ?>x<?php echo esc_attr($height) ?><?php echo esc_attr($marker_string) ?>&scale=<?php echo esc_attr( $mapscale ) ?>&<?php echo esc_attr( $google_maps_api_key ) ?>" width="<?php echo esc_attr($width) ?>" height="<?php echo esc_attr($height) ?>" alt="<?php echo esc_attr(str_replace('+', ' ', $address)) ?>">
 
 	<?php }
 
