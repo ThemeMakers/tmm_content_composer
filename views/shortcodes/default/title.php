@@ -231,7 +231,7 @@ $allowed_html = array(
 );
 
 if ( isset($title_type) && $title_type=='section'){
-    $html .= '<div class="section-title"><' . esc_attr($type) . ' class="' . esc_attr($css_class) . '" ' . esc_attr($styles) . '>' . $content . '</' . esc_attr($type) . '></div>';
+    $html .= '<div class="section-title"><' . $type . ' class="' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '></div>';
 } else {
     
     if (isset($word_animate) && $word_animate){
@@ -243,14 +243,14 @@ if ( isset($title_type) && $title_type=='section'){
 	    }
 
         $html .= '<style type="text/css">.id_' . $uuid . ':before {content:"";position: absolute;left:0;top:0;right:0;bottom:0;' . $bg_radius . $bg_color . $bg_opacity . '}</style>';
-	    $html .= '<div class="extraRadius ' . esc_attr($css_class) . '" ' . wp_kses($general_styles, $allowed_html) . '><div class="' . esc_attr($css_content) . '">';
+	    $html .= '<div class="extraRadius ' . $css_class . '" ' . wp_kses($general_styles, $allowed_html) . '><div class="' . $css_content . '">';
         foreach ($content as $title){
-            $html .= '<' . esc_attr($type) . ' ' . wp_kses($single_styles, $allowed_html) . '>' . esc_html($title) . '</' . esc_attr($type) . '>';
+            $html .= '<' . $type . ' ' . wp_kses($single_styles, $allowed_html) . '>' . esc_html($title) . '</' . $type . '>';
         }
         $html .= '</div></div>';
         
     } else {
-        $html .= '<' . esc_attr($type) . ' class="' . esc_attr($css_class) . '" ' . esc_attr($styles) . '>' . $content . '</' . esc_attr($type) . '>';
+        $html .= '<' . $type . ' class="' . $css_class . '" ' . $styles . '>' . $content . '</' . $type . '>';
     }
 }
 
