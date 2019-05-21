@@ -415,6 +415,10 @@
 			inset 0 0 0 1px rgba(0,0,0,.6),
 			inset 0 0 0 2px rgba(255,255,255,.2);
 	}
+
+.tmm_shortcode_template { display: -webkit-box; display: -webkit-flex; display: -moz-flex; display: -ms-flexbox; display: flex; -webkit-flex-flow: row nowrap; -moz-flex-flow: row nowrap; -ms-flex-flow: row nowrap; flex-flow: row nowrap }
+
+.tmm_shortcode_template .column { -webkit-box-flex: 1; -webkit-flex: 1 0 50%; -moz-box-flex: 1; -moz-flex: 1 0 50%; -ms-flex: 1 0 50%; flex: 1 0 50% }
         
 
 @media only screen and (max-width: 960px) {

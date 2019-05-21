@@ -112,7 +112,7 @@ class TMM_Content_Composer {
 	}
 
 	public static function enqueue_scripts() {
-		wp_register_script('tmm_cc_front', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, 1);
+		wp_enqueue_script('tmm_cc_front', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, 1);
 
 	}
 
