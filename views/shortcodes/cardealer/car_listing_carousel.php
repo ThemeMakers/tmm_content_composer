@@ -90,6 +90,8 @@ if ( !empty($query->posts) ) {
 <script type="text/javascript">
 	jQuery(function ($) {
 
+		var isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
+
 		$("#clc_<?php echo esc_attr( $uniqid ) ?>").sudoSlider({
 			auto: <?php echo esc_attr( (int) $autoslide ) ?>,
 			ease: 'swing',
@@ -98,12 +100,13 @@ if ( !empty($query->posts) ) {
 			resumePause: 2000,
 			touch: true,
 			prevNext: false,
-			slideCount: <?php echo esc_attr( (int) $items_per_set ) ?>,
+			slideCount: isMobile ? 2 : <?php  echo esc_attr( (int) $items_per_set ) ?>,
 			moveCount: 1,
 			startSlide: false,
 			continuous: true,
 			controlsFade: false,
-			customLink: "#clc_controls_<?php echo esc_attr( $uniqid ) ?> a"
+			customLink: "#clc_controls_<?php echo esc_attr( $uniqid ) ?> a",
+			responsive: true
 		});
 
 	});

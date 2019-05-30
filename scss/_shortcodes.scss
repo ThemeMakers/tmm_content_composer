@@ -1146,10 +1146,40 @@ $car-body-title-color-hover						: #ff600a;
 	.clc_content {
 		&.item-grid {
 			margin: 0 -20px;
+
+			@include media('<ipads_p') {
+				margin: 0 -5px;
+			}
+
 			.car-entry {
 				> div {
 					margin: 15px 20px;
+
+					&.image-post {
+						@include media('<ipads_p') {
+							margin: 10px 5px;
+						}
+					}
+
+					&.detailed {
+						@include media('<ipads_p') {
+							margin: 5px;
+						}
+
+						.title-item {
+							@include media('<ipads_p') {
+								font-size: 14px;
+							}
+						}
+
+						.price {
+							@include media('<ipads_p') {
+								font-size: 16px;
+							}
+						}
+					}
 				}
+
 				&[class*="col-"] {
 					padding: 0;
 				}
