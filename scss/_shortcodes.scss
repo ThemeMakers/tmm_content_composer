@@ -1414,3 +1414,22 @@ $car-body-title-color-hover						: #ff600a;
 		}
 	}
 }
+
+/* -------------------------------------------------- */
+/*	Dealer Listing
+/* -------------------------------------------------- */
+
+.lc-dealer-list {
+	article {
+		margin: 0 0 2em;
+		padding: 20px 0;
+		background-color: #f4f4f4;
+		border-bottom: 3px solid darken(#f4f4f4, 20%);
+
+		.list-entry {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+	}
+}

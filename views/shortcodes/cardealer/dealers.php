@@ -13,6 +13,7 @@ $args = array(
 	'orderby' => 'registered',
 	'order' => ($order != 'random' ? $order : 'ASC'),
 	'number' => $user_number,
+	'paged' => '1'
 );
 
 if(isset($dealer_type) && $dealer_type && $dealer_type !== '1'){
@@ -44,11 +45,36 @@ if($order == 'random'){
 }
 ?>
 
-<div id="change-items" class="row item-grid">
+<div class="lc-dealer-list">
 
 	<?php
 
-	foreach ($users as $user_data) {
+	// Pagination vars
+	$current_page = get_query_var('paged') ? (int) get_query_var('paged') : 1;
+	$users_per_page = 10;
+
+	$args = array(
+		'number' => $users_per_page, // How many per page
+		'paged' => $current_page // What page to get, starting from 1.
+	);
+
+	$u_query = new WP_User_Query( $args );
+
+	$total_users = $u_query->get_total(); // How many users we have in total (beyond the current page)
+	$num_pages = ceil($total_users / $users_per_page); // How many pages of users we will need
+
+	if ($current_page == $num_pages) {
+		$users_per_page = $total_users % $users_per_page;
+	} else {
+		if ($total_users < $users_per_page) {
+			$users_per_page = $total_users;
+		}
+	} ?>
+
+	<h3>Page <?php echo $current_page; ?> of <?php echo $num_pages; ?></h3>
+	<p>Displaying <?php echo $users_per_page; ?> of <?php echo $total_users; ?> users</p>
+
+	<?php if ( $u_query->get_results() ) foreach( $u_query->get_results() as $user_data )  {
 
 		if (empty($user_data)) {
 			continue;
@@ -60,113 +86,111 @@ if($order == 'random'){
 
 		?>
 
-		<article class="col-md-4">
+		<article class="row">
 
-			<?php if($show_dealer_logo && !empty($logo_url)){ ?>
+			<div class="col-md-4">
+				<?php if($show_dealer_logo && !empty($logo_url)){ ?>
 
-			<div class="image-post">
+					<div class="image-post">
 
-				<a href="<?php echo $dealers_page; ?>" class="single-image">
+						<a href="<?php echo esc_url( $dealers_page ); ?>" class="single-image">
+							<?php $logoUrl = TMM_Helper::get_image($logo_url, '300*225'); ?>
+							<img src="<?php echo esc_url( $logoUrl ); ?>" alt="<?php echo esc_attr( $user_data->display_name ); ?>">
+						</a>
 
-					<img src="<?php echo $logo_url; ?>" alt="<?php echo $user_data->display_name; ?>">
+					</div>
 
-				</a>
+				<?php } else {
+					$text = isset($user_data->nickname) ? $user_data->nickname : $user_data->first_name . ' ' . $user_data->last_name;
+					$no_logo_text = str_replace(" ", "+", $text);
+					$link_url = 'https://dummyimage.com/300x225/ccc/ffffff.gif&text=' . esc_html( $no_logo_text );
+					echo '<img class="aligncenter" src=' . $link_url . '>';
+				} ?>
+
+				<i class="icon-cab"></i> <?php echo count_user_posts( $user_data->ID , "car"  ); ?>
+			</div>
+			<div class="col-md-8">
+
+				<h6 class="title-item">
+					<?php if (!empty($user_data->nickname)) { ?>
+						<a href="<?php echo esc_url( $dealers_page ); ?>">
+							<?php echo esc_html( $user_data->nickname ); ?>
+						</a>
+					<?php } ?>
+				</h6>
+
+				<h6><?php echo esc_html_e('Contacts', 'tmm_content_composer'); ?>:</h6>
+
+				<div class="row">
+					<div class="col-md-8">
+
+						<ul class="list-entry">
+
+							<?php if ($show_address && !empty($ud->address)) { ?>
+
+								<li><i class="icon-warehouse"></i> <?php echo $ud->address ?></li>
+
+							<?php } ?>
+
+						</ul>
+
+						<?php if (!empty($ud->working_hours)) { ?>
+
+							<br>
+
+							<h6><?php echo esc_html_e('Working hours', 'tmm_content_composer'); ?>:</h6>
+
+							<?php echo nl2br( esc_html($ud->working_hours) ) ?>
+
+						<?php } ?>
+
+
+
+					</div>
+					<div class="col-md-4">
+
+						<ul class="list-entry">
+
+							<?php if ($show_phone && !empty($ud->phone)) { ?>
+
+								<li><i class="icon-phone"></i> <?php echo $ud->phone ?></li>
+
+							<?php } ?>
+
+							<?php if ($show_mobile && !empty($ud->mobile)) { ?>
+
+								<li><i class="icon-mobile"></i> <?php echo $ud->mobile ?></li>
+
+							<?php } ?>
+
+							<?php if ($show_fax && !empty($ud->fax)) { ?>
+
+								<li><i class="icon-fax"></i> <?php echo $ud->fax ?></li>
+
+							<?php } ?>
+
+							<li>&nbsp;</li>
+
+							<?php if ($show_email && !empty($ud->user_email)) { ?>
+
+								<li><i class="icon-at"></i> <a href="mailto:<?php echo esc_attr( $ud->user_email ) ?>" rel="nofollow"><?php echo esc_html_e('E-mail Us', 'tmm_content_composer'); ?></a></li>
+
+							<?php } ?>
+
+							<?php if ($show_site && !empty($ud->user_url)) { ?>
+
+								<li><i class="icon-globe"></i> <a href="<?php echo esc_url( $ud->user_url ) ?>" rel="nofollow" target="_blank"><?php echo esc_html_e('Website', 'tmm_content_composer'); ?></a></li>
+
+							<?php } ?>
+
+						</ul>
+
+					</div>
+				</div>
+
 
 			</div>
 
-			<?php } ?>
-
-			<h6 class="title-item">
-
-				<a href="<?php echo $dealers_page; ?>">
-					<?php echo $user_data->display_name; ?>
-				</a>
-
-			</h6>
-
-			<?php
-			if ($show_dealer_bio) {
-				$bio = $ud->description;
-				if($dealer_bio_symbols_count > 0){
-					$bio_after = strlen($bio) > (int) $dealer_bio_symbols_count ? ' ...' : '';
-					$bio = substr($bio, 0, (int) $dealer_bio_symbols_count) . $bio_after;
-				}
-				?>
-
-				<div class="dealer-bio"><?php echo $bio ?></div>
-
-			<?php } ?>
-
-			<div class="clear"></div>
-
-			<ul class="list-entry">
-
-				<?php if ($show_phone && !empty($ud->phone)) { ?>
-
-					<li><i class="icon-phone"></i> <?php echo $ud->phone ?></li>
-
-				<?php } ?>
-
-				<?php if ($show_mobile && !empty($ud->mobile)) { ?>
-
-					<li><i class="icon-mobile"></i> <?php echo $ud->mobile ?></li>
-
-				<?php } ?>
-
-				<?php if ($show_fax && !empty($ud->fax)) { ?>
-
-					<li><i class="icon-fax"></i> <?php echo $ud->fax ?></li>
-
-				<?php } ?>
-
-				<?php if ($show_email && !empty($ud->user_email)) { ?>
-
-					<li><i class="icon-at"></i> <a href="mailto:<?php echo $ud->user_email ?>" rel="nofollow"><?php echo $ud->user_email ?></a></li>
-
-				<?php } ?>
-
-				<?php if ($show_skype && !empty($ud->skype)) { ?>
-
-					<li><i class="icon-skype"></i> <?php echo $ud->skype ?></li>
-
-				<?php } ?>
-
-				<?php if ($show_site && !empty($ud->user_url)) { ?>
-
-					<li><i class="icon-globe"></i> <a href="<?php echo $ud->user_url ?>" rel="nofollow" target="_blank"><?php echo $ud->user_url ?></a></li>
-
-				<?php } ?>
-
-				<?php if ($show_address && !empty($ud->address)) { ?>
-
-					<li><i class="icon-warehouse"></i> <?php echo $ud->address ?></li>
-
-				<?php } ?>
-
-				<?php
-				if ($show_map && !empty($ud->address)) {
-
-					$map_data = TMM_Cardealer_User::get_user_map_data($user_data->ID);
-					$api_key = TMM::get_option( "google_map_api" );
-
-					if (!empty($map_data['map_latitude']) && $map_data['show_map_to_visitors']) {
-						?>
-
-						<p class="dealer-map">
-							<?php
-							if (shortcode_exists('google_map')) {
-								echo do_shortcode('[google_map height="200" width="300" key="'. $api_key .'" mode="image" location_mode="coordinates" latitude="' . $map_data['map_latitude'] . '" longitude="' . $map_data['map_longitude'] . '" address="" zoom="15" enable_scrollwheel="0" maptype="ROADMAP" enable_marker="1" enable_popup="0" marker_is_draggable="0"]');
-							}
-							?>
-						</p>
-
-						<?php
-					}
-					?>
-
-				<?php } ?>
-
-			</ul>
 
 		</article>
 
@@ -175,5 +199,23 @@ if($order == 'random'){
 	}
 
 	?>
+
+	<hr>
+	<br>
+
+	<p>
+		<?php
+		// Previous page
+		if ( $current_page > 1 ) {
+			echo '<a href="'. add_query_arg(array('paged' => $current_page-1)) .'">' . esc_html__('Previous Page', 'tmm_content_composer') . '</a>';
+		}
+
+		// Next page
+		if ( $current_page < $num_pages ) {
+			echo '<a href="'. add_query_arg(array('paged' => $current_page+1)) .'">' . esc_html__('Next Page', 'tmm_content_composer') . '</a>';
+		}
+		?>
+	</p>
+
 
 </div>
