@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2019-03-16 02:26+0100\n"
-"PO-Revision-Date: 2019-03-16 02:26+0100\n"
-"Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
+"POT-Creation-Date: 2019-06-11 22:57+0200\n"
+"PO-Revision-Date: 2019-06-11 22:58+0200\n"
+"Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -466,6 +466,30 @@ msgstr ""
 msgid "View all ads filed under %s"
 msgstr ""
 
+#: views/shortcodes/cardealer/dealers.php:122
+msgid "Contacts"
+msgstr ""
+
+#: views/shortcodes/cardealer/dealers.php:141
+msgid "Working hours"
+msgstr ""
+
+#: views/shortcodes/cardealer/dealers.php:176
+msgid "E-mail Us"
+msgstr ""
+
+#: views/shortcodes/cardealer/dealers.php:182
+msgid "Website"
+msgstr ""
+
+#: views/shortcodes/cardealer/dealers.php:210
+msgid "Previous Page"
+msgstr ""
+
+#: views/shortcodes/cardealer/dealers.php:215
+msgid "Next Page"
+msgstr ""
+
 #: views/shortcodes/cardealer/popups/animated_banner.php:9
 msgid "Banner Size"
 msgstr ""
@@ -593,7 +617,7 @@ msgid "All dealers"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/car_listing_carousel.php:132
-#: views/shortcodes/cardealer/popups/dealers.php:46
+#: views/shortcodes/cardealer/popups/dealers.php:47
 msgid "Administrator"
 msgstr ""
 
@@ -671,8 +695,8 @@ msgid "Enable link"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/car_makes.php:88
-#: views/shortcodes/cardealer/popups/dealers.php:44
-#: views/shortcodes/cardealer/popups/dealers.php:72
+#: views/shortcodes/cardealer/popups/dealers.php:45
+#: views/shortcodes/cardealer/popups/dealers.php:73
 msgid "All"
 msgstr ""
 
@@ -684,79 +708,79 @@ msgstr ""
 msgid "Select multiple car makes by holding CTRL + selecting certain option."
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:9
+#: views/shortcodes/cardealer/popups/dealers.php:10
 msgid "Dealers Number"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:24
+#: views/shortcodes/cardealer/popups/dealers.php:25
 msgid "Display Order"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:28
+#: views/shortcodes/cardealer/popups/dealers.php:29
 msgid "Latest First"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:29
+#: views/shortcodes/cardealer/popups/dealers.php:30
 msgid "Oldest First"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:30
+#: views/shortcodes/cardealer/popups/dealers.php:31
 msgid "Random"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:45
+#: views/shortcodes/cardealer/popups/dealers.php:46
 msgid "All without Administrator"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:55
+#: views/shortcodes/cardealer/popups/dealers.php:56
 msgid "Dealer Type"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:91
+#: views/shortcodes/cardealer/popups/dealers.php:92
 msgid "Specific Dealer"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:109
+#: views/shortcodes/cardealer/popups/dealers.php:110
 msgid "Display Dealer Logo"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:124
+#: views/shortcodes/cardealer/popups/dealers.php:128
 msgid "Display Dealer Bio"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:139
+#: views/shortcodes/cardealer/popups/dealers.php:143
 msgid "Display Phone"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:154
+#: views/shortcodes/cardealer/popups/dealers.php:158
 msgid "Display Cell Phone"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:169
+#: views/shortcodes/cardealer/popups/dealers.php:173
 msgid "Display Fax"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:184
+#: views/shortcodes/cardealer/popups/dealers.php:188
 msgid "Display Email"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:199
+#: views/shortcodes/cardealer/popups/dealers.php:203
 msgid "Display Skype ID"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:214
+#: views/shortcodes/cardealer/popups/dealers.php:218
 msgid "Display Website Url"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:229
+#: views/shortcodes/cardealer/popups/dealers.php:233
 msgid "Display Postal Address"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:244
+#: views/shortcodes/cardealer/popups/dealers.php:248
 msgid "Display Map Location"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:259
+#: views/shortcodes/cardealer/popups/dealers.php:263
 msgid "Excerpt Bio symbol count"
 msgstr ""
 
