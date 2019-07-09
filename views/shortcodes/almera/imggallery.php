@@ -16,13 +16,15 @@ if (!empty($album_ids)) {
     foreach ($album_ids as $gallery_id) {
         
         $cats = get_the_terms($gallery_id, 'gallery_categories');
-        
-        foreach ($cats as $cat){            
-            $filter[$cat->term_id]['id'] = $cat->term_id;
-            $filter[$cat->term_id]['name'] = $cat->name;
-            $filter[$cat->term_id]['slug'] = $cat->slug;
-        }  
-        
+
+        if (is_array($cats) || is_object($cats)) {
+            foreach ($cats as $cat){
+                $filter[$cat->term_id]['id'] = $cat->term_id;
+                $filter[$cat->term_id]['name'] = $cat->name;
+                $filter[$cat->term_id]['slug'] = $cat->slug;
+            }
+        }
+
         $tmp = get_post_meta($gallery_id, 'thememakers_gallery', true);
         
         if (!empty($tmp)) {            
