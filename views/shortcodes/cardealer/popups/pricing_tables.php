@@ -2,122 +2,126 @@
 
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
-	<div class="one-half">
+	<div class="column">
 
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Table Count', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'count',
-			'id' => 'count',
-			'options' => array(
-				1 => 1,
-				2 => 2,
-				3 => 3,
-				4 => 4,
-				6 => 6,
-			),
-			'default_value' => TMM_Content_Composer::set_default_value('count', 1),
-			'description' => ''
-		));
-		?>
+		<div class="one-half">
+
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => __('Table Count', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'count',
+				'id' => 'count',
+				'options' => array(
+					1 => 1,
+					2 => 2,
+					3 => 3,
+					4 => 4,
+					6 => 6,
+				),
+				'default_value' => TMM_Content_Composer::set_default_value('count', 1),
+				'description' => ''
+			));
+			?>
+		</div>
+
+		<div class="one-half">
+			<?php
+			$row_count_array = array();
+			for ($i = 1; $i <= 20; $i++) {
+				$row_count_array[$i] = $i;
+			}
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => __('Row Count', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'row_count',
+				'id' => 'row_count',
+				'options' => $row_count_array,
+				'default_value' => TMM_Content_Composer::set_default_value('row_count', 4),
+				'description' => ''
+			));
+			?>
+
+		</div><!--/ .one-half-->
+
 	</div>
+</div>
 
-	<div class="one-half">
-		<?php
-		$row_count_array = array();
-		for ($i = 1; $i <= 20; $i++) {
-			$row_count_array[$i] = $i;
-		}
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Row Count', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'row_count',
-			'id' => 'row_count',
-			'options' => $row_count_array,
-			'default_value' => TMM_Content_Composer::set_default_value('row_count', 4),
-			'description' => ''
-		));
-		?>
+<ul id="price_tables_list">
 
-	</div><!--/ .one-half-->
-
-	<ul id="price_tables_list">
-
-		<?php
-		$shortcodes_texts_array = array(0 => '[price_table title="' . __('Starter Package', TMM_CC_TEXTDOMAIN) . '" price="' . __('19.95', TMM_CC_TEXTDOMAIN) . '" button_text="' . __('Details', TMM_CC_TEXTDOMAIN) . '" button_link="#" featured="0"]^^^[/price_table]');
+	<?php
+	$shortcodes_texts_array = array(0 => '[price_table title="' . __('Starter Package', TMM_CC_TEXTDOMAIN) . '" price="' . __('19.95', TMM_CC_TEXTDOMAIN) . '" button_text="' . __('Details', TMM_CC_TEXTDOMAIN) . '" button_link="#" featured="0"]^^^[/price_table]');
+	//***
+	if (isset($_REQUEST["shortcode_mode_edit"])) {
+		$shortcodes_texts_array = array();
+		$edit_data_array = array();
 		//***
-		if (isset($_REQUEST["shortcode_mode_edit"])) {
-			$shortcodes_texts_array = array();
-			$edit_data_array = array();
-			//***
-			//parcing data
-			$content_edit_data = $_REQUEST["shortcode_mode_edit"]['content'];
-			$content_edit_data = str_replace('__PRICE_TABLE__', '[price_table', $content_edit_data);
-			$content_edit_data = str_replace('__PRICE_TABLE_CLOSE__', ']', $content_edit_data);
-			$content_edit_data = str_replace('__PRICE_TABLE_END__', '[/price_table]', $content_edit_data);
-			$content_edit_data = str_replace('\\', '"', $content_edit_data);
-			$content_edit_data = explode('[/price_table]', $content_edit_data);
-			//***
-			//unset last empty item
-			end($content_edit_data);
-			unset($content_edit_data[key($content_edit_data)]);
-			//***
-			if (!empty($content_edit_data)) {
-				foreach ($content_edit_data as $key => $value) {
-					if (empty($value)) {
-						unset($content_edit_data[$key]);
-					}
-					$shortcodes_texts_array[] = trim($value . '[/price_table]');
+		//parcing data
+		$content_edit_data = $_REQUEST["shortcode_mode_edit"]['content'];
+		$content_edit_data = str_replace('__PRICE_TABLE__', '[price_table', $content_edit_data);
+		$content_edit_data = str_replace('__PRICE_TABLE_CLOSE__', ']', $content_edit_data);
+		$content_edit_data = str_replace('__PRICE_TABLE_END__', '[/price_table]', $content_edit_data);
+		$content_edit_data = str_replace('\\', '"', $content_edit_data);
+		$content_edit_data = explode('[/price_table]', $content_edit_data);
+		//***
+		//unset last empty item
+		end($content_edit_data);
+		unset($content_edit_data[key($content_edit_data)]);
+		//***
+		if (!empty($content_edit_data)) {
+			foreach ($content_edit_data as $key => $value) {
+				if (empty($value)) {
+					unset($content_edit_data[$key]);
 				}
+				$shortcodes_texts_array[] = trim($value . '[/price_table]');
 			}
 		}
+	}
+	?>
+
+	<?php foreach ($shortcodes_texts_array as $pt_shortcode_txt) : ?>
+		<?php
+		$_REQUEST["shortcode_mode_edit"] = 1;
+		do_shortcode($pt_shortcode_txt);
+
+		$options_content = explode('^', $_REQUEST["shortcode_mode_edit"]['content']);
 		?>
+		<li>
+			<section class="simple-pricing-table col1 clearfix">
 
-		<?php foreach ($shortcodes_texts_array as $pt_shortcode_txt) : ?>
-			<?php
-			$_REQUEST["shortcode_mode_edit"] = 1;
-			do_shortcode($pt_shortcode_txt);
-			
-			$options_content = explode('^', $_REQUEST["shortcode_mode_edit"]['content']);
-			?>
-			<li>
-				<section class="simple-pricing-table col1 clearfix">
+				<div class="column">
 
-					<div class="column">
+					<div class="header">
+						<h2 class="title"><input type="text" class="price_table_title_row price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['title'] ?>" /></h2>
+						<h3 class="cost"><input type="text" class="price_table_price_row price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['price'] ?>" /></h3>
+					</div><!-- .header -->
 
-						<div class="header">
-							<h2 class="title"><input type="text" class="price_table_title_row price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['title'] ?>" /></h2>
-							<h3 class="cost"><input type="text" class="price_table_price_row price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['price'] ?>" /></h3>
-						</div><!-- .header -->
-						
-						<ul class="features">
-							<?php foreach ($options_content as $option_text) : ?>
-								<li><input type="text" class="price_table_option_row price_table_row_input data-input" value="<?php echo $option_text ?>" placeholder="<?php esc_html_e('Enter text here', TMM_CC_TEXTDOMAIN); ?>" /></li>
-							<?php endforeach; ?>
-						</ul><!-- .features -->
+					<ul class="features">
+						<?php foreach ($options_content as $option_text) : ?>
+							<li><input type="text" class="price_table_option_row price_table_row_input data-input" value="<?php echo $option_text ?>" placeholder="<?php esc_html_e('Enter text here', TMM_CC_TEXTDOMAIN); ?>" /></li>
+						<?php endforeach; ?>
+					</ul><!-- .features -->
 
-						<div class="footer">
-							<h4 class="label"><?php esc_html_e('Button Text', TMM_CC_TEXTDOMAIN); ?></h4>
-							<input type="text" class="price_table_button_text price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['button_text'] ?>" />
-							<h4 class="label"><?php esc_html_e('Button Link', TMM_CC_TEXTDOMAIN); ?></h4>
-							<input type="text" class="price_table_button_link price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['button_link'] ?>" /><br />
-							<input type="checkbox" value="<?php echo $_REQUEST["shortcode_mode_edit"]['featured'] ?>" <?php echo($_REQUEST["shortcode_mode_edit"]['featured'] == 1 ? 'checked' : '') ?> class="featured_price_list data-check js_shortcode_checkbox_self_update" />
-							<label class="label">
-								<span></span>
-								<i class="description"><?php esc_html_e('Is Featured', TMM_CC_TEXTDOMAIN); ?></i>
-							</label>
-						</div><!-- .footer -->
+					<div class="footer">
+						<h4 class="label"><?php esc_html_e('Button Text', TMM_CC_TEXTDOMAIN); ?></h4>
+						<input type="text" class="price_table_button_text price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['button_text'] ?>" />
+						<h4 class="label"><?php esc_html_e('Button Link', TMM_CC_TEXTDOMAIN); ?></h4>
+						<input type="text" class="price_table_button_link price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['button_link'] ?>" /><br />
+						<input type="checkbox" value="<?php echo $_REQUEST["shortcode_mode_edit"]['featured'] ?>" <?php echo($_REQUEST["shortcode_mode_edit"]['featured'] == 1 ? 'checked' : '') ?> class="featured_price_list data-check js_shortcode_checkbox_self_update" />
+						<label class="label">
+							<span></span>
+							<i class="description"><?php esc_html_e('Is Featured', TMM_CC_TEXTDOMAIN); ?></i>
+						</label>
+					</div><!-- .footer -->
 
-					</div><!-- .column -->
+				</div><!-- .column -->
 
-				</section>
-			</li>
-			
-		<?php endforeach; ?>
+			</section>
+		</li>
 
-	</ul>
-</div>
+	<?php endforeach; ?>
+
+</ul>
 
 <!-- --------------------------  PROCESSOR  --------------------------- -->
 
