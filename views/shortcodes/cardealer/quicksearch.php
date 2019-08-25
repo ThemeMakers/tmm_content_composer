@@ -123,7 +123,9 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 
 <div class="<?php echo esc_attr( $widget_class ) ?>" <?php echo esc_attr( $styles ) ?>>
 
-	<div class="quicksearch_load_area"></div>
+	<div class="quicksearch_load_area">
+		<div class="cardealer-spinner"><div></div><div></div><div></div><div></div><div></div></div>
+	</div>
 
 	<form class="car_form_search" action="<?php echo esc_attr( $searching_page ) ?>">
 

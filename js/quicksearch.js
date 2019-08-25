@@ -201,7 +201,7 @@ var THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH = function() {
                 car_location_id = car_location.val(),
                 selected_region_id = 0,
                 level = 0,
-                region_id = 0
+                region_id = 0,
                 loader = widget.find('.quicksearch_load_area');
 
 			loader.show();
