@@ -38,6 +38,14 @@ if ( ! defined( 'ICL_LANGUAGE_CODE' ) ) {
 	);
 }
 
+if ( isset( $cate ) && $cate != '' && ! empty( $cate ) ) {
+	$args['tax_query'][] = array(
+		'taxonomy' => 'carproducer',
+		'field' => 'term_id',
+		'terms' => $cate
+	);
+}
+
 $query = new WP_Query( $args );
 
 $car_compare_list = TMM_Ext_PostType_Car::get_compare_list();
@@ -75,7 +83,7 @@ $car_watch_list   = TMM_Ext_PostType_Car::get_watch_list();
 			$GLOBALS['recent_cars_show_currency_converter'] = ! isset( $show_recent_cars_currency_converter ) || $show_recent_cars_currency_converter;
 			$GLOBALS['recent_cars_show_details_button']     = ! isset( $show_details_button ) || $show_details_button;
 			$GLOBALS['hide_cars_options']                   = false;
-			$GLOBALS['compare_watchlist']                   = true;
+			$GLOBALS['compare_watchlist']                   = isset( $compare_watchlist ) ? $compare_watchlist : (bool) TMM::get_option('compare_watchlist', TMM_APP_CARDEALER_PREFIX);
 			$GLOBALS['thumbnail_size']                      = isset( $thumbnail_size ) ? $thumbnail_size : 'large';
 			get_template_part( 'article', 'car' );
 		}

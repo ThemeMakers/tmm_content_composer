@@ -1,8 +1,8 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
-    
+
 	<div class="one-half">
-		
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
@@ -13,7 +13,7 @@
 			'description' => '',
 		));
 		?>
-		
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
@@ -24,7 +24,7 @@
 			'description' => ''
 		));
 		?>
-		
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
@@ -35,7 +35,7 @@
 			'description' => ''
 		));
 		?>
-		
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
@@ -47,10 +47,30 @@
 		));
 		?>
 
+		<?php
+		$categories = get_terms( 'carproducer' );
+		$options          = array();
+		$options['']      = 'All';
+
+		foreach ( $categories as $cate ) {
+			$options[ $cate->term_id ] = __( $cate->name, TMM_CC_TEXTDOMAIN );
+		}
+
+		TMM_Content_Composer::html_option(array(
+			'type'            => 'select',
+			'title'           => __( 'Filter by make', TMM_CC_TEXTDOMAIN ),
+			'shortcode_field' => 'cate',
+			'id'              => '',
+			'options'         => $options,
+			'default_value'   => TMM_Content_Composer::set_default_value( 'cate', '' ),
+			'description'     => '',
+		));
+		?>
+
 	</div>
-    
+
 	<div class="one-half">
-		
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
@@ -61,7 +81,7 @@
 			'description' => ''
 		));
 		?>
-		
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
@@ -89,7 +109,7 @@
 		));
 		?>
 		</div>
-		
+
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
@@ -118,9 +138,9 @@
 		?>
 
 	</div>
-	
+
 </div><!--/ .tmm_shortcode_template->
-		  
+
 <!-- --------------------------  PROCESSOR  --------------------------- -->
 
 <script type="text/javascript">
