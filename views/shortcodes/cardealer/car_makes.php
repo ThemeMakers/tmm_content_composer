@@ -10,6 +10,7 @@ if (!empty($logos_list)) {
 
 $args = array(
 	'taxonomy'          => 'carproducer',
+	'post_status'       => 'publish',
 	'orderby'           => 'name',
 	'order'             => 'ASC',
 	'include'           => $logos_list,
@@ -21,7 +22,7 @@ $args = array(
 	'suppress_filters'  => false,
 );
 
-$makes = get_terms($args);
+$makes = get_terms('carproducer', $args);
 
 if (!isset($show_name)) {
 	$show_name = 1;
@@ -47,33 +48,31 @@ if (!isset($show_name)) {
 			continue;
 		}
 
-		if($make->count > 0 || !$hide_empty){
+		if(!$hide_empty){
 			?>
 
-			<li class="cat-item-<?php echo $make->term_id; ?><?php if($show_name){ ?> with-title<?php } ?>">
+			<li class="cat-item-<?php echo esc_attr( $make->term_id ) ?><?php if($show_name){ ?> with-title<?php } ?>">
 
-			<?php if (!isset($show_link) || $show_link) { ?>
-				<a title="<?php echo sprintf(__('View all ads filed under %s', TMM_CC_TEXTDOMAIN), $make->name); ?>" href="<?php echo get_term_link($make->slug, 'carproducer'); ?>">
+			<?php if (!isset($show_link) || $show_link && $make->count > 0) { ?>
+				<a title="<?php echo sprintf(esc_html__('View all ads filed under %s', TMM_CC_TEXTDOMAIN), $make->name); ?>" href="<?php echo get_term_link($make->slug, 'carproducer'); ?>">
 			<?php } ?>
 
 				<?php if($show_logo && $src != ''){ ?>
-					<img src="<?php echo $src; ?>" alt="<?php echo $make->name; ?>" />
+					<img src="<?php echo esc_attr( $src ) ?>" alt="<?php echo esc_html__( $make->name, TMM_CC_TEXTDOMAIN ) ?>" />
 				<?php } ?>
 
 				<?php if($show_name){ ?>
 					<span class="car-title">
-				<?php } ?>
 
 					<?php
-					echo ($show_name) ? $make->name : '';
-					echo (!isset($show_count) || $show_count) ? ' (' . $make->count . ')&#x200E;' : '';
+					echo esc_html__( $make->name, TMM_CC_TEXTDOMAIN );
+					echo (!isset($show_count) || $show_count) ? ' (' . $make->count . ')' : '';
 					?>
 
-				<?php if($show_name){ ?>
 					</span>
 				<?php } ?>
 
-			<?php if (!isset($show_link) || $show_link) { ?>
+			<?php if (!isset($show_link) || $show_link && $make->count > 0) { ?>
 				</a>
 			<?php } ?>
 

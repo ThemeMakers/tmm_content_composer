@@ -61,7 +61,7 @@ foreach ($car_body_list as $k => $body_name) {
 	    <a href="<?php echo esc_url( $body['url'] ) ?>">
 	    <?php } ?>
 
-		    <img src="<?php echo esc_url( $body['icon'] ) ?>" alt="<?php echo esc_html( $body['name'] ); ?>" />
+		    <img src="<?php echo esc_url( $body['icon'] ) ?>" alt="<?php echo esc_html__( $body['name'], TMM_CC_TEXTDOMAIN ); ?>" />
 
 		    <?php if (!empty($show_name)) { ?>
 		    <h6>
@@ -69,7 +69,7 @@ foreach ($car_body_list as $k => $body_name) {
 
 		    <?php
 		    if (!empty($show_name)) {
-		        echo esc_html( $body['name'] );
+		        echo esc_html__( $body['name'], TMM_CC_TEXTDOMAIN );
 		    }
 
 		    if (!empty($show_count)) {
