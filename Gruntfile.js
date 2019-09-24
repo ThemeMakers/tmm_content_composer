@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 				files: {
 					'js/min/front.min.js': [
 						'js/front.js',
-						'js/quicksearch.js',
+						'js/quicksearch.js'
 					]
 				}
 			}
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 		watch: {
 			scripts: {
 				files: [
-					'js/*.js',
+					'js/*.js'
 				],
 				tasks: ['uglify']
 			},
