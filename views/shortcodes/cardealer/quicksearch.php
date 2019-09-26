@@ -130,13 +130,14 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 	<form class="car_form_search" action="<?php echo esc_attr( $searching_page ) ?>">
 
 		<!-- Location -->
-		<fieldset>
-			<legend><?php esc_html_e("Location", 'cardealer') ?>:</legend>
+		<?php if (!empty($show_location0)) { ?>
+		<div class="fieldset">
+			<label><?php esc_html_e("Location", 'cardealer') ?></label>
+		<?php } ?>
 			<?php if (!empty($show_location0)) { ?>
 				<p>
-					<label for="tmm_qs_location0_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e($locations_captions_on_search_widget[0], TMM_CC_TEXTDOMAIN); ?>:</label>
-					<select id="tmm_qs_location0_<?php echo esc_attr( $uniqid ) ?>" name="carlocation[0]" class="qs_carlocation0 carlocations" data-location0="<?php echo (int) $carlocation[0] ?>">
-						<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+					<select name="carlocation[0]" class="qs_carlocation0 carlocations" data-location0="<?php echo (int) $carlocation[0] ?>">
+						<option value="0"><?php esc_html_e($locations_captions_on_search_widget[0], 'cardealer'); ?></option>
 					</select>
 				</p>
 			<?php } else if(!empty($show_location1) || !empty($show_location2)) { ?>
@@ -168,18 +169,16 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 						$data_attr = ' data-location'.($i-1).'="' . $carlocation[$i-1] . '" data-location'.$i.'="' . (isset($carlocation[$i]) ? $carlocation[$i] : 0) . '"';
 						?>
 						<p>
-							<label for="tmm_qs_location<?php echo esc_attr( $i ) . '_' . esc_attr( $uniqid ) ?>"><?php esc_html_e($locations_captions_on_search_widget[$i], TMM_CC_TEXTDOMAIN); ?>:</label>
-							<select id="tmm_qs_location<?php echo esc_attr( $i ) . '_' . esc_attr( $uniqid ) ?>" class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations" name="carlocation[<?php echo esc_attr( $i ) ?>]" data-level="<?php echo ($i ) ?>"<?php echo esc_attr( $data_attr ) ?>>
-								<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations" name="carlocation[<?php echo esc_attr( $i ) ?>]" data-level="<?php echo ($i ) ?>"<?php echo esc_attr( $data_attr ) ?>>
+								<option value="0"><?php esc_html_e($locations_captions_on_search_widget[$i], 'cardealer'); ?></option>
 							</select>
 						</p>
 
 					<?php }else{ ?>
 
 						<p>
-							<label for="tmm_qs_location<?php echo esc_attr( $i ) . '_' . esc_attr( $uniqid ) ?>"><?php esc_html_e(@$locations_captions_on_search_widget[$i], TMM_CC_TEXTDOMAIN); ?>:</label>
-							<select id="tmm_qs_location<?php echo esc_attr( $i ) . '_' . esc_attr( $uniqid ) ?>" class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations" name="carlocation[<?php echo esc_attr( $i ) ?>]" disabled="" data-level="<?php echo esc_attr( $i ) ?>">
-								<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations" name="carlocation[<?php echo esc_attr( $i ) ?>]" disabled="" data-level="<?php echo esc_attr( $i ) ?>">
+								<option value="0"><?php esc_html_e(@$locations_captions_on_search_widget[$i], 'cardealer'); ?></option>
 							</select>
 						</p>
 
@@ -195,26 +194,29 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 
 			}
 			?>
-		</fieldset>
-
+		<?php if (!empty($show_location0)) { ?>
+		</div>
+		<?php } ?>
 
 		<!-- Condition -->
 		<?php if (!empty($show_condition)) {
 			$condition_list = tmm_get_car_condition_list();
 			?>
+		<div class="fieldset">
 			<p>
-				<label for="tmm_qs_condition_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e('Condition', TMM_CC_TEXTDOMAIN) ?>:</label>
+				<label for="tmm_qs_condition_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e('Condition', 'cardealer') ?>:</label>
 				<select id="tmm_qs_condition_<?php echo esc_attr( $uniqid ) ?>" class="qs_condition" name="car_condition">
-					<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+					<option value="0"><?php esc_html_e("Any", 'cardealer') ?></option>
 					<?php
 					foreach ($condition_list as $cond_id => $cond_name) {
 						echo '<option value="'.$cond_id.'"' . selected($car_condition, $cond_id, false) . '>'
-							. sprintf( __("Only %s cars", TMM_CC_TEXTDOMAIN), strtolower( __($cond_name, TMM_CC_TEXTDOMAIN) ) )
+							. sprintf( __("Only %s cars", 'cardealer'), strtolower( __($cond_name, 'cardealer') ) )
 							. '</option>';
 					}
 					?>
 				</select>
 			</p>
+		</div>
 		<?php } ?>
 
 		<?php
@@ -233,49 +235,51 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 		<!-- Make & Model-->
 		<?php if (!empty($show_makes)) { ?>
 
+		<div class="fieldset">
 			<p>
-				<label for="tmm_qs_make_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Make", TMM_CC_TEXTDOMAIN) ?>:</label>
+				<label for="tmm_qs_make_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Make", 'cardealer') ?>:</label>
 				<select id="tmm_qs_make_<?php echo esc_attr( $uniqid ) ?>" class="qs_carproducer" name="carproducer" data-make="<?php echo (int) $carproducer ?>" data-location="<?php echo (int) $carlocation[0] ?>" data-region="<?php echo (int) $_selected_region_id ?>" data-level="<?php echo (int) $_level ?>">
-					<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+					<option value="0"><?php esc_html_e("Any", 'cardealer') ?></option>
 				</select>
 			</p>
 
 			<p>
-				<label for="tmm_qs_model_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Model", TMM_CC_TEXTDOMAIN) ?>:</label>
+				<label for="tmm_qs_model_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Model", 'cardealer') ?>:</label>
 				<select id="tmm_qs_model_<?php echo esc_attr( $uniqid ) ?>" class="qs_carmodel" name="carmodels" <?php if ($carproducer == 0) { ?>disabled=""<?php } ?>  data-make="<?php echo (int) $carproducer ?>" data-location="<?php echo (int) $carlocation[0] ?>" data-region="<?php echo (int) $_selected_region_id ?>" data-level="<?php echo (int) $_level ?>" data-model="<?php echo (int) $carmodels ?>">
-					<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+					<option value="0"><?php esc_html_e("Any", 'cardealer') ?></option>
 				</select>
 			</p>
+		</div>
 
 		<?php } ?>
 
 		<!-- Price Range-->
 		<?php if (!empty($show_price_range)) { ?>
-
+		<div class="fieldset">
+			<label><?php esc_html_e("Price", 'cardealer') ?> (<?php echo TMM_Ext_Car_Dealer::$default_currency['symbol'] ?>) <span><?php esc_html_e("min/max", 'cardealer') ?></span></label>
 			<p>
-				<label for="tmm_qs_price_min_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Price", TMM_CC_TEXTDOMAIN) ?> (<?php echo TMM_Ext_Car_Dealer::$default_currency['symbol'] ?>) <span><?php esc_html_e("min", TMM_CC_TEXTDOMAIN) ?></span>:</label>
-				<input id="tmm_qs_price_min_<?php echo esc_attr( $uniqid ) ?>" type="number" name="car_price_min" value="<?php echo esc_attr( $car_price_min ) ?>" />
+				<input type="number" name="car_price_min" value="<?php echo esc_attr( $car_price_min ) ?>" />
 			</p>
 
 			<p>
-				<label for="tmm_qs_price_max_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Price", TMM_CC_TEXTDOMAIN) ?> (<?php echo TMM_Ext_Car_Dealer::$default_currency['symbol'] ?>) <span><?php esc_html_e("max", TMM_CC_TEXTDOMAIN) ?></span>:</label>
-				<input id="tmm_qs_price_max_<?php echo esc_attr( $uniqid ) ?>" type="number" name="car_price_max" value="<?php echo esc_attr( $car_price_max ) ?>" />
+				<input type="number" name="car_price_max" value="<?php echo esc_attr( $car_price_max ) ?>" />
 			</p>
-
+		</div>
 		<?php } ?>
 
 		<!-- Year Range-->
 		<?php if (!empty($show_year_range)) { ?>
+		<div class="fieldset">
+			<label><?php esc_html_e("Year", 'cardealer') ?></label>
 			<p>
-				<label for="tmm_qs_year_from_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Year", TMM_CC_TEXTDOMAIN) ?> <span><?php esc_html_e("from", TMM_CC_TEXTDOMAIN) ?></span>:</label>
 				<?php
 				$now = (int) date("Y") + 1;
-				$years = array('any' => __("Any", TMM_CC_TEXTDOMAIN));
+				$years = array('any' => esc_html__("min", 'cardealer'));
 				for ($i = $now; $i >= 1900; $i--) {
 					$years[$i] = $i;
 				}
 				?>
-				<select id="tmm_qs_year_from_<?php echo esc_attr( $uniqid ) ?>" name="car_year_from">
+				<select name="car_year_from">
 					<?php foreach ($years as $k=>$y) { ?>
 						<option <?php echo($car_year_from == $y ? "selected" : "") ?> value="<?php echo esc_attr( $k ) ?>"><?php echo esc_attr( $y ) ?></option>
 					<?php } ?>
@@ -283,44 +287,46 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 			</p>
 
 			<p>
-				<label for="tmm_qs_year_to_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Year", TMM_CC_TEXTDOMAIN) ?> <span><?php esc_html_e("to", TMM_CC_TEXTDOMAIN) ?></span>:</label>
 				<?php
 				$now = (int) date("Y") + 1;
-				$years = array('any' => __("Any", TMM_CC_TEXTDOMAIN));
+				$years = array('any' => esc_html__("max", 'cardealer'));
 				for ($i = $now; $i >= 1900; $i--) {
 					$years[$i] = $i;
 				}
 				?>
-				<select id="tmm_qs_year_to_<?php echo esc_attr( $uniqid ) ?>" name="car_year_to">
+				<select name="car_year_to">
 					<?php foreach ($years as $k=>$y) { ?>
 						<option <?php echo($car_year_to == $y ? "selected" : "") ?> value="<?php echo esc_attr( $k ) ?>"><?php echo esc_attr( $y ) ?></option>
 					<?php } ?>
 				</select>
 			</p>
+		</div>
 		<?php } ?>
 
 		<!-- Mileage Range-->
 		<?php if (!empty($show_mileage)) { ?>
+		<div class="fieldset">
+			<label><?php ($mileage_unit == 'km') ? esc_html_e('Kilometer', 'cardealer') : esc_html_e('Mileage', 'cardealer') ?> <span><?php esc_html_e("min/max", 'cardealer') ?></span></label>
 			<p>
-				<label for="tmm_qs_mileage_from_<?php echo esc_attr( $uniqid ) ?>"><?php ($mileage_unit == 'km') ? esc_html_e('Kilometer', TMM_CC_TEXTDOMAIN) : esc_html_e('Mileage', TMM_CC_TEXTDOMAIN) ?> <span><?php esc_html_e("from", TMM_CC_TEXTDOMAIN) ?>:</span></label>
-				<input id="tmm_qs_mileage_from_<?php echo esc_attr( $uniqid ) ?>" type="number" name="car_mileage_from" value="<?php echo esc_attr( $car_mileage_from ) ?>" />
+				<input type="number" name="car_mileage_from" value="<?php echo esc_attr( $car_mileage_from ) ?>" />
 			</p>
 			<p>
-				<label for="tmm_qs_mileage_to_<?php echo esc_attr( $uniqid ) ?>"><?php ($mileage_unit == 'km') ? esc_html_e('Kilometer', TMM_CC_TEXTDOMAIN) : esc_html_e('Mileage', TMM_CC_TEXTDOMAIN) ?> <span><?php esc_html_e("to", TMM_CC_TEXTDOMAIN) ?>:</span></label>
-				<input id="tmm_qs_mileage_to_<?php echo esc_attr( $uniqid ) ?>" type="number" name="car_mileage_to" value="<?php echo esc_attr( $car_mileage_to ) ?>" />
+				<input type="number" name="car_mileage_to" value="<?php echo esc_attr( $car_mileage_to ) ?>" />
 			</p>
+		</div>
 		<?php } ?>
 
 		<!-- Fuel Type-->
+		<div class="fieldset">
 		<?php if (!empty($show_fuel_type)) { ?>
 			<p>
-				<label for="tmm_qs_fuel_type_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Fuel Type", TMM_CC_TEXTDOMAIN) ?></label>
+				<label for="tmm_qs_fuel_type_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Fuel Type", 'cardealer') ?></label>
 				<?php $fuel_types = TMM_Ext_PostType_Car::$car_options['fuel_type']; ?>
 				<select id="tmm_qs_fuel_type_<?php echo esc_attr( $uniqid ) ?>" name="car_fuel_type">
-					<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+					<option value="0"><?php esc_html_e("Any", 'cardealer') ?></option>
 					<?php if (!empty($fuel_types)) { ?>
 						<?php foreach ($fuel_types as $fuel_type => $fuel_type_name) { ?>
-							<option <?php selected($car_fuel_type, $fuel_type); ?> value="<?php echo esc_attr( $fuel_type ) ?>"><?php esc_html_e($fuel_type_name, TMM_CC_TEXTDOMAIN); ?></option>
+							<option <?php selected($car_fuel_type, $fuel_type); ?> value="<?php echo esc_attr( $fuel_type ) ?>"><?php esc_html_e($fuel_type_name, 'cardealer'); ?></option>
 						<?php } ?>
 					<?php } ?>
 				</select>
@@ -330,29 +336,31 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 		<!-- Transmission-->
 		<?php if (!empty($show_transmission)) { ?>
 			<p>
-				<label for="tmm_qs_gearbox_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Gearbox", TMM_CC_TEXTDOMAIN) ?></label>
+				<label for="tmm_qs_gearbox_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Gearbox", 'cardealer') ?></label>
 				<?php $car_transmissions = TMM_Ext_PostType_Car::$car_options['transmission']; ?>
 				<select id="tmm_qs_gearbox_<?php echo esc_attr( $uniqid ) ?>" name="car_transmission">
-					<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+					<option value="0"><?php esc_html_e("Any", 'cardealer') ?></option>
 					<?php if (!empty($car_transmissions)) { ?>
 						<?php foreach ($car_transmissions as $transmission => $transmission_name) { ?>
-							<option <?php selected($car_transmission, $transmission); ?> value="<?php echo esc_attr( $transmission ) ?>"><?php esc_html_e($transmission_name, TMM_CC_TEXTDOMAIN); ?></option>
+							<option <?php selected($car_transmission, $transmission); ?> value="<?php echo esc_attr( $transmission ) ?>"><?php esc_html_e($transmission_name, 'cardealer'); ?></option>
 						<?php } ?>
 					<?php } ?>
 				</select>
 			</p>
 		<?php } ?>
+		</div>
 
 		<!-- Body Type-->
+		<div class="fieldset">
 		<?php if (!empty($show_body_type)) { ?>
 			<p>
-				<label for="tmm_qs_body_type_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Body Type", TMM_CC_TEXTDOMAIN) ?></label>
+				<label for="tmm_qs_body_type_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Body Type", 'cardealer') ?></label>
 				<?php $carbodies = TMM_Ext_PostType_Car::$car_options['body']; ?>
 				<select id="tmm_qs_body_type_<?php echo esc_attr( $uniqid ) ?>" name="car_body">
-					<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+					<option value="0"><?php esc_html_e("Any", 'cardealer') ?></option>
 					<?php if (!empty($carbodies)) { ?>
 						<?php foreach ($carbodies as $carbody_key => $carbody_name) { ?>
-							<option <?php selected($car_body, $carbody_key); ?> value="<?php echo esc_attr( $carbody_key ) ?>"><?php esc_html_e($carbody_name, TMM_CC_TEXTDOMAIN); ?></option>
+							<option <?php selected($car_body, $carbody_key); ?> value="<?php echo esc_attr( $carbody_key ) ?>"><?php esc_html_e($carbody_name, 'cardealer'); ?></option>
 						<?php } ?>
 					<?php } ?>
 				</select>
@@ -362,61 +370,65 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 		<!-- Doors Count-->
 		<?php if (!empty($show_doors_count)) { ?>
 			<p>
-				<label for="tmm_qs_doors_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Door Count", TMM_CC_TEXTDOMAIN) ?></label>
+				<label for="tmm_qs_doors_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Door Count", 'cardealer') ?></label>
 				<select id="tmm_qs_doors_<?php echo esc_attr( $uniqid ) ?>" name="car_doors_count">
-					<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+					<option value="0"><?php esc_html_e("Any", 'cardealer') ?></option>
 					<?php for ($i = TMM_Ext_PostType_Car::$car_options['min_doors_count']; $i <= TMM_Ext_PostType_Car::$car_options['max_doors_count']; $i++) { ?>
 						<option <?php echo($car_doors_count == $i ? "selected" : "") ?> value="<?php echo esc_attr( $i ) ?>"><?php echo esc_attr( $i ) ?></option>
 					<?php } ?>
 				</select>
 			</p>
 		<?php } ?>
+		</div>
 
 		<!-- Exterior/Interior Colors-->
 		<?php if(!empty($show_colors)) { ?>
-
+		<div class="fieldset">
+			<label><?php esc_html_e("Color", 'cardealer') ?></label>
 			<?php
 			$car_int_colors = TMM_Ext_PostType_Car::$car_options['interior_color'];
 			$car_ext_colors = TMM_Ext_PostType_Car::$car_options['exterior_color'];
 			?>
 
 			<p>
-				<label for="tmm_qs_interrior_color_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Interior Color", TMM_CC_TEXTDOMAIN) ?></label>
-				<select id="tmm_qs_interrior_color_<?php echo esc_attr( $uniqid ) ?>" name="car_interrior_color">
-					<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+				<select name="car_interrior_color">
+					<option value="0"><?php esc_html_e("Interior", 'cardealer') ?></option>
 					<?php if (!empty($car_int_colors)) { ?>
 						<?php foreach ($car_int_colors as $color => $color_name) { ?>
-							<option <?php selected($car_interrior_color, $color); ?> value="<?php echo esc_attr( $color ) ?>"><?php esc_html_e($color_name, TMM_CC_TEXTDOMAIN); ?></option>
+							<option <?php selected($car_interrior_color, $color); ?> value="<?php echo esc_attr( $color ) ?>"><?php esc_html_e($color_name, 'cardealer'); ?></option>
 						<?php } ?>
 					<?php } ?>
 				</select>
 			</p>
 
 			<p>
-				<label for="tmm_qs_exterior_color_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Exterior Color", TMM_CC_TEXTDOMAIN) ?></label>
-				<select id="tmm_qs_exterior_color_<?php echo esc_attr( $uniqid ) ?>" name="car_exterior_color">
-					<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+				<select name="car_exterior_color">
+					<option value="0"><?php esc_html_e("Exterior", 'cardealer') ?></option>
 					<?php if (!empty($car_ext_colors)) { ?>
 						<?php foreach ($car_ext_colors as $color => $color_name) { ?>
-							<option <?php selected($car_exterior_color, $color); ?> value="<?php echo esc_attr( $color ) ?>"><?php esc_html_e($color_name, TMM_CC_TEXTDOMAIN); ?></option>
+							<option <?php selected($car_exterior_color, $color); ?> value="<?php echo esc_attr( $color ) ?>"><?php esc_html_e($color_name, 'cardealer'); ?></option>
 						<?php } ?>
 					<?php } ?>
 				</select>
 			</p>
-
+		</div>
 		<?php } ?>
 
-		<input class="button orange submit-search" type="submit" value="<?php esc_html_e("Search", TMM_CC_TEXTDOMAIN) ?>">
+		<div class="fieldset flex-end">
 
-		<?php if (!empty($show_advanced_options)) { ?>
+			<?php if (!empty($show_advanced_options)) { ?>
 
-			<div class="advanced-row">
+				<div class="advanced-row">
 				<span>
-					<a href="#" class="car_adv_search_btn"><?php esc_html_e("Advanced", TMM_CC_TEXTDOMAIN) ?></a>
+					<a href="#" class="car_adv_search_btn"><?php esc_html_e("Advanced", 'cardealer') ?></a>
 				</span>
-			</div><!--/ .advanced-row-->
+				</div><!--/ .advanced-row-->
 
-		<?php } ?>
+			<?php } ?>
+
+			<input class="button orange submit-search" type="submit" value="<?php esc_html_e("Search", 'cardealer') ?>">
+
+		</div>
 
 	</form><!--/ .form-panel-->
 
@@ -431,7 +443,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 				<?php $attributes_array = TMM_Ext_PostType_Car::get_attribute_constructors($specification_key); ?>
 
 				<?php if (!empty($attributes_array)) { ?>
-				<h4><?php esc_html_e($block_name, TMM_CC_TEXTDOMAIN); ?></h4>
+				<h4><?php esc_html_e($block_name, 'cardealer'); ?></h4>
 				<?php } ?>
 
 				<?php foreach ($attributes_array as $key => $value) { ?>
@@ -442,9 +454,9 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 							<p>
 								<input id="<?php echo esc_attr( $key ) . '_' . esc_attr( $uniqid ) ?>" type="checkbox" <?php echo (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key]) ? 'checked=""' : ''; ?> class="js_option_checkbox" value="<?php echo (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key]) ? '1' : '0'; ?>" name="advanced[<?php echo esc_attr( $specification_key) ?>][<?php echo esc_attr( $key ) ?>]">
 								<label class="check" for="<?php echo esc_attr( $key ) . '_' . esc_attr( $uniqid ) ?>">
-									<strong><?php esc_html_e($value['name'], TMM_CC_TEXTDOMAIN); ?></strong>
+									<strong><?php esc_html_e($value['name'], 'cardealer'); ?></strong>
 									<?php if (!empty($value['description'])) { ?>
-										<i class="description"><?php esc_html_e($value['description'], TMM_CC_TEXTDOMAIN); ?></i>
+										<i class="description"><?php esc_html_e($value['description'], 'cardealer'); ?></i>
 									<?php } ?>
 								</label>
 							</p>
@@ -457,16 +469,16 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 						<fieldset class="field-select">
 							<p>
 								<label for="<?php echo esc_attr( $key ) . '_' . esc_attr( $uniqid ) ?>">
-									<?php esc_html_e($value['name'], TMM_CC_TEXTDOMAIN); ?>
+									<?php esc_html_e($value['name'], 'cardealer'); ?>
 									<?php if (!empty($value['description'])) { ?>
-										<span data-description="<?php esc_html_e($value['description'], TMM_CC_TEXTDOMAIN); ?>"></span>
+										<span data-description="<?php esc_html_e($value['description'], 'cardealer'); ?>"></span>
 									<?php } ?>
 								</label>
 
 								<select id="<?php echo esc_attr( $key ) . '_' . esc_attr( $uniqid ) ?>" name="advanced[<?php echo esc_attr( $specification_key ) ?>][<?php echo esc_attr( $key ) ?>]">
-									<option value="0"><?php esc_html_e("Any", TMM_CC_TEXTDOMAIN) ?></option>
+									<option value="0"><?php esc_html_e("Any", 'cardealer') ?></option>
 									<?php foreach ($value['values'] as $val_key => $val_name) { ?>
-										<option <?php if (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key] == $val_key) { ?>selected<?php } ?> value="<?php echo esc_attr( $val_key ) ?>"><?php esc_html_e($val_name, TMM_CC_TEXTDOMAIN); ?></option>
+										<option <?php if (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key] == $val_key) { ?>selected<?php } ?> value="<?php echo esc_attr( $val_key ) ?>"><?php esc_html_e($val_name, 'cardealer'); ?></option>
 									<?php } ?>
 								</select>
 							</p>
@@ -480,7 +492,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 
 			<div class="clearfix"></div>
 
-			<input class="button orange submit-search" type="submit" value="<?php esc_html_e("Search", TMM_CC_TEXTDOMAIN) ?>">
+			<input class="button orange submit-search" type="submit" value="<?php esc_html_e("Search", 'cardealer') ?>">
 
 			<div class="clearfix"></div>
 
