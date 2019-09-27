@@ -338,29 +338,32 @@
 }
 
 .tmm-popup-content select {
-	background-color: white;
+	padding-right: 2em;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+
+	text-indent: 0.01px;
+	text-overflow: '';
+
+	/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+	@media screen and (-webkit-min-device-pixel-ratio:0) {
+		padding-right: 2em;
+	}
+
 	border-radius: 0;
+
+	outline: none;
 	display: inline-block;
-	-webkit-appearance:none;
-	-moz-appearance:none;
-
-	background-image:
-	linear-gradient(45deg, transparent 50%, #777 50%),
-	linear-gradient(135deg, #777 50%, transparent 50%),
-	linear-gradient(to right, #777, #777);
-	background-position:
-		calc(100% - 22px) 50%,
-		calc(100% - 14px) 50%,
-		0;
-	background-size:
-		8px 8px,
-		8px 8px,
-		0;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAACgUlEQVR4nO3cSW7bQBBGYd8n3ZTY1VplkVNl8CRlOEMWOYgXvpyVhdEAIUiySFbP7wO8L+p/sjcG7+4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEDzrMifwfnH3Hf0xjh3MM4dsh5hRX5v/O44iH8jgnSMc4eN3x03fne0IvssR4Txww8RpDEdP1sEdpRfp0cQQXznxg+fux3lOckRl8YngrgujZ80gsH5n9eOIII4Phr/JIKnKEfcOj4R6Lp1/KgRzD0iSZEdmPuli/Lls+P4ZckRRLDO0vGnn/un7fazyjFLfwMQwTIa46v/+SWCNIocPyCCuIoeP7AieyLQpzG+ce4hybFEoKuq8QMi0FHl+AERrFP1+AERLNPE+AERzNPU+IEV2Q/i34jguibHD+woz0RwWdPjB0Rwnsr4Ive5n+MmShGk+Q+XBD76J5qmxg+I4F2X4we9R9D1+EGvETD+RG8RMP4ZdpSnHiJg/Ctaj0BjfCvyI/dzRNVqBIw/Q2sRMP4CrUTA+CvUHgHjK6g1AsZXVFsEjB/B4PxjDRGojD/K99h3VkklgogvS2D8BEqN4PSNKIwf0doINl73tSmMn0EpETB+RrkjYPwC5IqA8QtinHtIGQHjFyhVBCrjO/8txWfSndgRMH4FYkXA+BXRjoDxK6QVAeNXTCMCxq+cEbnPEQHjFyR1BO9v43Jfcz83JlJFwPgFix0B41cgVgSMXxHtCBi/QloRMH7FrPP/1gZgnPub+zmwgtnK69LxrfiX3PdDwZIIGL8xcyJg/EbdEgHjN+5aBIzfiXMRMH5nphEwfqfMVl4ZHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlO4/4NIPH7tR+MsAAAAASUVORK5CYII=);
+	background-position: calc(100% - 10px) 50%;
+	background-size: 12px;
 	background-repeat: no-repeat;
+	transition: all .3s ease-in-out;
 
-	&[multiple] {
-		height: 350px;
-		background-image: none;
+	// Fix for IE 11
+	&::-ms-expand {
+		display: none;
 	}
 }
 
