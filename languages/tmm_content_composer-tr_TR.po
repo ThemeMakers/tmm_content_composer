@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-11 22:56+0200\n"
-"PO-Revision-Date: 2019-06-11 22:57+0200\n"
+"POT-Creation-Date: 2019-09-30 01:16+0200\n"
+"PO-Revision-Date: 2019-09-30 01:16+0200\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -108,19 +108,19 @@ msgid "Orange"
 msgstr "Turuncu"
 
 #: classes/content_composer.php:249
-#: views/shortcodes/cardealer/popups/recent_cars.php:111
+#: views/shortcodes/cardealer/popups/recent_cars.php:131
 #: views/shortcodes/default/popups/divider.php:28
 msgid "Small"
 msgstr "Küçük"
 
 #: classes/content_composer.php:250
-#: views/shortcodes/cardealer/popups/recent_cars.php:112
+#: views/shortcodes/cardealer/popups/recent_cars.php:132
 #: views/shortcodes/default/popups/divider.php:29
 msgid "Middle"
 msgstr "Orta"
 
 #: classes/content_composer.php:251
-#: views/shortcodes/cardealer/popups/recent_cars.php:113
+#: views/shortcodes/cardealer/popups/recent_cars.php:133
 #: views/shortcodes/default/popups/divider.php:30
 msgid "Large"
 msgstr "Büyük"
@@ -414,7 +414,8 @@ msgstr "Arka Plan"
 msgid "Transparent (default)"
 msgstr "Varsayılan Ayarlar"
 
-#: views/meta_panel.php:301 views/shortcodes/default/popups/title.php:144
+#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:387
+#: views/shortcodes/default/popups/title.php:144
 msgid "Color"
 msgstr "Renk"
 
@@ -527,7 +528,7 @@ msgstr "Sonraki"
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:56
+#: views/shortcodes/cardealer/car_makes.php:57
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
@@ -622,7 +623,7 @@ msgid "Logo"
 msgstr "Satıcı Logosunu Göster"
 
 #: views/shortcodes/cardealer/popups/animated_banner.php:109
-#: views/shortcodes/cardealer/popups/pricing_tables.php:101
+#: views/shortcodes/cardealer/popups/pricing_tables.php:106
 #, fuzzy
 msgid "Button Text"
 msgstr "Gönder Düğmesi Metni"
@@ -890,39 +891,39 @@ msgstr "Harita Konumunu Göster"
 msgid "Excerpt Bio symbol count"
 msgstr "Alıntı sembol sayısı"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:10
+#: views/shortcodes/cardealer/popups/pricing_tables.php:12
 #, fuzzy
 msgid "Table Count"
 msgstr "Sayı"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:34
+#: views/shortcodes/cardealer/popups/pricing_tables.php:36
 #, fuzzy
 msgid "Row Count"
 msgstr "Sayı"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:48
+#: views/shortcodes/cardealer/popups/pricing_tables.php:53
 msgid "Starter Package"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:48
+#: views/shortcodes/cardealer/popups/pricing_tables.php:53
 msgid "19.95"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:48
+#: views/shortcodes/cardealer/popups/pricing_tables.php:53
 msgid "Details"
 msgstr "Detaylar"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:96
+#: views/shortcodes/cardealer/popups/pricing_tables.php:101
 #, fuzzy
 msgid "Enter text here"
 msgstr "Metin"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:103
+#: views/shortcodes/cardealer/popups/pricing_tables.php:108
 #, fuzzy
 msgid "Button Link"
 msgstr "Bu Link"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:108
+#: views/shortcodes/cardealer/popups/pricing_tables.php:113
 #, fuzzy
 msgid "Is Featured"
 msgstr "Öne Çıkan"
@@ -1066,35 +1067,40 @@ msgstr "\"Tüm Araçlar\" düğmesini Göster"
 msgid "Show currency converter"
 msgstr "Döviz Çevirici"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:57
+#: views/shortcodes/cardealer/popups/recent_cars.php:61
+#, fuzzy
+msgid "Filter by make"
+msgstr "Boş otomobil markasını etkinleştirin"
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:77
 #, fuzzy
 msgid "Enter number of cars"
 msgstr "Araç Sayısı"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:68
+#: views/shortcodes/cardealer/popups/recent_cars.php:88
 #, fuzzy
 msgid "Show layout switcher"
 msgstr "Düzen Değiştiriciyi Göster"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:80
+#: views/shortcodes/cardealer/popups/recent_cars.php:100
 msgid "View Mode"
 msgstr "Görünüm Modu"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:84
-#: views/shortcodes/cardealer/recent_cars.php:57
+#: views/shortcodes/cardealer/popups/recent_cars.php:104
+#: views/shortcodes/cardealer/recent_cars.php:65
 msgid "Grid View"
 msgstr "Izgara Görünümü"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:85
-#: views/shortcodes/cardealer/recent_cars.php:60
+#: views/shortcodes/cardealer/popups/recent_cars.php:105
+#: views/shortcodes/cardealer/recent_cars.php:68
 msgid "List View"
 msgstr "Liste Görünümü"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:96
+#: views/shortcodes/cardealer/popups/recent_cars.php:116
 msgid "Slide featured cars images on hover"
 msgstr "Vurgulandığında Slayt Özellikli Araç Resimleri"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:107
+#: views/shortcodes/cardealer/popups/recent_cars.php:127
 msgid "Thumbnail size"
 msgstr "Küçük resim boyutu"
 
@@ -1248,34 +1254,32 @@ msgstr "Yeni öğe ekle"
 msgid "Remove"
 msgstr "Kaldır"
 
-#: views/shortcodes/cardealer/quicksearch.php:139
-#: views/shortcodes/cardealer/quicksearch.php:173
-#: views/shortcodes/cardealer/quicksearch.php:182
-#: views/shortcodes/cardealer/quicksearch.php:206
-#: views/shortcodes/cardealer/quicksearch.php:241
-#: views/shortcodes/cardealer/quicksearch.php:249
-#: views/shortcodes/cardealer/quicksearch.php:303
-#: views/shortcodes/cardealer/quicksearch.php:320
-#: views/shortcodes/cardealer/quicksearch.php:380
-#: views/shortcodes/cardealer/quicksearch.php:397
-#: views/shortcodes/cardealer/quicksearch.php:416
-#: views/shortcodes/cardealer/quicksearch.php:432
-#: views/shortcodes/cardealer/quicksearch.php:455
-#: views/shortcodes/cardealer/quicksearch.php:468
-#: views/shortcodes/cardealer/quicksearch.php:545
-msgid "Any"
-msgstr "Herhangi Biri"
+#: views/shortcodes/cardealer/quicksearch.php:135
+#, fuzzy
+msgid "Location"
+msgstr "Konum Modu"
 
-#: views/shortcodes/cardealer/quicksearch.php:204
+#: views/shortcodes/cardealer/quicksearch.php:207
 msgid "Condition"
 msgstr "Durum"
 
-#: views/shortcodes/cardealer/quicksearch.php:210
+#: views/shortcodes/cardealer/quicksearch.php:209
+#: views/shortcodes/cardealer/quicksearch.php:242
+#: views/shortcodes/cardealer/quicksearch.php:249
+#: views/shortcodes/cardealer/quicksearch.php:326
+#: views/shortcodes/cardealer/quicksearch.php:342
+#: views/shortcodes/cardealer/quicksearch.php:360
+#: views/shortcodes/cardealer/quicksearch.php:375
+#: views/shortcodes/cardealer/quicksearch.php:479
+msgid "Any"
+msgstr "Herhangi Biri"
+
+#: views/shortcodes/cardealer/quicksearch.php:213
 #, php-format
 msgid "Only %s cars"
 msgstr "Sadece %s araç"
 
-#: views/shortcodes/cardealer/quicksearch.php:239
+#: views/shortcodes/cardealer/quicksearch.php:240
 msgid "Make"
 msgstr "Marka"
 
@@ -1283,86 +1287,74 @@ msgstr "Marka"
 msgid "Model"
 msgstr "Model"
 
-#: views/shortcodes/cardealer/quicksearch.php:258
-#: views/shortcodes/cardealer/quicksearch.php:357
-#: views/shortcodes/cardealer/quicksearch.php:483
-#: views/shortcodes/cardealer/quicksearch.php:561
-msgid "Search"
-msgstr "Arama"
+#: views/shortcodes/cardealer/quicksearch.php:259
+msgid "Price"
+msgstr "Fiyat"
 
-#: views/shortcodes/cardealer/quicksearch.php:264
-#: views/shortcodes/cardealer/quicksearch.php:363
-#: views/shortcodes/cardealer/quicksearch.php:489
+#: views/shortcodes/cardealer/quicksearch.php:259
+#: views/shortcodes/cardealer/quicksearch.php:309
+msgid "min/max"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:273
+msgid "Year"
+msgstr "Yıl"
+
+#: views/shortcodes/cardealer/quicksearch.php:277
+msgid "min"
+msgstr "Min"
+
+#: views/shortcodes/cardealer/quicksearch.php:292
+msgid "max"
+msgstr "Maks"
+
+#: views/shortcodes/cardealer/quicksearch.php:309
+msgid "Kilometer"
+msgstr ""
+
+#: views/shortcodes/cardealer/quicksearch.php:309
+msgid "Mileage"
+msgstr "Km"
+
+#: views/shortcodes/cardealer/quicksearch.php:323
+msgid "Fuel Type"
+msgstr "Yakıt Türü"
+
+#: views/shortcodes/cardealer/quicksearch.php:339
+msgid "Gearbox"
+msgstr "Şanzıman"
+
+#: views/shortcodes/cardealer/quicksearch.php:357
+msgid "Body Type"
+msgstr "Kasa Türü"
+
+#: views/shortcodes/cardealer/quicksearch.php:373
+msgid "Door Count"
+msgstr "Kapı Sayısı"
+
+#: views/shortcodes/cardealer/quicksearch.php:395
+#, fuzzy
+#| msgid "Interior Color"
+msgid "Interior"
+msgstr "İç Renk"
+
+#: views/shortcodes/cardealer/quicksearch.php:406
+#, fuzzy
+#| msgid "Exterior Color"
+msgid "Exterior"
+msgstr "Dış Renk"
+
+#: views/shortcodes/cardealer/quicksearch.php:423
 #, fuzzy
 msgid "Advanced"
 msgstr "Gelişmiş Araç Seçeneklerini Düzenle"
 
-#: views/shortcodes/cardealer/quicksearch.php:280
-#: views/shortcodes/cardealer/quicksearch.php:286
-msgid "Price"
-msgstr "Fiyat"
+#: views/shortcodes/cardealer/quicksearch.php:429
+#: views/shortcodes/cardealer/quicksearch.php:495
+msgid "Search"
+msgstr "Arama"
 
-#: views/shortcodes/cardealer/quicksearch.php:280
-msgid "min"
-msgstr "Min"
-
-#: views/shortcodes/cardealer/quicksearch.php:286
-msgid "max"
-msgstr "Maks"
-
-#: views/shortcodes/cardealer/quicksearch.php:300
-#: views/shortcodes/cardealer/quicksearch.php:317
-msgid "Year"
-msgstr "Yıl"
-
-#: views/shortcodes/cardealer/quicksearch.php:300
-#: views/shortcodes/cardealer/quicksearch.php:342
-#, fuzzy
-msgid "from"
-msgstr ""
-"Tema Seçenekleri -> İletişim Formları'ndan bir iletişim formu "
-"oluşturabilirsiniz"
-
-#: views/shortcodes/cardealer/quicksearch.php:317
-#: views/shortcodes/cardealer/quicksearch.php:348
-msgid "to"
-msgstr ""
-
-#: views/shortcodes/cardealer/quicksearch.php:342
-#: views/shortcodes/cardealer/quicksearch.php:348
-msgid "Kilometer"
-msgstr ""
-
-#: views/shortcodes/cardealer/quicksearch.php:342
-#: views/shortcodes/cardealer/quicksearch.php:348
-msgid "Mileage"
-msgstr "Km"
-
-#: views/shortcodes/cardealer/quicksearch.php:377
-msgid "Fuel Type"
-msgstr "Yakıt Türü"
-
-#: views/shortcodes/cardealer/quicksearch.php:394
-msgid "Gearbox"
-msgstr "Şanzıman"
-
-#: views/shortcodes/cardealer/quicksearch.php:413
-msgid "Body Type"
-msgstr "Kasa Türü"
-
-#: views/shortcodes/cardealer/quicksearch.php:430
-msgid "Door Count"
-msgstr "Kapı Sayısı"
-
-#: views/shortcodes/cardealer/quicksearch.php:453
-msgid "Interior Color"
-msgstr "İç Renk"
-
-#: views/shortcodes/cardealer/quicksearch.php:466
-msgid "Exterior Color"
-msgstr "Dış Renk"
-
-#: views/shortcodes/cardealer/recent_cars.php:92
+#: views/shortcodes/cardealer/recent_cars.php:100
 msgid "Show all cars"
 msgstr "Tüm Araçları Göster"
 
@@ -2326,3 +2318,9 @@ msgstr "ThemeMakers"
 #. Author URI of the plugin/theme
 msgid "http://themeforest.net/user/ThemeMakers"
 msgstr "http://themeforest.net/user/ThemeMakers"
+
+#, fuzzy
+#~ msgid "from"
+#~ msgstr ""
+#~ "Tema Seçenekleri -> İletişim Formları'ndan bir iletişim formu "
+#~ "oluşturabilirsiniz"

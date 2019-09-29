@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-11 22:52+0200\n"
-"PO-Revision-Date: 2019-06-11 22:53+0200\n"
+"POT-Creation-Date: 2019-09-30 00:55+0200\n"
+"PO-Revision-Date: 2019-09-30 00:56+0200\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Bulgarian\n"
 "Language: bg_BG\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: index.php\n"
@@ -40,14 +40,12 @@ msgid "Apply"
 msgstr ""
 
 #: classes/content_composer.php:100
-#, fuzzy
 msgid "There is no options for shortcode!"
-msgstr "Настройките бяха обновени"
+msgstr "Настройките бяха обновени!"
 
 #: classes/content_composer.php:101
-#, fuzzy
 msgid "Shortcode updated!"
-msgstr "Обновено"
+msgstr "Обновено!"
 
 #: classes/content_composer.php:102
 msgid "Insert Shortcode"
@@ -104,19 +102,19 @@ msgid "Orange"
 msgstr ""
 
 #: classes/content_composer.php:249
-#: views/shortcodes/cardealer/popups/recent_cars.php:111
+#: views/shortcodes/cardealer/popups/recent_cars.php:131
 #: views/shortcodes/default/popups/divider.php:28
 msgid "Small"
 msgstr ""
 
 #: classes/content_composer.php:250
-#: views/shortcodes/cardealer/popups/recent_cars.php:112
+#: views/shortcodes/cardealer/popups/recent_cars.php:132
 #: views/shortcodes/default/popups/divider.php:29
 msgid "Middle"
 msgstr ""
 
 #: classes/content_composer.php:251
-#: views/shortcodes/cardealer/popups/recent_cars.php:113
+#: views/shortcodes/cardealer/popups/recent_cars.php:133
 #: views/shortcodes/default/popups/divider.php:30
 msgid "Large"
 msgstr ""
@@ -127,9 +125,8 @@ msgid "All Categories"
 msgstr "Още обяви"
 
 #: classes/content_composer.php:441
-#, fuzzy
 msgid "Browse"
-msgstr "Качи лого..."
+msgstr "Разгледай"
 
 #: classes/layout_constructor.php:202 views/shortcodes/default/tmm_video.php:98
 #: views/shortcodes/default/tmm_video.php:101
@@ -390,7 +387,8 @@ msgstr "Цвят на фона на модела"
 msgid "Transparent (default)"
 msgstr ""
 
-#: views/meta_panel.php:301 views/shortcodes/default/popups/title.php:144
+#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:387
+#: views/shortcodes/default/popups/title.php:144
 msgid "Color"
 msgstr "Цвят"
 
@@ -494,7 +492,7 @@ msgstr "Напред"
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:56
+#: views/shortcodes/cardealer/car_makes.php:57
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
@@ -584,7 +582,7 @@ msgid "Logo"
 msgstr "Лого"
 
 #: views/shortcodes/cardealer/popups/animated_banner.php:109
-#: views/shortcodes/cardealer/popups/pricing_tables.php:101
+#: views/shortcodes/cardealer/popups/pricing_tables.php:106
 #, fuzzy
 msgid "Button Text"
 msgstr "Публикувай"
@@ -864,39 +862,39 @@ msgstr "Тип Карта"
 msgid "Excerpt Bio symbol count"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:10
+#: views/shortcodes/cardealer/popups/pricing_tables.php:12
 #, fuzzy
 msgid "Table Count"
 msgstr "Врати"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:34
+#: views/shortcodes/cardealer/popups/pricing_tables.php:36
 #, fuzzy
 msgid "Row Count"
 msgstr "Врати"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:48
+#: views/shortcodes/cardealer/popups/pricing_tables.php:53
 msgid "Starter Package"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:48
+#: views/shortcodes/cardealer/popups/pricing_tables.php:53
 msgid "19.95"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:48
+#: views/shortcodes/cardealer/popups/pricing_tables.php:53
 msgid "Details"
 msgstr "Детайли"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:96
+#: views/shortcodes/cardealer/popups/pricing_tables.php:101
 #, fuzzy
 msgid "Enter text here"
 msgstr "Повтори парола"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:103
+#: views/shortcodes/cardealer/popups/pricing_tables.php:108
 #, fuzzy
 msgid "Button Link"
 msgstr "Публикувай"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:108
+#: views/shortcodes/cardealer/popups/pricing_tables.php:113
 #, fuzzy
 msgid "Is Featured"
 msgstr "VIP обява"
@@ -1034,36 +1032,41 @@ msgstr "Още обяви"
 msgid "Show currency converter"
 msgstr "Още обяви"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:57
+#: views/shortcodes/cardealer/popups/recent_cars.php:61
+#, fuzzy
+msgid "Filter by make"
+msgstr "Скрий Панела с Параметри"
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:77
 #, fuzzy
 msgid "Enter number of cars"
 msgstr "Моля въведете потребителско име или email"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:68
+#: views/shortcodes/cardealer/popups/recent_cars.php:88
 #, fuzzy
 msgid "Show layout switcher"
 msgstr "Още обяви"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:80
+#: views/shortcodes/cardealer/popups/recent_cars.php:100
 #, fuzzy
 msgid "View Mode"
 msgstr "Режим на местоположение"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:84
-#: views/shortcodes/cardealer/recent_cars.php:57
+#: views/shortcodes/cardealer/popups/recent_cars.php:104
+#: views/shortcodes/cardealer/recent_cars.php:65
 msgid "Grid View"
 msgstr "Решетка"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:85
-#: views/shortcodes/cardealer/recent_cars.php:60
+#: views/shortcodes/cardealer/popups/recent_cars.php:105
+#: views/shortcodes/cardealer/recent_cars.php:68
 msgid "List View"
 msgstr "Списък"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:96
+#: views/shortcodes/cardealer/popups/recent_cars.php:116
 msgid "Slide featured cars images on hover"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:107
+#: views/shortcodes/cardealer/popups/recent_cars.php:127
 #, fuzzy
 msgid "Thumbnail size"
 msgstr "Размер на двигателя"
@@ -1209,34 +1212,32 @@ msgstr "Добави обява"
 msgid "Remove"
 msgstr "Премахни"
 
-#: views/shortcodes/cardealer/quicksearch.php:139
-#: views/shortcodes/cardealer/quicksearch.php:173
-#: views/shortcodes/cardealer/quicksearch.php:182
-#: views/shortcodes/cardealer/quicksearch.php:206
-#: views/shortcodes/cardealer/quicksearch.php:241
-#: views/shortcodes/cardealer/quicksearch.php:249
-#: views/shortcodes/cardealer/quicksearch.php:303
-#: views/shortcodes/cardealer/quicksearch.php:320
-#: views/shortcodes/cardealer/quicksearch.php:380
-#: views/shortcodes/cardealer/quicksearch.php:397
-#: views/shortcodes/cardealer/quicksearch.php:416
-#: views/shortcodes/cardealer/quicksearch.php:432
-#: views/shortcodes/cardealer/quicksearch.php:455
-#: views/shortcodes/cardealer/quicksearch.php:468
-#: views/shortcodes/cardealer/quicksearch.php:545
-msgid "Any"
-msgstr " "
+#: views/shortcodes/cardealer/quicksearch.php:135
+#, fuzzy
+msgid "Location"
+msgstr "Режим на местоположение"
 
-#: views/shortcodes/cardealer/quicksearch.php:204
+#: views/shortcodes/cardealer/quicksearch.php:207
 msgid "Condition"
 msgstr "Състояние"
 
-#: views/shortcodes/cardealer/quicksearch.php:210
+#: views/shortcodes/cardealer/quicksearch.php:209
+#: views/shortcodes/cardealer/quicksearch.php:242
+#: views/shortcodes/cardealer/quicksearch.php:249
+#: views/shortcodes/cardealer/quicksearch.php:326
+#: views/shortcodes/cardealer/quicksearch.php:342
+#: views/shortcodes/cardealer/quicksearch.php:360
+#: views/shortcodes/cardealer/quicksearch.php:375
+#: views/shortcodes/cardealer/quicksearch.php:479
+msgid "Any"
+msgstr " "
+
+#: views/shortcodes/cardealer/quicksearch.php:213
 #, php-format
 msgid "Only %s cars"
 msgstr "%s"
 
-#: views/shortcodes/cardealer/quicksearch.php:239
+#: views/shortcodes/cardealer/quicksearch.php:240
 msgid "Make"
 msgstr "Марка"
 
@@ -1244,82 +1245,73 @@ msgstr "Марка"
 msgid "Model"
 msgstr "Модел"
 
-#: views/shortcodes/cardealer/quicksearch.php:258
-#: views/shortcodes/cardealer/quicksearch.php:357
-#: views/shortcodes/cardealer/quicksearch.php:483
-#: views/shortcodes/cardealer/quicksearch.php:561
-msgid "Search"
-msgstr "Търсене"
-
-#: views/shortcodes/cardealer/quicksearch.php:264
-#: views/shortcodes/cardealer/quicksearch.php:363
-#: views/shortcodes/cardealer/quicksearch.php:489
-msgid "Advanced"
-msgstr "Подробно търсене"
-
-#: views/shortcodes/cardealer/quicksearch.php:280
-#: views/shortcodes/cardealer/quicksearch.php:286
+#: views/shortcodes/cardealer/quicksearch.php:259
 msgid "Price"
 msgstr "Цена"
 
-#: views/shortcodes/cardealer/quicksearch.php:280
-msgid "min"
-msgstr "от"
+#: views/shortcodes/cardealer/quicksearch.php:259
+#: views/shortcodes/cardealer/quicksearch.php:309
+msgid "min/max"
+msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:286
-msgid "max"
-msgstr "до"
-
-#: views/shortcodes/cardealer/quicksearch.php:300
-#: views/shortcodes/cardealer/quicksearch.php:317
+#: views/shortcodes/cardealer/quicksearch.php:273
 msgid "Year"
 msgstr "Година"
 
-#: views/shortcodes/cardealer/quicksearch.php:300
-#: views/shortcodes/cardealer/quicksearch.php:342
-msgid "from"
+#: views/shortcodes/cardealer/quicksearch.php:277
+msgid "min"
 msgstr "от"
 
-#: views/shortcodes/cardealer/quicksearch.php:317
-#: views/shortcodes/cardealer/quicksearch.php:348
-msgid "to"
+#: views/shortcodes/cardealer/quicksearch.php:292
+msgid "max"
 msgstr "до"
 
-#: views/shortcodes/cardealer/quicksearch.php:342
-#: views/shortcodes/cardealer/quicksearch.php:348
+#: views/shortcodes/cardealer/quicksearch.php:309
 msgid "Kilometer"
 msgstr "Пробег"
 
-#: views/shortcodes/cardealer/quicksearch.php:342
-#: views/shortcodes/cardealer/quicksearch.php:348
+#: views/shortcodes/cardealer/quicksearch.php:309
 msgid "Mileage"
 msgstr "Пробег"
 
-#: views/shortcodes/cardealer/quicksearch.php:377
+#: views/shortcodes/cardealer/quicksearch.php:323
 msgid "Fuel Type"
 msgstr "Гориво"
 
-#: views/shortcodes/cardealer/quicksearch.php:394
+#: views/shortcodes/cardealer/quicksearch.php:339
 msgid "Gearbox"
 msgstr "Скоростна кутия"
 
-#: views/shortcodes/cardealer/quicksearch.php:413
+#: views/shortcodes/cardealer/quicksearch.php:357
 msgid "Body Type"
 msgstr "Категория"
 
-#: views/shortcodes/cardealer/quicksearch.php:430
+#: views/shortcodes/cardealer/quicksearch.php:373
 msgid "Door Count"
 msgstr "Врати"
 
-#: views/shortcodes/cardealer/quicksearch.php:453
-msgid "Interior Color"
+#: views/shortcodes/cardealer/quicksearch.php:395
+#, fuzzy
+#| msgid "Interior Color"
+msgid "Interior"
 msgstr "Цвят на интериора"
 
-#: views/shortcodes/cardealer/quicksearch.php:466
-msgid "Exterior Color"
+#: views/shortcodes/cardealer/quicksearch.php:406
+#, fuzzy
+#| msgid "Exterior Color"
+msgid "Exterior"
 msgstr "Цвят"
 
-#: views/shortcodes/cardealer/recent_cars.php:92
+#: views/shortcodes/cardealer/quicksearch.php:423
+msgid "Advanced"
+msgstr "Подробно търсене"
+
+#: views/shortcodes/cardealer/quicksearch.php:429
+#: views/shortcodes/cardealer/quicksearch.php:495
+msgid "Search"
+msgstr "Търсене"
+
+#: views/shortcodes/cardealer/recent_cars.php:100
 msgid "Show all cars"
 msgstr "Още обяви"
 
@@ -2240,3 +2232,9 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://themeforest.net/user/ThemeMakers"
 msgstr ""
+
+#~ msgid "from"
+#~ msgstr "от"
+
+#~ msgid "to"
+#~ msgstr "до"

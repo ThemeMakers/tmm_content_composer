@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Shortcodes Package\n"
-"POT-Creation-Date: 2019-06-11 22:57+0200\n"
-"PO-Revision-Date: 2019-06-11 22:57+0200\n"
+"POT-Creation-Date: 2019-09-30 01:16+0200\n"
+"PO-Revision-Date: 2019-09-30 01:16+0200\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: ThemeMakers Team <support@webtemplatemasters.com>\n"
 "Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -108,19 +108,19 @@ msgid "Orange"
 msgstr "Arancione"
 
 #: classes/content_composer.php:249
-#: views/shortcodes/cardealer/popups/recent_cars.php:111
+#: views/shortcodes/cardealer/popups/recent_cars.php:131
 #: views/shortcodes/default/popups/divider.php:28
 msgid "Small"
 msgstr "Piccola"
 
 #: classes/content_composer.php:250
-#: views/shortcodes/cardealer/popups/recent_cars.php:112
+#: views/shortcodes/cardealer/popups/recent_cars.php:132
 #: views/shortcodes/default/popups/divider.php:29
 msgid "Middle"
 msgstr "Media"
 
 #: classes/content_composer.php:251
-#: views/shortcodes/cardealer/popups/recent_cars.php:113
+#: views/shortcodes/cardealer/popups/recent_cars.php:133
 #: views/shortcodes/default/popups/divider.php:30
 msgid "Large"
 msgstr "Grande"
@@ -425,7 +425,8 @@ msgstr "Sfondo"
 msgid "Transparent (default)"
 msgstr "Grigio standard"
 
-#: views/meta_panel.php:301 views/shortcodes/default/popups/title.php:144
+#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:387
+#: views/shortcodes/default/popups/title.php:144
 msgid "Color"
 msgstr "Colore"
 
@@ -540,7 +541,7 @@ msgstr "Successivo"
 msgid "View all posts filed under %s"
 msgstr "Visualizza tutti i post archiviati in %s"
 
-#: views/shortcodes/cardealer/car_makes.php:56
+#: views/shortcodes/cardealer/car_makes.php:57
 #, php-format
 msgid "View all ads filed under %s"
 msgstr "Visualizza tutte le inserzioni archiviate in %s"
@@ -646,7 +647,7 @@ msgid "Logo"
 msgstr "Dimensioni del font del logo"
 
 #: views/shortcodes/cardealer/popups/animated_banner.php:109
-#: views/shortcodes/cardealer/popups/pricing_tables.php:101
+#: views/shortcodes/cardealer/popups/pricing_tables.php:106
 msgid "Button Text"
 msgstr "Testo del bottone"
 
@@ -928,35 +929,35 @@ msgstr "Mostra la località su mappa"
 msgid "Excerpt Bio symbol count"
 msgstr "Conteggio dei caratteri del riassunto della biografia"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:10
+#: views/shortcodes/cardealer/popups/pricing_tables.php:12
 msgid "Table Count"
 msgstr "Tabella di conteggio"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:34
+#: views/shortcodes/cardealer/popups/pricing_tables.php:36
 msgid "Row Count"
 msgstr "Riga di conteggio"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:48
+#: views/shortcodes/cardealer/popups/pricing_tables.php:53
 msgid "Starter Package"
 msgstr "Pacchetto base"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:48
+#: views/shortcodes/cardealer/popups/pricing_tables.php:53
 msgid "19.95"
 msgstr "19,95"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:48
+#: views/shortcodes/cardealer/popups/pricing_tables.php:53
 msgid "Details"
 msgstr "Dettagli"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:96
+#: views/shortcodes/cardealer/popups/pricing_tables.php:101
 msgid "Enter text here"
 msgstr "Inserisci qui il testo"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:103
+#: views/shortcodes/cardealer/popups/pricing_tables.php:108
 msgid "Button Link"
 msgstr "Link del bottone"
 
-#: views/shortcodes/cardealer/popups/pricing_tables.php:108
+#: views/shortcodes/cardealer/popups/pricing_tables.php:113
 msgid "Is Featured"
 msgstr "È in vetrina"
 
@@ -1081,33 +1082,39 @@ msgstr "Mostra il link a tutte le auto"
 msgid "Show currency converter"
 msgstr "Convertitore valuta"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:57
+#: views/shortcodes/cardealer/popups/recent_cars.php:61
+#, fuzzy
+#| msgid "Hide empty locations"
+msgid "Filter by make"
+msgstr "Permetti di mantenere vuoto il campo del costruttore di auto"
+
+#: views/shortcodes/cardealer/popups/recent_cars.php:77
 msgid "Enter number of cars"
 msgstr "Inserisce il numero di auto"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:68
+#: views/shortcodes/cardealer/popups/recent_cars.php:88
 msgid "Show layout switcher"
 msgstr "Mostra lo switcher per il layout"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:80
+#: views/shortcodes/cardealer/popups/recent_cars.php:100
 msgid "View Mode"
 msgstr "Modalità di visualizzazione"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:84
-#: views/shortcodes/cardealer/recent_cars.php:57
+#: views/shortcodes/cardealer/popups/recent_cars.php:104
+#: views/shortcodes/cardealer/recent_cars.php:65
 msgid "Grid View"
 msgstr "Visualizzazione a griglia"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:85
-#: views/shortcodes/cardealer/recent_cars.php:60
+#: views/shortcodes/cardealer/popups/recent_cars.php:105
+#: views/shortcodes/cardealer/recent_cars.php:68
 msgid "List View"
 msgstr "Visualizzazione ad elenco"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:96
+#: views/shortcodes/cardealer/popups/recent_cars.php:116
 msgid "Slide featured cars images on hover"
 msgstr "Fai scorrere le auto in vetrina all'evento \"hover\" del mouse"
 
-#: views/shortcodes/cardealer/popups/recent_cars.php:107
+#: views/shortcodes/cardealer/popups/recent_cars.php:127
 msgid "Thumbnail size"
 msgstr "Dimensioni della miniatura"
 
@@ -1252,35 +1259,34 @@ msgstr "Aggiungi elemento staff"
 msgid "Remove"
 msgstr "Rimuovi"
 
-#: views/shortcodes/cardealer/quicksearch.php:139
-#: views/shortcodes/cardealer/quicksearch.php:173
-#: views/shortcodes/cardealer/quicksearch.php:182
-#: views/shortcodes/cardealer/quicksearch.php:206
-#: views/shortcodes/cardealer/quicksearch.php:241
-#: views/shortcodes/cardealer/quicksearch.php:249
-#: views/shortcodes/cardealer/quicksearch.php:303
-#: views/shortcodes/cardealer/quicksearch.php:320
-#: views/shortcodes/cardealer/quicksearch.php:380
-#: views/shortcodes/cardealer/quicksearch.php:397
-#: views/shortcodes/cardealer/quicksearch.php:416
-#: views/shortcodes/cardealer/quicksearch.php:432
-#: views/shortcodes/cardealer/quicksearch.php:455
-#: views/shortcodes/cardealer/quicksearch.php:468
-#: views/shortcodes/cardealer/quicksearch.php:545
-msgid "Any"
-msgstr "Qualunque"
+#: views/shortcodes/cardealer/quicksearch.php:135
+#, fuzzy
+#| msgid "Location mode"
+msgid "Location"
+msgstr "Modalità località"
 
-#: views/shortcodes/cardealer/quicksearch.php:204
+#: views/shortcodes/cardealer/quicksearch.php:207
 msgid "Condition"
 msgstr "Condizione"
 
-#: views/shortcodes/cardealer/quicksearch.php:210
+#: views/shortcodes/cardealer/quicksearch.php:209
+#: views/shortcodes/cardealer/quicksearch.php:242
+#: views/shortcodes/cardealer/quicksearch.php:249
+#: views/shortcodes/cardealer/quicksearch.php:326
+#: views/shortcodes/cardealer/quicksearch.php:342
+#: views/shortcodes/cardealer/quicksearch.php:360
+#: views/shortcodes/cardealer/quicksearch.php:375
+#: views/shortcodes/cardealer/quicksearch.php:479
+msgid "Any"
+msgstr "Qualunque"
+
+#: views/shortcodes/cardealer/quicksearch.php:213
 #, fuzzy, php-format
 #| msgid "Only used cars"
 msgid "Only %s cars"
 msgstr "Mostra soltanto le auto in vetrina"
 
-#: views/shortcodes/cardealer/quicksearch.php:239
+#: views/shortcodes/cardealer/quicksearch.php:240
 msgid "Make"
 msgstr "Costruttore"
 
@@ -1288,82 +1294,73 @@ msgstr "Costruttore"
 msgid "Model"
 msgstr "Modello"
 
-#: views/shortcodes/cardealer/quicksearch.php:258
-#: views/shortcodes/cardealer/quicksearch.php:357
-#: views/shortcodes/cardealer/quicksearch.php:483
-#: views/shortcodes/cardealer/quicksearch.php:561
-msgid "Search"
-msgstr "Ricerca"
-
-#: views/shortcodes/cardealer/quicksearch.php:264
-#: views/shortcodes/cardealer/quicksearch.php:363
-#: views/shortcodes/cardealer/quicksearch.php:489
-msgid "Advanced"
-msgstr "Avanzate"
-
-#: views/shortcodes/cardealer/quicksearch.php:280
-#: views/shortcodes/cardealer/quicksearch.php:286
+#: views/shortcodes/cardealer/quicksearch.php:259
 msgid "Price"
 msgstr "Prezzo"
 
-#: views/shortcodes/cardealer/quicksearch.php:280
-msgid "min"
-msgstr "minimo"
+#: views/shortcodes/cardealer/quicksearch.php:259
+#: views/shortcodes/cardealer/quicksearch.php:309
+msgid "min/max"
+msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:286
-msgid "max"
-msgstr "massimo"
-
-#: views/shortcodes/cardealer/quicksearch.php:300
-#: views/shortcodes/cardealer/quicksearch.php:317
+#: views/shortcodes/cardealer/quicksearch.php:273
 msgid "Year"
 msgstr "Anno"
 
-#: views/shortcodes/cardealer/quicksearch.php:300
-#: views/shortcodes/cardealer/quicksearch.php:342
-msgid "from"
-msgstr "da"
+#: views/shortcodes/cardealer/quicksearch.php:277
+msgid "min"
+msgstr "minimo"
 
-#: views/shortcodes/cardealer/quicksearch.php:317
-#: views/shortcodes/cardealer/quicksearch.php:348
-msgid "to"
-msgstr "a"
+#: views/shortcodes/cardealer/quicksearch.php:292
+msgid "max"
+msgstr "massimo"
 
-#: views/shortcodes/cardealer/quicksearch.php:342
-#: views/shortcodes/cardealer/quicksearch.php:348
+#: views/shortcodes/cardealer/quicksearch.php:309
 msgid "Kilometer"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:342
-#: views/shortcodes/cardealer/quicksearch.php:348
+#: views/shortcodes/cardealer/quicksearch.php:309
 msgid "Mileage"
 msgstr "Chilometraggio"
 
-#: views/shortcodes/cardealer/quicksearch.php:377
+#: views/shortcodes/cardealer/quicksearch.php:323
 msgid "Fuel Type"
 msgstr "Tipo di carburante"
 
-#: views/shortcodes/cardealer/quicksearch.php:394
+#: views/shortcodes/cardealer/quicksearch.php:339
 msgid "Gearbox"
 msgstr "Cambio"
 
-#: views/shortcodes/cardealer/quicksearch.php:413
+#: views/shortcodes/cardealer/quicksearch.php:357
 msgid "Body Type"
 msgstr "Tipo di carrozzeria"
 
-#: views/shortcodes/cardealer/quicksearch.php:430
+#: views/shortcodes/cardealer/quicksearch.php:373
 msgid "Door Count"
 msgstr "Numero di porte"
 
-#: views/shortcodes/cardealer/quicksearch.php:453
-msgid "Interior Color"
+#: views/shortcodes/cardealer/quicksearch.php:395
+#, fuzzy
+#| msgid "Interior Color"
+msgid "Interior"
 msgstr "Colore interni"
 
-#: views/shortcodes/cardealer/quicksearch.php:466
-msgid "Exterior Color"
+#: views/shortcodes/cardealer/quicksearch.php:406
+#, fuzzy
+#| msgid "Exterior Color"
+msgid "Exterior"
 msgstr "Colore esterno"
 
-#: views/shortcodes/cardealer/recent_cars.php:92
+#: views/shortcodes/cardealer/quicksearch.php:423
+msgid "Advanced"
+msgstr "Avanzate"
+
+#: views/shortcodes/cardealer/quicksearch.php:429
+#: views/shortcodes/cardealer/quicksearch.php:495
+msgid "Search"
+msgstr "Ricerca"
+
+#: views/shortcodes/cardealer/recent_cars.php:100
 msgid "Show all cars"
 msgstr "Mostra tutte le auto"
 
@@ -2311,6 +2308,12 @@ msgstr "ThemeMakers"
 #. Author URI of the plugin/theme
 msgid "http://themeforest.net/user/ThemeMakers"
 msgstr "http://themeforest.net/user/ThemeMakers"
+
+#~ msgid "from"
+#~ msgstr "da"
+
+#~ msgid "to"
+#~ msgstr "a"
 
 #~ msgid "Upload"
 #~ msgstr "Carica"
