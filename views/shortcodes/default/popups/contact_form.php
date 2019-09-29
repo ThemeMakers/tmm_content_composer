@@ -8,7 +8,7 @@
 		
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Choose Contact Form', TMM_CC_TEXTDOMAIN),
+			'title' => __('Choose Contact Form', 'cardealer'),
 			'shortcode_field' => 'form_content',
 			'id' => 'form_content',
 			'options' => $contact_forms,

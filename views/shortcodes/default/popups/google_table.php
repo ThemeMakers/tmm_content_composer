@@ -11,7 +11,7 @@
 		//***
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Rows count', TMM_CC_TEXTDOMAIN),
+			'title' => __('Rows count', 'cardealer'),
 			'shortcode_field' => 'rows',
 			'id' => 'table_rows',
 			'options' => $numbers,
@@ -26,7 +26,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Columns count', TMM_CC_TEXTDOMAIN),
+			'title' => __('Columns count', 'cardealer'),
 			'shortcode_field' => 'cols',
 			'id' => 'table_cols',
 			'options' => $numbers,
@@ -43,19 +43,19 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'radio',
-			'title' => __('Show Row Number', TMM_CC_TEXTDOMAIN),
+			'title' => __('Show Row Number', 'cardealer'),
 			'shortcode_field' => 'show_row_number',
 			'id' => 'show_row_number',
 			'name' => 'show_row_number',
 			'values' => array(
 				1 => array(
-					'title' => __('Yes', TMM_CC_TEXTDOMAIN),
+					'title' => __('Yes', 'cardealer'),
 					'id' => 'show_row_number_1',
 					'value' => 1,
 					'checked' => ($value_type == 1 ? 1 : 0)
 				),
 				0 => array(
-					'title' => __('No', TMM_CC_TEXTDOMAIN),
+					'title' => __('No', 'cardealer'),
 					'id' => 'show_row_number_0',
 					'value' => 0,
 					'checked' => ($value_type == 0 ? 1 : 0)
@@ -72,8 +72,8 @@
 
 <?php
 $head_types_array = array(
-	'string' => __('string', TMM_CC_TEXTDOMAIN),
-	'number' => __('number', TMM_CC_TEXTDOMAIN)
+	'string' => __('string', 'cardealer'),
+	'number' => __('number', 'cardealer')
 );
 if (isset($_REQUEST["shortcode_mode_edit"])) {
 	$cols = (int) $_REQUEST["shortcode_mode_edit"]['cols'];
@@ -89,7 +89,7 @@ if (isset($_REQUEST["shortcode_mode_edit"])) {
 ?>
 
 
-<h4 for="google_table_headers" class="label"><?php esc_html_e('Table headers', TMM_CC_TEXTDOMAIN); ?></h4>
+<h4 for="google_table_headers" class="label"><?php esc_html_e('Table headers', 'cardealer'); ?></h4>
 <ul id="google_table_headers">
 
 
@@ -121,7 +121,7 @@ if (isset($_REQUEST["shortcode_mode_edit"])) {
 </ul>
 <br />
 <div style="clear: both;"></div>
-<h4 for="google_table" class="label"><?php esc_html_e('Table data', TMM_CC_TEXTDOMAIN); ?></h4>
+<h4 for="google_table" class="label"><?php esc_html_e('Table data', 'cardealer'); ?></h4>
 <ul id="google_table">
 
 	<?php foreach ($rows_data as $key => $row_data) : ?>

@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Title', TMM_CC_TEXTDOMAIN),
+			'title' => __('Title', 'cardealer'),
 			'shortcode_field' => 'title',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('title', ''),
@@ -17,7 +17,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show details button', TMM_CC_TEXTDOMAIN),
+			'title' => __('Show details button', 'cardealer'),
 			'shortcode_field' => 'show_details_button',
 			'id' => 'show_details_button',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_details_button', 1),
@@ -28,7 +28,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show link to all cars', TMM_CC_TEXTDOMAIN),
+			'title' => __('Show link to all cars', 'cardealer'),
 			'shortcode_field' => 'show_view_all_cars_link',
 			'id' => 'view_all_cars',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_view_all_cars_link', 1),
@@ -39,11 +39,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Enable Currency Converter', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enable Currency Converter', 'cardealer'),
 			'shortcode_field' => 'show_recent_cars_currency_converter',
 			'id' => 'show_recent_cars_currency_converter',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_recent_cars_currency_converter', 1),
-			'description' => __('Show currency converter', TMM_CC_TEXTDOMAIN)
+			'description' => __('Show currency converter', 'cardealer')
 		));
 		?>
 
@@ -53,12 +53,12 @@
 		$options['']      = 'All';
 
 		foreach ( $categories as $cate ) {
-			$options[ $cate->term_id ] = __( $cate->name, TMM_CC_TEXTDOMAIN );
+			$options[ $cate->term_id ] = __( $cate->name, 'cardealer' );
 		}
 
 		TMM_Content_Composer::html_option(array(
 			'type'            => 'select',
-			'title'           => __( 'Filter by make', TMM_CC_TEXTDOMAIN ),
+			'title'           => __( 'Filter by make', 'cardealer' ),
 			'shortcode_field' => 'cate',
 			'id'              => '',
 			'options'         => $options,
@@ -74,7 +74,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Enter number of cars', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enter number of cars', 'cardealer'),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', 9),
@@ -85,7 +85,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show layout switcher', TMM_CC_TEXTDOMAIN),
+			'title' => __('Show layout switcher', 'cardealer'),
 			'shortcode_field' => 'show_layout_switcher',
 			'id' => 'layout_switcher',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_layout_switcher', 1),
@@ -97,12 +97,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('View Mode', TMM_CC_TEXTDOMAIN),
+			'title' => __('View Mode', 'cardealer'),
 			'shortcode_field' => 'layout_mode',
 			'id' => 'layout_mode',
 			'options' => array(
-				'grid' => __('Grid View', TMM_CC_TEXTDOMAIN),
-				'list' => __('List View', TMM_CC_TEXTDOMAIN),
+				'grid' => __('Grid View', 'cardealer'),
+				'list' => __('List View', 'cardealer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('layout_mode', 'grid'),
 			'description' => ''
@@ -113,7 +113,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Slide featured cars images on hover', TMM_CC_TEXTDOMAIN),
+			'title' => __('Slide featured cars images on hover', 'cardealer'),
 			'shortcode_field' => 'set_featured_autoslide',
 			'id' => 'featured_autoslide',
 			'is_checked' => TMM_Content_Composer::set_default_value('set_featured_autoslide', 1),
@@ -124,13 +124,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Thumbnail size', TMM_CC_TEXTDOMAIN),
+			'title' => __('Thumbnail size', 'cardealer'),
 			'shortcode_field' => 'thumbnail_size',
 			'id' => 'thumbnail_size',
 			'options' => array(
-				'small' => __('Small', TMM_CC_TEXTDOMAIN),
-				'middle' => __('Middle', TMM_CC_TEXTDOMAIN),
-				'large' => __('Large', TMM_CC_TEXTDOMAIN),
+				'small' => __('Small', 'cardealer'),
+				'middle' => __('Middle', 'cardealer'),
+				'large' => __('Large', 'cardealer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('thumbnail_size', 'large'),
 			'description' => ''

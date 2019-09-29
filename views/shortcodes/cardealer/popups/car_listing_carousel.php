@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Title', TMM_CC_TEXTDOMAIN),
+			'title' => __('Title', 'cardealer'),
 			'shortcode_field' => 'title',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('title', ''),
@@ -17,7 +17,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Enter Number of Cars', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enter Number of Cars', 'cardealer'),
 			'shortcode_field' => 'count',
 			'id' => '',
 			'options' => array(
@@ -36,7 +36,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Enable Auto Slide', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enable Auto Slide', 'cardealer'),
 			'shortcode_field' => 'autoslide',
 			'id' => 'autoslide',
 			'is_checked' => TMM_Content_Composer::set_default_value('autoslide', 1),
@@ -47,7 +47,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Enable Currency Converter', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enable Currency Converter', 'cardealer'),
 			'shortcode_field' => 'show_currency_converter',
 			'id' => 'show_currency_converter',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_currency_converter', 1),
@@ -58,7 +58,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Slide Featured Cars Images on Hover', TMM_CC_TEXTDOMAIN),
+			'title' => __('Slide Featured Cars Images on Hover', 'cardealer'),
 			'shortcode_field' => 'set_featured_autoslide',
 			'id' => 'featured_autoslide',
 			'is_checked' => TMM_Content_Composer::set_default_value('set_featured_autoslide', 1),
@@ -73,13 +73,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Items per Set', TMM_CC_TEXTDOMAIN),
+			'title' => __('Items per Set', 'cardealer'),
 			'shortcode_field' => 'items_per_set',
 			'id' => 'items_per_set',
 			'options' => array(
-				'3' => __('3 Items', TMM_CC_TEXTDOMAIN),
-				'4' => __('4 Items', TMM_CC_TEXTDOMAIN),
-				'6' => __('6 Items', TMM_CC_TEXTDOMAIN),
+				'3' => __('3 Items', 'cardealer'),
+				'4' => __('4 Items', 'cardealer'),
+				'6' => __('6 Items', 'cardealer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('items_per_set', '3'),
 			'description' => ''
@@ -128,8 +128,8 @@
 		$admin_id = is_array($admin) ? $admin[0] : 1;
 
 		$sort_by_dealer_options = array(
-			0 => __('All dealers', TMM_CC_TEXTDOMAIN),
-			$admin_id => __('Administrator', TMM_CC_TEXTDOMAIN),
+			0 => __('All dealers', 'cardealer'),
+			$admin_id => __('Administrator', 'cardealer'),
 		);
 
 		if (!empty($dealers)) {
@@ -140,7 +140,7 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Sort by Dealer', TMM_CC_TEXTDOMAIN),
+			'title' => __('Sort by Dealer', 'cardealer'),
 			'shortcode_field' => 'sort_by_dealer',
 			'id' => 'sort_by_dealer',
 			'options' => $sort_by_dealer_options,
@@ -152,13 +152,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Apply Filters', TMM_CC_TEXTDOMAIN),
+			'title' => __('Apply Filters', 'cardealer'),
 			'shortcode_field' => 'filter',
 			'id' => '',
 			'options' => array(
-				'recent' => __('Recent cars', TMM_CC_TEXTDOMAIN),
-				'featured' => __('Featured cars', TMM_CC_TEXTDOMAIN),
-				'random' => __('Random cars', TMM_CC_TEXTDOMAIN),
+				'recent' => __('Recent cars', 'cardealer'),
+				'featured' => __('Featured cars', 'cardealer'),
+				'random' => __('Random cars', 'cardealer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('filter', 'recent'),
 			'description' => ''

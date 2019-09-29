@@ -54,18 +54,18 @@ if (!isset($show_name)) {
 			<li class="cat-item-<?php echo esc_attr( $make->term_id ) ?><?php if($show_name){ ?> with-title<?php } ?>">
 
 			<?php if (!isset($show_link) || $show_link && $make->count > 0) { ?>
-				<a title="<?php echo sprintf(esc_html__('View all ads filed under %s', TMM_CC_TEXTDOMAIN), $make->name); ?>" href="<?php echo get_term_link($make->slug, 'carproducer'); ?>">
+				<a title="<?php echo sprintf(esc_html__('View all ads filed under %s', 'cardealer'), $make->name); ?>" href="<?php echo get_term_link($make->slug, 'carproducer'); ?>">
 			<?php } ?>
 
 				<?php if($show_logo && $src != ''){ ?>
-					<img src="<?php echo esc_attr( $src ) ?>" alt="<?php echo esc_html__( $make->name, TMM_CC_TEXTDOMAIN ) ?>" />
+					<img src="<?php echo esc_attr( $src ) ?>" alt="<?php echo esc_html__( $make->name, 'cardealer' ) ?>" />
 				<?php } ?>
 
 				<?php if($show_name){ ?>
 					<span class="car-title">
 
 					<?php
-					echo esc_html__( $make->name, TMM_CC_TEXTDOMAIN );
+					echo esc_html__( $make->name, 'cardealer' );
 					echo (!isset($show_count) || $show_count) ? ' (' . $make->count . ')' : '';
 					?>
 

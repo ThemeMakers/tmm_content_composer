@@ -56,7 +56,7 @@ if ( !empty($query->posts) ) {
 
 	<div class="page-subheader">
 
-		<h3 class="section-title"><?php esc_html_e( $title, TMM_CC_TEXTDOMAIN ) ?></h3>
+		<h3 class="section-title"><?php esc_html_e( $title, 'cardealer' ) ?></h3>
 
 		<span class="clc_controls" id="clc_controls_<?php echo esc_attr( $uniqid ) ?>">
 			<a href="#" data-target="prev" class="prevBtn icon-angle-left" title="<?php esc_html_e('Previous', 'cardealer'); ?>"></a>

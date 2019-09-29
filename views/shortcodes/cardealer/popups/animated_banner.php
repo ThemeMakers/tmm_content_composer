@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Banner Size', TMM_CC_TEXTDOMAIN),
+			'title' => __('Banner Size', 'cardealer'),
 			'shortcode_field' => 'size',
 			'id' => 'size',
 			'options' => array(
@@ -21,10 +21,10 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Title Text 1', TMM_CC_TEXTDOMAIN),
+			'title' => __('Title Text 1', 'cardealer'),
 			'shortcode_field' => 'title_1',
 			'id' => 'title_1',
-			'default_value' => TMM_Content_Composer::set_default_value('title_1', __('Title 1', TMM_CC_TEXTDOMAIN)),
+			'default_value' => TMM_Content_Composer::set_default_value('title_1', __('Title 1', 'cardealer')),
 			'description' => ''
 		));
 		?>
@@ -32,10 +32,10 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Title Text 2', TMM_CC_TEXTDOMAIN),
+			'title' => __('Title Text 2', 'cardealer'),
 			'shortcode_field' => 'title_2',
 			'id' => 'title_2',
-			'default_value' => TMM_Content_Composer::set_default_value('title_2', __('Title 2', TMM_CC_TEXTDOMAIN)),
+			'default_value' => TMM_Content_Composer::set_default_value('title_2', __('Title 2', 'cardealer')),
 			'description' => ''
 		));
 		?>
@@ -43,10 +43,10 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Title Text 3', TMM_CC_TEXTDOMAIN),
+			'title' => __('Title Text 3', 'cardealer'),
 			'shortcode_field' => 'title_3',
 			'id' => 'title_3',
-			'default_value' => TMM_Content_Composer::set_default_value('title_3', __('Title 3', TMM_CC_TEXTDOMAIN)),
+			'default_value' => TMM_Content_Composer::set_default_value('title_3', __('Title 3', 'cardealer')),
 			'description' => ''
 		));
 		?>
@@ -54,12 +54,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Banner animation type', TMM_CC_TEXTDOMAIN),
+			'title' => __('Banner animation type', 'cardealer'),
 			'shortcode_field' => 'animation_type',
 			'id' => 'animation_type',
 			'options' => array(
-				'static' => __('Static Banner', TMM_CC_TEXTDOMAIN),
-				'animated' => __('Animated Banner', TMM_CC_TEXTDOMAIN),
+				'static' => __('Static Banner', 'cardealer'),
+				'animated' => __('Animated Banner', 'cardealer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('animation_type', 'static'),
 			'description' => ''
@@ -69,7 +69,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'color',
-			'title' => __('Caption Background Color', TMM_CC_TEXTDOMAIN),
+			'title' => __('Caption Background Color', 'cardealer'),
 			'shortcode_field' => 'caption_bg_color',
 			'id' => 'caption_bg_color',
 			'default_value' => TMM_Content_Composer::set_default_value('caption_bg_color', ''),
@@ -84,7 +84,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'upload',
-			'title' => __('Background Image', TMM_CC_TEXTDOMAIN),
+			'title' => __('Background Image', 'cardealer'),
 			'shortcode_field' => 'bg_image',
 			'id' => 'bg_image',
 			'default_value' => TMM_Content_Composer::set_default_value('bg_image', ''),
@@ -95,7 +95,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'upload',
-			'title' => __('Logo', TMM_CC_TEXTDOMAIN),
+			'title' => __('Logo', 'cardealer'),
 			'shortcode_field' => 'logo',
 			'id' => 'logo',
 			'default_value' => TMM_Content_Composer::set_default_value('logo', ''),
@@ -106,10 +106,10 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Button Text', TMM_CC_TEXTDOMAIN),
+			'title' => __('Button Text', 'cardealer'),
 			'shortcode_field' => 'button_text',
 			'id' => 'button_text',
-			'default_value' => TMM_Content_Composer::set_default_value('button_text', __('Know More', TMM_CC_TEXTDOMAIN)),
+			'default_value' => TMM_Content_Composer::set_default_value('button_text', __('Know More', 'cardealer')),
 			'description' => ''
 		));
 		?>
@@ -117,7 +117,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Button Url', TMM_CC_TEXTDOMAIN),
+			'title' => __('Button Url', 'cardealer'),
 			'shortcode_field' => 'button_url',
 			'id' => 'button_url',
 			'default_value' => TMM_Content_Composer::set_default_value('button_url', '#'),
@@ -128,12 +128,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Button Color', TMM_CC_TEXTDOMAIN),
+			'title' => __('Button Color', 'cardealer'),
 			'shortcode_field' => 'button_color',
 			'id' => 'button_color',
 			'options' => array(
-				'red' => __('Red', TMM_CC_TEXTDOMAIN),
-				'yellow' => __('Yellow', TMM_CC_TEXTDOMAIN),
+				'red' => __('Red', 'cardealer'),
+				'yellow' => __('Yellow', 'cardealer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('button_color', 'yellow'),
 			'description' => ''

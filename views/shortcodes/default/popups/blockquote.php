@@ -5,13 +5,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Quote Position', TMM_CC_TEXTDOMAIN),
+				'title' => __('Quote Position', 'cardealer'),
 				'shortcode_field' => 'positioning',
 				'id' => 'positioning',
 				'options' => array(
-						'fullwidth' => __('Full Width', TMM_CC_TEXTDOMAIN),
-						'left' => __('Align Left', TMM_CC_TEXTDOMAIN),
-						'right' => __('Align Right', TMM_CC_TEXTDOMAIN),
+						'fullwidth' => __('Full Width', 'cardealer'),
+						'left' => __('Align Left', 'cardealer'),
+						'right' => __('Align Right', 'cardealer'),
 				),
 				'default_value' => TMM_Content_Composer::set_default_value('positioning', 'fullwidth'),
 				'description' => ''
@@ -24,7 +24,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'textarea',
-			'title' => __('Enter text', TMM_CC_TEXTDOMAIN),
+			'title' => __('Enter text', 'cardealer'),
 			'shortcode_field' => 'content',
 			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),

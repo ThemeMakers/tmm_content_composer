@@ -199,7 +199,7 @@ class TMM_Layout_Constructor {
 				break;
             
 				default:
-					_e('Unsupported video format', TMM_CC_TEXTDOMAIN);
+					_e('Unsupported video format', 'cardealer');
 					break;
 			}
 

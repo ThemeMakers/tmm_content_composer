@@ -47,7 +47,7 @@ foreach ($car_body_list as $k => $body_name) {
 <?php if (!empty($title)) { ?>
 <div class="page-subheader">
 
-	<h3 class="section-title"><?php esc_html_e( $title, TMM_CC_TEXTDOMAIN ) ?></h3>
+	<h3 class="section-title"><?php esc_html_e( $title, 'cardealer' ) ?></h3>
 
 </div><!--/ .page-header-->
 <?php } ?>
@@ -61,7 +61,7 @@ foreach ($car_body_list as $k => $body_name) {
 	    <a href="<?php echo esc_url( $body['url'] ) ?>">
 	    <?php } ?>
 
-		    <img src="<?php echo esc_url( $body['icon'] ) ?>" alt="<?php echo esc_html__( $body['name'], TMM_CC_TEXTDOMAIN ); ?>" />
+		    <img src="<?php echo esc_url( $body['icon'] ) ?>" alt="<?php echo esc_html__( $body['name'], 'cardealer' ); ?>" />
 
 		    <?php if (!empty($show_name)) { ?>
 		    <h6>
@@ -69,7 +69,7 @@ foreach ($car_body_list as $k => $body_name) {
 
 		    <?php
 		    if (!empty($show_name)) {
-		        echo esc_html__( $body['name'], TMM_CC_TEXTDOMAIN );
+		        echo esc_html__( $body['name'], 'cardealer' );
 		    }
 
 		    if (!empty($show_count)) {

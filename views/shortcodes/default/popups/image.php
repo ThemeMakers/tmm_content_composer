@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'upload',
-			'title' => __('Image URL', TMM_CC_TEXTDOMAIN),
+			'title' => __('Image URL', 'cardealer'),
 			'shortcode_field' => 'content',
 			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -18,18 +18,18 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Image Hover Effect', TMM_CC_TEXTDOMAIN),
+					'title' => __('Image Hover Effect', 'cardealer'),
 					'shortcode_field' => 'hover_effect',
 					'id' => 'hover_effect',
 					'options' => array(
-						'' => __('None', TMM_CC_TEXTDOMAIN),
-						'opacity' => __('Opacity', TMM_CC_TEXTDOMAIN),
-						'grayscale' => __('Grayscale', TMM_CC_TEXTDOMAIN),
-						'sepia' => __('Sepia', TMM_CC_TEXTDOMAIN),
-						'saturate' => __('Saturate', TMM_CC_TEXTDOMAIN),
-						'brightness' => __('Brightness', TMM_CC_TEXTDOMAIN),
-						'contrast' => __('Contrast', TMM_CC_TEXTDOMAIN),
-						'blur' => __('Blur', TMM_CC_TEXTDOMAIN),
+						'' => __('None', 'cardealer'),
+						'opacity' => __('Opacity', 'cardealer'),
+						'grayscale' => __('Grayscale', 'cardealer'),
+						'sepia' => __('Sepia', 'cardealer'),
+						'saturate' => __('Saturate', 'cardealer'),
+						'brightness' => __('Brightness', 'cardealer'),
+						'contrast' => __('Contrast', 'cardealer'),
+						'blur' => __('Blur', 'cardealer'),
 					),
 					'default_value' => TMM_Content_Composer::set_default_value('hover_effect', ''),
 					'description' => ''
@@ -42,12 +42,12 @@
 				//***
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Action', TMM_CC_TEXTDOMAIN),
+					'title' => __('Action', 'cardealer'),
 					'shortcode_field' => 'action',
 					'id' => 'img_shortcode_action',
 					'options' => array(
-						'none' => __('No link on image', TMM_CC_TEXTDOMAIN),
-						'link' => __('Open link', TMM_CC_TEXTDOMAIN),
+						'none' => __('No link on image', 'cardealer'),
+						'link' => __('Open link', 'cardealer'),
 					),
 					'default_value' => $action,
 					'description' => ''
@@ -64,7 +64,7 @@
 					<?php
 					TMM_Content_Composer::html_option(array(
 						'type' => 'text',
-						'title' => __('Target URL', TMM_CC_TEXTDOMAIN),
+						'title' => __('Target URL', 'cardealer'),
 						'shortcode_field' => 'target_url',
 						'id' => 'target_url',
 						'default_value' => TMM_Content_Composer::set_default_value('target_url', '#'),
@@ -76,12 +76,12 @@
 					<?php
 					TMM_Content_Composer::html_option(array(
 						'type' => 'select',
-						'title' => __('Link Target', TMM_CC_TEXTDOMAIN),
+						'title' => __('Link Target', 'cardealer'),
 						'shortcode_field' => 'target',
 						'id' => 'target',
 						'options' => array(
-							'_self' => __('Self', TMM_CC_TEXTDOMAIN),
-							'_blank' => __('Blank', TMM_CC_TEXTDOMAIN),
+							'_self' => __('Self', 'cardealer'),
+							'_blank' => __('Blank', 'cardealer'),
 						),
 						'default_value' => TMM_Content_Composer::set_default_value('target', '_self'),
 						'description' => ''
@@ -95,7 +95,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 					'type' => 'checkbox',
-					'title' => __('Open original image size in Fancybox', TMM_CC_TEXTDOMAIN),
+					'title' => __('Open original image size in Fancybox', 'cardealer'),
 					'shortcode_field' => 'fancybox',
 					'id' => 'fancybox',
 					'is_checked' => TMM_Content_Composer::set_default_value('fancybox', 0),
@@ -110,14 +110,14 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Align', TMM_CC_TEXTDOMAIN),
+					'title' => __('Align', 'cardealer'),
 					'shortcode_field' => 'align',
 					'id' => 'align',
 					'options' => array(
-						'' => __('None', TMM_CC_TEXTDOMAIN),
-						'alignleft' => __('Left', TMM_CC_TEXTDOMAIN),
-						'alignright' => __('Right', TMM_CC_TEXTDOMAIN),
-						'aligncenter' => __('Center', TMM_CC_TEXTDOMAIN),
+						'' => __('None', 'cardealer'),
+						'alignleft' => __('Left', 'cardealer'),
+						'alignright' => __('Right', 'cardealer'),
+						'aligncenter' => __('Center', 'cardealer'),
 					),
 					'default_value' => TMM_Content_Composer::set_default_value('align', ''),
 					'description' => ''
@@ -128,7 +128,7 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Size', TMM_CC_TEXTDOMAIN),
+					'title' => __('Size', 'cardealer'),
 					'shortcode_field' => 'image_size_alias',
 					'id' => 'image_size_alias',
 					'options' => TMM_OptionsHelper::get_theme_image_sizes_aliases(),
@@ -144,13 +144,13 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Caption Type', TMM_CC_TEXTDOMAIN),
+					'title' => __('Caption Type', 'cardealer'),
 					'shortcode_field' => 'caption_type',
 					'id' => 'caption_type',
 					'options' => array(
-						'' => __('Default (Beneath Image)', TMM_CC_TEXTDOMAIN),
-						'static' => __('Static (Over Image)', TMM_CC_TEXTDOMAIN),
-						'animated' => __('Animated (Over Image)', TMM_CC_TEXTDOMAIN),
+						'' => __('Default (Beneath Image)', 'cardealer'),
+						'static' => __('Static (Over Image)', 'cardealer'),
+						'animated' => __('Animated (Over Image)', 'cardealer'),
 					),
 					'default_value' => TMM_Content_Composer::set_default_value('caption_type', ''),
 					'description' => ''
@@ -161,13 +161,13 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Caption Style', TMM_CC_TEXTDOMAIN),
+					'title' => __('Caption Style', 'cardealer'),
 					'shortcode_field' => 'caption_style',
 					'id' => 'caption_style',
 					'options' => array(
-						'' => __('Default', TMM_CC_TEXTDOMAIN),
-						'style-1' => __('Light Translucent BG', TMM_CC_TEXTDOMAIN),
-						'style-2' => __('Dark Translucent BG', TMM_CC_TEXTDOMAIN),
+						'' => __('Default', 'cardealer'),
+						'style-1' => __('Light Translucent BG', 'cardealer'),
+						'style-2' => __('Dark Translucent BG', 'cardealer'),
 					),
 					'default_value' => TMM_Content_Composer::set_default_value('caption_style', ''),
 					'description' => ''
@@ -181,7 +181,7 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'text',
-					'title' => __('Image Alt', TMM_CC_TEXTDOMAIN),
+					'title' => __('Image Alt', 'cardealer'),
 					'shortcode_field' => 'image_alt',
 					'id' => 'image_alt',
 					'default_value' => TMM_Content_Composer::set_default_value('image_alt', ''),
@@ -193,7 +193,7 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'text',
-					'title' => __('Image Caption', TMM_CC_TEXTDOMAIN),
+					'title' => __('Image Caption', 'cardealer'),
 					'shortcode_field' => 'img_caption',
 					'id' => 'img_caption',
 					'default_value' => TMM_Content_Composer::set_default_value('img_caption', ''),
@@ -210,15 +210,15 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Inner Offset', TMM_CC_TEXTDOMAIN),
+			'title' => __('Inner Offset', 'cardealer'),
 			'shortcode_field' => 'inner_offset',
 			'id' => 'inner_offset',
 			'options' => array(
-				'' => __('None', TMM_CC_TEXTDOMAIN),
-				'io-1' => __('Smaller...........1px', TMM_CC_TEXTDOMAIN),
-				'io-3' => __('Small..............3px', TMM_CC_TEXTDOMAIN),
-				'io-5' => __('Middle............5px', TMM_CC_TEXTDOMAIN),
-				'io-10' => __('Large.............10px', TMM_CC_TEXTDOMAIN),
+				'' => __('None', 'cardealer'),
+				'io-1' => __('Smaller...........1px', 'cardealer'),
+				'io-3' => __('Small..............3px', 'cardealer'),
+				'io-5' => __('Middle............5px', 'cardealer'),
+				'io-10' => __('Large.............10px', 'cardealer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('inner_offset', ''),
 			'description' => ''
@@ -231,15 +231,15 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Outer Offset (top)', TMM_CC_TEXTDOMAIN),
+					'title' => __('Outer Offset (top)', 'cardealer'),
 					'shortcode_field' => 'margin_top',
 					'id' => 'margin_top',
 					'options' => array(
-						'' => __('None', TMM_CC_TEXTDOMAIN),
-						'oo-t-5' => __('Smaller...........5px', TMM_CC_TEXTDOMAIN),
-						'oo-t-10' => __('Small..............10px', TMM_CC_TEXTDOMAIN),
-						'oo-t-15' => __('Middle............15px', TMM_CC_TEXTDOMAIN),
-						'oo-t-20' => __('Large.............20px', TMM_CC_TEXTDOMAIN),
+						'' => __('None', 'cardealer'),
+						'oo-t-5' => __('Smaller...........5px', 'cardealer'),
+						'oo-t-10' => __('Small..............10px', 'cardealer'),
+						'oo-t-15' => __('Middle............15px', 'cardealer'),
+						'oo-t-20' => __('Large.............20px', 'cardealer'),
 					),
 					'default_value' => TMM_Content_Composer::set_default_value('margin_top', ''),
 					'description' => ''
@@ -253,15 +253,15 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Outer Offset (right)', TMM_CC_TEXTDOMAIN),
+					'title' => __('Outer Offset (right)', 'cardealer'),
 					'shortcode_field' => 'margin_right',
 					'id' => 'margin_right',
 					'options' => array(
-						'' => __('None', TMM_CC_TEXTDOMAIN),
-						'oo-r-5' => __('Smaller...........5px', TMM_CC_TEXTDOMAIN),
-						'oo-r-10' => __('Small..............10px', TMM_CC_TEXTDOMAIN),
-						'oo-r-15' => __('Middle............15px', TMM_CC_TEXTDOMAIN),
-						'oo-r-20' => __('Large.............20px', TMM_CC_TEXTDOMAIN),
+						'' => __('None', 'cardealer'),
+						'oo-r-5' => __('Smaller...........5px', 'cardealer'),
+						'oo-r-10' => __('Small..............10px', 'cardealer'),
+						'oo-r-15' => __('Middle............15px', 'cardealer'),
+						'oo-r-20' => __('Large.............20px', 'cardealer'),
 					),
 					'default_value' => TMM_Content_Composer::set_default_value('margin_right', ''),
 					'description' => ''
@@ -277,15 +277,15 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Outer Offset (bottom)', TMM_CC_TEXTDOMAIN),
+					'title' => __('Outer Offset (bottom)', 'cardealer'),
 					'shortcode_field' => 'margin_bottom',
 					'id' => 'margin_bottom',
 					'options' => array(
-						'' => __('None', TMM_CC_TEXTDOMAIN),
-						'oo-b-5' => __('Smaller...........5px', TMM_CC_TEXTDOMAIN),
-						'oo-b-10' => __('Small..............10px', TMM_CC_TEXTDOMAIN),
-						'oo-b-15' => __('Middle............15px', TMM_CC_TEXTDOMAIN),
-						'oo-b-20' => __('Large.............20px', TMM_CC_TEXTDOMAIN),
+						'' => __('None', 'cardealer'),
+						'oo-b-5' => __('Smaller...........5px', 'cardealer'),
+						'oo-b-10' => __('Small..............10px', 'cardealer'),
+						'oo-b-15' => __('Middle............15px', 'cardealer'),
+						'oo-b-20' => __('Large.............20px', 'cardealer'),
 					),
 					'default_value' => TMM_Content_Composer::set_default_value('margin_bottom', ''),
 					'description' => ''
@@ -299,15 +299,15 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Outer Offset (left)', TMM_CC_TEXTDOMAIN),
+					'title' => __('Outer Offset (left)', 'cardealer'),
 					'shortcode_field' => 'margin_left',
 					'id' => 'margin_left',
 					'options' => array(
-						'' => __('None', TMM_CC_TEXTDOMAIN),
-						'oo-l-5' => __('Smaller...........5px', TMM_CC_TEXTDOMAIN),
-						'oo-l-10' => __('Small..............10px', TMM_CC_TEXTDOMAIN),
-						'oo-l-15' => __('Middle............15px', TMM_CC_TEXTDOMAIN),
-						'oo-l-20' => __('Large.............20px', TMM_CC_TEXTDOMAIN),
+						'' => __('None', 'cardealer'),
+						'oo-l-5' => __('Smaller...........5px', 'cardealer'),
+						'oo-l-10' => __('Small..............10px', 'cardealer'),
+						'oo-l-15' => __('Middle............15px', 'cardealer'),
+						'oo-l-20' => __('Large.............20px', 'cardealer'),
 					),
 					'default_value' => TMM_Content_Composer::set_default_value('margin_left', ''),
 					'description' => ''
@@ -323,13 +323,13 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Border Style', TMM_CC_TEXTDOMAIN),
+					'title' => __('Border Style', 'cardealer'),
 					'shortcode_field' => 'brd_style',
 					'id' => 'brd_style',
 					'options' => array(
-						'brd-solid' => __('Solid', TMM_CC_TEXTDOMAIN),
-						'brd-dashed' => __('Dashed', TMM_CC_TEXTDOMAIN),
-						'brd-dotted' => __('Dotted', TMM_CC_TEXTDOMAIN),
+						'brd-solid' => __('Solid', 'cardealer'),
+						'brd-dashed' => __('Dashed', 'cardealer'),
+						'brd-dotted' => __('Dotted', 'cardealer'),
 					),
 					'default_value' => TMM_Content_Composer::set_default_value('brd_style', 'brd-solid'),
 					'description' => ''
@@ -343,13 +343,13 @@
 				<?php
 				TMM_Content_Composer::html_option(array(
 					'type' => 'select',
-					'title' => __('Border Width', TMM_CC_TEXTDOMAIN),
+					'title' => __('Border Width', 'cardealer'),
 					'shortcode_field' => 'brd_width',
 					'id' => 'brd_width',
 					'options' => array(
-						'brd-w-0' => __('None', TMM_CC_TEXTDOMAIN),
-						'brd-w-1' => __('Small..............1px', TMM_CC_TEXTDOMAIN),
-						'brd-w-2' => __('Middle............2px', TMM_CC_TEXTDOMAIN),
+						'brd-w-0' => __('None', 'cardealer'),
+						'brd-w-1' => __('Small..............1px', 'cardealer'),
+						'brd-w-2' => __('Middle............2px', 'cardealer'),
 					),
 					'default_value' => TMM_Content_Composer::set_default_value('brd_width', 'brd-w-0'),
 					'description' => ''
@@ -362,15 +362,15 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Border Color', TMM_CC_TEXTDOMAIN),
+			'title' => __('Border Color', 'cardealer'),
 			'shortcode_field' => 'brd_color',
 			'id' => 'brd_color',
 			'options' => array(
-				'brd-light-grey' => __('Light Grey', TMM_CC_TEXTDOMAIN),
-				'brd-grey' => __('Grey', TMM_CC_TEXTDOMAIN),
-				'brd-white' => __('White', TMM_CC_TEXTDOMAIN),
-				'brd-white-transparent' => __('White with opacity', TMM_CC_TEXTDOMAIN),
-				'brd-grey-transparent' => __('Grey with opacity', TMM_CC_TEXTDOMAIN),
+				'brd-light-grey' => __('Light Grey', 'cardealer'),
+				'brd-grey' => __('Grey', 'cardealer'),
+				'brd-white' => __('White', 'cardealer'),
+				'brd-white-transparent' => __('White with opacity', 'cardealer'),
+				'brd-grey-transparent' => __('Grey with opacity', 'cardealer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('brd_color', 'brd-light-grey'),
 			'description' => ''

@@ -3,8 +3,8 @@
 global $tmm_row_options; ?>
 
 <input type="hidden" name="tmm_meta_saving" value="1" />
-<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php _e("Add New Section", TMM_CC_TEXTDOMAIN) ?></a>
-<a href="#" class="tmm-lc-paste-row button button-large"><?php _e("Insert Clipboard Section here", TMM_CC_TEXTDOMAIN) ?></a><br />
+<a href="#add_row" class="tmm-lc-add-row button button-primary button-large"><?php _e("Add New Section", 'cardealer') ?></a>
+<a href="#" class="tmm-lc-paste-row button button-large"><?php _e("Insert Clipboard Section here", 'cardealer') ?></a><br />
 
 <ul id="tmm_lc_rows" class="tmm-lc-rows">
 
@@ -17,10 +17,10 @@ global $tmm_row_options; ?>
 			<li id="tmm_lc_row_<?php echo $row ?>" class="tmm-lc-row">
 
 				<div class="tmm-lc-row-buttons-wrapper">
-					<a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php _e("Add Column to Section", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php _e("Add Section to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php _e("Section Editor", TMM_CC_TEXTDOMAIN) ?>"></a>
-					<a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php _e("Delete Section", TMM_CC_TEXTDOMAIN) ?>"></a>
+					<a class="tmm-lc-add-column" data-row-id="<?php echo $row ?>" title="<?php _e("Add Column to Section", 'cardealer') ?>"></a>
+					<a class="tmm-lc-copy-row" data-row-id="<?php echo $row ?>" title="<?php _e("Add Section to Clipboard", 'cardealer') ?>"></a>
+					<a class="tmm-lc-edit-row" data-row-id="<?php echo $row ?>" title="<?php _e("Section Editor", 'cardealer') ?>"></a>
+					<a class="tmm-lc-delete-row" data-row-id="<?php echo $row ?>" title="<?php _e("Delete Section", 'cardealer') ?>"></a>
 				</div>
 
 				<div class="tmm-lc-columns" id="tmm_lc_columns_<?php echo $row ?>">
@@ -100,10 +100,10 @@ global $tmm_row_options; ?>
 	<li id="tmm_lc_row___ROW_ID__" class="tmm-lc-row">
 
 		<div class="tmm-lc-row-buttons-wrapper">
-			<a class="tmm-lc-add-column" title="<?php _e("Add Column", TMM_CC_TEXTDOMAIN) ?>" data-row-id="__ROW_ID__"></a>
-			<a class="tmm-lc-copy-row" data-row-id="__ROW_ID__" title="<?php _e("Add to Clipboard", TMM_CC_TEXTDOMAIN) ?>"></a>
-			<a class="tmm-lc-edit-row" data-row-id="__ROW_ID__" title="<?php _e("Edit", TMM_CC_TEXTDOMAIN) ?>"></a>
-			<a class="tmm-lc-delete-row" data-row-id="__ROW_ID__" title="<?php _e("Delete", TMM_CC_TEXTDOMAIN) ?>"></a>
+			<a class="tmm-lc-add-column" title="<?php _e("Add Column", 'cardealer') ?>" data-row-id="__ROW_ID__"></a>
+			<a class="tmm-lc-copy-row" data-row-id="__ROW_ID__" title="<?php _e("Add to Clipboard", 'cardealer') ?>"></a>
+			<a class="tmm-lc-edit-row" data-row-id="__ROW_ID__" title="<?php _e("Edit", 'cardealer') ?>"></a>
+			<a class="tmm-lc-delete-row" data-row-id="__ROW_ID__" title="<?php _e("Delete", 'cardealer') ?>"></a>
 		</div>
 
 		<div class="tmm-lc-columns" id="tmm_lc_columns___ROW_ID__"></div>
@@ -126,23 +126,23 @@ global $tmm_row_options; ?>
 <div id="tmm_lc_column_effects">
 	<?php
 	$effects = array(
-		'' => __("No effects", TMM_CC_TEXTDOMAIN),
-		'swipeDownEffect' => __('Swipe Down', TMM_CC_TEXTDOMAIN),
-		'showMeEffect' => __('Show Me', TMM_CC_TEXTDOMAIN),
-		'opacityEffect' => __('Opacity', TMM_CC_TEXTDOMAIN),
-		'scaleEffect' => __('Scale', TMM_CC_TEXTDOMAIN),
-		'rotateEffect' => __('Rotate', TMM_CC_TEXTDOMAIN),
-		'slideRightEffect' => __('Slide Right', TMM_CC_TEXTDOMAIN),
-		'slideLeftEffect' => __('Slide Left', TMM_CC_TEXTDOMAIN),
-		'slideDownEffect' => __('Slide Down', TMM_CC_TEXTDOMAIN),
-		'slideUpEffect' => __('Slide Up', TMM_CC_TEXTDOMAIN),
-		'translateEffect' => __('Translate', TMM_CC_TEXTDOMAIN),
+		'' => __("No effects", 'cardealer'),
+		'swipeDownEffect' => __('Swipe Down', 'cardealer'),
+		'showMeEffect' => __('Show Me', 'cardealer'),
+		'opacityEffect' => __('Opacity', 'cardealer'),
+		'scaleEffect' => __('Scale', 'cardealer'),
+		'rotateEffect' => __('Rotate', 'cardealer'),
+		'slideRightEffect' => __('Slide Right', 'cardealer'),
+		'slideLeftEffect' => __('Slide Left', 'cardealer'),
+		'slideDownEffect' => __('Slide Down', 'cardealer'),
+		'slideUpEffect' => __('Slide Up', 'cardealer'),
+		'translateEffect' => __('Translate', 'cardealer'),
 	);
 
 	TMM_Content_Composer::html_option(array(
 		'type' => 'select',
 		'title' => '',
-		'label' => __("Layout constructor", TMM_CC_TEXTDOMAIN),
+		'label' => __("Layout constructor", 'cardealer'),
 		'shortcode_field' => 'tmm-lc-column-effects-selector',
 		'id' => '',
 		'options' => $effects,
@@ -162,13 +162,13 @@ global $tmm_row_options; ?>
 	<?php
 	TMM_Content_Composer::html_option(array(
 		'type' => 'select',
-		'title' => __('Section Content Position', TMM_CC_TEXTDOMAIN),
+		'title' => __('Section Content Position', 'cardealer'),
 		'shortcode_field' => 'row_lc_displaying',
 		'id' => 'row_lc_displaying',
 		'options' => array(
-			'default' => __('Below content matching its layout', TMM_CC_TEXTDOMAIN),
-			'before_full_width' => __('Before main content with separate layout options', TMM_CC_TEXTDOMAIN),
-			'full_width' => __('After main content with separate layout options', TMM_CC_TEXTDOMAIN)
+			'default' => __('Below content matching its layout', 'cardealer'),
+			'before_full_width' => __('Before main content with separate layout options', 'cardealer'),
+			'full_width' => __('After main content with separate layout options', 'cardealer')
 		),
 		'default_value' => $tmm_row_options['lc_displaying'],
 		'description' => ''
@@ -180,12 +180,12 @@ global $tmm_row_options; ?>
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Container Width', TMM_CC_TEXTDOMAIN),
+			'title' => __('Container Width', 'cardealer'),
 			'shortcode_field' => 'row_container_width',
 			'id' => 'row_container_width',
 			'options' => array(
-				0 => __('Fixed Width', TMM_CC_TEXTDOMAIN),
-				1 => __('Full Width', TMM_CC_TEXTDOMAIN)
+				0 => __('Fixed Width', 'cardealer'),
+				1 => __('Full Width', 'cardealer')
 			),
 			'default_value' => $tmm_row_options['container_width'],
 			'description' => ''
@@ -197,13 +197,13 @@ global $tmm_row_options; ?>
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Container Height', TMM_CC_TEXTDOMAIN),
+			'title' => __('Container Height', 'cardealer'),
 			'shortcode_field' => 'row_container_height',
 			'id' => 'row_container_height',
 			'options' => array(
-				0 => __('Auto', TMM_CC_TEXTDOMAIN),
-				1 => __('50% of Screen', TMM_CC_TEXTDOMAIN),
-				2 => __('100% of Screen', TMM_CC_TEXTDOMAIN),
+				0 => __('Auto', 'cardealer'),
+				1 => __('50% of Screen', 'cardealer'),
+				2 => __('100% of Screen', 'cardealer'),
 			),
 			'default_value' => $tmm_row_options['container_height'],
 			'description' => ''
@@ -214,13 +214,13 @@ global $tmm_row_options; ?>
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Content Align', TMM_CC_TEXTDOMAIN),
+			'title' => __('Content Align', 'cardealer'),
 			'shortcode_field' => 'row_align',
 			'id' => 'row_align',
 			'options' => array(
-				'left' => __('Left', TMM_CC_TEXTDOMAIN),
-				'right' => __('Right', TMM_CC_TEXTDOMAIN),
-				'center' => __('Center', TMM_CC_TEXTDOMAIN),
+				'left' => __('Left', 'cardealer'),
+				'right' => __('Right', 'cardealer'),
+				'center' => __('Center', 'cardealer'),
 			),
 			'default_value' => $tmm_row_options['align'],
 			'description' => ''
@@ -228,14 +228,14 @@ global $tmm_row_options; ?>
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Border Top', TMM_CC_TEXTDOMAIN),
+			'title' => __('Border Top', 'cardealer'),
 			'shortcode_field' => 'row_border_top',
 			'id' => 'row_border_top',
 			'options' => array(
-				'0' => __('No Top Border', TMM_CC_TEXTDOMAIN),
-				'1' => __('Border Style 1', TMM_CC_TEXTDOMAIN),
-				'2' => __('Border Style 2', TMM_CC_TEXTDOMAIN),
-				'3' => __('Border Style 3', TMM_CC_TEXTDOMAIN),
+				'0' => __('No Top Border', 'cardealer'),
+				'1' => __('Border Style 1', 'cardealer'),
+				'2' => __('Border Style 2', 'cardealer'),
+				'3' => __('Border Style 3', 'cardealer'),
 			),
 			'default_value' => $tmm_row_options['border_top'],
 			'description' => ''
@@ -248,19 +248,19 @@ global $tmm_row_options; ?>
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Offset Top', TMM_CC_TEXTDOMAIN),
+			'title' => __('Offset Top', 'cardealer'),
 			'shortcode_field' => 'row_padding_top',
 			'id' => 'row_padding_top',
 			'options' => array(
-				'0' => __('No Top Padding', TMM_CC_TEXTDOMAIN),
-				'20' => __('20 PX', TMM_CC_TEXTDOMAIN),
-				'40' => __('40 PX', TMM_CC_TEXTDOMAIN),
-				'60' => __('60 PX', TMM_CC_TEXTDOMAIN),
-				'80' => __('80 PX', TMM_CC_TEXTDOMAIN),
-				'100' => __('100 PX', TMM_CC_TEXTDOMAIN)
+				'0' => __('No Top Padding', 'cardealer'),
+				'20' => __('20 PX', 'cardealer'),
+				'40' => __('40 PX', 'cardealer'),
+				'60' => __('60 PX', 'cardealer'),
+				'80' => __('80 PX', 'cardealer'),
+				'100' => __('100 PX', 'cardealer')
 			),
 			'default_value' => $tmm_row_options['padding_top'],
-			'description' => __('Default Value 0px', TMM_CC_TEXTDOMAIN)
+			'description' => __('Default Value 0px', 'cardealer')
 		));
 		?>
 	</div>
@@ -269,19 +269,19 @@ global $tmm_row_options; ?>
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Offset Bottom', TMM_CC_TEXTDOMAIN),
+			'title' => __('Offset Bottom', 'cardealer'),
 			'shortcode_field' => 'row_padding_bottom',
 			'id' => 'row_padding_bottom',
 			'options' => array(
-				'0' => __('No Bottom Padding', TMM_CC_TEXTDOMAIN),
-				'20' => __('20 PX', TMM_CC_TEXTDOMAIN),
-				'40' => __('40 PX', TMM_CC_TEXTDOMAIN),
-				'60' => __('60 PX', TMM_CC_TEXTDOMAIN),
-				'80' => __('80 PX', TMM_CC_TEXTDOMAIN),
-				'100' => __('100 PX', TMM_CC_TEXTDOMAIN)
+				'0' => __('No Bottom Padding', 'cardealer'),
+				'20' => __('20 PX', 'cardealer'),
+				'40' => __('40 PX', 'cardealer'),
+				'60' => __('60 PX', 'cardealer'),
+				'80' => __('80 PX', 'cardealer'),
+				'100' => __('100 PX', 'cardealer')
 			),
 			'default_value' => $tmm_row_options['padding_bottom'],
-			'description' => __('Default Value 20px', TMM_CC_TEXTDOMAIN)
+			'description' => __('Default Value 20px', 'cardealer')
 		));
 		?>
 	</div>
@@ -293,14 +293,14 @@ global $tmm_row_options; ?>
 	<?php
 	TMM_Content_Composer::html_option(array(
 		'type' => 'select',
-		'title' => __('Section Background Type', TMM_CC_TEXTDOMAIN),
+		'title' => __('Section Background Type', 'cardealer'),
 		'shortcode_field' => 'row_bg_type',
 		'id' => 'row_bg_type',
 		'options' => array(
-			'none' => __('Transparent (default)', TMM_CC_TEXTDOMAIN),
-			'color' => __('Color', TMM_CC_TEXTDOMAIN),
-			'image' => __('Image', TMM_CC_TEXTDOMAIN),
-			//'video' => __('Video', TMM_CC_TEXTDOMAIN)
+			'none' => __('Transparent (default)', 'cardealer'),
+			'color' => __('Color', 'cardealer'),
+			'image' => __('Image', 'cardealer'),
+			//'video' => __('Video', 'cardealer')
 		),
 		'default_value' => $tmm_row_options['bg_type'],
 		'description' => ''
@@ -313,16 +313,16 @@ global $tmm_row_options; ?>
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Preinstalled BG Colors', TMM_CC_TEXTDOMAIN),
+			'title' => __('Preinstalled BG Colors', 'cardealer'),
 			'shortcode_field' => 'row_bg_color_type',
 			'id' => 'row_bg_color_type',
 			'options' => array(
-				'0' => __('None', TMM_CC_TEXTDOMAIN),
-				'bg-color-1' => __('White', TMM_CC_TEXTDOMAIN),
-				'bg-color-2' => __('Silver', TMM_CC_TEXTDOMAIN),
-				'bg-color-3' => __('Light Gray', TMM_CC_TEXTDOMAIN),
-				'bg-color-4' => __('Light Blue', TMM_CC_TEXTDOMAIN),
-				'custom' => __('Custom', TMM_CC_TEXTDOMAIN),
+				'0' => __('None', 'cardealer'),
+				'bg-color-1' => __('White', 'cardealer'),
+				'bg-color-2' => __('Silver', 'cardealer'),
+				'bg-color-3' => __('Light Gray', 'cardealer'),
+				'bg-color-4' => __('Light Blue', 'cardealer'),
+				'custom' => __('Custom', 'cardealer'),
 			),
 			'default_value' => $tmm_row_options['bg_color_type'],
 			'description' => ''
@@ -333,7 +333,7 @@ global $tmm_row_options; ?>
 		<div class="one-half inner-right">
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'title' => __('Custom Background Color', TMM_CC_TEXTDOMAIN),
+			'title' => __('Custom Background Color', 'cardealer'),
 			'shortcode_field' => 'row_bg_color',
 			'id' => 'row_bg_color',
 			'type' => 'color',
@@ -351,7 +351,7 @@ global $tmm_row_options; ?>
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'upload',
-			'title' => __('Background Image', TMM_CC_TEXTDOMAIN),
+			'title' => __('Background Image', 'cardealer'),
 			'shortcode_field' => 'row_bg_image',
 			'id' => 'row_bg_image',
 			'default_value' => $tmm_row_options['bg_image'],
@@ -360,12 +360,12 @@ global $tmm_row_options; ?>
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Background Attachment', TMM_CC_TEXTDOMAIN),
+			'title' => __('Background Attachment', 'cardealer'),
 			'shortcode_field' => 'row_bg_attachment',
 			'id' => 'row_bg_attachment',
 			'options' => array(
-				'1' => __('scroll', TMM_CC_TEXTDOMAIN),
-				'0' => __('fixed', TMM_CC_TEXTDOMAIN)
+				'1' => __('scroll', 'cardealer'),
+				'0' => __('fixed', 'cardealer')
 			),
 			'default_value' => $tmm_row_options['bg_attachment'],
 			'description' => ''
@@ -377,11 +377,11 @@ global $tmm_row_options; ?>
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Overlay', TMM_CC_TEXTDOMAIN),
+				'title' => __('Overlay', 'cardealer'),
 				'shortcode_field' => 'row_bg_overlay',
 				'id' => 'row_bg_overlay',
 				'is_checked' => $tmm_row_options['bg_overlay'],
-				'description' => __('Set overlay on background image', TMM_CC_TEXTDOMAIN)
+				'description' => __('Set overlay on background image', 'cardealer')
 			));
 			?>
 
@@ -391,7 +391,7 @@ global $tmm_row_options; ?>
 				<div class="one-half inner-left">
 				<?php
 				TMM_Content_Composer::html_option(array(
-					'title' => __('Overlay Color', TMM_CC_TEXTDOMAIN),
+					'title' => __('Overlay Color', 'cardealer'),
 					'shortcode_field' => 'row_bg_overlay_color',
 					'id' => 'row_bg_overlay_color',
 					'type' => 'color',
@@ -405,7 +405,7 @@ global $tmm_row_options; ?>
 				<div class="one-half inner-right">
 				<?php
 				TMM_Content_Composer::html_option(array(
-					'title' => __('Overlay Opacity', TMM_CC_TEXTDOMAIN),
+					'title' => __('Overlay Opacity', 'cardealer'),
 					'shortcode_field' => 'row_bg_overlay_opacity',
 					'id' => 'row_bg_overlay_opacity',
 					'type' => 'slider',
@@ -427,7 +427,7 @@ global $tmm_row_options; ?>
 		<?php
 //		TMM_Content_Composer::html_option(array(
 //			'type' => 'upload_video',
-//			'title' => __('Background Video', TMM_CC_TEXTDOMAIN),
+//			'title' => __('Background Video', 'cardealer'),
 //			'shortcode_field' => 'row_bg_video',
 //			'id' => 'row_bg_video',
 //			'default_value' => $tmm_row_options['bg_video'],

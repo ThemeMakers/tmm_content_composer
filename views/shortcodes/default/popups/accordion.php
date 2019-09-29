@@ -6,12 +6,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Type', TMM_CC_TEXTDOMAIN),
+			'title' => __('Type', 'cardealer'),
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'options' => array(
-				'' => __('Accordion', TMM_CC_TEXTDOMAIN),
-				'toggle' => __('Toggle', TMM_CC_TEXTDOMAIN),
+				'' => __('Accordion', 'cardealer'),
+				'toggle' => __('Toggle', 'cardealer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('type', ''),
 			'description' => ''
@@ -25,7 +25,7 @@
 
 	<div class="fullwidth">
 
-		<a class="button button-secondary js_add_accordion_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_accordion_item" href="#"><?php esc_html_e('Add item', 'cardealer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 
@@ -42,13 +42,13 @@
 					<table class="list-table">
 						<tr>
 							<td valign="top" style="width: 100%;">
-								<input type="text" value="<?php echo $titles_edit_data[$key] ?>" placeholder="<?php esc_html_e('Title', TMM_CC_TEXTDOMAIN); ?>" class="accordion_item_title js_shortcode_template_changer data-input" style="width: 50%;" />
-								&nbsp;<a class="button button-secondary js_delete_accordion_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', TMM_CC_TEXTDOMAIN); ?></a>
+								<input type="text" value="<?php echo $titles_edit_data[$key] ?>" placeholder="<?php esc_html_e('Title', 'cardealer'); ?>" class="accordion_item_title js_shortcode_template_changer data-input" style="width: 50%;" />
+								&nbsp;<a class="button button-secondary js_delete_accordion_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'cardealer'); ?></a>
 							</td>
 						</tr>
 						<tr>
 							<td valign="top" style="width: 100%;" colspan="2">
-								<textarea class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php esc_html_e('Content', TMM_CC_TEXTDOMAIN); ?>"><?php echo $content_edit_text ?></textarea>
+								<textarea class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php esc_html_e('Content', 'cardealer'); ?>"><?php echo $content_edit_text ?></textarea>
 							</td>
 						</tr>
 					</table>
@@ -56,7 +56,7 @@
 			<?php endforeach; ?>
 
 		</ul>
-		<a class="button button-secondary js_add_accordion_item" href="#"><?php esc_html_e('Add item', TMM_CC_TEXTDOMAIN); ?></a><br />
+		<a class="button button-secondary js_add_accordion_item" href="#"><?php esc_html_e('Add item', 'cardealer'); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'upload_audio',
-			'title' => __('Link to Audio', TMM_CC_TEXTDOMAIN),
+			'title' => __('Link to Audio', 'cardealer'),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),

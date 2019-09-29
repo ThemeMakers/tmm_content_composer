@@ -7,7 +7,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'text',
-				'title' => __('Dealers Number', TMM_CC_TEXTDOMAIN),
+				'title' => __('Dealers Number', 'cardealer'),
 				'shortcode_field' => 'user_number',
 				'id' => 'user_number',
 				'default_value' => TMM_Content_Composer::set_default_value('user_number', 9),
@@ -22,13 +22,13 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Display Order', TMM_CC_TEXTDOMAIN),
+				'title' => __('Display Order', 'cardealer'),
 				'shortcode_field' => 'order',
 				'id' => 'order',
 				'options' => array(
-					'DESC' => __('Latest First', TMM_CC_TEXTDOMAIN),
-					'ASC' => __('Oldest First', TMM_CC_TEXTDOMAIN),
-					'random' => __('Random', TMM_CC_TEXTDOMAIN)
+					'DESC' => __('Latest First', 'cardealer'),
+					'ASC' => __('Oldest First', 'cardealer'),
+					'random' => __('Random', 'cardealer')
 				),
 				'default_value' => TMM_Content_Composer::set_default_value('order', 'DESC'),
 				'description' => ''
@@ -42,9 +42,9 @@
 			<?php
 			$packets = TMM_Cardealer_User::get_user_roles();
 			$dealer_types = array(
-				'0' => __('All', TMM_CC_TEXTDOMAIN),
-				'1' => __('All without Administrator', TMM_CC_TEXTDOMAIN),
-				'administrator' => __('Administrator', TMM_CC_TEXTDOMAIN),
+				'0' => __('All', 'cardealer'),
+				'1' => __('All without Administrator', 'cardealer'),
+				'administrator' => __('Administrator', 'cardealer'),
 			);
 
 			foreach ($packets as $key => $value) {
@@ -53,7 +53,7 @@
 
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Dealer Type', TMM_CC_TEXTDOMAIN),
+				'title' => __('Dealer Type', 'cardealer'),
 				'shortcode_field' => 'dealer_type',
 				'id' => 'dealer_type',
 				'css_classes' => 'widget_dealer_type',
@@ -70,7 +70,7 @@
 			<?php
 			$dealer_type = TMM_Content_Composer::set_default_value('dealer_type', '0');
 			$dealers = array(
-				'' => __('All', TMM_CC_TEXTDOMAIN),
+				'' => __('All', 'cardealer'),
 			);
 
 			$args = array();
@@ -89,7 +89,7 @@
 
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Specific Dealer', TMM_CC_TEXTDOMAIN),
+				'title' => __('Specific Dealer', 'cardealer'),
 				'shortcode_field' => 'specific_dealer',
 				'id' => 'specific_dealer',
 				'css_classes' => 'widget_specific_dealer',
@@ -107,7 +107,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Dealer Logo', TMM_CC_TEXTDOMAIN),
+				'title' => __('Display Dealer Logo', 'cardealer'),
 				'shortcode_field' => 'show_dealer_logo',
 				'id' => 'show_dealer_logo',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_dealer_logo', 1),
@@ -125,7 +125,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Dealer Bio', TMM_CC_TEXTDOMAIN),
+				'title' => __('Display Dealer Bio', 'cardealer'),
 				'shortcode_field' => 'show_dealer_bio',
 				'id' => 'show_dealer_bio',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_dealer_bio', 1),
@@ -140,7 +140,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Phone', TMM_CC_TEXTDOMAIN),
+				'title' => __('Display Phone', 'cardealer'),
 				'shortcode_field' => 'show_phone',
 				'id' => 'show_phone',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_phone', 1),
@@ -155,7 +155,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Cell Phone', TMM_CC_TEXTDOMAIN),
+				'title' => __('Display Cell Phone', 'cardealer'),
 				'shortcode_field' => 'show_mobile',
 				'id' => 'show_mobile',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_mobile', 1),
@@ -170,7 +170,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Fax', TMM_CC_TEXTDOMAIN),
+				'title' => __('Display Fax', 'cardealer'),
 				'shortcode_field' => 'show_fax',
 				'id' => 'show_fax',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_fax', 1),
@@ -185,7 +185,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Email', TMM_CC_TEXTDOMAIN),
+				'title' => __('Display Email', 'cardealer'),
 				'shortcode_field' => 'show_email',
 				'id' => 'show_email',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_email', 1),
@@ -200,7 +200,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Skype ID', TMM_CC_TEXTDOMAIN),
+				'title' => __('Display Skype ID', 'cardealer'),
 				'shortcode_field' => 'show_skype',
 				'id' => 'show_skype',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_skype', 1),
@@ -215,7 +215,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Website Url', TMM_CC_TEXTDOMAIN),
+				'title' => __('Display Website Url', 'cardealer'),
 				'shortcode_field' => 'show_site',
 				'id' => 'show_site',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_site', 1),
@@ -230,7 +230,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Postal Address', TMM_CC_TEXTDOMAIN),
+				'title' => __('Display Postal Address', 'cardealer'),
 				'shortcode_field' => 'show_address',
 				'id' => 'show_address',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_address', 1),
@@ -245,7 +245,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Map Location', TMM_CC_TEXTDOMAIN),
+				'title' => __('Display Map Location', 'cardealer'),
 				'shortcode_field' => 'show_map',
 				'id' => 'show_map',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_map', 1),
@@ -260,7 +260,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'text',
-				'title' => __('Excerpt Bio symbol count', TMM_CC_TEXTDOMAIN),
+				'title' => __('Excerpt Bio symbol count', 'cardealer'),
 				'shortcode_field' => 'dealer_bio_symbols_count',
 				'id' => 'dealer_bio_symbols_count',
 				'default_value' => TMM_Content_Composer::set_default_value('dealer_bio_symbols_count', 100),

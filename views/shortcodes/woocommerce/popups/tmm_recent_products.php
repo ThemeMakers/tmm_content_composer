@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Products Per Page', TMM_CC_TEXTDOMAIN),
+			'title' => __('Products Per Page', 'cardealer'),
 			'shortcode_field' => 'products_per_page',
 			'id' => 'products_per_page',
 			'default_value' => TMM_Content_Composer::set_default_value('products_per_page', 12),
@@ -19,7 +19,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Columns', TMM_CC_TEXTDOMAIN),
+			'title' => __('Columns', 'cardealer'),
 			'shortcode_field' => 'columns',
 			'id' => 'columns',
 			'options' => array(2 => 2, 3 => 3 , 4 => 4),
@@ -42,7 +42,7 @@
 		);
 		$terms = get_terms('product_cat', $args);
 
-		$product_categories = array('0' => __('None', TMM_CC_TEXTDOMAIN));
+		$product_categories = array('0' => __('None', 'cardealer'));
 
 		if($terms){
 			foreach($terms as $term){
@@ -52,12 +52,12 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Select Category', TMM_CC_TEXTDOMAIN),
+			'title' => __('Select Category', 'cardealer'),
 			'shortcode_field' => 'category',
 			'id' => 'category',
 			'options' => $product_categories,
 			'default_value' => TMM_Content_Composer::set_default_value('category',''),
-			'description' => __('Display products by selected category', TMM_CC_TEXTDOMAIN)
+			'description' => __('Display products by selected category', 'cardealer')
 		));
 		?>
 	</div><!--/ .one-half-->

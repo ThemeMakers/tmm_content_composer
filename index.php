@@ -11,7 +11,6 @@
 
 define('TMM_CC_DIR', plugin_dir_path( __FILE__ ));
 define('TMM_CC_URL', plugin_dir_url( __FILE__ ));
-define('TMM_CC_TEXTDOMAIN', 'tmm_content_composer');
 
 require_once TMM_CC_DIR.'classes/content_composer.php';
 require_once TMM_CC_DIR.'classes/layout_constructor.php';

@@ -39,7 +39,7 @@ if ( !empty($wp_query->posts) ) {
 
 	<div class="page-subheader">
 
-		<h3 class="section-title"><?php esc_html_e( $title, TMM_CC_TEXTDOMAIN ) ?></h3>
+		<h3 class="section-title"><?php esc_html_e( $title, 'cardealer' ) ?></h3>
 
 		<span class="rnc_controls" id="rnc_controls_<?php echo $uniqid ?>">
 			<a href="#" data-target="prev" class="prevBtn icon-angle-left" title="<?php esc_html_e('Previous', 'cardealer'); ?>"></a>

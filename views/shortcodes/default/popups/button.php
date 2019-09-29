@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Buttons Text', TMM_CC_TEXTDOMAIN),
+			'title' => __('Buttons Text', 'cardealer'),
 			'shortcode_field' => 'content',
 			'id' => 'content',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -16,25 +16,25 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Buttons URL', TMM_CC_TEXTDOMAIN),
+			'title' => __('Buttons URL', 'cardealer'),
 			'shortcode_field' => 'url',
 			'id' => 'url',
 			'default_value' => TMM_Content_Composer::set_default_value('url', ''),
-			'description' => __('http://forums.webtemplatemasters.com/', TMM_CC_TEXTDOMAIN)
+			'description' => __('http://forums.webtemplatemasters.com/', 'cardealer')
 		));
 		?>
 
 		<?php
 		TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Buttons Position', TMM_CC_TEXTDOMAIN),
+				'title' => __('Buttons Position', 'cardealer'),
 				'shortcode_field' => 'positioning',
 				'id' => 'positioning',
 				'options' => array(
-						'default' => __('Default', TMM_CC_TEXTDOMAIN),
-						'left' => __('Push to Left', TMM_CC_TEXTDOMAIN),
-						'right' => __('Push to Right', TMM_CC_TEXTDOMAIN),
-						'center' => __('Align Center', TMM_CC_TEXTDOMAIN),
+						'default' => __('Default', 'cardealer'),
+						'left' => __('Push to Left', 'cardealer'),
+						'right' => __('Push to Right', 'cardealer'),
+						'center' => __('Align Center', 'cardealer'),
 				),
 				'default_value' => TMM_Content_Composer::set_default_value('positioning', 'default'),
 				'description' => ''
@@ -48,7 +48,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Buttons Color', TMM_CC_TEXTDOMAIN),
+			'title' => __('Buttons Color', 'cardealer'),
 			'shortcode_field' => 'color',
 			'id' => 'color',
 			'options' => TMM_Content_Composer::get_theme_buttons(),
@@ -60,7 +60,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Buttons Size', TMM_CC_TEXTDOMAIN),
+			'title' => __('Buttons Size', 'cardealer'),
 			'shortcode_field' => 'size',
 			'id' => 'size',
 			'options' => TMM_Content_Composer::get_theme_buttons_sizes(),
