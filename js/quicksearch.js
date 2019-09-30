@@ -202,7 +202,7 @@ var THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH = function() {
                 selected_region_id = 0,
                 level = 0,
                 region_id = 0,
-                loader = widget.find('.quicksearch_load_area');
+                loader = widget.find('.form_load_area');
 
 			loader.show();
             self.clear_select(car_model);
@@ -245,7 +245,7 @@ var THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH = function() {
                 car_location_id = widget.find('.qs_carlocation0').val(),
                 selected_region_id = 0,
                 level = 0,
-                loader = widget.find('.quicksearch_load_area'),
+                loader = widget.find('.form_load_area'),
                 region_id = 0;
         
             loader.show();
@@ -287,7 +287,7 @@ var THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH = function() {
 			});
 		},
 		load_locations: function(parent_id, level, widget) {//level 0 is top region
-			var loader = widget.find('.quicksearch_load_area');
+			var loader = widget.find('.form_load_area');
                 
             loader.show();
 
