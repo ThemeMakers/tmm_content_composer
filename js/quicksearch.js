@@ -282,7 +282,7 @@ var THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH = function() {
 			};
 			jQuery.post(ajaxurl, data, function(response) {
                 self.clear_select(car_model);
-                car_model.append(response).attr('disabled', false).parent('.sel').removeClass('disabled');
+                car_model.append(response).attr('disabled', false);
 				loader.hide();
 			});
 		},
@@ -299,8 +299,7 @@ var THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH = function() {
 			jQuery.post(ajaxurl, data, function(response) {
                 var location = widget.find('.qs_carlocation' + (level + 1));
                 self.clear_select(location);
-                location.append(response).removeAttr('disabled')
-                        .parent('.sel').removeClass('disabled');
+                location.append(response).removeAttr('disabled');
                 loader.hide();
 			});
             self.load_producers(widget);
@@ -371,7 +370,15 @@ var THEMEMAKERS_APP_CARDEALER_WIDGET_QUICKSEARCH = function() {
 		},
         clear_select: function(select) {
 			select.each(function(){
-                jQuery(this).val(0).html('<option value="0">' + tmm_l10n.any + '</option>');
+                if(jQuery(select).hasClass('qs_carlocation0')) {
+					jQuery(this).val(0).html('<option value="0">' + tmm_l10n.country + '</option>');
+				} else if(jQuery(select).hasClass('qs_carlocation1')) {
+					jQuery(this).val(0).html('<option value="0">' + tmm_l10n.region + '</option>');
+				} else if(jQuery(select).hasClass('qs_carlocation2')) {
+					jQuery(this).val(0).html('<option value="0">' + tmm_l10n.city + '</option>');
+				} else {
+					jQuery(this).val(0).html('<option value="0">' + tmm_l10n.any + '</option>');
+				}
             });
 		}
 	};

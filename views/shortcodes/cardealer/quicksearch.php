@@ -136,7 +136,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 		<?php } ?>
 			<?php if (!empty($show_location0)) { ?>
 				<p>
-					<select name="carlocation[0]" class="qs_carlocation0 carlocations" data-location0="<?php echo (int) $carlocation[0] ?>">
+					<select name="carlocation[0]" class="qs_carlocation0 carlocations" data-location0="<?php echo esc_attr( $carlocation[0] ) ?>">
 						<option value="0"><?php esc_html_e($locations_captions_on_search_widget[0], 'cardealer'); ?></option>
 					</select>
 				</p>
@@ -174,7 +174,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 							</select>
 						</p>
 
-					<?php }else{ ?>
+					<?php } else { ?>
 
 						<p>
 							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations" name="carlocation[<?php echo esc_attr( $i ) ?>]" disabled="" data-level="<?php echo esc_attr( $i ) ?>">
@@ -238,14 +238,14 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 		<div class="fieldset">
 			<p>
 				<label for="tmm_qs_make_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Make", 'cardealer') ?>:</label>
-				<select id="tmm_qs_make_<?php echo esc_attr( $uniqid ) ?>" class="qs_carproducer" name="carproducer" data-make="<?php echo (int) $carproducer ?>" data-location="<?php echo (int) $carlocation[0] ?>" data-region="<?php echo (int) $_selected_region_id ?>" data-level="<?php echo (int) $_level ?>">
+				<select id="tmm_qs_make_<?php echo esc_attr( $uniqid ) ?>" class="qs_carproducer" name="carproducer" data-make="<?php echo esc_attr( $carproducer ) ?>" data-location="<?php echo esc_attr( $carlocation[0] ) ?>" data-region="<?php echo esc_attr( $_selected_region_id ) ?>" data-level="<?php echo esc_attr( $_level ) ?>">
 					<option value="0"><?php esc_html_e("Any", 'cardealer') ?></option>
 				</select>
 			</p>
 
 			<p>
 				<label for="tmm_qs_model_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Model", 'cardealer') ?>:</label>
-				<select id="tmm_qs_model_<?php echo esc_attr( $uniqid ) ?>" class="qs_carmodel" name="carmodels" <?php if ($carproducer == 0) { ?>disabled=""<?php } ?>  data-make="<?php echo (int) $carproducer ?>" data-location="<?php echo (int) $carlocation[0] ?>" data-region="<?php echo (int) $_selected_region_id ?>" data-level="<?php echo (int) $_level ?>" data-model="<?php echo (int) $carmodels ?>">
+				<select id="tmm_qs_model_<?php echo esc_attr( $uniqid ) ?>" class="qs_carmodel" name="carmodels" <?php if ($carproducer == 0) { ?>disabled=""<?php } ?>  data-make="<?php echo esc_attr( $carproducer ) ?>" data-location="<?php echo esc_attr( $carlocation[0] ) ?>" data-region="<?php echo esc_attr( $_selected_region_id ) ?>" data-level="<?php echo esc_attr( $_level ) ?>" data-model="<?php echo esc_attr( $carmodels ) ?>">
 					<option value="0"><?php esc_html_e("Any", 'cardealer') ?></option>
 				</select>
 			</p>
