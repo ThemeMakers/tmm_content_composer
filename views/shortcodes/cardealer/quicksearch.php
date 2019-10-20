@@ -130,7 +130,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 	<form class="car_form_search" action="<?php echo esc_attr( $searching_page ) ?>">
 
 		<!-- Location -->
-		<?php if (!empty($show_location0)) { ?>
+		<?php if (!empty($show_location0) || !empty($show_location1)) { ?>
 		<div class="fieldset">
 			<label><?php esc_html_e("Location", 'cardealer') ?></label>
 		<?php } ?>
@@ -166,10 +166,10 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 						}
 
 
-						$data_attr = ' data-location'.($i-1).'="' . $carlocation[$i-1] . '" data-location'.$i.'="' . (isset($carlocation[$i]) ? $carlocation[$i] : 0) . '"';
+						$data_attr = ' data-location'.($i-1).'=' . $carlocation[$i-1] . ' data-location'.$i.'=' . (isset($carlocation[$i]) ? $carlocation[$i] : 0);
 						?>
 						<p>
-							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations" name="carlocation[<?php echo esc_attr( $i ) ?>]" data-level="<?php echo ($i ) ?>"<?php echo esc_attr( $data_attr ) ?>>
+							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations" name="carlocation[<?php echo esc_attr( $i ) ?>]" data-level="<?php echo ($i ) ?>" <?php echo esc_attr( $data_attr ) ?>>
 								<option value="0"><?php esc_html_e($locations_captions_on_search_widget[$i], 'cardealer'); ?></option>
 							</select>
 						</p>
