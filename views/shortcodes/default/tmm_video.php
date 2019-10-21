@@ -13,6 +13,9 @@ $video_types = array(
 	'.webm'
 );
 
+$width = (isset($width) && !empty($width)) ? $width : '';
+$height = (!isset($width) || empty($width) || !isset($height)) ? '' : $height;
+
 /* define type of video */
 $video_type = '';
 
@@ -56,7 +59,7 @@ switch ($video_type) {
 			$source_code = $source_code[1];
 		}
 		?>
-		<iframe <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (!isset($width) || empty($width) || !isset($height)) ? '' : 'height="'.$height.'"';  ?> src="https://www.youtube.com/embed/<?php echo $source_code ?>?wmode=transparent&amp;rel=0&amp;showinfo=0&amp;enablejsapi=1" allowFullScreen></iframe>
+		<iframe width="<?php echo esc_attr( $width ) ?>" height="<?php echo esc_attr( $height ) ?>" src="https://www.youtube.com/embed/<?php echo esc_attr( $source_code ) ?>?wmode=transparent&amp;rel=0&amp;showinfo=0&amp;enablejsapi=1" allowFullScreen></iframe>
 		<?php
 
 		break;
@@ -68,7 +71,7 @@ switch ($video_type) {
 			$source_code = $source_code[count($source_code) - 1];
 		}
 		?>
-		<iframe width="<?php echo $width ?>" height="<?php echo (!isset($width) || empty($width)) ? '' : $height ?>" src="http://player.vimeo.com/video/<?php echo $source_code ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=f6e200" allowFullScreen></iframe>
+		<iframe width="<?php echo esc_attr( $width ) ?>" height="<?php echo esc_attr( $height ) ?>" src="https://player.vimeo.com/video/<?php echo esc_attr( $source_code ) ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=f6e200" allowFullScreen></iframe>
 		<?php
 		break;
 
@@ -83,12 +86,12 @@ switch ($video_type) {
 		}
 		?>
 
-		<video poster="<?php echo esc_url($cover_image) ?>" controls="controls" <?php echo (isset($width) && !empty($width)) ? 'width="'.$width.'"' : ''; ?> <?php echo (isset($height) && !empty($height)) ? 'height="'.$height.'"' : ''; ?>>
+		<video class="shVideo" poster="<?php echo esc_url($cover_image) ?>" controls="controls" width="<?php echo esc_attr( $width ) ?>" height="<?php echo esc_attr( $height ) ?>">
 			<source type="video/<?php echo trim($video_type, '.') ?>" src="<?php echo esc_url($source_code) ?>" />
 		</video>
 
 		<?php
-		wp_enqueue_script('mediaelement');
+//		wp_enqueue_script('mediaelement');
 		break;
 
 	default:
@@ -97,7 +100,7 @@ switch ($video_type) {
 			?>
 			<img src="<?php echo esc_url(TMM_Content_Composer::resize_image_cover($cover_image, $image_size)); ?>" alt="<?php esc_attr_e('Unsupported video format', 'cardealer') ?>" />
 		<?php
-		}else{
+		} else {
 			esc_html_e('Unsupported video format', 'cardealer');
 		}
 		break;
