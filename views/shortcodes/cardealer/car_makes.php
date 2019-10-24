@@ -8,6 +8,8 @@ if (!empty($logos_list)) {
 	$logos_list = '';
 }
 
+$hide_empty = isset($hide_empty) ? $hide_empty : false;
+
 $args = array(
 	'taxonomy'          => 'carproducer',
 	'post_status'       => 'publish',
@@ -40,7 +42,7 @@ if (!isset($show_name)) {
 
 		if ( !file_exists(TMM_CC_DIR . $src) ) {
 			$src = '';
-		}else{
+		} else {
 			$src = TMM_CC_URL . $src;
 		}
 
@@ -48,7 +50,7 @@ if (!isset($show_name)) {
 			continue;
 		}
 
-		if(!$hide_empty){
+		if($make->count > 0 || !$hide_empty){
 			?>
 
 			<li class="cat-item-<?php echo esc_attr( $make->term_id ) ?><?php if($show_name){ ?> with-title<?php } ?>">

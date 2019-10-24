@@ -5,18 +5,18 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Hide empty makes', 'cardealer'),
+			'title' => esc_html__('Hide items with no cars', 'cardealer'),
 			'shortcode_field' => 'hide_empty',
 			'id' => 'hide_empty_carproducers',
 			'is_checked' => TMM_Content_Composer::set_default_value('hide_empty', 0),
-			'description' => ''
+			'description' => '',
 		));
 		?>
 
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display car make logos', 'cardealer'),
+			'title' => esc_html__('Display car make logos', 'cardealer'),
 			'shortcode_field' => 'show_logo',
 			'id' => 'show_logo',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_logo', 1),
@@ -27,7 +27,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display only makes, that have their logo', 'cardealer'),
+			'title' => esc_html__('Display only makes, that have their logo', 'cardealer'),
 			'shortcode_field' => 'show_only_with_logo',
 			'id' => 'show_only_with_logo',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_only_with_logo', 1),
@@ -38,7 +38,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display make title', 'cardealer'),
+			'title' => esc_html__('Display make title', 'cardealer'),
 			'shortcode_field' => 'show_name',
 			'id' => 'show_name',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_name', 1),
@@ -49,7 +49,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display number of cars', 'cardealer'),
+			'title' => esc_html__('Display number of cars', 'cardealer'),
 			'shortcode_field' => 'show_count',
 			'id' => 'show_count',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_count', 1),
@@ -60,7 +60,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Enable link', 'cardealer'),
+			'title' => esc_html__('Enable link', 'cardealer'),
 			'shortcode_field' => 'show_link',
 			'id' => 'show_link',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_link', 1),
@@ -85,7 +85,7 @@
 		$makes = get_terms('carproducer', $args);
 
 		$logos = array(
-			0 => __('All', 'cardealer'),
+			0 => esc_html__('All', 'cardealer'),
 		);
 
 		if (!empty($makes) && is_array($makes)) {
@@ -94,13 +94,13 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('List of logos', 'cardealer'),
+			'title' => esc_html__('List of logos', 'cardealer'),
 			'shortcode_field' => 'logos_list',
 			'id' => 'logos_list',
 			'multiple' => true,
 			'options' => $logos,
 			'default_value' => TMM_Content_Composer::set_default_value('logos_list', 0),
-			'description' => __('Select multiple car makes by holding CTRL + selecting certain option.', 'cardealer'),
+			'description' => esc_html__('Select multiple car makes by holding CTRL + selecting certain option.', 'cardealer'),
 		));
 		?>
 
