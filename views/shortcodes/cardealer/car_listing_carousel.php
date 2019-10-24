@@ -46,7 +46,6 @@ $query = new WP_Query( $args );
 $uniqid = uniqid();
 
 if ( !empty($query->posts) ) {
-
 	wp_enqueue_script('tmm_sudoSlider');
 ?>
 
@@ -67,7 +66,7 @@ if ( !empty($query->posts) ) {
 
 <?php } ?>
 	<!--	clc - Car Listing Carousel -->
-	<div id="clc_<?php echo esc_attr( $uniqid ) ?>" class="clc_content tmm-view-mode item-grid">
+	<div id="clc_<?php echo esc_attr( $uniqid ) ?>" class="clc_content content-grid">
 		<?php
 		if ( !empty($query->posts) ) {
 			foreach ( $query->posts as $post ) {
@@ -93,14 +92,14 @@ if ( !empty($query->posts) ) {
 		var isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
 
 		$("#clc_<?php echo esc_attr( $uniqid ) ?>").sudoSlider({
-			auto: <?php echo esc_attr( (int) $autoslide ) ?>,
+			auto: <?php echo esc_attr( $autoslide ) ?>,
 			ease: 'swing',
 			speed: 800,
 			pause: 2000,
 			resumePause: 2000,
 			touch: true,
 			prevNext: false,
-			slideCount: isMobile ? 2 : <?php  echo esc_attr( (int) $items_per_set ) ?>,
+			slideCount: isMobile ? 2 : <?php  echo esc_attr( $items_per_set ) ?>,
 			moveCount: 1,
 			startSlide: false,
 			continuous: true,

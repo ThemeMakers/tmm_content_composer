@@ -179,6 +179,17 @@ $rnc-content-date-font-size						: 13px;
 $car-body-title-color							: #232527;
 $car-body-title-color-hover						: #ff600a;
 
+
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
 /* -------------------------------------------------- */
 /* Services: Icons at Left
 /* -------------------------------------------------- */
@@ -1144,32 +1155,72 @@ $car-body-title-color-hover						: #ff600a;
 	}
 
 	.clc_content {
-		&.item-grid {
+		&.content-grid {
+			font-size: 0;
 			margin: 0 -20px;
+			@extend .clearfix;
 
 			@include media('<ipads_p') {
 				margin: 0 -5px;
 			}
 
 			.car-entry {
+				&[class*="col-"] {
+					padding: 0;
+				}
+
+				&.col-md-2 {
+					margin-bottom: 40px;
+
+					.image-post {
+						.ribbon {
+							bottom: -5px;
+							padding: 0 2px;
+							font-size: 8px;
+							letter-spacing: 0.5px;
+						}
+
+						.video-icon, .picture-icon {
+							font: 8px/8px 'fontello';
+							width: 13px;
+							height: 13px;
+							padding: 2px;
+						}
+
+						.video-icon {
+							right: 22px;
+						}
+					}
+
+					.title-item {
+						font-size: 14px;
+					}
+
+					.price {
+						font-size: 16px;
+					}
+				}
+
 				> div {
 					margin: 15px 20px;
 
 					&.image-post {
+						overflow: hidden;
+						margin-bottom: 10px;
+						max-height: 158px;
+
 						@include media('<ipads_p') {
 							margin: 10px 5px;
+						}
+
+						.single-image {
+							margin-bottom: 0;
 						}
 					}
 
 					&.detailed {
 						@include media('<ipads_p') {
 							margin: 5px;
-						}
-
-						.title-item {
-							@include media('<ipads_p') {
-								font-size: 14px;
-							}
 						}
 
 						.price {
@@ -1180,8 +1231,18 @@ $car-body-title-color-hover						: #ff600a;
 					}
 				}
 
-				&[class*="col-"] {
-					padding: 0;
+				.title-item {
+					margin-bottom: 0;
+					font-size: 19px;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+
+					@include media('<ipads_p') {
+						font-size: 14px;
+					}
+
+					a {color: #232527;}
 				}
 			}
 		}

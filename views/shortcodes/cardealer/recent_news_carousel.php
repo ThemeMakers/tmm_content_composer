@@ -29,7 +29,6 @@ $wp_query = new WP_Query( $args );
 $uniqid = uniqid();
 
 if ( !empty($wp_query->posts) ) {
-
 	wp_enqueue_script('tmm_sudoSlider');
 ?>
 
@@ -41,7 +40,7 @@ if ( !empty($wp_query->posts) ) {
 
 		<h3 class="section-title"><?php esc_html_e( $title, 'cardealer' ) ?></h3>
 
-		<span class="rnc_controls" id="rnc_controls_<?php echo $uniqid ?>">
+		<span class="rnc_controls" id="rnc_controls_<?php echo esc_attr( $uniqid ) ?>">
 			<a href="#" data-target="prev" class="prevBtn icon-angle-left" title="<?php esc_html_e('Previous', 'cardealer'); ?>"></a>
 			<a href="#" data-target="next" class="nextBtn icon-angle-right" title="<?php esc_html_e('Next', 'cardealer'); ?>"></a>
 		</span>
@@ -51,7 +50,7 @@ if ( !empty($wp_query->posts) ) {
 <?php } ?>
 
 	<!--	rnc - Recent News Carousel -->
-	<div id="rnc_<?php echo $uniqid ?>" class="rnc_content">
+	<div id="rnc_<?php echo esc_attr( $uniqid ) ?>" class="rnc_content">
 		<?php
 		if (have_posts()) {
 			while (have_posts()) {
@@ -103,7 +102,7 @@ if ( !empty($wp_query->posts) ) {
 									<?php
 									if( strpos( $post->post_content, '<!--more-->' ) ){
 										the_content();
-									}else{
+									} else {
 										if ($desc_symbols === '') {
 											$desc_symbols = 220;
 										}
@@ -146,8 +145,8 @@ if ( !empty($wp_query->posts) ) {
 <script type="text/javascript">
 	jQuery(function ($) {
 
-		$("#rnc_<?php echo $uniqid ?>").sudoSlider({
-			auto: <?php echo (int) $autoslide ?>,
+		$("#rnc_<?php echo esc_attr( $uniqid ) ?>").sudoSlider({
+			auto: <?php echo esc_attr( $autoslide ) ?>,
 			ease: 'swing',
 			speed: 800,
 			pause: 2000,
@@ -156,11 +155,11 @@ if ( !empty($wp_query->posts) ) {
 			continuous: true,
 			touch: true,
 			prevNext: false,
-			slideCount: <?php echo (int) $items_per_set ?>,
+			slideCount: <?php echo esc_attr( $items_per_set ) ?>,
 			moveCount: 1,
 			startSlide: false,
 			controlsFade: false,
-			customLink: "#rnc_controls_<?php echo $uniqid ?> a"
+			customLink: "#rnc_controls_<?php echo esc_attr( $uniqid ) ?> a"
 		});
 
 	});
