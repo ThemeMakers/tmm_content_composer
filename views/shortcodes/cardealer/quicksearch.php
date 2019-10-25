@@ -121,7 +121,7 @@ $uniqid = uniqid();
 $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_unit() : 'miles');
 ?>
 
-<div class="<?php echo esc_attr( $widget_class ) ?>" <?php echo esc_attr( $styles ) ?>>
+<div class="<?php echo esc_attr( $widget_class ) ?>" <?php echo wp_kses( $styles, array('style' => array()) ); ?>>
 
 	<div class="form_load_area">
 		<div class="cardealer-spinner"><div></div><div></div><div></div><div></div><div></div></div>
