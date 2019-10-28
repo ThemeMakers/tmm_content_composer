@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-30 01:13+0200\n"
-"PO-Revision-Date: 2019-09-30 01:14+0200\n"
+"POT-Creation-Date: 2019-10-28 23:45+0100\n"
+"PO-Revision-Date: 2019-10-28 23:45+0100\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -123,8 +123,9 @@ msgstr "Alle Kategorien"
 msgid "Browse"
 msgstr "Datei wählen"
 
-#: classes/layout_constructor.php:202 views/shortcodes/default/tmm_video.php:98
+#: classes/layout_constructor.php:202
 #: views/shortcodes/default/tmm_video.php:101
+#: views/shortcodes/default/tmm_video.php:104
 msgid "Unsupported video format"
 msgstr "Nicht unterstütztes Videoformat"
 
@@ -445,13 +446,13 @@ msgstr "Einblenden"
 msgid "Overlay Opacity"
 msgstr "Deckkraft (Undurchsichtigkeit)"
 
-#: views/shortcodes/cardealer/car_listing_carousel.php:62
-#: views/shortcodes/cardealer/recent_news_carousel.php:45
+#: views/shortcodes/cardealer/car_listing_carousel.php:61
+#: views/shortcodes/cardealer/recent_news_carousel.php:44
 msgid "Previous"
 msgstr "Vorheriges"
 
-#: views/shortcodes/cardealer/car_listing_carousel.php:63
-#: views/shortcodes/cardealer/recent_news_carousel.php:46
+#: views/shortcodes/cardealer/car_listing_carousel.php:62
+#: views/shortcodes/cardealer/recent_news_carousel.php:45
 msgid "Next"
 msgstr "Vor"
 
@@ -462,7 +463,7 @@ msgstr "Vor"
 msgid "View all posts filed under %s"
 msgstr "Zeige alle Beiträge in %s"
 
-#: views/shortcodes/cardealer/car_makes.php:57
+#: views/shortcodes/cardealer/car_makes.php:59
 #, php-format
 msgid "View all ads filed under %s"
 msgstr "Alle Einträge anzeigen, die unter %s gespeichert sind"
@@ -672,8 +673,10 @@ msgid "Hide locations whithout related cars"
 msgstr "Standorte whithout ähnlichen Autos ausblenden"
 
 #: views/shortcodes/cardealer/popups/car_makes.php:8
-msgid "Hide empty makes"
-msgstr "Leere Hersteller ausblenden"
+#, fuzzy
+#| msgid "Hide locations whithout related cars"
+msgid "Hide items with no cars"
+msgstr "Standorte whithout ähnlichen Autos ausblenden"
 
 #: views/shortcodes/cardealer/popups/car_makes.php:19
 msgid "Display car make logos"
@@ -2031,6 +2034,9 @@ msgstr "ThemeMakers"
 #. Author URI of the plugin/theme
 msgid "http://themeforest.net/user/ThemeMakers"
 msgstr "http://themeforest.net/user/Thememakers"
+
+#~ msgid "Hide empty makes"
+#~ msgstr "Leere Hersteller ausblenden"
 
 #~ msgid "from"
 #~ msgstr "ab"

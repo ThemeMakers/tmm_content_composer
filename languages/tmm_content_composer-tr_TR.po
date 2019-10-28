@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-30 01:16+0200\n"
-"PO-Revision-Date: 2019-09-30 01:16+0200\n"
+"POT-Creation-Date: 2019-10-28 23:47+0100\n"
+"PO-Revision-Date: 2019-10-28 23:47+0100\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
@@ -133,8 +133,9 @@ msgstr "Tüm Kategoriler"
 msgid "Browse"
 msgstr "Gözat"
 
-#: classes/layout_constructor.php:202 views/shortcodes/default/tmm_video.php:98
+#: classes/layout_constructor.php:202
 #: views/shortcodes/default/tmm_video.php:101
+#: views/shortcodes/default/tmm_video.php:104
 #, fuzzy
 msgid "Unsupported video format"
 msgstr "Para Birimi Biçimi"
@@ -505,8 +506,8 @@ msgstr "Button color"
 msgid "Overlay Opacity"
 msgstr "Filigran Opaklığı"
 
-#: views/shortcodes/cardealer/car_listing_carousel.php:62
-#: views/shortcodes/cardealer/recent_news_carousel.php:45
+#: views/shortcodes/cardealer/car_listing_carousel.php:61
+#: views/shortcodes/cardealer/recent_news_carousel.php:44
 #, fuzzy
 msgid "Previous"
 msgstr ""
@@ -516,8 +517,8 @@ msgstr ""
 "araba reklam tutarına göre yeniden düzenleneceğini ve geri kalanın Araba "
 "reklamları taslağa gönderileceğini hatırlatmak isteriz."
 
-#: views/shortcodes/cardealer/car_listing_carousel.php:63
-#: views/shortcodes/cardealer/recent_news_carousel.php:46
+#: views/shortcodes/cardealer/car_listing_carousel.php:62
+#: views/shortcodes/cardealer/recent_news_carousel.php:45
 msgid "Next"
 msgstr "Sonraki"
 
@@ -528,7 +529,7 @@ msgstr "Sonraki"
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:57
+#: views/shortcodes/cardealer/car_makes.php:59
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
@@ -772,8 +773,8 @@ msgstr ""
 
 #: views/shortcodes/cardealer/popups/car_makes.php:8
 #, fuzzy
-msgid "Hide empty makes"
-msgstr "Boş otomobil markasını etkinleştirin"
+msgid "Hide items with no cars"
+msgstr "Boş konumları etkinleştir"
 
 #: views/shortcodes/cardealer/popups/car_makes.php:19
 #, fuzzy
@@ -2318,6 +2319,10 @@ msgstr "ThemeMakers"
 #. Author URI of the plugin/theme
 msgid "http://themeforest.net/user/ThemeMakers"
 msgstr "http://themeforest.net/user/ThemeMakers"
+
+#, fuzzy
+#~ msgid "Hide empty makes"
+#~ msgstr "Boş otomobil markasını etkinleştirin"
 
 #, fuzzy
 #~ msgid "from"

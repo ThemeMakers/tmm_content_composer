@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2019-09-30 00:51+0200\n"
-"PO-Revision-Date: 2019-09-30 00:52+0200\n"
+"POT-Creation-Date: 2019-10-28 23:48+0100\n"
+"PO-Revision-Date: 2019-10-28 23:48+0100\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "Language: en_US\n"
@@ -123,8 +123,9 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
-#: classes/layout_constructor.php:202 views/shortcodes/default/tmm_video.php:98
+#: classes/layout_constructor.php:202
 #: views/shortcodes/default/tmm_video.php:101
+#: views/shortcodes/default/tmm_video.php:104
 msgid "Unsupported video format"
 msgstr ""
 
@@ -445,13 +446,13 @@ msgstr ""
 msgid "Overlay Opacity"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_listing_carousel.php:62
-#: views/shortcodes/cardealer/recent_news_carousel.php:45
+#: views/shortcodes/cardealer/car_listing_carousel.php:61
+#: views/shortcodes/cardealer/recent_news_carousel.php:44
 msgid "Previous"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_listing_carousel.php:63
-#: views/shortcodes/cardealer/recent_news_carousel.php:46
+#: views/shortcodes/cardealer/car_listing_carousel.php:62
+#: views/shortcodes/cardealer/recent_news_carousel.php:45
 msgid "Next"
 msgstr ""
 
@@ -462,7 +463,7 @@ msgstr ""
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:57
+#: views/shortcodes/cardealer/car_makes.php:59
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
@@ -672,7 +673,7 @@ msgid "Hide locations whithout related cars"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/car_makes.php:8
-msgid "Hide empty makes"
+msgid "Hide items with no cars"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/car_makes.php:19

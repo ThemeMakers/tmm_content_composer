@@ -3,10 +3,10 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2019-09-30 00:52+0200\n"
-"PO-Revision-Date: 2019-03-16 02:26+0100\n"
-"Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
-"Language-Team: Alex TM <support@webtemplatemasters.com>\n"
+"POT-Creation-Date: 2019-10-28 23:43+0100\n"
+"PO-Revision-Date: 2019-10-28 23:43+0100\n"
+"Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
+"Language-Team: ThemeMakers <support@webtemplatemasters.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +19,8 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
 
 #: classes/content_composer.php:64
 msgid "ThemeMakers Layout Constructor"
@@ -123,8 +124,9 @@ msgstr ""
 msgid "Browse"
 msgstr ""
 
-#: classes/layout_constructor.php:202 views/shortcodes/default/tmm_video.php:98
+#: classes/layout_constructor.php:202
 #: views/shortcodes/default/tmm_video.php:101
+#: views/shortcodes/default/tmm_video.php:104
 msgid "Unsupported video format"
 msgstr ""
 
@@ -445,13 +447,13 @@ msgstr ""
 msgid "Overlay Opacity"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_listing_carousel.php:62
-#: views/shortcodes/cardealer/recent_news_carousel.php:45
+#: views/shortcodes/cardealer/car_listing_carousel.php:61
+#: views/shortcodes/cardealer/recent_news_carousel.php:44
 msgid "Previous"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_listing_carousel.php:63
-#: views/shortcodes/cardealer/recent_news_carousel.php:46
+#: views/shortcodes/cardealer/car_listing_carousel.php:62
+#: views/shortcodes/cardealer/recent_news_carousel.php:45
 msgid "Next"
 msgstr ""
 
@@ -462,7 +464,7 @@ msgstr ""
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:57
+#: views/shortcodes/cardealer/car_makes.php:59
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
@@ -672,7 +674,7 @@ msgid "Hide locations whithout related cars"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/car_makes.php:8
-msgid "Hide empty makes"
+msgid "Hide items with no cars"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/car_makes.php:19
