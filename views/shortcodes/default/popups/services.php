@@ -9,25 +9,25 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'radio',
-			'title' => __('Type', 'cardealer'),
+			'title' => __('Type', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'name' => 'type',
 			'values' => array(
 				0 => array(
-					'title' => __('Default', 'cardealer'),
+					'title' => __('Default', 'tmm_content_composer'),
 					'id' => 'type_normal',
 					'value' => 0,
 					'checked' => ($value_type == 0 ? 1 : 0)
 				),
 				1 => array(
-					'title' => __('Alternate Hover Box', 'cardealer'),
+					'title' => __('Alternate Hover Box', 'tmm_content_composer'),
 					'id' => 'type_colorized',
 					'value' => 1,
 					'checked' => ($value_type == 1 ? 1 : 0)
 				),
 				2 => array(
-					'title' => __('Alternate Icon on Top', 'cardealer'),
+					'title' => __('Alternate Icon on Top', 'tmm_content_composer'),
 					'id' => 'type_icon_top',
 					'value' => 2,
 					'checked' => ($value_type == 2 ? 1 : 0)
@@ -129,8 +129,8 @@
 		);
 		?>
 
-		<h4 class="label"><?php esc_html_e('Blocks', 'cardealer'); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add item', 'cardealer'); ?></a><br />
+		<h4 class="label"><?php esc_html_e('Blocks', 'tmm_content_composer'); ?></h4>
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add item', 'tmm_content_composer'); ?></a><br />
 		<ul id="list_items" class="list-items">
 			<?php
 			$content_edit_data = array('');
@@ -175,7 +175,7 @@
                                 <?php                               
                                 
 								TMM_Content_Composer::html_option(array(
-									'title' => __('Text Color', 'cardealer'),
+									'title' => __('Text Color', 'tmm_content_composer'),
 									'shortcode_field' => 'list_item_color['.$key.']',
 									'type' => 'color',
 									'description' => '',
@@ -188,7 +188,7 @@
 								
                                 <?php
 								TMM_Content_Composer::html_option(array(
-									'title' => __('Background Color', 'cardealer'),
+									'title' => __('Background Color', 'tmm_content_composer'),
 									'shortcode_field' => 'list_item_color['.$key.']',
 									'type' => 'color',
 									'description' => '',
@@ -202,7 +202,7 @@
                                 <?php
                                 
 								TMM_Content_Composer::html_option(array(
-									'title' => __('Text Hover Color', 'cardealer'),
+									'title' => __('Text Hover Color', 'tmm_content_composer'),
 									'shortcode_field' => 'list_item_color['.$key.']',
 									'type' => 'color',
 									'description' => '',
@@ -215,7 +215,7 @@
                                                                 
                                 <?php
 								TMM_Content_Composer::html_option(array(
-									'title' => __('Background Hover Color', 'cardealer'),
+									'title' => __('Background Hover Color', 'tmm_content_composer'),
 									'shortcode_field' => 'list_item_hover_bgcolor['.$key.']',
 									'type' => 'color',
 									'description' => '',
@@ -229,23 +229,23 @@
 							</td>
 							<td style="width: 50%;">							
 
-								<h5 class="label"><?php esc_html_e('Title', 'cardealer'); ?></h5>
+								<h5 class="label"><?php esc_html_e('Title', 'tmm_content_composer'); ?></h5>
 								<input type="text" value="<?php echo (isset($titles_edit_data[$key])) ? $titles_edit_data[$key] : '' ?>" class="list_item_title js_shortcode_template_changer data-input" style="width: 100%;" /><br />
 
-								<h5 class="label"><?php esc_html_e('Link', 'cardealer'); ?></h5>
+								<h5 class="label"><?php esc_html_e('Link', 'tmm_content_composer'); ?></h5>
 								<input type="text" value="<?php echo (isset($links_edit_data[$key])) ? $links_edit_data[$key] : '' ?>" class="list_item_link js_shortcode_template_changer data-input" style="width: 100%;" /><br />
                                 
                                 <div class="colorized_hover_title" <?php echo ($value_type!==1) ? 'style="display:none"' : '' ?>>
-                                    <h5 class="label"><?php esc_html_e('Hover Title', 'cardealer'); ?></h5>
+                                    <h5 class="label"><?php esc_html_e('Hover Title', 'tmm_content_composer'); ?></h5>
                                     <input type="text" value="<?php echo (isset($hover_titles_edit_data[$key])) ? $hover_titles_edit_data[$key] : '' ?>" class="list_item_hover_title js_shortcode_template_changer data-input" style="width: 100%;" /><br />
                                 </div>
                                 
-								<h5 class="label title_content" <?php echo ($value_type==1) ? 'style="display:none"' : '' ?>><?php  esc_html_e('Content', 'cardealer'); ?></h5>
-								<h5 class="label hover_title_content" <?php echo ($value_type!==1) ? 'style="display:none"' : '' ?>><?php  esc_html_e('Hover Content', 'cardealer'); ?></h5>
+								<h5 class="label title_content" <?php echo ($value_type==1) ? 'style="display:none"' : '' ?>><?php  esc_html_e('Content', 'tmm_content_composer'); ?></h5>
+								<h5 class="label hover_title_content" <?php echo ($value_type!==1) ? 'style="display:none"' : '' ?>><?php  esc_html_e('Hover Content', 'tmm_content_composer'); ?></h5>
 								<textarea class="list_item_content js_shortcode_template_changer data-area" style="width: 100%; min-height: 50px;"><?php echo $content_edit_text ?></textarea>
 							</td>
 							<td>
-								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'cardealer'); ?></a>
+								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'tmm_content_composer'); ?></a>
 							</td>
 							<td></td>
 						</tr>
@@ -256,7 +256,7 @@
             <?php } ?>
 
 		</ul>
-		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add item', 'cardealer'); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add item', 'tmm_content_composer'); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

@@ -98,10 +98,10 @@ switch ($video_type) {
 		$cover_image = isset($cover_id) && (has_post_thumbnail($cover_id)) ? TMM_Content_Composer::get_post_featured_image($cover_id, '') : '';
 		if (!empty($cover_image)) {
 			?>
-			<img src="<?php echo esc_url(TMM_Content_Composer::resize_image_cover($cover_image, $image_size)); ?>" alt="<?php esc_attr_e('Unsupported video format', 'cardealer') ?>" />
+			<img src="<?php echo esc_url(TMM_Content_Composer::resize_image_cover($cover_image, $image_size)); ?>" alt="<?php esc_attr_e('Unsupported video format', 'tmm_content_composer') ?>" />
 		<?php
 		} else {
-			esc_html_e('Unsupported video format', 'cardealer');
+			esc_html_e('Unsupported video format', 'tmm_content_composer');
 		}
 		break;
 }

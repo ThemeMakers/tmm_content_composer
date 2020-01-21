@@ -9,7 +9,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Table Count', 'cardealer'),
+				'title' => __('Table Count', 'tmm_content_composer'),
 				'shortcode_field' => 'count',
 				'id' => 'count',
 				'options' => array(
@@ -33,7 +33,7 @@
 			}
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Row Count', 'cardealer'),
+				'title' => __('Row Count', 'tmm_content_composer'),
 				'shortcode_field' => 'row_count',
 				'id' => 'row_count',
 				'options' => $row_count_array,
@@ -50,7 +50,7 @@
 <ul id="price_tables_list">
 
 	<?php
-	$shortcodes_texts_array = array(0 => '[price_table title="' . __('Starter Package', 'cardealer') . '" price="' . __('19.95', 'cardealer') . '" button_text="' . __('Details', 'cardealer') . '" button_link="#" featured="0"]^^^[/price_table]');
+	$shortcodes_texts_array = array(0 => '[price_table title="' . __('Starter Package', 'tmm_content_composer') . '" price="' . __('19.95', 'tmm_content_composer') . '" button_text="' . __('Details', 'tmm_content_composer') . '" button_link="#" featured="0"]^^^[/price_table]');
 	//***
 	if (isset($_REQUEST["shortcode_mode_edit"])) {
 		$shortcodes_texts_array = array();
@@ -98,19 +98,19 @@
 
 					<ul class="features">
 						<?php foreach ($options_content as $option_text) : ?>
-							<li><input type="text" class="price_table_option_row price_table_row_input data-input" value="<?php echo $option_text ?>" placeholder="<?php esc_html_e('Enter text here', 'cardealer'); ?>" /></li>
+							<li><input type="text" class="price_table_option_row price_table_row_input data-input" value="<?php echo $option_text ?>" placeholder="<?php esc_html_e('Enter text here', 'tmm_content_composer'); ?>" /></li>
 						<?php endforeach; ?>
 					</ul><!-- .features -->
 
 					<div class="footer">
-						<h4 class="label"><?php esc_html_e('Button Text', 'cardealer'); ?></h4>
+						<h4 class="label"><?php esc_html_e('Button Text', 'tmm_content_composer'); ?></h4>
 						<input type="text" class="price_table_button_text price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['button_text'] ?>" />
-						<h4 class="label"><?php esc_html_e('Button Link', 'cardealer'); ?></h4>
+						<h4 class="label"><?php esc_html_e('Button Link', 'tmm_content_composer'); ?></h4>
 						<input type="text" class="price_table_button_link price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['button_link'] ?>" /><br />
 						<input type="checkbox" value="<?php echo $_REQUEST["shortcode_mode_edit"]['featured'] ?>" <?php echo($_REQUEST["shortcode_mode_edit"]['featured'] == 1 ? 'checked' : '') ?> class="featured_price_list data-check js_shortcode_checkbox_self_update" />
 						<label class="label">
 							<span></span>
-							<i class="description"><?php esc_html_e('Is Featured', 'cardealer'); ?></i>
+							<i class="description"><?php esc_html_e('Is Featured', 'tmm_content_composer'); ?></i>
 						</label>
 					</div><!-- .footer -->
 

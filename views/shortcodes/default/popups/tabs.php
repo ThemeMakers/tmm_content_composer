@@ -3,9 +3,9 @@
 	
 	<div class="fullwidth">
 
-		<h4 class="label"><?php esc_html_e('Items', 'cardealer'); ?></h4>
+		<h4 class="label"><?php esc_html_e('Items', 'tmm_content_composer'); ?></h4>
 
-		<a class="button button-small js_add_accordion_item" href="#"><?php esc_html_e('Add item', 'cardealer'); ?></a><br />
+		<a class="button button-small js_add_accordion_item" href="#"><?php esc_html_e('Add item', 'tmm_content_composer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 
@@ -23,13 +23,13 @@
 					<table style="width: 100%;">
 						<tr>
 							<td valign="top" style="width: 100%;">
-								<input placeholder="<?php esc_html_e('Title', 'cardealer'); ?>" type="text" value="<?php echo $titles_edit_data[$key] ?>" class="accordion_item_title js_shortcode_template_changer" style="width: 67%;" />
-								&nbsp;<a class="button button-small js_delete_accordion_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'cardealer'); ?></a>
+								<input placeholder="<?php esc_html_e('Title', 'tmm_content_composer'); ?>" type="text" value="<?php echo $titles_edit_data[$key] ?>" class="accordion_item_title js_shortcode_template_changer" style="width: 67%;" />
+								&nbsp;<a class="button button-small js_delete_accordion_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'tmm_content_composer'); ?></a>
 							</td>
 						</tr>
 						<tr>
 							<td valign="top" style="width: 100%;" colspan="2">
-								<textarea placeholder="<?php esc_html_e('Content', 'cardealer'); ?>" class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php esc_html_e('Content', 'cardealer'); ?>"><?php echo $content_edit_text ?></textarea>
+								<textarea placeholder="<?php esc_html_e('Content', 'tmm_content_composer'); ?>" class="accordion_item_content js_shortcode_template_changer data-area" placeholder="<?php esc_html_e('Content', 'tmm_content_composer'); ?>"><?php echo $content_edit_text ?></textarea>
 							</td>
 						</tr>
 					</table>
@@ -37,7 +37,7 @@
 			<?php endforeach; ?>
 		</ul>
 
-		<a class="button button-small js_add_accordion_item" href="#"><?php esc_html_e('Add item', 'cardealer'); ?></a><br />
+		<a class="button button-small js_add_accordion_item" href="#"><?php esc_html_e('Add item', 'tmm_content_composer'); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

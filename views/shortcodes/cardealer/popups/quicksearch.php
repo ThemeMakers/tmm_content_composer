@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display country', 'cardealer'),
+			'title' => __('Display country', 'tmm_content_composer'),
 			'shortcode_field' => 'show_location0',
 			'id' => 'show_location0',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_location0', 1),
@@ -17,7 +17,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display state', 'cardealer'),
+			'title' => __('Display state', 'tmm_content_composer'),
 			'shortcode_field' => 'show_location1',
 			'id' => 'show_location1',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_location1', 1),
@@ -28,7 +28,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display city', 'cardealer'),
+			'title' => __('Display city', 'tmm_content_composer'),
 			'shortcode_field' => 'show_location2',
 			'id' => 'show_location2',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_location2', 1),
@@ -39,7 +39,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display condition', 'cardealer'),
+			'title' => __('Display condition', 'tmm_content_composer'),
 			'shortcode_field' => 'show_condition',
 			'id' => 'show_condition',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_condition', 1),
@@ -50,7 +50,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display producers &amp; models', 'cardealer'),
+			'title' => __('Display producers &amp; models', 'tmm_content_composer'),
 			'shortcode_field' => 'show_makes',
 			'id' => 'show_makes',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_makes', 1),
@@ -61,7 +61,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display price range', 'cardealer'),
+			'title' => __('Display price range', 'tmm_content_composer'),
 			'shortcode_field' => 'show_price_range',
 			'id' => 'show_price_range',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_price_range', 1),
@@ -72,7 +72,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display year range', 'cardealer'),
+			'title' => __('Display year range', 'tmm_content_composer'),
 			'shortcode_field' => 'show_year_range',
 			'id' => 'show_year_range',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_year_range', 1),
@@ -83,13 +83,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Search button position', 'cardealer'),
+			'title' => __('Search button position', 'tmm_content_composer'),
 			'shortcode_field' => 'button_position',
 			'id' => 'button_position',
 			'options' => array(
-				1 => __('First column', 'cardealer'),
-				2 => __('Second column', 'cardealer'),
-				3 => __('Third column', 'cardealer'),
+				1 => __('First column', 'tmm_content_composer'),
+				2 => __('Second column', 'tmm_content_composer'),
+				3 => __('Third column', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('button_position', 3),
 			'description' => ''
@@ -98,7 +98,7 @@
 
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'title' => __('Widget Background', 'cardealer'),
+			'title' => __('Widget Background', 'tmm_content_composer'),
 			'shortcode_field' => 'bg_color',
 			'id' => 'bg_color',
 			'type' => 'color',
@@ -119,7 +119,7 @@
 
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Select default country', 'cardealer'),
+				'title' => __('Select default country', 'tmm_content_composer'),
 				'shortcode_field' => 'selected_location0',
 				'id' => 'selected_location0',
 				'options' => $countries,
@@ -148,7 +148,7 @@
 
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Select default state', 'cardealer'),
+				'title' => __('Select default state', 'tmm_content_composer'),
 				'shortcode_field' => 'selected_location1',
 				'id' => 'selected_location1',
 				'options' => $states,
@@ -167,7 +167,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display mileage', 'cardealer'),
+			'title' => __('Display mileage', 'tmm_content_composer'),
 			'shortcode_field' => 'show_mileage',
 			'id' => 'show_mileage',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_mileage', 1),
@@ -178,7 +178,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display fuel type', 'cardealer'),
+			'title' => __('Display fuel type', 'tmm_content_composer'),
 			'shortcode_field' => 'show_fuel_type',
 			'id' => 'show_fuel_type',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_fuel_type', 1),
@@ -189,7 +189,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display gearbox', 'cardealer'),
+			'title' => __('Display gearbox', 'tmm_content_composer'),
 			'shortcode_field' => 'show_transmission',
 			'id' => 'show_transmission',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_transmission', 1),
@@ -200,7 +200,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display body type', 'cardealer'),
+			'title' => __('Display body type', 'tmm_content_composer'),
 			'shortcode_field' => 'show_body_type',
 			'id' => 'show_body_type',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_body_type', 1),
@@ -211,7 +211,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display doors count', 'cardealer'),
+			'title' => __('Display doors count', 'tmm_content_composer'),
 			'shortcode_field' => 'show_doors_count',
 			'id' => 'show_doors_count',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_doors_count', 1),
@@ -222,7 +222,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display colors', 'cardealer'),
+			'title' => __('Display colors', 'tmm_content_composer'),
 			'shortcode_field' => 'show_colors',
 			'id' => 'show_colors',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_colors', 1),
@@ -233,7 +233,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display advanced search', 'cardealer'),
+			'title' => __('Display advanced search', 'tmm_content_composer'),
 			'shortcode_field' => 'show_advanced_options',
 			'id' => 'show_advanced_options',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_advanced_options', 1),
@@ -244,12 +244,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Search Widget Offset', 'cardealer'),
+			'title' => __('Search Widget Offset', 'tmm_content_composer'),
 			'shortcode_field' => 'search_widget_offset',
 			'id' => 'search_widget_offset',
 			'options' => array(
-					'default' => __('Default Offset', 'cardealer'),
-					'none' => __('No Offset', 'cardealer'),
+					'default' => __('Default Offset', 'tmm_content_composer'),
+					'none' => __('No Offset', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('search_widget_offset', 'default'),
 			'description' => ''
@@ -259,7 +259,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display all fields in one column in pairs', 'cardealer'),
+				'title' => __('Display all fields in one column in pairs', 'tmm_content_composer'),
 				'shortcode_field' => 'show_in_one_col',
 				'id' => 'show_in_one_col',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_in_one_col', 0),

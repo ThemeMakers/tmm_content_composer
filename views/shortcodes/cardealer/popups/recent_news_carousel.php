@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => esc_html__('Title', 'cardealer'),
+			'title' => esc_html__('Title', 'tmm_content_composer'),
 			'shortcode_field' => 'title',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('title', ''),
@@ -17,7 +17,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => esc_html__('Enter Number of Posts', 'cardealer'),
+			'title' => esc_html__('Enter Number of Posts', 'tmm_content_composer'),
 			'shortcode_field' => 'count',
 			'id' => '',
 			'options' => array(
@@ -36,7 +36,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => esc_html__('Enable Auto Slide', 'cardealer'),
+			'title' => esc_html__('Enable Auto Slide', 'tmm_content_composer'),
 			'shortcode_field' => 'autoslide',
 			'id' => 'autoslide',
 			'is_checked' => TMM_Content_Composer::set_default_value('autoslide', 1),
@@ -47,7 +47,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => esc_html__('Display Date', 'cardealer'),
+			'title' => esc_html__('Display Date', 'tmm_content_composer'),
 			'shortcode_field' => 'show_date',
 			'id' => 'show_date',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_date', 1),
@@ -62,14 +62,14 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => esc_html__('Items per Set', 'cardealer'),
+			'title' => esc_html__('Items per Set', 'tmm_content_composer'),
 			'shortcode_field' => 'items_per_set',
 			'id' => 'items_per_set',
 			'options' => array(
-				'3' => esc_html__('3 Items', 'cardealer'),
-				'4' => esc_html__('4 Items', 'cardealer'),
-				'5' => esc_html__('5 Items', 'cardealer'),
-				'6' => esc_html__('6 Items', 'cardealer'),
+				'3' => esc_html__('3 Items', 'tmm_content_composer'),
+				'4' => esc_html__('4 Items', 'tmm_content_composer'),
+				'5' => esc_html__('5 Items', 'tmm_content_composer'),
+				'6' => esc_html__('6 Items', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('items_per_set', '3'),
 			'description' => ''
@@ -79,12 +79,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => esc_html__('Apply Filters', 'cardealer'),
+			'title' => esc_html__('Apply Filters', 'tmm_content_composer'),
 			'shortcode_field' => 'filter',
 			'id' => '',
 			'options' => array(
-				'recent' => esc_html__('Recent news', 'cardealer'),
-				'random' => esc_html__('Random news', 'cardealer'),
+				'recent' => esc_html__('Recent news', 'tmm_content_composer'),
+				'random' => esc_html__('Random news', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('filter', 'recent'),
 			'description' => ''
@@ -94,7 +94,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => esc_html__('Max Symbols Number in Description', 'cardealer'),
+			'title' => esc_html__('Max Symbols Number in Description', 'tmm_content_composer'),
 			'shortcode_field' => 'desc_symbols',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('desc_symbols', ''),

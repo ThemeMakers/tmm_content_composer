@@ -56,16 +56,16 @@ $car_watch_list   = TMM_Ext_PostType_Car::get_watch_list();
 
 	<div class="page-subheader">
 
-		<h2 class="section-title"><?php esc_html_e( $title, 'cardealer' ) ?></h2>
+		<h2 class="section-title"><?php esc_html_e( $title, 'tmm_content_composer' ) ?></h2>
 
 		<?php if ( isset( $show_layout_switcher ) && $show_layout_switcher == true ) { ?>
 			<div class="layout-switcher">
 				<a class="layout-grid <?php echo( $cars_listing_layout_class == 'item-grid' ? 'active' : '' ) ?>"
 				   data-css-class="item-grid"
-				   href="javascript:void(0);"><?php esc_html_e( "Grid View", 'cardealer' ) ?></a>
+				   href="javascript:void(0);"><?php esc_html_e( "Grid View", 'tmm_content_composer' ) ?></a>
 				<a class="layout-list <?php echo( $cars_listing_layout_class == 'item-list' ? 'active' : '' ) ?>"
 				   data-css-class="item-list"
-				   href="javascript:void(0);"><?php esc_html_e( "List View", 'cardealer' ) ?></a>
+				   href="javascript:void(0);"><?php esc_html_e( "List View", 'tmm_content_composer' ) ?></a>
 			</div><!--/ .layout-switcher-->
 		<?php } ?>
 
@@ -97,5 +97,5 @@ $car_watch_list   = TMM_Ext_PostType_Car::get_watch_list();
 <?php if ( $show_view_all_cars_link ):
 	$searching_page = TMM_Helper::get_permalink_by_lang( TMM::get_option( 'searching_page', TMM_APP_CARDEALER_PREFIX ) );
 	?>
-	<a href="<?php echo $searching_page; ?>"><?php esc_html_e( 'Show all cars', 'cardealer' ); ?> <i class="icon-angle-double-right"></i></a>
+	<a href="<?php echo $searching_page; ?>"><?php esc_html_e( 'Show all cars', 'tmm_content_composer' ); ?> <i class="icon-angle-double-right"></i></a>
 <?php endif; ?>

@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Products Per Page', 'cardealer'),
+			'title' => __('Products Per Page', 'tmm_content_composer'),
 			'shortcode_field' => 'products_per_page',
 			'id' => 'products_per_page',
 			'default_value' => TMM_Content_Composer::set_default_value('products_per_page', 12),
@@ -19,7 +19,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Columns', 'cardealer'),
+			'title' => __('Columns', 'tmm_content_composer'),
 			'shortcode_field' => 'columns',
 			'id' => 'columns',
 			'options' => array(2 => 2, 3 => 3 , 4 => 4),
@@ -32,20 +32,20 @@
 	<div class="one-half">
 		<?php
 		$product_type = array(
-			'featured_products' => __('Featured', 'cardealer'),
-			//'top_rated_products' => __('Top Rated', 'cardealer'),
-			'best_selling_products' => __('Best Selling', 'cardealer'),
-			'sale_products' => __('Sale Products', 'cardealer'),
+			'featured_products' => __('Featured', 'tmm_content_composer'),
+			//'top_rated_products' => __('Top Rated', 'tmm_content_composer'),
+			'best_selling_products' => __('Best Selling', 'tmm_content_composer'),
+			'sale_products' => __('Sale Products', 'tmm_content_composer'),
 		);
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Select Products Type', 'cardealer'),
+			'title' => __('Select Products Type', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'options' => $product_type,
 			'default_value' => TMM_Content_Composer::set_default_value('type','featured_products'),
-			'description' => __('Select products type', 'cardealer')
+			'description' => __('Select products type', 'tmm_content_composer')
 		));
 		?>
 	</div><!--/ .one-half-->

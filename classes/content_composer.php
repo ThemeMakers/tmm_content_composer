@@ -61,7 +61,7 @@ class TMM_Content_Composer {
 		if ( in_array( $post_type, $post_types )) {
 			add_meta_box(
 				'tmm_layout_constructor',
-				__("ThemeMakers Layout Constructor", 'cardealer'),
+				__("ThemeMakers Layout Constructor", 'tmm_content_composer'),
 				array('TMM_Layout_Constructor', 'draw_page_meta_box'),
 				$post_type,
 				'normal',
@@ -94,13 +94,13 @@ class TMM_Content_Composer {
 					var tmm_lang = {};
 				}
 
-				tmm_lang['loading'] = "<?php _e("Loading ...", 'cardealer') ?>";
-				tmm_lang['close'] = "<?php _e("Close", 'cardealer') ?>";
-				tmm_lang['apply'] = "<?php _e("Apply", 'cardealer') ?>";
-				tmm_lang['shortcode_nooption'] = "<?php _e("There is no options for shortcode!", 'cardealer') ?>";
-				tmm_lang['shortcode_updated'] = "<?php _e("Shortcode updated!", 'cardealer') ?>";
-				tmm_lang['shortcode_insert'] = "<?php _e("Insert Shortcode", 'cardealer') ?>";
-				tmm_lang['shortcode_edit'] = "<?php _e("Edit shortcode", 'cardealer') ?>";
+				tmm_lang['loading'] = "<?php _e("Loading ...", 'tmm_content_composer') ?>";
+				tmm_lang['close'] = "<?php _e("Close", 'tmm_content_composer') ?>";
+				tmm_lang['apply'] = "<?php _e("Apply", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_nooption'] = "<?php _e("There is no options for shortcode!", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_updated'] = "<?php _e("Shortcode updated!", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_insert'] = "<?php _e("Insert Shortcode", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_edit'] = "<?php _e("Edit shortcode", 'tmm_content_composer') ?>";
 			</script>
 		<?php
 		}
@@ -112,11 +112,11 @@ class TMM_Content_Composer {
 
 			?>
 			<script type="text/javascript">
-				tmm_lang['column_delete'] = "<?php _e("Sure about column deleting?", 'cardealer') ?>";
-				tmm_lang['row_delete'] = "<?php _e("Sure about row deleting?", 'cardealer') ?>";
-				tmm_lang['empty_title'] = "<?php _e("Empty title", 'cardealer') ?>";
-				tmm_lang['column_popup_title'] = "<?php _e("Column content editor", 'cardealer') ?>";
-				tmm_lang['row_popup_title'] = "<?php _e("Section editor", 'cardealer') ?>";
+				tmm_lang['column_delete'] = "<?php _e("Sure about column deleting?", 'tmm_content_composer') ?>";
+				tmm_lang['row_delete'] = "<?php _e("Sure about row deleting?", 'tmm_content_composer') ?>";
+				tmm_lang['empty_title'] = "<?php _e("Empty title", 'tmm_content_composer') ?>";
+				tmm_lang['column_popup_title'] = "<?php _e("Column content editor", 'tmm_content_composer') ?>";
+				tmm_lang['row_popup_title'] = "<?php _e("Section editor", 'tmm_content_composer') ?>";
 			</script>
 		<?php
 		}
@@ -142,9 +142,9 @@ class TMM_Content_Composer {
 
 		$tmm_lang = array(
 			'captcha_image_url' => get_template_directory_uri() . '/helper/capcha/image.php',
-			'wrong_field_value' => __('Please enter correct', 'cardealer'),
-			'success' => __('Your message has been sent successfully!', 'cardealer'),
-			'fail' => __('Server failed. Send later', 'cardealer'),
+			'wrong_field_value' => __('Please enter correct', 'tmm_content_composer'),
+			'success' => __('Your message has been sent successfully!', 'tmm_content_composer'),
+			'fail' => __('Server failed. Send later', 'tmm_content_composer'),
 		);
 
 		wp_register_script('tmm_composer_front', TMM_CC_URL . 'js/min/front.min.js', array('jquery'), false, true);
@@ -157,7 +157,7 @@ class TMM_Content_Composer {
 
 		if (is_array($options)) {
 			$options['use_wptexturize'] = array(
-				'title' => __('Use wptexturize', 'cardealer'),
+				'title' => __('Use wptexturize', 'tmm_content_composer'),
 				'type' => 'checkbox',
 				'default_value' => 0,
 				'description' => '',
@@ -237,8 +237,8 @@ class TMM_Content_Composer {
 
 	public static function get_theme_buttons() {
 		$buttons = array(
-			'default' => __('Default Grey', 'cardealer'),
-			'orange' => __('Orange', 'cardealer')
+			'default' => __('Default Grey', 'tmm_content_composer'),
+			'orange' => __('Orange', 'tmm_content_composer')
 		);
 
 		return $buttons;
@@ -246,9 +246,9 @@ class TMM_Content_Composer {
 
 	public static function get_theme_buttons_sizes() {
 		$button_sizes = array(
-			'small' => __('Small', 'cardealer'),
-			'middle' => __('Middle', 'cardealer'),
-			'large' => __('Large', 'cardealer'),
+			'small' => __('Small', 'tmm_content_composer'),
+			'middle' => __('Middle', 'tmm_content_composer'),
+			'large' => __('Large', 'tmm_content_composer'),
 		);
 
 		return $button_sizes;
@@ -256,7 +256,7 @@ class TMM_Content_Composer {
 
 	public static function get_post_categories() {
 		$post_categories = array(
-			0 => __('All Categories', 'cardealer')
+			0 => __('All Categories', 'tmm_content_composer')
 		);
 
 		$args = 	array(
@@ -438,7 +438,7 @@ class TMM_Content_Composer {
 
 				<input type="text" id="<?php echo esc_attr($data['id']); ?>" value="<?php echo esc_attr($data['default_value']); ?>" class="js_shortcode_template_changer data-input data-upload <?php echo esc_attr($css_class); ?>" data-shortcode-field="<?php echo esc_attr($data['shortcode_field']); ?>" />
 				<a title="" class="button tmm_button_upload" data-type="<?php echo esc_attr($type); ?>" href="#">
-					<?php esc_html_e('Browse', 'cardealer'); ?>
+					<?php esc_html_e('Browse', 'tmm_content_composer'); ?>
 				</a>
 				<span class="preset_description"><?php echo esc_html($data['description']); ?></span>
 				<?php

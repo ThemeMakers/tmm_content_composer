@@ -5,13 +5,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Select Type', 'cardealer'),
+				'title' => __('Select Type', 'tmm_content_composer'),
 				'shortcode_field' => 'type',
 				'id' => 'type',
 				'options' => array(
-						'type-1' => __('Solid', 'cardealer'),
-						'type-2' => __('Solid Short', 'cardealer'),
-						'type-3' => __('Empty Space', 'cardealer'),
+						'type-1' => __('Solid', 'tmm_content_composer'),
+						'type-2' => __('Solid Short', 'tmm_content_composer'),
+						'type-3' => __('Empty Space', 'tmm_content_composer'),
 				),
 				'default_value' => TMM_Content_Composer::set_default_value('type', 'type-1'),
 				'description' => ''
@@ -21,13 +21,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Space around divider', 'cardealer'),
+				'title' => __('Space around divider', 'tmm_content_composer'),
 				'shortcode_field' => 'size',
 				'id' => 'size',
 				'options' => array(
-						'small' => __('Small', 'cardealer'),
-						'middle' => __('Middle', 'cardealer'),
-						'large' => __('Large', 'cardealer'),
+						'small' => __('Small', 'tmm_content_composer'),
+						'middle' => __('Middle', 'tmm_content_composer'),
+						'large' => __('Large', 'tmm_content_composer'),
 				),
 				'default_value' => TMM_Content_Composer::set_default_value('size', 'middle'),
 				'description' => ''
@@ -41,13 +41,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Buttons Color', 'cardealer'),
+				'title' => __('Buttons Color', 'tmm_content_composer'),
 				'shortcode_field' => 'color',
 				'id' => 'color',
 				'options' => array(
-						'transparent' => __('Transparent', 'cardealer'),
-						'gray' => __('Gray', 'cardealer'),
-						'dark' => __('Dark', 'cardealer'),
+						'transparent' => __('Transparent', 'tmm_content_composer'),
+						'gray' => __('Gray', 'tmm_content_composer'),
+						'dark' => __('Dark', 'tmm_content_composer'),
 				),
 				'default_value' => TMM_Content_Composer::set_default_value('color', 'gray'),
 				'description' => ''

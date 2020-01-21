@@ -55,11 +55,11 @@ if ( !empty($query->posts) ) {
 
 	<div class="page-subheader">
 
-		<h3 class="section-title"><?php esc_html_e( $title, 'cardealer' ) ?></h3>
+		<h3 class="section-title"><?php esc_html_e( $title, 'tmm_content_composer' ) ?></h3>
 
 		<span class="clc_controls" id="clc_controls_<?php echo esc_attr( $uniqid ) ?>">
-			<a href="#" data-target="prev" class="prevBtn icon-angle-left" title="<?php esc_html_e('Previous', 'cardealer'); ?>"></a>
-			<a href="#" data-target="next" class="nextBtn icon-angle-right" title="<?php esc_html_e('Next', 'cardealer'); ?>"></a>
+			<a href="#" data-target="prev" class="prevBtn icon-angle-left" title="<?php esc_html_e('Previous', 'tmm_content_composer'); ?>"></a>
+			<a href="#" data-target="next" class="nextBtn icon-angle-right" title="<?php esc_html_e('Next', 'tmm_content_composer'); ?>"></a>
 		</span>
 
 	</div><!--/ .page-header-->

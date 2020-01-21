@@ -5,11 +5,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'upload_video',
-			'title' => __('Youtube or Vimeo link', 'cardealer'),
+			'title' => __('Youtube or Vimeo link', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
-			'description' => __('Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg  http://vimeo.com/22439234 or upload self hosted video', 'cardealer')
+			'description' => __('Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg  http://vimeo.com/22439234 or upload self hosted video', 'tmm_content_composer')
 		));
 		?>
 
@@ -19,7 +19,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'upload',
-			'title' => __('Cover Image for Self Hosted Video', 'cardealer'),
+			'title' => __('Cover Image for Self Hosted Video', 'tmm_content_composer'),
 			'shortcode_field' => 'cover_image',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('cover_image', ''),
@@ -30,11 +30,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show Cover Image Only on Mobiles', 'cardealer'),
+			'title' => __('Show Cover Image Only on Mobiles', 'tmm_content_composer'),
 			'shortcode_field' => 'cover_image_on_mobiles',
 			'id' => 'cover_image_on_mobiles',
 			'is_checked' => TMM_Content_Composer::set_default_value('cover_image_on_mobiles', 1),
-			'description' => __('Show Cover Image Only on Mobiles', 'cardealer')
+			'description' => __('Show Cover Image Only on Mobiles', 'tmm_content_composer')
 		));
 		?>
 	</div><!--/ .fullwidth-->
@@ -43,7 +43,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Width', 'cardealer'),
+			'title' => __('Width', 'tmm_content_composer'),
 			'shortcode_field' => 'width',
 			'id' => 'width',
 			'default_value' => TMM_Content_Composer::set_default_value('width', ''),
@@ -57,7 +57,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Height', 'cardealer'),
+			'title' => __('Height', 'tmm_content_composer'),
 			'shortcode_field' => 'height',
 			'id' => 'height',
 			'default_value' => TMM_Content_Composer::set_default_value('height', ''),

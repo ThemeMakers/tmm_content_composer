@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Title', 'cardealer'),
+			'title' => __('Title', 'tmm_content_composer'),
 			'shortcode_field' => 'title',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('title', ''),
@@ -17,7 +17,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display Body Type Name', 'cardealer'),
+			'title' => __('Display Body Type Name', 'tmm_content_composer'),
 			'shortcode_field' => 'show_name',
 			'id' => 'show_name',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_name', 1),
@@ -28,7 +28,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Display Count of Cars Related to Body Type', 'cardealer'),
+			'title' => __('Display Count of Cars Related to Body Type', 'tmm_content_composer'),
 			'shortcode_field' => 'show_count',
 			'id' => 'show_count',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_count', 1),
@@ -39,7 +39,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Enable Link to Car Listing', 'cardealer'),
+			'title' => __('Enable Link to Car Listing', 'tmm_content_composer'),
 			'shortcode_field' => 'enable_link',
 			'id' => 'enable_link',
 			'is_checked' => TMM_Content_Composer::set_default_value('enable_link', 1),

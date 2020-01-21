@@ -5,7 +5,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Title Text', 'cardealer'),
+			'title' => __('Title Text', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', ''),
@@ -19,7 +19,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Title Heading', 'cardealer'),
+			'title' => __('Title Heading', 'tmm_content_composer'),
 			'shortcode_field' => 'type',
 			'id' => 'type',
 			'options' => array(
@@ -38,7 +38,7 @@
 
 	<div class="one-half">
 		<?php
-		$font_size = array('' => __('Default', 'cardealer'));
+		$font_size = array('' => __('Default', 'tmm_content_composer'));
 
 		for ($i = 8; $i <= 72; $i++) {
 			$font_size[$i] = $i;
@@ -46,7 +46,7 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Font Size', 'cardealer'),
+			'title' => __('Font Size', 'tmm_content_composer'),
 			'shortcode_field' => 'font_size',
 			'id' => 'font_size',
 			'options' => $font_size,
@@ -61,7 +61,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Letter spacing (px)', 'cardealer'),
+			'title' => __('Letter spacing (px)', 'tmm_content_composer'),
 			'shortcode_field' => 'letter_spacing',
 			'id' => 'letter_spacing',
 			'default_value' => TMM_Content_Composer::set_default_value('letter_spacing', '0'),
@@ -74,17 +74,17 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Font weight', 'cardealer'),
+			'title' => __('Font weight', 'tmm_content_composer'),
 			'shortcode_field' => 'font_weight',
 			'id' => 'font_weight',
 			'options' => array(
-				'' => __('Default', 'cardealer'),
-				'normal' => __('Normal', 'cardealer'),
+				'' => __('Default', 'tmm_content_composer'),
+				'normal' => __('Normal', 'tmm_content_composer'),
 				'200' => 200,
 				'400' => 400,
 				'600' => 600,
 				'800' => 800,
-				'bold' => __('Bold', 'cardealer'),
+				'bold' => __('Bold', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('font_weight', ''),
 			'description' => ''
@@ -96,13 +96,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Align', 'cardealer'),
+			'title' => __('Align', 'tmm_content_composer'),
 			'shortcode_field' => 'align',
 			'id' => 'align',
 			'options' => array(
-				'left' => __('Left', 'cardealer'),
-				'right' => __('Right', 'cardealer'),
-				'center' => __('Center', 'cardealer'),
+				'left' => __('Left', 'tmm_content_composer'),
+				'right' => __('Right', 'tmm_content_composer'),
+				'center' => __('Center', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('align', 'left'),
 			'description' => ''
@@ -112,7 +112,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show border under the title', 'cardealer'),
+			'title' => __('Show border under the title', 'tmm_content_composer'),
 			'shortcode_field' => 'section_title',
 			'id' => 'section_title',
 			'is_checked' => TMM_Content_Composer::set_default_value('section_title', 0),
@@ -127,7 +127,7 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Font Family', 'cardealer'),
+			'title' => __('Font Family', 'tmm_content_composer'),
 			'shortcode_field' => 'font_family',
 			'id' => 'font_family',
 			'options' => tmm_get_fonts_array(),
@@ -141,7 +141,7 @@
 	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
-			'title' => __('Color', 'cardealer'),
+			'title' => __('Color', 'tmm_content_composer'),
 			'shortcode_field' => 'color',
 			'type' => 'color',
 			'description' => '',
@@ -155,7 +155,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Bottom Indent (px)', 'cardealer'),
+			'title' => __('Bottom Indent (px)', 'tmm_content_composer'),
 			'shortcode_field' => 'bottom_indent',
 			'id' => 'bottom_indent',
 			'default_value' => TMM_Content_Composer::set_default_value('bottom_indent', ''),

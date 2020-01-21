@@ -5,9 +5,9 @@
 
 		<?php
 		$type_array = array(
-			'type-1' => __('Type 1', 'cardealer'),
-			'type-2' => __('Type 2', 'cardealer'),
-			'type-3' => __('Type 3', 'cardealer'),
+			'type-1' => __('Type 1', 'tmm_content_composer'),
+			'type-2' => __('Type 2', 'tmm_content_composer'),
+			'type-3' => __('Type 3', 'tmm_content_composer'),
 		);
 
 		//***
@@ -34,19 +34,19 @@
 		//ul == 0
 		TMM_Content_Composer::html_option(array(
 			'type' => 'radio',
-			'title' => __('List Type', 'cardealer'),
+			'title' => __('List Type', 'tmm_content_composer'),
 			'shortcode_field' => 'list_type',
 			'id' => 'list_type',
 			'name' => 'list_type',
 			'values' => array(
 				0 => array(
-					'title' => __('Unordered', 'cardealer'),
+					'title' => __('Unordered', 'tmm_content_composer'),
 					'id' => 'list_type_ul',
 					'value' => 0,
 					'checked' => ($list_type == 0 ? 1 : 0)
 				),
 				1 => array(
-					'title' => __('Ordered', 'cardealer'),
+					'title' => __('Ordered', 'tmm_content_composer'),
 					'id' => 'list_type_ol',
 					'value' => 1,
 					'checked' => ($list_type == 1 ? 1 : 0)
@@ -58,8 +58,8 @@
 		));
 		?>
 
-		<h4 class="label"><?php esc_html_e('List Styles', 'cardealer'); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add list item', 'cardealer'); ?></a><br />
+		<h4 class="label"><?php esc_html_e('List Styles', 'tmm_content_composer'); ?></h4>
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add list item', 'tmm_content_composer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 			<?php foreach ($content_edit_data as $key => $content_edit_text) : ?>
@@ -85,7 +85,7 @@
 								<input type="text" value="<?php echo $content_edit_text ?>" class="list_item_content js_shortcode_template_changer data-area" />
 							</td>
 							<td>
-								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'cardealer'); ?></a>
+								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'tmm_content_composer'); ?></a>
 							</td>
 							<td><div class="row-mover"></div></td>
 						</tr>
@@ -95,7 +95,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add list item', 'cardealer'); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add list item', 'tmm_content_composer'); ?></a><br />
 
 	</div><!--/ .fullwidth-->
 

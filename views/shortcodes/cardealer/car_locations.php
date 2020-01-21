@@ -18,7 +18,7 @@ $searching_page = get_permalink(TMM::get_option('searching_page', TMM_APP_CARDEA
 		?>
 	
 		<li class="cat-item cat-item-<?php echo $term->id ?>">
-			<a title="<?php echo sprintf(__('View all posts filed under %s', 'cardealer'), $term->name); ?>" href="<?php echo $searching_page; ?>?carlocation=<?php echo $term->id ?>"><?php esc_html_e($term->name, 'cardealer'); ?></a> (<?php echo $car_count; ?>)&#x200E;
+			<a title="<?php echo sprintf(__('View all posts filed under %s', 'tmm_content_composer'), $term->name); ?>" href="<?php echo $searching_page; ?>?carlocation=<?php echo $term->id ?>"><?php esc_html_e($term->name, 'tmm_content_composer'); ?></a> (<?php echo $car_count; ?>)&#x200E;
 			<?php
 			if(count($states)){
 				?>
@@ -37,7 +37,7 @@ $searching_page = get_permalink(TMM::get_option('searching_page', TMM_APP_CARDEA
 							?>
 					
 							<li class="cat-item cat-item-<?php echo $state->id ?>">
-								<a title="<?php echo sprintf(__('View all posts filed under %s', 'cardealer'), $state->name); ?>" href="<?php echo $searching_page; ?>?carlocation=<?php echo $term->id. ',' .$state->id ?>"><?php esc_html_e($state->name, 'cardealer'); ?></a> (<?php echo $car_count; ?>)&#x200E;
+								<a title="<?php echo sprintf(__('View all posts filed under %s', 'tmm_content_composer'), $state->name); ?>" href="<?php echo $searching_page; ?>?carlocation=<?php echo $term->id. ',' .$state->id ?>"><?php esc_html_e($state->name, 'tmm_content_composer'); ?></a> (<?php echo $car_count; ?>)&#x200E;
 								<?php
 								if(count($cities)){
 									?>
@@ -52,7 +52,7 @@ $searching_page = get_permalink(TMM::get_option('searching_page', TMM_APP_CARDEA
 												?>
 
 												<li class="cat-item cat-item-<?php echo $city->id ?>">
-													<a title="<?php echo sprintf(__('View all posts filed under %s', 'cardealer'), $city->name); ?>" href="<?php echo $searching_page; ?>?carlocation=<?php echo $term->id. ',' .$state->id. ',' .$city->id ?>"><?php esc_html_e($city->name, 'cardealer'); ?></a> (<?php echo $car_count; ?>)&#x200E;
+													<a title="<?php echo sprintf(__('View all posts filed under %s', 'tmm_content_composer'), $city->name); ?>" href="<?php echo $searching_page; ?>?carlocation=<?php echo $term->id. ',' .$state->id. ',' .$city->id ?>"><?php esc_html_e($city->name, 'tmm_content_composer'); ?></a> (<?php echo $car_count; ?>)&#x200E;
 
 												</li>
 

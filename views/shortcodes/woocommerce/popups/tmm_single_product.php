@@ -29,12 +29,12 @@
 
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Select Product', 'cardealer'),
+			'title' => __('Select Product', 'tmm_content_composer'),
 			'shortcode_field' => 'product_id',
 			'id' => 'product_id',
 			'options' => $products,
 			'default_value' => TMM_Content_Composer::set_default_value('product_id',''),
-			'description' => __('Select single product by title', 'cardealer')
+			'description' => __('Select single product by title', 'tmm_content_composer')
 		));
 		?>
 	</div><!--/ .one-half-->
@@ -43,11 +43,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Product SKU', 'cardealer'),
+			'title' => __('Product SKU', 'tmm_content_composer'),
 			'shortcode_field' => 'sku',
 			'id' => 'sku',
 			'default_value' => TMM_Content_Composer::set_default_value('sku', ''),
-			'description' => __('Display single product by SKU.', 'cardealer')
+			'description' => __('Display single product by SKU.', 'tmm_content_composer')
 		));
 		?>
 	</div><!--/ .one-half-->

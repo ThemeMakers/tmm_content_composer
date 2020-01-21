@@ -22,8 +22,8 @@
 		}
 		?>
 
-		<h4 class="label"><?php esc_html_e('Staff', 'cardealer'); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add staff item', 'cardealer'); ?></a><br />
+		<h4 class="label"><?php esc_html_e('Staff', 'tmm_content_composer'); ?></h4>
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add staff item', 'tmm_content_composer'); ?></a><br />
 
 		<ul id="list_items" class="list-items">
 			<?php foreach ($albums_edit_data as $staff_id) : ?>
@@ -45,7 +45,7 @@
 								?>
 							</td>
 							<td>
-								<a class="button button-secondary js_delete_list_item" href="#"><?php esc_html_e('Remove', 'cardealer'); ?></a>
+								<a class="button button-secondary js_delete_list_item" href="#"><?php esc_html_e('Remove', 'tmm_content_composer'); ?></a>
 							</td>
 							<td><div class="row-mover"></div></td>
 						</tr>
@@ -55,7 +55,7 @@
 
 		</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add staff item', 'cardealer'); ?></a><br />
+		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add staff item', 'tmm_content_composer'); ?></a><br />
 
 	</div>
 

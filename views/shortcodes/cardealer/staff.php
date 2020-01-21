@@ -60,18 +60,18 @@ $i = 0;
 			</div>
 			<ul class="social-icons">
 				<?php if ( ! empty( $custom["facebook"] ) ): ?>
-					<li><b><?php esc_html_e( 'Facebook', 'cardealer' ) ?>:</b>&nbsp;<a
-							href="<?php echo $custom["facebook"] ?>" title="<?php esc_html_e('Facebook', 'cardealer'); ?>"><i class="icon-facebook-squared"></i></a>
+					<li><b><?php esc_html_e( 'Facebook', 'tmm_content_composer' ) ?>:</b>&nbsp;<a
+							href="<?php echo $custom["facebook"] ?>" title="<?php esc_html_e('Facebook', 'tmm_content_composer'); ?>"><i class="icon-facebook-squared"></i></a>
 					</li>
 				<?php endif; ?>
 				<?php if ( ! empty( $custom["twitter"] ) ): ?>
-					<li><b><?php esc_html_e( 'Twitter', 'cardealer' ) ?>:</b>&nbsp;<a
-							href="<?php echo $custom["twitter"] ?>" title="<?php esc_html_e('Twitter', 'cardealer'); ?>"><i class="icon-twitter-squared"></i></a>
+					<li><b><?php esc_html_e( 'Twitter', 'tmm_content_composer' ) ?>:</b>&nbsp;<a
+							href="<?php echo $custom["twitter"] ?>" title="<?php esc_html_e('Twitter', 'tmm_content_composer'); ?>"><i class="icon-twitter-squared"></i></a>
 					</li>
 				<?php endif; ?>
 				<?php if ( ! empty( $custom["gplus"] ) ): ?>
-					<li><b><?php esc_html_e( 'Google+', 'cardealer' ) ?>:</b>&nbsp;<a
-							href="<?php echo $custom["gplus"] ?>" title="<?php esc_html_e('Google+', 'cardealer'); ?>"><i class="icon-gplus-squared"></i></a>
+					<li><b><?php esc_html_e( 'Google+', 'tmm_content_composer' ) ?>:</b>&nbsp;<a
+							href="<?php echo $custom["gplus"] ?>" title="<?php esc_html_e('Google+', 'tmm_content_composer'); ?>"><i class="icon-gplus-squared"></i></a>
 					</li>
 				<?php endif; ?>
 			</ul>
@@ -80,7 +80,7 @@ $i = 0;
 
 				<?php if (!empty($custom["office_phone"])): ?>
 
-					<b><?php esc_html_e('Office', 'cardealer') ?>:</b>
+					<b><?php esc_html_e('Office', 'tmm_content_composer') ?>:</b>
 
 					<?php $office_phone_explode = explode(" ", $custom["office_phone"]); ?>
 
@@ -97,7 +97,7 @@ $i = 0;
 
 				<?php if (!empty($custom["mobile_phone"])): ?>
 
-					<b><?php esc_html_e('Mobile', 'cardealer') ?>:</b>
+					<b><?php esc_html_e('Mobile', 'tmm_content_composer') ?>:</b>
 
 					<?php $mobile_phone_explode = explode(" ", $custom["mobile_phone"]); ?>
 
@@ -114,7 +114,7 @@ $i = 0;
 
 				<?php if (!empty($custom["fax"])): ?>
 
-					<b><?php esc_html_e('Fax', 'cardealer') ?>:</b>
+					<b><?php esc_html_e('Fax', 'tmm_content_composer') ?>:</b>
 
 					<?php $fax_explode = explode(" ", $custom["fax"]); ?>
 
@@ -130,7 +130,7 @@ $i = 0;
 				<?php endif; ?>
 
 				<?php if ( ! empty( $custom["staff_email"] ) ): ?>
-					<b><?php esc_html_e( 'Email', 'cardealer' ) ?>:</b>&nbsp;<a
+					<b><?php esc_html_e( 'Email', 'tmm_content_composer' ) ?>:</b>&nbsp;<a
 						href="mailto: <?php echo $custom["staff_email"] ?>"><?php echo $custom["staff_email"] ?></a>
 					<br/>
 				<?php endif; ?>
