@@ -1,143 +1,144 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
-	<div class="one-half" style="display: none;">
+	<div class="column">
 
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => esc_html__('Layout', 'tmm_content_composer'),
-			'shortcode_field' => 'content',
-			'id' => 'type',
-			'options' => array(
-				1 => esc_html__('Masonry', 'tmm_content_composer'),
-			),
-			'default_value' => TMM_Content_Composer::set_default_value('content', 1),
-			'description' => ''
-		));
-		?>
+		<div class="one-half" style="display: none;">
 
-	</div><!--/ .one-half-->
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => esc_html__('Layout', 'tmm_content_composer'),
+				'shortcode_field' => 'content',
+				'id' => 'type',
+				'options' => array(
+					1 => esc_html__('Masonry', 'tmm_content_composer'),
+				),
+				'default_value' => TMM_Content_Composer::set_default_value('content', 1),
+				'description' => ''
+			));
+			?>
 
-	<div class="full-width">
+		</div><!--/ .one-half-->
 
-		<?php
-		$col_algorims_ids = array(
-			"random" => esc_html__('Algorithm random', 'tmm_content_composer'),
-			1 => esc_html__('Algoritm 1', 'tmm_content_composer'),
-			2 => esc_html__('Algoritm 2', 'tmm_content_composer'),
-		);
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => esc_html__('Image Sizes', 'tmm_content_composer'),
-			'shortcode_field' => 'col_alg',
-			'id' => 'type',
-			'options' => $col_algorims_ids,
-			'default_value' => TMM_Content_Composer::set_default_value('col_alg', 1),
-			'description' => ''
-		));
-		?>
+		<div class="full-width">
 
-	</div><!--/ .one-half-->
+			<?php
+			$col_algorims_ids = array(
+				"random" => esc_html__('Algorithm random', 'tmm_content_composer'),
+				1 => esc_html__('Algoritm 1', 'tmm_content_composer'),
+				2 => esc_html__('Algoritm 2', 'tmm_content_composer'),
+			);
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => esc_html__('Image Sizes', 'tmm_content_composer'),
+				'shortcode_field' => 'col_alg',
+				'id' => 'type',
+				'options' => $col_algorims_ids,
+				'default_value' => TMM_Content_Composer::set_default_value('col_alg', 1),
+				'description' => ''
+			));
+			?>
 
-	<div class="one-half">
+		</div><!--/ .one-half-->
 
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'checkbox',
-			'title' => esc_html__('Enable Slide-Up Effect', 'almera'),
-			'shortcode_field' => 'folio_slide_up',
-			'id' => 'folio_slide_up',
-			'is_checked' => TMM_Content_Composer::set_default_value('folio_slide_up', 1),
-			'description' => ''
-		));
-		?>
+		<div class="one-half">
 
-	</div><!--/ .one-half-->
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'checkbox',
+				'title' => esc_html__('Enable Slide-Up Effect', 'almera'),
+				'shortcode_field' => 'folio_slide_up',
+				'id' => 'folio_slide_up',
+				'is_checked' => TMM_Content_Composer::set_default_value('folio_slide_up', 1),
+				'description' => ''
+			));
+			?>
 
-	<div class="one-half icons_appear">
-		<?php
-		$folio_icons = array(
-			'1' => 'One Icon',
-			'2' => 'Two Icons'
-		);
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => 'Icons Appearance',
-			'shortcode_field' => 'folio_amount_icons',
-			'id' => '',
-			'options' => $folio_icons,
-			'css_class' => '',
-			'default_value' => TMM_Content_Composer::set_default_value('folio_amount_icons', '2'),
-			'description' => '',
+		</div><!--/ .one-half-->
 
-		));
-		?>
-	</div>
+		<div class="one-half icons_appear">
+			<?php
+			$folio_icons = array(
+				'1' => 'One Icon',
+				'2' => 'Two Icons'
+			);
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => 'Icons Appearance',
+				'shortcode_field' => 'folio_amount_icons',
+				'id' => '',
+				'options' => $folio_icons,
+				'css_class' => '',
+				'default_value' => TMM_Content_Composer::set_default_value('folio_amount_icons', '2'),
+				'description' => '',
 
-	<div class="full-width">
+			));
+			?>
+		</div>
 
-		<?php
-		$posts = get_posts(array('post_type' => TMM_Portfolio::$slug, 'numberposts'=>'-1'));
-		$posts_array = array();
-		if (!empty($posts)) {
-			foreach ($posts as $value) {
-				$posts_array[$value->ID] = $value->post_title;
+		<div class="full-width">
+
+			<?php
+			$posts = get_posts(array('post_type' => TMM_Portfolio::$slug, 'numberposts'=>'-1'));
+			$posts_array = array();
+			if (!empty($posts)) {
+				foreach ($posts as $value) {
+					$posts_array[$value->ID] = $value->post_title;
+				}
 			}
-		}
-		//***
-		$albums_edit_data = array('');
-		if (isset($_REQUEST["shortcode_mode_edit"])) {
-			if (isset($_REQUEST["shortcode_mode_edit"]['folioposts'])) {
-				$albums_edit_data = explode('^', $_REQUEST["shortcode_mode_edit"]['folioposts']);
-			} else {
-				$albums_edit_data = array('0');
+			//***
+			$albums_edit_data = array('');
+			if (isset($_REQUEST["shortcode_mode_edit"])) {
+				if (isset($_REQUEST["shortcode_mode_edit"]['folioposts'])) {
+					$albums_edit_data = explode('^', $_REQUEST["shortcode_mode_edit"]['folioposts']);
+				} else {
+					$albums_edit_data = array('0');
+				}
 			}
-		}
-		?>
+			?>
 
-		<h4 class="label"><?php esc_html_e('Galleries', 'tmm_content_composer'); ?></h4>
-		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add gallery item', 'tmm_content_composer'); ?></a><br />
+			<h4 class="label"><?php esc_html_e('Galleries', 'tmm_content_composer'); ?></h4>
+			<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add gallery item', 'tmm_content_composer'); ?></a><br />
 
-		<ul id="list_items" class="list-items">
-			<?php foreach ($albums_edit_data as $album_id) : ?>
-				<li class="list_item">
-					<table class="list-table">
-						<tr>
-							<td width="100%">
-								<?php
-								TMM_Content_Composer::html_option(array(
-									'type' => 'select',
-									'title' => '',
-									'shortcode_field' => 'folioposts',
-									'id' => '',
-									'options' => $posts_array,
-									'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
-									'default_value' => $album_id,
-									'description' => ''
-								));
-								?>
-							</td>
-							<td>
-								<a class="button button-secondary js_delete_list_item" href="#"><?php esc_html_e('Remove', 'tmm_content_composer'); ?></a>
-							</td>
-							<td><div class="row-mover"></div></td>
-						</tr>
-					</table>
-				</li>
-			<?php endforeach; ?>
+			<ul id="list_items" class="list-items">
+				<?php foreach ($albums_edit_data as $album_id) : ?>
+					<li class="list_item">
+						<table class="list-table">
+							<tr>
+								<td width="100%">
+									<?php
+									TMM_Content_Composer::html_option(array(
+										'type' => 'select',
+										'title' => '',
+										'shortcode_field' => 'folioposts',
+										'id' => '',
+										'options' => $posts_array,
+										'css_classes' => 'list_item_style save_as_one js_shortcode_template_changer',
+										'default_value' => $album_id,
+										'description' => ''
+									));
+									?>
+								</td>
+								<td>
+									<a class="button button-secondary js_delete_list_item" href="#"><?php esc_html_e('Remove', 'tmm_content_composer'); ?></a>
+								</td>
+								<td><div class="row-mover"></div></td>
+							</tr>
+						</table>
+					</li>
+				<?php endforeach; ?>
 
-		</ul>
+			</ul>
 
-		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add gallery item', 'tmm_content_composer'); ?></a><br />
+			<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add gallery item', 'tmm_content_composer'); ?></a><br />
 
+
+		</div>
 
 	</div>
-
-
 
 </div>
-
 
 
 <!-- --------------------------  PROCESSOR  --------------------------- -->
@@ -207,4 +208,3 @@
 	});
 
 </script>
-
