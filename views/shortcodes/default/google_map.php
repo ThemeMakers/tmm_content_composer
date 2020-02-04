@@ -2,6 +2,7 @@
 
 if (TMM::get_option("api_key_google")){
 
+	$height = isset($height) ? $height : '200';
 	$inique_id = uniqid();
 
 	$google_maps_api_key = (TMM::get_option("api_key_google")) ? 'key=' . TMM::get_option("api_key_google") : '' ;

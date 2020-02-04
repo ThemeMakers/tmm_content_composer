@@ -147,6 +147,7 @@
 		}
 
 		.tmm-popup-content .one-fourth { width: calc(25% - 30px); }
+        .tmm-popup-content .one-third { width: calc(33.3% - 30px); }
         .tmm-popup-content .one-half { width: calc(50% - 30px); }
 		.tmm-popup-content .fullwidth { width: calc(100% - 30px); }
                 
@@ -165,7 +166,7 @@
 			display: -ms-flexbox;      /* TWEENER - IE 10 */
 			display: -webkit-flex;     /* NEW - Chrome */
 			display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
-			flex-flow: row nowrap;
+			flex-flow: column nowrap;
 		}
 
 		.tmm_shortcode_template .column {
@@ -196,44 +197,8 @@
 			padding: 6px 8px;
 			height: auto;
 		}
-
-        .tmm-popup-content .sel {
-            display: block;
-            margin: 0;
-            position: relative;
-            vertical-align: top;
-            width: 100%;
-        }
-
-            .tmm-popup-content .sel:after {
-                background-color: #fff;
-                color: #d5d6d6;
-                content: "";
-                cursor: pointer;
-                display: block;
-                font-family: 'dashicons';
-                font-size: 25px;
-                height: calc(100% - 2px);
-                line-height: 30px;
-                pointer-events: none;
-                position: absolute;
-                right: 1px;
-                top: 1px;
-                transition: color 0.25s linear 0s;
-                width: 30px;
-                
-                -webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,.07);
-                   -moz-box-shadow: inset 0 1px 0 rgba(0,0,0,.07);
-                        box-shadow: inset 0 1px 0 rgba(0,0,0,.07);
-            }
-
-            .tmm-popup-content .icon-option .sel{
-                width: 86%;
-                float: left;
-                margin-right: 10px;
-            }
             .tmm-popup-content .icon-option .iconsweets{
-                margin-top: 0;
+                margin-top: 20px;
             }
 
 			.tmm-popup-content .radio-holder {
@@ -256,6 +221,10 @@
                 padding: 7px 10px;
                 vertical-align: top;
                 width: 100%;
+            }
+
+            .tmm-popup-content select {
+                padding: 7px 24px 7px 10px;
             }
 
 			.tmm-popup-content input[type="checkbox"],

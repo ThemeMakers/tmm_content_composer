@@ -1403,38 +1403,6 @@ input[type="color"]:focus,
 textarea:focus,
 select:focus { border-color: #f85c37; color: #262626; }
 
-	.sel {
-		position: relative;
-		display: block;
-		margin: 0;
-		width: 100%;
-		vertical-align: top;
-	}
-
-	.sel:after {
-		position: absolute;
-		top: 1px;
-		right: 1px;
-		display: block;
-		width: 30px;
-		height: 40px;
-		background-color: #fff;
-		color: #d5d6d6;
-		content: '\e8af';
-		font-size: 16px;
-		font-family: 'fontello';
-		text-align: center;
-		cursor: pointer;
-		pointer-events: none;
-		line-height: 37px;
-		border-left: 1px solid #d6d6d6;
-		border-top-right-radius: 5px;
-		border-bottom-right-radius: 5px;
-
-		-webkit-transition: color .25s linear;
-				transition: color .25s linear;
-	}
-
 	textarea {
 		resize: both;
 		min-height: 90px;

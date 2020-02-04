@@ -2,72 +2,76 @@
 
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
-	<div class="one-half">
-		<?php
-		$numbers = array();
-		for ($i = 1; $i <= 100; $i++) {
-			$numbers[$i] = $i;
-		}
-		//***
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Rows count', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'rows',
-			'id' => 'table_rows',
-			'options' => $numbers,
-			'default_value' => TMM_Content_Composer::set_default_value('rows', 3),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half-->
+	<div class="column">
+
+		<div class="one-third">
+			<?php
+			$numbers = array();
+			for ($i = 1; $i <= 100; $i++) {
+				$numbers[$i] = $i;
+			}
+			//***
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => __('Rows count', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'rows',
+				'id' => 'table_rows',
+				'options' => $numbers,
+				'default_value' => TMM_Content_Composer::set_default_value('rows', 3),
+				'description' => ''
+			));
+			?>
+		</div><!--/ .one-half-->
 
 
-	<div class="one-half">
-		<?php
-		TMM_Content_Composer::html_option(array(
-			'type' => 'select',
-			'title' => __('Columns count', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'cols',
-			'id' => 'table_cols',
-			'options' => $numbers,
-			'default_value' => TMM_Content_Composer::set_default_value('cols', 3),
-			'description' => ''
-		));
-		?>
-	</div><!--/ .one-half-->
+		<div class="one-third">
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'select',
+				'title' => __('Columns count', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'cols',
+				'id' => 'table_cols',
+				'options' => $numbers,
+				'default_value' => TMM_Content_Composer::set_default_value('cols', 3),
+				'description' => ''
+			));
+			?>
+		</div><!--/ .one-half-->
 
 
-	<div class="one-half">
-		<?php
-		$value_type = TMM_Content_Composer::set_default_value('show_row_number', 1);
+		<div class="one-third">
+			<?php
+			$value_type = TMM_Content_Composer::set_default_value('show_row_number', 1);
 
-		TMM_Content_Composer::html_option(array(
-			'type' => 'radio',
-			'title' => __('Show Row Number', TMM_CC_TEXTDOMAIN),
-			'shortcode_field' => 'show_row_number',
-			'id' => 'show_row_number',
-			'name' => 'show_row_number',
-			'values' => array(
-				1 => array(
-					'title' => __('Yes', TMM_CC_TEXTDOMAIN),
-					'id' => 'show_row_number_1',
-					'value' => 1,
-					'checked' => ($value_type == 1 ? 1 : 0)
+			TMM_Content_Composer::html_option(array(
+				'type' => 'radio',
+				'title' => __('Show Row Number', TMM_CC_TEXTDOMAIN),
+				'shortcode_field' => 'show_row_number',
+				'id' => 'show_row_number',
+				'name' => 'show_row_number',
+				'values' => array(
+					1 => array(
+						'title' => __('Yes', TMM_CC_TEXTDOMAIN),
+						'id' => 'show_row_number_1',
+						'value' => 1,
+						'checked' => ($value_type == 1 ? 1 : 0)
+					),
+					0 => array(
+						'title' => __('No', TMM_CC_TEXTDOMAIN),
+						'id' => 'show_row_number_0',
+						'value' => 0,
+						'checked' => ($value_type == 0 ? 1 : 0)
+					)
 				),
-				0 => array(
-					'title' => __('No', TMM_CC_TEXTDOMAIN),
-					'id' => 'show_row_number_0',
-					'value' => 0,
-					'checked' => ($value_type == 0 ? 1 : 0)
-				)
-			),
-			'value' => $value_type,
-			'description' => '',
-			'hidden_id' => 'show_row_number'
-		));
-		?>
+				'value' => $value_type,
+				'description' => '',
+				'hidden_id' => 'show_row_number'
+			));
+			?>
 
-	</div><!--/ .one-half-->
+		</div><!--/ .one-half-->
+
+	</div>
 
 	<?php
 	$head_types_array = array(
@@ -134,7 +138,6 @@
 			</li>
 		<?php endforeach; ?>
 	</ul>
-
 
 </div>
 

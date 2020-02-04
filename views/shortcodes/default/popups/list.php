@@ -190,14 +190,7 @@
 	jQuery(function() {
 		
 		colorizator();
-        
-        if (jQuery('#list_type_ol').prop('checked')){              
-            setTimeout(function(){
-                jQuery(".sel").hide(200);
-            },900);
-            
-        }
-		
+
 		jQuery("#list_items").sortable({
 			stop: function(event, ui) {
 				tmm_ext_shortcodes.list_changer(shortcode_name);
