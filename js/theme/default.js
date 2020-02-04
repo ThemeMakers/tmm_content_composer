@@ -305,6 +305,7 @@
 
                                 });
                             }
+
                             if ($('.image-slider').length) {
                                 $('.image-slider').owlCarousel(CONFIG.objImageSlider);
                             }
@@ -312,18 +313,18 @@
                             if ($('audio').length) {
                                 $('audio').mediaelementplayer({
                                     audioWidth: '100%',
-                                    audioHeight: 45,
+                                    audioHeight: 45
                                 });
-                            };
+                            }
 
                             if ($('video').length) {
                                 $('video').mediaelementplayer({
                                     videoWidth: '',
                                     videoHeight: ''
                                 });
-                            };
+                            }
 
-                            $("a.social-like").click(function() {
+                            $("a.social-like").on('click', function() {
 
                                 var heart = $(this);
                                 var post_id = heart.data("post_id");
@@ -347,7 +348,6 @@
 
                                 return false;
                             });
-
 
                         });
                     });

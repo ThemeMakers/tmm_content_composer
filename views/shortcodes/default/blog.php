@@ -200,7 +200,7 @@ $_REQUEST['image_background'] = (isset($image_background) && $image_background!=
                     echo TMM::draw_html('post/masonry_piece', $data);
                 }
             } 
-        } ?>       
+        } ?>
             
 	</div><!--/ .post-area-->
 
@@ -220,29 +220,25 @@ $_REQUEST['image_background'] = (isset($image_background) && $image_background!=
         }
         ?>
 
-        <div class="masonry-loader spinner">
+        <div class="masonry-loader">
             <div id="spinningSquaresG">
-                <div id="spinningSquaresG_1" class="spinningSquaresG">
-                </div>
-                <div id="spinningSquaresG_2" class="spinningSquaresG">
-                </div>
-                <div id="spinningSquaresG_3" class="spinningSquaresG">
-                </div>
-                <div id="spinningSquaresG_4" class="spinningSquaresG">
-                </div>
-                <div id="spinningSquaresG_5" class="spinningSquaresG">
-                </div>
-                <div id="spinningSquaresG_6" class="spinningSquaresG">
-                </div>
-                <div id="spinningSquaresG_7" class="spinningSquaresG">
-                </div>
-                <div id="spinningSquaresG_8" class="spinningSquaresG">
-                </div>
+                <div id="spinningSquaresG_1" class="spinningSquaresG"></div>
+                <div id="spinningSquaresG_2" class="spinningSquaresG"></div>
+                <div id="spinningSquaresG_3" class="spinningSquaresG"></div>
+                <div id="spinningSquaresG_4" class="spinningSquaresG"></div>
+                <div id="spinningSquaresG_5" class="spinningSquaresG"></div>
+                <div id="spinningSquaresG_6" class="spinningSquaresG"></div>
+                <div id="spinningSquaresG_7" class="spinningSquaresG"></div>
+                <div id="spinningSquaresG_8" class="spinningSquaresG"></div>
             </div>
         </div>
         
 		<div class='post-load-more'>
-			<a class='load-more button secondary middle' data-loadbyscroll="<?php echo esc_attr($load_by_scrolling); ?>" data-page-load="2" data-posts-per-load="<?php echo esc_attr($posts_per_load); ?>" data-posts="<?php echo esc_attr($next_posts); ?>" href='#load-more'><?php _e('Load More', TMM_CC_TEXTDOMAIN) ?></a>
+            <a class='load-more button secondary middle'
+               data-loadbyscroll="<?php echo esc_attr( $load_by_scrolling ); ?>" data-page-load="2"
+               data-posts-per-load="<?php echo esc_attr( $posts_per_load ); ?>"
+               data-posts="<?php echo esc_attr( $next_posts ); ?>"
+               href='#load-more'><?php esc_html_e( 'Load More', TMM_CC_TEXTDOMAIN ) ?></a>
 		</div><!--/ .post-load-more-->
 
     <?php
@@ -258,7 +254,9 @@ wp_reset_postdata();
 
  if (!empty($posts_array) && ($blog_type == 'masonry')){     
      $load_with_animation = 1;
-     wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/plugins/min/jquery.masonry.min.js');
+
+     wp_enqueue_script('tmm_masonry', TMM_CC_URL . 'js/plugins/min/jquery.masonry.min.js', array('jquery'), false, true);
+
     ?>
 	<script type="text/javascript">
 		jQuery(function() {
