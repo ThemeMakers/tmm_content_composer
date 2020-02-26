@@ -30,16 +30,8 @@ if (!empty($styles)) {
 	$styles = ' style="' . $styles . '"';
 }
 
-if (!isset($button_position)) {
-	$button_position = 3;
-}
-
 if (isset($search_widget_offset) && $search_widget_offset === 'none') {
 	$widget_class .= ' no-padding';
-}
-
-if (!empty($show_in_one_col)) {
-	$widget_class .= ' one-column';
 }
 
 if (isset($_GET['car_condition'])) {
@@ -130,10 +122,8 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 	<form class="car_form_search" action="<?php echo esc_attr( $searching_page ) ?>">
 
 		<!-- Location -->
-		<?php if (!empty($show_location0) || !empty($show_location1)) { ?>
 		<div class="fieldset">
 			<label><?php esc_html_e("Location", 'tmm_content_composer') ?></label>
-		<?php } ?>
 			<?php if (!empty($show_location0)) { ?>
 				<p>
 					<select name="carlocation[0]" class="qs_carlocation0 carlocations" data-location0="<?php echo esc_attr( $carlocation[0] ) ?>">
@@ -169,7 +159,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 						$data_attr = ' data-location'.($i-1).'=' . $carlocation[$i-1] . ' data-location'.$i.'=' . (isset($carlocation[$i]) ? $carlocation[$i] : 0);
 						?>
 						<p>
-							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations" name="carlocation[<?php echo esc_attr( $i ) ?>]" data-level="<?php echo ($i ) ?>" <?php echo esc_attr( $data_attr ) ?>>
+							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations" name="carlocation[<?php echo esc_attr( $i ) ?>]" data-level="<?php echo esc_attr($i ) ?>" <?php echo esc_attr( $data_attr ) ?>>
 								<option value="0"><?php esc_html_e($locations_captions_on_search_widget[$i], 'tmm_content_composer'); ?></option>
 							</select>
 						</p>
@@ -194,9 +184,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 
 			}
 			?>
-		<?php if (!empty($show_location0)) { ?>
 		</div>
-		<?php } ?>
 
 		<!-- Condition -->
 		<?php if (!empty($show_condition)) {
