@@ -57,7 +57,7 @@ if (!in_array($post_pod_type, $post_types)) {
     <?php } ?>
 
     <?php if ($show_post_metadata == 1){ ?>
-        <div class="post-meta">
+        <div class="post-meta clearfix">
 
             <?php if (!class_exists('TMM') || TMM::get_option("blog_listing_show_date")){ ?>
                 <span class="date"><a href="<?php echo esc_url(home_url()) ?>/<?php echo mysql2date('Y/m', $post->post_date, false) ?>"><?php echo mysql2date(get_option('date_format'), $post->post_date, false) ?></a></span>
