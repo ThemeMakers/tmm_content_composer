@@ -242,7 +242,7 @@ if ( isset($title_type) && $title_type=='section'){
 		    $content = $separete_content;
 	    }
 
-        $html .= '<style type="text/css">.id_' . $uuid . ':before {content:"";position: absolute;left:0;top:0;right:0;bottom:0;' . $bg_radius . $bg_color . $bg_opacity . '}</style>';
+        $html .= '<style type="text/css">.id_' . $uuid . ':before {content:"";position: absolute;left:0;top:0;right:0;bottom:0;z-index:-1;' . $bg_radius . $bg_color . $bg_opacity . '}</style>';
 	    $html .= '<div class="extraRadius ' . $css_class . '" ' . wp_kses($general_styles, $allowed_html) . '><div class="' . $css_content . '">';
         foreach ($content as $title){
             $html .= '<' . $type . ' ' . wp_kses($single_styles, $allowed_html) . '>' . esc_html($title) . '</' . $type . '>';
