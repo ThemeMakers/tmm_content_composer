@@ -236,7 +236,7 @@
 			tmm_ext_shortcodes.album_changer(shortcode_name);
 		});
 
-		if(layout.filter(":selected").val() == 0) {
+		if(layout.filter(":selected").val() == 0 || pagination.val() == 0) {
 			postsPP.closest('[class^="one-"]').slideUp();
 		}
 
