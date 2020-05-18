@@ -17,7 +17,9 @@ if (!isset($icon_css_class)) { $icon_css_class = ""; }
                    <?php echo esc_html($text) ?>
                 </p>	
             <?php } ?>
+            <?php if ($icon_read_more_btn){ ?>
                 <a class="read-more" href="<?php echo esc_url($url) ?>"><?php esc_html_e('read more', TMM_CC_TEXTDOMAIN) ?></a>
+            <?php } ?>
         </div><!--/ .iconbox-entry-->
 </div><!--/ .iconbox-->
 	

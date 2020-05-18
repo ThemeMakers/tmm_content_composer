@@ -24,7 +24,18 @@
 			'shortcode_field' => 'url',
 			'id' => 'url',
 			'default_value' => TMM_Content_Composer::set_default_value('url', ''),
-			'description' => esc_html__('Example: ', TMM_CC_TEXTDOMAIN) . 'http://forums.webtemplatemasters.com/'
+			'description' => esc_html__('Example: ', TMM_CC_TEXTDOMAIN) . 'https://helpdesk.webtemplatemasters.com/'
+		));
+		?>
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
+			'title' => esc_html__('Enable "Read More" button', TMM_CC_TEXTDOMAIN),
+			'shortcode_field' => 'icon_read_more_btn',
+			'id' => 'icon_read_more_btn',
+			'is_checked' => TMM_Content_Composer::set_default_value('icon_read_more_btn', 1),
+			'description' => ''
 		));
 		?>
 	</div><!--/ .one-half-->
