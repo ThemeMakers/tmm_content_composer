@@ -67,7 +67,7 @@ class TMM_Content_Composer {
 
 		$screen = get_current_screen();
 
-		if ($screen->base === 'toplevel_page_gf_edit_forms' || $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' || $pagenow === 'widgets.php' ) {
+		if ($screen->base === 'toplevel_page_gf_edit_forms' || $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' || $pagenow === 'widgets.php' || $pagenow === 'admin.php' ) {
 			wp_enqueue_style('tmm_popup', TMM_CC_URL . 'css/popup.css');
 			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/admin/popup.js', array('jquery'));
 
@@ -148,7 +148,7 @@ class TMM_Content_Composer {
 	}
 
 	public static function mce_add_plugin($plugin_array) {
-		$plugin_array['tmm_tiny_shortcodes'] = TMM_CC_URL . '/js/admin/editor.js';
+		$plugin_array['tmm_tiny_shortcodes'] = TMM_CC_URL . 'js/admin/editor.js';
 		return $plugin_array;
 	}
 
