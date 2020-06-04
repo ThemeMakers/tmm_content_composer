@@ -200,7 +200,7 @@
                         'is_checked' => TMM_Content_Composer::set_default_value('parallax', 0),
                         'description' => ''
                 ));
-            ?>	
+            ?>
             <?php
             TMM_Content_Composer::html_option(array(
                         'type' => 'checkbox',
@@ -211,8 +211,6 @@
                         'description' => ''
                 ));
                 ?>
-            
-            
         </div>
 
 	</div><!--/ .one-half-->

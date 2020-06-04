@@ -232,6 +232,7 @@
                 padding: 7px 10px;
                 vertical-align: top;
                 width: 100%;
+				max-width: 30rem;
             }
 
 			.tmm-popup-content input[type="checkbox"],
