@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2018-07-03 00:55+0200\n"
+"POT-Creation-Date: 2020-06-07 02:09+0200\n"
 "PO-Revision-Date: 2018-07-03 00:55+0200\n"
 "Last-Translator: Alex TM <support@webtemplatemasters.com>\n"
 "Language-Team: Alex TM <support@webtemplatemasters.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: index.php\n"
@@ -73,52 +73,52 @@ msgstr ""
 msgid "Row editor"
 msgstr ""
 
-#: classes/content_composer.php:149
+#: classes/content_composer.php:148
 msgid "Please enter correct"
 msgstr ""
 
-#: classes/content_composer.php:150
+#: classes/content_composer.php:149
 msgid "Your message has been sent successfully!"
 msgstr ""
 
-#: classes/content_composer.php:151
+#: classes/content_composer.php:150
 msgid "Server failed. Send later"
 msgstr ""
 
-#: classes/content_composer.php:165
+#: classes/content_composer.php:164
 msgid "Use wptexturize"
 msgstr ""
 
-#: classes/content_composer.php:248 index.php:40
+#: classes/content_composer.php:247 index.php:40
 #: views/shortcodes/default/popups/title.php:58
 msgid "Default"
 msgstr ""
 
-#: classes/content_composer.php:249
+#: classes/content_composer.php:248
 msgid "Default-white"
 msgstr ""
 
-#: classes/content_composer.php:260
+#: classes/content_composer.php:259
 msgid "Small"
 msgstr ""
 
-#: classes/content_composer.php:261
+#: classes/content_composer.php:260
 msgid "Middle"
 msgstr ""
 
-#: classes/content_composer.php:262
+#: classes/content_composer.php:261
 msgid "Large"
 msgstr ""
 
-#: classes/content_composer.php:270
+#: classes/content_composer.php:269
 msgid "All Categories"
 msgstr ""
 
-#: classes/content_composer.php:433
+#: classes/content_composer.php:432
 msgid "Browse"
 msgstr ""
 
-#: classes/layout_constructor.php:398
+#: classes/layout_constructor.php:401
 #: views/shortcodes/default/tmm_video.php:127
 #: views/shortcodes/default/tmm_video.php:130
 msgid "Unsupported video format"
@@ -297,7 +297,7 @@ msgstr ""
 msgid "Color"
 msgstr ""
 
-#: views/meta_panel.php:314 views/shortcodes/default/popups/google_map.php:43
+#: views/meta_panel.php:314 views/shortcodes/default/popups/google_map.php:111
 #: views/shortcodes/engorgio/recent_projects.php:30
 msgid "Image"
 msgstr ""
@@ -361,7 +361,11 @@ msgstr ""
 msgid "Overlay"
 msgstr ""
 
-#: views/shortcodes/default/icon.php:20
+#: views/shortcodes/default/detail_box.php:5
+msgid "Call"
+msgstr ""
+
+#: views/shortcodes/default/icon.php:21
 msgid "read more"
 msgstr ""
 
@@ -549,7 +553,7 @@ msgstr ""
 msgid "Enter text"
 msgstr ""
 
-#: views/shortcodes/default/popups/blockquote.php:22
+#: views/shortcodes/default/popups/blockquote.php:23
 #: views/shortcodes/default/popups/button.php:95
 #: views/shortcodes/default/popups/services.php:128
 msgid "Text Color"
@@ -740,7 +744,7 @@ msgid "Items Per Slide"
 msgstr ""
 
 #: views/shortcodes/default/popups/clients.php:38
-#: views/shortcodes/engorgio/popups/testimonials.php:66
+#: views/shortcodes/engorgio/popups/testimonials.php:43
 msgid "Slides Animation Effect"
 msgstr ""
 
@@ -826,125 +830,105 @@ msgstr ""
 msgid "Enter Symbol"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:9
-#: views/shortcodes/default/popups/tmm_video.php:60
-msgid "Height"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:24
+#: views/shortcodes/default/popups/google_map.php:10
 #: views/shortcodes/default/popups/tmm_video.php:46
 msgid "Width"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:38
-msgid "Mode"
+#: views/shortcodes/default/popups/google_map.php:23
+#: views/shortcodes/default/popups/tmm_video.php:60
+msgid "Height"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:42
-msgid "Map"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:56
-msgid "Location mode"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:60
-#: views/shortcodes/default/popups/google_map.php:105
-msgid "Address"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:61
-msgid "Coordinates"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:75
+#: views/shortcodes/default/popups/google_map.php:36
 msgid "Marker Latitude"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:79
-#: views/shortcodes/default/popups/google_map.php:95
+#: views/shortcodes/default/popups/google_map.php:40
+#: views/shortcodes/default/popups/google_map.php:55
 msgid ""
 "Point on which the viewport will be centered. If not given and no markers "
 "are defined the viewport defaults to world view. In address Location mode it "
 "is calculated automatically!"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:91
+#: views/shortcodes/default/popups/google_map.php:51
 msgid "Marker Longitude"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:126
-msgid "Zoom"
+#: views/shortcodes/default/popups/google_map.php:64
+#: views/shortcodes/default/popups/google_map.php:127
+msgid "Address"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:131
-msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:141
-msgid "Enable Slide Up Effect"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:145
-msgid "Show with Slide Up Effect"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:154
-msgid "Enable Scrollwheel"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:158
-msgid "Set to false to disable zooming with your mouses scrollwheel."
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:167
-msgid "Maptype"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:171
-msgid "ROADMAP"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:172
-msgid "SATELLITE"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:173
-msgid "HYBRID"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:174
-msgid "TERRAIN"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:188
-msgid "Enable Marker"
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:192
-msgid "Set to false to disable display a marker in the viewport."
-msgstr ""
-
-#: views/shortcodes/default/popups/google_map.php:201
+#: views/shortcodes/default/popups/google_map.php:77
 msgid "Enable Popup"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:205
+#: views/shortcodes/default/popups/google_map.php:81
 msgid ""
 "If true the info window for this marker will be shown when the map finished "
 "loading. If html is empty this option will be ignored."
 msgstr ""
 
+#: views/shortcodes/default/popups/google_map.php:90
+msgid "Html Content"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:106
+msgid "Map Mode"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:110
+msgid "Map"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:123
+msgid "Location mode"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:128
+msgid "Coordinates"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:147
+msgid "Zoom"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:152
+msgid "Zoom value from 1 to 19 where 19 is the greatest and 1 the smallest."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:162
+msgid "Maptype"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:181
+msgid "Map Scale"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:198
+msgid "Enable Scrollwheel"
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:202
+msgid "Set to false to disable zooming with your mouses scrollwheel."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:211
+msgid "Enable Marker"
+msgstr ""
+
 #: views/shortcodes/default/popups/google_map.php:215
+msgid "Set to false to disable display a marker in the viewport."
+msgstr ""
+
+#: views/shortcodes/default/popups/google_map.php:224
 msgid "Marker is draggable"
 msgstr ""
 
-#: views/shortcodes/default/popups/google_map.php:219
-msgid "Set marker draggable"
-msgstr ""
-
 #: views/shortcodes/default/popups/google_map.php:228
-msgid "Html Content"
+msgid "Set marker draggable"
 msgstr ""
 
 #: views/shortcodes/default/popups/google_table.php:14
@@ -979,46 +963,50 @@ msgstr ""
 msgid "Example: "
 msgstr ""
 
-#: views/shortcodes/default/popups/icon.php:44
-#: views/shortcodes/default/popups/icon.php:357
+#: views/shortcodes/default/popups/icon.php:34
+msgid "Enable \"Read More\" button"
+msgstr ""
+
+#: views/shortcodes/default/popups/icon.php:55
+#: views/shortcodes/default/popups/icon.php:368
 msgid "New Icons"
 msgstr ""
 
-#: views/shortcodes/default/popups/icon.php:45
-#: views/shortcodes/default/popups/icon.php:370
+#: views/shortcodes/default/popups/icon.php:56
+#: views/shortcodes/default/popups/icon.php:381
 msgid "Web Application Icons"
 msgstr ""
 
-#: views/shortcodes/default/popups/icon.php:46
-#: views/shortcodes/default/popups/icon.php:383
+#: views/shortcodes/default/popups/icon.php:57
+#: views/shortcodes/default/popups/icon.php:394
 msgid "Text Editor Icons"
 msgstr ""
 
-#: views/shortcodes/default/popups/icon.php:47
-#: views/shortcodes/default/popups/icon.php:396
+#: views/shortcodes/default/popups/icon.php:58
+#: views/shortcodes/default/popups/icon.php:407
 msgid "Directional Icons"
 msgstr ""
 
-#: views/shortcodes/default/popups/icon.php:48
-#: views/shortcodes/default/popups/icon.php:409
+#: views/shortcodes/default/popups/icon.php:59
+#: views/shortcodes/default/popups/icon.php:420
 msgid "Video Player Icons"
 msgstr ""
 
-#: views/shortcodes/default/popups/icon.php:49
-#: views/shortcodes/default/popups/icon.php:422
+#: views/shortcodes/default/popups/icon.php:60
+#: views/shortcodes/default/popups/icon.php:433
 msgid "Brand Icons"
 msgstr ""
 
-#: views/shortcodes/default/popups/icon.php:50
-#: views/shortcodes/default/popups/icon.php:435
+#: views/shortcodes/default/popups/icon.php:61
+#: views/shortcodes/default/popups/icon.php:446
 msgid "Medical Icons"
 msgstr ""
 
-#: views/shortcodes/default/popups/icon.php:56
+#: views/shortcodes/default/popups/icon.php:67
 msgid "View icon group"
 msgstr ""
 
-#: views/shortcodes/default/popups/icon.php:73
+#: views/shortcodes/default/popups/icon.php:84
 msgid "Optional Text"
 msgstr ""
 
@@ -1631,47 +1619,53 @@ msgid "Show"
 msgstr ""
 
 #: views/shortcodes/engorgio/popups/testimonials.php:16
-msgid "Show selected testimonial"
+msgid "Selected testimonials"
 msgstr ""
 
 #: views/shortcodes/engorgio/popups/testimonials.php:17
-msgid "Show random testimonial"
+msgid "Random testimonials"
 msgstr ""
 
 #: views/shortcodes/engorgio/popups/testimonials.php:18
-msgid "Show latest testimonial"
+msgid "Latest testimonials"
 msgstr ""
 
-#: views/shortcodes/engorgio/popups/testimonials.php:38
-msgid "Testimonials"
-msgstr ""
-
-#: views/shortcodes/engorgio/popups/testimonials.php:83
+#: views/shortcodes/engorgio/popups/testimonials.php:60
 msgid "Count"
 msgstr ""
 
-#: views/shortcodes/engorgio/popups/testimonials.php:87
+#: views/shortcodes/engorgio/popups/testimonials.php:64
 #: views/shortcodes/engorgio/portfolio.php:109
 msgid "All"
 msgstr ""
 
-#: views/shortcodes/engorgio/popups/testimonials.php:106
+#: views/shortcodes/engorgio/popups/testimonials.php:83
 msgid "Content Color"
 msgstr ""
 
-#: views/shortcodes/engorgio/popups/testimonials.php:110
+#: views/shortcodes/engorgio/popups/testimonials.php:87
 msgid "Dark"
 msgstr ""
 
-#: views/shortcodes/engorgio/popups/testimonials.php:111
+#: views/shortcodes/engorgio/popups/testimonials.php:88
 msgid "Light"
 msgstr ""
 
-#: views/shortcodes/engorgio/popups/testimonials.php:125
+#: views/shortcodes/engorgio/popups/testimonials.php:113
+msgid "Testimonials"
+msgstr ""
+
+#: views/shortcodes/engorgio/popups/testimonials.php:119
+msgid ""
+"Hold down the Ctrl (for Mac users use Cmd) key and select as many options as "
+"you need."
+msgstr ""
+
+#: views/shortcodes/engorgio/popups/testimonials.php:131
 msgid "Show photo"
 msgstr ""
 
-#: views/shortcodes/engorgio/popups/testimonials.php:129
+#: views/shortcodes/engorgio/popups/testimonials.php:135
 msgid "Show/Hide Photo"
 msgstr ""
 
