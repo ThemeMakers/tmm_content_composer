@@ -10,31 +10,42 @@ if (!empty($logos_list)) {
 
 $hide_empty = isset($hide_empty) ? $hide_empty : false;
 
+if ( !function_exists( 'get_terms' ) ) {
+	require_once ABSPATH . WPINC . '/taxonomy.php';
+}
+
+// TODO: update the shortcode with the following feature extension
 $args = array(
-	'taxonomy'          => 'carproducer',
-	'post_status'       => 'publish',
-	'orderby'           => 'name',
-	'order'             => 'ASC',
-	'include'           => $logos_list,
-	'hide_empty'        => $hide_empty,
-	'fields'            => 'all',
-	'parent'            => 0,
-	'hierarchical'      => 1,
-	'pad_counts'        => 1,
-	'suppress_filters'  => false,
+	'taxonomy'         => 'carproducer',
+	'orderby'          => 'none',
+//	'order'            => 'ASC',
+	'include'          => $logos_list,
+	'hide_empty'       => $hide_empty,
+	'fields'           => 'all',
+	'parent'           => 0,
+	'hierarchical'     => true,
+	'pad_counts'       => true
 );
 
-$makes = get_terms('carproducer', $args);
+$makes = get_terms($args);
 
 if (!isset($show_name)) {
 	$show_name = 1;
 }
+var_dump($logos_list);
+
+usort($makes);
+
+var_dump($makes);
+
 ?>
 
 <ul class="carproducers_list">
 
 	<?php
 	foreach ($makes as $make){
+
+		var_dump($make->term_id);
 
 		$image_name = strtolower($make->name);
 		$image_name = preg_replace( array('/\s/', '/ë/'), array('_', 'e'), $image_name );

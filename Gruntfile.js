@@ -16,6 +16,7 @@ module.exports = function(grunt) {
 				files: {
 					'js/min/front.min.js': [
 						'js/front.js',
+						'js/select2.js',
 						'js/quicksearch.js'
 					]
 				}
@@ -38,7 +39,8 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+	//grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-contrib-uglify-es');
 	grunt.loadNpmTasks('grunt-contrib-compass');
 
 	grunt.registerTask('default', ['watch']);

@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-01-21 22:34+0100\n"
-"PO-Revision-Date: 2020-01-21 22:34+0100\n"
+"PO-Revision-Date: 2020-03-07 02:17+0100\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -822,15 +822,15 @@ msgstr "Ist Empfohlen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:9
 msgid "Display country"
-msgstr "Anzeigen Land"
+msgstr "Land anzeigen "
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:20
 msgid "Display state"
-msgstr "Anzeigezustand"
+msgstr "Bundesland anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:31
 msgid "Display city"
-msgstr "Stadt"
+msgstr "Stadt anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:42
 msgid "Display condition"

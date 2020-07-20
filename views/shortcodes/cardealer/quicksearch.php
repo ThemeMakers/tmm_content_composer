@@ -1,5 +1,12 @@
 <?php if ( !defined('ABSPATH') ) exit;
+
 wp_enqueue_script('tmm_composer_front');
+
+$site_locale = substr(get_locale(), 0, 2);
+
+if($site_locale !== 'en') {
+	wp_enqueue_script( 'tmm_select_locale', TMM_CC_URL . 'js/i18n/' . $site_locale . '.js', array ( 'jquery' ), false, true);
+}
 
 $car_condition = 0;
 $carlocation = array(0);
@@ -79,7 +86,6 @@ if (isset($_GET['car_interrior_color'])) {
 	$car_interrior_color = $_GET['car_interrior_color'];
 }
 
-
 if (isset($_GET['car_exterior_color'])) {
 	$car_exterior_color = $_GET['car_exterior_color'];
 }
@@ -126,13 +132,16 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 			<label><?php esc_html_e("Location", 'tmm_content_composer') ?></label>
 			<?php if (!empty($show_location0)) { ?>
 				<p>
-					<select name="carlocation[0]" class="qs_carlocation0 carlocations" data-location0="<?php echo esc_attr( $carlocation[0] ) ?>">
-						<option value="0"><?php esc_html_e($locations_captions_on_search_widget[0], 'tmm_content_composer'); ?></option>
+					<select class="qs_carlocation0 carlocations"
+					        name="carlocation[0]"
+					        data-placeholder="<?php esc_html_e( $locations_captions_on_search_widget[0], 'tmm_content_composer' ); ?>"
+					        data-location0="<?php echo esc_attr( $carlocation[0] ) ?>">
+						<option value="0"><?php esc_html_e( $locations_captions_on_search_widget[0], 'tmm_content_composer' ); ?></option>
 					</select>
 				</p>
 			<?php } else if(!empty($show_location1) || !empty($show_location2)) { ?>
 
-				<input type="hidden" value="<?php echo isset($selected_location0) ? $selected_location0 : 0; ?>" class="qs_carlocation0 carlocations">
+				<input type="hidden" value="<?php echo !empty($selected_location0) ? $selected_location0 : 0; ?>" class="qs_carlocation0 carlocations">
 
 			<?php } ?>
 
@@ -159,16 +168,24 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 						$data_attr = ' data-location'.($i-1).'=' . $carlocation[$i-1] . ' data-location'.$i.'=' . (isset($carlocation[$i]) ? $carlocation[$i] : 0);
 						?>
 						<p>
-							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations" name="carlocation[<?php echo esc_attr( $i ) ?>]" data-level="<?php echo esc_attr($i ) ?>" <?php echo esc_attr( $data_attr ) ?>>
-								<option value="0"><?php esc_html_e($locations_captions_on_search_widget[$i], 'tmm_content_composer'); ?></option>
+							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations"
+							        name="carlocation[<?php echo esc_attr( $i ) ?>]"
+							        data-level="<?php echo esc_attr( $i ) ?>"
+							        data-placeholder="<?php esc_html_e( $locations_captions_on_search_widget[ $i ], 'tmm_content_composer' ); ?>"
+									<?php echo esc_attr( $data_attr ) ?>>
+								<option value="0"><?php esc_html_e( $locations_captions_on_search_widget[ $i ], 'tmm_content_composer' ); ?></option>
 							</select>
 						</p>
 
 					<?php } else { ?>
 
 						<p>
-							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations" name="carlocation[<?php echo esc_attr( $i ) ?>]" disabled="" data-level="<?php echo esc_attr( $i ) ?>">
-								<option value="0"><?php esc_html_e(@$locations_captions_on_search_widget[$i], 'tmm_content_composer'); ?></option>
+							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations"
+							        name="carlocation[<?php echo esc_attr( $i ) ?>]"
+							        disabled
+							        data-placeholder="<?php esc_html_e( $locations_captions_on_search_widget[ $i ], 'tmm_content_composer' ); ?>"
+							        data-level="<?php echo esc_attr( $i ) ?>">
+								<option value="0"><?php esc_html_e( $locations_captions_on_search_widget[ $i ], 'tmm_content_composer' ); ?></option>
 							</select>
 						</p>
 

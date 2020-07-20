@@ -1,0 +1,73 @@
+$form-bg-color:					#ffffff;
+$form-border-color:				#dddcdc;
+$form-border-color-hover:		#acaaaa;
+$form-border-color-disabled:	#f6f6f6;
+
+.select2-selection--single {
+  background-color: $form-bg-color;
+  border: 1px solid $form-border-color;
+  @include border-radius(0);
+  @include box-shadow(0 2px 3px rgba(100,100,100,0.1));
+
+  outline: none;
+  display: block;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAACgUlEQVR4nO3cSW7bQBBGYd8n3ZTY1VplkVNl8CRlOEMWOYgXvpyVhdEAIUiySFbP7wO8L+p/sjcG7+4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEDzrMifwfnH3Hf0xjh3MM4dsh5hRX5v/O44iH8jgnSMc4eN3x03fne0IvssR4Txww8RpDEdP1sEdpRfp0cQQXznxg+fux3lOckRl8YngrgujZ80gsH5n9eOIII4Phr/JIKnKEfcOj4R6Lp1/KgRzD0iSZEdmPuli/Lls+P4ZckRRLDO0vGnn/un7fazyjFLfwMQwTIa46v/+SWCNIocPyCCuIoeP7AieyLQpzG+ce4hybFEoKuq8QMi0FHl+AERrFP1+AERLNPE+AERzNPU+IEV2Q/i34jguibHD+woz0RwWdPjB0Rwnsr4Ive5n+MmShGk+Q+XBD76J5qmxg+I4F2X4we9R9D1+EGvETD+RG8RMP4ZdpSnHiJg/Ctaj0BjfCvyI/dzRNVqBIw/Q2sRMP4CrUTA+CvUHgHjK6g1AsZXVFsEjB/B4PxjDRGojD/K99h3VkklgogvS2D8BEqN4PSNKIwf0doINl73tSmMn0EpETB+RrkjYPwC5IqA8QtinHtIGQHjFyhVBCrjO/8txWfSndgRMH4FYkXA+BXRjoDxK6QVAeNXTCMCxq+cEbnPEQHjFyR1BO9v43Jfcz83JlJFwPgFix0B41cgVgSMXxHtCBi/QloRMH7FrPP/1gZgnPub+zmwgtnK69LxrfiX3PdDwZIIGL8xcyJg/EbdEgHjN+5aBIzfiXMRMH5nphEwfqfMVl4ZHwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlO4/4NIPH7tR+MsAAAAASUVORK5CYII=);
+  background-position: calc(100% - 10px) 50%;
+  background-size: 12px;
+  background-repeat: no-repeat;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    border-color: $form-border-color-hover;
+  }
+
+  .select2-selection__rendered {
+    color: #444;
+    line-height: 32px;
+  }
+
+  .select2-selection__clear {
+    cursor: pointer;
+    float: right;
+    font-weight: bold;
+  }
+
+  .select2-selection__placeholder {
+    color: #999;
+  }
+}
+
+&[dir="rtl"] {
+  .select2-selection--single {
+    .select2-selection__clear {
+      float: left;
+    }
+
+    .select2-selection__arrow {
+      left: 1px;
+      right: auto;
+    }
+  }
+}
+
+&.select2-container--disabled {
+  .select2-selection--single {
+    background-color: $form-border-color-disabled;
+    cursor: default;
+
+    .select2-selection__clear {
+      display: none;
+    }
+  }
+}
+
+&.select2-container--open {
+  .select2-selection--single {
+    .select2-selection__arrow {
+      b {
+        border-color: transparent transparent #888 transparent;
+        border-width: 0 4px 5px 4px;
+      }
+    }
+  }
+}

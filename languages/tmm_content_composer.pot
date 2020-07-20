@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2020-01-21 22:37+0100\n"
+"POT-Creation-Date: 2020-03-03 22:45+0100\n"
 "PO-Revision-Date: 2019-10-28 23:43+0100\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: ThemeMakers <support@webtemplatemasters.com>\n"
@@ -365,7 +365,7 @@ msgstr ""
 msgid "Transparent (default)"
 msgstr ""
 
-#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:387
+#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:375
 #: views/shortcodes/default/popups/title.php:144
 msgid "Color"
 msgstr ""
@@ -847,76 +847,56 @@ msgstr ""
 msgid "Display year range"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:86
-msgid "Search button position"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:90
-msgid "First column"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:91
-msgid "Second column"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:92
-msgid "Third column"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:101
+#: views/shortcodes/cardealer/popups/quicksearch.php:85
 msgid "Widget Background"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:122
+#: views/shortcodes/cardealer/popups/quicksearch.php:106
 msgid "Select default country"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:151
+#: views/shortcodes/cardealer/popups/quicksearch.php:135
 msgid "Select default state"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:170
+#: views/shortcodes/cardealer/popups/quicksearch.php:154
 msgid "Display mileage"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:181
+#: views/shortcodes/cardealer/popups/quicksearch.php:165
 msgid "Display fuel type"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:192
+#: views/shortcodes/cardealer/popups/quicksearch.php:176
 msgid "Display gearbox"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:203
+#: views/shortcodes/cardealer/popups/quicksearch.php:187
 msgid "Display body type"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:214
+#: views/shortcodes/cardealer/popups/quicksearch.php:198
 msgid "Display doors count"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:225
+#: views/shortcodes/cardealer/popups/quicksearch.php:209
 msgid "Display colors"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:236
+#: views/shortcodes/cardealer/popups/quicksearch.php:220
 msgid "Display advanced search"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:247
+#: views/shortcodes/cardealer/popups/quicksearch.php:231
 msgid "Search Widget Offset"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:251
+#: views/shortcodes/cardealer/popups/quicksearch.php:235
 msgid "Default Offset"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:252
+#: views/shortcodes/cardealer/popups/quicksearch.php:236
 msgid "No Offset"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:262
-msgid "Display all fields in one column in pairs"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:20
@@ -1094,97 +1074,97 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:135
+#: views/shortcodes/cardealer/quicksearch.php:126
 msgid "Location"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:207
+#: views/shortcodes/cardealer/quicksearch.php:195
 msgid "Condition"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:209
-#: views/shortcodes/cardealer/quicksearch.php:242
-#: views/shortcodes/cardealer/quicksearch.php:249
-#: views/shortcodes/cardealer/quicksearch.php:326
-#: views/shortcodes/cardealer/quicksearch.php:342
-#: views/shortcodes/cardealer/quicksearch.php:360
-#: views/shortcodes/cardealer/quicksearch.php:375
-#: views/shortcodes/cardealer/quicksearch.php:479
+#: views/shortcodes/cardealer/quicksearch.php:197
+#: views/shortcodes/cardealer/quicksearch.php:230
+#: views/shortcodes/cardealer/quicksearch.php:237
+#: views/shortcodes/cardealer/quicksearch.php:314
+#: views/shortcodes/cardealer/quicksearch.php:330
+#: views/shortcodes/cardealer/quicksearch.php:348
+#: views/shortcodes/cardealer/quicksearch.php:363
+#: views/shortcodes/cardealer/quicksearch.php:467
 msgid "Any"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:213
+#: views/shortcodes/cardealer/quicksearch.php:201
 #, php-format
 msgid "Only %s cars"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:240
+#: views/shortcodes/cardealer/quicksearch.php:228
 msgid "Make"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:247
+#: views/shortcodes/cardealer/quicksearch.php:235
 msgid "Model"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:259
+#: views/shortcodes/cardealer/quicksearch.php:247
 msgid "Price"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:259
-#: views/shortcodes/cardealer/quicksearch.php:309
+#: views/shortcodes/cardealer/quicksearch.php:247
+#: views/shortcodes/cardealer/quicksearch.php:297
 msgid "min/max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:273
+#: views/shortcodes/cardealer/quicksearch.php:261
 msgid "Year"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:277
+#: views/shortcodes/cardealer/quicksearch.php:265
 msgid "min"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:292
+#: views/shortcodes/cardealer/quicksearch.php:280
 msgid "max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:309
+#: views/shortcodes/cardealer/quicksearch.php:297
 msgid "Kilometer"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:309
+#: views/shortcodes/cardealer/quicksearch.php:297
 msgid "Mileage"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:323
+#: views/shortcodes/cardealer/quicksearch.php:311
 msgid "Fuel Type"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:339
+#: views/shortcodes/cardealer/quicksearch.php:327
 msgid "Gearbox"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:357
+#: views/shortcodes/cardealer/quicksearch.php:345
 msgid "Body Type"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:373
+#: views/shortcodes/cardealer/quicksearch.php:361
 msgid "Door Count"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:395
+#: views/shortcodes/cardealer/quicksearch.php:383
 msgid "Interior"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:406
+#: views/shortcodes/cardealer/quicksearch.php:394
 msgid "Exterior"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:423
+#: views/shortcodes/cardealer/quicksearch.php:411
 msgid "Advanced"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:429
-#: views/shortcodes/cardealer/quicksearch.php:495
+#: views/shortcodes/cardealer/quicksearch.php:417
+#: views/shortcodes/cardealer/quicksearch.php:483
 msgid "Search"
 msgstr ""
 
