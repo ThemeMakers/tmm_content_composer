@@ -51,8 +51,9 @@ if (TMM::get_option("api_key_google")){
 		wp_enqueue_script('tmm_composer_front');
 		?>
 
-		<div class="google_map" id="google_map_<?php echo esc_attr($inique_id) ?>" style="height: <?php echo esc_attr($height) ?>px;"></div>
+		<div class="google_map" id="google_map_<?php echo esc_attr( $inique_id ) ?>" style="height: <?php echo esc_attr( $height ) ?>px;"></div>
 
+        <?php if ($output['status'] == 'OK') { ?>
 		<script type="text/javascript">
 			jQuery(function() {
 				gmt_init_map(
@@ -70,8 +71,9 @@ if (TMM::get_option("api_key_google")){
                 );
 			});
 		</script>
-	<?php } else { ?>
-		<?php
+        <?php
+        }
+	} else {
 		$marker_string = '';
 		if ($enable_marker) {
 			$marker_string = '&markers=color:red%7clabel:%7c' . $latitude . ',' . $longitude;
@@ -82,7 +84,8 @@ if (TMM::get_option("api_key_google")){
 
         <img src="https://maps.googleapis.com/maps/api/staticmap?<?php echo esc_attr($location_mode_string) ?>&zoom=<?php echo esc_attr($zoom) ?>&maptype=<?php echo strtolower($maptype) ?>&size=<?php echo esc_attr($width) ?>x<?php echo esc_attr($height) ?><?php echo esc_attr($marker_string) ?>&scale=<?php echo esc_attr( $mapscale ) ?>&<?php echo esc_attr( $google_maps_api_key ) ?>" width="<?php echo esc_attr($width) ?>" height="<?php echo esc_attr($height) ?>" alt="<?php echo esc_attr(str_replace('+', ' ', $address)) ?>">
 
-	<?php }
+	<?php
+	}
 
 } else {
 	$full_width = ($width == '' || $width == '100%') ? '1130' : $width;
