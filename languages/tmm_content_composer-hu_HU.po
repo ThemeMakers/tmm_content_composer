@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-21 22:33+0100\n"
-"PO-Revision-Date: 2020-01-21 22:34+0100\n"
+"POT-Creation-Date: 2020-09-02 23:18+0200\n"
+"PO-Revision-Date: 2020-09-02 23:18+0200\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Magyar\n"
 "Language: hu_HU\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -25,101 +25,101 @@ msgstr ""
 msgid "ThemeMakers Layout Constructor"
 msgstr ""
 
-#: classes/content_composer.php:97
+#: classes/content_composer.php:98
 msgid "Loading ..."
 msgstr "Betöltés..."
 
-#: classes/content_composer.php:98
+#: classes/content_composer.php:99
 msgid "Close"
 msgstr "Bezár"
 
-#: classes/content_composer.php:99
+#: classes/content_composer.php:100
 msgid "Apply"
 msgstr ""
 
-#: classes/content_composer.php:100
+#: classes/content_composer.php:101
 msgid "There is no options for shortcode!"
 msgstr ""
 
-#: classes/content_composer.php:101
+#: classes/content_composer.php:102
 msgid "Shortcode updated!"
 msgstr ""
 
-#: classes/content_composer.php:102
+#: classes/content_composer.php:103
 msgid "Insert Shortcode"
 msgstr ""
 
-#: classes/content_composer.php:103
+#: classes/content_composer.php:104
 msgid "Edit shortcode"
 msgstr ""
 
-#: classes/content_composer.php:115
+#: classes/content_composer.php:116
 msgid "Sure about column deleting?"
 msgstr ""
 
-#: classes/content_composer.php:116
+#: classes/content_composer.php:117
 msgid "Sure about row deleting?"
 msgstr ""
 
-#: classes/content_composer.php:117 views/column_item.php:13
+#: classes/content_composer.php:118 views/column_item.php:13
 msgid "Empty title"
 msgstr ""
 
-#: classes/content_composer.php:118
+#: classes/content_composer.php:119
 msgid "Column content editor"
 msgstr ""
 
-#: classes/content_composer.php:119
+#: classes/content_composer.php:120
 msgid "Section editor"
 msgstr ""
 
-#: classes/content_composer.php:145
+#: classes/content_composer.php:146
 msgid "Please enter correct"
 msgstr ""
 
-#: classes/content_composer.php:146
+#: classes/content_composer.php:147
 msgid "Your message has been sent successfully!"
 msgstr "Köszönöm üzenetét, hamarosan válaszolok. Üdvözlettel: Talabér Tamás"
 
-#: classes/content_composer.php:147
+#: classes/content_composer.php:148
 msgid "Server failed. Send later"
 msgstr ""
 
-#: classes/content_composer.php:160
+#: classes/content_composer.php:161
 msgid "Use wptexturize"
 msgstr ""
 
-#: classes/content_composer.php:240
+#: classes/content_composer.php:241
 msgid "Default Grey"
 msgstr ""
 
-#: classes/content_composer.php:241
+#: classes/content_composer.php:242
 msgid "Orange"
 msgstr ""
 
-#: classes/content_composer.php:249
+#: classes/content_composer.php:250
 #: views/shortcodes/cardealer/popups/recent_cars.php:131
 #: views/shortcodes/default/popups/divider.php:28
 msgid "Small"
 msgstr "Kicsi"
 
-#: classes/content_composer.php:250
+#: classes/content_composer.php:251
 #: views/shortcodes/cardealer/popups/recent_cars.php:132
 #: views/shortcodes/default/popups/divider.php:29
 msgid "Middle"
 msgstr "Közepes"
 
-#: classes/content_composer.php:251
+#: classes/content_composer.php:252
 #: views/shortcodes/cardealer/popups/recent_cars.php:133
 #: views/shortcodes/default/popups/divider.php:30
 msgid "Large"
 msgstr "nagy"
 
-#: classes/content_composer.php:259
+#: classes/content_composer.php:260
 msgid "All Categories"
 msgstr "Összes kategória"
 
-#: classes/content_composer.php:441
+#: classes/content_composer.php:442
 msgid "Browse"
 msgstr ""
 
@@ -364,7 +364,7 @@ msgstr ""
 msgid "Transparent (default)"
 msgstr ""
 
-#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:387
+#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:394
 #: views/shortcodes/default/popups/title.php:144
 msgid "Color"
 msgstr "Szín"
@@ -463,34 +463,44 @@ msgstr "következő"
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:59
+#: views/shortcodes/cardealer/car_makes.php:70
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:122
+#: views/shortcodes/cardealer/dealers.php:76
+#, php-format
+msgid "Page %s of %d"
+msgstr ""
+
+#: views/shortcodes/cardealer/dealers.php:77
+#, php-format
+msgid "Displaying %s of %d users"
+msgstr ""
+
+#: views/shortcodes/cardealer/dealers.php:124
 msgid "Contacts"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:141
+#: views/shortcodes/cardealer/dealers.php:143
 msgid "Working hours"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:176
+#: views/shortcodes/cardealer/dealers.php:178
 msgid "E-mail Us"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:182
+#: views/shortcodes/cardealer/dealers.php:184
 msgid "Website"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:210
+#: views/shortcodes/cardealer/dealers.php:212
 #, fuzzy
 #| msgid "Previous"
 msgid "Previous Page"
 msgstr "előző"
 
-#: views/shortcodes/cardealer/dealers.php:215
+#: views/shortcodes/cardealer/dealers.php:217
 #, fuzzy
 #| msgid "Next"
 msgid "Next Page"
@@ -718,6 +728,10 @@ msgstr ""
 msgid "Dealers Number"
 msgstr ""
 
+#: views/shortcodes/cardealer/popups/dealers.php:14
+msgid "Minimum 5 dealers will be displayed."
+msgstr ""
+
 #: views/shortcodes/cardealer/popups/dealers.php:25
 msgid "Display Order"
 msgstr ""
@@ -850,76 +864,56 @@ msgstr ""
 msgid "Display year range"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:86
-msgid "Search button position"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:90
-msgid "First column"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:91
-msgid "Second column"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:92
-msgid "Third column"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:101
+#: views/shortcodes/cardealer/popups/quicksearch.php:85
 msgid "Widget Background"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:122
+#: views/shortcodes/cardealer/popups/quicksearch.php:106
 msgid "Select default country"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:151
+#: views/shortcodes/cardealer/popups/quicksearch.php:135
 msgid "Select default state"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:170
+#: views/shortcodes/cardealer/popups/quicksearch.php:154
 msgid "Display mileage"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:181
+#: views/shortcodes/cardealer/popups/quicksearch.php:165
 msgid "Display fuel type"
 msgstr "\"Üzemanyag\" kiírása"
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:192
+#: views/shortcodes/cardealer/popups/quicksearch.php:176
 msgid "Display gearbox"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:203
+#: views/shortcodes/cardealer/popups/quicksearch.php:187
 msgid "Display body type"
 msgstr "\"Kivitel\" kiírása"
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:214
+#: views/shortcodes/cardealer/popups/quicksearch.php:198
 msgid "Display doors count"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:225
+#: views/shortcodes/cardealer/popups/quicksearch.php:209
 msgid "Display colors"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:236
+#: views/shortcodes/cardealer/popups/quicksearch.php:220
 msgid "Display advanced search"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:247
+#: views/shortcodes/cardealer/popups/quicksearch.php:231
 msgid "Search Widget Offset"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:251
+#: views/shortcodes/cardealer/popups/quicksearch.php:235
 msgid "Default Offset"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:252
+#: views/shortcodes/cardealer/popups/quicksearch.php:236
 msgid "No Offset"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:262
-msgid "Display all fields in one column in pairs"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:20
@@ -1099,99 +1093,99 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:135
+#: views/shortcodes/cardealer/quicksearch.php:133
 msgid "Location"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:207
+#: views/shortcodes/cardealer/quicksearch.php:214
 msgid "Condition"
 msgstr "Állapot"
 
-#: views/shortcodes/cardealer/quicksearch.php:209
-#: views/shortcodes/cardealer/quicksearch.php:242
+#: views/shortcodes/cardealer/quicksearch.php:216
 #: views/shortcodes/cardealer/quicksearch.php:249
-#: views/shortcodes/cardealer/quicksearch.php:326
-#: views/shortcodes/cardealer/quicksearch.php:342
-#: views/shortcodes/cardealer/quicksearch.php:360
-#: views/shortcodes/cardealer/quicksearch.php:375
-#: views/shortcodes/cardealer/quicksearch.php:479
+#: views/shortcodes/cardealer/quicksearch.php:256
+#: views/shortcodes/cardealer/quicksearch.php:333
+#: views/shortcodes/cardealer/quicksearch.php:349
+#: views/shortcodes/cardealer/quicksearch.php:367
+#: views/shortcodes/cardealer/quicksearch.php:382
+#: views/shortcodes/cardealer/quicksearch.php:486
 msgid "Any"
 msgstr "Bármi"
 
-#: views/shortcodes/cardealer/quicksearch.php:213
+#: views/shortcodes/cardealer/quicksearch.php:220
 #, php-format
 msgid "Only %s cars"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:240
+#: views/shortcodes/cardealer/quicksearch.php:247
 msgid "Make"
 msgstr "Márka"
 
-#: views/shortcodes/cardealer/quicksearch.php:247
+#: views/shortcodes/cardealer/quicksearch.php:254
 msgid "Model"
 msgstr "Típus"
 
-#: views/shortcodes/cardealer/quicksearch.php:259
+#: views/shortcodes/cardealer/quicksearch.php:266
 msgid "Price"
 msgstr "Vételár"
 
-#: views/shortcodes/cardealer/quicksearch.php:259
-#: views/shortcodes/cardealer/quicksearch.php:309
+#: views/shortcodes/cardealer/quicksearch.php:266
+#: views/shortcodes/cardealer/quicksearch.php:316
 msgid "min/max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:273
+#: views/shortcodes/cardealer/quicksearch.php:280
 msgid "Year"
 msgstr "Évjárat"
 
-#: views/shortcodes/cardealer/quicksearch.php:277
+#: views/shortcodes/cardealer/quicksearch.php:284
 msgid "min"
 msgstr "min."
 
-#: views/shortcodes/cardealer/quicksearch.php:292
+#: views/shortcodes/cardealer/quicksearch.php:299
 msgid "max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:309
+#: views/shortcodes/cardealer/quicksearch.php:316
 msgid "Kilometer"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:309
+#: views/shortcodes/cardealer/quicksearch.php:316
 msgid "Mileage"
 msgstr "Futott km"
 
-#: views/shortcodes/cardealer/quicksearch.php:323
+#: views/shortcodes/cardealer/quicksearch.php:330
 msgid "Fuel Type"
 msgstr "Üzemanyag"
 
-#: views/shortcodes/cardealer/quicksearch.php:339
+#: views/shortcodes/cardealer/quicksearch.php:346
 msgid "Gearbox"
 msgstr "Sebességváltó"
 
-#: views/shortcodes/cardealer/quicksearch.php:357
+#: views/shortcodes/cardealer/quicksearch.php:364
 msgid "Body Type"
 msgstr "Kivitel"
 
-#: views/shortcodes/cardealer/quicksearch.php:373
+#: views/shortcodes/cardealer/quicksearch.php:380
 msgid "Door Count"
 msgstr "Ajtók száma"
 
-#: views/shortcodes/cardealer/quicksearch.php:395
+#: views/shortcodes/cardealer/quicksearch.php:402
 msgid "Interior"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:406
+#: views/shortcodes/cardealer/quicksearch.php:413
 #, fuzzy
 #| msgid "Exterior Color"
 msgid "Exterior"
 msgstr "Szín"
 
-#: views/shortcodes/cardealer/quicksearch.php:423
+#: views/shortcodes/cardealer/quicksearch.php:430
 msgid "Advanced"
 msgstr "Bővített kereső"
 
-#: views/shortcodes/cardealer/quicksearch.php:429
-#: views/shortcodes/cardealer/quicksearch.php:495
+#: views/shortcodes/cardealer/quicksearch.php:436
+#: views/shortcodes/cardealer/quicksearch.php:502
 msgid "Search"
 msgstr "Keresés"
 
