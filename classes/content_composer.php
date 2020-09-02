@@ -81,6 +81,7 @@ class TMM_Content_Composer {
 		if ( $pagenow === 'post-new.php' || $pagenow === 'post.php' || $pagenow === 'nav-menus.php' ) {
 			wp_enqueue_style('tmm_layout_constructor', TMM_CC_URL . 'css/style-lc-admin.css');
 			wp_enqueue_script('tmm_popup', TMM_CC_URL . 'js/admin/popup.js', array('jquery'));
+			wp_enqueue_script('tmm_select2', TMM_CC_URL . 'js/select2.js', array('jquery'));
 			wp_enqueue_script('tmm_colorpicker', TMM_CC_URL . 'js/admin/colorpicker/colorpicker.js', array('jquery'));
 			wp_enqueue_script('tmm_shortcodes', TMM_CC_URL . 'js/admin/shortcodes.js', array('jquery'), false, true);
 

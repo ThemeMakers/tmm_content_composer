@@ -3,8 +3,10 @@
 global $wpdb;
 $users = array();
 
-if ($user_number <= 0) {
-	$user_number = 5;
+if (!isset($user_number)) {
+    if ($user_number <= 0) {
+        $user_number = 5;
+    }
 }
 
 $author__in = array();
@@ -71,8 +73,8 @@ if($order == 'random'){
 		}
 	} ?>
 
-	<h3>Page <?php echo $current_page; ?> of <?php echo $num_pages; ?></h3>
-	<p>Displaying <?php echo $users_per_page; ?> of <?php echo $total_users; ?> users</p>
+    <h3><?php echo sprintf( esc_html__("Page %s of %d", 'tmm_content_composer'), $current_page, $num_pages); ?></h3>
+    <p><?php echo sprintf( esc_html__("Displaying %s of %d users", 'tmm_content_composer'), $users_per_page, $total_users); ?></p>
 
 	<?php if ( $u_query->get_results() ) foreach( $u_query->get_results() as $user_data )  {
 
@@ -119,7 +121,7 @@ if($order == 'random'){
 					<?php } ?>
 				</h6>
 
-				<h6><?php echo esc_html_e('Contacts', 'tmm_content_composer'); ?>:</h6>
+				<h6><?php esc_html_e('Contacts', 'tmm_content_composer'); ?>:</h6>
 
 				<div class="row">
 					<div class="col-md-8">
@@ -128,7 +130,7 @@ if($order == 'random'){
 
 							<?php if ($show_address && !empty($ud->address)) { ?>
 
-								<li><i class="icon-warehouse"></i> <?php echo $ud->address ?></li>
+								<li><i class="icon-warehouse"></i> <?php echo esc_html( $ud->address ) ?></li>
 
 							<?php } ?>
 
@@ -138,7 +140,7 @@ if($order == 'random'){
 
 							<br>
 
-							<h6><?php echo esc_html_e('Working hours', 'tmm_content_composer'); ?>:</h6>
+							<h6><?php esc_html_e('Working hours', 'tmm_content_composer'); ?>:</h6>
 
 							<?php echo nl2br( esc_html($ud->working_hours) ) ?>
 
@@ -153,19 +155,19 @@ if($order == 'random'){
 
 							<?php if ($show_phone && !empty($ud->phone)) { ?>
 
-								<li><i class="icon-phone"></i> <?php echo $ud->phone ?></li>
+								<li><i class="icon-phone"></i> <?php echo esc_attr( $ud->phone ) ?></li>
 
 							<?php } ?>
 
 							<?php if ($show_mobile && !empty($ud->mobile)) { ?>
 
-								<li><i class="icon-mobile"></i> <?php echo $ud->mobile ?></li>
+								<li><i class="icon-mobile"></i> <?php echo esc_attr( $ud->mobile ) ?></li>
 
 							<?php } ?>
 
 							<?php if ($show_fax && !empty($ud->fax)) { ?>
 
-								<li><i class="icon-fax"></i> <?php echo $ud->fax ?></li>
+								<li><i class="icon-fax"></i> <?php echo esc_attr( $ud->fax ) ?></li>
 
 							<?php } ?>
 
@@ -173,13 +175,13 @@ if($order == 'random'){
 
 							<?php if ($show_email && !empty($ud->user_email)) { ?>
 
-								<li><i class="icon-at"></i> <a href="mailto:<?php echo esc_attr( $ud->user_email ) ?>" rel="nofollow"><?php echo esc_html_e('E-mail Us', 'tmm_content_composer'); ?></a></li>
+								<li><i class="icon-at"></i> <a href="mailto:<?php echo esc_attr( $ud->user_email ) ?>" rel="nofollow"><?php esc_html_e('E-mail Us', 'tmm_content_composer'); ?></a></li>
 
 							<?php } ?>
 
 							<?php if ($show_site && !empty($ud->user_url)) { ?>
 
-								<li><i class="icon-globe"></i> <a href="<?php echo esc_url( $ud->user_url ) ?>" rel="nofollow" target="_blank"><?php echo esc_html_e('Website', 'tmm_content_composer'); ?></a></li>
+								<li><i class="icon-globe"></i> <a href="<?php echo esc_url( $ud->user_url ) ?>" rel="nofollow" target="_blank"><?php esc_html_e('Website', 'tmm_content_composer'); ?></a></li>
 
 							<?php } ?>
 

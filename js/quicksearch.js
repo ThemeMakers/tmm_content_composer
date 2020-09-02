@@ -1,5 +1,7 @@
 jQuery(document).ready(function() {
 	const form = jQuery('.car_form_search');
+	const yrFrom = jQuery('select[name=car_year_from]');
+	const yrTo = jQuery('select[name=car_year_to]');
 
 	if (form.length) {
 
@@ -32,7 +34,7 @@ jQuery(document).ready(function() {
 					}
 				})
 			).then(function () {
-				console.log('done with loading countries...');
+				// console.log('done with loading countries...');
 				if(typeof jQuery.fn.select2 === 'function' && loc_0.is('select')){
 					loc_0.select2();
 				}
@@ -69,7 +71,7 @@ jQuery(document).ready(function() {
 					}
 				})
 			).then(function () {
-				console.log('done with loading regions...');
+				// console.log('done with loading regions...');
 				if(typeof jQuery.fn.select2 === 'function' && loc_1.is('select')){
 					loc_1.select2();
 				}
@@ -105,7 +107,7 @@ jQuery(document).ready(function() {
 					}
 				})
 			).then(function () {
-				console.log('done with loading cities...');
+				// console.log('done with loading cities...');
 				if(typeof jQuery.fn.select2 === 'function' && loc_2.is('select')){
 					loc_2.select2();
 				}
@@ -143,7 +145,7 @@ jQuery(document).ready(function() {
 					}
 				})
 			).then(function () {
-				console.log('done with loading car makes...');
+				// console.log('done with loading car makes...');
 				if(typeof jQuery.fn.select2 === 'function' && $make.is('select')){
 					$make.select2();
 				}
@@ -181,12 +183,18 @@ jQuery(document).ready(function() {
 					}
 				})
 			).then(function () {
-				console.log('done with loading car models...');
+				// console.log('done with loading car models...');
 				if(typeof jQuery.fn.select2 === 'function' && $model.is('select')){
 					$model.select2();
 				}
 			});
 
+		}
+
+		/* apply select2 to year fields */
+		if(typeof jQuery.fn.select2 === 'function'){
+			yrFrom.select2();
+			yrTo.select2();
 		}
 
 		var app = new TmmQuickSearchApp();
@@ -196,16 +204,30 @@ jQuery(document).ready(function() {
 });
 
 function TmmQuickSearchApp() {
+	this.body = jQuery(document.body);
+	this.make = '.qs_carproducer';
+	this.model = '.qs_carmodel';
+	this.locs = '.carlocations';
+	this.loc_0 = '.qs_carlocation0';
+	this.loc_1 = '.qs_carlocation1';
+	this.loc_2 = '.qs_carlocation2';
+	this.btnSubmit = '.submit-search';
+	this.searchContainer = '.quicksearch-container';
+	this.advSearchBtn = '.car_adv_search_btn';
+	this.advSearchPanel = '.car_adv_search';
+}
 
-	const self = this;
+TmmQuickSearchApp.prototype = {
+	init() {
+		const self = this;
+		const body = self.body;
 
-	this.init = () => {
-		jQuery(document.body).on('change', '.qs_carlocation0', function() {
+		body.on('change', self.loc_0, function() {
 			const value = jQuery(this).val(),
-				widget = jQuery(this).closest('.quicksearch-container'),
+				widget = jQuery(this).closest(self.searchContainer),
 				car_condition = widget.find('.qs_condition').val(),
-				state = widget.find('.qs_carlocation1'),
-				city = widget.find('.qs_carlocation2');
+				state = widget.find(self.loc_1),
+				city = widget.find(self.loc_2);
 
 			self.clear_select(city);
 			city.attr('disabled', true);
@@ -220,11 +242,11 @@ function TmmQuickSearchApp() {
 			}
 		});
 
-		jQuery(document.body).on('change', '.qs_carlocation1', function() {
+		body.on('change', self.loc_1, function() {
 			const level = jQuery(this).data('level'),
 				value = jQuery(this).val(),
-				widget = jQuery(this).closest('.quicksearch-container'),
-				city = widget.find('.qs_carlocation2');
+				widget = jQuery(this).closest(self.searchContainer),
+				city = widget.find(self.loc_2);
 
 			if (value === '0') {
 				self.clear_select(city);
@@ -236,27 +258,28 @@ function TmmQuickSearchApp() {
 			}
 		});
 
-		jQuery(document.body).on('change', '.qs_carlocation2', function() {
-			var widget = jQuery(this).closest('.quicksearch-container');
+		body.on('change', self.loc_2, function() {
+			var widget = jQuery(this).closest(self.searchContainer);
 
 			self.load_producers(widget);
 		});
 
-		if(jQuery('.qs_carlocation1').val() !== '0'){
-			jQuery('.qs_carlocation2').attr('disabled', false).parent().removeClass('active')
+		if(jQuery(self.loc_1).val() !== '0'){
+			jQuery(self.loc_2).attr('disabled', false).parent().removeClass('active')
 		}
 
-		jQuery(document.body).on('change', '.qs_carproducer', function() {
-			var widget = jQuery(this).closest('.quicksearch-container');
+		body.on('change', self.make, function() {
+			var widget = jQuery(this).closest(self.searchContainer);
 			self.load_models(widget);
 		});
 
-		jQuery(document.body).on('click', '.car_adv_search_btn', function() {
+		body.on('click', self.advSearchBtn, function() {
 
 			var button = jQuery(this),
-				widget = jQuery(this).closest('.quicksearch-container');
+				widget = button.closest(self.searchContainer),
+				advSearch = widget.find(self.advSearchPanel);
 
-			widget.find('.car_adv_search').slideToggle(400, function() {
+			advSearch.slideToggle(400, function() {
 				if (jQuery(this).hasClass("hide")) {
 					jQuery(this).removeClass('hide').addClass('show');
 					button.parent().addClass('active');
@@ -269,21 +292,22 @@ function TmmQuickSearchApp() {
 			return false;
 		});
 
-		jQuery(".submit-search").on('click', function(e) {
+		jQuery(self.btnSubmit).on('click', function(e) {
 			e.preventDefault();
-			var widget = jQuery(this).closest('.quicksearch-container');
+			var widget = jQuery(this).closest(self.searchContainer);
 			self.search(widget);
 			return false;
 		});
+	},
 
+	load_producers(widget) {
 
-	};
+		const self = this;
 
-	this.load_producers = (widget) => {
-
-		var car_producer = widget.find('.qs_carproducer'),
-			car_model = widget.find('.qs_carmodel'),
-			car_location = widget.find('.qs_carlocation0'),
+		var make = widget.find(self.make),
+			model = widget.find(self.model),
+			locations = widget.find(self.locs),
+			car_location = widget.find(self.loc_0),
 			car_location_id = car_location.val(),
 			selected_region_id = 0,
 			level = 0,
@@ -291,11 +315,11 @@ function TmmQuickSearchApp() {
 			loader = widget.find('.form_load_area');
 
 		//loader.show();
-		self.clear_select(car_model);
-		car_producer.attr('disabled', true);
-		car_model.attr('disabled', true);
+		self.clear_select(model);
+		make.attr('disabled', true);
+		model.attr('disabled', true);
 
-		widget.find('.carlocations').each(function() {
+		locations.each(function() {
 			var $this = jQuery(this);
 			if ($this.attr('type') == 'hidden') {
 				region_id = $this.val();
@@ -327,10 +351,10 @@ function TmmQuickSearchApp() {
 					loader.show();
 				},
 				success: function(response) {
-					self.clear_select(car_producer);
-					self.clear_select(car_model);
-					car_producer.append(response).attr('disabled', false);
-					car_model.attr('disabled', true);
+					self.clear_select(make);
+					self.clear_select(model);
+					make.append(response).attr('disabled', false);
+					model.attr('disabled', true);
 				},
 				error: function (xhr, ajaxOptions, thrownError) {
 					console.log(xhr);
@@ -338,21 +362,23 @@ function TmmQuickSearchApp() {
 				}
 			})
 		).then(function(){
-			console.log('done with loading car makes...');
-			if(typeof jQuery.fn.select2 === 'function' && car_producer.is('select')){
-				car_producer.select2({
+			// console.log('done with loading car makes...');
+			if(typeof jQuery.fn.select2 === 'function' && make.is('select')){
+				make.select2({
 					width: '100%',
 					language: tmm_l10n.any
 				});
 			}
 			loader.hide();
 		});
-	};
+	},
 
-	this.load_models = (widget) => {
-		var car_producer_id = widget.find('.qs_carproducer').val(),
-			car_model = widget.find('.qs_carmodel'),
-			car_location_id = widget.find('.qs_carlocation0').val(),
+	load_models(widget) {
+		const self = this;
+		var car_producer_id = widget.find(self.make).val(),
+			car_model = widget.find(self.model),
+			locations = widget.find(self.locs),
+			car_location_id = widget.find(self.loc_0).val(),
 			selected_region_id = 0,
 			level = 0,
 			loader = widget.find('.form_load_area'),
@@ -367,11 +393,11 @@ function TmmQuickSearchApp() {
 			return;
 		}
 
-		widget.find('.carlocations').each(function(index, obj) {
-			$this = jQuery(obj);
-			if($this.attr('type') == 'hidden'){
+		locations.each(function (index, obj) {
+			var $this = jQuery(obj);
+			if ($this.attr('type') === 'hidden') {
 				region_id = $this.val();
-			}else{
+			} else {
 				region_id = $this.find('option:selected').val();
 			}
 
@@ -409,7 +435,7 @@ function TmmQuickSearchApp() {
 				}
 			})
 		).then(function(){
-			console.log('done with loading models...');
+			// console.log('done with loading models...');
 			if(typeof jQuery.fn.select2 === 'function' && car_model.is('select')){
 				car_model.select2({
 					width: '100%',
@@ -418,9 +444,10 @@ function TmmQuickSearchApp() {
 			}
 			loader.hide();
 		});
-	};
+	},
 
-	this.load_locations = (parent_id, level, widget) => {//level 0 is top region
+	load_locations(parent_id, level, widget) {//level 0 is top region
+		const self = this;
 		const loader = widget.find('.form_load_area');
 		const locationSelectorClass = '.qs_carlocation' + (level + 1);
 		const locationSelector = jQuery(locationSelectorClass);
@@ -450,7 +477,7 @@ function TmmQuickSearchApp() {
 				}
 			})
 		).then(function(){
-			console.log('done with loading location level_' + level + '...');
+			// console.log('done with loading location level_' + level + '...');
 			if(typeof jQuery.fn.select2 === 'function' && locationSelector.is('select')){
 				locationSelector.select2({
 					width: '100%',
@@ -462,16 +489,17 @@ function TmmQuickSearchApp() {
 		});
 
 		self.load_producers(widget);
-	};
+	},
 
-	this.search = (widget) => {
+	search(widget) {
+		const self = this;
 		var form = widget.find(".car_form_search"),
 			action_link = form.attr('action'),
 			main_params_object = {
 				car_condition: widget.find(".qs_condition").length ? widget.find(".qs_condition").val() : '0',
 				carlocation: '0',
-				carproducer: widget.find(".qs_carproducer").length ? widget.find('.qs_carproducer').val() : '0',
-				carmodels: widget.find(".qs_carmodel").length ? widget.find('.qs_carmodel').val() : '0',
+				carproducer: widget.find(self.make).length ? widget.find(self.make).val() : '0',
+				carmodels: widget.find(self.model).length ? widget.find(self.model).val() : '0',
 				car_price_min: widget.find("[name=car_price_min]").length ? widget.find("[name=car_price_min]").val() : '0',
 				car_price_max: widget.find("[name=car_price_max]").length ? widget.find("[name=car_price_max]").val() : '0',
 				car_year_from: widget.find("[name=car_year_from]").length ? widget.find("[name=car_year_from]").val() : '0',
@@ -486,9 +514,9 @@ function TmmQuickSearchApp() {
 				car_mileage_to: widget.find("[name=car_mileage_to]").length ? widget.find("[name=car_mileage_to]").val() : '0'
 			},
 			carlocations = [
-				widget.find('.qs_carlocation0').length ? widget.find('.qs_carlocation0').val() : '0',
-				widget.find('.qs_carlocation1').length ? widget.find('.qs_carlocation1').val() : '0',
-				widget.find('.qs_carlocation2').length ? widget.find('.qs_carlocation2').val() : '0'
+				widget.find(self.loc_0).length ? widget.find(self.loc_0).val() : '0',
+				widget.find(self.loc_1).length ? widget.find(self.loc_1).val() : '0',
+				widget.find(self.loc_2).length ? widget.find(self.loc_2).val() : '0'
 			],
 			i = 0;
 
@@ -527,19 +555,24 @@ function TmmQuickSearchApp() {
 		}
 
 		return true;
-	};
+	},
 
-	this.clear_select = (select) => {
-		select.each(function(){
-			if(jQuery(select).hasClass('qs_carlocation0')) {
-				jQuery(this).val(0).html('<option value="0">' + tmm_l10n.country + '</option>');
-			} else if(jQuery(select).hasClass('qs_carlocation1')) {
-				jQuery(this).val(0).html('<option value="0">' + tmm_l10n.region + '</option>');
-			} else if(jQuery(select).hasClass('qs_carlocation2')) {
-				jQuery(this).val(0).html('<option value="0">' + tmm_l10n.city + '</option>');
+	clear_select(select) {
+		const o = this;
+
+		select.each(function () {
+			const val = jQuery(this).val(0);
+			const sel = jQuery(select);
+
+			if (sel.is(o.loc_0)) {
+				val.html('<option value="0">' + tmm_l10n.country + '</option>');
+			} else if (sel.is(o.loc_1)) {
+				val.html('<option value="0">' + tmm_l10n.region + '</option>');
+			} else if (sel.is(o.loc_2)) {
+				val.html('<option value="0">' + tmm_l10n.city + '</option>');
 			} else {
-				jQuery(this).val(0).html('<option value="0">' + tmm_l10n.any + '</option>');
+				val.html('<option value="0">' + tmm_l10n.any + '</option>');
 			}
 		});
-	};
+	}
 }

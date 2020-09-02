@@ -7,11 +7,11 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'text',
-				'title' => __('Dealers Number', 'tmm_content_composer'),
+				'title' => esc_html__('Dealers Number', 'tmm_content_composer'),
 				'shortcode_field' => 'user_number',
 				'id' => 'user_number',
 				'default_value' => TMM_Content_Composer::set_default_value('user_number', 9),
-				'description' => '',
+				'description' => esc_html__('Minimum 5 dealers will be displayed.', 'tmm_content_composer'),
 			));
 			?>
 
@@ -22,13 +22,13 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Display Order', 'tmm_content_composer'),
+				'title' => esc_html__('Display Order', 'tmm_content_composer'),
 				'shortcode_field' => 'order',
 				'id' => 'order',
 				'options' => array(
-					'DESC' => __('Latest First', 'tmm_content_composer'),
-					'ASC' => __('Oldest First', 'tmm_content_composer'),
-					'random' => __('Random', 'tmm_content_composer')
+					'DESC' => esc_html__('Latest First', 'tmm_content_composer'),
+					'ASC' => esc_html__('Oldest First', 'tmm_content_composer'),
+					'random' => esc_html__('Random', 'tmm_content_composer')
 				),
 				'default_value' => TMM_Content_Composer::set_default_value('order', 'DESC'),
 				'description' => ''
@@ -42,9 +42,9 @@
 			<?php
 			$packets = TMM_Cardealer_User::get_user_roles();
 			$dealer_types = array(
-				'0' => __('All', 'tmm_content_composer'),
-				'1' => __('All without Administrator', 'tmm_content_composer'),
-				'administrator' => __('Administrator', 'tmm_content_composer'),
+				'0' => esc_html__('All', 'tmm_content_composer'),
+				'1' => esc_html__('All without Administrator', 'tmm_content_composer'),
+				'administrator' => esc_html__('Administrator', 'tmm_content_composer'),
 			);
 
 			foreach ($packets as $key => $value) {
@@ -53,7 +53,7 @@
 
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Dealer Type', 'tmm_content_composer'),
+				'title' => esc_html__('Dealer Type', 'tmm_content_composer'),
 				'shortcode_field' => 'dealer_type',
 				'id' => 'dealer_type',
 				'css_classes' => 'widget_dealer_type',
@@ -70,7 +70,7 @@
 			<?php
 			$dealer_type = TMM_Content_Composer::set_default_value('dealer_type', '0');
 			$dealers = array(
-				'' => __('All', 'tmm_content_composer'),
+				'' => esc_html__('All', 'tmm_content_composer'),
 			);
 
 			$args = array();
@@ -89,7 +89,7 @@
 
 			TMM_Content_Composer::html_option(array(
 				'type' => 'select',
-				'title' => __('Specific Dealer', 'tmm_content_composer'),
+				'title' => esc_html__('Specific Dealer', 'tmm_content_composer'),
 				'shortcode_field' => 'specific_dealer',
 				'id' => 'specific_dealer',
 				'css_classes' => 'widget_specific_dealer',
@@ -107,7 +107,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Dealer Logo', 'tmm_content_composer'),
+				'title' => esc_html__('Display Dealer Logo', 'tmm_content_composer'),
 				'shortcode_field' => 'show_dealer_logo',
 				'id' => 'show_dealer_logo',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_dealer_logo', 1),
@@ -125,7 +125,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Dealer Bio', 'tmm_content_composer'),
+				'title' => esc_html__('Display Dealer Bio', 'tmm_content_composer'),
 				'shortcode_field' => 'show_dealer_bio',
 				'id' => 'show_dealer_bio',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_dealer_bio', 1),
@@ -140,7 +140,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Phone', 'tmm_content_composer'),
+				'title' => esc_html__('Display Phone', 'tmm_content_composer'),
 				'shortcode_field' => 'show_phone',
 				'id' => 'show_phone',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_phone', 1),
@@ -155,7 +155,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Cell Phone', 'tmm_content_composer'),
+				'title' => esc_html__('Display Cell Phone', 'tmm_content_composer'),
 				'shortcode_field' => 'show_mobile',
 				'id' => 'show_mobile',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_mobile', 1),
@@ -170,7 +170,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Fax', 'tmm_content_composer'),
+				'title' => esc_html__('Display Fax', 'tmm_content_composer'),
 				'shortcode_field' => 'show_fax',
 				'id' => 'show_fax',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_fax', 1),
@@ -185,7 +185,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Email', 'tmm_content_composer'),
+				'title' => esc_html__('Display Email', 'tmm_content_composer'),
 				'shortcode_field' => 'show_email',
 				'id' => 'show_email',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_email', 1),
@@ -200,7 +200,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Skype ID', 'tmm_content_composer'),
+				'title' => esc_html__('Display Skype ID', 'tmm_content_composer'),
 				'shortcode_field' => 'show_skype',
 				'id' => 'show_skype',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_skype', 1),
@@ -215,7 +215,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Website Url', 'tmm_content_composer'),
+				'title' => esc_html__('Display Website Url', 'tmm_content_composer'),
 				'shortcode_field' => 'show_site',
 				'id' => 'show_site',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_site', 1),
@@ -230,7 +230,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Postal Address', 'tmm_content_composer'),
+				'title' => esc_html__('Display Postal Address', 'tmm_content_composer'),
 				'shortcode_field' => 'show_address',
 				'id' => 'show_address',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_address', 1),
@@ -245,7 +245,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
-				'title' => __('Display Map Location', 'tmm_content_composer'),
+				'title' => esc_html__('Display Map Location', 'tmm_content_composer'),
 				'shortcode_field' => 'show_map',
 				'id' => 'show_map',
 				'is_checked' => TMM_Content_Composer::set_default_value('show_map', 1),
@@ -260,7 +260,7 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'text',
-				'title' => __('Excerpt Bio symbol count', 'tmm_content_composer'),
+				'title' => esc_html__('Excerpt Bio symbol count', 'tmm_content_composer'),
 				'shortcode_field' => 'dealer_bio_symbols_count',
 				'id' => 'dealer_bio_symbols_count',
 				'default_value' => TMM_Content_Composer::set_default_value('dealer_bio_symbols_count', 100),

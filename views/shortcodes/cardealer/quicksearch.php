@@ -127,6 +127,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 
 	<form class="car_form_search" action="<?php echo esc_attr( $searching_page ) ?>">
 
+        <?php if (!TMM::get_option('locations_hide_location_fields', TMM_APP_CARDEALER_PREFIX)) { ?>
 		<!-- Location -->
 		<div class="fieldset">
 			<label><?php esc_html_e("Location", 'tmm_content_composer') ?></label>
@@ -202,6 +203,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 			}
 			?>
 		</div>
+        <?php } ?>
 
 		<!-- Condition -->
 		<?php if (!empty($show_condition)) {
