@@ -32,11 +32,11 @@ $makes = get_terms($args);
 if (!isset($show_name)) {
 	$show_name = 1;
 }
-var_dump($logos_list);
+//var_dump($logos_list);
 
 usort($makes);
 
-var_dump($makes);
+//var_dump($makes);
 
 ?>
 
@@ -45,7 +45,7 @@ var_dump($makes);
 	<?php
 	foreach ($makes as $make){
 
-		var_dump($make->term_id);
+//		var_dump($make->term_id);
 
 		$image_name = strtolower($make->name);
 		$image_name = preg_replace( array('/\s/', '/ë/'), array('_', 'e'), $image_name );
