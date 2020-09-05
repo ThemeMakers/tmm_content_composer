@@ -21,8 +21,8 @@ if (TMM::get_option("api_key_google")){
         $geocode = file_get_contents('https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&' . $google_maps_api_key);
         $output = json_decode($geocode, true);
 
-        $latitude = '';
-        $longitude = '';
+        $latitude = 0;
+        $longitude = 0;
 
         // if latitude & longitude does not defined by user
         if ($output) {
@@ -30,7 +30,7 @@ if (TMM::get_option("api_key_google")){
                 $latitude = $output['results'][0]['geometry']['location']['lat'];
                 $longitude = $output['results'][0]['geometry']['location']['lng'];
             } else {
-                printf( $output['error_message'] );
+                printf( '<p class="info w-50">' . $output['error_message'] . '</p>' );
             }
         } else {
             printf( 'GPS coordinates were not available because connection failed or malformed request' );
@@ -53,26 +53,10 @@ if (TMM::get_option("api_key_google")){
 
 		<div class="google_map" id="google_map_<?php echo esc_attr( $inique_id ) ?>" style="height: <?php echo esc_attr( $height ) ?>px;"></div>
 
-        <?php if ($output['status'] == 'OK') { ?>
-		<script type="text/javascript">
-			jQuery(function() {
-				gmt_init_map(
-                    <?php echo esc_attr($latitude) ?>,
-                    <?php echo esc_attr($longitude) ?>,
-                    "google_map_<?php echo esc_attr($inique_id) ?>",
-                    <?php echo esc_attr($zoom) ?>,
-                    "<?php echo esc_attr($maptype) ?>",
-                    "<?php echo esc_attr($content) ?>",
-                    "<?php echo esc_attr($enable_marker) ?>",
-                    "<?php echo esc_attr($enable_popup) ?>",
-                    "<?php echo esc_attr($enable_scrollwheel) ?>",
-                    <?php echo esc_attr($js_controls) ?>,
-                    "<?php echo esc_attr($marker_is_draggable) ?>"
-                );
-			});
+		<script>
+			jQuery(function() {gmt_init_map(<?php echo wp_kses_post( $latitude . ',' . $longitude . ',' . '"google_map_' . $inique_id . '",' . $zoom . ',' . '"' . $maptype . '",' . '"' . $content . '",' . '"' . $maptype . '",' . '"' . $enable_marker . '",' . '"' . $enable_popup . '",' . '"' . $enable_scrollwheel . '",' . '"' . $js_controls . '",' . '"' . $marker_is_draggable . '"' ) ?>)});
 		</script>
         <?php
-        }
 	} else {
 		$marker_string = '';
 		if ($enable_marker) {
