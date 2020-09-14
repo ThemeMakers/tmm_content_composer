@@ -18,7 +18,7 @@ if ( !function_exists( 'get_terms' ) ) {
 $args = array(
 	'taxonomy'         => 'carproducer',
 	'orderby'          => 'none',
-//	'order'            => 'ASC',
+	'order'            => 'ASC',
 	'include'          => $logos_list,
 	'hide_empty'       => $hide_empty,
 	'fields'           => 'all',
@@ -34,7 +34,7 @@ if (!isset($show_name)) {
 }
 //var_dump($logos_list);
 
-usort($makes);
+//usort($makes);
 
 //var_dump($makes);
 
