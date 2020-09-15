@@ -7,7 +7,7 @@ var TMM_APP_SHORTCODES = function() {
 				return this;
 			};
 			//***
-			if (!jQuery("#tmm_shortcodes_html_buffer").size()) {
+			if (!jQuery("#tmm_shortcodes_html_buffer").length) {
 				jQuery('body').append('<div id="tmm_shortcodes_html_buffer" style="display: none;"></div>');
 			}
 			self.html_buffer = jQuery("#tmm_shortcodes_html_buffer");
