@@ -630,7 +630,7 @@
             _is_rows_exists: function() {
                 
                 var rows_wrapper = $("#tmm_lc_rows"),
-                    rows_count = rows_wrapper.find('li').size();
+                    rows_count = rows_wrapper.find('li').length;
                 if (rows_count === 0) {
                     rows_wrapper.hide();
                 } else {
