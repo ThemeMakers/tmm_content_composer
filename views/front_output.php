@@ -82,6 +82,8 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			$padding_top = (isset($tmm_layout_constructor_row[$row]['padding_top'])) ? $tmm_layout_constructor_row[$row]['padding_top'] : 0;
 			$padding_bottom = (isset($tmm_layout_constructor_row[$row]['padding_bottom'])) ? $tmm_layout_constructor_row[$row]['padding_bottom'] : 0;
 			$align  = (isset($tmm_layout_constructor_row[$row]['row_align'])) ? $tmm_layout_constructor_row[$row]['row_align'] : '';
+            $bg_attachment = !empty($tmm_layout_constructor_row[$row]['bg_attachment']) ? ' bg_attachment' : '';
+            $bg_attachment_fixed = !empty($tmm_layout_constructor_row[$row]['bg_attachment']) ? ' full-bg-image-fixed' : '';
 
 			$row_class = 'tmm_row';
 
@@ -128,7 +130,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 
 					if (isset($row_style['bg_type']) && $row_style['bg_type'] == 'custom' && $tmm_layout_constructor_row[$row]['bg_custom_type']=='image'){
 						?>
-						<div style="<?php echo (!empty($tmm_layout_constructor_row[$row]['bg_image'])) ? 'background-image: url(' . $tmm_layout_constructor_row[$row]["bg_image"] . ');' : ''; ?>" class="full-bg-image full-bg-image-<?php echo $tmm_layout_constructor_row[$row]['bg_attachment'] ?>"></div>
+						<div style="<?php echo (!empty($tmm_layout_constructor_row[$row]['bg_image'])) ? 'background-image: url(' . $tmm_layout_constructor_row[$row]["bg_image"] . ');' : ''; ?>" class="full-bg-image full-bg-image-<?php echo $bg_attachment ?>"></div>
 					<?php
 					}
 					?>

@@ -102,12 +102,12 @@ if ($gallery_type === 'albums') {
 			<div class="filter-container">
 				<ul id="portfolio_filter_<?php echo $uniqid; ?>" class="portfolio-filter">
 
-					<li><a class="filter active" data-filter="all"><?php _e('All', TMM_CC_TEXTDOMAIN); ?></a></li>
+					<li><a class="filter" data-filter="all"><?php _e('All', TMM_CC_TEXTDOMAIN); ?></a></li>
 
 					<?php if (!empty($folio_tags)): ?>
 						<?php foreach ($folio_tags as $term_id => $tag) : ?>
 							<?php if (empty($gal_category) || in_array($term_id, $gal_category)): ?>
-								<li><a class="filter" data-filter=".<?php echo $tag->slug ?>"><?php _e($tag->name, TMM_CC_TEXTDOMAIN); ?></a></li>
+								<li><a class="filter" data-filter=".y<?php echo esc_attr( $tag->slug ) ?>"><?php esc_html_e( $tag->name, TMM_CC_TEXTDOMAIN ); ?></a></li>
 							<?php endif; ?>
 						<?php endforeach; ?>
 					<?php endif; ?>
@@ -117,7 +117,7 @@ if ($gallery_type === 'albums') {
 
 		<?php } ?>
 
-		<section id="portfolio_items_<?php echo $uniqid; ?>" class="portfolio-items popup-gallery col-<?php echo $layout ?>" data-display="<?php echo $display_images ?>">
+		<section id="portfolio_items_<?php echo esc_attr( $uniqid ) ?>" class="portfolio-items popup-gallery col-<?php echo esc_attr( $layout ) ?>" data-display="<?php echo esc_attr( $display_images ) ?>">
 
 			<?php
 			foreach ($gal_images as $key => $image) {
