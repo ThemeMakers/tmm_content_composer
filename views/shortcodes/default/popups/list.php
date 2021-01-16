@@ -200,7 +200,7 @@
 
 		//***
 		tmm_ext_shortcodes.list_changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").life('keyup change', function() {
+		jQuery('#tmm_shortcode_template').on('keyup change', '.js_shortcode_template_changer', function() {
 			tmm_ext_shortcodes.list_changer(shortcode_name);
 		});
 
@@ -231,7 +231,8 @@
 			return false;
 		});
 
-		jQuery(".js_delete_list_item").life('click',function() {
+		jQuery(document.body).on('click', '.js_delete_list_item', function(e) {
+		    e.preventDefault();
 			if (jQuery(".list_item").length > 1) {
 				jQuery(this).parents('li').hide(200, function() {
 					jQuery(this).remove();
@@ -242,7 +243,7 @@
 			return false;
 		});
 
-		jQuery(".list_item_style").life('change', function() {
+		jQuery(document.body).on('change', '.list_item_style', function() {
 			jQuery(this).parents('li').find('i').removeAttr('class').addClass(jQuery(this).val());
 			tmm_ext_shortcodes.list_changer(shortcode_name);
 		});

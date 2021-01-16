@@ -262,13 +262,13 @@
 			tmm_ext_shortcodes.price_table_changer(shortcode_name);
 		});
 
-		jQuery("#price_tables_list").find("input").life('keyup', function() {
+		jQuery("#price_tables_list").on('keyup', 'input', function() {
 			tmm_ext_shortcodes.price_table_changer(shortcode_name);
 		});
 
 		//***
 
-		jQuery("#price_tables_list").life('click', '.featured_price_list', function() {
+		jQuery("#price_tables_list").on('click', '.featured_price_list', function() {
 			if (jQuery(this).is(":checked")) {
 				jQuery(this).val(1);
 			} else {

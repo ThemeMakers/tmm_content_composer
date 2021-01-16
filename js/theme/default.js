@@ -1,11 +1,5 @@
 (function ($) {
 
-    $.fn.life = function(types, data, fn) {
-        "use strict";
-        $(this.context).on(types, this.selector, data, fn);
-        return this;
-    };
-
     /* ---------------------------------------------------- */
     /*	Effect												*/
     /* ---------------------------------------------------- */

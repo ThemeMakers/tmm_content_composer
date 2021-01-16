@@ -395,7 +395,7 @@
 
 		cahangeExcerpt(showExcerpt.is(':checked'));
 
-		showExcerpt.life('change', function(){
+		showExcerpt.on('change', function(){
 			var val = jQuery(this).is(':checked');
 			cahangeExcerpt(val);
 		});

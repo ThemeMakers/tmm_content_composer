@@ -1,13 +1,14 @@
 (function($) {
 
-    $(function() {
+    (function() {
         var self;
-
         if(typeof tmm_lang !== 'undefined') {
+
             tinymce.create("tinymce.plugins.tmm_tiny_shortcodes", {
                 sc_info: {},
-                init: function(ed, url) {
+                init: function (ed, url) {
                     self = this;
+                    // console.log('ddd', ed);
 
                     ed.addButton('tmm_shortcodes', {
                         title: tmm_lang['shortcode_insert'],
@@ -76,6 +77,7 @@
                         var sc_id = $(e.target).data('scid');
 
                         if ((tag != undefined) && (sc_id != undefined)) {
+                            console.log('sss');
                             window.parent.tinyMCE.get(self.get_active_editor()).plugins.tmm_tiny_shortcodes.edit_shortcode(tag, sc_id);
                         } else {
                             return false;
@@ -85,7 +87,6 @@
 
                     ed.on("BeforeSetContent", function(ed, o) {
                         ed.content = self.toHTML(ed.content);
-
                     });
 
                     ed.on("PostProcess", function(ed, o) {
@@ -220,7 +221,6 @@
                 get_active_editor: function() {
                     return tinyMCE.activeEditor.id;
                 },
-
                 cache: function(key, val) {
                     if (key && !val)
                         return self.sc_info[key] || null;
@@ -294,12 +294,12 @@
                 getId: function() {
                     return 'sc' + tmm_uniqid();
                 }
-
             });
 
             tinymce.PluginManager.add("tmm_tiny_shortcodes", tinymce.plugins.tmm_tiny_shortcodes);
+
         }
 
-    });
+    })();
 
 }(jQuery));

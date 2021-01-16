@@ -11,8 +11,8 @@ class TMM_Content_Composer {
 
 		add_action('add_meta_boxes', array(__CLASS__, 'add_meta_box'));
 
-		add_filter('mce_buttons', array(__CLASS__, 'mce_buttons'));
-		add_filter('mce_external_plugins', array(__CLASS__, 'mce_add_plugin'));
+		add_filter('mce_external_plugins', array(__CLASS__, 'tmm_add_mce_plugins'));
+		add_filter('mce_buttons', array(__CLASS__, 'tmm_register_mce_buttons'));
 		add_filter('mce_css', array(__CLASS__, 'mce_css'));
 
 		add_action('admin_enqueue_scripts', array(__CLASS__, 'admin_enqueue_scripts'), 1);
@@ -141,13 +141,12 @@ class TMM_Content_Composer {
 		wp_enqueue_script('tmm_layout_constructor', TMM_CC_URL . 'js/front.min.js', array('jquery'), false, true);
 	}
 
-	public static function mce_buttons($buttons) {
-		$buttons[] = 'tmm_shortcodes';
-		$buttons[] = 'code';
+	public static function tmm_register_mce_buttons($buttons) {
+        array_push( $buttons, 'tmm_shortcodes', 'code' );
 		return $buttons;
 	}
 
-	public static function mce_add_plugin($plugin_array) {
+	public static function tmm_add_mce_plugins($plugin_array) {
 		$plugin_array['tmm_tiny_shortcodes'] = TMM_CC_URL . 'js/admin/editor.js';
 		return $plugin_array;
 	}

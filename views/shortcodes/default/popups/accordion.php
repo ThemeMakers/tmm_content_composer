@@ -97,7 +97,8 @@
 			return false;
 		});
 
-		jQuery(".js_delete_accordion_item").life('click',function() {
+		jQuery(document.body).on('click','.js_delete_accordion_item', function(e) {
+		    e.preventDefault();
 			if (jQuery(".list_item").length > 1) {
 				jQuery(this).parents('li').hide(200, function() {
 					jQuery(this).remove();
