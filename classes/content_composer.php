@@ -133,6 +133,7 @@ class TMM_Content_Composer {
 
 			$translation_array = array(
 				'ajaxurl' => admin_url('admin-ajax.php'),
+                'is_rtl' => is_rtl() ? 'rtl' : 'ltr',
 			);
 			wp_localize_script('tmm_composer_theme', 'tmm_l10n', $translation_array);
 

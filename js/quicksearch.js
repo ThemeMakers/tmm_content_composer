@@ -36,7 +36,7 @@ jQuery(document).ready(function() {
 			).then(function () {
 				// console.log('done with loading countries...');
 				if(typeof jQuery.fn.select2 === 'function' && loc_0.is('select')){
-					loc_0.select2();
+					loc_0.select2({dir: tmm_l10n.is_rtl});
 				}
 
 				if(loc_0.is('select')) {
@@ -73,7 +73,7 @@ jQuery(document).ready(function() {
 			).then(function () {
 				// console.log('done with loading regions...');
 				if(typeof jQuery.fn.select2 === 'function' && loc_1.is('select')){
-					loc_1.select2();
+					loc_1.select2({dir: tmm_l10n.is_rtl});
 				}
 
 				if(!loc_0.is('select')) {
@@ -109,7 +109,7 @@ jQuery(document).ready(function() {
 			).then(function () {
 				// console.log('done with loading cities...');
 				if(typeof jQuery.fn.select2 === 'function' && loc_2.is('select')){
-					loc_2.select2();
+					loc_2.select2({dir: tmm_l10n.is_rtl});
 				}
 
 				if(!loc_0.is('select') || !loc_1.is('select')) {
@@ -147,7 +147,7 @@ jQuery(document).ready(function() {
 			).then(function () {
 				// console.log('done with loading car makes...');
 				if(typeof jQuery.fn.select2 === 'function' && $make.is('select')){
-					$make.select2();
+					$make.select2({dir: tmm_l10n.is_rtl});
 				}
 
 				if(!loc_0.is('select') || !loc_1.is('select') || !loc_2.is('select') || $make.is('select')) {
@@ -185,7 +185,7 @@ jQuery(document).ready(function() {
 			).then(function () {
 				// console.log('done with loading car models...');
 				if(typeof jQuery.fn.select2 === 'function' && $model.is('select')){
-					$model.select2();
+					$model.select2({dir: tmm_l10n.is_rtl});
 				}
 			});
 
@@ -193,8 +193,8 @@ jQuery(document).ready(function() {
 
 		/* apply select2 to year fields */
 		if(typeof jQuery.fn.select2 === 'function'){
-			yrFrom.select2();
-			yrTo.select2();
+			yrFrom.select2({dir: tmm_l10n.is_rtl});
+			yrTo.select2({dir: tmm_l10n.is_rtl});
 		}
 
 		var app = new TmmQuickSearchApp();
@@ -366,6 +366,7 @@ TmmQuickSearchApp.prototype = {
 			if(typeof jQuery.fn.select2 === 'function' && make.is('select')){
 				make.select2({
 					width: '100%',
+					dir: tmm_l10n.is_rtl,
 					language: tmm_l10n.any
 				});
 			}
@@ -439,6 +440,7 @@ TmmQuickSearchApp.prototype = {
 			if(typeof jQuery.fn.select2 === 'function' && car_model.is('select')){
 				car_model.select2({
 					width: '100%',
+					dir: tmm_l10n.is_rtl,
 					language: tmm_l10n.any
 				});
 			}
@@ -481,6 +483,7 @@ TmmQuickSearchApp.prototype = {
 			if(typeof jQuery.fn.select2 === 'function' && locationSelector.is('select')){
 				locationSelector.select2({
 					width: '100%',
+					dir: tmm_l10n.is_rtl,
 					language: tmm_l10n.site_locale,
 					minimumInputLength: (level==2) ? 3 : 0
 				});
