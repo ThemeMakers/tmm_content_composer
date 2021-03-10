@@ -239,8 +239,8 @@ class TMM_Content_Composer {
 
 	public static function get_theme_buttons() {
 		$buttons = array(
-			'default' => __('Default Grey', 'tmm_content_composer'),
-			'orange' => __('Orange', 'tmm_content_composer')
+			'default' => esc_html__('Secondary Button', 'tmm_content_composer'),
+			'primary-button' => esc_html__('Primary Button', 'tmm_content_composer')
 		);
 
 		return $buttons;

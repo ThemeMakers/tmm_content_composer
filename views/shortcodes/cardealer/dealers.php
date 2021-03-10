@@ -4,16 +4,20 @@ global $wpdb;
 $users = array();
 
 if (!isset($user_number)) {
+    $user_number = 5;
+} else {
     if ($user_number <= 0) {
         $user_number = 5;
     }
 }
 
+$order = isset($order) ? $order : 'ASC';
+
 $author__in = array();
 
 $args = array(
 	'orderby' => 'registered',
-	'order' => ($order != 'random' ? $order : 'ASC'),
+	'order' => $order,
 	'number' => $user_number,
 	'paged' => '1'
 );
@@ -56,6 +60,7 @@ if($order == 'random'){
 	$users_per_page = 10;
 
 	$args = array(
+	    'dealer_type' => $dealer_type,
 		'number' => $users_per_page, // How many per page
 		'paged' => $current_page // What page to get, starting from 1.
 	);
@@ -78,15 +83,13 @@ if($order == 'random'){
 
 	<?php if ( $u_query->get_results() ) foreach( $u_query->get_results() as $user_data )  {
 
-		if (empty($user_data)) {
+		if ($dealer_type != $user_data->roles[0] || $dealer_type = 'all') {
 			continue;
 		}
 
 		$dealers_page = TMM_Helper::get_permalink_by_lang( TMM::get_option('dealers_page', TMM_APP_CARDEALER_PREFIX), array('dealer_id' => $user_data->ID), true );
 		$logo_url = TMM_Cardealer_User::get_user_logo_url( $user_data->ID );
-		$ud = get_userdata($user_data->ID)
-
-		?>
+		$ud = get_userdata($user_data->ID); ?>
 
 		<article class="row">
 

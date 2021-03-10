@@ -1,18 +1,14 @@
-<?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<div class="slider-container">
-<div class="row">
+<?php if (!defined('ABSPATH')) die('No direct access allowed');?>
 
-	<?php if ($show_sidebar && $sidebar_position === 'left') { ?>
-
-		<div class="col-md-4">
-
-			<?php if (function_exists('dynamic_sidebar') ) dynamic_sidebar('cars_slider_sidebar'); ?>
-
-		</div>
-
-	<?php } ?>
+    <div class="fsl-position fsl-position-<?php echo esc_attr($sidebar_position === 'right' ? 'left' : 'right') ?>" >
 
 	<?php
+    if ($show_sidebar && $sidebar_position === 'left') {
+
+        if (function_exists('dynamic_sidebar') ) dynamic_sidebar('cars_slider_sidebar');
+
+	}
+
 	if ($slider_type == 0) {
 
 		wp_enqueue_script('tmm_flexslider');
@@ -23,7 +19,7 @@
 		if (!empty($featured_cars)) {
 			?>
 
-			<div id="<?php echo esc_attr( $slider_id ) ?>" class="flexslider clearfix <?php echo esc_attr( $show_sidebar ? 'col-md-8' : 'col-xs-12' ) ?>">
+			<div id="<?php echo esc_attr( $slider_id ) ?>" class="flexslider clearfix <?php echo esc_attr( $show_sidebar ? 'two-thirds' : '' ) ?>">
 
 				<ul class="slides">
 
@@ -142,12 +138,10 @@
 				);
 				?>
 
-				<script type="text/javascript">
-
+				<script>
 					jQuery(function() {
 						jQuery('#<?php echo esc_attr( $slider_id ) ?>').flexslider(<?php echo json_encode($slider_opts); ?>);
 					});
-
 				</script>
 
 			</div><!--/ #slider-->
@@ -158,7 +152,7 @@
 	} else {
 		?>
 
-		<div class="wrapper-slider <?php echo esc_attr( $show_sidebar ? 'col-md-8' : 'col-xs-12' ) ?>">
+		<div class="wrapper-slider">
 			<?php
 			$alias = TMM_Ext_PostType_Car::slider_image_size($show_sidebar, 1);
 			$options = array(
@@ -176,17 +170,14 @@
 			?>
 		</div>
 
-	<?php } ?>
+	<?php
+	}
 
-	<?php if ($show_sidebar && $sidebar_position !== 'left') { ?>
+	if ($show_sidebar && $sidebar_position !== 'left') {
 
-		<div class="col-md-4">
+        if (function_exists('dynamic_sidebar') ) dynamic_sidebar('cars_slider_sidebar');
 
-			<?php if (function_exists('dynamic_sidebar') ) dynamic_sidebar('cars_slider_sidebar'); ?>
+	}
+	?>
 
-		</div>
-
-	<?php } ?>
-
-</div><!--/ .row-->
-</div><!--/ .slider-container-->
+	</div>

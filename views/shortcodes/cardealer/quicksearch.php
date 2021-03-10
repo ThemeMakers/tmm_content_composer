@@ -119,7 +119,7 @@ $uniqid = uniqid();
 $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_unit() : 'miles');
 ?>
 
-<div class="<?php echo esc_attr( $widget_class ) ?>" <?php echo wp_kses( $styles, array('style' => array()) ); ?>>
+<div class="<?php echo esc_attr( $widget_class ) ?>" <?php echo wp_kses_post( $styles ); ?>>
 
 	<div class="form_load_area">
 		<div class="cardealer-spinner"><div></div><div></div><div></div><div></div><div></div></div>
@@ -433,7 +433,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 
 			<?php } ?>
 
-			<input class="button orange submit-search" type="submit" value="<?php esc_html_e("Search", 'tmm_content_composer') ?>">
+			<input class="button primary-button submit-search" type="submit" value="<?php esc_html_e("Search", 'tmm_content_composer') ?>">
 
 		</div>
 
@@ -499,7 +499,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 
 			<div class="clearfix"></div>
 
-			<input class="button orange submit-search" type="submit" value="<?php esc_html_e("Search", 'tmm_content_composer') ?>">
+			<input class="button primary-button submit-search" type="submit" value="<?php esc_html_e("Search", 'tmm_content_composer') ?>">
 
 			<div class="clearfix"></div>
 

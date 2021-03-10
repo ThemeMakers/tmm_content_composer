@@ -54,7 +54,7 @@ $currency = class_exists('TMM_Ext_Car_Dealer') && isset(TMM_Ext_Car_Dealer::$def
 	<?php endif; ?>
 
 	<footer class="footer">
-		<a href="<?php echo $button_link ?>" class="button big orange"><?php echo $button_text ?></a>
+		<a href="<?php echo $button_link ?>" class="button big primary-button"><?php echo $button_text ?></a>
 	</footer><!--/.footer -->
 
 </div>

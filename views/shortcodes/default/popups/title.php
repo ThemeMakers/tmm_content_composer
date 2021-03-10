@@ -13,9 +13,6 @@
 		));
 		?>
 
-	</div><!--/ .one-half-->
-
-	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
@@ -34,9 +31,7 @@
 			'description' => ''
 		));
 		?>
-	</div><!--/ .one-half-->
 
-	<div class="one-half">
 		<?php
 		$font_size = array('' => __('Default', 'tmm_content_composer'));
 
@@ -55,9 +50,6 @@
 		));
 		?>
 
-	</div>
-
-	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
@@ -90,9 +82,7 @@
 			'description' => ''
 		));
 		?>
-	</div><!--/ .ona-half-->
 
-	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
@@ -120,9 +110,6 @@
 		));
 		?>
 
-	</div>
-
-	<div class="one-half">
 		<?php
 
 		TMM_Content_Composer::html_option(array(
@@ -136,9 +123,6 @@
 		));
 		?>
 
-	</div><!--/ .one-half-->
-
-	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'title' => __('Color', 'tmm_content_composer'),
@@ -149,9 +133,7 @@
 			'id' => ''
 		));
 		?>
-	</div>
 
-	<div class="one-half">
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',

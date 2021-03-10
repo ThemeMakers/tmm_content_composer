@@ -47,7 +47,7 @@
 				'options' => array(
 						'transparent' => __('Transparent', 'tmm_content_composer'),
 						'gray' => __('Gray', 'tmm_content_composer'),
-						'dark' => __('Dark', 'tmm_content_composer'),
+						'secondary-button' => __('Dark', 'tmm_content_composer'),
 				),
 				'default_value' => TMM_Content_Composer::set_default_value('color', 'gray'),
 				'description' => ''

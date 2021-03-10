@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 					'js/min/front.min.js': [
 						'js/front.js',
 						'js/select2.js',
+						// 'js/select2.full.js',
 						'js/quicksearch.js'
 					]
 				}

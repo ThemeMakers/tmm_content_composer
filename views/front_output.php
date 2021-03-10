@@ -209,7 +209,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 			<div class="<?php echo $container_class; ?>">
 		<?php } ?>
 
-				<div <?php if ($row_displaying === 'default') { ?>id="<?php echo 'section_'.$row ?>"<?php } ?> class="<?php echo $row_class; ?>"<?php echo $row_style_attr; ?>>
+				<div <?php if ($row_displaying === 'default') { ?>id="<?php echo 'section_'.$row ?>"<?php } ?> class="<?php echo wp_kses_post( $row_class ) ?>"<?php echo wp_kses_post( $row_style_attr ) ?>>
 
 					<?php foreach ($row_data as $uniqid => $column) { ?>
 
@@ -221,7 +221,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 							$col_class .= ' ' . $column['effect'];
 						}
 						?>
-						<div class="<?php echo $col_class ?>"><?php echo $content ?></div>
+						<div class="<?php echo wp_kses_post( $col_class ) ?>"><?php echo $content ?></div>
 
 					<?php } ?>
 

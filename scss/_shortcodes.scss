@@ -526,7 +526,7 @@ $car-body-title-color-hover						: #ff600a;
 	}
 
 	//	Orange color
-	&.orange {
+	&.primary-button {
 		color: $lc-button-orange-text-color;
 		background-color: $lc-button-orange-bg-color;
 		border-color: $lc-button-orange-border-color;
@@ -594,7 +594,7 @@ $car-body-title-color-hover						: #ff600a;
 		border-top-color: $lc-divider-color-gray;
 	}
 
-	&.dark {
+	&.secondary-button {
 		border-top-color: $lc-divider-color-dark;
 	}
 }
