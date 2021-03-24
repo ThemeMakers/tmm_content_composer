@@ -54,7 +54,19 @@ if (TMM::get_option("api_key_google")){
 		<div class="google_map" id="google_map_<?php echo esc_attr( $inique_id ) ?>" style="height: <?php echo esc_attr( $height ) ?>px;"></div>
 
 		<script>
-			jQuery(function() {gmt_init_map(<?php echo wp_kses_post( $latitude . ',' . $longitude . ',' . '"google_map_' . $inique_id . '",' . $zoom . ',' . '"' . $maptype . '",' . '"' . $content . '",' . '"' . $maptype . '",' . '"' . $enable_marker . '",' . '"' . $enable_popup . '",' . '"' . $enable_scrollwheel . '",' . '"' . $js_controls . '",' . '"' . $marker_is_draggable . '"' ) ?>)});
+			jQuery(function () {
+				gmt_init_map( <?php echo wp_kses_post($latitude.',
+					'.$longitude.',
+					"google_map_'.$inique_id.'",
+					'.$zoom.',
+					"'.$maptype.'",
+					"'.$content.'",
+					"'.$enable_marker.'",
+					"'.$enable_popup.'",
+					"'.$enable_scrollwheel.'",
+					"'.$js_controls.'",
+					"'.$marker_is_draggable.'"') ?> )
+			});
 		</script>
         <?php
 	} else {
