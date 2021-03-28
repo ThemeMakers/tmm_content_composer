@@ -144,9 +144,9 @@ class TMM_Content_Composer {
 
 		$tmm_lang = array(
 			'captcha_image_url' => get_template_directory_uri() . '/helper/capcha/image.php',
-			'wrong_field_value' => __('Please enter correct', 'tmm_content_composer'),
-			'success' => __('Your message has been sent successfully!', 'tmm_content_composer'),
-			'fail' => __('Server failed. Send later', 'tmm_content_composer'),
+			'wrong_field_value' => esc_html__('The following field is required', 'tmm_content_composer'),
+			'success' => esc_html__('Your message has been sent successfully.', 'tmm_content_composer'),
+			'fail' => esc_html__('Temporary server error. Please try again later.', 'tmm_content_composer'),
 		);
 
 		wp_register_script('tmm_composer_front', TMM_CC_URL . 'js/min/front.min.js', array('jquery'), false, true);

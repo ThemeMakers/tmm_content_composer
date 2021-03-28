@@ -262,3 +262,12 @@
 	83.25% {transform: translateY(1px);}
 	100% {transform: translateY(0);}
 }
+
+@include keyframes(spin) {
+	0% {
+		@include transform(rotate(0deg));
+	}
+	100% {
+		@include transform(rotate(359deg));
+	}
+}

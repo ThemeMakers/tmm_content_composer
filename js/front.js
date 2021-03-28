@@ -258,18 +258,24 @@ jQuery(document).ready(function() {
 
 	var $form = jQuery('.contact-form');
 
-	$form.submit(function() {
+	$form.on('submit', function() {
 
-		$response = jQuery(this).next(jQuery(".contact_form_responce"));
-		$response.find("ul").html("");
-		$response.find("ul").removeClass();
+		const responseContainer = jQuery('<ul></ul>');
+		const errContainer = jQuery(this).find('.error');
+		const submitBtn = jQuery(this).find('button[type=submit]');
 
-		var data = {
+		submitBtn.addClass('icon-spin');
+
+		if(errContainer.length) {
+			errContainer.remove();
+		}
+
+		const data = {
 			action: "contact_form_request",
 			values: jQuery(this).serialize()
 		};
 
-		var form_self = this;
+		const form_self = this;
 		//send data to server
 		jQuery.post(ajaxurl, data, function(response) {
 
@@ -278,30 +284,30 @@ jQuery(document).ready(function() {
 
 			if (response.is_errors) {
 
-				jQuery($response).find("ul").addClass("error type-2");
+				responseContainer.addClass("error");
 				jQuery.each(response.info, function(input_name, input_label) {
 					jQuery(form_self).find("[name=" + input_name + "]").addClass("wrong-data");
-					jQuery($response).find("ul").append('<li>' + tmm_mail_l10n.wrong_field_value + ' "' + input_label + '"!</li>');
+					responseContainer.append('<li>' + tmm_mail_l10n.wrong_field_value + ': "' + input_label + '"!</li>');
 				});
-
-				$response.show(450);
 
 			} else {
 
-				jQuery($response).find("ul").addClass("success type-2");
-
 				if (response.info == 'succsess') {
-					jQuery($response).find("ul").append('<li>' + tmm_mail_l10n.success + '!</li>');
-					$response.show(450).delay(1800).hide(400);
+					submitBtn.attr('disabled', true);
+					responseContainer.addClass("success");
+					responseContainer.append('<li>' + tmm_mail_l10n.success + '!</li>');
 				}
-
+				
 				if (response.info == 'server_fail') {
-					jQuery($response).find("ul").append('<li>' + tmm_mail_l10n.fail + '!</li>');
+					responseContainer.addClass("error");
+					responseContainer.append('<li>' + tmm_mail_l10n.fail + '!</li>');
 				}
 
-				jQuery(form_self).find("[type=text],[type=email],textarea").val("");
+				form_self.reset();
 
 			}
+
+			responseContainer.appendTo($form);
 
 			// Scroll to bottom of the form to show respond message
 			var bottomPosition = jQuery(form_self).offset().top + jQuery(form_self).outerHeight() - jQuery(window).height();
@@ -311,6 +317,8 @@ jQuery(document).ready(function() {
 					scrollTop: bottomPosition
 				});
 			}
+
+			submitBtn.removeClass('icon-spin');
 
 			update_capcha(form_self, response.hash);
 		});
