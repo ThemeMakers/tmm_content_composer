@@ -1,0 +1,25 @@
+{
+  "name": "tmm_content_composer",
+  "version": "1.0.0",
+  "description": "ThemeMakers Contact composer plugin",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThemeMakers/tmm_content_composer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThemeMakers/tmm_content_composer/issues"
+  },
+  "homepage": "https://github.com/ThemeMakers/tmm_content_composer#readme",
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
