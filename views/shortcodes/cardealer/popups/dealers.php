@@ -245,6 +245,21 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'checkbox',
+				'title' => esc_html__('Display Working Hours', 'tmm_content_composer'),
+				'shortcode_field' => 'show_working_hours',
+				'id' => 'show_working_hours',
+				'is_checked' => TMM_Content_Composer::set_default_value('show_working_hours', 1),
+				'description' => ''
+			));
+			?>
+
+		</div><!--/ .one-half-->
+
+		<div class="one-half">
+
+			<?php
+			TMM_Content_Composer::html_option(array(
+				'type' => 'checkbox',
 				'title' => esc_html__('Display Map Location', 'tmm_content_composer'),
 				'shortcode_field' => 'show_map',
 				'id' => 'show_map',
@@ -263,8 +278,8 @@
 				'title' => esc_html__('Excerpt Bio symbol count', 'tmm_content_composer'),
 				'shortcode_field' => 'dealer_bio_symbols_count',
 				'id' => 'dealer_bio_symbols_count',
-				'default_value' => TMM_Content_Composer::set_default_value('dealer_bio_symbols_count', 100),
-				'description' => '',
+				'default_value' => TMM_Content_Composer::set_default_value('dealer_bio_symbols_count', 300),
+				'description' => esc_html__('Leave empty to strip description field to 300 symbols', 'tmm_content_composer'),
 			));
 			?>
 
