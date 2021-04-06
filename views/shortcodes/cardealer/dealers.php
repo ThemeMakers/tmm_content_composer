@@ -13,7 +13,7 @@ if (!isset($user_number)) {
 
 $order = isset($order) ? $order : 'ASC';
 
-echo var_dump($order);
+//echo var_dump($order);
 
 if($order == 'random'){
     shuffle($users);
