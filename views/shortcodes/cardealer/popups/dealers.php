@@ -7,35 +7,65 @@
 			<?php
 			TMM_Content_Composer::html_option(array(
 				'type' => 'text',
-				'title' => esc_html__('Dealers Number', 'tmm_content_composer'),
-				'shortcode_field' => 'user_number',
-				'id' => 'user_number',
-				'default_value' => TMM_Content_Composer::set_default_value('user_number', 9),
-				'description' => esc_html__('Minimum 5 dealers will be displayed.', 'tmm_content_composer'),
+				'title' => esc_html__('Dealers Per Page', 'tmm_content_composer'),
+				'shortcode_field' => 'users_per_page',
+				'id' => 'users_per_page',
+				'default_value' => TMM_Content_Composer::set_default_value('users_per_page', 10),
+				'description' => esc_html__('By default 3 dealers will be displayed.', 'tmm_content_composer'),
 			));
 			?>
 
 	    </div><!--/ .one-half-->
 
-		<div class="one-half">
+        <div class="one-half">
 
-			<?php
-			TMM_Content_Composer::html_option(array(
-				'type' => 'select',
-				'title' => esc_html__('Display Order', 'tmm_content_composer'),
-				'shortcode_field' => 'order',
-				'id' => 'order',
-				'options' => array(
-					'DESC' => esc_html__('Latest First', 'tmm_content_composer'),
-					'ASC' => esc_html__('Oldest First', 'tmm_content_composer'),
-					'random' => esc_html__('Random', 'tmm_content_composer')
-				),
-				'default_value' => TMM_Content_Composer::set_default_value('order', 'DESC'),
-				'description' => ''
-			));
-			?>
+            <?php
+            TMM_Content_Composer::html_option(array(
+                'type' => 'select',
+                'title' => esc_html__('Display Order', 'tmm_content_composer'),
+                'shortcode_field' => 'order',
+                'id' => 'order',
+                'options' => array(
+                    'DESC' => esc_html__('Latest First', 'tmm_content_composer'),
+                    'ASC' => esc_html__('Oldest First', 'tmm_content_composer'),
+                    'random' => esc_html__('Random', 'tmm_content_composer')
+                ),
+                'default_value' => TMM_Content_Composer::set_default_value('order', 'DESC'),
+                'description' => ''
+            ));
+            ?>
 
-		</div><!--/ .one-half-->
+        </div><!--/ .one-half-->
+
+        <div class="one-half">
+
+            <?php
+            TMM_Content_Composer::html_option(array(
+                'type' => 'checkbox',
+                'title' => esc_html__('Enable location filter', 'tmm_content_composer'),
+                'shortcode_field' => 'enable_location_filter',
+                'id' => 'enable_location_filter',
+                'is_checked' => TMM_Content_Composer::set_default_value('enable_location_filter', 1),
+                'description' => ''
+            ));
+            ?>
+
+        </div><!--/ .one-half-->
+
+        <div class="one-half">
+
+            <?php
+            TMM_Content_Composer::html_option(array(
+                'type' => 'text',
+                'title' => esc_html__('Select region to filter by', 'tmm_content_composer'),
+                'shortcode_field' => 'filter_by_key_region',
+                'id' => 'filter_by_key_region',
+                'default_value' => TMM_Content_Composer::set_default_value('filter_by_key_region', ''),
+                'description' => esc_html__('Following field allows you filtering dealers by their location. Say entering a key `Berlin` will display all the dealers from region `Berlin`. Important: Filter applies only for Region address field', 'tmm_content_composer'),
+            ));
+            ?>
+
+        </div><!--/ .one-half-->
 
 		<div class="one-half">
 
@@ -100,7 +130,6 @@
 			?>
 
 		</div><!--/ .one-half-->
-
 
 		<div class="one-half">
 
@@ -279,7 +308,7 @@
 				'shortcode_field' => 'dealer_bio_symbols_count',
 				'id' => 'dealer_bio_symbols_count',
 				'default_value' => TMM_Content_Composer::set_default_value('dealer_bio_symbols_count', 300),
-				'description' => esc_html__('Leave empty to strip description field to 300 symbols', 'tmm_content_composer'),
+				'description' => esc_html__('Leave empty to limit description field with 300 symbols', 'tmm_content_composer'),
 			));
 			?>
 
@@ -288,7 +317,7 @@
 
 </div>
 
-<script type="text/javascript">
+<script>
 
 	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
 	jQuery(function() {
@@ -296,6 +325,20 @@
 		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").on('click change keyup', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
+
+		const location_checkbox = jQuery('#enable_location_filter');
+		const location_field = jQuery('#filter_by_key_region');
+        const location_fld_handler = () => {
+            if(location_checkbox.is(':checked')) {
+                location_field.closest('div').slideDown();
+            } else {
+                location_field.closest('div').slideUp();
+            }
+        };
+
+        location_fld_handler();
+
+        location_checkbox.on('change', location_fld_handler);
 	});
 
 </script>
