@@ -8,6 +8,9 @@ if($site_locale !== 'en') {
 	wp_enqueue_script( 'tmm_select_locale', TMM_CC_URL . 'js/i18n/' . $site_locale . '.js', array ( 'jquery' ), false, true);
 }
 
+$show_loc0 = 0;
+$show_loc1 = 0;
+$show_loc2 = 0;
 $car_condition = 0;
 $carlocation = array(0);
 $carproducer = 0;
@@ -27,6 +30,20 @@ $car_transmission = '';
 $widget_class = 'quicksearch-container';
 $styles = '';
 
+if(!empty($show_location0)) {
+    $show_loc0 = 1;
+}
+
+if(!empty($show_location1)) {
+    $show_loc1 = 1;
+}
+
+if(!empty($show_location2)) {
+    $show_loc2 = 1;
+}
+
+$num_of_displayed_locations = $show_loc0 + $show_loc1 + $show_loc2;
+
 // Background Color
 if (!empty($bg_color)) {
 	$styles .= "background-color: " . $bg_color . "; ";
@@ -37,8 +54,8 @@ if (!empty($styles)) {
 	$styles = ' style="' . $styles . '"';
 }
 
-if (isset($search_widget_offset) && $search_widget_offset === 'none') {
-	$widget_class .= ' no-padding';
+if (isset($search_widget_width)) {
+	$widget_class .= ' ' . $search_widget_width;
 }
 
 if (isset($_GET['car_condition'])) {
@@ -127,10 +144,10 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 
 	<form class="car_form_search" action="<?php echo esc_attr( $searching_page ) ?>">
 
-        <?php if (!TMM::get_option('locations_hide_location_fields', TMM_APP_CARDEALER_PREFIX)) { ?>
+        <?php if (!TMM::get_option('locations_hide_location_fields', TMM_APP_CARDEALER_PREFIX) && $num_of_displayed_locations > 0) { ?>
 		<!-- Location -->
-		<div class="fieldset">
-			<label><?php esc_html_e("Location", 'tmm_content_composer') ?></label>
+		<fieldset data-row="location" data-col="<?php echo esc_attr($num_of_displayed_locations) ?>">
+			<legend><?php esc_html_e("Location", 'tmm_content_composer') ?></legend>
 			<?php if (!empty($show_location0)) { ?>
 				<p>
 					<select class="qs_carlocation0 carlocations"
@@ -202,14 +219,14 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 
 			}
 			?>
-		</div>
+		</fieldset>
         <?php } ?>
 
 		<!-- Condition -->
 		<?php if (!empty($show_condition)) {
 			$condition_list = tmm_get_car_condition_list();
 			?>
-		<div class="fieldset">
+        <fieldset data-row="condition">
 			<p>
 				<label for="tmm_qs_condition_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e('Condition', 'tmm_content_composer') ?>:</label>
 				<select id="tmm_qs_condition_<?php echo esc_attr( $uniqid ) ?>" class="qs_condition" name="car_condition">
@@ -223,7 +240,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 					?>
 				</select>
 			</p>
-		</div>
+		</fieldset>
 		<?php } ?>
 
 		<?php
@@ -242,7 +259,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 		<!-- Make & Model-->
 		<?php if (!empty($show_makes)) { ?>
 
-		<div class="fieldset">
+        <fieldset data-row="make-model">
 			<p>
 				<label for="tmm_qs_make_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Make", 'tmm_content_composer') ?>:</label>
 				<select id="tmm_qs_make_<?php echo esc_attr( $uniqid ) ?>" class="qs_carproducer" name="carproducer" data-make="<?php echo esc_attr( $carproducer ) ?>" data-location="<?php echo esc_attr( $carlocation[0] ) ?>" data-region="<?php echo esc_attr( $_selected_region_id ) ?>" data-level="<?php echo esc_attr( $_level ) ?>">
@@ -256,14 +273,14 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 					<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
 				</select>
 			</p>
-		</div>
+		</fieldset>
 
 		<?php } ?>
 
 		<!-- Price Range-->
 		<?php if (!empty($show_price_range)) { ?>
-		<div class="fieldset">
-			<label><?php esc_html_e("Price", 'tmm_content_composer') ?> (<?php echo TMM_Ext_Car_Dealer::$default_currency['symbol'] ?>) <span><?php esc_html_e("min/max", 'tmm_content_composer') ?></span></label>
+        <fieldset data-row="price-range">
+			<legend><?php esc_html_e("Price", 'tmm_content_composer') ?> (<?php echo TMM_Ext_Car_Dealer::$default_currency['symbol'] ?>) <span><?php esc_html_e("min/max", 'tmm_content_composer') ?></span></legend>
 			<p>
 				<input type="number" name="car_price_min" value="<?php echo esc_attr( $car_price_min ) ?>" />
 			</p>
@@ -271,13 +288,13 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 			<p>
 				<input type="number" name="car_price_max" value="<?php echo esc_attr( $car_price_max ) ?>" />
 			</p>
-		</div>
+		</fieldset>
 		<?php } ?>
 
 		<!-- Year Range-->
 		<?php if (!empty($show_year_range)) { ?>
-		<div class="fieldset">
-			<label><?php esc_html_e("Year", 'tmm_content_composer') ?></label>
+        <fieldset data-row="year-range">
+			<legend><?php esc_html_e("Year", 'tmm_content_composer') ?></legend>
 			<p>
 				<?php
 				$now = (int) date("Y") + 1;
@@ -307,24 +324,24 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 					<?php } ?>
 				</select>
 			</p>
-		</div>
+		</fieldset>
 		<?php } ?>
 
 		<!-- Mileage Range-->
 		<?php if (!empty($show_mileage)) { ?>
-		<div class="fieldset">
-			<label><?php ($mileage_unit == 'km') ? esc_html_e('Kilometer', 'tmm_content_composer') : esc_html_e('Mileage', 'tmm_content_composer') ?> <span><?php esc_html_e("min/max", 'tmm_content_composer') ?></span></label>
+        <fieldset data-row="mileage-range">
+			<legend><?php ($mileage_unit == 'km') ? esc_html_e('Kilometer', 'tmm_content_composer') : esc_html_e('Mileage', 'tmm_content_composer') ?> <span><?php esc_html_e("min/max", 'tmm_content_composer') ?></span></legend>
 			<p>
 				<input type="number" name="car_mileage_from" value="<?php echo esc_attr( $car_mileage_from ) ?>" />
 			</p>
 			<p>
 				<input type="number" name="car_mileage_to" value="<?php echo esc_attr( $car_mileage_to ) ?>" />
 			</p>
-		</div>
+		</fieldset>
 		<?php } ?>
 
 		<!-- Fuel Type-->
-		<div class="fieldset">
+        <fieldset data-row="fuel-transmission" <?php echo (empty($show_fuel_type) || empty($show_transmission)) ? 'data-single="true"' : '' ?>>
 		<?php if (!empty($show_fuel_type)) { ?>
 			<p>
 				<label for="tmm_qs_fuel_type_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Fuel Type", 'tmm_content_composer') ?></label>
@@ -355,10 +372,10 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 				</select>
 			</p>
 		<?php } ?>
-		</div>
+		</fieldset>
 
 		<!-- Body Type-->
-		<div class="fieldset">
+        <fieldset data-row="body-door-cnt" <?php echo (empty($show_body_type) || empty($show_doors_count)) ? 'data-single="true"' : '' ?>>
 		<?php if (!empty($show_body_type)) { ?>
 			<p>
 				<label for="tmm_qs_body_type_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Body Type", 'tmm_content_composer') ?></label>
@@ -386,12 +403,12 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 				</select>
 			</p>
 		<?php } ?>
-		</div>
+        </fieldset>
 
 		<!-- Exterior/Interior Colors-->
 		<?php if(!empty($show_colors)) { ?>
-		<div class="fieldset">
-			<label><?php esc_html_e("Color", 'tmm_content_composer') ?></label>
+        <fieldset data-row="mileage-range">
+			<legend><?php esc_html_e("Color", 'tmm_content_composer') ?></legend>
 			<?php
 			$car_int_colors = TMM_Ext_PostType_Car::$car_options['interior_color'];
 			$car_ext_colors = TMM_Ext_PostType_Car::$car_options['exterior_color'];
@@ -418,7 +435,7 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 					<?php } ?>
 				</select>
 			</p>
-		</div>
+        </fieldset>
 		<?php } ?>
 
 		<div class="fieldset flex-end">
@@ -443,22 +460,23 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 
 	<form class="advanced_car_search_panel" action="/">
 
-		<div class="car_adv_search hide">
+		<div class="tmm-cardealer-custom-radio-check car_adv_search hide">
 
 			<?php foreach (TMM_Ext_PostType_Car::$specifications_array as $specification_key => $block_name) { ?>
 
 				<?php $attributes_array = TMM_Ext_PostType_Car::get_attribute_constructors($specification_key); ?>
 
+                <fieldset class="category">
+
 				<?php if (!empty($attributes_array)) { ?>
-				<h4><?php esc_html_e($block_name, 'tmm_content_composer'); ?></h4>
+				<legend><?php esc_html_e($block_name, 'tmm_content_composer'); ?></legend>
 				<?php } ?>
 
 				<?php foreach ($attributes_array as $key => $value) { ?>
 
 					<?php if ($value['type'] == 'checkbox') { ?>
 
-						<fieldset class="field-check">
-							<p>
+                        <p>
 								<input id="<?php echo esc_attr( $key ) . '_' . esc_attr( $uniqid ) ?>" type="checkbox" <?php echo (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key]) ? 'checked=""' : ''; ?> class="js_option_checkbox" value="<?php echo (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key]) ? '1' : '0'; ?>" name="advanced[<?php echo esc_attr( $specification_key) ?>][<?php echo esc_attr( $key ) ?>]">
 								<label class="check" for="<?php echo esc_attr( $key ) . '_' . esc_attr( $uniqid ) ?>">
 									<strong><?php esc_html_e($value['name'], 'tmm_content_composer'); ?></strong>
@@ -467,14 +485,12 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 									<?php } ?>
 								</label>
 							</p>
-						</fieldset>
 
 					<?php } ?>
 
 					<?php if ($value['type'] == 'select') { ?>
 
-						<fieldset class="field-select">
-							<p>
+                        <p>
 								<label for="<?php echo esc_attr( $key ) . '_' . esc_attr( $uniqid ) ?>">
 									<?php esc_html_e($value['name'], 'tmm_content_composer'); ?>
 									<?php if (!empty($value['description'])) { ?>
@@ -489,11 +505,12 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 									<?php } ?>
 								</select>
 							</p>
-						</fieldset>
 
 					<?php } ?>
 
 				<?php } ?>
+
+                </fieldset>
 
 			<?php } ?>
 
