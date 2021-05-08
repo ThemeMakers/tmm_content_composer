@@ -228,14 +228,15 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => esc_html__('Search Widget Offset', 'tmm_content_composer'),
-			'shortcode_field' => 'search_widget_offset',
-			'id' => 'search_widget_offset',
+			'title' => esc_html__('Widget Width', 'tmm_content_composer'),
+			'shortcode_field' => 'search_widget_width',
+			'id' => 'search_widget_width',
 			'options' => array(
-					'default' => esc_html__('Default Offset', 'tmm_content_composer'),
-					'none' => esc_html__('No Offset', 'tmm_content_composer'),
+					'tmm-site-full-width' => esc_html__('Full Width', 'tmm_content_composer'),
+					'tmm-site-two-thirds' => esc_html__('Two thirds (of site width)', 'tmm_content_composer'),
+					'none' => esc_html__('One third (of site width)', 'tmm_content_composer'),
 			),
-			'default_value' => TMM_Content_Composer::set_default_value('search_widget_offset', 'default'),
+			'default_value' => TMM_Content_Composer::set_default_value('search_widget_width', 'none'),
 			'description' => ''
 		));
 		?>
