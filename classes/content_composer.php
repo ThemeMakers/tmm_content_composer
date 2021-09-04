@@ -95,13 +95,13 @@ class TMM_Content_Composer {
 					var tmm_lang = {};
 				}
 
-				tmm_lang['loading'] = "<?php _e("Loading ...", 'tmm_content_composer') ?>";
-				tmm_lang['close'] = "<?php _e("Close", 'tmm_content_composer') ?>";
-				tmm_lang['apply'] = "<?php _e("Apply", 'tmm_content_composer') ?>";
-				tmm_lang['shortcode_nooption'] = "<?php _e("There is no options for shortcode!", 'tmm_content_composer') ?>";
-				tmm_lang['shortcode_updated'] = "<?php _e("Shortcode updated!", 'tmm_content_composer') ?>";
-				tmm_lang['shortcode_insert'] = "<?php _e("Insert Shortcode", 'tmm_content_composer') ?>";
-				tmm_lang['shortcode_edit'] = "<?php _e("Edit shortcode", 'tmm_content_composer') ?>";
+				tmm_lang['loading'] = "<?php esc_html_e("Loading ...", 'tmm_content_composer') ?>";
+				tmm_lang['close'] = "<?php esc_html_e("Close", 'tmm_content_composer') ?>";
+				tmm_lang['apply'] = "<?php esc_html_e("Apply", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_nooption'] = "<?php esc_html_e("There is no options for shortcode!", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_updated'] = "<?php esc_html_e("Shortcode updated!", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_insert'] = "<?php esc_html_e("Insert Shortcode", 'tmm_content_composer') ?>";
+				tmm_lang['shortcode_edit'] = "<?php esc_html_e("Edit shortcode", 'tmm_content_composer') ?>";
 			</script>
 		<?php
 		}
@@ -113,11 +113,11 @@ class TMM_Content_Composer {
 
 			?>
 			<script type="text/javascript">
-				tmm_lang['column_delete'] = "<?php _e("Sure about column deleting?", 'tmm_content_composer') ?>";
-				tmm_lang['row_delete'] = "<?php _e("Sure about row deleting?", 'tmm_content_composer') ?>";
-				tmm_lang['empty_title'] = "<?php _e("Empty title", 'tmm_content_composer') ?>";
-				tmm_lang['column_popup_title'] = "<?php _e("Column content editor", 'tmm_content_composer') ?>";
-				tmm_lang['row_popup_title'] = "<?php _e("Section editor", 'tmm_content_composer') ?>";
+				tmm_lang['column_delete'] = "<?php esc_html_e("Sure about column deleting?", 'tmm_content_composer') ?>";
+				tmm_lang['row_delete'] = "<?php esc_html_e("Sure about row deleting?", 'tmm_content_composer') ?>";
+				tmm_lang['empty_title'] = "<?php esc_html_e("Empty title", 'tmm_content_composer') ?>";
+				tmm_lang['column_popup_title'] = "<?php esc_html_e("Column content editor", 'tmm_content_composer') ?>";
+				tmm_lang['row_popup_title'] = "<?php esc_html_e("Section editor", 'tmm_content_composer') ?>";
 			</script>
 		<?php
 		}
