@@ -277,9 +277,11 @@ jQuery(document).ready(function() {
 
 		const form_self = this;
 		//send data to server
-		jQuery.post(ajaxurl, data, function(response) {
+		const posting = jQuery.post(ajaxurl, data);
 
-			response = jQuery.parseJSON(response);
+		posting.done(result=>{
+			const response = JSON.parse(result);
+
 			jQuery(form_self).find(".wrong-data").removeClass("wrong-data");
 
 			if (response.is_errors) {
@@ -295,12 +297,12 @@ jQuery(document).ready(function() {
 				if (response.info == 'succsess') {
 					submitBtn.attr('disabled', true);
 					responseContainer.addClass("success");
-					responseContainer.append('<li>' + tmm_mail_l10n.success + '!</li>');
+					responseContainer.append('<li>' + tmm_mail_l10n.success + '</li>');
 				}
 				
 				if (response.info == 'server_fail') {
 					responseContainer.addClass("error");
-					responseContainer.append('<li>' + tmm_mail_l10n.fail + '!</li>');
+					responseContainer.append('<li>' + tmm_mail_l10n.fail + '</li>');
 				}
 
 				form_self.reset();
@@ -322,6 +324,7 @@ jQuery(document).ready(function() {
 
 			update_capcha(form_self, response.hash);
 		});
+		
 		return false;
 	});
 
