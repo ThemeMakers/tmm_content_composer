@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 23:20+0200\n"
-"PO-Revision-Date: 2020-09-02 23:20+0200\n"
+"POT-Creation-Date: 2021-09-04 23:37+0200\n"
+"PO-Revision-Date: 2021-09-04 23:37+0200\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Slovak\n"
 "Language: sk_SK\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=( n == 1 ) ? 0 : ( n >= 2 && n <= 4 ) ? 1 : "
 "2;\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -76,53 +76,55 @@ msgstr ""
 msgid "Section editor"
 msgstr ""
 
-#: classes/content_composer.php:146
-msgid "Please enter correct"
-msgstr ""
-
 #: classes/content_composer.php:147
-msgid "Your message has been sent successfully!"
-msgstr "Vaša správa sa úspešne odoslala !"
+msgid "The following field is required"
+msgstr ""
 
 #: classes/content_composer.php:148
-msgid "Server failed. Send later"
+#, fuzzy
+#| msgid "Your message has been sent successfully!"
+msgid "Your message has been sent successfully."
+msgstr "Vaša správa sa úspešne odoslala !"
+
+#: classes/content_composer.php:149
+msgid "Temporary server error. Please try again later."
 msgstr ""
 
-#: classes/content_composer.php:161
+#: classes/content_composer.php:162
 msgid "Use wptexturize"
 msgstr ""
 
-#: classes/content_composer.php:241
-msgid "Default Grey"
+#: classes/content_composer.php:242
+msgid "Secondary Button"
 msgstr ""
 
-#: classes/content_composer.php:242
-msgid "Orange"
-msgstr "Oranžová"
+#: classes/content_composer.php:243
+msgid "Primary Button"
+msgstr ""
 
-#: classes/content_composer.php:250
+#: classes/content_composer.php:251
 #: views/shortcodes/cardealer/popups/recent_cars.php:131
 #: views/shortcodes/default/popups/divider.php:28
 msgid "Small"
 msgstr "Malé"
 
-#: classes/content_composer.php:251
+#: classes/content_composer.php:252
 #: views/shortcodes/cardealer/popups/recent_cars.php:132
 #: views/shortcodes/default/popups/divider.php:29
 msgid "Middle"
 msgstr "Stredné"
 
-#: classes/content_composer.php:252
+#: classes/content_composer.php:253
 #: views/shortcodes/cardealer/popups/recent_cars.php:133
 #: views/shortcodes/default/popups/divider.php:30
 msgid "Large"
 msgstr "Veľké"
 
-#: classes/content_composer.php:260
+#: classes/content_composer.php:261
 msgid "All Categories"
 msgstr "Všetky kategórie"
 
-#: classes/content_composer.php:442
+#: classes/content_composer.php:443
 msgid "Browse"
 msgstr "Prehľadávať "
 
@@ -263,7 +265,9 @@ msgstr "Šírka"
 msgid "Fixed Width"
 msgstr "Šírka"
 
-#: views/meta_panel.php:188 views/shortcodes/default/popups/blockquote.php:12
+#: views/meta_panel.php:188
+#: views/shortcodes/cardealer/popups/quicksearch.php:235
+#: views/shortcodes/default/popups/blockquote.php:12
 #, fuzzy
 msgid "Full Width"
 msgstr "Šírka"
@@ -293,19 +297,19 @@ msgstr ""
 
 #: views/meta_panel.php:221 views/shortcodes/cardealer/popups/slider.php:48
 #: views/shortcodes/default/popups/image.php:118
-#: views/shortcodes/default/popups/title.php:103
+#: views/shortcodes/default/popups/title.php:93
 #, fuzzy
 msgid "Left"
 msgstr "zostáva znakov"
 
 #: views/meta_panel.php:222 views/shortcodes/cardealer/popups/slider.php:47
 #: views/shortcodes/default/popups/image.php:119
-#: views/shortcodes/default/popups/title.php:104
+#: views/shortcodes/default/popups/title.php:94
 msgid "Right"
 msgstr ""
 
 #: views/meta_panel.php:223 views/shortcodes/default/popups/image.php:120
-#: views/shortcodes/default/popups/title.php:105
+#: views/shortcodes/default/popups/title.php:95
 msgid "Center"
 msgstr ""
 
@@ -387,8 +391,8 @@ msgstr "Typ motora"
 msgid "Transparent (default)"
 msgstr ""
 
-#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:394
-#: views/shortcodes/default/popups/title.php:144
+#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:411
+#: views/shortcodes/default/popups/title.php:128
 #, fuzzy
 msgid "Color"
 msgstr "Farba interiéru "
@@ -498,40 +502,40 @@ msgstr ""
 msgid "View all ads filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:76
+#: views/shortcodes/cardealer/dealers.php:83
 #, php-format
 msgid "Page %s of %d"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:77
+#: views/shortcodes/cardealer/dealers.php:84
 #, php-format
 msgid "Displaying %s of %d users"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:124
+#: views/shortcodes/cardealer/dealers.php:142
 #, fuzzy
 msgid "Contacts"
 msgstr "Kontakty na predajcu "
 
-#: views/shortcodes/cardealer/dealers.php:143
+#: views/shortcodes/cardealer/dealers.php:190
 msgid "Working hours"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:178
+#: views/shortcodes/cardealer/dealers.php:225
 #, fuzzy
 msgid "E-mail Us"
 msgstr "Tento mail bol odoslaný prostredníctvom "
 
-#: views/shortcodes/cardealer/dealers.php:184
+#: views/shortcodes/cardealer/dealers.php:231
 msgid "Website"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:212
+#: views/shortcodes/cardealer/dealers.php:259
 #, fuzzy
 msgid "Previous Page"
 msgstr "Počet áut na stranu"
 
-#: views/shortcodes/cardealer/dealers.php:217
+#: views/shortcodes/cardealer/dealers.php:264
 #, fuzzy
 msgid "Next Page"
 msgstr "Ďalší krok"
@@ -673,7 +677,7 @@ msgid "All dealers"
 msgstr "Profil predajcu"
 
 #: views/shortcodes/cardealer/popups/car_listing_carousel.php:132
-#: views/shortcodes/cardealer/popups/dealers.php:47
+#: views/shortcodes/cardealer/popups/dealers.php:77
 msgid "Administrator"
 msgstr ""
 
@@ -759,8 +763,8 @@ msgid "Enable link"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/car_makes.php:88
-#: views/shortcodes/cardealer/popups/dealers.php:45
-#: views/shortcodes/cardealer/popups/dealers.php:73
+#: views/shortcodes/cardealer/popups/dealers.php:75
+#: views/shortcodes/cardealer/popups/dealers.php:103
 #, fuzzy
 msgid "All"
 msgstr "Ukázať všetky autá"
@@ -776,11 +780,11 @@ msgstr ""
 
 #: views/shortcodes/cardealer/popups/dealers.php:10
 #, fuzzy
-msgid "Dealers Number"
-msgstr "Kontakty na predajcu "
+msgid "Dealers Per Page"
+msgstr "Počet áut na stranu: "
 
 #: views/shortcodes/cardealer/popups/dealers.php:14
-msgid "Minimum 5 dealers will be displayed."
+msgid "By default 3 dealers will be displayed."
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/dealers.php:25
@@ -800,73 +804,97 @@ msgstr ""
 msgid "Random"
 msgstr "Náhodné"
 
-#: views/shortcodes/cardealer/popups/dealers.php:46
+#: views/shortcodes/cardealer/popups/dealers.php:45
+msgid "Enable location filter"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:60
+msgid "Select region to filter by"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:64
+msgid ""
+"Following field allows you filtering dealers by their location. Say entering "
+"a key `Berlin` will display all the dealers from region `Berlin`. Important: "
+"Filter applies only for Region address field"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:76
 #, fuzzy
 msgid "All without Administrator"
 msgstr "Všetky kategórie"
 
-#: views/shortcodes/cardealer/popups/dealers.php:56
+#: views/shortcodes/cardealer/popups/dealers.php:86
 #, fuzzy
 msgid "Dealer Type"
 msgstr "Súkromná správa predajcovi"
 
-#: views/shortcodes/cardealer/popups/dealers.php:92
+#: views/shortcodes/cardealer/popups/dealers.php:122
 #, fuzzy
 msgid "Specific Dealer"
 msgstr "Súkromná správa predajcovi"
 
-#: views/shortcodes/cardealer/popups/dealers.php:110
+#: views/shortcodes/cardealer/popups/dealers.php:139
 #, fuzzy
 msgid "Display Dealer Logo"
 msgstr "Súkromná správa predajcovi"
 
-#: views/shortcodes/cardealer/popups/dealers.php:128
+#: views/shortcodes/cardealer/popups/dealers.php:157
 #, fuzzy
 msgid "Display Dealer Bio"
 msgstr "Súkromná správa predajcovi"
 
-#: views/shortcodes/cardealer/popups/dealers.php:143
+#: views/shortcodes/cardealer/popups/dealers.php:172
 #, fuzzy
 msgid "Display Phone"
 msgstr "Mobil"
 
-#: views/shortcodes/cardealer/popups/dealers.php:158
+#: views/shortcodes/cardealer/popups/dealers.php:187
 #, fuzzy
 msgid "Display Cell Phone"
 msgstr "Mobil"
 
-#: views/shortcodes/cardealer/popups/dealers.php:173
+#: views/shortcodes/cardealer/popups/dealers.php:202
 #, fuzzy
 msgid "Display Fax"
 msgstr "Rozšírené vyhľadávanie"
 
-#: views/shortcodes/cardealer/popups/dealers.php:188
+#: views/shortcodes/cardealer/popups/dealers.php:217
 #, fuzzy
 msgid "Display Email"
 msgstr "Mesto"
 
-#: views/shortcodes/cardealer/popups/dealers.php:203
+#: views/shortcodes/cardealer/popups/dealers.php:232
 #, fuzzy
 msgid "Display Skype ID"
 msgstr "Rozšírené vyhľadávanie"
 
-#: views/shortcodes/cardealer/popups/dealers.php:218
+#: views/shortcodes/cardealer/popups/dealers.php:247
 #, fuzzy
 msgid "Display Website Url"
 msgstr "Rozšírené vyhľadávanie"
 
-#: views/shortcodes/cardealer/popups/dealers.php:233
+#: views/shortcodes/cardealer/popups/dealers.php:262
 #, fuzzy
 msgid "Display Postal Address"
 msgstr "Mesto"
 
-#: views/shortcodes/cardealer/popups/dealers.php:248
+#: views/shortcodes/cardealer/popups/dealers.php:277
+#, fuzzy
+msgid "Display Working Hours"
+msgstr "Farby interiéru"
+
+#: views/shortcodes/cardealer/popups/dealers.php:292
 #, fuzzy
 msgid "Display Map Location"
 msgstr "Lokalita"
 
-#: views/shortcodes/cardealer/popups/dealers.php:263
+#: views/shortcodes/cardealer/popups/dealers.php:307
 msgid "Excerpt Bio symbol count"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:311
+msgid "Leave empty to limit description field with 300 symbols"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/pricing_tables.php:12
@@ -985,15 +1013,15 @@ msgstr "Rozšírené vyhľadávanie"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:231
 #, fuzzy
-msgid "Search Widget Offset"
-msgstr "Naša ponuka"
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:235
-msgid "Default Offset"
-msgstr ""
+msgid "Widget Width"
+msgstr "Šírka"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:236
-msgid "No Offset"
+msgid "Two thirds (of site width)"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/quicksearch.php:237
+msgid "One third (of site width)"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:20
@@ -1191,103 +1219,103 @@ msgstr "Pridať auto"
 msgid "Remove"
 msgstr "Odstrániť "
 
-#: views/shortcodes/cardealer/quicksearch.php:133
+#: views/shortcodes/cardealer/quicksearch.php:150
 #, fuzzy
 msgid "Location"
 msgstr "Lokalita"
 
-#: views/shortcodes/cardealer/quicksearch.php:214
+#: views/shortcodes/cardealer/quicksearch.php:231
 msgid "Condition"
 msgstr "Stav"
 
-#: views/shortcodes/cardealer/quicksearch.php:216
-#: views/shortcodes/cardealer/quicksearch.php:249
-#: views/shortcodes/cardealer/quicksearch.php:256
-#: views/shortcodes/cardealer/quicksearch.php:333
-#: views/shortcodes/cardealer/quicksearch.php:349
-#: views/shortcodes/cardealer/quicksearch.php:367
-#: views/shortcodes/cardealer/quicksearch.php:382
-#: views/shortcodes/cardealer/quicksearch.php:486
+#: views/shortcodes/cardealer/quicksearch.php:233
+#: views/shortcodes/cardealer/quicksearch.php:266
+#: views/shortcodes/cardealer/quicksearch.php:273
+#: views/shortcodes/cardealer/quicksearch.php:350
+#: views/shortcodes/cardealer/quicksearch.php:366
+#: views/shortcodes/cardealer/quicksearch.php:384
+#: views/shortcodes/cardealer/quicksearch.php:399
+#: views/shortcodes/cardealer/quicksearch.php:502
 msgid "Any"
 msgstr "-Vyberte-"
 
-#: views/shortcodes/cardealer/quicksearch.php:220
+#: views/shortcodes/cardealer/quicksearch.php:237
 #, php-format
 msgid "Only %s cars"
 msgstr "Iba %s autá"
 
-#: views/shortcodes/cardealer/quicksearch.php:247
+#: views/shortcodes/cardealer/quicksearch.php:264
 msgid "Make"
 msgstr "Značka"
 
-#: views/shortcodes/cardealer/quicksearch.php:254
+#: views/shortcodes/cardealer/quicksearch.php:271
 #, fuzzy
 msgid "Model"
 msgstr "Model vozidla"
 
-#: views/shortcodes/cardealer/quicksearch.php:266
+#: views/shortcodes/cardealer/quicksearch.php:283
 msgid "Price"
 msgstr "Cena"
 
-#: views/shortcodes/cardealer/quicksearch.php:266
-#: views/shortcodes/cardealer/quicksearch.php:316
+#: views/shortcodes/cardealer/quicksearch.php:283
+#: views/shortcodes/cardealer/quicksearch.php:333
 msgid "min/max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:280
+#: views/shortcodes/cardealer/quicksearch.php:297
 msgid "Year"
 msgstr "Rok"
 
-#: views/shortcodes/cardealer/quicksearch.php:284
+#: views/shortcodes/cardealer/quicksearch.php:301
 msgid "min"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:299
+#: views/shortcodes/cardealer/quicksearch.php:316
 msgid "max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:316
+#: views/shortcodes/cardealer/quicksearch.php:333
 msgid "Kilometer"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:316
+#: views/shortcodes/cardealer/quicksearch.php:333
 msgid "Mileage"
 msgstr "Najazdené Km"
 
-#: views/shortcodes/cardealer/quicksearch.php:330
+#: views/shortcodes/cardealer/quicksearch.php:347
 msgid "Fuel Type"
 msgstr "Typ paliva"
 
-#: views/shortcodes/cardealer/quicksearch.php:346
+#: views/shortcodes/cardealer/quicksearch.php:363
 msgid "Gearbox"
 msgstr "Prevodovka"
 
-#: views/shortcodes/cardealer/quicksearch.php:364
+#: views/shortcodes/cardealer/quicksearch.php:381
 msgid "Body Type"
 msgstr "Typ karosérie"
 
-#: views/shortcodes/cardealer/quicksearch.php:380
+#: views/shortcodes/cardealer/quicksearch.php:397
 msgid "Door Count"
 msgstr "Počet dverí"
 
-#: views/shortcodes/cardealer/quicksearch.php:402
+#: views/shortcodes/cardealer/quicksearch.php:419
 #, fuzzy
 #| msgid "Interior Color"
 msgid "Interior"
 msgstr "Farba interiéru"
 
-#: views/shortcodes/cardealer/quicksearch.php:413
+#: views/shortcodes/cardealer/quicksearch.php:430
 #, fuzzy
 #| msgid "Exterior Color"
 msgid "Exterior"
 msgstr "Farba exteriéru"
 
-#: views/shortcodes/cardealer/quicksearch.php:430
+#: views/shortcodes/cardealer/quicksearch.php:447
 msgid "Advanced"
 msgstr "Rozšírené"
 
-#: views/shortcodes/cardealer/quicksearch.php:436
-#: views/shortcodes/cardealer/quicksearch.php:502
+#: views/shortcodes/cardealer/quicksearch.php:453
+#: views/shortcodes/cardealer/quicksearch.php:519
 msgid "Search"
 msgstr "Hľadať "
 
@@ -1341,7 +1369,7 @@ msgstr "Telefón"
 msgid "FAX"
 msgstr ""
 
-#: views/shortcodes/default/contact_form.php:101
+#: views/shortcodes/default/contact_form.php:110
 msgid "Are you human?"
 msgstr ""
 
@@ -1438,8 +1466,8 @@ msgstr ""
 #: views/shortcodes/default/popups/button.php:34
 #: views/shortcodes/default/popups/image.php:168
 #: views/shortcodes/default/popups/services.php:18
-#: views/shortcodes/default/popups/title.php:41
-#: views/shortcodes/default/popups/title.php:81
+#: views/shortcodes/default/popups/title.php:36
+#: views/shortcodes/default/popups/title.php:73
 msgid "Default"
 msgstr ""
 
@@ -1511,12 +1539,12 @@ msgid "Chart Height"
 msgstr "Výška"
 
 #: views/shortcodes/default/popups/chart.php:74
-#: views/shortcodes/default/popups/title.php:130
+#: views/shortcodes/default/popups/title.php:117
 msgid "Font Family"
 msgstr ""
 
 #: views/shortcodes/default/popups/chart.php:96
-#: views/shortcodes/default/popups/title.php:49
+#: views/shortcodes/default/popups/title.php:44
 #, fuzzy
 msgid "Font Size"
 msgstr "Veľkosť motoru"
@@ -1808,7 +1836,7 @@ msgid "Open original image size in Fancybox"
 msgstr ""
 
 #: views/shortcodes/default/popups/image.php:113
-#: views/shortcodes/default/popups/title.php:99
+#: views/shortcodes/default/popups/title.php:89
 msgid "Align"
 msgstr ""
 
@@ -2071,31 +2099,31 @@ msgstr "položiek"
 msgid "Title Text"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:22
+#: views/shortcodes/default/popups/title.php:19
 msgid "Title Heading"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:64
+#: views/shortcodes/default/popups/title.php:56
 msgid "Letter spacing (px)"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:77
+#: views/shortcodes/default/popups/title.php:69
 msgid "Font weight"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:82
+#: views/shortcodes/default/popups/title.php:74
 msgid "Normal"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:87
+#: views/shortcodes/default/popups/title.php:79
 msgid "Bold"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:115
+#: views/shortcodes/default/popups/title.php:105
 msgid "Show border under the title"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:158
+#: views/shortcodes/default/popups/title.php:140
 msgid "Bottom Indent (px)"
 msgstr ""
 
@@ -2198,6 +2226,17 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://themeforest.net/user/ThemeMakers"
 msgstr ""
+
+#~ msgid "Orange"
+#~ msgstr "Oranžová"
+
+#, fuzzy
+#~ msgid "Dealers Number"
+#~ msgstr "Kontakty na predajcu "
+
+#, fuzzy
+#~ msgid "Search Widget Offset"
+#~ msgstr "Naša ponuka"
 
 #, fuzzy
 #~ msgid "Search button position"

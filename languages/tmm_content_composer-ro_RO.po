@@ -1,16 +1,18 @@
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 :(((n%100>19)||(( n%100==0)&&(n!"
-"=0)))? 2 : 1));\n"
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2019-10-28 23:43+0100\n"
-"PO-Revision-Date: 2020-09-16 09:08+0000\n"
-"Last-Translator: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-04 23:37+0200\n"
+"PO-Revision-Date: 2021-09-04 23:37+0200\n"
+"Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Română\n"
+"Language: ro_RO\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 :(((n%100>19)||(( n%100==0)&&(n!"
+"=0)))? 2 : 1));\n"
+"X-Generator: Poedit 3.0\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: index.php\n"
@@ -18,112 +20,110 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Loco-Version: 2.4.3; wp-5.5.1\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.min.js\n"
 "X-Poedit-SearchPathExcluded-1: node_modules\n"
-"Report-Msgid-Bugs-To: \n"
-"Language: ro_RO\n"
-"X-Loco-Version: 2.4.3; wp-5.5.1"
 
 #: classes/content_composer.php:64
 msgid "ThemeMakers Layout Constructor"
 msgstr ""
 
-#: classes/content_composer.php:97
+#: classes/content_composer.php:98
 msgid "Loading ..."
 msgstr ""
 
-#: classes/content_composer.php:98
+#: classes/content_composer.php:99
 msgid "Close"
 msgstr ""
 
-#: classes/content_composer.php:99
+#: classes/content_composer.php:100
 msgid "Apply"
 msgstr ""
 
-#: classes/content_composer.php:100
+#: classes/content_composer.php:101
 msgid "There is no options for shortcode!"
 msgstr ""
 
-#: classes/content_composer.php:101
+#: classes/content_composer.php:102
 msgid "Shortcode updated!"
 msgstr ""
 
-#: classes/content_composer.php:102
+#: classes/content_composer.php:103
 msgid "Insert Shortcode"
 msgstr ""
 
-#: classes/content_composer.php:103
+#: classes/content_composer.php:104
 msgid "Edit shortcode"
 msgstr ""
 
-#: classes/content_composer.php:115
+#: classes/content_composer.php:116
 msgid "Sure about column deleting?"
 msgstr ""
 
-#: classes/content_composer.php:116
+#: classes/content_composer.php:117
 msgid "Sure about row deleting?"
 msgstr ""
 
-#: classes/content_composer.php:117 views/column_item.php:13
+#: classes/content_composer.php:118 views/column_item.php:13
 msgid "Empty title"
 msgstr ""
 
-#: classes/content_composer.php:118
+#: classes/content_composer.php:119
 msgid "Column content editor"
 msgstr ""
 
-#: classes/content_composer.php:119
+#: classes/content_composer.php:120
 msgid "Section editor"
 msgstr ""
 
-#: classes/content_composer.php:145
-msgid "Please enter correct"
-msgstr ""
-
-#: classes/content_composer.php:146
-msgid "Your message has been sent successfully!"
-msgstr ""
-
 #: classes/content_composer.php:147
-msgid "Server failed. Send later"
+msgid "The following field is required"
 msgstr ""
 
-#: classes/content_composer.php:160
+#: classes/content_composer.php:148
+msgid "Your message has been sent successfully."
+msgstr ""
+
+#: classes/content_composer.php:149
+msgid "Temporary server error. Please try again later."
+msgstr ""
+
+#: classes/content_composer.php:162
 msgid "Use wptexturize"
 msgstr ""
 
-#: classes/content_composer.php:240
-msgid "Default Grey"
+#: classes/content_composer.php:242
+msgid "Secondary Button"
 msgstr ""
 
-#: classes/content_composer.php:241
-msgid "Orange"
+#: classes/content_composer.php:243
+msgid "Primary Button"
 msgstr ""
 
-#: classes/content_composer.php:249
+#: classes/content_composer.php:251
 #: views/shortcodes/cardealer/popups/recent_cars.php:131
 #: views/shortcodes/default/popups/divider.php:28
 msgid "Small"
 msgstr ""
 
-#: classes/content_composer.php:250
+#: classes/content_composer.php:252
 #: views/shortcodes/cardealer/popups/recent_cars.php:132
 #: views/shortcodes/default/popups/divider.php:29
 msgid "Middle"
 msgstr ""
 
-#: classes/content_composer.php:251
+#: classes/content_composer.php:253
 #: views/shortcodes/cardealer/popups/recent_cars.php:133
 #: views/shortcodes/default/popups/divider.php:30
 msgid "Large"
 msgstr ""
 
-#: classes/content_composer.php:259
+#: classes/content_composer.php:261
 msgid "All Categories"
 msgstr ""
 
-#: classes/content_composer.php:441
+#: classes/content_composer.php:443
 msgid "Browse"
 msgstr ""
 
@@ -253,7 +253,9 @@ msgstr ""
 msgid "Fixed Width"
 msgstr ""
 
-#: views/meta_panel.php:188 views/shortcodes/default/popups/blockquote.php:12
+#: views/meta_panel.php:188
+#: views/shortcodes/cardealer/popups/quicksearch.php:235
+#: views/shortcodes/default/popups/blockquote.php:12
 msgid "Full Width"
 msgstr ""
 
@@ -281,18 +283,18 @@ msgstr ""
 
 #: views/meta_panel.php:221 views/shortcodes/cardealer/popups/slider.php:48
 #: views/shortcodes/default/popups/image.php:118
-#: views/shortcodes/default/popups/title.php:103
+#: views/shortcodes/default/popups/title.php:93
 msgid "Left"
 msgstr ""
 
 #: views/meta_panel.php:222 views/shortcodes/cardealer/popups/slider.php:47
 #: views/shortcodes/default/popups/image.php:119
-#: views/shortcodes/default/popups/title.php:104
+#: views/shortcodes/default/popups/title.php:94
 msgid "Right"
 msgstr ""
 
 #: views/meta_panel.php:223 views/shortcodes/default/popups/image.php:120
-#: views/shortcodes/default/popups/title.php:105
+#: views/shortcodes/default/popups/title.php:95
 msgid "Center"
 msgstr ""
 
@@ -368,8 +370,8 @@ msgstr ""
 msgid "Transparent (default)"
 msgstr ""
 
-#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:387
-#: views/shortcodes/default/popups/title.php:144
+#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:411
+#: views/shortcodes/default/popups/title.php:128
 msgid "Color"
 msgstr ""
 
@@ -467,32 +469,42 @@ msgstr ""
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:59
+#: views/shortcodes/cardealer/car_makes.php:70
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:122
+#: views/shortcodes/cardealer/dealers.php:83
+#, php-format
+msgid "Page %s of %d"
+msgstr ""
+
+#: views/shortcodes/cardealer/dealers.php:84
+#, php-format
+msgid "Displaying %s of %d users"
+msgstr ""
+
+#: views/shortcodes/cardealer/dealers.php:142
 msgid "Contacts"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:141
+#: views/shortcodes/cardealer/dealers.php:190
 msgid "Working hours"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:176
+#: views/shortcodes/cardealer/dealers.php:225
 msgid "E-mail Us"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:182
+#: views/shortcodes/cardealer/dealers.php:231
 msgid "Website"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:210
+#: views/shortcodes/cardealer/dealers.php:259
 msgid "Previous Page"
 msgstr ""
 
-#: views/shortcodes/cardealer/dealers.php:215
+#: views/shortcodes/cardealer/dealers.php:264
 msgid "Next Page"
 msgstr ""
 
@@ -623,7 +635,7 @@ msgid "All dealers"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/car_listing_carousel.php:132
-#: views/shortcodes/cardealer/popups/dealers.php:47
+#: views/shortcodes/cardealer/popups/dealers.php:77
 msgid "Administrator"
 msgstr ""
 
@@ -701,8 +713,8 @@ msgid "Enable link"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/car_makes.php:88
-#: views/shortcodes/cardealer/popups/dealers.php:45
-#: views/shortcodes/cardealer/popups/dealers.php:73
+#: views/shortcodes/cardealer/popups/dealers.php:75
+#: views/shortcodes/cardealer/popups/dealers.php:103
 msgid "All"
 msgstr ""
 
@@ -715,7 +727,11 @@ msgid "Select multiple car makes by holding CTRL + selecting certain option."
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/dealers.php:10
-msgid "Dealers Number"
+msgid "Dealers Per Page"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:14
+msgid "By default 3 dealers will be displayed."
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/dealers.php:25
@@ -734,60 +750,83 @@ msgstr ""
 msgid "Random"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:46
+#: views/shortcodes/cardealer/popups/dealers.php:45
+msgid "Enable location filter"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:60
+msgid "Select region to filter by"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:64
+msgid ""
+"Following field allows you filtering dealers by their location. Say entering "
+"a key `Berlin` will display all the dealers from region `Berlin`. Important: "
+"Filter applies only for Region address field"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:76
 msgid "All without Administrator"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:56
+#: views/shortcodes/cardealer/popups/dealers.php:86
 msgid "Dealer Type"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:92
+#: views/shortcodes/cardealer/popups/dealers.php:122
 msgid "Specific Dealer"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:110
+#: views/shortcodes/cardealer/popups/dealers.php:139
 msgid "Display Dealer Logo"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:128
+#: views/shortcodes/cardealer/popups/dealers.php:157
 msgid "Display Dealer Bio"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:143
+#: views/shortcodes/cardealer/popups/dealers.php:172
 msgid "Display Phone"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:158
+#: views/shortcodes/cardealer/popups/dealers.php:187
 msgid "Display Cell Phone"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:173
+#: views/shortcodes/cardealer/popups/dealers.php:202
 msgid "Display Fax"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:188
+#: views/shortcodes/cardealer/popups/dealers.php:217
 msgid "Display Email"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:203
+#: views/shortcodes/cardealer/popups/dealers.php:232
 msgid "Display Skype ID"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:218
+#: views/shortcodes/cardealer/popups/dealers.php:247
 msgid "Display Website Url"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:233
+#: views/shortcodes/cardealer/popups/dealers.php:262
 msgid "Display Postal Address"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:248
+#: views/shortcodes/cardealer/popups/dealers.php:277
+msgid "Display Working Hours"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:292
 msgid "Display Map Location"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/dealers.php:263
+#: views/shortcodes/cardealer/popups/dealers.php:307
 msgid "Excerpt Bio symbol count"
+msgstr ""
+
+#: views/shortcodes/cardealer/popups/dealers.php:311
+msgid "Leave empty to limit description field with 300 symbols"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/pricing_tables.php:12
@@ -850,76 +889,56 @@ msgstr ""
 msgid "Display year range"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:86
-msgid "Search button position"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:90
-msgid "First column"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:91
-msgid "Second column"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:92
-msgid "Third column"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:101
+#: views/shortcodes/cardealer/popups/quicksearch.php:85
 msgid "Widget Background"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:122
+#: views/shortcodes/cardealer/popups/quicksearch.php:106
 msgid "Select default country"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:151
+#: views/shortcodes/cardealer/popups/quicksearch.php:135
 msgid "Select default state"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:170
+#: views/shortcodes/cardealer/popups/quicksearch.php:154
 msgid "Display mileage"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:181
+#: views/shortcodes/cardealer/popups/quicksearch.php:165
 msgid "Display fuel type"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:192
+#: views/shortcodes/cardealer/popups/quicksearch.php:176
 msgid "Display gearbox"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:203
+#: views/shortcodes/cardealer/popups/quicksearch.php:187
 msgid "Display body type"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:214
+#: views/shortcodes/cardealer/popups/quicksearch.php:198
 msgid "Display doors count"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:225
+#: views/shortcodes/cardealer/popups/quicksearch.php:209
 msgid "Display colors"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:236
+#: views/shortcodes/cardealer/popups/quicksearch.php:220
 msgid "Display advanced search"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:247
-msgid "Search Widget Offset"
+#: views/shortcodes/cardealer/popups/quicksearch.php:231
+msgid "Widget Width"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:251
-msgid "Default Offset"
+#: views/shortcodes/cardealer/popups/quicksearch.php:236
+msgid "Two thirds (of site width)"
 msgstr ""
 
-#: views/shortcodes/cardealer/popups/quicksearch.php:252
-msgid "No Offset"
-msgstr ""
-
-#: views/shortcodes/cardealer/popups/quicksearch.php:262
-msgid "Display all fields in one column in pairs"
+#: views/shortcodes/cardealer/popups/quicksearch.php:237
+msgid "One third (of site width)"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:20
@@ -1097,97 +1116,97 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:135
+#: views/shortcodes/cardealer/quicksearch.php:150
 msgid "Location"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:207
+#: views/shortcodes/cardealer/quicksearch.php:231
 msgid "Condition"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:209
-#: views/shortcodes/cardealer/quicksearch.php:242
-#: views/shortcodes/cardealer/quicksearch.php:249
-#: views/shortcodes/cardealer/quicksearch.php:326
-#: views/shortcodes/cardealer/quicksearch.php:342
-#: views/shortcodes/cardealer/quicksearch.php:360
-#: views/shortcodes/cardealer/quicksearch.php:375
-#: views/shortcodes/cardealer/quicksearch.php:479
+#: views/shortcodes/cardealer/quicksearch.php:233
+#: views/shortcodes/cardealer/quicksearch.php:266
+#: views/shortcodes/cardealer/quicksearch.php:273
+#: views/shortcodes/cardealer/quicksearch.php:350
+#: views/shortcodes/cardealer/quicksearch.php:366
+#: views/shortcodes/cardealer/quicksearch.php:384
+#: views/shortcodes/cardealer/quicksearch.php:399
+#: views/shortcodes/cardealer/quicksearch.php:502
 msgid "Any"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:213
+#: views/shortcodes/cardealer/quicksearch.php:237
 #, php-format
 msgid "Only %s cars"
 msgstr "Numai masini %s"
 
-#: views/shortcodes/cardealer/quicksearch.php:240
+#: views/shortcodes/cardealer/quicksearch.php:264
 msgid "Make"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:247
+#: views/shortcodes/cardealer/quicksearch.php:271
 msgid "Model"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:259
+#: views/shortcodes/cardealer/quicksearch.php:283
 msgid "Price"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:259
-#: views/shortcodes/cardealer/quicksearch.php:309
+#: views/shortcodes/cardealer/quicksearch.php:283
+#: views/shortcodes/cardealer/quicksearch.php:333
 msgid "min/max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:273
+#: views/shortcodes/cardealer/quicksearch.php:297
 msgid "Year"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:277
+#: views/shortcodes/cardealer/quicksearch.php:301
 msgid "min"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:292
+#: views/shortcodes/cardealer/quicksearch.php:316
 msgid "max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:309
+#: views/shortcodes/cardealer/quicksearch.php:333
 msgid "Kilometer"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:309
+#: views/shortcodes/cardealer/quicksearch.php:333
 msgid "Mileage"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:323
+#: views/shortcodes/cardealer/quicksearch.php:347
 msgid "Fuel Type"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:339
+#: views/shortcodes/cardealer/quicksearch.php:363
 msgid "Gearbox"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:357
+#: views/shortcodes/cardealer/quicksearch.php:381
 msgid "Body Type"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:373
+#: views/shortcodes/cardealer/quicksearch.php:397
 msgid "Door Count"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:395
+#: views/shortcodes/cardealer/quicksearch.php:419
 msgid "Interior"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:406
+#: views/shortcodes/cardealer/quicksearch.php:430
 msgid "Exterior"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:423
+#: views/shortcodes/cardealer/quicksearch.php:447
 msgid "Advanced"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:429
-#: views/shortcodes/cardealer/quicksearch.php:495
+#: views/shortcodes/cardealer/quicksearch.php:453
+#: views/shortcodes/cardealer/quicksearch.php:519
 msgid "Search"
 msgstr ""
 
@@ -1239,7 +1258,7 @@ msgstr ""
 msgid "FAX"
 msgstr ""
 
-#: views/shortcodes/default/contact_form.php:101
+#: views/shortcodes/default/contact_form.php:110
 msgid "Are you human?"
 msgstr ""
 
@@ -1331,8 +1350,8 @@ msgstr ""
 #: views/shortcodes/default/popups/button.php:34
 #: views/shortcodes/default/popups/image.php:168
 #: views/shortcodes/default/popups/services.php:18
-#: views/shortcodes/default/popups/title.php:41
-#: views/shortcodes/default/popups/title.php:81
+#: views/shortcodes/default/popups/title.php:36
+#: views/shortcodes/default/popups/title.php:73
 msgid "Default"
 msgstr ""
 
@@ -1398,12 +1417,12 @@ msgid "Chart Height"
 msgstr ""
 
 #: views/shortcodes/default/popups/chart.php:74
-#: views/shortcodes/default/popups/title.php:130
+#: views/shortcodes/default/popups/title.php:117
 msgid "Font Family"
 msgstr ""
 
 #: views/shortcodes/default/popups/chart.php:96
-#: views/shortcodes/default/popups/title.php:49
+#: views/shortcodes/default/popups/title.php:44
 msgid "Font Size"
 msgstr ""
 
@@ -1676,7 +1695,7 @@ msgid "Open original image size in Fancybox"
 msgstr ""
 
 #: views/shortcodes/default/popups/image.php:113
-#: views/shortcodes/default/popups/title.php:99
+#: views/shortcodes/default/popups/title.php:89
 msgid "Align"
 msgstr ""
 
@@ -1905,31 +1924,31 @@ msgstr ""
 msgid "Title Text"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:22
+#: views/shortcodes/default/popups/title.php:19
 msgid "Title Heading"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:64
+#: views/shortcodes/default/popups/title.php:56
 msgid "Letter spacing (px)"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:77
+#: views/shortcodes/default/popups/title.php:69
 msgid "Font weight"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:82
+#: views/shortcodes/default/popups/title.php:74
 msgid "Normal"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:87
+#: views/shortcodes/default/popups/title.php:79
 msgid "Bold"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:115
+#: views/shortcodes/default/popups/title.php:105
 msgid "Show border under the title"
 msgstr ""
 
-#: views/shortcodes/default/popups/title.php:158
+#: views/shortcodes/default/popups/title.php:140
 msgid "Bottom Indent (px)"
 msgstr ""
 
