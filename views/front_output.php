@@ -199,17 +199,17 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 		?>
 
 		<?php if ($row_displaying === 'full_width' || $row_displaying === 'before_full_width') { ?>
-		<section id="<?php echo 'section_'.$row ?>" class="<?php echo $section_class; ?>"<?php echo $section_style_attr; ?>>
+		<section id="<?php echo 'section_'.$row ?>" class="<?php echo esc_attr( $section_class ); ?>"<?php echo wp_kses_post( $section_style_attr ); ?>>
 
 			<?php
 			if ($display_overlay) { ?>
-			<div class="overlay"<?php echo $overlay_style_attr; ?>></div>
+			<div class="overlay"<?php echo wp_kses_post( $overlay_style_attr ); ?>></div>
 			<?php } ?>
 
-			<div class="<?php echo $container_class; ?>">
+			<div class="<?php echo esc_attr( $container_class ); ?>">
 		<?php } ?>
 
-				<div <?php if ($row_displaying === 'default') { ?>id="<?php echo 'section_'.$row ?>"<?php } ?> class="<?php echo wp_kses_post( $row_class ) ?>"<?php echo wp_kses_post( $row_style_attr ) ?>>
+				<div <?php if ($row_displaying === 'default') { ?>id="<?php echo 'section_'.$row ?>"<?php } ?> class="<?php echo esc_attr( $row_class ) ?>"<?php echo wp_kses_post( $row_style_attr ) ?>>
 
 					<?php foreach ($row_data as $uniqid => $column) { ?>
 
@@ -221,7 +221,7 @@ foreach ($tmm_layout_constructor as $row => $row_data) {
 							$col_class .= ' ' . $column['effect'];
 						}
 						?>
-						<div class="<?php echo wp_kses_post( $col_class ) ?>"><?php echo $content ?></div>
+						<div class="<?php echo esc_attr( $col_class ) ?>"><?php echo $content ?></div>
 
 					<?php } ?>
 

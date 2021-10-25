@@ -73,7 +73,7 @@ $car_watch_list   = TMM_Ext_PostType_Car::get_watch_list();
 
 <?php endif; ?>
 
-<div id="change-items" class="row tmm-view-mode <?php echo $cars_listing_layout_class ?>">
+<div id="change-items" class="row tmm-view-mode <?php echo esc_attr( $cars_listing_layout_class ) ?>">
 
 	<?php
 	if ( ! empty( $query->posts ) ) {

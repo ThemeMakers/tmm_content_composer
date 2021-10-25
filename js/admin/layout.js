@@ -10,61 +10,61 @@
 						'value': '1/4',
 						'name': 'col-md-3',
 						'css_class': 'col-md-3',
-						'front_css_class': 'col-md-3'
+						'front_css_class': 'col-md-3 col-sm-6'
 					},
 					{
 						'value': '1/3',
 						'name': 'col-md-4',
 						'css_class': 'col-md-4',
-						'front_css_class': 'col-md-4'
+						'front_css_class': 'col-md-4 col-sm-4'
 					},
 					{
 						'value': '5/12',
 						'name': 'col-md-5',
 						'css_class': 'col-md-5',
-						'front_css_class': 'col-md-5'
+						'front_css_class': 'col-md-5 col-sm-5'
 					},
 					{
 						'value': '1/2',
 						'name': 'col-md-6',
 						'css_class': 'col-md-6',
-						'front_css_class': 'col-md-6'
+						'front_css_class': 'col-md-6 col-sm-6'
 					},
 					{
 						'value': '7/12',
 						'name': 'col-md-7',
 						'css_class': 'col-md-7',
-						'front_css_class': 'col-md-7'
+						'front_css_class': 'col-md-7 col-sm-7'
 					},
 					{
 						'value': '2/3',
 						'name': 'col-md-8',
 						'css_class': 'col-md-8',
-						'front_css_class': 'col-md-8'
+						'front_css_class': 'col-md-8 col-sm-8'
 					},
 					{
 						'value': '3/4',
 						'name': 'col-md-9',
 						'css_class': 'col-md-9',
-						'front_css_class': 'col-md-9'
+						'front_css_class': 'col-md-9 col-sm-9'
 					},
 					{
 						'value': '5/6',
 						'name': 'col-md-10',
 						'css_class': 'col-md-10',
-						'front_css_class': 'col-md-10'
+						'front_css_class': 'col-md-10 col-sm-10'
 					},
 					{
 						'value': '11/12',
 						'name': 'col-md-11',
 						'css_class': 'col-md-11',
-						'front_css_class': 'col-md-11'
+						'front_css_class': 'col-md-11 col-sm-11'
 					},
 					{
 						'value': 'Fullwidth',
 						'name': 'col-md-12',
 						'css_class': 'col-md-12',
-						'front_css_class': 'col-md-12'
+						'front_css_class': 'col-md-12 col-sm-12'
 					}
 				];
 
