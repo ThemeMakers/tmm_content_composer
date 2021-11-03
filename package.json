@@ -6,7 +6,12 @@
   "dependencies": {
     "grunt-contrib-cssmin": "^2.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "^1.4.1",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-uglify": "^5.0.1",
+    "grunt-contrib-watch": "^1.1.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
