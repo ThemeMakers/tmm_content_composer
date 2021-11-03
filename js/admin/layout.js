@@ -61,7 +61,7 @@
                 $('.tmm-lc-columns').sortable();
 
                 /* Events handlers */
-                $(ducument.body).on('click', '.tmm-lc-add-row', function(){
+                $(document.body).on('click', '.tmm-lc-add-row', function(){
                     self.add_row();
                     return false;
                 });
