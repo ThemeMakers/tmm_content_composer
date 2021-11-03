@@ -449,7 +449,7 @@
 		colorizator();
 		separateRow();
 
-		jQuery('#word_animate').life('click', function () {
+		jQuery(document.body).on('click', '#word_animate', function () {
 			if (jQuery(this).is(':checked')) {
 				var title_text = jQuery('#title_text').val();
 				var prev_separate = jQuery('#separate_row').val();

@@ -165,7 +165,7 @@ jQuery(document).ready(function() {
 		return false;
 	});
 
-	jQuery(".contact_form_option_checkbox").life('click', function() {
+	jQuery(document.body).on('click', ".contact_form_option_checkbox", function() {
 		if (jQuery(this).is(":checked")) {
 			jQuery(this).val(1);
 		} else {

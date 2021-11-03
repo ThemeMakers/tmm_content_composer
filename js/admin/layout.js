@@ -5,12 +5,6 @@
             active_editor_id: null,
             init: function() {
 
-                $.fn.life = function(types, data, fn) {
-                    "use strict";
-                    $(this.context).on(types, this.selector, data, fn);
-                    return this;
-                };
-
                 self.columns = [
                     {
                         'value': '1/4',
@@ -67,17 +61,17 @@
                 $('.tmm-lc-columns').sortable();
 
                 /* Events handlers */
-                $('.tmm-lc-add-row').life('click', function(){
+                $(ducument.body).on('click', '.tmm-lc-add-row', function(){
                     self.add_row();
                     return false;
                 });
                 
-                $('.tmm-lc-add-column').life('click', function(){
+                $(document.body).on('click', '.tmm-lc-add-column', function(){
                     self.add_column($(this).data('row-id'));
                     return false;
                 });
                 
-                $('.tmm-lc-copy-row').life('click', function(){
+                $(document.body).on('click', '.tmm-lc-copy-row', function(){
                     self.copy_row($(this).data('row-id'));
                     var tmm_buffer = localStorage.getItem('tmm_buffer');
                     if (tmm_buffer){
@@ -91,7 +85,7 @@
                     $('.tmm-lc-paste-row').addClass('disabled');
                 }                
                 
-                $('.tmm-lc-paste-row').life('click', function(){
+                $(document.body).on('click', '.tmm-lc-paste-row', function(){
                     var tmm_buffer = localStorage.getItem('tmm_buffer');
                     if (tmm_buffer){
                         self.paste_row();
@@ -99,24 +93,24 @@
                    return false; 
                 });
                 
-                $('.tmm-lc-edit-row').life('click', function(){
+                $(document.body).on('click', '.tmm-lc-edit-row', function(){
                     self.edit_row($(this).data('row-id'));
                     return false;
                 });
                 
-                $('.tmm-lc-delete-row').life('click', function(){
+                $(document.body).on('click', '.tmm-lc-delete-row', function(){
                     self.delete_row($(this).data('row-id'));
                     return false;
                 });
                 
-                $(".tmm-lc-delete-column").life('click', function() {
+                $(document.bofy).on('click', ".tmm-lc-delete-column", function() {
                     if (confirm(tmm_lang['column_delete'])) {
                         $("#item_" + $(this).data('item-id')).remove();
                     }
                     return false;
                 });
 
-                $(".tmm-lc-edit-column").life('click', function() {
+                $(document.body).on('click', ".tmm-lc-edit-column", function() {
 
                     if ($(".tmm-lc-column-title-input").length > 0) {
                         return;
@@ -220,7 +214,7 @@
 
                 });
 
-                $(".tmm-lc-column-size-plus").life('click', function() {
+                $(document.body).on('click', ".tmm-lc-column-size-plus", function() {
 	                var item_id = $(this).data('item-id');
 
 	                self.change_column_size(item_id, 1);
@@ -228,7 +222,7 @@
 	                return false;
                 });
 
-                $(".tmm-lc-column-size-minus").life('click', function() {
+                $(document.body).on('click', ".tmm-lc-column-size-minus", function() {
                     var item_id = $(this).data('item-id');
 
                     self.change_column_size(item_id, -1);

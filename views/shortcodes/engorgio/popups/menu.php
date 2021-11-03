@@ -191,7 +191,7 @@
             tmm_ext_shortcodes.menu_changer(shortcode_name);
         });	
         
-        jQuery('.icon_type').life('change', function(){
+        jQuery('.icon_type').on('change', function(){
             var $this = jQuery(this),
             val = $this.val(), 
             this_icon = $this.parents('.one-half').next('.one-half').find('i');
@@ -215,7 +215,7 @@
 			return false;
 		});
 
-		jQuery(".js_delete_accordion_item").life('click',function() {
+		jQuery(document.body).on('click', ".js_delete_accordion_item", function() {
 			if (jQuery(".list_item").length > 1) {
 				jQuery(this).parents('li').hide(200, function() {
 					jQuery(this).remove();

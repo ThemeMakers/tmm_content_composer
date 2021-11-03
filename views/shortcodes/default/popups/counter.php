@@ -133,7 +133,7 @@
 	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
 	jQuery(function() {
 		tmm_ext_shortcodes.changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").life('keyup change', function() {
+		jQuery("#tmm_shortcode_template").on('keyup change', '.js_shortcode_template_changer', function() {
 			tmm_ext_shortcodes.changer(shortcode_name);
 		});
 		//***
@@ -153,7 +153,7 @@
 		});
 
 
-		jQuery(".js_delete_list_item").life('click',function() {
+		jQuery(document.body).on('click', ".js_delete_list_item", function() {
 			if (jQuery(".list_item").length > 1) {
 				jQuery(this).parents('li').hide(200, function() {
 					jQuery(this).remove();

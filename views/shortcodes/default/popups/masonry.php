@@ -149,7 +149,7 @@
 			return false;
 		});
 
-		jQuery(".js_delete_list_item").life('click',function() {
+		jQuery(document.body).on('click', ".js_delete_list_item", function() {
 			if (jQuery(".list_item").length > 1) {
 				jQuery(this).parents('li').hide(200, function() {
 					jQuery(this).remove();

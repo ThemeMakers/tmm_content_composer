@@ -326,7 +326,7 @@
 
 		//***
 		tmm_ext_shortcodes.text_slider_changer(shortcode_name);
-		jQuery("#tmm_shortcode_template .js_shortcode_template_changer").life('keyup change', function() {
+		jQuery("#tmm_shortcode_template").on('keyup change', '.js_shortcode_template_changer', function() {
 			tmm_ext_shortcodes.text_slider_changer(shortcode_name);
             colorizator();
 		});
@@ -343,7 +343,7 @@
 			return false;
 		});
                 
-		jQuery(".js_delete_text_slider_item").life('click',function() {
+		jQuery(document.body).on('click', ".js_delete_text_slider_item", function() {
 			if (jQuery(".list_item").length > 1) {
 				jQuery(this).parents('li').hide(200, function() {
 					jQuery(this).remove();
