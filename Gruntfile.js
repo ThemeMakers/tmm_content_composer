@@ -3,11 +3,14 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
-		compass: {
-			dist: {
+		sass: {
+			plugin: {
 				options: {
-					//sourcemap: true,
-					config: 'config.rb'
+					cacheLocation: '../../../.sass-cache',
+					style: 'compressed'
+				},
+				files: {
+					'css/style-lc.css': 'scss/style-lc.scss'
 				}
 			}
 		},
@@ -34,15 +37,15 @@ module.exports = function(grunt) {
 				files: [
 					'scss/*.scss'
 				],
-				tasks: ['compass']
+				tasks: ['sass']
 			}
 		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 
-	grunt.registerTask('default', ['watch']);
+	grunt.registerTask('default', ['sass'], ['watch']);
 
 };

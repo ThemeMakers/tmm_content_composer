@@ -17,6 +17,10 @@ $form-border-color-disabled:	#f6f6f6;
   background-repeat: no-repeat;
   transition: all .3s ease-in-out;
 
+  #{'.rtl'} & {
+    background-position: 10px 50%;
+  }
+
   &:hover {
     border-color: $form-border-color-hover;
   }
