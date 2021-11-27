@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-04 23:39+0200\n"
-"PO-Revision-Date: 2021-09-04 23:39+0200\n"
-"Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
+"PO-Revision-Date: 2021-11-27 01:13+0100\n"
+"Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.4.3\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -18,6 +18,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Loco-Version: 2.5.5; wp-5.8.2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -75,31 +76,27 @@ msgstr "Abschnitt-editor"
 
 #: classes/content_composer.php:147
 msgid "The following field is required"
-msgstr ""
+msgstr "Das folgende Feld ist erforderlich"
 
 #: classes/content_composer.php:148
-#, fuzzy
-#| msgid "Your message has been sent successfully!"
 msgid "Your message has been sent successfully."
-msgstr "Nachricht wurde erfolgreich versendet!"
+msgstr "Deine Nachricht wurde erfolgreich verschickt."
 
 #: classes/content_composer.php:149
 msgid "Temporary server error. Please try again later."
-msgstr ""
+msgstr "Temporärer Serverfehler. Bitte versuchen Sie es später noch einmal."
 
 #: classes/content_composer.php:162
 msgid "Use wptexturize"
 msgstr "Wptexturize verwenden"
 
 #: classes/content_composer.php:242
-#, fuzzy
-#| msgid "Second column"
 msgid "Secondary Button"
-msgstr "Zweite Spalte"
+msgstr "Secondary Button"
 
 #: classes/content_composer.php:243
 msgid "Primary Button"
-msgstr ""
+msgstr "Primary Button"
 
 #: classes/content_composer.php:251
 #: views/shortcodes/cardealer/popups/recent_cars.php:131
@@ -239,11 +236,11 @@ msgstr "Unter Inhalt passend sein layout"
 
 #: views/meta_panel.php:170
 msgid "Before main content with separate layout options"
-msgstr ""
+msgstr "Vor dem Hauptinhalt mit separaten Layout-Optionen"
 
 #: views/meta_panel.php:171
 msgid "After main content with separate layout options"
-msgstr ""
+msgstr "Nach dem Hauptinhalt mit separaten Layout-Optionen"
 
 #: views/meta_panel.php:183
 msgid "Container Width"
@@ -477,12 +474,12 @@ msgstr "Alle Einträge anzeigen, die unter %s gespeichert sind"
 #: views/shortcodes/cardealer/dealers.php:83
 #, php-format
 msgid "Page %s of %d"
-msgstr ""
+msgstr "Seite %s von %d"
 
 #: views/shortcodes/cardealer/dealers.php:84
 #, php-format
 msgid "Displaying %s of %d users"
-msgstr ""
+msgstr "Anzeige %s von %d Benutzer"
 
 #: views/shortcodes/cardealer/dealers.php:142
 msgid "Contacts"
@@ -579,7 +576,7 @@ msgstr "Rot"
 
 #: views/shortcodes/cardealer/popups/animated_banner.php:136
 msgid "Yellow"
-msgstr ""
+msgstr "Gelb"
 
 #: views/shortcodes/cardealer/popups/car_listing_carousel.php:9
 #: views/shortcodes/cardealer/popups/recent_cars.php:9
@@ -689,18 +686,16 @@ msgid "Hide locations whithout related cars"
 msgstr "Standorte whithout ähnlichen Autos ausblenden"
 
 #: views/shortcodes/cardealer/popups/car_makes.php:8
-#, fuzzy
-#| msgid "Hide locations whithout related cars"
 msgid "Hide items with no cars"
-msgstr "Standorte whithout ähnlichen Autos ausblenden"
+msgstr "Gegenstände ohne Autos ausblenden"
 
 #: views/shortcodes/cardealer/popups/car_makes.php:19
 msgid "Display car make logos"
-msgstr "Anzeige Herstellerlogos"
+msgstr "Herstellerlogos Anzeigen"
 
 #: views/shortcodes/cardealer/popups/car_makes.php:30
 msgid "Display only makes, that have their logo"
-msgstr ""
+msgstr "Nur Hersteller mit Logo anzeigen"
 
 #: views/shortcodes/cardealer/popups/car_makes.php:41
 msgid "Display make title"
@@ -726,17 +721,15 @@ msgstr "Liste der logos"
 
 #: views/shortcodes/cardealer/popups/car_makes.php:103
 msgid "Select multiple car makes by holding CTRL + selecting certain option."
-msgstr ""
+msgstr "Wählen Sie mehrere Automarken durch STRG + Auswählen einer Option"
 
 #: views/shortcodes/cardealer/popups/dealers.php:10
-#, fuzzy
-#| msgid "Products Per Page"
 msgid "Dealers Per Page"
-msgstr "Produkte pro Seite"
+msgstr "Händler pro Seite"
 
 #: views/shortcodes/cardealer/popups/dealers.php:14
 msgid "By default 3 dealers will be displayed."
-msgstr ""
+msgstr "Standardmäßig werden 3 Händler angezeigt."
 
 #: views/shortcodes/cardealer/popups/dealers.php:25
 msgid "Display Order"
@@ -755,14 +748,12 @@ msgid "Random"
 msgstr "Zufällig"
 
 #: views/shortcodes/cardealer/popups/dealers.php:45
-#, fuzzy
-#| msgid "Enable animation loop"
 msgid "Enable location filter"
-msgstr "Aktivieren Animationsschleife"
+msgstr "Standort Filter aktivieren"
 
 #: views/shortcodes/cardealer/popups/dealers.php:60
 msgid "Select region to filter by"
-msgstr ""
+msgstr "Zu filternde Region auswählen"
 
 #: views/shortcodes/cardealer/popups/dealers.php:64
 msgid ""
@@ -770,6 +761,10 @@ msgid ""
 "a key `Berlin` will display all the dealers from region `Berlin`. Important: "
 "Filter applies only for Region address field"
 msgstr ""
+"Im folgenden Feld können Sie Händler nach ihrem Standort filtern. Wenn Sie "
+"beispielsweise einen Schlüssel \"Berlin\" eingeben, werden alle Händler aus "
+"der Region \"Berlin\" angezeigt. Wichtig: Filter gilt nur für das Feld "
+"Regionsadresse"
 
 #: views/shortcodes/cardealer/popups/dealers.php:76
 msgid "All without Administrator"
@@ -785,31 +780,31 @@ msgstr "Spezifische Fachhändler"
 
 #: views/shortcodes/cardealer/popups/dealers.php:139
 msgid "Display Dealer Logo"
-msgstr "Display Dealer Logo"
+msgstr "Dealer Logo anzeigen"
 
 #: views/shortcodes/cardealer/popups/dealers.php:157
 msgid "Display Dealer Bio"
-msgstr "Anzeigen Händler Bio"
+msgstr "Händler Bio anzeigen"
 
 #: views/shortcodes/cardealer/popups/dealers.php:172
 msgid "Display Phone"
-msgstr "AnzeigenTelefon"
+msgstr "Telefon anzeigen"
 
 #: views/shortcodes/cardealer/popups/dealers.php:187
 msgid "Display Cell Phone"
-msgstr "Anzeigen Handy"
+msgstr "Handy anzeigen"
 
 #: views/shortcodes/cardealer/popups/dealers.php:202
 msgid "Display Fax"
-msgstr "Anzeigen Fax"
+msgstr "Fax anzeigen"
 
 #: views/shortcodes/cardealer/popups/dealers.php:217
 msgid "Display Email"
-msgstr "Anzeigen E-Mail"
+msgstr "E-Mail anzeigen"
 
 #: views/shortcodes/cardealer/popups/dealers.php:232
 msgid "Display Skype ID"
-msgstr "Zeigen Sie Skype ID"
+msgstr "Skype ID anzeigen"
 
 #: views/shortcodes/cardealer/popups/dealers.php:247
 msgid "Display Website Url"
@@ -817,13 +812,11 @@ msgstr "Website URL anzeigen"
 
 #: views/shortcodes/cardealer/popups/dealers.php:262
 msgid "Display Postal Address"
-msgstr "Anzeigen Postanschrift"
+msgstr "Postanschrift anzeigen"
 
 #: views/shortcodes/cardealer/popups/dealers.php:277
-#, fuzzy
-#| msgid "Working hours"
 msgid "Display Working Hours"
-msgstr "Öffnungszeiten"
+msgstr "Öffnungszeiten anzeigen"
 
 #: views/shortcodes/cardealer/popups/dealers.php:292
 msgid "Display Map Location"
@@ -835,7 +828,7 @@ msgstr "Auszug Bio Symbolanzahl"
 
 #: views/shortcodes/cardealer/popups/dealers.php:311
 msgid "Leave empty to limit description field with 300 symbols"
-msgstr ""
+msgstr "Leer lassen, um das Beschreibungsfeld auf 300 Symbole zu beschränken"
 
 #: views/shortcodes/cardealer/popups/pricing_tables.php:12
 msgid "Table Count"
@@ -871,7 +864,7 @@ msgstr "Ist Empfohlen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:9
 msgid "Display country"
-msgstr "Land anzeigen "
+msgstr "Land anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:20
 msgid "Display state"
@@ -938,18 +931,16 @@ msgid "Display advanced search"
 msgstr "Anzeigen erweiterte Suche"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:231
-#, fuzzy
-#| msgid "Fixed Width"
 msgid "Widget Width"
-msgstr "Feste Breite"
+msgstr "Widget Breite"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:236
 msgid "Two thirds (of site width)"
-msgstr ""
+msgstr "Zwei Drittel (der Standortbreite)"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:237
 msgid "One third (of site width)"
-msgstr ""
+msgstr "Ein Drittel (der Standortbreite)"
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:20
 msgid "Show details button"
@@ -1165,11 +1156,11 @@ msgstr "Preis"
 #: views/shortcodes/cardealer/quicksearch.php:283
 #: views/shortcodes/cardealer/quicksearch.php:333
 msgid "min/max"
-msgstr ""
+msgstr "min/max"
 
 #: views/shortcodes/cardealer/quicksearch.php:297
 msgid "Year"
-msgstr "Jahr"
+msgstr "Erstzulassung"
 
 #: views/shortcodes/cardealer/quicksearch.php:301
 msgid "min"
@@ -1481,7 +1472,7 @@ msgstr "Fest"
 
 #: views/shortcodes/default/popups/divider.php:13
 msgid "Solid Short"
-msgstr ""
+msgstr "Solide kurze"
 
 #: views/shortcodes/default/popups/divider.php:14
 msgid "Empty Space"
@@ -1657,27 +1648,27 @@ msgstr "Bild Hover-Effekt"
 
 #: views/shortcodes/default/popups/image.php:27
 msgid "Grayscale"
-msgstr ""
+msgstr "Grayscale"
 
 #: views/shortcodes/default/popups/image.php:28
 msgid "Sepia"
-msgstr ""
+msgstr "Sepia"
 
 #: views/shortcodes/default/popups/image.php:29
 msgid "Saturate"
-msgstr ""
+msgstr "Saturate"
 
 #: views/shortcodes/default/popups/image.php:30
 msgid "Brightness"
-msgstr ""
+msgstr "Helligkeit"
 
 #: views/shortcodes/default/popups/image.php:31
 msgid "Contrast"
-msgstr ""
+msgstr "Kontrast"
 
 #: views/shortcodes/default/popups/image.php:32
 msgid "Blur"
-msgstr ""
+msgstr "Unschärfe"
 
 #: views/shortcodes/default/popups/image.php:45
 msgid "Action"
@@ -1709,7 +1700,7 @@ msgstr "Leer"
 
 #: views/shortcodes/default/popups/image.php:98
 msgid "Open original image size in Fancybox"
-msgstr ""
+msgstr "Offenen Originalgröße des Bildes in Fancybox"
 
 #: views/shortcodes/default/popups/image.php:113
 #: views/shortcodes/default/popups/title.php:89
@@ -1758,11 +1749,11 @@ msgstr "Bildunterschrift"
 
 #: views/shortcodes/default/popups/image.php:213
 msgid "Inner Offset"
-msgstr ""
+msgstr "Inneren Versatz"
 
 #: views/shortcodes/default/popups/image.php:218
 msgid "Smaller...........1px"
-msgstr ""
+msgstr "Kleiner... 1px"
 
 #: views/shortcodes/default/popups/image.php:219
 msgid "Small..............3px"
@@ -1907,7 +1898,7 @@ msgstr "Alternatives Symbol an der Spitze"
 
 #: views/shortcodes/default/popups/services.php:132
 msgid "Blocks"
-msgstr ""
+msgstr "Blocks"
 
 #: views/shortcodes/default/popups/services.php:178
 msgid "Text Color"
@@ -1982,6 +1973,8 @@ msgid ""
 "Examples: https://www.youtube.com/watch?v=_EBYf3lYSEg  http://vimeo."
 "com/22439234 or upload self hosted video"
 msgstr ""
+"Beispiele: https://www.youtube.com/watch?v=_EBYf3lYSEg http://vimeo."
+"com/22439234 oder Upload selbst gehosteten Video"
 
 #: views/shortcodes/default/popups/tmm_video.php:22
 msgid "Cover Image for Self Hosted Video"
@@ -2065,66 +2058,3 @@ msgstr "ThemeMakers"
 #. Author URI of the plugin/theme
 msgid "http://themeforest.net/user/ThemeMakers"
 msgstr "http://themeforest.net/user/Thememakers"
-
-#~ msgid "Please enter correct"
-#~ msgstr "Bitte richtig eingeben"
-
-#~ msgid "Server failed. Send later"
-#~ msgstr "Server ist fehlgeschlagen. Später senden"
-
-#~ msgid "Default Grey"
-#~ msgstr "Standard Grau"
-
-#~ msgid "Orange"
-#~ msgstr "Orange"
-
-#~ msgid "Dealers Number"
-#~ msgstr "Händler Nummer"
-
-#~ msgid "Search Widget Offset"
-#~ msgstr "Suche Widget Offset"
-
-#~ msgid "Default Offset"
-#~ msgstr "Widget Hintergrund"
-
-#~ msgid "Search button position"
-#~ msgstr "Suchtaste Position"
-
-#~ msgid "First column"
-#~ msgstr "Ersten Spalte"
-
-#~ msgid "Third column"
-#~ msgstr "Dritte Spalte"
-
-#~ msgid "Hide empty makes"
-#~ msgstr "Leere Hersteller ausblenden"
-
-#~ msgid "from"
-#~ msgstr "ab"
-
-#~ msgid "to"
-#~ msgstr "bis"
-
-#~ msgid "Arial"
-#~ msgstr "Arial"
-
-#~ msgid "Tahoma"
-#~ msgstr "Tahoma"
-
-#~ msgid "Verdana"
-#~ msgstr "Verdana"
-
-#~ msgid "Calibri"
-#~ msgstr "Calibri"
-
-#~ msgid "ROADMAP"
-#~ msgstr "STRASSENKARTE"
-
-#~ msgid "SATELLITE"
-#~ msgstr "Satelliten"
-
-#~ msgid "HYBRID"
-#~ msgstr "HYBRID"
-
-#~ msgid "TERRAIN"
-#~ msgstr "GELÄNDE"
