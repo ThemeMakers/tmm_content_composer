@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-09-04 23:39+0200\n"
-"PO-Revision-Date: 2021-11-27 01:13+0100\n"
+"PO-Revision-Date: 2021-12-03 22:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -44,7 +44,7 @@ msgstr "Es gibt keine Optionen für Shortcode!"
 
 #: classes/content_composer.php:102
 msgid "Shortcode updated!"
-msgstr "Short aktualisiert!"
+msgstr "Shortcode aktualisiert!"
 
 #: classes/content_composer.php:103
 msgid "Insert Shortcode"
@@ -52,15 +52,15 @@ msgstr "Shortcode einfügen"
 
 #: classes/content_composer.php:104
 msgid "Edit shortcode"
-msgstr "Kurzwahlnummer bearbeiten"
+msgstr "Shortcode bearbeiten"
 
 #: classes/content_composer.php:116
 msgid "Sure about column deleting?"
-msgstr "Sicher über die Spalte löschen?"
+msgstr "Wirklich die Spalte löschen?"
 
 #: classes/content_composer.php:117
 msgid "Sure about row deleting?"
-msgstr "Sicher über die Zeile löschen?"
+msgstr "Wirklich die Zeile löschen?"
 
 #: classes/content_composer.php:118 views/column_item.php:13
 msgid "Empty title"
@@ -72,7 +72,7 @@ msgstr "Spalte-Content-editor"
 
 #: classes/content_composer.php:120
 msgid "Section editor"
-msgstr "Abschnitt-editor"
+msgstr "Abschnitts-Editor"
 
 #: classes/content_composer.php:147
 msgid "The following field is required"
@@ -228,7 +228,7 @@ msgstr "Layout-Konstruktor"
 
 #: views/meta_panel.php:165
 msgid "Section Content Position"
-msgstr "Inhalt"
+msgstr "Inhalt Schnittposition"
 
 #: views/meta_panel.php:169
 msgid "Below content matching its layout"
@@ -601,7 +601,7 @@ msgstr "Auto-Slide aktivieren"
 #: views/shortcodes/cardealer/popups/car_listing_carousel.php:50
 #: views/shortcodes/cardealer/popups/recent_cars.php:42
 msgid "Enable Currency Converter"
-msgstr "Aktivieren Währungsrechner"
+msgstr "Währungsrechner aktivieren"
 
 #: views/shortcodes/cardealer/popups/car_listing_carousel.php:61
 msgid "Slide Featured Cars Images on Hover"
@@ -679,7 +679,7 @@ msgstr "Zeige Positionen nach Ebene"
 
 #: views/shortcodes/cardealer/popups/car_locations.php:23
 msgid "Hide empty locations"
-msgstr "Aktivieren Sie Leerplätze"
+msgstr "Leere Standorte ausblenden"
 
 #: views/shortcodes/cardealer/popups/car_locations.php:27
 msgid "Hide locations whithout related cars"
@@ -721,7 +721,7 @@ msgstr "Liste der logos"
 
 #: views/shortcodes/cardealer/popups/car_makes.php:103
 msgid "Select multiple car makes by holding CTRL + selecting certain option."
-msgstr "Wählen Sie mehrere Automarken durch STRG + Auswählen einer Option"
+msgstr "Wählen Sie mehrere Automarken durch STRG + Auswählen einer Option."
 
 #: views/shortcodes/cardealer/popups/dealers.php:10
 msgid "Dealers Per Page"
@@ -741,11 +741,11 @@ msgstr "Neue zuerst"
 
 #: views/shortcodes/cardealer/popups/dealers.php:30
 msgid "Oldest First"
-msgstr "Älteste"
+msgstr "Älteste zuerst"
 
 #: views/shortcodes/cardealer/popups/dealers.php:31
 msgid "Random"
-msgstr "Zufällig"
+msgstr "Zufällige Fahrzeuge"
 
 #: views/shortcodes/cardealer/popups/dealers.php:45
 msgid "Enable location filter"
@@ -832,11 +832,11 @@ msgstr "Leer lassen, um das Beschreibungsfeld auf 300 Symbole zu beschränken"
 
 #: views/shortcodes/cardealer/popups/pricing_tables.php:12
 msgid "Table Count"
-msgstr "Preis Tabelle"
+msgstr "Tabelle Anzahl"
 
 #: views/shortcodes/cardealer/popups/pricing_tables.php:36
 msgid "Row Count"
-msgstr "Zeile-editor"
+msgstr "Zeilenanzahl"
 
 #: views/shortcodes/cardealer/popups/pricing_tables.php:53
 msgid "Starter Package"
@@ -860,7 +860,7 @@ msgstr "Button-Link"
 
 #: views/shortcodes/cardealer/popups/pricing_tables.php:113
 msgid "Is Featured"
-msgstr "Ist Empfohlen"
+msgstr "TOP Inserat"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:9
 msgid "Display country"
@@ -876,19 +876,19 @@ msgstr "Stadt anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:42
 msgid "Display condition"
-msgstr "Voraussetzung"
+msgstr "Zustand anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:53
 msgid "Display producers &amp; models"
-msgstr "Display-Hersteller und Modelle"
+msgstr "Hersteller &amp; Modelle anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:64
 msgid "Display price range"
-msgstr "Anzeige Preisspanne"
+msgstr "Preisspanne anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:75
 msgid "Display year range"
-msgstr "Anzeigebereich"
+msgstr "Erstzulassung anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:85
 msgid "Widget Background"
@@ -896,27 +896,27 @@ msgstr "Widget-Hintergrund"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:106
 msgid "Select default country"
-msgstr "Wählen Sie das Standard-Land"
+msgstr "Standard Land wählen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:135
 msgid "Select default state"
-msgstr "Wählen Sie die Standardzustand"
+msgstr "Standard Bundesland wählen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:154
 msgid "Display mileage"
-msgstr "Anzeige Autos"
+msgstr "Kilometerstand anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:165
 msgid "Display fuel type"
-msgstr "Display Kraftstoffart"
+msgstr "Kraftstoffart anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:176
 msgid "Display gearbox"
-msgstr "Display-Getriebe"
+msgstr "Getriebe anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:187
 msgid "Display body type"
-msgstr "Display Körper Typ"
+msgstr "Karosserieform anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:198
 msgid "Display doors count"
@@ -924,11 +924,11 @@ msgstr "Türenanzahl anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:209
 msgid "Display colors"
-msgstr "Display-Farben"
+msgstr "Farbe anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:220
 msgid "Display advanced search"
-msgstr "Anzeigen erweiterte Suche"
+msgstr "Erweiterte Suche anzeigen"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:231
 msgid "Widget Width"
@@ -944,11 +944,11 @@ msgstr "Ein Drittel (der Standortbreite)"
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:20
 msgid "Show details button"
-msgstr "Details anzeigen Button"
+msgstr "Details-Button anzeigen"
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:31
 msgid "Show link to all cars"
-msgstr "Zeige Link zu allen Autos"
+msgstr "Link zu allen Fahrzeugen anzeigen"
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:46
 msgid "Show currency converter"
@@ -960,7 +960,7 @@ msgstr "Filtern nach Marke"
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:77
 msgid "Enter number of cars"
-msgstr "Geben Sie die Anzahl der Autos"
+msgstr "Anzahl der Fahrzeuge eingeben"
 
 #: views/shortcodes/cardealer/popups/recent_cars.php:88
 msgid "Show layout switcher"
@@ -1014,7 +1014,7 @@ msgstr "Max Symbole Anzahl Beschreibung"
 
 #: views/shortcodes/cardealer/popups/search_by_car_body.php:20
 msgid "Display Body Type Name"
-msgstr "Karosserie-Typ anzeigen"
+msgstr "Karosserieform anzeigen"
 
 #: views/shortcodes/cardealer/popups/search_by_car_body.php:31
 msgid "Display Count of Cars Related to Body Type"
@@ -1192,24 +1192,24 @@ msgstr "Karosserieform"
 
 #: views/shortcodes/cardealer/quicksearch.php:397
 msgid "Door Count"
-msgstr "Anzahl Türen"
+msgstr "Anzahl der Türen"
 
 #: views/shortcodes/cardealer/quicksearch.php:419
 msgid "Interior"
-msgstr "Innenausstattung"
+msgstr "Innen"
 
 #: views/shortcodes/cardealer/quicksearch.php:430
 msgid "Exterior"
-msgstr "Aussenausstattung"
+msgstr "Aussen"
 
 #: views/shortcodes/cardealer/quicksearch.php:447
 msgid "Advanced"
-msgstr "Erweitert"
+msgstr "Erweiterte Suche"
 
 #: views/shortcodes/cardealer/quicksearch.php:453
 #: views/shortcodes/cardealer/quicksearch.php:519
 msgid "Search"
-msgstr "Suchen"
+msgstr "Los"
 
 #: views/shortcodes/cardealer/recent_cars.php:100
 msgid "Show all cars"
@@ -1530,7 +1530,7 @@ msgstr "Adresse"
 
 #: views/shortcodes/default/popups/google_map.php:77
 msgid "Enable Popup"
-msgstr "Aktivieren Sie Popup"
+msgstr "Popup aktivieren"
 
 #: views/shortcodes/default/popups/google_map.php:81
 msgid ""
@@ -1600,7 +1600,7 @@ msgstr "Ziehbare Marke setzen"
 
 #: views/shortcodes/default/popups/google_map.php:228
 msgid "Set marker draggable"
-msgstr "Ziehbare Marke setzen"
+msgstr "Verschiebbarer Marker erlauben"
 
 #: views/shortcodes/default/popups/google_table.php:14
 msgid "Rows count"
@@ -2033,15 +2033,15 @@ msgstr "Sale Produkte"
 
 #: views/shortcodes/woocommerce/popups/tmm_special_products.php:43
 msgid "Select Products Type"
-msgstr "Ausgewählte Produkte-Typ"
+msgstr "Produkt-Typ wählen"
 
 #: views/shortcodes/woocommerce/popups/tmm_special_products.php:48
 msgid "Select products type"
-msgstr "Geben Sie ausgewählte Produkte"
+msgstr "Produkt-Typ wählen"
 
 #. Plugin Name of the plugin/theme
 msgid "ThemeMakers Visual Content Composer"
-msgstr "Zeige nur Visual Composer"
+msgstr "ThemeMakers Visual Content Composer"
 
 #. Plugin URI of the plugin/theme
 msgid "http://webtemplatemasters.com"
