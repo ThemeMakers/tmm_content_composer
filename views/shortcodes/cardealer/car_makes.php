@@ -66,33 +66,23 @@ foreach ($makes as $make) {
     if ($make->count > 0 || !$hide_empty) {
         ?>
 
-			<li class="cat-item-<?php echo esc_attr($make->term_id) ?><?php if ($show_name) {?> with-title<?php }?>">
-
-			<?php if (!isset($show_link) || $show_link && $make->count > 0) {?>
-				<a title="<?php echo sprintf(esc_html__('View all ads filed under %s', 'tmm_content_composer'), $make->name); ?>" href="<?php echo get_term_link($make->slug, 'carproducer'); ?>" class="icon-link">
-			<?php }?>
-
-				<?php if ($show_logo && $src != '') {?>
-					<img src="<?php echo esc_attr($src) ?>" alt="<?php echo esc_html__($make->name, 'tmm_content_composer') ?>" />
-				<?php }?>
-
-			<?php if (!isset($show_link) || $show_link && $make->count > 0) {?>
-				</a>
-			<?php }?>
+			<li class="cat-item-<?php echo esc_attr((str_replace(' ', '-', strtolower($make->name)))) ?>">
 
 			<?php if (!isset($show_link) || $show_link && $make->count > 0) {?>
 				<a title="<?php echo sprintf(esc_html__('View all ads filed under %s', 'tmm_content_composer'), $make->name); ?>" href="<?php echo get_term_link($make->slug, 'carproducer'); ?>">
 			<?php }?>
 
-				<?php if ($show_name) {?>
-					<span class="car-title">
+				<?php if ($show_logo && $src != '') {?>
+					<span class="icon"><img src="<?php echo esc_attr($src) ?>" alt="<?php echo esc_html__($make->name, 'tmm_content_composer') ?>" /></span>
+				<?php }?>
 
-					<?php
+				<?php if ($show_name) {?>
+					<h4 class="car-title">
+                        <?php
 echo esc_html__($make->name, 'tmm_content_composer');
             echo (!isset($show_count) || $show_count) ? ' (' . $make->count . ')' : '';
             ?>
-
-					</span>
+                    </h4>
 				<?php }?>
 
 			<?php if (!isset($show_link) || $show_link && $make->count > 0) {?>
