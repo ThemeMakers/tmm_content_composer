@@ -47,8 +47,10 @@ class TMM_Shortcode
 
         $shortcodes_keys = array_keys(self::$shortcodes);
 
-        function tmm_do_shortcode($atts, $content = '', $shortcode_key)
+        function tmm_do_shortcode($atts, string $content, $shortcode_key)
         {
+            $content = isset($content) ? $content : '';
+
             if (is_array($atts) && isset($atts['content'])) {
                 $atts["content"] = $content;
             }
