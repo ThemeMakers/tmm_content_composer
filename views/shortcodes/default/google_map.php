@@ -83,9 +83,7 @@ if (TMM::get_option("api_key_google")){
 	<?php
 	}
 
-} else {
-	$full_width = ($width == '' || $width == '100%') ? '1130' : $width;
-	$custom_height = ($height == '') ? '400' : $height;
-	$link_url = 'https://placeholdit.imgix.net/~text?txtsize=40&txt=Please+Enter+a+Valid+Google+API+key&w='. $full_width . '&h=' . $custom_height;
-	echo '<img class="aligncenter" src=' . $link_url . '>';
+} else { ?>
+	<p class="notice"><?php esc_html_e('missing Google API key', 'cardealer'); ?></p>
+	<?php
 }
