@@ -6,7 +6,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Title', 'tmm_content_composer'),
+			'title' => esc_html__('Title', 'tmm_content_composer'),
 			'shortcode_field' => 'title',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('title', ''),
@@ -17,7 +17,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show details button', 'tmm_content_composer'),
+			'title' => esc_html__('Show details button', 'tmm_content_composer'),
 			'shortcode_field' => 'show_details_button',
 			'id' => 'show_details_button',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_details_button', 1),
@@ -28,7 +28,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show link to all cars', 'tmm_content_composer'),
+			'title' => esc_html__('Show link to all cars', 'tmm_content_composer'),
 			'shortcode_field' => 'show_view_all_cars_link',
 			'id' => 'view_all_cars',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_view_all_cars_link', 1),
@@ -39,11 +39,11 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Enable Currency Converter', 'tmm_content_composer'),
+			'title' => esc_html__('Enable Currency Converter', 'tmm_content_composer'),
 			'shortcode_field' => 'show_recent_cars_currency_converter',
 			'id' => 'show_recent_cars_currency_converter',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_recent_cars_currency_converter', 1),
-			'description' => __('Show currency converter', 'tmm_content_composer')
+			'description' => esc_html__('Show currency converter', 'tmm_content_composer')
 		));
 		?>
 
@@ -74,7 +74,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'text',
-			'title' => __('Enter number of cars', 'tmm_content_composer'),
+			'title' => esc_html__('Enter number of cars', 'tmm_content_composer'),
 			'shortcode_field' => 'content',
 			'id' => '',
 			'default_value' => TMM_Content_Composer::set_default_value('content', 9),
@@ -85,7 +85,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Show layout switcher', 'tmm_content_composer'),
+			'title' => esc_html__('Show layout switcher', 'tmm_content_composer'),
 			'shortcode_field' => 'show_layout_switcher',
 			'id' => 'layout_switcher',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_layout_switcher', 1),
@@ -97,12 +97,12 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('View Mode', 'tmm_content_composer'),
+			'title' => esc_html__('View Mode', 'tmm_content_composer'),
 			'shortcode_field' => 'layout_mode',
 			'id' => 'layout_mode',
 			'options' => array(
-				'grid' => __('Grid View', 'tmm_content_composer'),
-				'list' => __('List View', 'tmm_content_composer'),
+				'grid' => esc_html__('Grid View', 'tmm_content_composer'),
+				'list' => esc_html__('List View', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('layout_mode', 'grid'),
 			'description' => ''
@@ -113,7 +113,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => __('Slide featured cars images on hover', 'tmm_content_composer'),
+			'title' => esc_html__('Slide featured cars images on hover', 'tmm_content_composer'),
 			'shortcode_field' => 'set_featured_autoslide',
 			'id' => 'featured_autoslide',
 			'is_checked' => TMM_Content_Composer::set_default_value('set_featured_autoslide', 1),
@@ -124,13 +124,13 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'select',
-			'title' => __('Thumbnail size', 'tmm_content_composer'),
+			'title' => esc_html__('Thumbnail size', 'tmm_content_composer'),
 			'shortcode_field' => 'thumbnail_size',
 			'id' => 'thumbnail_size',
 			'options' => array(
-				'small' => __('Small', 'tmm_content_composer'),
-				'middle' => __('Middle', 'tmm_content_composer'),
-				'large' => __('Large', 'tmm_content_composer'),
+				'small' => esc_html__('Small', 'tmm_content_composer'),
+				'middle' => esc_html__('Middle', 'tmm_content_composer'),
+				'large' => esc_html__('Large', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('thumbnail_size', 'large'),
 			'description' => ''
@@ -139,11 +139,9 @@
 
 	</div>
 
-</div><!--/ .tmm_shortcode_template->
+</div><!--/ .tmm_shortcode_template -->
 
-<!-- --------------------------  PROCESSOR  --------------------------- -->
-
-<script type="text/javascript">
+<script>
 	var shortcode_name = "<?php echo basename(__FILE__, '.php'); ?>";
 
 	jQuery(function() {
