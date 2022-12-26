@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-04 23:37+0200\n"
-"PO-Revision-Date: 2021-09-04 23:37+0200\n"
+"POT-Creation-Date: 2022-12-26 15:00+0100\n"
+"PO-Revision-Date: 2022-12-26 15:00+0100\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Română\n"
 "Language: ro_RO\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 :(((n%100>19)||(( n%100==0)&&(n!"
 "=0)))? 2 : 1));\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: index.php\n"
@@ -133,11 +133,11 @@ msgstr ""
 msgid "Unsupported video format"
 msgstr ""
 
-#: classes/shortcode.php:43
+#: classes/shortcode.php:39
 msgid "Price table"
 msgstr ""
 
-#: classes/shortcode.php:44
+#: classes/shortcode.php:40
 msgid "Google table row"
 msgstr ""
 
@@ -469,7 +469,7 @@ msgstr ""
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:70
+#: views/shortcodes/cardealer/car_makes.php:72
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
@@ -918,7 +918,7 @@ msgid "Display body type"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:198
-msgid "Display doors count"
+msgid "Display doors number"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:209
@@ -1190,7 +1190,7 @@ msgid "Body Type"
 msgstr ""
 
 #: views/shortcodes/cardealer/quicksearch.php:397
-msgid "Door Count"
+msgid "Doors Number"
 msgstr ""
 
 #: views/shortcodes/cardealer/quicksearch.php:419

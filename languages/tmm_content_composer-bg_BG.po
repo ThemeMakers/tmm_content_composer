@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-04 23:39+0200\n"
-"PO-Revision-Date: 2021-09-04 23:39+0200\n"
+"POT-Creation-Date: 2022-12-26 14:58+0100\n"
+"PO-Revision-Date: 2022-12-26 14:58+0100\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Bulgarian\n"
 "Language: bg_BG\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: index.php\n"
@@ -134,12 +134,12 @@ msgstr "Разгледай"
 msgid "Unsupported video format"
 msgstr "Добави видео"
 
-#: classes/shortcode.php:43
+#: classes/shortcode.php:39
 #, fuzzy
 msgid "Price table"
 msgstr "Настройки на цената"
 
-#: classes/shortcode.php:44
+#: classes/shortcode.php:40
 msgid "Google table row"
 msgstr ""
 
@@ -494,7 +494,7 @@ msgstr "Напред"
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:70
+#: views/shortcodes/cardealer/car_makes.php:72
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
@@ -1009,7 +1009,7 @@ msgstr "Категория"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:198
 #, fuzzy
-msgid "Display doors count"
+msgid "Display doors number"
 msgstr "Врати"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:209
@@ -1304,8 +1304,9 @@ msgid "Body Type"
 msgstr "Категория"
 
 #: views/shortcodes/cardealer/quicksearch.php:397
-msgid "Door Count"
-msgstr "Врати"
+#, fuzzy
+msgid "Doors Number"
+msgstr "Коли"
 
 #: views/shortcodes/cardealer/quicksearch.php:419
 #, fuzzy
@@ -2250,13 +2251,12 @@ msgstr ""
 msgid "http://themeforest.net/user/ThemeMakers"
 msgstr ""
 
+#~ msgid "Door Count"
+#~ msgstr "Врати"
+
 #, fuzzy
 #~ msgid "Please enter correct"
 #~ msgstr "Невалиден email адрес"
-
-#, fuzzy
-#~ msgid "Dealers Number"
-#~ msgstr "Коли"
 
 #, fuzzy
 #~ msgid "Search Widget Offset"

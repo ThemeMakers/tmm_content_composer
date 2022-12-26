@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-04 23:37+0200\n"
-"PO-Revision-Date: 2021-09-04 23:37+0200\n"
+"POT-Creation-Date: 2022-12-26 14:59+0100\n"
+"PO-Revision-Date: 2022-12-26 14:59+0100\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Polski\n"
 "Language: pl_PL\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 &&(n"
 "%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
@@ -136,11 +136,11 @@ msgstr ""
 msgid "Unsupported video format"
 msgstr ""
 
-#: classes/shortcode.php:43
+#: classes/shortcode.php:39
 msgid "Price table"
 msgstr ""
 
-#: classes/shortcode.php:44
+#: classes/shortcode.php:40
 msgid "Google table row"
 msgstr ""
 
@@ -472,7 +472,7 @@ msgstr "Następny"
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:70
+#: views/shortcodes/cardealer/car_makes.php:72
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
@@ -925,7 +925,9 @@ msgid "Display body type"
 msgstr "Wyświetl typ karoserii"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:198
-msgid "Display doors count"
+#, fuzzy
+#| msgid "Display doors count"
+msgid "Display doors number"
 msgstr "Wyświetl ilość drzwi"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:209
@@ -1197,8 +1199,10 @@ msgid "Body Type"
 msgstr "Typ karoserii"
 
 #: views/shortcodes/cardealer/quicksearch.php:397
-msgid "Door Count"
-msgstr "Ilość drzwi"
+#, fuzzy
+#| msgid "Dealers Number"
+msgid "Doors Number"
+msgstr "Liczba sprzedawców"
 
 #: views/shortcodes/cardealer/quicksearch.php:419
 #, fuzzy
@@ -2060,11 +2064,11 @@ msgstr ""
 msgid "http://themeforest.net/user/ThemeMakers"
 msgstr ""
 
+#~ msgid "Door Count"
+#~ msgstr "Ilość drzwi"
+
 #~ msgid "Orange"
 #~ msgstr "Pomarańczowy"
-
-#~ msgid "Dealers Number"
-#~ msgstr "Liczba sprzedawców"
 
 #~ msgid "from"
 #~ msgstr "od"

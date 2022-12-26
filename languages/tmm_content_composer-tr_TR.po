@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-04 23:36+0200\n"
-"PO-Revision-Date: 2021-09-04 23:36+0200\n"
+"POT-Creation-Date: 2022-12-26 15:00+0100\n"
+"PO-Revision-Date: 2022-12-26 15:00+0100\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Turkish\n"
 "Language: tr_TR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -140,12 +140,12 @@ msgstr "Gözat"
 msgid "Unsupported video format"
 msgstr "Para Birimi Biçimi"
 
-#: classes/shortcode.php:43
+#: classes/shortcode.php:39
 #, fuzzy
 msgid "Price table"
 msgstr "Fiyat"
 
-#: classes/shortcode.php:44
+#: classes/shortcode.php:40
 #, fuzzy
 msgid "Google table row"
 msgstr "Google+"
@@ -531,7 +531,7 @@ msgstr "Sonraki"
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:70
+#: views/shortcodes/cardealer/car_makes.php:72
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
@@ -1045,7 +1045,7 @@ msgstr "Kasa Türü Adını Görüntüle"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:198
 #, fuzzy
-msgid "Display doors count"
+msgid "Display doors number"
 msgstr "Araç Kapısı Sayısı"
 
 #: views/shortcodes/cardealer/popups/quicksearch.php:209
@@ -1348,8 +1348,10 @@ msgid "Body Type"
 msgstr "Kasa Türü"
 
 #: views/shortcodes/cardealer/quicksearch.php:397
-msgid "Door Count"
-msgstr "Kapı Sayısı"
+#, fuzzy
+#| msgid "Dealers Number"
+msgid "Doors Number"
+msgstr "Satıcı Numarası"
 
 #: views/shortcodes/cardealer/quicksearch.php:419
 #, fuzzy
@@ -2338,6 +2340,9 @@ msgstr "ThemeMakers"
 msgid "http://themeforest.net/user/ThemeMakers"
 msgstr "http://themeforest.net/user/ThemeMakers"
 
+#~ msgid "Door Count"
+#~ msgstr "Kapı Sayısı"
+
 #, fuzzy
 #~ msgid "Please enter correct"
 #~ msgstr "Lütfen doğru veriyi buna göre girin!"
@@ -2347,9 +2352,6 @@ msgstr "http://themeforest.net/user/ThemeMakers"
 
 #~ msgid "Orange"
 #~ msgstr "Turuncu"
-
-#~ msgid "Dealers Number"
-#~ msgstr "Satıcı Numarası"
 
 #, fuzzy
 #~ msgid "Search Widget Offset"
