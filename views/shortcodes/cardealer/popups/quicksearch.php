@@ -195,7 +195,7 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
-			'title' => esc_html__('Display doors count', 'tmm_content_composer'),
+			'title' => esc_html__('Display doors number', 'tmm_content_composer'),
 			'shortcode_field' => 'show_doors_count',
 			'id' => 'show_doors_count',
 			'is_checked' => TMM_Content_Composer::set_default_value('show_doors_count', 1),

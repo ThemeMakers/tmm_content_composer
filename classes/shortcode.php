@@ -3,14 +3,12 @@
  * Shortcodes Package
  */
 
-class TMM_Shortcode
-{
+class TMM_Shortcode {
     public static $shortcodes = array();
     public static $shortcodes_folders = array();
     public static $shortcodes_keys_by_folders = array();
 
-    public static function register()
-    {
+    public static function register() {
         //collect shortcodes from folder "views"
         $handler = opendir(TMM_CC_DIR . "views/shortcodes/");
         while ($file = readdir($handler)) {
@@ -20,11 +18,7 @@ class TMM_Shortcode
                     continue;
                 }
 
-                if ($file === 'seamless-donations' && !function_exists('dgx_donate_init')) {
-                    continue;
-                }
-
-                if ($file !== 'default' && $file !== 'woocommerce' && $file !== 'seamless-donations' && !class_exists('TMM')) {
+                if ($file !== 'default' && $file !== 'woocommerce' && !class_exists('TMM')) {
                     continue;
                 }
 
@@ -47,8 +41,7 @@ class TMM_Shortcode
 
         $shortcodes_keys = array_keys(self::$shortcodes);
 
-        function tmm_do_shortcode($atts, string $content, $shortcode_key)
-        {
+        function tmm_do_shortcode($atts, string $content, $shortcode_key) {
             $content = isset($content) ? $content : '';
 
             if (is_array($atts) && isset($atts['content'])) {
@@ -73,10 +66,11 @@ class TMM_Shortcode
             $_REQUEST["shortcode_key"] = $shortcode_key;
             add_shortcode($shortcode_key, 'tmm_do_shortcode');
         }
+        // list all shortcodes
+        // echo var_dump($shortcodes_keys);
     }
 
-    public static function get_shortcodes_items()
-    {
+    public static function get_shortcodes_items() {
         $continue_array = array('google_table_row', 'price_table');
         $result = array();
 
@@ -101,13 +95,11 @@ class TMM_Shortcode
         return json_encode($result);
     }
 
-    public static function draw_html($shortcode_key, $attributes = array())
-    {
+    public static function draw_html($shortcode_key, $attributes = array()) {
         return self::render_html("views/shortcodes/" . self::get_shortcode_key_folder($shortcode_key) . "/" . $shortcode_key . ".php", $attributes);
     }
 
-    public static function get_shortcode_icon($shortcode)
-    {
+    public static function get_shortcode_icon($shortcode) {
         $icon_url = TMM_CC_URL . 'images/icons/' . $shortcode . '.png';
         if (file_exists(TMM_CC_DIR . 'images/icons/' . $shortcode . '.png')) {
             return $icon_url;
@@ -116,8 +108,7 @@ class TMM_Shortcode
         return TMM_CC_URL . 'images/icons/shortcode.png';
     }
 
-    public static function get_shortcodes_array()
-    {
+    public static function get_shortcodes_array() {
         $results = array();
 
         foreach (self::$shortcodes_folders as $shortcode_folder) {
@@ -160,8 +151,7 @@ class TMM_Shortcode
         return $results;
     }
 
-    public static function usort($a, $b)
-    {
+    public static function usort($a, $b) {
         if (strpos($a, 'tmm_') === 0) {
             $a = str_replace('tmm_', '', $a);
         }
@@ -172,8 +162,7 @@ class TMM_Shortcode
     }
 
     //ajax
-    public static function get_shortcode_template()
-    {
+    public static function get_shortcode_template() {
         $data = array();
         if ($_REQUEST['mode'] == 'edit') {
             $_REQUEST['shortcode_mode_edit'] = array();
@@ -186,8 +175,7 @@ class TMM_Shortcode
         exit;
     }
 
-    public static function set_post_fonts()
-    {
+    public static function set_post_fonts() {
         $fonts = array();
         $pattern = '/font_family="([a-zA-Z ]*)"/i';
         $text = isset($_POST['content']) ? $_POST['content'] : '';
@@ -219,8 +207,7 @@ class TMM_Shortcode
         update_post_meta($post_id, 'tmm_google_fonts', $result);
     }
 
-    public static function get_shortcode_key_folder($shortcode_key)
-    {
+    public static function get_shortcode_key_folder($shortcode_key) {
         foreach (self::$shortcodes_keys_by_folders as $folder => $shortcodes_keys) {
             if (in_array($shortcode_key, $shortcodes_keys)) {
                 return $folder;
@@ -228,8 +215,7 @@ class TMM_Shortcode
         }
     }
 
-    public static function render_html($pagepath, $data = array())
-    {
+    public static function render_html($pagepath, $data = array()) {
         $pagepath = TMM_CC_DIR . $pagepath;
         @extract($data);
         ob_start();

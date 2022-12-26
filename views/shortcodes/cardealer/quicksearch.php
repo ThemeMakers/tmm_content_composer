@@ -391,10 +391,10 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 			</p>
 		<?php } ?>
 
-		<!-- Doors Count-->
+		<!-- Doors Number-->
 		<?php if (!empty($show_doors_count)) { ?>
 			<p>
-				<label for="tmm_qs_doors_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Door Count", 'tmm_content_composer') ?></label>
+				<label for="tmm_qs_doors_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Doors Number", 'tmm_content_composer') ?></label>
 				<select id="tmm_qs_doors_<?php echo esc_attr( $uniqid ) ?>" name="car_doors_count">
 					<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
 					<?php for ($i = TMM_Ext_PostType_Car::$car_options['min_doors_count']; $i <= TMM_Ext_PostType_Car::$car_options['max_doors_count']; $i++) { ?>

@@ -16,6 +16,9 @@ fonts_dir = "fonts"
 line_comments = false
 color_output = false
 
+asset_cache_buster = :none 
+cache = false
+
 preferred_syntax = :scss
 output_style = :compressed
 sass_options = {:sourcemap => false}
