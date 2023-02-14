@@ -82,7 +82,7 @@
 
 							</td>
 							<td style="width: 60%;">
-								<input type="text" value="<?php echo $content_edit_text ?>" class="list_item_content js_shortcode_template_changer data-area" />
+								<input type="text" value="<?php echo htmlspecialchars( wp_kses_post($content_edit_text) ) ?>" class="list_item_content js_shortcode_template_changer data-area" />
 							</td>
 							<td>
 								<a class="button button-secondary js_delete_list_item js_shortcode_template_changer" href="#"><?php esc_html_e('Remove', 'tmm_content_composer'); ?></a>
