@@ -11,7 +11,7 @@ switch($type){
         ?>
         <div class="content-boxes">
 							
-            <ul>
+            <ul class="list-entry">
                 <?php if (!empty($content)){ ?>
                     <?php foreach ($content as $key => $text){
 

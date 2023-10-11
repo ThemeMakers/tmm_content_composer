@@ -25,7 +25,7 @@
 		<h4 class="label"><?php esc_html_e('Staff', 'tmm_content_composer'); ?></h4>
 		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add staff item', 'tmm_content_composer'); ?></a><br />
 
-		<ul id="list_items" class="list-items">
+		<ul id="list_items" class="list-entry list-items">
 			<?php foreach ($albums_edit_data as $staff_id) : ?>
 				<li class="list_item">
 					<table class="list-table">

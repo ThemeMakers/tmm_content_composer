@@ -58,7 +58,7 @@ $i = 0;
 				</div>
 				<div class="spiner"></div>
 			</div>
-			<ul class="social-icons">
+			<ul class="list-entry social-icons">
 				<?php if ( ! empty( $custom["facebook"] ) ): ?>
 					<li><b><?php esc_html_e( 'Facebook', 'tmm_content_composer' ) ?>:</b>&nbsp;<a
 							href="<?php echo $custom["facebook"] ?>" title="<?php esc_html_e('Facebook', 'tmm_content_composer'); ?>"><i class="icon-facebook-squared"></i></a>

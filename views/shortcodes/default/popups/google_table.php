@@ -90,11 +90,11 @@ if (isset($_REQUEST["shortcode_mode_edit"])) {
 
 
 <h4 for="google_table_headers" class="label"><?php esc_html_e('Table headers', 'tmm_content_composer'); ?></h4>
-<ul id="google_table_headers">
+<ul id="google_table_headers" class="list-entry">
 
 
 	<li>
-		<ul class="google_table_cols">
+		<ul class="list-entry google_table_cols">
 
 			<?php foreach ($heads_values as $key => $head_value) : ?>
 				<li style="width: <?php echo((int) 100 / $cols) ?>%;">
@@ -122,12 +122,12 @@ if (isset($_REQUEST["shortcode_mode_edit"])) {
 <br />
 <div style="clear: both;"></div>
 <h4 for="google_table" class="label"><?php esc_html_e('Table data', 'tmm_content_composer'); ?></h4>
-<ul id="google_table">
+<ul id="google_table" class="list-entry">
 
 	<?php foreach ($rows_data as $key => $row_data) : ?>
 		<?php $row_data = explode('^', $row_data); ?>
 		<li>
-			<ul class="google_table_cols">
+			<ul class="list-entry google_table_cols">
 				<?php foreach ($row_data as $key => $val) : ?>
 					<li style="width: <?php echo((int) 100 / count($row_data)) ?>%;">
 						<input type="text" class="google_table_col" value="<?php echo $val ?>" />

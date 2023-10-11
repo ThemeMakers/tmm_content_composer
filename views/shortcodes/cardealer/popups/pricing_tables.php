@@ -47,7 +47,7 @@
 	</div>
 </div>
 
-<ul id="price_tables_list">
+<ul id="price_tables_list" class="list-entry">
 
 	<?php
 	$shortcodes_texts_array = array(0 => '[price_table title="' . __('Starter Package', 'tmm_content_composer') . '" price="' . __('19.95', 'tmm_content_composer') . '" button_text="' . __('Details', 'tmm_content_composer') . '" button_link="#" featured="0"]^^^[/price_table]');
@@ -96,7 +96,7 @@
 						<h3 class="cost"><input type="text" class="price_table_price_row price_table_row_input data-input" value="<?php echo $_REQUEST["shortcode_mode_edit"]['price'] ?>" /></h3>
 					</div><!-- .header -->
 
-					<ul class="features">
+					<ul class="list-entry features">
 						<?php foreach ($options_content as $option_text) : ?>
 							<li><input type="text" class="price_table_option_row price_table_row_input data-input" value="<?php echo $option_text ?>" placeholder="<?php esc_html_e('Enter text here', 'tmm_content_composer'); ?>" /></li>
 						<?php endforeach; ?>

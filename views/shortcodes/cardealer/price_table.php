@@ -46,7 +46,7 @@ $currency = class_exists('TMM_Ext_Car_Dealer') && isset(TMM_Ext_Car_Dealer::$def
 
 	<?php $content = explode('^', $content); ?>
 	<?php if (!empty($content)): ?>
-		<ul class="features">
+		<ul class="list-entry features">
 			<?php foreach ($content as $text) : ?>
 				<li><span><?php echo $text ?></span></li>
 			<?php endforeach; ?>

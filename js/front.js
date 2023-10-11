@@ -6,435 +6,460 @@
  * Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
  */
 (function ($) {
-	$.fn.appear = function (options) {
+  $.fn.appear = function (options) {
+    var transEndEventNames = {
+        WebkitTransition: "webkitTransitionEnd",
+        MozTransition: "transitionend",
+        OTransition: "oTransitionEnd",
+        msTransition: "MSTransitionEnd",
+        transition: "transitionend",
+      },
+      transEndEventName = transEndEventNames[Modernizr.prefixed("transition")];
 
-		var transEndEventNames = {
-				'WebkitTransition': 'webkitTransitionEnd',
-				'MozTransition': 'transitionend',
-				'OTransition': 'oTransitionEnd',
-				'msTransition': 'MSTransitionEnd',
-				'transition': 'transitionend'
-			},
-			transEndEventName = transEndEventNames[ Modernizr.prefixed('transition') ];
+    appearingSpeed = tmm_l10n.appearing_speed ? tmm_l10n.appearing_speed : 50;
 
-		appearingSpeed = tmm_l10n.appearing_speed ? tmm_l10n.appearing_speed : 50;
+    var settings = $.extend(
+      {
+        data: undefined,
+        speedAddClass: appearingSpeed,
+        speedRemoveClass: 100,
+        // X & Y accuracy
+        accX: 0,
+        accY: 0,
+      },
+      options
+    );
 
-		var settings = $.extend({
-			data: undefined,
-			speedAddClass: appearingSpeed,
-			speedRemoveClass: 100,
-			// X & Y accuracy
-			accX: 0,
-			accY: 0
-		}, options);
+    return this.each(function (id) {
+      var t = $(this);
 
-		return this.each(function (id) {
+      //whether the element is currently visible
+      t.appeared = false;
 
-			var t = $(this);
+      var w = $(window),
+        check = function () {
+          //is the element hidden?
+          if (!t.is(":visible")) {
+            //it became hidden
+            t.appeared = false;
+            return;
+          }
 
-			//whether the element is currently visible
-			t.appeared = false;
+          //is the element inside the visible window?
+          var a = w.scrollLeft(),
+            b = w.scrollTop(),
+            o = t.offset(),
+            x = o.left,
+            y = o.top,
+            ax = settings.accX,
+            ay = settings.accY,
+            th = t.height(),
+            wh = w.height(),
+            tw = t.width(),
+            ww = w.width();
 
-			var w = $(window),
-				check = function () {
+          if (
+            y + th + ay >= b &&
+            y <= b + wh + ay &&
+            x + tw + ax >= a &&
+            x <= a + ww + ax
+          ) {
+            //trigger the custom event
+            if (!t.appeared) t.trigger("appear", settings.data);
+          } else {
+            //it scrolled out of view
+            t.appeared = false;
+          }
+        };
 
-					//is the element hidden?
-					if (!t.is(':visible')) {
+      var fn = function (e) {
+        if (e.data) {
+          id = !id ? 1 : id;
 
-						//it became hidden
-						t.appeared = false;
-						return;
-					}
+          setTimeout(function () {
+            $(e.currentTarget)
+              .addClass(e.data + "Run")
+              .one(transEndEventName, function () {
+                $(this).removeClass(e.data);
+              });
+          }, id * settings.speedAddClass);
+        }
+      };
 
-					//is the element inside the visible window?
-					var a = w.scrollLeft(),
-						b = w.scrollTop(),
-						o = t.offset(),
-						x = o.left,
-						y = o.top,
+      //create a modified fn with some additional logic
+      var modifiedFn = function () {
+        //mark the element as visible
+        t.appeared = true;
 
-						ax = settings.accX,
-						ay = settings.accY,
-						th = t.height(),
-						wh = w.height(),
-						tw = t.width(),
-						ww = w.width();
+        //trigger the original fn
+        fn.apply(this, arguments);
+      };
 
-					if (y + th + ay >= b &&
-						y <= b + wh + ay &&
-						x + tw + ax >= a &&
-						x <= a + ww + ax) {
+      //bind the modified fn to the element
+      t.bind("appear", settings.data, modifiedFn);
 
-						//trigger the custom event
-						if (!t.appeared) t.trigger('appear', settings.data);
+      //check whenever the window scrolls
+      w.scroll(check);
 
-					} else {
+      //check whenever the dom changes
+      $.fn.appear.checks.push(check);
 
-						//it scrolled out of view
-						t.appeared = false;
-					}
-				};
+      //check now
+      check();
+    });
+  };
 
-			var fn = function (e) {
-				if (e.data) {
+  //keep a queue of appearance checks
+  $.extend($.fn.appear, {
+    checks: [],
+    timeout: null,
 
-					id = !id ? 1 : id;
+    //process the queue
+    checkAll: function () {
+      var length = $.fn.appear.checks.length;
+      if (length > 0) while (length--) $.fn.appear.checks[length]();
+    },
 
-					setTimeout(function() {
-						$(e.currentTarget).addClass(e.data + 'Run').one(transEndEventName, function () {
-							$(this).removeClass(e.data);
-						});
-					}, id * settings.speedAddClass);
-				}
-			}
+    //check the queue asynchronously
+    run: function () {
+      if ($.fn.appear.timeout) clearTimeout($.fn.appear.timeout);
+      $.fn.appear.timeout = setTimeout($.fn.appear.checkAll, 20);
+    },
+  });
 
-			//create a modified fn with some additional logic
-			var modifiedFn = function () {
+  //run checks when these methods are called
+  $.each(
+    [
+      "append",
+      "prepend",
+      "after",
+      "before",
+      "attr",
+      "removeAttr",
+      "addClass",
+      "removeClass",
+      "toggleClass",
+      "remove",
+      "css",
+      "show",
+      "hide",
+    ],
+    function (i, n) {
+      var old = $.fn[n];
 
-				//mark the element as visible
-				t.appeared = true;
-
-				//trigger the original fn
-				fn.apply(this, arguments);
-			};
-
-			//bind the modified fn to the element
-			t.bind('appear', settings.data, modifiedFn);
-
-			//check whenever the window scrolls
-			w.scroll(check);
-
-			//check whenever the dom changes
-			$.fn.appear.checks.push(check);
-
-			//check now
-			(check)();
-		});
-	};
-
-	//keep a queue of appearance checks
-	$.extend($.fn.appear, {
-
-		checks: [],
-		timeout: null,
-
-		//process the queue
-		checkAll: function() {
-			var length = $.fn.appear.checks.length;
-			if (length > 0) while (length--) ($.fn.appear.checks[length])();
-		},
-
-		//check the queue asynchronously
-		run: function() {
-			if ($.fn.appear.timeout) clearTimeout($.fn.appear.timeout);
-			$.fn.appear.timeout = setTimeout($.fn.appear.checkAll, 20);
-		}
-	});
-
-	//run checks when these methods are called
-	$.each(['append', 'prepend', 'after', 'before', 'attr',
-		'removeAttr', 'addClass', 'removeClass', 'toggleClass',
-		'remove', 'css', 'show', 'hide'], function(i, n) {
-		var old = $.fn[n];
-
-		if (old) {
-			$.fn[n] = function() {
-				var r = old.apply(this, arguments);
-				$.fn.appear.run();
-				return r;
-			}
-		}
-	});
-
+      if (old) {
+        $.fn[n] = function () {
+          var r = old.apply(this, arguments);
+          $.fn.appear.run();
+          return r;
+        };
+      }
+    }
+  );
 })(jQuery);
 
 /**
  * Layout effects
  */
 (function ($) {
+  $(function () {
+    if ($(".swipeDownEffect").length) {
+      $(".swipeDownEffect").appear({
+        accX: 0,
+        accY: -150,
+        data: "swipeDownEffect",
+      });
+    }
 
-	$(function () {
+    if ($(".showMeEffect").length) {
+      $(".showMeEffect").appear({
+        accX: 0,
+        accY: -150,
+        data: "showMeEffect",
+      });
+    }
 
-		if ($('.swipeDownEffect').length) {
-			$('.swipeDownEffect').appear({
-				accX: 0,
-				accY: -150,
-				data: 'swipeDownEffect'
-			});
-		}
+    if ($(".opacityEffect").length) {
+      $(".opacityEffect").appear({
+        accX: 0,
+        accY: 300,
+        data: "opacityEffect",
+      });
+    }
 
-		if ($('.showMeEffect').length) {
-			$('.showMeEffect').appear({
-				accX: 0,
-				accY: -150,
-				data: 'showMeEffect'
-			});
-		}
+    if ($(".scaleEffect").length) {
+      $(".scaleEffect").appear({
+        accX: 0,
+        accY: 300,
+        data: "scaleEffect",
+      });
+    }
 
-		if ($('.opacityEffect').length) {
-			$('.opacityEffect').appear({
-				accX: 0,
-				accY: 300,
-				data: 'opacityEffect'
-			});
-		}
+    if ($(".rotateEffect").length) {
+      $(".rotateEffect").appear({
+        accX: 0,
+        accY: 300,
+        data: "rotateEffect",
+      });
+    }
 
-		if ($('.scaleEffect').length) {
-			$('.scaleEffect').appear({
-				accX: 0,
-				accY: 300,
-				data: 'scaleEffect'
-			});
-		}
+    if ($(".slideRightEffect").length) {
+      $(".slideRightEffect").appear({
+        accX: 0,
+        accY: -150,
+        data: "slideRightEffect",
+      });
+    }
 
-		if ($('.rotateEffect').length) {
-			$('.rotateEffect').appear({
-				accX: 0,
-				accY: 300,
-				data: 'rotateEffect'
-			});
-		}
+    if ($(".slideLeftEffect").length) {
+      $(".slideLeftEffect").appear({
+        accX: 0,
+        accY: -150,
+        data: "slideLeftEffect",
+      });
+    }
 
-		if ($('.slideRightEffect').length) {
-			$('.slideRightEffect').appear({
-				accX: 0,
-				accY: -150,
-				data: 'slideRightEffect'
-			});
-		}
+    if ($(".slideDownEffect").length) {
+      $(".slideDownEffect").appear({
+        accX: 0,
+        accY: -150,
+        data: "slideDownEffect",
+      });
+    }
 
-		if ($('.slideLeftEffect').length) {
-			$('.slideLeftEffect').appear({
-				accX: 0,
-				accY: -150,
-				data: 'slideLeftEffect'
-			});
-		}
+    if ($(".slideUpEffect").length) {
+      $(".slideUpEffect").appear({
+        accX: 0,
+        accY: 300,
+        data: "slideUpEffect",
+      });
+    }
 
-		if ($('.slideDownEffect').length) {
-			$('.slideDownEffect').appear({
-				accX: 0,
-				accY: -150,
-				data: 'slideDownEffect'
-			});
-		}
+    if ($(".slideUp").length) {
+      $(".slideUp").appear({
+        accX: 0,
+        accY: 300,
+        data: "slideUp",
+        speedAddClass: 200,
+      });
+    }
 
-		if ($('.slideUpEffect').length) {
-			$('.slideUpEffect').appear({
-				accX: 0,
-				accY: 300,
-				data: 'slideUpEffect'
-			});
-		}
-
-		if ($('.slideUp').length) {
-			$('.slideUp').appear({
-				accX: 0,
-				accY: 300,
-				data: 'slideUp',
-				speedAddClass: 200
-			});
-		}
-
-		if ($('.translateEffect').length) {
-			$('.translateEffect').appear({
-				accX: 0,
-				accY: 300,
-				data: 'translateEffect',
-				speedAddClass: 200
-			});
-		}
-
-
-	});
-
-}(jQuery));
+    if ($(".translateEffect").length) {
+      $(".translateEffect").appear({
+        accX: 0,
+        accY: 300,
+        data: "translateEffect",
+        speedAddClass: 200,
+      });
+    }
+  });
+})(jQuery);
 
 /**
  * Contact form
  */
 
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
+  var $form = jQuery(".contact-form");
 
-	var $form = jQuery('.contact-form');
+  $form.on("submit", function () {
+    const responseContainer = jQuery('<ul class="list-entry"></ul>');
+    const errContainer = jQuery(this).find(".error");
+    const submitBtn = jQuery(this).find("button[type=submit]");
 
-	$form.on('submit', function() {
+    submitBtn.addClass("icon-spin");
 
-		const responseContainer = jQuery('<ul></ul>');
-		const errContainer = jQuery(this).find('.error');
-		const submitBtn = jQuery(this).find('button[type=submit]');
+    if (errContainer.length) {
+      errContainer.remove();
+    }
 
-		submitBtn.addClass('icon-spin');
+    const data = {
+      action: "contact_form_request",
+      values: jQuery(this).serialize(),
+    };
 
-		if(errContainer.length) {
-			errContainer.remove();
-		}
+    const form_self = this;
+    //send data to server
+    const posting = jQuery.post(ajaxurl, data);
 
-		const data = {
-			action: "contact_form_request",
-			values: jQuery(this).serialize()
-		};
+    posting.done((result) => {
+      const response = JSON.parse(result);
 
-		const form_self = this;
-		//send data to server
-		const posting = jQuery.post(ajaxurl, data);
+      jQuery(form_self).find(".wrong-data").removeClass("wrong-data");
 
-		posting.done(result=>{
-			const response = JSON.parse(result);
+      if (response.is_errors) {
+        responseContainer.addClass("error");
+        jQuery.each(response.info, function (input_name, input_label) {
+          jQuery(form_self)
+            .find("[name=" + input_name + "]")
+            .addClass("wrong-data");
+          responseContainer.append(
+            "<li>" +
+              tmm_mail_l10n.wrong_field_value +
+              ': "' +
+              input_label +
+              '"!</li>'
+          );
+        });
+      } else {
+        if (response.info == "succsess") {
+          submitBtn.attr("disabled", true);
+          responseContainer.addClass("success");
+          responseContainer.append("<li>" + tmm_mail_l10n.success + "</li>");
+        }
 
-			jQuery(form_self).find(".wrong-data").removeClass("wrong-data");
+        if (response.info == "server_fail") {
+          responseContainer.addClass("error");
+          responseContainer.append("<li>" + tmm_mail_l10n.fail + "</li>");
+        }
 
-			if (response.is_errors) {
+        form_self.reset();
+      }
 
-				responseContainer.addClass("error");
-				jQuery.each(response.info, function(input_name, input_label) {
-					jQuery(form_self).find("[name=" + input_name + "]").addClass("wrong-data");
-					responseContainer.append('<li>' + tmm_mail_l10n.wrong_field_value + ': "' + input_label + '"!</li>');
-				});
+      responseContainer.appendTo($form);
 
-			} else {
+      // Scroll to bottom of the form to show respond message
+      var bottomPosition =
+        jQuery(form_self).offset().top +
+        jQuery(form_self).outerHeight() -
+        jQuery(window).height();
 
-				if (response.info == 'succsess') {
-					submitBtn.attr('disabled', true);
-					responseContainer.addClass("success");
-					responseContainer.append('<li>' + tmm_mail_l10n.success + '</li>');
-				}
-				
-				if (response.info == 'server_fail') {
-					responseContainer.addClass("error");
-					responseContainer.append('<li>' + tmm_mail_l10n.fail + '</li>');
-				}
+      if (jQuery(document).scrollTop() < bottomPosition) {
+        jQuery("html, body").animate({
+          scrollTop: bottomPosition,
+        });
+      }
 
-				form_self.reset();
+      submitBtn.removeClass("icon-spin");
 
-			}
+      update_capcha(form_self, response.hash);
+    });
 
-			responseContainer.appendTo($form);
-
-			// Scroll to bottom of the form to show respond message
-			var bottomPosition = jQuery(form_self).offset().top + jQuery(form_self).outerHeight() - jQuery(window).height();
-
-			if (jQuery(document).scrollTop() < bottomPosition) {
-				jQuery('html, body').animate({
-					scrollTop: bottomPosition
-				});
-			}
-
-			submitBtn.removeClass('icon-spin');
-
-			update_capcha(form_self, response.hash);
-		});
-		
-		return false;
-	});
-
+    return false;
+  });
 });
 
 function update_capcha(form_object, hash) {
-	jQuery(form_object).find("[name=verify]").val("");
-	jQuery(form_object).find("[name=verify_code]").val(hash);
-	jQuery(form_object).find(".contact_form_capcha").attr('src', tmm_mail_l10n.captcha_image_url + '?hash=' + hash);
+  jQuery(form_object).find("[name=verify]").val("");
+  jQuery(form_object).find("[name=verify_code]").val(hash);
+  jQuery(form_object)
+    .find(".contact_form_capcha")
+    .attr("src", tmm_mail_l10n.captcha_image_url + "?hash=" + hash);
 }
 
 /**
  * Google map
  */
 
-function gmt_init_map(Lat, Lng, map_canvas_id, zoom, maptype, info, show_marker, show_popup, scrollwheel, custom_controls, marker_is_draggable) {
-	var latLng = new google.maps.LatLng(Lat, Lng);
-	var homeLatLng = new google.maps.LatLng(Lat, Lng);
+function gmt_init_map(
+  Lat,
+  Lng,
+  map_canvas_id,
+  zoom,
+  maptype,
+  info,
+  show_marker,
+  show_popup,
+  scrollwheel,
+  custom_controls,
+  marker_is_draggable
+) {
+  var latLng = new google.maps.LatLng(Lat, Lng);
+  var homeLatLng = new google.maps.LatLng(Lat, Lng);
 
-	switch (maptype) {
-		case "SATELLITE":
-			maptype = google.maps.MapTypeId.SATELLITE;
-			break;
+  switch (maptype) {
+    case "SATELLITE":
+      maptype = google.maps.MapTypeId.SATELLITE;
+      break;
 
-		case "HYBRID":
-			maptype = google.maps.MapTypeId.HYBRID;
-			break;
+    case "HYBRID":
+      maptype = google.maps.MapTypeId.HYBRID;
+      break;
 
-		case "TERRAIN":
-			maptype = google.maps.MapTypeId.TERRAIN;
-			break;
+    case "TERRAIN":
+      maptype = google.maps.MapTypeId.TERRAIN;
+      break;
 
-		default:
-			maptype = google.maps.MapTypeId.ROADMAP;
-			break;
+    default:
+      maptype = google.maps.MapTypeId.ROADMAP;
+      break;
+  }
 
-	}
+  scrollwheel = parseInt(scrollwheel, 10);
+  var map;
+  if (custom_controls.length > 0) {
+    var options = merge_objects_options(
+      {
+        zoom: zoom,
+        center: latLng,
+        mapTypeId: maptype,
+        scrollwheel: scrollwheel,
+        disableDefaultUI: true,
+      },
+      custom_controls
+    );
 
-	scrollwheel = parseInt(scrollwheel, 10);
-	var map;
-	if (custom_controls.length > 0) {
+    map = new google.maps.Map(document.getElementById(map_canvas_id), options);
+  } else {
+    map = new google.maps.Map(document.getElementById(map_canvas_id), {
+      zoom: zoom,
+      center: latLng,
+      mapTypeId: maptype,
+      scrollwheel: scrollwheel,
+    });
+  }
 
-		var options = merge_objects_options({
-			zoom: zoom,
-			center: latLng,
-			mapTypeId: maptype,
-			scrollwheel: scrollwheel,
-			disableDefaultUI: true
-		}, custom_controls);
+  show_marker = parseInt(show_marker, 10);
+  if (show_marker) {
+    var marker = new google.maps.Marker({
+      position: homeLatLng,
+      draggable: parseInt(marker_is_draggable) == 1 ? true : false,
+      map: map,
+    });
 
-		map = new google.maps.Map(document.getElementById(map_canvas_id), options);
-	} else {
-		map = new google.maps.Map(document.getElementById(map_canvas_id), {
-			zoom: zoom,
-			center: latLng,
-			mapTypeId: maptype,
-			scrollwheel: scrollwheel
-		});
-	}
-
-	show_marker = parseInt(show_marker, 10);
-	if (show_marker) {
-		var marker = new google.maps.Marker({
-			position: homeLatLng,
-			draggable: (parseInt(marker_is_draggable) == 1 ? true : false),
-			map: map
-		});
-
-
-		if (show_popup && info != "") {
-			google.maps.event.addListener(marker, "click", function(e) {
-				iw.open(map, marker);
-			});
-			var iw = new google.maps.InfoWindow({
-				content: info
-			});
-		}
-	}
-
+    if (show_popup && info != "") {
+      google.maps.event.addListener(marker, "click", function (e) {
+        iw.open(map, marker);
+      });
+      var iw = new google.maps.InfoWindow({
+        content: info,
+      });
+    }
+  }
 }
 
 function merge_objects_options(obj1, obj2) {
-	var obj3 = {};
-	for (var attrname in obj1) {
-		obj3[attrname] = obj1[attrname];
-	}
-	for (var attrname in obj2) {
-		obj3[attrname] = obj2[attrname];
-	}
-	return obj3;
+  var obj3 = {};
+  for (var attrname in obj1) {
+    obj3[attrname] = obj1[attrname];
+  }
+  for (var attrname in obj2) {
+    obj3[attrname] = obj2[attrname];
+  }
+  return obj3;
 }
 
 /**
  * Section background parallax
  */
-jQuery(window).on('scroll', function(){
-	bg_parallax();
+jQuery(window).on("scroll", function () {
+  bg_parallax();
 });
 
 bg_parallax();
 
 function bg_parallax(el) {
-	jQuery('.bg-scroll').each(function( i ) {
-		// checks if the element is vertically visible
-		var isVisible = ( window.innerHeight + window.scrollY > this.offsetTop ) && (window.scrollY < this.offsetTop + this.offsetHeight );
+  jQuery(".bg-scroll").each(function (i) {
+    // checks if the element is vertically visible
+    var isVisible =
+      window.innerHeight + window.scrollY > this.offsetTop &&
+      window.scrollY < this.offsetTop + this.offsetHeight;
 
-		if(isVisible) {
-			this.style.backgroundPosition = '50% ' + ( this.offsetTop - window.scrollY ) / 3 + 'px';
-		}
-	});
+    if (isVisible) {
+      this.style.backgroundPosition =
+        "50% " + (this.offsetTop - window.scrollY) / 3 + "px";
+    }
+  });
 }
 
 /**
@@ -442,28 +467,25 @@ function bg_parallax(el) {
  */
 
 (function ($) {
+  $(function () {
+    var content_boxes = $("content-boxes");
 
-	$(function () {
+    if (content_boxes.length) {
+      if (Modernizr.touch) {
+        content_boxes.on("touchstart", "li", function (e) {
+          e.preventDefault();
 
-		var content_boxes = $('content-boxes');
-
-		if (content_boxes.length) {
-
-			if (Modernizr.touch) {
-
-				content_boxes.on('touchstart', 'li', function (e) {
-					e.preventDefault();
-
-					if ($(this).hasClass('active')) {
-						$(this).removeClass('active');
-					} else {
-						$(this).siblings('li').removeClass('active').end().addClass('active');
-					}
-				});
-
-			}
-		}
-
-	});
-
-}(jQuery));
+          if ($(this).hasClass("active")) {
+            $(this).removeClass("active");
+          } else {
+            $(this)
+              .siblings("li")
+              .removeClass("active")
+              .end()
+              .addClass("active");
+          }
+        });
+      }
+    }
+  });
+})(jQuery);

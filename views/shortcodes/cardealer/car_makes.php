@@ -42,7 +42,7 @@ if (!isset($show_name)) {
 
 ?>
 
-<ul class="carproducers_list">
+<ul class="list-entry carproducers_list">
 
 	<?php
 foreach ($makes as $make) {

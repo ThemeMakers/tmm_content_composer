@@ -131,7 +131,7 @@
 
 		<h4 class="label"><?php esc_html_e('Blocks', 'tmm_content_composer'); ?></h4>
 		<a class="button button-secondary js_add_list_item" href="#"><?php esc_html_e('Add item', 'tmm_content_composer'); ?></a><br />
-		<ul id="list_items" class="list-items">
+		<ul id="list_items" class="list-entry list-items">
 			<?php
 			$content_edit_data = array('');
 			$links_edit_data = array('#');

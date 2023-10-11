@@ -8,7 +8,7 @@ $content_array = explode('^', $content);
 
 	<div class="content-tabs">
 
-		<ul class="tabs-nav">
+		<ul class="list-entry tabs-nav">
 			<?php foreach ($titles_array as $key => $value) : ?>
 				<li><a href="#"><?php echo $value ?></a></li>
 			<?php endforeach; ?>		

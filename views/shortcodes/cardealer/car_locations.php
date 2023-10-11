@@ -4,7 +4,7 @@ $terms = TMM_Ext_PostType_Car::get_locations(0);
 $searching_page = get_permalink(TMM::get_option('searching_page', TMM_APP_CARDEALER_PREFIX));
 ?>
 
-<ul class="carlocations_list list">
+<ul class="list-entry carlocations_list list">
 	
 	<?php 
 	foreach ($terms as $term){
@@ -23,7 +23,7 @@ $searching_page = get_permalink(TMM::get_option('searching_page', TMM_APP_CARDEA
 			if(count($states)){
 				?>
 			
-				<ul class="carlocations_list list">
+				<ul class="list-entry carlocations_list list">
 					
 				<?php
 					foreach ($states as $state){
@@ -42,7 +42,7 @@ $searching_page = get_permalink(TMM::get_option('searching_page', TMM_APP_CARDEA
 								if(count($cities)){
 									?>
 								
-									<ul class="carlocations_list list">
+									<ul class="list-entry carlocations_list list">
 										
 									<?php
 										foreach ($cities as $city){

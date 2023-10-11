@@ -51,6 +51,11 @@ $author__in = array();
                 'key'     => 'address_region',
                 'value'   => $filter_by_key_region,
                 'compare' => '='
+            ),
+            array(
+                'key'     => 'address_city',
+                'value'   => $filter_by_key_region,
+                'compare' => '='
             )
         );
     }

@@ -54,7 +54,7 @@ foreach ($car_body_list as $k => $body_name) {
 </div><!--/ .page-header-->
 <?php }?>
 
-<ul class="lc-car-body-list">
+<ul class="list-entry lc-car-body-list">
 
     <?php foreach ($car_bodies as $k => $body) {?>
     <li>

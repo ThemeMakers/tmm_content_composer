@@ -27,7 +27,7 @@
 
 		<a class="button button-secondary js_add_accordion_item" href="#"><?php esc_html_e('Add item', 'tmm_content_composer'); ?></a><br />
 
-		<ul id="list_items" class="list-items">
+		<ul id="list_items" class="list-entry list-items">
 
 			<?php
 			$titles_edit_data = array('');

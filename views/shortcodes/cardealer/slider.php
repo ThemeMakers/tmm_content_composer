@@ -26,7 +26,7 @@ if ($slider_type == 0) {
 
 			<div id="<?php echo esc_attr($slider_id) ?>" class="flexslider clearfix <?php echo esc_attr($show_sidebar ? 'two-thirds' : '') ?>">
 
-				<ul class="slides">
+				<ul class="list-entry slides">
 
 					<?php
 foreach ($featured_cars as $car_id => $car) {

@@ -1,5 +1,5 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<ul class="our-contacts">
+<ul class="list-entry our-contacts">
     <?php if (!empty($content)): ?>
         <li class="address"><b><?php esc_html_e('Address Info', 'tmm_content_composer') ?>:</b> <?php echo esc_html( $content ) ?></li>
     <?php endif; ?>
