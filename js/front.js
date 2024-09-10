@@ -400,7 +400,7 @@ function gmt_init_map(
         zoom: zoom,
         center: latLng,
         mapTypeId: maptype,
-        scrollwheel: scrollwheel,
+        scrollwheel: !!scrollwheel,
         disableDefaultUI: true,
         mapId: map_canvas_id, // Map ID is required for advanced markers.
       },
@@ -413,7 +413,7 @@ function gmt_init_map(
       zoom: zoom,
       center: latLng,
       mapTypeId: maptype,
-      scrollwheel: scrollwheel,
+      scrollwheel: !!scrollwheel,
       mapId: map_canvas_id, // Map ID is required for advanced markers.
     });
   }
