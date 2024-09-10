@@ -262,10 +262,20 @@
 jQuery(document).ready(function () {
   var $form = jQuery(".contact-form");
 
+  const refreshCaptcha = (form) => {
+    const timestamp = new Date().getTime();
+    jQuery("#captcha_image_" + form).attr(
+      "src",
+      tmm_mail_l10n.captcha_image_url + "?t=" + timestamp
+    );
+    jQuery("#captcha_" + form).val(""); // reset captcha value
+  };
+
   $form.on("submit", function () {
     const responseContainer = jQuery('<ul class="list-entry"></ul>');
     const errContainer = jQuery(this).find(".error");
     const submitBtn = jQuery(this).find("button[type=submit]");
+    const formName = jQuery(this).find("input[name=contact_form_name]").val();
 
     submitBtn.addClass("icon-spin");
 
@@ -276,6 +286,7 @@ jQuery(document).ready(function () {
     const data = {
       action: "contact_form_request",
       values: jQuery(this).serialize(),
+      captcha: jQuery("#captcha_" + formName).val(),
     };
 
     const form_self = this;
@@ -287,19 +298,23 @@ jQuery(document).ready(function () {
 
       jQuery(form_self).find(".wrong-data").removeClass("wrong-data");
 
-      if (response.is_errors) {
+      if (!!response.is_errors) {
         responseContainer.addClass("error");
         jQuery.each(response.info, function (input_name, input_label) {
           jQuery(form_self)
             .find("[name=" + input_name + "]")
             .addClass("wrong-data");
-          responseContainer.append(
-            "<li>" +
-              tmm_mail_l10n.wrong_field_value +
-              ': "' +
-              input_label +
-              '"!</li>'
-          );
+          if (input_name === "captcha") {
+            responseContainer.append("<li>" + input_label + "</li>");
+          } else {
+            responseContainer.append(
+              "<li>" +
+                tmm_mail_l10n.wrong_field_value +
+                ': "' +
+                input_label +
+                '"!</li>'
+            );
+          }
         });
       } else {
         if (response.info == "succsess") {
@@ -316,6 +331,7 @@ jQuery(document).ready(function () {
         form_self.reset();
       }
 
+      refreshCaptcha(formName); // Refresh CAPTCHA
       responseContainer.appendTo($form);
 
       // Scroll to bottom of the form to show respond message
@@ -331,21 +347,12 @@ jQuery(document).ready(function () {
       }
 
       submitBtn.removeClass("icon-spin");
-
-      update_capcha(form_self, response.hash);
+      submitBtn.attr("disabled", false);
     });
 
     return false;
   });
 });
-
-function update_capcha(form_object, hash) {
-  jQuery(form_object).find("[name=verify]").val("");
-  jQuery(form_object).find("[name=verify_code]").val(hash);
-  jQuery(form_object)
-    .find(".contact_form_capcha")
-    .attr("src", tmm_mail_l10n.captcha_image_url + "?hash=" + hash);
-}
 
 /**
  * Google map
