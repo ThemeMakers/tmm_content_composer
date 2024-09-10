@@ -1,11 +1,11 @@
-<?php if ( !defined('ABSPATH') ) exit;
+<?php if (!defined('ABSPATH')) exit;
 
 wp_enqueue_script('tmm_composer_front');
 
 $site_locale = substr(get_locale(), 0, 2);
 
-if($site_locale !== 'en') {
-	wp_enqueue_script( 'tmm_select_locale', TMM_CC_URL . 'js/i18n/' . $site_locale . '.js', array ( 'jquery' ), false, true);
+if ($site_locale !== 'en') {
+	wp_enqueue_script('tmm_select_locale', TMM_CC_URL . 'js/i18n/' . $site_locale . '.js', array('jquery'), false, true);
 }
 
 $show_loc0 = 0;
@@ -30,16 +30,16 @@ $car_transmission = '';
 $widget_class = 'quicksearch-container';
 $styles = '';
 
-if(!empty($show_location0)) {
-    $show_loc0 = 1;
+if (!empty($show_location0)) {
+	$show_loc0 = 1;
 }
 
-if(!empty($show_location1)) {
-    $show_loc1 = 1;
+if (!empty($show_location1)) {
+	$show_loc1 = 1;
 }
 
-if(!empty($show_location2)) {
-    $show_loc2 = 1;
+if (!empty($show_location2)) {
+	$show_loc2 = 1;
 }
 
 $num_of_displayed_locations = $show_loc0 + $show_loc1 + $show_loc2;
@@ -60,6 +60,10 @@ if (isset($search_widget_width)) {
 
 if (isset($_GET['car_condition'])) {
 	$car_condition = $_GET['car_condition'];
+}
+
+if (isset($_GET['vehicle_type'])) {
+	$vehicle_type = $_GET['vehicle_type'];
 }
 
 if (isset($_GET['carlocation'])) {
@@ -127,130 +131,155 @@ if (isset($_GET['adv_params'])) {
 	$adv_params = unserialize(base64_decode($_GET['adv_params']));
 }
 
-$searching_page = TMM_Helper::get_permalink_by_lang( TMM::get_option('searching_page', TMM_APP_CARDEALER_PREFIX) );
+$searching_page = TMM_Helper::get_permalink_by_lang(TMM::get_option('searching_page', TMM_APP_CARDEALER_PREFIX));
 //get locations selects name
 $locations_captions_on_search_widget = TMM::get_option('locations_captions_on_search_widget', TMM_APP_CARDEALER_PREFIX);
 $locations_captions_on_search_widget = explode(',', $locations_captions_on_search_widget);
 $uniqid = uniqid();
 
-$mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_unit() : 'miles');
+$mileage_unit = (! empty(tmm_get_car_mileage_unit()) ? tmm_get_car_mileage_unit() : 'miles');
 ?>
 
-<div class="<?php echo esc_attr( $widget_class ) ?>" <?php echo wp_kses_post( $styles ); ?>>
+<div class="<?php echo esc_attr($widget_class) ?>" <?php echo wp_kses_post($styles); ?>>
 
 	<div class="form_load_area">
-		<div class="cardealer-spinner"><div></div><div></div><div></div><div></div><div></div></div>
+		<div class="cardealer-spinner">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 	</div>
 
-	<form class="car_form_search" action="<?php echo esc_attr( $searching_page ) ?>">
+	<form class="car_form_search" action="<?php echo esc_attr($searching_page) ?>">
 
-        <?php if (!TMM::get_option('locations_hide_location_fields', TMM_APP_CARDEALER_PREFIX) && $num_of_displayed_locations > 0) { ?>
-		<!-- Location -->
-		<fieldset data-row="location" data-col="<?php echo esc_attr($num_of_displayed_locations) ?>">
-			<legend><?php esc_html_e("Location", 'tmm_content_composer') ?></legend>
-			<?php if (!empty($show_location0)) { ?>
-				<p>
-					<select class="qs_carlocation0 carlocations"
-					        name="carlocation[0]"
-					        data-placeholder="<?php esc_html_e( $locations_captions_on_search_widget[0], 'tmm_content_composer' ); ?>"
-					        data-location0="<?php echo esc_attr( $carlocation[0] ) ?>">
-						<option value="0"><?php esc_html_e( $locations_captions_on_search_widget[0], 'tmm_content_composer' ); ?></option>
-					</select>
-				</p>
-			<?php } else if(!empty($show_location1) || !empty($show_location2)) { ?>
+		<?php if (!TMM::get_option('locations_hide_location_fields', TMM_APP_CARDEALER_PREFIX) && $num_of_displayed_locations > 0) { ?>
+			<!-- Location -->
+			<fieldset data-row="location" data-col="<?php echo esc_attr($num_of_displayed_locations) ?>">
+				<legend><?php esc_html_e("Location", 'tmm_content_composer') ?></legend>
+				<?php if (!empty($show_location0)) { ?>
+					<p>
+						<select class="qs_carlocation0 carlocations"
+							name="carlocation[0]"
+							data-placeholder="<?php esc_html_e($locations_captions_on_search_widget[0], 'tmm_content_composer'); ?>"
+							data-location0="<?php echo esc_attr($carlocation[0]) ?>">
+							<option value="0"><?php esc_html_e($locations_captions_on_search_widget[0], 'tmm_content_composer'); ?></option>
+						</select>
+					</p>
+				<?php } else if (!empty($show_location1) || !empty($show_location2)) { ?>
 
-				<input type="hidden" value="<?php echo !empty($selected_location0) ? $selected_location0 : 0; ?>" class="qs_carlocation0 carlocations">
+					<input type="hidden" value="<?php echo !empty($selected_location0) ? $selected_location0 : 0; ?>" class="qs_carlocation0 carlocations">
 
-			<?php } ?>
+				<?php } ?>
 
-			<?php
-			for ($i = 1; $i < TMM_Ext_Car_Dealer::get_locations_max_level(); $i++) {
-				$var_show_location = 'show_location'.$i;
-				$var_show_location_prev = 'show_location'.($i-1);
-				$var_selected_location_prev = 'selected_location'.($i-1);
+				<?php
+				for ($i = 1; $i < TMM_Ext_Car_Dealer::get_locations_max_level(); $i++) {
+					$var_show_location = 'show_location' . $i;
+					$var_show_location_prev = 'show_location' . ($i - 1);
+					$var_selected_location_prev = 'selected_location' . ($i - 1);
 
-				if (!empty($$var_show_location)) {
+					if (!empty($$var_show_location)) {
 
-					if ( (!isset($$var_show_location_prev) || !$$var_show_location_prev) && !empty($$var_selected_location_prev) ) {
-						$carlocation[$i-1] = $$var_selected_location_prev;
-					}
-
-					if (isset($carlocation[$i-1]) && $carlocation[$i-1] != 0) {
-
-						$parent_id = $carlocation[0];
-						if ($i > 1 && isset($carlocation[$i - 1])) {
-							$parent_id = $carlocation[$i - 1];
+						if ((!isset($$var_show_location_prev) || !$$var_show_location_prev) && !empty($$var_selected_location_prev)) {
+							$carlocation[$i - 1] = $$var_selected_location_prev;
 						}
 
+						if (isset($carlocation[$i - 1]) && $carlocation[$i - 1] != 0) {
 
-						$data_attr = ' data-location'.($i-1).'=' . $carlocation[$i-1] . ' data-location'.$i.'=' . (isset($carlocation[$i]) ? $carlocation[$i] : 0);
+							$parent_id = $carlocation[0];
+							if ($i > 1 && isset($carlocation[$i - 1])) {
+								$parent_id = $carlocation[$i - 1];
+							}
+
+
+							$data_attr = ' data-location' . ($i - 1) . '=' . $carlocation[$i - 1] . ' data-location' . $i . '=' . (isset($carlocation[$i]) ? $carlocation[$i] : 0);
+				?>
+							<p>
+								<select class="qs_carlocation<?php echo esc_attr($i) ?> carlocations"
+									name="carlocation[<?php echo esc_attr($i) ?>]"
+									data-level="<?php echo esc_attr($i) ?>"
+									data-placeholder="<?php esc_html_e($locations_captions_on_search_widget[$i], 'tmm_content_composer'); ?>"
+									<?php echo esc_attr($data_attr) ?>>
+									<option value="0"><?php esc_html_e($locations_captions_on_search_widget[$i], 'tmm_content_composer'); ?></option>
+								</select>
+							</p>
+
+						<?php } else { ?>
+
+							<p>
+								<select class="qs_carlocation<?php echo esc_attr($i) ?> carlocations"
+									name="carlocation[<?php echo esc_attr($i) ?>]"
+									disabled
+									data-placeholder="<?php esc_html_e($locations_captions_on_search_widget[$i], 'tmm_content_composer'); ?>"
+									data-level="<?php echo esc_attr($i) ?>">
+									<option value="0"><?php esc_html_e($locations_captions_on_search_widget[$i], 'tmm_content_composer'); ?></option>
+								</select>
+							</p>
+
+						<?php }
+					} else if ($show_location2 && !$show_location1) {
 						?>
-						<p>
-							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations"
-							        name="carlocation[<?php echo esc_attr( $i ) ?>]"
-							        data-level="<?php echo esc_attr( $i ) ?>"
-							        data-placeholder="<?php esc_html_e( $locations_captions_on_search_widget[ $i ], 'tmm_content_composer' ); ?>"
-									<?php echo esc_attr( $data_attr ) ?>>
-								<option value="0"><?php esc_html_e( $locations_captions_on_search_widget[ $i ], 'tmm_content_composer' ); ?></option>
-							</select>
-						</p>
 
-					<?php } else { ?>
+						<input type="hidden" value="<?php echo isset($selected_location1) ? $selected_location1 : 0; ?>" class="qs_carlocation1 carlocations">
 
-						<p>
-							<select class="qs_carlocation<?php echo esc_attr( $i ) ?> carlocations"
-							        name="carlocation[<?php echo esc_attr( $i ) ?>]"
-							        disabled
-							        data-placeholder="<?php esc_html_e( $locations_captions_on_search_widget[ $i ], 'tmm_content_composer' ); ?>"
-							        data-level="<?php echo esc_attr( $i ) ?>">
-								<option value="0"><?php esc_html_e( $locations_captions_on_search_widget[ $i ], 'tmm_content_composer' ); ?></option>
-							</select>
-						</p>
-
-					<?php }
-
-				} else if ($show_location2 && !$show_location1) {
-					?>
-
-					<input type="hidden" value="<?php echo isset($selected_location1) ? $selected_location1 : 0; ?>" class="qs_carlocation1 carlocations">
-
-					<?php
+				<?php
+					}
 				}
-
-			}
-			?>
-		</fieldset>
-        <?php } ?>
+				?>
+			</fieldset>
+		<?php } ?>
 
 		<!-- Condition -->
 		<?php if (!empty($show_condition)) {
 			$condition_list = tmm_get_car_condition_list();
-			?>
-        <fieldset data-row="condition">
-			<p>
-				<label for="tmm_qs_condition_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e('Condition', 'tmm_content_composer') ?>:</label>
-				<select id="tmm_qs_condition_<?php echo esc_attr( $uniqid ) ?>" class="qs_condition" name="car_condition">
-					<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
-					<?php
-					foreach ($condition_list as $cond_id => $cond_name) {
-						echo '<option value="'.$cond_id.'"' . selected($car_condition, $cond_id, false) . '>'
-							. sprintf( __("Only %s cars", 'tmm_content_composer'), strtolower( __($cond_name, 'tmm_content_composer') ) )
-							. '</option>';
-					}
-					?>
-				</select>
-			</p>
-		</fieldset>
+		?>
+			<fieldset data-row="condition">
+				<p>
+					<label for="tmm_qs_condition_<?php echo esc_attr($uniqid) ?>"><?php esc_html_e('Condition', 'tmm_content_composer') ?>:</label>
+					<select id="tmm_qs_condition_<?php echo esc_attr($uniqid) ?>" class="qs_condition" name="car_condition">
+						<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
+						<?php
+						foreach ($condition_list as $cond_id => $cond_name) {
+							echo '<option value="' . $cond_id . '"' . selected($car_condition, $cond_id, false) . '>'
+								. sprintf(__("Only %s cars", 'tmm_content_composer'), strtolower(__($cond_name, 'tmm_content_composer')))
+								. '</option>';
+						}
+						?>
+					</select>
+				</p>
+			</fieldset>
+		<?php } ?>
+
+		<!-- Vehicle Type -->
+		<?php if (!empty($show_vehicle_type)) {
+			$vehicle_type_list = tmm_get_vehicle_type_list();
+		?>
+			<fieldset data-row="vehicle_type">
+				<p>
+					<label for="tmm_qs_vehicle_type_<?php echo esc_attr($uniqid) ?>"><?php esc_html_e('Vehicle Type', 'tmm_content_composer') ?>:</label>
+					<select id="tmm_qs_vehicle_type_<?php echo esc_attr($uniqid) ?>" class="qs_vehicle_type" name="vehicle_type">
+						<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
+						<?php
+						foreach ($vehicle_type_list as $vt_id => $vt_name) {
+							echo '<option value="' . $vt_id . '">'
+								. esc_html__($vt_name, 'tmm_content_composer')
+								. '</option>';
+						}
+						?>
+					</select>
+				</p>
+			</fieldset>
 		<?php } ?>
 
 		<?php
-		if(isset($carlocation[2])){
+		if (isset($carlocation[2])) {
 			$_level = 3;
 			$_selected_region_id = $carlocation[2];
-		}else if(isset($carlocation[1])){
+		} else if (isset($carlocation[1])) {
 			$_level = 2;
 			$_selected_region_id = $carlocation[1];
-		}else{
+		} else {
 			$_level = 0;
 			$_selected_region_id = 0;
 		}
@@ -259,183 +288,183 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 		<!-- Make & Model-->
 		<?php if (!empty($show_makes)) { ?>
 
-        <fieldset data-row="make-model">
-			<p>
-				<label for="tmm_qs_make_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Make", 'tmm_content_composer') ?>:</label>
-				<select id="tmm_qs_make_<?php echo esc_attr( $uniqid ) ?>" class="qs_carproducer" name="carproducer" data-make="<?php echo esc_attr( $carproducer ) ?>" data-location="<?php echo esc_attr( $carlocation[0] ) ?>" data-region="<?php echo esc_attr( $_selected_region_id ) ?>" data-level="<?php echo esc_attr( $_level ) ?>">
-					<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
-				</select>
-			</p>
+			<fieldset data-row="make-model">
+				<p>
+					<label for="tmm_qs_make_<?php echo esc_attr($uniqid) ?>"><?php esc_html_e("Make", 'tmm_content_composer') ?>:</label>
+					<select id="tmm_qs_make_<?php echo esc_attr($uniqid) ?>" class="qs_carproducer" name="carproducer" data-make="<?php echo esc_attr($carproducer) ?>" data-location="<?php echo esc_attr($carlocation[0]) ?>" data-region="<?php echo esc_attr($_selected_region_id) ?>" data-level="<?php echo esc_attr($_level) ?>">
+						<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
+					</select>
+				</p>
 
-			<p>
-				<label for="tmm_qs_model_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Model", 'tmm_content_composer') ?>:</label>
-				<select id="tmm_qs_model_<?php echo esc_attr( $uniqid ) ?>" class="qs_carmodel" name="carmodels" <?php if ($carproducer == 0) { ?>disabled=""<?php } ?>  data-make="<?php echo esc_attr( $carproducer ) ?>" data-location="<?php echo esc_attr( $carlocation[0] ) ?>" data-region="<?php echo esc_attr( $_selected_region_id ) ?>" data-level="<?php echo esc_attr( $_level ) ?>" data-model="<?php echo esc_attr( $carmodels ) ?>">
-					<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
-				</select>
-			</p>
-		</fieldset>
+				<p>
+					<label for="tmm_qs_model_<?php echo esc_attr($uniqid) ?>"><?php esc_html_e("Model", 'tmm_content_composer') ?>:</label>
+					<select id="tmm_qs_model_<?php echo esc_attr($uniqid) ?>" class="qs_carmodel" name="carmodels" <?php if ($carproducer == 0) { ?>disabled="" <?php } ?> data-make="<?php echo esc_attr($carproducer) ?>" data-location="<?php echo esc_attr($carlocation[0]) ?>" data-region="<?php echo esc_attr($_selected_region_id) ?>" data-level="<?php echo esc_attr($_level) ?>" data-model="<?php echo esc_attr($carmodels) ?>">
+						<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
+					</select>
+				</p>
+			</fieldset>
 
 		<?php } ?>
 
 		<!-- Price Range-->
 		<?php if (!empty($show_price_range)) { ?>
-        <fieldset data-row="price-range">
-			<legend><?php esc_html_e("Price", 'tmm_content_composer') ?> (<?php echo TMM_Ext_Car_Dealer::$default_currency['symbol'] ?>) <span><?php esc_html_e("min/max", 'tmm_content_composer') ?></span></legend>
-			<p>
-				<input type="number" name="car_price_min" value="<?php echo esc_attr( $car_price_min ) ?>" />
-			</p>
+			<fieldset data-row="price-range">
+				<legend><?php esc_html_e("Price", 'tmm_content_composer') ?> (<?php echo TMM_Ext_Car_Dealer::$default_currency['symbol'] ?>) <span><?php esc_html_e("min/max", 'tmm_content_composer') ?></span></legend>
+				<p>
+					<input type="number" name="car_price_min" value="<?php echo esc_attr($car_price_min) ?>" />
+				</p>
 
-			<p>
-				<input type="number" name="car_price_max" value="<?php echo esc_attr( $car_price_max ) ?>" />
-			</p>
-		</fieldset>
+				<p>
+					<input type="number" name="car_price_max" value="<?php echo esc_attr($car_price_max) ?>" />
+				</p>
+			</fieldset>
 		<?php } ?>
 
 		<!-- Year Range-->
 		<?php if (!empty($show_year_range)) { ?>
-        <fieldset data-row="year-range">
-			<legend><?php esc_html_e("Year", 'tmm_content_composer') ?></legend>
-			<p>
-				<?php
-				$now = (int) date("Y") + 1;
-				$years = array('any' => esc_html__("min", 'tmm_content_composer'));
-				for ($i = $now; $i >= 1900; $i--) {
-					$years[$i] = $i;
-				}
-				?>
-				<select name="car_year_from">
-					<?php foreach ($years as $k=>$y) { ?>
-						<option <?php echo($car_year_from == $y ? "selected" : "") ?> value="<?php echo esc_attr( $k ) ?>"><?php echo esc_attr( $y ) ?></option>
-					<?php } ?>
-				</select>
-			</p>
+			<fieldset data-row="year-range">
+				<legend><?php esc_html_e("Year", 'tmm_content_composer') ?></legend>
+				<p>
+					<?php
+					$now = (int) date("Y") + 1;
+					$years = array('any' => esc_html__("min", 'tmm_content_composer'));
+					for ($i = $now; $i >= 1900; $i--) {
+						$years[$i] = $i;
+					}
+					?>
+					<select name="car_year_from">
+						<?php foreach ($years as $k => $y) { ?>
+							<option <?php echo ($car_year_from == $y ? "selected" : "") ?> value="<?php echo esc_attr($k) ?>"><?php echo esc_attr($y) ?></option>
+						<?php } ?>
+					</select>
+				</p>
 
-			<p>
-				<?php
-				$now = (int) date("Y") + 1;
-				$years = array('any' => esc_html__("max", 'tmm_content_composer'));
-				for ($i = $now; $i >= 1900; $i--) {
-					$years[$i] = $i;
-				}
-				?>
-				<select name="car_year_to">
-					<?php foreach ($years as $k=>$y) { ?>
-						<option <?php echo($car_year_to == $y ? "selected" : "") ?> value="<?php echo esc_attr( $k ) ?>"><?php echo esc_attr( $y ) ?></option>
-					<?php } ?>
-				</select>
-			</p>
-		</fieldset>
+				<p>
+					<?php
+					$now = (int) date("Y") + 1;
+					$years = array('any' => esc_html__("max", 'tmm_content_composer'));
+					for ($i = $now; $i >= 1900; $i--) {
+						$years[$i] = $i;
+					}
+					?>
+					<select name="car_year_to">
+						<?php foreach ($years as $k => $y) { ?>
+							<option <?php echo ($car_year_to == $y ? "selected" : "") ?> value="<?php echo esc_attr($k) ?>"><?php echo esc_attr($y) ?></option>
+						<?php } ?>
+					</select>
+				</p>
+			</fieldset>
 		<?php } ?>
 
 		<!-- Mileage Range-->
 		<?php if (!empty($show_mileage)) { ?>
-        <fieldset data-row="mileage-range">
-			<legend><?php ($mileage_unit == 'km') ? esc_html_e('Kilometer', 'tmm_content_composer') : esc_html_e('Mileage', 'tmm_content_composer') ?> <span><?php esc_html_e("min/max", 'tmm_content_composer') ?></span></legend>
-			<p>
-				<input type="number" name="car_mileage_from" value="<?php echo esc_attr( $car_mileage_from ) ?>" />
-			</p>
-			<p>
-				<input type="number" name="car_mileage_to" value="<?php echo esc_attr( $car_mileage_to ) ?>" />
-			</p>
-		</fieldset>
+			<fieldset data-row="mileage-range">
+				<legend><?php ($mileage_unit == 'km') ? esc_html_e('Kilometer', 'tmm_content_composer') : esc_html_e('Mileage', 'tmm_content_composer') ?> <span><?php esc_html_e("min/max", 'tmm_content_composer') ?></span></legend>
+				<p>
+					<input type="number" name="car_mileage_from" value="<?php echo esc_attr($car_mileage_from) ?>" />
+				</p>
+				<p>
+					<input type="number" name="car_mileage_to" value="<?php echo esc_attr($car_mileage_to) ?>" />
+				</p>
+			</fieldset>
 		<?php } ?>
 
 		<!-- Fuel Type-->
-        <fieldset data-row="fuel-transmission" <?php echo (empty($show_fuel_type) || empty($show_transmission)) ? 'data-single="true"' : '' ?>>
-		<?php if (!empty($show_fuel_type)) { ?>
-			<p>
-				<label for="tmm_qs_fuel_type_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Fuel Type", 'tmm_content_composer') ?></label>
-				<?php $fuel_types = TMM_Ext_PostType_Car::$car_options['fuel_type']; ?>
-				<select id="tmm_qs_fuel_type_<?php echo esc_attr( $uniqid ) ?>" name="car_fuel_type">
-					<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
-					<?php if (!empty($fuel_types)) { ?>
-						<?php foreach ($fuel_types as $fuel_type => $fuel_type_name) { ?>
-							<option <?php selected($car_fuel_type, $fuel_type); ?> value="<?php echo esc_attr( $fuel_type ) ?>"><?php esc_html_e($fuel_type_name, 'tmm_content_composer'); ?></option>
+		<fieldset data-row="fuel-transmission" <?php echo (empty($show_fuel_type) || empty($show_transmission)) ? 'data-single="true"' : '' ?>>
+			<?php if (!empty($show_fuel_type)) { ?>
+				<p>
+					<label for="tmm_qs_fuel_type_<?php echo esc_attr($uniqid) ?>"><?php esc_html_e("Fuel Type", 'tmm_content_composer') ?></label>
+					<?php $fuel_types = TMM_Ext_PostType_Car::$car_options['fuel_type']; ?>
+					<select id="tmm_qs_fuel_type_<?php echo esc_attr($uniqid) ?>" name="car_fuel_type">
+						<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
+						<?php if (!empty($fuel_types)) { ?>
+							<?php foreach ($fuel_types as $fuel_type => $fuel_type_name) { ?>
+								<option <?php selected($car_fuel_type, $fuel_type); ?> value="<?php echo esc_attr($fuel_type) ?>"><?php esc_html_e($fuel_type_name, 'tmm_content_composer'); ?></option>
+							<?php } ?>
 						<?php } ?>
-					<?php } ?>
-				</select>
-			</p>
-		<?php } ?>
+					</select>
+				</p>
+			<?php } ?>
 
-		<!-- Transmission-->
-		<?php if (!empty($show_transmission)) { ?>
-			<p>
-				<label for="tmm_qs_gearbox_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Gearbox", 'tmm_content_composer') ?></label>
-				<?php $car_transmissions = TMM_Ext_PostType_Car::$car_options['transmission']; ?>
-				<select id="tmm_qs_gearbox_<?php echo esc_attr( $uniqid ) ?>" name="car_transmission">
-					<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
-					<?php if (!empty($car_transmissions)) { ?>
-						<?php foreach ($car_transmissions as $transmission => $transmission_name) { ?>
-							<option <?php selected($car_transmission, $transmission); ?> value="<?php echo esc_attr( $transmission ) ?>"><?php esc_html_e($transmission_name, 'tmm_content_composer'); ?></option>
+			<!-- Transmission-->
+			<?php if (!empty($show_transmission)) { ?>
+				<p>
+					<label for="tmm_qs_gearbox_<?php echo esc_attr($uniqid) ?>"><?php esc_html_e("Gearbox", 'tmm_content_composer') ?></label>
+					<?php $car_transmissions = TMM_Ext_PostType_Car::$car_options['transmission']; ?>
+					<select id="tmm_qs_gearbox_<?php echo esc_attr($uniqid) ?>" name="car_transmission">
+						<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
+						<?php if (!empty($car_transmissions)) { ?>
+							<?php foreach ($car_transmissions as $transmission => $transmission_name) { ?>
+								<option <?php selected($car_transmission, $transmission); ?> value="<?php echo esc_attr($transmission) ?>"><?php esc_html_e($transmission_name, 'tmm_content_composer'); ?></option>
+							<?php } ?>
 						<?php } ?>
-					<?php } ?>
-				</select>
-			</p>
-		<?php } ?>
+					</select>
+				</p>
+			<?php } ?>
 		</fieldset>
 
 		<!-- Body Type-->
-        <fieldset data-row="body-door-cnt" <?php echo (empty($show_body_type) || empty($show_doors_count)) ? 'data-single="true"' : '' ?>>
-		<?php if (!empty($show_body_type)) { ?>
-			<p>
-				<label for="tmm_qs_body_type_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Body Type", 'tmm_content_composer') ?></label>
-				<?php $carbodies = TMM_Ext_PostType_Car::$car_options['body']; ?>
-				<select id="tmm_qs_body_type_<?php echo esc_attr( $uniqid ) ?>" name="car_body">
-					<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
-					<?php if (!empty($carbodies)) { ?>
-						<?php foreach ($carbodies as $carbody_key => $carbody_name) { ?>
-							<option <?php selected($car_body, $carbody_key); ?> value="<?php echo esc_attr( $carbody_key ) ?>"><?php esc_html_e($carbody_name, 'tmm_content_composer'); ?></option>
+		<fieldset data-row="body-door-cnt" <?php echo (empty($show_body_type) || empty($show_doors_count)) ? 'data-single="true"' : '' ?>>
+			<?php if (!empty($show_body_type)) { ?>
+				<p>
+					<label for="tmm_qs_body_type_<?php echo esc_attr($uniqid) ?>"><?php esc_html_e("Body Type", 'tmm_content_composer') ?></label>
+					<?php $carbodies = TMM_Ext_PostType_Car::$car_options['body']; ?>
+					<select id="tmm_qs_body_type_<?php echo esc_attr($uniqid) ?>" name="car_body">
+						<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
+						<?php if (!empty($carbodies)) { ?>
+							<?php foreach ($carbodies as $carbody_key => $carbody_name) { ?>
+								<option <?php selected($car_body, $carbody_key); ?> value="<?php echo esc_attr($carbody_key) ?>"><?php esc_html_e($carbody_name, 'tmm_content_composer'); ?></option>
+							<?php } ?>
 						<?php } ?>
-					<?php } ?>
-				</select>
-			</p>
-		<?php } ?>
+					</select>
+				</p>
+			<?php } ?>
 
-		<!-- Doors Number-->
-		<?php if (!empty($show_doors_count)) { ?>
-			<p>
-				<label for="tmm_qs_doors_<?php echo esc_attr( $uniqid ) ?>"><?php esc_html_e("Doors Number", 'tmm_content_composer') ?></label>
-				<select id="tmm_qs_doors_<?php echo esc_attr( $uniqid ) ?>" name="car_doors_count">
-					<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
-					<?php for ($i = TMM_Ext_PostType_Car::$car_options['min_doors_count']; $i <= TMM_Ext_PostType_Car::$car_options['max_doors_count']; $i++) { ?>
-						<option <?php echo($car_doors_count == $i ? "selected" : "") ?> value="<?php echo esc_attr( $i ) ?>"><?php echo esc_attr( $i ) ?></option>
-					<?php } ?>
-				</select>
-			</p>
-		<?php } ?>
-        </fieldset>
+			<!-- Doors Number-->
+			<?php if (!empty($show_doors_count)) { ?>
+				<p>
+					<label for="tmm_qs_doors_<?php echo esc_attr($uniqid) ?>"><?php esc_html_e("Doors Number", 'tmm_content_composer') ?></label>
+					<select id="tmm_qs_doors_<?php echo esc_attr($uniqid) ?>" name="car_doors_count">
+						<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
+						<?php for ($i = TMM_Ext_PostType_Car::$car_options['min_doors_count']; $i <= TMM_Ext_PostType_Car::$car_options['max_doors_count']; $i++) { ?>
+							<option <?php echo ($car_doors_count == $i ? "selected" : "") ?> value="<?php echo esc_attr($i) ?>"><?php echo esc_attr($i) ?></option>
+						<?php } ?>
+					</select>
+				</p>
+			<?php } ?>
+		</fieldset>
 
 		<!-- Exterior/Interior Colors-->
-		<?php if(!empty($show_colors)) { ?>
-        <fieldset data-row="mileage-range">
-			<legend><?php esc_html_e("Color", 'tmm_content_composer') ?></legend>
-			<?php
-			$car_int_colors = TMM_Ext_PostType_Car::$car_options['interior_color'];
-			$car_ext_colors = TMM_Ext_PostType_Car::$car_options['exterior_color'];
-			?>
+		<?php if (!empty($show_colors)) { ?>
+			<fieldset data-row="mileage-range">
+				<legend><?php esc_html_e("Color", 'tmm_content_composer') ?></legend>
+				<?php
+				$car_int_colors = TMM_Ext_PostType_Car::$car_options['interior_color'];
+				$car_ext_colors = TMM_Ext_PostType_Car::$car_options['exterior_color'];
+				?>
 
-			<p>
-				<select name="car_interrior_color">
-					<option value="0"><?php esc_html_e("Interior", 'tmm_content_composer') ?></option>
-					<?php if (!empty($car_int_colors)) { ?>
-						<?php foreach ($car_int_colors as $color => $color_name) { ?>
-							<option <?php selected($car_interrior_color, $color); ?> value="<?php echo esc_attr( $color ) ?>"><?php esc_html_e($color_name, 'tmm_content_composer'); ?></option>
+				<p>
+					<select name="car_interrior_color">
+						<option value="0"><?php esc_html_e("Interior", 'tmm_content_composer') ?></option>
+						<?php if (!empty($car_int_colors)) { ?>
+							<?php foreach ($car_int_colors as $color => $color_name) { ?>
+								<option <?php selected($car_interrior_color, $color); ?> value="<?php echo esc_attr($color) ?>"><?php esc_html_e($color_name, 'tmm_content_composer'); ?></option>
+							<?php } ?>
 						<?php } ?>
-					<?php } ?>
-				</select>
-			</p>
+					</select>
+				</p>
 
-			<p>
-				<select name="car_exterior_color">
-					<option value="0"><?php esc_html_e("Exterior", 'tmm_content_composer') ?></option>
-					<?php if (!empty($car_ext_colors)) { ?>
-						<?php foreach ($car_ext_colors as $color => $color_name) { ?>
-							<option <?php selected($car_exterior_color, $color); ?> value="<?php echo esc_attr( $color ) ?>"><?php esc_html_e($color_name, 'tmm_content_composer'); ?></option>
+				<p>
+					<select name="car_exterior_color">
+						<option value="0"><?php esc_html_e("Exterior", 'tmm_content_composer') ?></option>
+						<?php if (!empty($car_ext_colors)) { ?>
+							<?php foreach ($car_ext_colors as $color => $color_name) { ?>
+								<option <?php selected($car_exterior_color, $color); ?> value="<?php echo esc_attr($color) ?>"><?php esc_html_e($color_name, 'tmm_content_composer'); ?></option>
+							<?php } ?>
 						<?php } ?>
-					<?php } ?>
-				</select>
-			</p>
-        </fieldset>
+					</select>
+				</p>
+			</fieldset>
 		<?php } ?>
 
 		<div class="fieldset flex-end">
@@ -443,9 +472,9 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 			<?php if (!empty($show_advanced_options)) { ?>
 
 				<div class="advanced-row">
-				<span>
-					<a href="#" class="car_adv_search_btn"><?php esc_html_e("Advanced", 'tmm_content_composer') ?></a>
-				</span>
+					<span>
+						<a href="#" class="car_adv_search_btn"><?php esc_html_e("Advanced", 'tmm_content_composer') ?></a>
+					</span>
 				</div><!--/ .advanced-row-->
 
 			<?php } ?>
@@ -458,71 +487,71 @@ $mileage_unit = (! empty( tmm_get_car_mileage_unit() ) ? tmm_get_car_mileage_uni
 
 	<?php if (!empty($show_advanced_options)) { ?>
 
-	<form class="advanced_car_search_panel" action="/">
+		<form class="advanced_car_search_panel" action="/">
 
-		<div class="tmm-cardealer-custom-radio-check car_adv_search hide">
+			<div class="tmm-cardealer-custom-radio-check car_adv_search hide">
 
-			<?php foreach (TMM_Ext_PostType_Car::$specifications_array as $specification_key => $block_name) { ?>
+				<?php foreach (TMM_Ext_PostType_Car::$specifications_array as $specification_key => $block_name) { ?>
 
-				<?php $attributes_array = TMM_Ext_PostType_Car::get_attribute_constructors($specification_key); ?>
+					<?php $attributes_array = TMM_Ext_PostType_Car::get_attribute_constructors($specification_key); ?>
 
-                <fieldset class="category">
+					<fieldset class="category">
 
-				<?php if (!empty($attributes_array)) { ?>
-				<legend><?php esc_html_e($block_name, 'tmm_content_composer'); ?></legend>
+						<?php if (!empty($attributes_array)) { ?>
+							<legend><?php esc_html_e($block_name, 'tmm_content_composer'); ?></legend>
+						<?php } ?>
+
+						<?php foreach ($attributes_array as $key => $value) { ?>
+
+							<?php if ($value['type'] == 'checkbox') { ?>
+
+								<p>
+									<input id="<?php echo esc_attr($key) . '_' . esc_attr($uniqid) ?>" type="checkbox" <?php echo (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key]) ? 'checked=""' : ''; ?> class="js_option_checkbox" value="<?php echo (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key]) ? '1' : '0'; ?>" name="advanced[<?php echo esc_attr($specification_key) ?>][<?php echo esc_attr($key) ?>]">
+									<label class="check" for="<?php echo esc_attr($key) . '_' . esc_attr($uniqid) ?>">
+										<strong><?php esc_html_e($value['name'], 'tmm_content_composer'); ?></strong>
+										<?php if (!empty($value['description'])) { ?>
+											<i class="description"><?php esc_html_e($value['description'], 'tmm_content_composer'); ?></i>
+										<?php } ?>
+									</label>
+								</p>
+
+							<?php } ?>
+
+							<?php if ($value['type'] == 'select') { ?>
+
+								<p>
+									<label for="<?php echo esc_attr($key) . '_' . esc_attr($uniqid) ?>">
+										<?php esc_html_e($value['name'], 'tmm_content_composer'); ?>
+										<?php if (!empty($value['description'])) { ?>
+											<span data-description="<?php esc_html_e($value['description'], 'tmm_content_composer'); ?>"></span>
+										<?php } ?>
+									</label>
+
+									<select id="<?php echo esc_attr($key) . '_' . esc_attr($uniqid) ?>" name="advanced[<?php echo esc_attr($specification_key) ?>][<?php echo esc_attr($key) ?>]">
+										<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
+										<?php foreach ($value['values'] as $val_key => $val_name) { ?>
+											<option <?php if (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key] == $val_key) { ?>selected<?php } ?> value="<?php echo esc_attr($val_key) ?>"><?php esc_html_e($val_name, 'tmm_content_composer'); ?></option>
+										<?php } ?>
+									</select>
+								</p>
+
+							<?php } ?>
+
+						<?php } ?>
+
+					</fieldset>
+
 				<?php } ?>
 
-				<?php foreach ($attributes_array as $key => $value) { ?>
+				<div class="clearfix"></div>
 
-					<?php if ($value['type'] == 'checkbox') { ?>
+				<input class="button primary-button submit-search" type="submit" value="<?php esc_html_e("Search", 'tmm_content_composer') ?>">
 
-                        <p>
-								<input id="<?php echo esc_attr( $key ) . '_' . esc_attr( $uniqid ) ?>" type="checkbox" <?php echo (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key]) ? 'checked=""' : ''; ?> class="js_option_checkbox" value="<?php echo (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key]) ? '1' : '0'; ?>" name="advanced[<?php echo esc_attr( $specification_key) ?>][<?php echo esc_attr( $key ) ?>]">
-								<label class="check" for="<?php echo esc_attr( $key ) . '_' . esc_attr( $uniqid ) ?>">
-									<strong><?php esc_html_e($value['name'], 'tmm_content_composer'); ?></strong>
-									<?php if (!empty($value['description'])) { ?>
-										<i class="description"><?php esc_html_e($value['description'], 'tmm_content_composer'); ?></i>
-									<?php } ?>
-								</label>
-							</p>
+				<div class="clearfix"></div>
 
-					<?php } ?>
+			</div>
 
-					<?php if ($value['type'] == 'select') { ?>
-
-                        <p>
-								<label for="<?php echo esc_attr( $key ) . '_' . esc_attr( $uniqid ) ?>">
-									<?php esc_html_e($value['name'], 'tmm_content_composer'); ?>
-									<?php if (!empty($value['description'])) { ?>
-										<span data-description="<?php esc_html_e($value['description'], 'tmm_content_composer'); ?>"></span>
-									<?php } ?>
-								</label>
-
-								<select id="<?php echo esc_attr( $key ) . '_' . esc_attr( $uniqid ) ?>" name="advanced[<?php echo esc_attr( $specification_key ) ?>][<?php echo esc_attr( $key ) ?>]">
-									<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
-									<?php foreach ($value['values'] as $val_key => $val_name) { ?>
-										<option <?php if (isset($adv_params['advanced'][$specification_key][$key]) && $adv_params['advanced'][$specification_key][$key] == $val_key) { ?>selected<?php } ?> value="<?php echo esc_attr( $val_key ) ?>"><?php esc_html_e($val_name, 'tmm_content_composer'); ?></option>
-									<?php } ?>
-								</select>
-							</p>
-
-					<?php } ?>
-
-				<?php } ?>
-
-                </fieldset>
-
-			<?php } ?>
-
-			<div class="clearfix"></div>
-
-			<input class="button primary-button submit-search" type="submit" value="<?php esc_html_e("Search", 'tmm_content_composer') ?>">
-
-			<div class="clearfix"></div>
-
-		</div>
-
-	</form><!--/ .advanced_car_search_panel-->
+		</form><!--/ .advanced_car_search_panel-->
 
 	<?php } ?>
 

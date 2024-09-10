@@ -50,6 +50,17 @@
 		<?php
 		TMM_Content_Composer::html_option(array(
 			'type' => 'checkbox',
+			'title' => esc_html__('Display Vehicle Type', 'tmm_content_composer'),
+			'shortcode_field' => 'show_vehicle_type',
+			'id' => 'show_vehicle_type',
+			'is_checked' => TMM_Content_Composer::set_default_value('show_vehicle_type', 1),
+			'description' => ''
+		));
+		?>
+
+		<?php
+		TMM_Content_Composer::html_option(array(
+			'type' => 'checkbox',
 			'title' => esc_html__('Display producers &amp; models', 'tmm_content_composer'),
 			'shortcode_field' => 'show_makes',
 			'id' => 'show_makes',
@@ -121,7 +132,7 @@
 			$states = array();
 
 			if ($parent_id > 0) {
-				$terms = TMM_Ext_PostType_Car::get_locations( $parent_id );
+				$terms = TMM_Ext_PostType_Car::get_locations($parent_id);
 
 				foreach ($terms as $term) {
 					$states[$term->id] = $term->name;
@@ -232,9 +243,9 @@
 			'shortcode_field' => 'search_widget_width',
 			'id' => 'search_widget_width',
 			'options' => array(
-					'tmm-site-full-width' => esc_html__('Full Width', 'tmm_content_composer'),
-					'tmm-site-two-thirds' => esc_html__('Two thirds (of site width)', 'tmm_content_composer'),
-					'none' => esc_html__('One third (of site width)', 'tmm_content_composer'),
+				'tmm-site-full-width' => esc_html__('Full Width', 'tmm_content_composer'),
+				'tmm-site-two-thirds' => esc_html__('Two thirds (of site width)', 'tmm_content_composer'),
+				'none' => esc_html__('One third (of site width)', 'tmm_content_composer'),
 			),
 			'default_value' => TMM_Content_Composer::set_default_value('search_widget_width', 'none'),
 			'description' => ''
@@ -258,13 +269,13 @@
 		});
 		colorizator();
 
-		jQuery('#selected_location0_cont select').on('change', function(){
+		jQuery('#selected_location0_cont select').on('change', function() {
 			var select = jQuery('#selected_location1_cont select'),
 				parent_id = jQuery(this).val();
 
 			select.empty();
 
-			if(parent_id !== ''){
+			if (parent_id !== '') {
 				var data = {
 					action: "app_cardealer_draw_locations_select",
 					hide_empty: 0,
@@ -283,22 +294,21 @@
 			return false;
 		});
 
-		jQuery('#show_location0').on('click', function(){
-			if(jQuery(this).is(':checked')){
+		jQuery('#show_location0').on('click', function() {
+			if (jQuery(this).is(':checked')) {
 				jQuery('#selected_location0_cont').hide();
-			}else{
+			} else {
 				jQuery('#selected_location0_cont').show().find('select').trigger('change');
 			}
 		});
 
-		jQuery('#show_location1').on('click', function(){
-			if(jQuery(this).is(':checked')){
+		jQuery('#show_location1').on('click', function() {
+			if (jQuery(this).is(':checked')) {
 				jQuery('#selected_location1_cont').hide();
-			}else{
+			} else {
 				jQuery('#selected_location1_cont').show();
 			}
 		});
 
 	});
-
 </script>
