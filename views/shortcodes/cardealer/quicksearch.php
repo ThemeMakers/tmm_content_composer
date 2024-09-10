@@ -12,6 +12,7 @@ $show_loc0 = 0;
 $show_loc1 = 0;
 $show_loc2 = 0;
 $car_condition = 0;
+$vehicle_type = 0;
 $carlocation = array(0);
 $carproducer = 0;
 $carmodels = 0;
@@ -262,7 +263,7 @@ $mileage_unit = (! empty(tmm_get_car_mileage_unit()) ? tmm_get_car_mileage_unit(
 						<option value="0"><?php esc_html_e("Any", 'tmm_content_composer') ?></option>
 						<?php
 						foreach ($vehicle_type_list as $vt_id => $vt_name) {
-							echo '<option value="' . $vt_id . '">'
+							echo '<option value="' . $vt_id . '"' . selected($vehicle_type, $vt_id, false) . '>'
 								. esc_html__($vt_name, 'tmm_content_composer')
 								. '</option>';
 						}
