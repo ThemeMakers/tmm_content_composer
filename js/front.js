@@ -402,6 +402,7 @@ function gmt_init_map(
         mapTypeId: maptype,
         scrollwheel: scrollwheel,
         disableDefaultUI: true,
+        mapId: map_canvas_id, // Map ID is required for advanced markers.
       },
       custom_controls
     );
@@ -413,15 +414,16 @@ function gmt_init_map(
       center: latLng,
       mapTypeId: maptype,
       scrollwheel: scrollwheel,
+      mapId: map_canvas_id, // Map ID is required for advanced markers.
     });
   }
 
   show_marker = parseInt(show_marker, 10);
   if (show_marker) {
-    var marker = new google.maps.Marker({
+    const marker = new google.maps.marker.AdvancedMarkerElement({
+      map: map,
       position: homeLatLng,
       draggable: parseInt(marker_is_draggable) == 1 ? true : false,
-      map: map,
     });
 
     if (show_popup && info != "") {
