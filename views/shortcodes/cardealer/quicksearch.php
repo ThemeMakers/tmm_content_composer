@@ -231,11 +231,12 @@ $mileage_unit = (! empty(tmm_get_car_mileage_unit()) ? tmm_get_car_mileage_unit(
 			</fieldset>
 		<?php } ?>
 
-		<!-- Condition -->
-		<?php if (!empty($show_condition)) {
-			$condition_list = tmm_get_car_condition_list();
-		?>
-			<fieldset data-row="condition">
+		<fieldset data-row="condition-vehicle_type" <?php echo (empty($show_condition) || empty($show_vehicle_type)) ? 'data-single="true"' : '' ?>>
+			<!-- Condition -->
+			<?php if (!empty($show_condition)) {
+				$condition_list = tmm_get_car_condition_list();
+			?>
+
 				<p>
 					<label for="tmm_qs_condition_<?php echo esc_attr($uniqid) ?>"><?php esc_html_e('Condition', 'tmm_content_composer') ?>:</label>
 					<select id="tmm_qs_condition_<?php echo esc_attr($uniqid) ?>" class="qs_condition" name="car_condition">
@@ -249,14 +250,12 @@ $mileage_unit = (! empty(tmm_get_car_mileage_unit()) ? tmm_get_car_mileage_unit(
 						?>
 					</select>
 				</p>
-			</fieldset>
-		<?php } ?>
+			<?php } ?>
 
-		<!-- Vehicle Type -->
-		<?php if (!empty($show_vehicle_type)) {
-			$vehicle_type_list = tmm_get_vehicle_type_list();
-		?>
-			<fieldset data-row="vehicle_type">
+			<!-- Vehicle Type -->
+			<?php if (!empty($show_vehicle_type)) {
+				$vehicle_type_list = tmm_get_vehicle_type_list();
+			?>
 				<p>
 					<label for="tmm_qs_vehicle_type_<?php echo esc_attr($uniqid) ?>"><?php esc_html_e('Vehicle Type', 'tmm_content_composer') ?>:</label>
 					<select id="tmm_qs_vehicle_type_<?php echo esc_attr($uniqid) ?>" class="qs_vehicle_type" name="vehicle_type">
@@ -270,8 +269,8 @@ $mileage_unit = (! empty(tmm_get_car_mileage_unit()) ? tmm_get_car_mileage_unit(
 						?>
 					</select>
 				</p>
-			</fieldset>
-		<?php } ?>
+			<?php } ?>
+		</fieldset>
 
 		<?php
 		if (isset($carlocation[2])) {
@@ -370,8 +369,8 @@ $mileage_unit = (! empty(tmm_get_car_mileage_unit()) ? tmm_get_car_mileage_unit(
 			</fieldset>
 		<?php } ?>
 
-		<!-- Fuel Type-->
 		<fieldset data-row="fuel-transmission" <?php echo (empty($show_fuel_type) || empty($show_transmission)) ? 'data-single="true"' : '' ?>>
+			<!-- Fuel Type-->
 			<?php if (!empty($show_fuel_type)) { ?>
 				<p>
 					<label for="tmm_qs_fuel_type_<?php echo esc_attr($uniqid) ?>"><?php esc_html_e("Fuel Type", 'tmm_content_composer') ?></label>
