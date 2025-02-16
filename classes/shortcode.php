@@ -54,7 +54,7 @@ class TMM_Shortcode
             if (is_array($atts) && isset($atts['content'])) {
                 $atts["content"] = $content;
             } else {
-                $atts = array("content" => $content);
+                $atts["content"] = $content;
             }
 
             if (isset($_REQUEST["shortcode_mode_edit"])) {
