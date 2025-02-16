@@ -1,4 +1,4 @@
-<?php if ( !defined('ABSPATH') ) exit; ?>
+<?php if (!defined('ABSPATH')) exit; ?>
 
 <div id="tmm_shortcode_template" class="tmm_shortcode_template clearfix">
 
@@ -21,8 +21,8 @@
 
 		$products = array();
 
-		if($products_query){
-			foreach($products_query->posts as $product){
+		if ($products_query) {
+			foreach ($products_query->posts as $product) {
 				$products[$product->ID] = $product->post_title;
 			}
 		}
@@ -33,7 +33,7 @@
 			'shortcode_field' => 'product_id',
 			'id' => 'product_id',
 			'options' => $products,
-			'default_value' => TMM_Content_Composer::set_default_value('product_id',''),
+			'default_value' => TMM_Content_Composer::set_default_value('product_id', ''),
 			'description' => __('Select single product by title', 'tmm_content_composer')
 		));
 		?>
