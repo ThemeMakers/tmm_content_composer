@@ -49,8 +49,13 @@ class TMM_Shortcode
 
         $shortcodes_keys = array_keys(self::$shortcodes);
 
-        function tmm_do_shortcode($atts, string $content = '', $shortcode_key)
+        function tmm_do_shortcode($atts, string $content = '', $shortcode_key = null)
         {
+            if ($shortcode_key === null) {
+                trigger_error("The parameter 'shortcode_key' is required.", E_USER_WARNING);
+                return '';
+            }
+
             if (is_array($atts) && isset($atts['content'])) {
                 $atts["content"] = $content;
             } else {
