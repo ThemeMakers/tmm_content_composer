@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 22:32+0200\n"
-"PO-Revision-Date: 2024-09-11 22:33+0200\n"
+"POT-Creation-Date: 2025-10-03 17:53+0200\n"
+"PO-Revision-Date: 2025-10-03 17:53+0200\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Slovak\n"
 "Language: sk_SK\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=( n == 1 ) ? 0 : ( n >= 2 && n <= 4 ) ? 1 : "
 "2;\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -134,11 +134,11 @@ msgstr "Prehľadávať "
 msgid "Unsupported video format"
 msgstr "Nepodporovaný video formát"
 
-#: classes/shortcode.php:39
+#: classes/shortcode.php:47
 msgid "Price table"
 msgstr "Cenová tabulka"
 
-#: classes/shortcode.php:40
+#: classes/shortcode.php:48
 #, fuzzy
 msgid "Google table row"
 msgstr "Cenová tabulka"
@@ -391,7 +391,7 @@ msgstr "Typ motora"
 msgid "Transparent (default)"
 msgstr ""
 
-#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:440
+#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:455
 #: views/shortcodes/default/popups/title.php:128
 #, fuzzy
 msgid "Color"
@@ -1224,110 +1224,110 @@ msgstr "Pridať auto"
 msgid "Remove"
 msgstr "Odstrániť "
 
-#: views/shortcodes/cardealer/quicksearch.php:161
+#: views/shortcodes/cardealer/quicksearch.php:176
 #, fuzzy
 msgid "Location"
 msgstr "Lokalita"
 
-#: views/shortcodes/cardealer/quicksearch.php:241
+#: views/shortcodes/cardealer/quicksearch.php:256
 msgid "Condition"
 msgstr "Stav"
 
-#: views/shortcodes/cardealer/quicksearch.php:243
-#: views/shortcodes/cardealer/quicksearch.php:262
-#: views/shortcodes/cardealer/quicksearch.php:295
-#: views/shortcodes/cardealer/quicksearch.php:302
-#: views/shortcodes/cardealer/quicksearch.php:379
-#: views/shortcodes/cardealer/quicksearch.php:395
-#: views/shortcodes/cardealer/quicksearch.php:413
+#: views/shortcodes/cardealer/quicksearch.php:258
+#: views/shortcodes/cardealer/quicksearch.php:277
+#: views/shortcodes/cardealer/quicksearch.php:310
+#: views/shortcodes/cardealer/quicksearch.php:317
+#: views/shortcodes/cardealer/quicksearch.php:394
+#: views/shortcodes/cardealer/quicksearch.php:410
 #: views/shortcodes/cardealer/quicksearch.php:428
-#: views/shortcodes/cardealer/quicksearch.php:531
+#: views/shortcodes/cardealer/quicksearch.php:443
+#: views/shortcodes/cardealer/quicksearch.php:546
 msgid "Any"
 msgstr "-Vyberte-"
 
-#: views/shortcodes/cardealer/quicksearch.php:247
+#: views/shortcodes/cardealer/quicksearch.php:262
 #, php-format
 msgid "Only %s cars"
 msgstr "Iba %s autá"
 
-#: views/shortcodes/cardealer/quicksearch.php:260
+#: views/shortcodes/cardealer/quicksearch.php:275
 #, fuzzy
 msgid "Vehicle Type"
 msgstr "Súkromná správa predajcovi"
 
-#: views/shortcodes/cardealer/quicksearch.php:293
+#: views/shortcodes/cardealer/quicksearch.php:308
 msgid "Make"
 msgstr "Značka"
 
-#: views/shortcodes/cardealer/quicksearch.php:300
+#: views/shortcodes/cardealer/quicksearch.php:315
 #, fuzzy
 msgid "Model"
 msgstr "Model vozidla"
 
-#: views/shortcodes/cardealer/quicksearch.php:312
+#: views/shortcodes/cardealer/quicksearch.php:327
 msgid "Price"
 msgstr "Cena"
 
-#: views/shortcodes/cardealer/quicksearch.php:312
-#: views/shortcodes/cardealer/quicksearch.php:362
+#: views/shortcodes/cardealer/quicksearch.php:327
+#: views/shortcodes/cardealer/quicksearch.php:377
 msgid "min/max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:326
+#: views/shortcodes/cardealer/quicksearch.php:341
 msgid "Year"
 msgstr "Rok"
 
-#: views/shortcodes/cardealer/quicksearch.php:330
+#: views/shortcodes/cardealer/quicksearch.php:345
 msgid "min"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:345
+#: views/shortcodes/cardealer/quicksearch.php:360
 msgid "max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:362
+#: views/shortcodes/cardealer/quicksearch.php:377
 msgid "Kilometer"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:362
+#: views/shortcodes/cardealer/quicksearch.php:377
 msgid "Mileage"
 msgstr "Najazdené Km"
 
-#: views/shortcodes/cardealer/quicksearch.php:376
+#: views/shortcodes/cardealer/quicksearch.php:391
 msgid "Fuel Type"
 msgstr "Typ paliva"
 
-#: views/shortcodes/cardealer/quicksearch.php:392
+#: views/shortcodes/cardealer/quicksearch.php:407
 msgid "Gearbox"
 msgstr "Prevodovka"
 
-#: views/shortcodes/cardealer/quicksearch.php:410
+#: views/shortcodes/cardealer/quicksearch.php:425
 msgid "Body Type"
 msgstr "Typ karosérie"
 
-#: views/shortcodes/cardealer/quicksearch.php:426
+#: views/shortcodes/cardealer/quicksearch.php:441
 #, fuzzy
 msgid "Doors Number"
 msgstr "Kontakty na predajcu "
 
-#: views/shortcodes/cardealer/quicksearch.php:448
+#: views/shortcodes/cardealer/quicksearch.php:463
 #, fuzzy
 #| msgid "Interior Color"
 msgid "Interior"
 msgstr "Farba interiéru"
 
-#: views/shortcodes/cardealer/quicksearch.php:459
+#: views/shortcodes/cardealer/quicksearch.php:474
 #, fuzzy
 #| msgid "Exterior Color"
 msgid "Exterior"
 msgstr "Farba exteriéru"
 
-#: views/shortcodes/cardealer/quicksearch.php:476
+#: views/shortcodes/cardealer/quicksearch.php:491
 msgid "Advanced"
 msgstr "Rozšírené"
 
-#: views/shortcodes/cardealer/quicksearch.php:482
-#: views/shortcodes/cardealer/quicksearch.php:548
+#: views/shortcodes/cardealer/quicksearch.php:497
+#: views/shortcodes/cardealer/quicksearch.php:563
 msgid "Search"
 msgstr "Hľadať "
 
@@ -2228,7 +2228,7 @@ msgid "ThemeMakers Visual Content Composer"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://webtemplatemasters.com"
+msgid "https://webtemplatemasters.com"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -2240,7 +2240,7 @@ msgid "ThemeMakers"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://themeforest.net/user/ThemeMakers"
+msgid "https://themeforest.net/user/ThemeMakers"
 msgstr ""
 
 #~ msgid "Door Count"

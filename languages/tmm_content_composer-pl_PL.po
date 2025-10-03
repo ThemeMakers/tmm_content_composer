@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 22:33+0200\n"
-"PO-Revision-Date: 2024-09-11 22:33+0200\n"
+"POT-Creation-Date: 2025-10-03 17:53+0200\n"
+"PO-Revision-Date: 2025-10-03 17:53+0200\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Polski\n"
 "Language: pl_PL\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10 >= 2 && n%10<=4 "
 "&&(n%100<10||n%100 >= 20)? 1 : 2);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
@@ -136,11 +136,11 @@ msgstr ""
 msgid "Unsupported video format"
 msgstr ""
 
-#: classes/shortcode.php:39
+#: classes/shortcode.php:47
 msgid "Price table"
 msgstr ""
 
-#: classes/shortcode.php:40
+#: classes/shortcode.php:48
 msgid "Google table row"
 msgstr ""
 
@@ -373,7 +373,7 @@ msgstr ""
 msgid "Transparent (default)"
 msgstr "Nieprzezroczystość (domyślnie)"
 
-#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:440
+#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:455
 #: views/shortcodes/default/popups/title.php:128
 msgid "Color"
 msgstr "Kolor"
@@ -1131,110 +1131,110 @@ msgstr ""
 msgid "Remove"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:161
+#: views/shortcodes/cardealer/quicksearch.php:176
 msgid "Location"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:241
+#: views/shortcodes/cardealer/quicksearch.php:256
 msgid "Condition"
 msgstr "Stan pojazdu"
 
-#: views/shortcodes/cardealer/quicksearch.php:243
-#: views/shortcodes/cardealer/quicksearch.php:262
-#: views/shortcodes/cardealer/quicksearch.php:295
-#: views/shortcodes/cardealer/quicksearch.php:302
-#: views/shortcodes/cardealer/quicksearch.php:379
-#: views/shortcodes/cardealer/quicksearch.php:395
-#: views/shortcodes/cardealer/quicksearch.php:413
+#: views/shortcodes/cardealer/quicksearch.php:258
+#: views/shortcodes/cardealer/quicksearch.php:277
+#: views/shortcodes/cardealer/quicksearch.php:310
+#: views/shortcodes/cardealer/quicksearch.php:317
+#: views/shortcodes/cardealer/quicksearch.php:394
+#: views/shortcodes/cardealer/quicksearch.php:410
 #: views/shortcodes/cardealer/quicksearch.php:428
-#: views/shortcodes/cardealer/quicksearch.php:531
+#: views/shortcodes/cardealer/quicksearch.php:443
+#: views/shortcodes/cardealer/quicksearch.php:546
 msgid "Any"
 msgstr "Wszystkie"
 
-#: views/shortcodes/cardealer/quicksearch.php:247
+#: views/shortcodes/cardealer/quicksearch.php:262
 #, php-format
 msgid "Only %s cars"
 msgstr "Tylko %s"
 
-#: views/shortcodes/cardealer/quicksearch.php:260
+#: views/shortcodes/cardealer/quicksearch.php:275
 #, fuzzy
 #| msgid "Dealer Type"
 msgid "Vehicle Type"
 msgstr "Typ sprzedawcy"
 
-#: views/shortcodes/cardealer/quicksearch.php:293
+#: views/shortcodes/cardealer/quicksearch.php:308
 msgid "Make"
 msgstr "Marka"
 
-#: views/shortcodes/cardealer/quicksearch.php:300
+#: views/shortcodes/cardealer/quicksearch.php:315
 msgid "Model"
 msgstr "Model"
 
-#: views/shortcodes/cardealer/quicksearch.php:312
+#: views/shortcodes/cardealer/quicksearch.php:327
 msgid "Price"
 msgstr "Cena"
 
-#: views/shortcodes/cardealer/quicksearch.php:312
-#: views/shortcodes/cardealer/quicksearch.php:362
+#: views/shortcodes/cardealer/quicksearch.php:327
+#: views/shortcodes/cardealer/quicksearch.php:377
 msgid "min/max"
 msgstr ""
 
-#: views/shortcodes/cardealer/quicksearch.php:326
+#: views/shortcodes/cardealer/quicksearch.php:341
 msgid "Year"
 msgstr "Rok"
 
-#: views/shortcodes/cardealer/quicksearch.php:330
+#: views/shortcodes/cardealer/quicksearch.php:345
 msgid "min"
 msgstr "min"
 
-#: views/shortcodes/cardealer/quicksearch.php:345
+#: views/shortcodes/cardealer/quicksearch.php:360
 msgid "max"
 msgstr "max"
 
-#: views/shortcodes/cardealer/quicksearch.php:362
+#: views/shortcodes/cardealer/quicksearch.php:377
 msgid "Kilometer"
 msgstr "Przebieg"
 
-#: views/shortcodes/cardealer/quicksearch.php:362
+#: views/shortcodes/cardealer/quicksearch.php:377
 msgid "Mileage"
 msgstr "Przebieg"
 
-#: views/shortcodes/cardealer/quicksearch.php:376
+#: views/shortcodes/cardealer/quicksearch.php:391
 msgid "Fuel Type"
 msgstr "Rodzaj paliwa"
 
-#: views/shortcodes/cardealer/quicksearch.php:392
+#: views/shortcodes/cardealer/quicksearch.php:407
 msgid "Gearbox"
 msgstr "Skrzynia biegów"
 
-#: views/shortcodes/cardealer/quicksearch.php:410
+#: views/shortcodes/cardealer/quicksearch.php:425
 msgid "Body Type"
 msgstr "Typ karoserii"
 
-#: views/shortcodes/cardealer/quicksearch.php:426
+#: views/shortcodes/cardealer/quicksearch.php:441
 #, fuzzy
 #| msgid "Dealers Number"
 msgid "Doors Number"
 msgstr "Liczba sprzedawców"
 
-#: views/shortcodes/cardealer/quicksearch.php:448
+#: views/shortcodes/cardealer/quicksearch.php:463
 #, fuzzy
 #| msgid "Interior Color"
 msgid "Interior"
 msgstr "Kolor tapicerki"
 
-#: views/shortcodes/cardealer/quicksearch.php:459
+#: views/shortcodes/cardealer/quicksearch.php:474
 #, fuzzy
 #| msgid "Exterior Color"
 msgid "Exterior"
 msgstr "Kolor karoserii"
 
-#: views/shortcodes/cardealer/quicksearch.php:476
+#: views/shortcodes/cardealer/quicksearch.php:491
 msgid "Advanced"
 msgstr "Szczegółowe dane"
 
-#: views/shortcodes/cardealer/quicksearch.php:482
-#: views/shortcodes/cardealer/quicksearch.php:548
+#: views/shortcodes/cardealer/quicksearch.php:497
+#: views/shortcodes/cardealer/quicksearch.php:563
 msgid "Search"
 msgstr "Szukaj"
 
@@ -2066,7 +2066,7 @@ msgid "ThemeMakers Visual Content Composer"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://webtemplatemasters.com"
+msgid "https://webtemplatemasters.com"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -2078,7 +2078,7 @@ msgid "ThemeMakers"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://themeforest.net/user/ThemeMakers"
+msgid "https://themeforest.net/user/ThemeMakers"
 msgstr ""
 
 #~ msgid "Door Count"

@@ -4,10 +4,10 @@
 
 /**
  * Plugin Name: ThemeMakers Visual Content Composer
- * Plugin URI: http://webtemplatemasters.com
+ * Plugin URI: https://webtemplatemasters.com
  * Description: Universal Layout Composer with Shortcodes Package
  * Author: ThemeMakers
- * Author URI: http://themeforest.net/user/ThemeMakers
+ * Author URI: https://themeforest.net/user/ThemeMakers
  * Version: 1.5.9
  * Text Domain: tmm_content_composer
  * Domain Path: /languages/
@@ -15,6 +15,15 @@
 
 define('TMM_CC_DIR', trailingslashit(plugin_dir_path(__FILE__)));
 define('TMM_CC_URL', trailingslashit(plugin_dir_url(__FILE__)));
+
+if (!function_exists('tmm_cc_load_textdomain')) {
+    function tmm_cc_load_textdomain()
+    {
+        load_plugin_textdomain('tmm_content_composer', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+    }
+}
+
+add_action('plugins_loaded', 'tmm_cc_load_textdomain');
 
 require_once TMM_CC_DIR . '/classes/content_composer.php';
 require_once TMM_CC_DIR . '/classes/layout_constructor.php';

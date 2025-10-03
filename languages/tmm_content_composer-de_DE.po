@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-11 22:31+0200\n"
-"PO-Revision-Date: 2024-09-11 22:31+0200\n"
+"POT-Creation-Date: 2025-10-03 17:54+0200\n"
+"PO-Revision-Date: 2025-10-03 17:54+0200\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.4.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: index.php\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -130,11 +130,11 @@ msgstr "Datei wählen"
 msgid "Unsupported video format"
 msgstr "Nicht unterstütztes Videoformat"
 
-#: classes/shortcode.php:39
+#: classes/shortcode.php:47
 msgid "Price table"
 msgstr "Preis Tabelle"
 
-#: classes/shortcode.php:40
+#: classes/shortcode.php:48
 msgid "Google table row"
 msgstr "Google-Tabellenzeile"
 
@@ -367,7 +367,7 @@ msgstr "Abschnitt Hintergrund Typ"
 msgid "Transparent (default)"
 msgstr "Transparent (default)"
 
-#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:440
+#: views/meta_panel.php:301 views/shortcodes/cardealer/quicksearch.php:455
 #: views/shortcodes/default/popups/title.php:128
 msgid "Color"
 msgstr "Farbe"
@@ -1125,106 +1125,106 @@ msgstr "Personal-Element hinzufügen"
 msgid "Remove"
 msgstr "Herausnehmen"
 
-#: views/shortcodes/cardealer/quicksearch.php:161
+#: views/shortcodes/cardealer/quicksearch.php:176
 msgid "Location"
 msgstr "Standort"
 
-#: views/shortcodes/cardealer/quicksearch.php:241
+#: views/shortcodes/cardealer/quicksearch.php:256
 msgid "Condition"
 msgstr "Zustand"
 
-#: views/shortcodes/cardealer/quicksearch.php:243
-#: views/shortcodes/cardealer/quicksearch.php:262
-#: views/shortcodes/cardealer/quicksearch.php:295
-#: views/shortcodes/cardealer/quicksearch.php:302
-#: views/shortcodes/cardealer/quicksearch.php:379
-#: views/shortcodes/cardealer/quicksearch.php:395
-#: views/shortcodes/cardealer/quicksearch.php:413
+#: views/shortcodes/cardealer/quicksearch.php:258
+#: views/shortcodes/cardealer/quicksearch.php:277
+#: views/shortcodes/cardealer/quicksearch.php:310
+#: views/shortcodes/cardealer/quicksearch.php:317
+#: views/shortcodes/cardealer/quicksearch.php:394
+#: views/shortcodes/cardealer/quicksearch.php:410
 #: views/shortcodes/cardealer/quicksearch.php:428
-#: views/shortcodes/cardealer/quicksearch.php:531
+#: views/shortcodes/cardealer/quicksearch.php:443
+#: views/shortcodes/cardealer/quicksearch.php:546
 msgid "Any"
 msgstr "Alle"
 
-#: views/shortcodes/cardealer/quicksearch.php:247
+#: views/shortcodes/cardealer/quicksearch.php:262
 #, php-format
 msgid "Only %s cars"
 msgstr "Nur %s Autos"
 
-#: views/shortcodes/cardealer/quicksearch.php:260
+#: views/shortcodes/cardealer/quicksearch.php:275
 #, fuzzy
 #| msgid "Dealer Type"
 msgid "Vehicle Type"
 msgstr "Händlertyp"
 
-#: views/shortcodes/cardealer/quicksearch.php:293
+#: views/shortcodes/cardealer/quicksearch.php:308
 msgid "Make"
 msgstr "Hersteller"
 
-#: views/shortcodes/cardealer/quicksearch.php:300
+#: views/shortcodes/cardealer/quicksearch.php:315
 msgid "Model"
 msgstr "Modell"
 
-#: views/shortcodes/cardealer/quicksearch.php:312
+#: views/shortcodes/cardealer/quicksearch.php:327
 msgid "Price"
 msgstr "Preis"
 
-#: views/shortcodes/cardealer/quicksearch.php:312
-#: views/shortcodes/cardealer/quicksearch.php:362
+#: views/shortcodes/cardealer/quicksearch.php:327
+#: views/shortcodes/cardealer/quicksearch.php:377
 msgid "min/max"
 msgstr "min/max"
 
-#: views/shortcodes/cardealer/quicksearch.php:326
+#: views/shortcodes/cardealer/quicksearch.php:341
 msgid "Year"
 msgstr "Erstzulassung"
 
-#: views/shortcodes/cardealer/quicksearch.php:330
+#: views/shortcodes/cardealer/quicksearch.php:345
 msgid "min"
 msgstr "min"
 
-#: views/shortcodes/cardealer/quicksearch.php:345
+#: views/shortcodes/cardealer/quicksearch.php:360
 msgid "max"
 msgstr "max"
 
-#: views/shortcodes/cardealer/quicksearch.php:362
+#: views/shortcodes/cardealer/quicksearch.php:377
 msgid "Kilometer"
 msgstr "Kilometer"
 
-#: views/shortcodes/cardealer/quicksearch.php:362
+#: views/shortcodes/cardealer/quicksearch.php:377
 msgid "Mileage"
 msgstr "Kilometer"
 
-#: views/shortcodes/cardealer/quicksearch.php:376
+#: views/shortcodes/cardealer/quicksearch.php:391
 msgid "Fuel Type"
 msgstr "Kraftstoffart"
 
-#: views/shortcodes/cardealer/quicksearch.php:392
+#: views/shortcodes/cardealer/quicksearch.php:407
 msgid "Gearbox"
 msgstr "Getriebe"
 
-#: views/shortcodes/cardealer/quicksearch.php:410
+#: views/shortcodes/cardealer/quicksearch.php:425
 msgid "Body Type"
 msgstr "Karosserieform"
 
-#: views/shortcodes/cardealer/quicksearch.php:426
+#: views/shortcodes/cardealer/quicksearch.php:441
 #, fuzzy
 #| msgid "Show Row Number"
 msgid "Doors Number"
 msgstr "Zeilennummer anzeigen"
 
-#: views/shortcodes/cardealer/quicksearch.php:448
+#: views/shortcodes/cardealer/quicksearch.php:463
 msgid "Interior"
 msgstr "Innen"
 
-#: views/shortcodes/cardealer/quicksearch.php:459
+#: views/shortcodes/cardealer/quicksearch.php:474
 msgid "Exterior"
 msgstr "Aussen"
 
-#: views/shortcodes/cardealer/quicksearch.php:476
+#: views/shortcodes/cardealer/quicksearch.php:491
 msgid "Advanced"
 msgstr "Erweiterte Suche"
 
-#: views/shortcodes/cardealer/quicksearch.php:482
-#: views/shortcodes/cardealer/quicksearch.php:548
+#: views/shortcodes/cardealer/quicksearch.php:497
+#: views/shortcodes/cardealer/quicksearch.php:563
 msgid "Search"
 msgstr "Los"
 
@@ -2065,7 +2065,9 @@ msgid "ThemeMakers Visual Content Composer"
 msgstr "ThemeMakers Visual Content Composer"
 
 #. Plugin URI of the plugin/theme
-msgid "http://webtemplatemasters.com"
+#, fuzzy
+#| msgid "http://webtemplatemasters.com"
+msgid "https://webtemplatemasters.com"
 msgstr "http://webtemplatemasters.com"
 
 #. Description of the plugin/theme
@@ -2077,7 +2079,9 @@ msgid "ThemeMakers"
 msgstr "ThemeMakers"
 
 #. Author URI of the plugin/theme
-msgid "http://themeforest.net/user/ThemeMakers"
+#, fuzzy
+#| msgid "http://themeforest.net/user/ThemeMakers"
+msgid "https://themeforest.net/user/ThemeMakers"
 msgstr "http://themeforest.net/user/Thememakers"
 
 #~ msgid "Door Count"
