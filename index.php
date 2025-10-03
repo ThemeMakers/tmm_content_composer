@@ -8,16 +8,69 @@
  * Description: Universal Layout Composer with Shortcodes Package
  * Author: ThemeMakers
  * Author URI: http://themeforest.net/user/ThemeMakers
- * Version: 1.5.8
+ * Version: 1.5.9
  * Text Domain: tmm_content_composer
+ * Domain Path: /languages/
  */
 
-define('TMM_CC_DIR', plugin_dir_path(__FILE__));
-define('TMM_CC_URL', plugin_dir_url(__FILE__));
+define('TMM_CC_DIR', trailingslashit(plugin_dir_path(__FILE__)));
+define('TMM_CC_URL', trailingslashit(plugin_dir_url(__FILE__)));
 
-require_once TMM_CC_DIR . 'classes/content_composer.php';
-require_once TMM_CC_DIR . 'classes/layout_constructor.php';
-require_once TMM_CC_DIR . 'classes/shortcode.php';
+require_once TMM_CC_DIR . '/classes/content_composer.php';
+require_once TMM_CC_DIR . '/classes/layout_constructor.php';
+require_once TMM_CC_DIR . '/classes/shortcode.php';
+
+if (!function_exists('tmm_cc_array_sanitize_deep')) {
+    function tmm_cc_array_sanitize_deep($value)
+    {
+        if (is_array($value)) {
+            foreach ($value as $key => $item) {
+                $value[$key] = tmm_cc_array_sanitize_deep($item);
+            }
+            return $value;
+        }
+
+        if (is_scalar($value)) {
+            return is_numeric($value) ? $value + 0 : sanitize_text_field((string) $value);
+        }
+
+        return '';
+    }
+}
+
+if (!function_exists('tmm_cc_safe_decode_params')) {
+    function tmm_cc_safe_decode_params($raw)
+    {
+        if (empty($raw)) {
+            return array();
+        }
+
+        if (is_array($raw)) {
+            return tmm_cc_array_sanitize_deep($raw);
+        }
+
+        if (!is_string($raw)) {
+            return array();
+        }
+
+        $decoded = base64_decode($raw, true);
+        if ($decoded === false) {
+            return array();
+        }
+
+        // Prevent object injection by disallowing classes and rejecting non-arrays.
+        $data = @unserialize($decoded, array('allowed_classes' => false));
+        if ($data === false && $decoded !== 'b:0;') {
+            $data = json_decode($decoded, true);
+        }
+
+        if (!is_array($data)) {
+            return array();
+        }
+
+        return tmm_cc_array_sanitize_deep($data);
+    }
+}
 
 /**
  * Register
@@ -56,16 +109,6 @@ function tmm_cc_register()
 }
 
 add_action('init', 'tmm_cc_register');
-
-/**
- * Load plugin textdomain.
- */
-function tmm_cc_load_textdomain()
-{
-    load_plugin_textdomain('tmm_content_composer', false, plugin_basename(dirname(__FILE__)) . '/languages');
-}
-
-add_action('plugins_loaded', 'tmm_cc_load_textdomain');
 
 /**
  * Deactivate old Shortcodes and Layout Constructor plugins

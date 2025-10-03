@@ -60,76 +60,91 @@ if (isset($search_widget_width)) {
 }
 
 if (isset($_GET['car_condition'])) {
-	$car_condition = $_GET['car_condition'];
+	$car_condition = sanitize_text_field(wp_unslash($_GET['car_condition']));
 }
 
 if (isset($_GET['vehicle_type'])) {
-	$vehicle_type = $_GET['vehicle_type'];
+	$vehicle_type = sanitize_text_field(wp_unslash($_GET['vehicle_type']));
 }
 
 if (isset($_GET['carlocation'])) {
-	$carlocation = explode(',', $_GET['carlocation']);
-	$carlocation = array_map('intval', $carlocation);
+	$carlocation_raw = wp_unslash($_GET['carlocation']);
+	if (is_array($carlocation_raw)) {
+		$carlocation = array_map('intval', $carlocation_raw);
+	} else {
+		$carlocation = array_map('intval', array_filter(array_map('trim', explode(',', (string) $carlocation_raw))));
+	}
+	if (empty($carlocation)) {
+		$carlocation = array(0);
+	}
 }
 
 if (isset($_GET['carproducer'])) {
-	$carproducer = $_GET['carproducer'];
+	$carproducer_raw = wp_unslash($_GET['carproducer']);
+	if (is_array($carproducer_raw)) {
+		$carproducer_raw = reset($carproducer_raw);
+	}
+	$carproducer = intval($carproducer_raw);
 }
 
 if (isset($_GET['carmodels'])) {
-	$carmodels = $_GET['carmodels'];
+	$carmodels_raw = wp_unslash($_GET['carmodels']);
+	if (is_array($carmodels_raw)) {
+		$carmodels_raw = reset($carmodels_raw);
+	}
+	$carmodels = intval($carmodels_raw);
 }
 
 if (isset($_GET['car_price_min'])) {
-	$car_price_min = $_GET['car_price_min'];
+	$car_price_min = intval(wp_unslash($_GET['car_price_min']));
 }
 
 if (isset($_GET['car_price_max'])) {
-	$car_price_max = $_GET['car_price_max'];
+	$car_price_max = intval(wp_unslash($_GET['car_price_max']));
 }
 
 if (isset($_GET['car_year_from'])) {
-	$car_year_from = $_GET['car_year_from'];
+	$car_year_from = sanitize_text_field(wp_unslash($_GET['car_year_from']));
 }
 
 if (isset($_GET['car_year_to'])) {
-	$car_year_to = $_GET['car_year_to'];
+	$car_year_to = sanitize_text_field(wp_unslash($_GET['car_year_to']));
 }
 
 if (isset($_GET['car_body'])) {
-	$car_body = $_GET['car_body'];
+	$car_body = sanitize_text_field(wp_unslash($_GET['car_body']));
 }
 
 if (isset($_GET['car_doors_count'])) {
-	$car_doors_count = $_GET['car_doors_count'];
+	$car_doors_count = intval(wp_unslash($_GET['car_doors_count']));
 }
 
 if (isset($_GET['car_interrior_color'])) {
-	$car_interrior_color = $_GET['car_interrior_color'];
+	$car_interrior_color = sanitize_text_field(wp_unslash($_GET['car_interrior_color']));
 }
 
 if (isset($_GET['car_exterior_color'])) {
-	$car_exterior_color = $_GET['car_exterior_color'];
+	$car_exterior_color = sanitize_text_field(wp_unslash($_GET['car_exterior_color']));
 }
 
 if (isset($_GET['car_transmission'])) {
-	$car_transmission = $_GET['car_transmission'];
+	$car_transmission = sanitize_text_field(wp_unslash($_GET['car_transmission']));
 }
 
 if (isset($_GET['car_fuel_type'])) {
-	$car_fuel_type = $_GET['car_fuel_type'];
+	$car_fuel_type = sanitize_text_field(wp_unslash($_GET['car_fuel_type']));
 }
 
 if (isset($_GET['car_mileage_from'])) {
-	$car_mileage_from = $_GET['car_mileage_from'];
+	$car_mileage_from = intval(wp_unslash($_GET['car_mileage_from']));
 }
 
 if (isset($_GET['car_mileage_to'])) {
-	$car_mileage_to = $_GET['car_mileage_to'];
+	$car_mileage_to = intval(wp_unslash($_GET['car_mileage_to']));
 }
 
 if (isset($_GET['adv_params'])) {
-	$adv_params = unserialize(base64_decode($_GET['adv_params']));
+	$adv_params = tmm_cc_safe_decode_params(wp_unslash($_GET['adv_params']));
 }
 
 $searching_page = TMM_Helper::get_permalink_by_lang(TMM::get_option('searching_page', TMM_APP_CARDEALER_PREFIX));
