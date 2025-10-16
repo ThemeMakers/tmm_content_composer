@@ -44,56 +44,56 @@ if (!isset($show_name)) {
 
 <ul class="list-entry carproducers_list">
 
-	<?php
-foreach ($makes as $make) {
+    <?php
+    foreach ($makes as $make) {
 
-//        var_dump($make->term_id);
+        //        var_dump($make->term_id);
 
-    $image_name = strtolower($make->name);
-    $image_name = preg_replace(array('/\s/', '/ë/'), array('_', 'e'), $image_name);
-    $src = 'images/car_makes_logos/' . $image_name . '.svg';
+        $image_name = strtolower($make->name);
+        $image_name = preg_replace(array('/\s/', '/ë/'), array('_', 'e'), $image_name);
+        $src = 'images/car_makes_logos/' . $image_name . '.svg';
 
-    if (!file_exists(TMM_CC_DIR . $src)) {
-        $src = '';
-    } else {
-        $src = TMM_CC_URL . $src;
+        if (!file_exists(TMM_CC_DIR . $src)) {
+            $src = '';
+        } else {
+            $src = TMM_CC_URL . $src;
+        }
+
+        if (isset($show_only_with_logo) && $show_only_with_logo && !$src) {
+            continue;
+        }
+
+        if ($make->count > 0 || !$hide_empty) {
+    ?>
+
+            <li class="cat-item-<?php echo esc_attr((str_replace(' ', '-', strtolower($make->name)))) ?>">
+
+                <?php if (!isset($show_link) || $show_link && $make->count > 0) { ?>
+                    <a title="<?php echo sprintf(esc_html__('View all ads filed under %s', 'tmm_content_composer'), $make->name); ?>" href="<?php echo get_term_link($make->slug, 'carproducer'); ?>">
+                    <?php } ?>
+
+                    <?php if ($show_logo && $src != '') { ?>
+                        <span class="icon"><img src="<?php echo esc_attr($src) ?>" alt="<?php echo esc_html__($make->name, 'tmm_content_composer') ?>" /></span>
+                    <?php } ?>
+
+                    <?php if ($show_name) { ?>
+                        <div class="h4-style car-title">
+                            <?php
+                            echo esc_html__($make->name, 'tmm_content_composer');
+                            echo (!isset($show_count) || $show_count) ? ' (' . $make->count . ')' : '';
+                            ?>
+                        </div>
+                    <?php } ?>
+
+                    <?php if (!isset($show_link) || $show_link && $make->count > 0) { ?>
+                    </a>
+                <?php } ?>
+
+            </li>
+
+    <?php
+        }
     }
-
-    if (isset($show_only_with_logo) && $show_only_with_logo && !$src) {
-        continue;
-    }
-
-    if ($make->count > 0 || !$hide_empty) {
-        ?>
-
-			<li class="cat-item-<?php echo esc_attr((str_replace(' ', '-', strtolower($make->name)))) ?>">
-
-			<?php if (!isset($show_link) || $show_link && $make->count > 0) {?>
-				<a title="<?php echo sprintf(esc_html__('View all ads filed under %s', 'tmm_content_composer'), $make->name); ?>" href="<?php echo get_term_link($make->slug, 'carproducer'); ?>">
-			<?php }?>
-
-				<?php if ($show_logo && $src != '') {?>
-					<span class="icon"><img src="<?php echo esc_attr($src) ?>" alt="<?php echo esc_html__($make->name, 'tmm_content_composer') ?>" /></span>
-				<?php }?>
-
-				<?php if ($show_name) {?>
-					<h4 class="car-title">
-                        <?php
-echo esc_html__($make->name, 'tmm_content_composer');
-            echo (!isset($show_count) || $show_count) ? ' (' . $make->count . ')' : '';
-            ?>
-                    </h4>
-				<?php }?>
-
-			<?php if (!isset($show_link) || $show_link && $make->count > 0) {?>
-				</a>
-			<?php }?>
-
-			</li>
-
-		<?php
-}
-}
-?>
+    ?>
 
 </ul>

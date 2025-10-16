@@ -75,7 +75,7 @@ switch ($type) {
                                 <a style="<?php echo esc_attr($hover_title_style); ?>" href="<?php echo esc_url($link); ?>">
                                 <?php } ?>
                                 <i class="content-icon <?php echo esc_attr($icon); ?>"></i>
-                                <h3 style="<?php echo esc_attr($title_style); ?>"><?php echo esc_html($title); ?></h3>
+                                <div class="h3-style" style="<?php echo esc_attr($title_style); ?>"><?php echo esc_html($title); ?></>
 
                                 <div class="hover-box" style="<?php echo esc_attr($hover_box_style); ?>" data-color="<?php echo esc_attr($color_text); ?>" data-color-state="<?php echo esc_attr($color_bg); ?>" data-text-hover="<?php echo esc_attr($color_hover_text); ?>" data-color-hover="<?php echo esc_attr($color_hover_bg); ?>"></div><!--/ .hover-box-->
                                 <div class="extra-content">
