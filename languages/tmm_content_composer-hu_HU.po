@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-10-03 17:54+0200\n"
-"PO-Revision-Date: 2025-10-03 17:54+0200\n"
+"POT-Creation-Date: 2025-12-26 18:37+0100\n"
+"PO-Revision-Date: 2025-12-26 18:37+0100\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: Magyar\n"
 "Language: hu_HU\n"
@@ -564,7 +564,8 @@ msgid "Button Text"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/animated_banner.php:112
-msgid "Know More"
+#: views/shortcodes/default/services.php:87
+msgid "Read more"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/animated_banner.php:120

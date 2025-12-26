@@ -109,7 +109,7 @@
 			'title' => __('Button Text', 'tmm_content_composer'),
 			'shortcode_field' => 'button_text',
 			'id' => 'button_text',
-			'default_value' => TMM_Content_Composer::set_default_value('button_text', __('Know More', 'tmm_content_composer')),
+			'default_value' => TMM_Content_Composer::set_default_value('button_text', __('Read more', 'tmm_content_composer')),
 			'description' => ''
 		));
 		?>
