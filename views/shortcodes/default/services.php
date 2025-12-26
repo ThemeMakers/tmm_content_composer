@@ -83,9 +83,11 @@ switch ($type) {
                                             <p style="<?php echo esc_attr($hover_title_style); ?>">
                                                 <?php echo esc_html($text); ?>
                                             </p>
-                                            <?php if (!empty($link)) { ?><a href="<?php echo esc_url($link); ?>" class="lc-button middle"><?php } ?>
-                                                <?php esc_html_e('Read more', 'tmm_content_composer'); ?>
-                                                <?php if (!empty($link)) { ?></a><?php } ?>
+                                            <?php if (!empty($link)) { ?>
+                                                <a href="<?php echo esc_url($link); ?>" aria-label="<?php echo esc_attr($title); ?>" class="lc-button middle">
+                                                    <?php esc_html_e('Read more', 'tmm_content_composer'); ?>
+                                                </a>
+                                            <?php } ?>
                                         </div><!--/ .extra-inner-->
                                     </div>
 
