@@ -61,7 +61,7 @@ foreach ($car_body_list as $k => $body_name) {
         <li>
 
             <?php if (!empty($enable_link)) { ?>
-                <a href="<?php echo esc_url($body['url']) ?>" class="icon-link" data-car-body="<?php echo esc_attr($k); ?>">
+                <a href="<?php echo esc_url($body['url']) ?>" class="icon-link" rel="nofollow" data-car-body="<?php echo esc_attr($k); ?>">
                 <?php } ?>
                 <img src="<?php echo esc_url($body['icon']) ?>" alt="<?php echo esc_html__($body['name'], 'tmm_content_composer'); ?>" />
                 <?php if (!empty($enable_link)) { ?>
@@ -70,7 +70,7 @@ foreach ($car_body_list as $k => $body_name) {
 
             <?php if (!empty($show_name)) { ?><div class="h6-style"><?php } ?>
 
-                <?php if (!empty($enable_link)) { ?><a href="<?php echo esc_url($body['url']) ?>" data-car-body="<?php echo esc_attr($k); ?>"><?php } ?>
+                <?php if (!empty($enable_link)) { ?><a href="<?php echo esc_url($body['url']) ?>" rel="nofollow" data-car-body="<?php echo esc_attr($k); ?>"><?php } ?>
 
                     <?php
                     if (!empty($show_name)) {

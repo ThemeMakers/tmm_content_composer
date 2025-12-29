@@ -89,9 +89,7 @@ if (!isset($show_name)) {
                 <?php if (!isset($show_link) || $show_link && $make->count > 0) { ?>
                     <a title="<?php echo sprintf(esc_html__('View all ads filed under %s', 'tmm_content_composer'), $make->name); ?>"
                         href="<?php echo esc_url($make_url); ?>"
-                        class="tmm-make-to-inventory"
-                        data-carproducer="<?php echo (int) $make->term_id; ?>"
-                        data-inventory-url="<?php echo esc_url($inventory_page_url); ?>">
+                        rel="nofollow">
                     <?php } ?>
 
                     <?php if ($show_logo && $src != '') { ?>
