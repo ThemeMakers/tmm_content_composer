@@ -1,15 +1,17 @@
-<?php if (!defined('ABSPATH')) {
-    exit();
-}
+<?php if (!defined('ABSPATH')) exit();
 
 $car_bodies = array();
 $car_body_list = TMM_Ext_PostType_Car::$car_options['body'];
 $searching_page = get_permalink(TMM::get_option('searching_page', TMM_APP_CARDEALER_PREFIX));
+$car_body_slug = function_exists('tmm_get_car_body_slug')
+    ? tmm_get_car_body_slug()
+    : sanitize_title(apply_filters('tmm_car_body_slug', __('vehicle-body', 'tmm_content_composer')));
 
 foreach ($car_body_list as $k => $body_name) {
+    $pretty_url = trailingslashit(trailingslashit($searching_page) . $car_body_slug . '/' . $k);
     $car_bodies[$k] = array(
         'name' => $body_name,
-        'url' => add_query_arg(array('car_body' => $k), $searching_page),
+        'url' => $pretty_url,
         'count' => 0,
         'icon' => file_exists(TMM_EXT_PATH . '/cardealer/images/car_body_icons/' . $k . '.svg')
             ? TMM_EXT_URI . '/cardealer/images/car_body_icons/' . $k . '.svg'
@@ -59,7 +61,7 @@ foreach ($car_body_list as $k => $body_name) {
         <li>
 
             <?php if (!empty($enable_link)) { ?>
-                <a href="<?php echo esc_url($body['url']) ?>" class="icon-link">
+                <a href="<?php echo esc_url($body['url']) ?>" class="icon-link" data-car-body="<?php echo esc_attr($k); ?>">
                 <?php } ?>
                 <img src="<?php echo esc_url($body['icon']) ?>" alt="<?php echo esc_html__($body['name'], 'tmm_content_composer'); ?>" />
                 <?php if (!empty($enable_link)) { ?>
@@ -68,7 +70,7 @@ foreach ($car_body_list as $k => $body_name) {
 
             <?php if (!empty($show_name)) { ?><div class="h6-style"><?php } ?>
 
-                <?php if (!empty($enable_link)) { ?><a href="<?php echo esc_url($body['url']) ?>"><?php } ?>
+                <?php if (!empty($enable_link)) { ?><a href="<?php echo esc_url($body['url']) ?>" data-car-body="<?php echo esc_attr($k); ?>"><?php } ?>
 
                     <?php
                     if (!empty($show_name)) {
