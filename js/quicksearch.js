@@ -256,11 +256,12 @@ TmmQuickSearchApp.prototype = {
     const body = self.body;
 
     body.on('change', self.loc_0, function () {
-      const value = jQuery(this).val(),
-        widget = jQuery(this).closest(self.searchContainer),
-        car_condition = widget.find('.qs_condition').val(),
-        state = widget.find(self.loc_1),
-        city = widget.find(self.loc_2);
+      const $current = jQuery(this);
+      const value = $current.val();
+      const widget = $current.closest(self.searchContainer);
+      const car_condition = widget.find('.qs_condition').val();
+      const state = widget.find(self.loc_1);
+      const city = widget.find(self.loc_2);
 
       self.clear_select(city);
       city.attr('disabled', true);
@@ -276,10 +277,11 @@ TmmQuickSearchApp.prototype = {
     });
 
     body.on('change', self.loc_1, function () {
-      const level = jQuery(this).data('level'),
-        value = jQuery(this).val(),
-        widget = jQuery(this).closest(self.searchContainer),
-        city = widget.find(self.loc_2);
+      const $current = jQuery(this);
+      const level = $current.data('level');
+      const value = $current.val();
+      const widget = $current.closest(self.searchContainer);
+      const city = widget.find(self.loc_2);
 
       if (value === '0') {
         self.clear_select(city);
@@ -340,9 +342,6 @@ TmmQuickSearchApp.prototype = {
       locations = widget.find(self.locs),
       car_location = widget.find(self.loc_0),
       car_location_id = car_location.val(),
-      selected_region_id = 0,
-      level = 0,
-      region_id = 0,
       loader = widget.find('.form_load_area');
 
     //loader.show();
@@ -350,27 +349,13 @@ TmmQuickSearchApp.prototype = {
     make.attr('disabled', true);
     model.attr('disabled', true);
 
-    locations.each(function () {
-      var $this = jQuery(this);
-      if ($this.attr('type') == 'hidden') {
-        region_id = $this.val();
-      } else {
-        region_id = $this.find('option:selected').val();
-      }
-
-      if (region_id > 0) {
-        level++;
-      } else {
-        return;
-      }
-      selected_region_id = region_id;
-    });
+    const regionDetails = self.getRegionDetails(locations);
 
     var data = {
       action: 'app_cardealer_draw_quicksearch_producers',
       location_id: car_location_id,
-      selected_region_id: selected_region_id,
-      level: level,
+      selected_region_id: regionDetails.selected_region_id,
+      level: regionDetails.level,
     };
 
     jQuery
@@ -396,13 +381,11 @@ TmmQuickSearchApp.prototype = {
       )
       .then(function () {
         // console.log('done with loading car makes...');
-        if (typeof jQuery.fn.select2 === 'function' && make.is('select')) {
-          make.select2({
-            width: '100%',
-            dir: tmm_l10n.is_rtl,
-            language: tmm_l10n.any,
-          });
-        }
+        self.applySelect2(make, {
+          width: '100%',
+          dir: tmm_l10n.is_rtl,
+          language: tmm_l10n.any,
+        });
         loader.hide();
       });
   },
@@ -413,10 +396,7 @@ TmmQuickSearchApp.prototype = {
       car_model = widget.find(self.model),
       locations = widget.find(self.locs),
       car_location_id = widget.find(self.loc_0).val(),
-      selected_region_id = 0,
-      level = 0,
-      loader = widget.find('.form_load_area'),
-      region_id = 0;
+      loader = widget.find('.form_load_area');
 
     //loader.show();
     car_model.attr('disabled', true);
@@ -427,28 +407,14 @@ TmmQuickSearchApp.prototype = {
       return;
     }
 
-    locations.each(function (index, obj) {
-      var $this = jQuery(obj);
-      if ($this.attr('type') === 'hidden') {
-        region_id = $this.val();
-      } else {
-        region_id = $this.find('option:selected').val();
-      }
-
-      if (region_id > 0) {
-        level++;
-      } else {
-        return;
-      }
-      selected_region_id = region_id;
-    });
+    const regionDetails = self.getRegionDetails(locations);
 
     var data = {
       action: 'app_cardealer_draw_quicksearch_models',
       location_id: car_location_id,
-      selected_region_id: selected_region_id,
+      selected_region_id: regionDetails.selected_region_id,
       producer_id: car_producer_id,
-      level: level,
+      level: regionDetails.level,
     };
 
     jQuery
@@ -472,13 +438,11 @@ TmmQuickSearchApp.prototype = {
       )
       .then(function () {
         // console.log('done with loading models...');
-        if (typeof jQuery.fn.select2 === 'function' && car_model.is('select')) {
-          car_model.select2({
-            width: '100%',
-            dir: tmm_l10n.is_rtl,
-            language: tmm_l10n.any,
-          });
-        }
+        self.applySelect2(car_model, {
+          width: '100%',
+          dir: tmm_l10n.is_rtl,
+          language: tmm_l10n.any,
+        });
         loader.hide();
       });
   },
@@ -488,7 +452,7 @@ TmmQuickSearchApp.prototype = {
     const self = this;
     const loader = widget.find('.form_load_area');
     const locationSelectorClass = '.qs_carlocation' + (level + 1);
-    const locationSelector = jQuery(locationSelectorClass);
+    const location = widget.find(locationSelectorClass);
 
     var data = {
       action: 'app_cardealer_draw_quicksearch_locations',
@@ -506,7 +470,6 @@ TmmQuickSearchApp.prototype = {
             loader.show();
           },
           success: function (response) {
-            var location = widget.find(locationSelectorClass);
             self.clear_select(location);
             location.append(response).removeAttr('disabled');
           },
@@ -518,17 +481,12 @@ TmmQuickSearchApp.prototype = {
       )
       .then(function () {
         // console.log('done with loading location level_' + level + '...');
-        if (
-          typeof jQuery.fn.select2 === 'function' &&
-          locationSelector.is('select')
-        ) {
-          locationSelector.select2({
-            width: '100%',
-            dir: tmm_l10n.is_rtl,
-            language: tmm_l10n.site_locale,
-            minimumInputLength: level == 2 ? 3 : 0,
-          });
-        }
+        self.applySelect2(location, {
+          width: '100%',
+          dir: tmm_l10n.is_rtl,
+          language: tmm_l10n.site_locale,
+          minimumInputLength: level == 2 ? 3 : 0,
+        });
         loader.hide();
       });
 
@@ -537,69 +495,44 @@ TmmQuickSearchApp.prototype = {
 
   search(widget) {
     const self = this;
-    var form = widget.find('.car_form_search'),
-      action_link = form.attr('action'),
-      loader = widget.find('.form_load_area'),
-      $results = jQuery('#change-items'),
-      $pager = jQuery('.wp-pagenavi.vehicle-pagination'),
-      hasResultsContainer = $results.length > 0,
-      params = new URLSearchParams(),
-      main_params_object = {
-        car_condition: widget.find('.qs_condition').length
-          ? widget.find('.qs_condition').val()
-          : '0',
-        vehicle_type: widget.find('.qs_vehicle_type').length
-          ? widget.find('.qs_vehicle_type').val()
-          : '0',
-        carlocation: '0',
-        carproducer: widget.find(self.make).length
-          ? widget.find(self.make).val()
-          : '0',
-        carmodels: widget.find(self.model).length
-          ? widget.find(self.model).val()
-          : '0',
-        car_price_min: widget.find('[name=car_price_min]').length
-          ? widget.find('[name=car_price_min]').val()
-          : '0',
-        car_price_max: widget.find('[name=car_price_max]').length
-          ? widget.find('[name=car_price_max]').val()
-          : '0',
-        car_year_from: widget.find('[name=car_year_from]').length
-          ? widget.find('[name=car_year_from]').val()
-          : '0',
-        car_year_to: widget.find('[name=car_year_to]').length
-          ? widget.find('[name=car_year_to]').val()
-          : '0',
-        car_fuel_type: widget.find('[name=car_fuel_type]').length
-          ? widget.find('[name=car_fuel_type]').val()
-          : '0',
-        car_body: widget.find('[name=car_body]').length
-          ? widget.find('[name=car_body]').val()
-          : '0',
-        car_doors_count: widget.find('[name=car_doors_count]').length
-          ? widget.find('[name=car_doors_count]').val()
-          : '0',
-        car_interrior_color: widget.find('[name=car_interrior_color]').length
-          ? widget.find('[name=car_interrior_color]').val()
-          : '0',
-        car_exterior_color: widget.find('[name=car_exterior_color]').length
-          ? widget.find('[name=car_exterior_color]').val()
-          : '0',
-        car_transmission: widget.find('[name=car_transmission]').length
-          ? widget.find('[name=car_transmission]').val()
-          : '0',
-        car_mileage_from: widget.find('[name=car_mileage_from]').length
-          ? widget.find('[name=car_mileage_from]').val()
-          : '0',
-        car_mileage_to: widget.find('[name=car_mileage_to]').length
-          ? widget.find('[name=car_mileage_to]').val()
-          : '0',
-      },
-      carlocations = [
-        widget.find(self.loc_0).length ? widget.find(self.loc_0).val() : '0',
-        widget.find(self.loc_1).length ? widget.find(self.loc_1).val() : '0',
-        widget.find(self.loc_2).length ? widget.find(self.loc_2).val() : '0',
-      ];
+    const form = widget.find('.car_form_search');
+    const action_link = form.attr('action');
+    const loader = widget.find('.form_load_area');
+    let $results = jQuery('#change-items');
+    let $pager = jQuery('.wp-pagenavi.vehicle-pagination');
+    const hasResultsContainer = $results.length > 0;
+    const params = new URLSearchParams();
+
+    const getFieldValue = function (selector) {
+      const $field = widget.find(selector);
+      return $field.length ? $field.val() : '0';
+    };
+
+    const main_params_object = {
+      car_condition: getFieldValue('.qs_condition'),
+      vehicle_type: getFieldValue('.qs_vehicle_type'),
+      carlocation: '0',
+      carproducer: getFieldValue(self.make),
+      carmodels: getFieldValue(self.model),
+      car_price_min: getFieldValue('[name=car_price_min]'),
+      car_price_max: getFieldValue('[name=car_price_max]'),
+      car_year_from: getFieldValue('[name=car_year_from]'),
+      car_year_to: getFieldValue('[name=car_year_to]'),
+      car_fuel_type: getFieldValue('[name=car_fuel_type]'),
+      car_body: getFieldValue('[name=car_body]'),
+      car_doors_count: getFieldValue('[name=car_doors_count]'),
+      car_interrior_color: getFieldValue('[name=car_interrior_color]'),
+      car_exterior_color: getFieldValue('[name=car_exterior_color]'),
+      car_transmission: getFieldValue('[name=car_transmission]'),
+      car_mileage_from: getFieldValue('[name=car_mileage_from]'),
+      car_mileage_to: getFieldValue('[name=car_mileage_to]'),
+    };
+
+    const carlocations = [
+      getFieldValue(self.loc_0),
+      getFieldValue(self.loc_1),
+      getFieldValue(self.loc_2),
+    ];
 
     if (carlocations[0] !== '0') {
       main_params_object.carlocation = carlocations[0];
@@ -688,18 +621,46 @@ TmmQuickSearchApp.prototype = {
     const o = this;
 
     select.each(function () {
-      const val = jQuery(this).val(0);
-      const sel = jQuery(select);
+      const $field = jQuery(this).val(0);
 
-      if (sel.is(o.loc_0)) {
-        val.html('<option value="0">' + tmm_l10n.country + '</option>');
-      } else if (sel.is(o.loc_1)) {
-        val.html('<option value="0">' + tmm_l10n.region + '</option>');
-      } else if (sel.is(o.loc_2)) {
-        val.html('<option value="0">' + tmm_l10n.city + '</option>');
+      if ($field.is(o.loc_0)) {
+        $field.html('<option value="0">' + tmm_l10n.country + '</option>');
+      } else if ($field.is(o.loc_1)) {
+        $field.html('<option value="0">' + tmm_l10n.region + '</option>');
+      } else if ($field.is(o.loc_2)) {
+        $field.html('<option value="0">' + tmm_l10n.city + '</option>');
       } else {
-        val.html('<option value="0">' + tmm_l10n.any + '</option>');
+        $field.html('<option value="0">' + tmm_l10n.any + '</option>');
       }
     });
+  },
+
+  applySelect2($element, options) {
+    if (typeof jQuery.fn.select2 === 'function' && $element.is('select')) {
+      $element.select2(options);
+    }
+  },
+
+  getRegionDetails(locations) {
+    let selected_region_id = 0;
+    let level = 0;
+
+    locations.each(function () {
+      const $location = jQuery(this);
+      const region_id =
+        $location.attr('type') === 'hidden'
+          ? $location.val()
+          : $location.find('option:selected').val();
+
+      if (region_id > 0) {
+        level++;
+        selected_region_id = region_id;
+      }
+    });
+
+    return {
+      selected_region_id: selected_region_id,
+      level: level,
+    };
   },
 };
