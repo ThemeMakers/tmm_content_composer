@@ -670,6 +670,11 @@ TmmQuickSearchApp.prototype = {
       state,
     } = config;
 
+    const noResultsMessage =
+      (typeof tmm_l10n === 'object' &&
+        (tmm_l10n.lang_no_results || tmm_l10n.no_results)) ||
+      'NO RESULTS!';
+
     let { $results, $pager } = state;
 
     if (!hasResultsContainer || !isOnActionPage) {
@@ -691,6 +696,13 @@ TmmQuickSearchApp.prototype = {
           if ($newItems.length && $results.length) {
             $results.replaceWith($newItems);
             $results = $newItems;
+          } else if ($results.length) {
+            $results.empty().append(
+              jQuery('<div>', {
+                class: 'col-md-12 alert alert-info tmm-no-results',
+                text: noResultsMessage,
+              })
+            );
           }
 
           if ($newPager.length) {
@@ -701,6 +713,9 @@ TmmQuickSearchApp.prototype = {
               $results.after($newPager);
               $pager = $newPager;
             }
+          } else if ($pager.length) {
+            $pager.remove();
+            $pager = jQuery();
           }
 
           state.$results = $results;
