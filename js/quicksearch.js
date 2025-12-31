@@ -549,6 +549,19 @@ TmmQuickSearchApp.prototype = {
       }
     });
 
+    try {
+      const perPage =
+        typeof window.tmmGetStoredPerPage === 'function'
+          ? window.tmmGetStoredPerPage()
+          : null;
+      if (perPage) {
+        params.append('per_page', perPage);
+        if (typeof window.tmmStorePerPage === 'function') {
+          window.tmmStorePerPage(perPage);
+        }
+      }
+    } catch (e) {}
+
     // only treat the action page as the “results” page; elsewhere, do a full redirect
     const currentBase = tmmNormalizeBase(window.location.href);
     const actionBase = tmmNormalizeBase(action_link);
