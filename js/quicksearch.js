@@ -720,6 +720,10 @@ TmmQuickSearchApp.prototype = {
 
           state.$results = $results;
           state.$pager = $pager;
+
+          if (typeof window.tmmRewritePagerLinks === 'function') {
+            window.tmmRewritePagerLinks($pager, actionBase);
+          }
         })
         .fail(function () {
           // Fallback to full navigation if AJAX fails
