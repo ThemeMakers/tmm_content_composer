@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ThemeMakers Visual Content Composer\n"
-"POT-Creation-Date: 2025-12-26 18:39+0100\n"
+"POT-Creation-Date: 2025-12-31 17:07+0100\n"
 "PO-Revision-Date: 2019-10-28 23:43+0100\n"
 "Last-Translator: ThemeMakers <support@webtemplatemasters.com>\n"
 "Language-Team: ThemeMakers <support@webtemplatemasters.com>\n"
@@ -459,14 +459,14 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_locations.php:21
-#: views/shortcodes/cardealer/car_locations.php:40
-#: views/shortcodes/cardealer/car_locations.php:55
+#: views/shortcodes/cardealer/car_locations.php:22
+#: views/shortcodes/cardealer/car_locations.php:41
+#: views/shortcodes/cardealer/car_locations.php:58
 #, php-format
 msgid "View all posts filed under %s"
 msgstr ""
 
-#: views/shortcodes/cardealer/car_makes.php:72
+#: views/shortcodes/cardealer/car_makes.php:90
 #, php-format
 msgid "View all ads filed under %s"
 msgstr ""
@@ -559,7 +559,7 @@ msgid "Button Text"
 msgstr ""
 
 #: views/shortcodes/cardealer/popups/animated_banner.php:112
-#: views/shortcodes/default/services.php:87
+#: views/shortcodes/default/services.php:88
 msgid "Read more"
 msgstr ""
 
@@ -1219,6 +1219,10 @@ msgstr ""
 
 #: views/shortcodes/cardealer/recent_cars.php:100
 msgid "Show all cars"
+msgstr ""
+
+#: views/shortcodes/cardealer/search_by_car_body.php:8
+msgid "vehicle-body"
 msgstr ""
 
 #: views/shortcodes/cardealer/staff.php:63
