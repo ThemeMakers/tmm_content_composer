@@ -8,14 +8,14 @@ $car_body_slug = function_exists('tmm_get_car_body_slug')
     : sanitize_title(apply_filters('tmm_car_body_slug', __('vehicle-body', 'tmm_content_composer')));
 
 foreach ($car_body_list as $k => $body_name) {
-    $pretty_url = trailingslashit(trailingslashit($searching_page) . $car_body_slug . '/' . $k);
+    $pretty_url = trailingslashit($searching_page);
     $car_bodies[$k] = array(
         'name' => $body_name,
         'url' => $pretty_url,
         'count' => 0,
         'icon' => file_exists(TMM_EXT_PATH . '/cardealer/images/car_body_icons/' . $k . '.svg')
-            ? TMM_EXT_URI . '/cardealer/images/car_body_icons/' . $k . '.svg'
-            : TMM_EXT_URI . '/cardealer/images/car_body_icons/sedan.svg',
+                ? TMM_EXT_URI . '/cardealer/images/car_body_icons/' . $k . '.svg'
+                : TMM_EXT_URI . '/cardealer/images/car_body_icons/sedan.svg',
     );
 
     if (!empty($show_count)) {
