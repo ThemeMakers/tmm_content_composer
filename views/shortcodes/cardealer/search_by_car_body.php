@@ -3,9 +3,6 @@
 $car_bodies = array();
 $car_body_list = TMM_Ext_PostType_Car::$car_options['body'];
 $searching_page = get_permalink(TMM::get_option('searching_page', TMM_APP_CARDEALER_PREFIX));
-$car_body_slug = function_exists('tmm_get_car_body_slug')
-    ? tmm_get_car_body_slug()
-    : sanitize_title(apply_filters('tmm_car_body_slug', __('vehicle-body', 'tmm_content_composer')));
 
 foreach ($car_body_list as $k => $body_name) {
     $pretty_url = trailingslashit($searching_page);
