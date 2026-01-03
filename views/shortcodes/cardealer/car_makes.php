@@ -78,18 +78,15 @@ if (!isset($show_name)) {
 
             <li class="cat-item-<?php echo esc_attr((str_replace(' ', '-', strtolower($make->name)))) ?>">
                 <?php
-                // Prefer linking to the inventory/search page with a prefilled make filter; fall back to taxonomy link.
-                if ($inventory_page_url) {
-                    $make_url = user_trailingslashit(trailingslashit($inventory_page_url) . 'make/' . $make->slug);
-                } else {
-                    $make_url = get_term_link($make->slug, 'carproducer');
-                }
+                // Always send users to the inventory/search page; the JS layer applies the filter via JSON.
+                $make_url = $inventory_page_url ?: get_term_link($make->slug, 'carproducer');
                 ?>
 
                 <?php if (!isset($show_link) || $show_link && $make->count > 0) { ?>
                     <a title="<?php echo sprintf(esc_html__('View all ads filed under %s', 'tmm_content_composer'), $make->name); ?>"
                         href="<?php echo esc_url($make_url); ?>"
-                        rel="nofollow">
+                        rel="nofollow"
+                        data-carproducer="<?php echo (int) $make->term_id; ?>">
                     <?php } ?>
 
                     <?php if ($show_logo && $src != '') { ?>
